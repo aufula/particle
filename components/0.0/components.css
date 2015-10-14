@@ -1,6 +1,148 @@
 /*Lucid Particle Components
 
 */
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #5a5a5a;
+}
 img {
   max-width: 100%;
 }
@@ -44,11 +186,8 @@ img {
 }
 .lucid-input-stepper .lucid-down {
   bottom: 1px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-input-stepper:hover .lucid-input {
   background: #FFF;
@@ -92,19 +231,15 @@ img {
   position: absolute;
   top: 10px;
   right: 0;
-  -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
   font-size: 0;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon g {
   fill: #fff;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateZ(180deg);
-          transform: rotateZ(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateZ(180deg);
+  transform-origin: center;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer {
   padding: 10px;
@@ -112,8 +247,7 @@ img {
   box-sizing: border-box;
   opacity: 1;
   margin-top: 0;
-  -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
   margin-top: 0px !important;
@@ -122,8 +256,7 @@ img {
   opacity: 0;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-popover-menu {
   background-color: #f1f1f1;
@@ -154,8 +287,7 @@ img {
   margin-top: -7px;
 }
 .lucid-popover-menu.ng-animate {
-  -webkit-transition: .1s all linear;
-          transition: .1s all linear;
+  transition: .1s all linear;
 }
 .lucid-popover-menu .lucid-wrapper-overflow-hidden {
   overflow: hidden;
@@ -287,8 +419,7 @@ img {
   padding: 3px;
   box-sizing: border-box;
   display: inline-block;
-  -webkit-transition: 0.1s ease-in-out background;
-          transition: 0.1s ease-in-out background;
+  transition: 0.1s ease-in-out background;
   vertical-align: top;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check {
@@ -300,15 +431,10 @@ img {
   z-index: 3;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check img {
-  -webkit-transform: scale(0.01);
-      -ms-transform: scale(0.01);
-          transform: scale(0.01);
+  transform: scale(0.01);
   opacity: 0;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: 0.1s ease-in-out all;
-          transition: 0.1s ease-in-out all;
+  transform-origin: center;
+  transition: 0.1s ease-in-out all;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square:hover {
   background: rgba(0, 0, 0, 0.05);
@@ -317,9 +443,7 @@ img {
   background: rgba(0, 0, 0, 0.1);
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-selected .lucid-swatch-check img {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-swatch-plus {
@@ -385,8 +509,7 @@ img {
   top: -2px;
   z-index: 2;
   opacity: 1;
-  -webkit-transition: all 0.1s ease-in-out;
-          transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-color-inputs li {
   display: inline-block;
@@ -440,8 +563,7 @@ img {
   display: inline-block;
   width: 100%;
   margin-top: 10px;
-  -webkit-transition: 0.3s ease-in-out background, 0.2s ease-out margin;
-          transition: 0.3s ease-in-out background, 0.2s ease-out margin;
+  transition: 0.3s ease-in-out background, 0.2s ease-out margin;
   text-align: left;
 }
 .lucid-shape-group:first-child {
@@ -473,8 +595,7 @@ img {
   padding: 5px 10px;
   position: relative;
   color: #555;
-  -webkit-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   box-sizing: border-box;
   line-height: 20px;
   text-align: left;
@@ -482,8 +603,7 @@ img {
 .lucid-shape-group .shape-group-top .lucid-shape-group-top-right-icons {
   float: right;
   opacity: 0;
-  -webkit-transition: 0.4s ease-in-out all;
-          transition: 0.4s ease-in-out all;
+  transition: 0.4s ease-in-out all;
 }
 .lucid-shape-group .shape-group-top .lucid-shape-group-top-right-icons .lucid-icon {
   float: right;
@@ -535,8 +655,7 @@ img {
   opacity: 0;
 }
 .lucid-shape-group .lucid-close-icon.ng-animate {
-  -webkit-transition: 0.3s all ease-in-out;
-          transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 .lucid-shape-group .lucid-pin-icon {
   width: 22px;
@@ -555,25 +674,18 @@ img {
   margin: 7px 7.9px;
   position: relative;
   z-index: 1;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 .lucid-shape-group .lucid-shape.ng-enter {
-  -webkit-transform: scale(0.01);
-      -ms-transform: scale(0.01);
-          transform: scale(0.01);
+  transform: scale(0.01);
   opacity: 0;
 }
 .lucid-shape-group .lucid-shape.ng-enter-active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 .lucid-shape-group .lucid-shape.ng-animate {
-  -webkit-transition: .25s;
-          transition: .25s;
+  transition: .25s;
 }
 .lucid-shape-group .lucid-shape svg {
   vertical-align: -webkit-baseline-middle;
@@ -589,8 +701,7 @@ img {
   opacity: 0;
 }
 .lucid-modal-wrapper.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
-          transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal {
   position: fixed;
@@ -606,14 +717,11 @@ img {
   z-index: 2;
 }
 .lucid-modal-wrapper .lucid-modal.ng-hide {
-  -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-          transform: translateY(10px);
+  transform: translateY(10px);
   opacity: 0;
 }
 .lucid-modal-wrapper .lucid-modal.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
-          transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal > header {
   background: #3d4752;
@@ -736,8 +844,7 @@ img {
   box-sizing: border-box;
   height: 28px;
   whitespace: nowrap;
-  -webkit-transition: 0.15s ease-in-out background-color;
-          transition: 0.15s ease-in-out background-color;
+  transition: 0.15s ease-in-out background-color;
 }
 .lucid-button.lucid-blue {
   background-color: #29aae1;
@@ -858,11 +965,8 @@ img {
   right: 0px;
   cursor: pointer;
   top: 10px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-select-wrapper .lucid-selected-option {
   text-align: left;
