@@ -6,6 +6,6 @@ angular.module('lucidBorderOptions', [])
                 selected: '='
             },
             replace: false,
-            templateUrl: '/components/0.0/border-options/lucid-border-options.html',
+            templateUrl: 'components/0.0/border-options/lucid-border-options.html',
         };
     });

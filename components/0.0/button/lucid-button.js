@@ -8,6 +8,6 @@ angular.module("lucidButton", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/button/lucid-button.html",
+            templateUrl: "components/0.0/button/lucid-button.html",
         };
     }); 

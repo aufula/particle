@@ -7,7 +7,7 @@ angular.module("lucidButtcon", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/buttcon/lucid-buttcon.html",
+            templateUrl: "components/0.0/buttcon/lucid-buttcon.html",
 
             controller: function($scope) {},
 
