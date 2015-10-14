@@ -13,7 +13,7 @@ angular.module("lucidModal", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/modal/lucid-modal.html",
+            templateUrl: "components/0.0/modal/lucid-modal.html",
 
             link: function(scope, el) {
                 $document.on('click', function(e) {

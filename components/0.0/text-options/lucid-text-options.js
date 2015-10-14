@@ -6,6 +6,6 @@ angular.module('lucidTextOptions', [])
                 selected: '='
             },
             replace: false,
-            templateUrl: '/components/0.0/text-options/lucid-text-options.html',
+            templateUrl: 'components/0.0/text-options/lucid-text-options.html',
         };
     });

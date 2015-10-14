@@ -6,6 +6,6 @@ angular.module('lucidShadowOptions', [])
                 selected: '='
             },
             replace: false,
-            templateUrl: '/components/0.0/shadow-options/lucid-shadow-options.html',
+            templateUrl: 'components/0.0/shadow-options/lucid-shadow-options.html',
         };
     });

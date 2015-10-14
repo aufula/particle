@@ -7,7 +7,7 @@ angular.module("lucidColorPicker", [])
                 selected: '=',
             },
             replace: false,
-            templateUrl: "/components/0.0/color-picker/lucid-color-picker.html",
+            templateUrl: "components/0.0/color-picker/lucid-color-picker.html",
 
             controller: function($scope) {
 

@@ -2,7 +2,7 @@ angular.module("lucidFingerTabs", [])
 .directive('lucidFingerTabs', function() {
         return {
             restrict: 'E',
-            templateUrl: '/components/0.0/finger-tabs/lucid-finger-tabs.html',
+            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tabs.html',
             scope: { 
             },
             transclude: true,
@@ -28,7 +28,7 @@ angular.module("lucidFingerTabs", [])
     .directive('lucidFingerTab', function() {
         return {
             restrict: 'E',
-            templateUrl: '/components/0.0/finger-tabs/lucid-finger-tab.html',
+            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tab.html',
             transclude: true,
             replace: true,
             scope: {

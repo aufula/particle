@@ -9,7 +9,7 @@ angular.module("lucidPathStyle", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/path-style/lucid-path-style.html",
+            templateUrl: "components/0.0/path-style/lucid-path-style.html",
 
             controller: function($scope) {
                 var lucidPath = new SVGMorpheus('#lucid-path-style');

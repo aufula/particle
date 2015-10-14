@@ -9,7 +9,7 @@ angular.module('lucidShape', [])
                 text: '='
             },
             replace: true,
-            templateUrl: "/components/0.0/shape/lucid-shape.html",
+            templateUrl: "components/0.0/shape/lucid-shape.html",
         };
     })
     .directive('lucidDraggable', ['$document', function($document) {

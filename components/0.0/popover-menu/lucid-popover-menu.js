@@ -7,7 +7,7 @@ angular.module("lucidPopoverMenu", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/popover-menu/lucid-popover-menu.html",
+            templateUrl: "components/0.0/popover-menu/lucid-popover-menu.html",
 
             link: function(scope, el) {
                 $document.on('click', function(e) {

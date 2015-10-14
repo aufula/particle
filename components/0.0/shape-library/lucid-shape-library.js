@@ -8,7 +8,7 @@ angular.module('lucidShapeLibrary', [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/shape-library/lucid-shape-library.html",
+            templateUrl: "components/0.0/shape-library/lucid-shape-library.html",
 
             link: function(scope, el) {
                 $document.on('click', function(e) {

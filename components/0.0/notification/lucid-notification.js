@@ -8,6 +8,6 @@ angular.module("lucidNotification", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/notification/lucid-notification.html",
+            templateUrl: "components/0.0/notification/lucid-notification.html",
         };
     }); 

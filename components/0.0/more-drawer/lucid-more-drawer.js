@@ -8,6 +8,6 @@ angular.module("lucidMoreDrawer", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/more-drawer/lucid-more-drawer.html",
+            templateUrl: "components/0.0/more-drawer/lucid-more-drawer.html",
         };
     }); 

@@ -6,6 +6,6 @@ angular.module('lucidPositionOptions', [])
                 selected: '='
             },
             replace: false,
-            templateUrl: '/components/0.0/position-options/lucid-position-options.html',
+            templateUrl: 'components/0.0/position-options/lucid-position-options.html',
         };
     });

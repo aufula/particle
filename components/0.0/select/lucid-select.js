@@ -7,7 +7,7 @@ angular.module("lucidSelect", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "/components/0.0/select/lucid-select.html",
+            templateUrl: "components/0.0/select/lucid-select.html",
 
             controller: function($scope) {
                 $scope.selectedOption = $scope.options[0];
