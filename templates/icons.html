@@ -1,0 +1,21 @@
+<h1>Icon Sheet</h1>
+<div class="hr"></div>
+<h2>How to use</h2>
+<p>Lorem ipsum dolor sit amet, augue mollis mel eu. Quot nullam mediocritatem eum no, vim no purto ponderum accommodare. Vis ea appetere ocurreret, utroque sadipscing ei est. Vel et hinc malorum, consul feugait intellegam cum ut. No eum dicant nonumy possit, ei nec postea iriure, nam eu iudico timeam. Cetero rationibus at mel.</p>
+<div class="icon-search">
+    <input ng-model="searchResults" placeholder="Search icons">
+    <img src="/components/0.0/icon/img/search-dark.svg">
+</div>
+<div ng-repeat="icongroup in icons | filter:searchResults" >
+    <h2>{{icongroup.name}}</h2>
+    <div class="icon-list-container clearfix">
+        <div class="particle-icon-wrapper" ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
+            <div class="icon-container">
+                <a href="/components/0.0/icon/img/{{icon.name}}.svg" download="{{icon.name}}.svg">
+                    <img ng-src="/components/0.0/icon/img/{{icon.name}}.svg">
+                </a>
+            </div>
+            <h5>{{icon.name}}</h5>
+        </div>
+    </div>
+</div>

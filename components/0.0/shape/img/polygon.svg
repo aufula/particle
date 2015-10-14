@@ -1,0 +1,5 @@
+
+<svg ng-attr-width="{{shape.width}}px" ng-attr-height="{{shape.height}}px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+
+            <polygon id="Polygon" sketch:type="MSShapeGroup" points="15 3 27.3637347 11.9827791 22.6412083 26.5172209 7.35879172 26.5172209 2.63626529 11.9827791 " stroke-width="{{shape.strokewidth}}" rx="{{shape.radius}}" ry="{{shape.radius}}" stroke="{{shape.stroke}}" fill="{{shape.fill}}"></polygon>
+</svg>

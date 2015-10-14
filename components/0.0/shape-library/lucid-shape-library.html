@@ -1,0 +1,14 @@
+<div class="lucid-shape-group">
+    <div class="shape-group-top" ng-class="{'lucid-custom-library' : shapegroup.custom }">
+        <span class="shape-group-name"> {{shapegroup.groupname}}</span>
+        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-bluesteel.svg" ng-show="manageshapes" ng-click="unPinShapeGroup(shapegroup)">
+    </div>
+    <ul>
+        <li class="lucid-shape" ng-drag="true" draggable="true" ng-drag-data="shape" data-allow-transform="true" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes track by $index">
+            <lucid-shape shape="shape"></lucid-shape>
+        </li>
+    </ul>
+    <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
+        <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
+    </div>
+</div>

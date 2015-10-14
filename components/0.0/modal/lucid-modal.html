@@ -1,0 +1,16 @@
+<div class="lucid-modal-wrapper" ng-hide="!showmodal">
+    <div ng-hide="!showmodal" class="lucid-modal" style="width: {{width}}px; height:{{height}}px;">
+        <header><span class="lucid-modal-title">{{title}}</span>
+            <lucid-icon class="lucid-close-modal" size="22" icon="'x-white'" ng-click="showmodal=false"></lucid-icon>
+        </header>
+        <div style="height:{{height - 42 - 45}}px">
+            <ng-transclude></ng-transclude>
+        </div>
+        <footer>
+            <button class="lucid-button lucid-cancel" ng-show="cancel" ng-click="showmodal=false">{{cancel}}</button>
+            <button class="lucid-button lucid-blue" ng-show="confirm" ng-click="showmodal=false">{{confirm}}</button>
+        </footer>
+    </div>
+    <div class="lucid-modal-bg" ng-click="showmodal=false">
+    </div>
+</div>

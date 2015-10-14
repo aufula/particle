@@ -1,0 +1,1 @@
+angular.module("lucidButtcon",[]).directive("lucidButtcon",function(t,n){return{restrict:"E",scope:{icon:"="},replace:!0,transclude:!0,templateUrl:"/components/0.0/buttcon/lucid-buttcon.html",controller:function(t){},link:function(n,c){t.on("click",function(t){c[0].contains(t.target)||(n.showpopup=!1,n.$apply())})}}});

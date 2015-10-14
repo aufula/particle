@@ -1,0 +1,252 @@
+//specific popovers
+@panelgray: #e5e5e5;
+@lightgray: #f6f6f6;
+@popover-menu-background: #F1F1F1;
+@popover-menu-background-2: @panelgray;
+@popover-menu-background-3: #DCDCDC;
+//this will go in buttcon
+///////
+.lucid-color-picker {
+    .lucid-popover-menu {
+        background-color: @panelgray;
+        &:after {
+            border-bottom: 10px @popover-menu-background-3 solid;
+        }
+        font-size: 0;
+        box-sizing: border-box;
+        .lucid-swatch-top {
+            padding: 10px;
+            background-color: @popover-menu-background-3;
+            border-radius: 5px 5px 0 0;
+            .lucid-swatch {
+                float: right;
+                &.active {
+                    background: #FFF;
+                }
+            }
+            .lucid-buttcon {
+                background: @popover-menu-background;
+                &:hover {
+                    background: #fff;
+                }
+            }
+            .lucid-swatch-toggle {
+                position: relative;
+                height: 32px;
+                font-size: 14px;
+                line-height: 26px;
+                padding: 0 10px;
+                box-sizing: border-box;
+                display: inline-block;
+                background-color: @popover-menu-background; //@lightgray;
+                cursor: pointer;
+                border-left: 1px solid @popover-menu-background-3;
+                width: 33%; //47px;
+                text-align: center;
+                &.lucid-fill {
+                    border-radius: 3px 0 0 3px;
+                }
+                &:nth-last-child(2) {
+                    border-radius: 0 3px 3px 0;
+                }
+                &.active {
+                    background-color: #fff;
+                }
+                &:hover {
+                    background-color: #fff;
+                }
+                .swatch {
+                    //width:80px;
+                    height: 6px;
+                    position: absolute;
+                    left: 2px;
+                    right: 2px;
+                    bottom: 2px;
+                    &.lucid-transparent-swatch {
+                        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #FFF !important;
+                        background-size: 6px !important;
+                    }
+                }
+            }
+            .make-default-swatch {
+                float: right;
+                display: none;
+            }
+        }
+        //end lucid-swatch-top
+        .swatch-colors {
+            text-align: left;
+            padding: 10px;
+            position: relative;
+            background: @popover-menu-background;
+            z-index:1;
+        }
+        ul {
+            &.lucid-grayscale-colors {
+                margin-bottom: 10px;
+            }
+            &.lucid-recent-colors {
+                background-color: #fff;
+                display: none;
+            }
+            &.lucid-colorpicker-colors {
+                margin-bottom: 0;
+            }
+        }
+        .on-canvas-title {
+            font-size: 14px;
+            padding-bottom: 5px;
+        }
+        .lucid-swatch-square {
+            width: 36px;
+            height: 36px;
+            position: relative;
+            background: rgba(0, 0, 0, 0);
+            border-radius: 4px;
+            padding: 3px;
+            box-sizing: border-box;
+            display: inline-block;
+            transition: .1s ease-in-out background;
+            vertical-align: top;
+            .lucid-swatch-check {
+                position: absolute;
+                right: -4px;
+                top: -4px;
+                width: 14px;
+                height: 14px;
+                z-index: 3;
+                img {
+                    transform: scale(.01);
+                    opacity: 0;
+                    transform-origin: center;
+                    transition: .1s ease-in-out all;
+                }
+            }
+            &:hover {
+                background: rgba(0, 0, 0, .05);
+            }
+            &.lucid-selected {
+                background: rgba(0, 0, 0, .1);
+            }
+            &.lucid-selected .lucid-swatch-check img {
+                transform: scale(1);
+                opacity: 1;
+            }
+            &.lucid-swatch-plus {
+                padding: 2px;
+                //background: rgba(0, 0, 0, .1);
+                cursor: pointer;
+                img {
+                    border: 3px solid rgba(0, 0, 0, .1);
+                    padding: 2px;
+                    border-radius: 3px;
+                }
+            }
+            &.lucid-swatch-shadow .lucid-selected-swatch {
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+            }
+            .lucid-selected-swatch {
+                width: 30px;
+                height: 30px;
+                box-sizing: border-box;
+                line-height: 25px; //height minus border
+                font-size: 18px;
+                border: 2px solid;
+                text-align: center;
+                box-sizing: border-box;
+                cursor: pointer;
+                display: inline-block;
+                position: relative;
+            }
+        }
+        .lucid-square {
+            height: 24px;
+            width: 24px;
+            display: inline-block;
+            cursor: pointer;
+            position: relative;
+            &.lucid-transparent {
+                background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #FFF;
+            }
+            &.blank {
+                cursor: auto;
+            }
+            &:hover .lucid-selected-color {
+                opacity: .8;
+            }
+            .lucid-selected-color {
+                border: 2px solid #fff;
+                width: 24px;
+                height: 24px;
+                left: 0px;
+                top: 0px;
+                box-sizing: border-box;
+                position: absolute;
+                box-shadow: 0 0 5px rgba(0, 0, 0, .25);
+                opacity: 0;
+                .lucid-inset-shadow {
+                    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+                    width: 100%;
+                    height: 100%;
+                }
+                &.lucid-selected {
+                    width: 28px;
+                    height: 28px;
+                    left: -2px;
+                    top: -2px;
+                    z-index: 2;
+                    opacity: 1;
+                    transition: all .1s ease-in-out;
+                }
+            }
+        }
+        .lucid-color-inputs li {
+            display: inline-block;
+            vertical-align: top;
+        }
+        .lucid-hex {
+            width: 75px;
+            display: inline-block;
+            text-transform: uppercase;
+            float:left;
+        }
+        .lucid-opacity{
+            float:right;
+        }
+        .lucid-opacity-title,
+        .lucid-hex-title {
+            font-size: 14px;
+            display: inline-block;
+            //line-height: 32px;
+            padding-right: 5px;
+        }
+        .lucid-advanced-color {
+            margin: 0 7px;
+            border-radius: 16px;
+            height: 32px;
+            line-height: 32px;
+            cursor: pointer;
+            background-color: #F1F1F1;
+            &:hover {
+                background-color: #FFF;
+            }
+        }
+        .clear {
+            clear: both;
+        }
+        .spacer-10 {
+            height: 10px;
+        }
+        .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden{
+            overflow:visible;
+            .lucid-select-wrapper {
+                margin-top:10px;
+                width:100%;
+            }
+            .lucid-select-dropdown{
+                width:100%;
+                top:28px;
+            }
+        }
+    }
+}

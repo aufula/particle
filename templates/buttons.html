@@ -1,0 +1,60 @@
+<h1>Component: Buttons</h1>
+<div class="hr"></div>
+<p>This is where components will go. You know, once we actually put them here.</p>
+
+<div class="code-preview" ng-controller="previewController">
+	<header>
+		<h2 class="reversed-header">Sample Buttons</h2>
+		<div class="control" ng-click="showAdvanced = !showAdvanced; showBasic = false;" ng-class="{'active': showAdvanced}">
+			<i class="l-icon l-icon-code"></i>
+			<span>Code</span>
+		</div>
+		<div class="control" ng-click="showBasic = !showBasic; showAdvanced = false;" ng-class="{'active': showBasic}">
+			<i class="l-icon l-icon-angular"></i>
+			<span>Basic</span>
+		</div>
+	</header>
+	<div class="drawer-wrapper" ng-hide="!showBasic && !showAdvanced">
+		<div class="drawer basic-drawer" ng-show="showBasic">
+			<header>
+				<span ng-click="less = false" ng-class="{'active': !less}">HTML</span>
+				<span ng-click="less = true" ng-class="{'active': less}">LESS</span>
+			</header>
+			<div class="html-content" ng-show="!less">
+				<textarea>// BASIC HTML code</textarea>
+			</div>
+			<div class="less-content" ng-show="less">
+				<textarea>// BASIC less code</textarea>
+			</div>
+		</div>
+		<div class="drawer advanced-drawer" ng-show="showAdvanced">
+			<header>
+				<span ng-click="less = false" ng-class="{'active': !less}">HTML</span>
+				<span ng-click="less = true" ng-class="{'active': less}">LESS</span>
+			</header>
+			<div class="html-content" ng-show="!less">
+				<textarea>
+<div class="drawer advanced-drawer" ng-show="showAdvanced">
+	<header>
+		<span ng-click="less = false" ng-class="{'active': !less}">HTML</span>
+		<span ng-click="less = true" ng-class="{'active': less}">LESS</span>
+	</header>
+	<div class="html-content" ng-show="!less">
+	</div>
+	<div class="less-content" ng-show="less">
+	</div>
+</div>
+
+				</textarea>
+			</div>
+			<div class="less-content" ng-show="less">
+				<textarea>// some CSS code</textarea>
+			</div>
+		</div>
+	</div>
+	<div class="component-preview"></div>
+	<div class="status">
+		<i class="l-icon l-icon-check-circle green"></i>
+		<p>This code is only for reference. This component is used in production. It can be found in the Team Admin App Integrations pages. See the live code on <a hred="https://www.lucidchart.com/style-docs/css-common-components-finger-tabs.html">Lucid Styles</a>.</p>
+	</div>
+</div>
