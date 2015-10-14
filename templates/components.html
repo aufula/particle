@@ -24,10 +24,10 @@
                 </header>
                 <div class="scroll-area" ng-show="showBasic">
                     <div class="html-content" ng-show="drawer == 'html'">
-                        <div hljs language="HTML" include="'../components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'"></div>
+                        <div hljs language="HTML" include="'components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'"></div>
                     </div>
                     <div class="less-content" ng-show="drawer == 'less'">
-                        <div hljs language="css" include="'../components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
+                        <div hljs language="css" include="'components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
                     </div>
                     <div class="inputs-content" ng-show="drawer == 'inputs'">
                         <table class="lucid-table" style="margin:0;">
@@ -50,15 +50,15 @@
                 </div>
                 <div class="scroll-area" ng-show="showAdvanced">
                     <div class="html-content" ng-show="!less">
-                        <div hljs language="HTML" include="'../components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.html'"></div>
+                        <div hljs language="HTML" include="'components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.html'"></div>
                     </div>
                     <div class="less-content" ng-show="less">
-                        <div hljs language="css" include="'../components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
+                        <div hljs language="css" include="'components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="component-preview" ng-include src="'../components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'">
+        <div class="component-preview" ng-include src="'components/0.0/'+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'">
         </div>
 
         <lucid-notification type="information">Component for prototyping only. Not ready for production.
