@@ -1,14 +1,14 @@
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module('lucidTextAlign', [])
-    .directive('lucidTextAlign', function($document) {
+angular.module('lucidTextAlign', ['appConfig'])
+    .directive('lucidTextAlign', function($document, config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: true,
-            templateUrl: "components/0.0/text-align/lucid-text-align.html",
+            templateUrl: config.componentsURL + 'text-align/lucid-text-align.html',
 
             controller: function($scope) {
 

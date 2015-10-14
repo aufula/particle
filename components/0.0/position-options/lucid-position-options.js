@@ -1,11 +1,11 @@
-angular.module('lucidPositionOptions', [])
-    .directive('lucidPositionOptions', function() {
+angular.module('lucidPositionOptions', ['appConfig'])
+    .directive('lucidPositionOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/position-options/lucid-position-options.html',
+            templateUrl: config.componentsURL + 'position-options/lucid-position-options.html',
         };
     });

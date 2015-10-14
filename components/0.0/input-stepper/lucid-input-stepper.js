@@ -1,5 +1,5 @@
-angular.module('lucidInputStepper', [])
-    .directive('lucidInputStepper', function() {
+angular.module('lucidInputStepper', ['appConfig'])
+    .directive('lucidInputStepper', function(config) {
         return {
             restrict: 'AE',
             scope: {
@@ -9,7 +9,7 @@ angular.module('lucidInputStepper', [])
                 width: '='
             },
             replace: true,
-            templateUrl: 'components/0.0/input-stepper/lucid-input-stepper.html',
+            templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope) {
                 $scope.stepUp = function() {
                     $scope.ngModel = parseInt($scope.ngModel) + parseInt($scope.step);

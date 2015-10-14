@@ -1,4 +1,4 @@
-angular.module("lucidButtcon", [])
+angular.module("lucidButtcon", ['appConfig'])
     .directive('lucidButtcon', function($document, canvasData) {
         return {
             restrict: 'E',
@@ -7,7 +7,7 @@ angular.module("lucidButtcon", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/buttcon/lucid-buttcon.html",
+            templateUrl: config.componentsURL + 'buttcon/lucid-buttcon.html',
 
             controller: function($scope) {},
 

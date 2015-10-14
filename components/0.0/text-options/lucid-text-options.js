@@ -1,11 +1,11 @@
-angular.module('lucidTextOptions', [])
-    .directive('lucidTextOptions', function() {
+angular.module('lucidTextOptions', ['appConfig'])
+    .directive('lucidTextOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/text-options/lucid-text-options.html',
+            templateUrl: config.componentsURL + 'text-options/lucid-text-options.html',
         };
     });

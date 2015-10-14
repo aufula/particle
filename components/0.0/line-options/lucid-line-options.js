@@ -1,11 +1,11 @@
-angular.module('lucidLineOptions', [])
-    .directive('lucidLineOptions', function() {
+angular.module('lucidLineOptions', ['appConfig'])
+    .directive('lucidLineOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/line-options/lucid-line-options.html',
+            templateUrl: config.componentsURL + 'line-options/lucid-line-options.html',
         };
     });

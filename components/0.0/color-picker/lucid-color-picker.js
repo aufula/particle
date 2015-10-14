@@ -1,13 +1,13 @@
 /*global angular : true fixes codekit error*/
-angular.module("lucidColorPicker", [])
-    .directive('lucidColorPicker', function($document) {
+angular.module("lucidColorPicker", ['appConfig'])
+    .directive('lucidColorPicker', function($document, config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '=',
             },
             replace: false,
-            templateUrl: "components/0.0/color-picker/lucid-color-picker.html",
+            templateUrl: config.componentsURL + 'color-picker/lucid-color-picker.html',
 
             controller: function($scope) {
 

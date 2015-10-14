@@ -1,29 +1,47 @@
 /*global angular : true fixes codekit error*/
 
-//@codekit-prepend "canvas/lucid-canvas-data.js"
-//@codekit-prepend "input-stepper/lucid-input-stepper.js"
-//@codekit-prepend "color-picker/lucid-color-picker.js"
-//@codekit-prepend "popover-menu/lucid-popover-menu.js"
-//@codekit-prepend "path-style/lucid-path-style.js"
-//@codekit-prepend "text-align/lucid-text-align.js"
-//@codekit-prepend "more-drawer/lucid-more-drawer.js"
-//@codekit-prepend "border-options/lucid-border-options.js"
-//@codekit-prepend "text-options/lucid-text-options.js"
-//@codekit-prepend "line-options/lucid-line-options.js"
-//@codekit-prepend "position-options/lucid-position-options.js"
-//@codekit-prepend "shadow-options/lucid-shadow-options.js"
-//@codekit-prepend "modal/lucid-modal.js"
-//@codekit-prepend "shape/lucid-shape.js"
-//@codekit-prepend "finger-tabs/lucid-finger-tabs.js"
-//@codekit-prepend "buttcon-popover/lucid-buttcon-popover.js"
-//@codekit-prepend "notification/lucid-notification.js"
-//@codekit-prepend "select/lucid-select.js"
-//@codekit-prepend "button/lucid-button.js"
+//@codekit-append "canvas/lucid-canvas-data.js"
+//@codekit-append "input-stepper/lucid-input-stepper.js"
+//@codekit-append "color-picker/lucid-color-picker.js"
+//@codekit-append "popover-menu/lucid-popover-menu.js"
+//@codekit-append "path-style/lucid-path-style.js"
+//@codekit-append "text-align/lucid-text-align.js"
+//@codekit-append "more-drawer/lucid-more-drawer.js"
+//@codekit-append "border-options/lucid-border-options.js"
+//@codekit-append "text-options/lucid-text-options.js"
+//@codekit-append "line-options/lucid-line-options.js"
+//@codekit-append "position-options/lucid-position-options.js"
+//@codekit-append "shadow-options/lucid-shadow-options.js"
+//@codekit-append "modal/lucid-modal.js"
+//@codekit-append "shape/lucid-shape.js"
+//@codekit-append "finger-tabs/lucid-finger-tabs.js"
+//@codekit-append "buttcon-popover/lucid-buttcon-popover.js"
+//@codekit-append "notification/lucid-notification.js"
+//@codekit-append "select/lucid-select.js"
+//@codekit-append "button/lucid-button.js"
 
 
-//@codekit-prepend "shape-library/lucid-shape-library.js"
+//@codekit-append "shape-library/lucid-shape-library.js"
 
-angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlign', 'lucidInputStepper', 'lucidPopoverMenu','lucidColorPicker','lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover','lucidNotification', 'lucidSelect', 'lucidButton'])
+angular.module('appConfig', [])
+
+.config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        'http://lucidsoftware.github.io/particle/components/**'
+    ]);
+})
+
+.constant("config", {
+    'componentsURL': "/components/0.0/" //local dev
+        //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+
+});
+
+angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlign', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton'])
+
 .directive('ngdEnter', function() {
     return function(scope, element, attrs) {
         element.bind("keydown keypress", function(event) {
@@ -68,6 +86,7 @@ angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAli
         });
     };
 })
+
 //right click
 .directive('ngRightClick', function($parse) {
     return function(scope, element, attrs) {

@@ -1,5 +1,5 @@
-angular.module("lucidModal", [])
-    .directive('lucidModal', function($document) {
+angular.module("lucidModal", ['appConfig'])
+    .directive('lucidModal', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -13,7 +13,7 @@ angular.module("lucidModal", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/modal/lucid-modal.html",
+            templateUrl: config.componentsURL + 'modal/lucid-modal.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {

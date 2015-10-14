@@ -1,5 +1,5 @@
-angular.module("lucidSelect", [])
-    .directive('lucidSelect', function($document) {
+angular.module("lucidSelect", ['appConfig'])
+    .directive('lucidSelect', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -7,7 +7,7 @@ angular.module("lucidSelect", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/select/lucid-select.html",
+            templateUrl: config.componentsURL + 'select/lucid-select.html',
 
             controller: function($scope) {
                 $scope.selectedOption = $scope.options[0];

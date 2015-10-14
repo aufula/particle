@@ -1,5 +1,5 @@
-angular.module("lucidButton", [])
-    .directive('lucidButton', function() {
+angular.module("lucidButton", ['appConfig'])
+    .directive('lucidButton', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -8,6 +8,6 @@ angular.module("lucidButton", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/button/lucid-button.html",
+            templateUrl: config.componentsURL + 'button/lucid-button.html',
         };
     }); 

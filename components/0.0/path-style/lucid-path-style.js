@@ -1,7 +1,7 @@
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module("lucidPathStyle", [])
-    .directive('lucidPathStyle', function($document) {
+angular.module("lucidPathStyle", ['appConfig'])
+    .directive('lucidPathStyle', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -9,7 +9,7 @@ angular.module("lucidPathStyle", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/path-style/lucid-path-style.html",
+            templateUrl: config.componentsURL + 'components/0.0/path-style/lucid-path-style.html',
 
             controller: function($scope) {
                 var lucidPath = new SVGMorpheus('#lucid-path-style');

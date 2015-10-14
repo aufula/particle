@@ -1,5 +1,5 @@
-angular.module("lucidNotification", [])
-    .directive('lucidNotification', function() {
+angular.module("lucidNotification", ['appConfig'])
+    .directive('lucidNotification', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -8,6 +8,6 @@ angular.module("lucidNotification", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/notification/lucid-notification.html",
+            templateUrl: config.componentsURL + 'notification/lucid-notification.html',
         };
     }); 

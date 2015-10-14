@@ -1,11 +1,11 @@
-angular.module('lucidShadowOptions', [])
-    .directive('lucidShadowOptions', function() {
+angular.module('lucidShadowOptions', ['appConfig'])
+    .directive('lucidShadowOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/shadow-options/lucid-shadow-options.html',
+            templateUrl: config.componentsURL + 'shadow-options/lucid-shadow-options.html',
         };
     });

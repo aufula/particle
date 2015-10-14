@@ -1,8 +1,8 @@
-angular.module("lucidFingerTabs", [])
-.directive('lucidFingerTabs', function() {
+angular.module("lucidFingerTabs", ['appConfig'])
+.directive('lucidFingerTabs', function(config) {
         return {
             restrict: 'E',
-            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tabs.html',
+            templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tabs.html',
             scope: { 
             },
             transclude: true,

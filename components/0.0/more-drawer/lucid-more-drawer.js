@@ -1,5 +1,5 @@
-angular.module("lucidMoreDrawer", [])
-    .directive('lucidMoreDrawer', function() {
+angular.module("lucidMoreDrawer", ['appConfig'])
+    .directive('lucidMoreDrawer', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -8,6 +8,6 @@ angular.module("lucidMoreDrawer", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/more-drawer/lucid-more-drawer.html",
+            templateUrl: config.componentsURL + 'more-drawer/lucid-more-drawer.html',
         };
     }); 

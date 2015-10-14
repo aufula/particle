@@ -1,11 +1,11 @@
-angular.module('lucidBorderOptions', [])
-    .directive('lucidBorderOptions', function() {
+angular.module('lucidBorderOptions', ['appConfig'])
+    .directive('lucidBorderOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/border-options/lucid-border-options.html',
+            templateUrl: config.componentsURL + 'border-options/lucid-border-options.html',
         };
     });

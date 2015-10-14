@@ -1,4 +1,160 @@
 /*global angular : true fixes codekit error*/
+
+//@codekit-append "canvas/lucid-canvas-data.js"
+//@codekit-append "input-stepper/lucid-input-stepper.js"
+//@codekit-append "color-picker/lucid-color-picker.js"
+//@codekit-append "popover-menu/lucid-popover-menu.js"
+//@codekit-append "path-style/lucid-path-style.js"
+//@codekit-append "text-align/lucid-text-align.js"
+//@codekit-append "more-drawer/lucid-more-drawer.js"
+//@codekit-append "border-options/lucid-border-options.js"
+//@codekit-append "text-options/lucid-text-options.js"
+//@codekit-append "line-options/lucid-line-options.js"
+//@codekit-append "position-options/lucid-position-options.js"
+//@codekit-append "shadow-options/lucid-shadow-options.js"
+//@codekit-append "modal/lucid-modal.js"
+//@codekit-append "shape/lucid-shape.js"
+//@codekit-append "finger-tabs/lucid-finger-tabs.js"
+//@codekit-append "buttcon-popover/lucid-buttcon-popover.js"
+//@codekit-append "notification/lucid-notification.js"
+//@codekit-append "select/lucid-select.js"
+//@codekit-append "button/lucid-button.js"
+
+
+//@codekit-append "shape-library/lucid-shape-library.js"
+
+angular.module('appConfig', [])
+
+.config(function($sceDelegateProvider) {
+    $sceDelegateProvider.resourceUrlWhitelist([
+        // Allow same origin resource loads.
+        'self',
+        // Allow loading from our assets domain.  Notice the difference between * and **.
+        'http://lucidsoftware.github.io/particle/components/**'
+    ]);
+})
+
+.constant("config", {
+    'componentsURL': "/components/0.0/" //local dev
+        //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+
+});
+
+angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlign', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton'])
+
+.directive('ngdEnter', function() {
+    return function(scope, element, attrs) {
+        element.bind("keydown keypress", function(event) {
+            if (event.which === 13) {
+                scope.$apply(function() {
+                    scope.$eval(attrs.ngEnter);
+                });
+                event.preventDefault();
+            }
+        });
+    };
+})
+
+
+////////////////////      REUSABLE DIRECTIVES      //////////////////////
+//on enter
+.directive('ngEnter', function() {
+    return function(scope, element, attrs) {
+        element.bind("keydown keypress", function(event) {
+            if (event.which === 13) {
+                scope.$apply(function() {
+                    scope.$eval(attrs.ngEnter);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+})
+
+//escape
+.directive('escKey', function() {
+    return function(scope, element, attrs) {
+        element.bind('keydown keypress', function(event) {
+            if (event.which === 27) { // 27 = esc key
+                scope.$apply(function() {
+                    scope.$eval(attrs.escKey);
+                });
+
+                event.preventDefault();
+            }
+        });
+    };
+})
+
+//right click
+.directive('ngRightClick', function($parse) {
+    return function(scope, element, attrs) {
+        var fn = $parse(attrs.ngRightClick);
+        element.bind('contextmenu', function(event) {
+            scope.$apply(function() {
+                event.preventDefault();
+                fn(scope, {
+                    $event: event
+                });
+            });
+        });
+    };
+})
+
+
+////////////////////      Filters      //////////////////////
+
+///filter unique objects
+.filter('unique', function() {
+
+    return function(items, filterOn) {
+
+        if (filterOn === false) {
+            return items;
+        }
+
+        if ((filterOn || angular.isUndefined(filterOn)) && angular.isArray(items)) {
+            //var hashCheck = {}, 
+            var newItems = [];
+
+            var extractValueToCompare = function(item) {
+                if (angular.isObject(item) && angular.isString(filterOn)) {
+                    return item[filterOn];
+                } else {
+                    return item;
+                }
+            };
+
+            angular.forEach(items, function(item) {
+                //var valueToCheck, 
+                var isDuplicate = false;
+
+                for (var i = 0; i < newItems.length; i++) {
+                    if (angular.equals(extractValueToCompare(newItems[i]), extractValueToCompare(item))) {
+                        isDuplicate = true;
+                        break;
+                    }
+                }
+                if (!isDuplicate) {
+                    newItems.push(item);
+                }
+
+            });
+            items = newItems;
+        }
+        return items;
+    };
+})
+
+//filter used to send svgs as html
+.filter("sanitize", ['$sce', function($sce) {
+    return function(htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
+    };
+}]);
+
+/*global angular : true fixes codekit error*/
 angular.module('lucidCanvasData', [])
     .factory('canvasData', function() {
 
@@ -5464,8 +5620,8 @@ angular.module('lucidCanvasData', [])
     return lucidThemes;
 });
 
-angular.module('lucidInputStepper', [])
-    .directive('lucidInputStepper', function() {
+angular.module('lucidInputStepper', ['appConfig'])
+    .directive('lucidInputStepper', function(config) {
         return {
             restrict: 'AE',
             scope: {
@@ -5475,7 +5631,7 @@ angular.module('lucidInputStepper', [])
                 width: '='
             },
             replace: true,
-            templateUrl: 'components/0.0/input-stepper/lucid-input-stepper.html',
+            templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope) {
                 $scope.stepUp = function() {
                     $scope.ngModel = parseInt($scope.ngModel) + parseInt($scope.step);
@@ -5488,15 +5644,15 @@ angular.module('lucidInputStepper', [])
     });
 
 /*global angular : true fixes codekit error*/
-angular.module("lucidColorPicker", [])
-    .directive('lucidColorPicker', function($document) {
+angular.module("lucidColorPicker", ['appConfig'])
+    .directive('lucidColorPicker', function($document, config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '=',
             },
             replace: false,
-            templateUrl: "components/0.0/color-picker/lucid-color-picker.html",
+            templateUrl: config.componentsURL + 'color-picker/lucid-color-picker.html',
 
             controller: function($scope) {
 
@@ -5674,8 +5830,8 @@ angular.module("lucidColorPicker", [])
         };
     });
 
-angular.module("lucidPopoverMenu", [])
-    .directive('lucidPopoverMenu', function($document) {
+angular.module("lucidPopoverMenu", ['appConfig'])
+    .directive('lucidPopoverMenu', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -5683,7 +5839,7 @@ angular.module("lucidPopoverMenu", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/popover-menu/lucid-popover-menu.html",
+            templateUrl: config.componentsURL + 'popover-menu/lucid-popover-menu.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {
@@ -5701,8 +5857,8 @@ angular.module("lucidPopoverMenu", [])
 
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module("lucidPathStyle", [])
-    .directive('lucidPathStyle', function($document) {
+angular.module("lucidPathStyle", ['appConfig'])
+    .directive('lucidPathStyle', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -5710,7 +5866,7 @@ angular.module("lucidPathStyle", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/path-style/lucid-path-style.html",
+            templateUrl: config.componentsURL + 'components/0.0/path-style/lucid-path-style.html',
 
             controller: function($scope) {
                 var lucidPath = new SVGMorpheus('#lucid-path-style');
@@ -5767,15 +5923,15 @@ angular.module("lucidPathStyle", [])
 
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module('lucidTextAlign', [])
-    .directive('lucidTextAlign', function($document) {
+angular.module('lucidTextAlign', ['appConfig'])
+    .directive('lucidTextAlign', function($document, config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: true,
-            templateUrl: "components/0.0/text-align/lucid-text-align.html",
+            templateUrl: config.componentsURL + 'text-align/lucid-text-align.html',
 
             controller: function($scope) {
 
@@ -5925,8 +6081,8 @@ angular.module('lucidTextAlign', [])
         };
     });
 
-angular.module("lucidMoreDrawer", [])
-    .directive('lucidMoreDrawer', function() {
+angular.module("lucidMoreDrawer", ['appConfig'])
+    .directive('lucidMoreDrawer', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -5935,72 +6091,72 @@ angular.module("lucidMoreDrawer", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/more-drawer/lucid-more-drawer.html",
+            templateUrl: config.componentsURL + 'more-drawer/lucid-more-drawer.html',
         };
     }); 
 
-angular.module('lucidBorderOptions', [])
-    .directive('lucidBorderOptions', function() {
+angular.module('lucidBorderOptions', ['appConfig'])
+    .directive('lucidBorderOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/border-options/lucid-border-options.html',
+            templateUrl: config.componentsURL + 'border-options/lucid-border-options.html',
         };
     });
 
-angular.module('lucidTextOptions', [])
-    .directive('lucidTextOptions', function() {
+angular.module('lucidTextOptions', ['appConfig'])
+    .directive('lucidTextOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/text-options/lucid-text-options.html',
+            templateUrl: config.componentsURL + 'text-options/lucid-text-options.html',
         };
     });
 
-angular.module('lucidLineOptions', [])
-    .directive('lucidLineOptions', function() {
+angular.module('lucidLineOptions', ['appConfig'])
+    .directive('lucidLineOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/line-options/lucid-line-options.html',
+            templateUrl: config.componentsURL + 'line-options/lucid-line-options.html',
         };
     });
 
-angular.module('lucidPositionOptions', [])
-    .directive('lucidPositionOptions', function() {
+angular.module('lucidPositionOptions', ['appConfig'])
+    .directive('lucidPositionOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/position-options/lucid-position-options.html',
+            templateUrl: config.componentsURL + 'position-options/lucid-position-options.html',
         };
     });
 
-angular.module('lucidShadowOptions', [])
-    .directive('lucidShadowOptions', function() {
+angular.module('lucidShadowOptions', ['appConfig'])
+    .directive('lucidShadowOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 selected: '='
             },
             replace: false,
-            templateUrl: 'components/0.0/shadow-options/lucid-shadow-options.html',
+            templateUrl: config.componentsURL + 'shadow-options/lucid-shadow-options.html',
         };
     });
 
-angular.module("lucidModal", [])
-    .directive('lucidModal', function($document) {
+angular.module("lucidModal", ['appConfig'])
+    .directive('lucidModal', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -6014,7 +6170,7 @@ angular.module("lucidModal", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/modal/lucid-modal.html",
+            templateUrl: config.componentsURL + 'modal/lucid-modal.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {
@@ -6030,8 +6186,8 @@ angular.module("lucidModal", [])
         };
     }); 
 
-angular.module('lucidShape', [])
-    .directive('lucidShape', function() {
+angular.module('lucidShape', ['appConfig'])
+    .directive('lucidShape', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -6041,7 +6197,7 @@ angular.module('lucidShape', [])
                 text: '='
             },
             replace: true,
-            templateUrl: "components/0.0/shape/lucid-shape.html",
+            templateUrl: config.componentsURL + 'shape/lucid-shape.html',
         };
     })
     .directive('lucidDraggable', ['$document', function($document) {
@@ -6083,11 +6239,11 @@ angular.module('lucidShape', [])
         };
     }]);
 
-angular.module("lucidFingerTabs", [])
-.directive('lucidFingerTabs', function() {
+angular.module("lucidFingerTabs", ['appConfig'])
+.directive('lucidFingerTabs', function(config) {
         return {
             restrict: 'E',
-            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tabs.html',
+            templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tabs.html',
             scope: { 
             },
             transclude: true,
@@ -6129,8 +6285,8 @@ angular.module("lucidFingerTabs", [])
         };
     });
 
-angular.module("lucidButtconPopover", [])
-    .directive('lucidButtconPopover', function($document) {
+angular.module("lucidButtconPopover", ['appConfig'])
+    .directive('lucidButtconPopover', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -6139,7 +6295,7 @@ angular.module("lucidButtconPopover", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/buttcon-popover/lucid-buttcon-popover.html",
+            templateUrl: config.componentsURL + 'buttcon-popover/lucid-buttcon-popover.html',
             link: function(scope, el) {
                 $document.on('click', function(e) {
                     if (el[0].contains(e.target)) {
@@ -6154,8 +6310,8 @@ angular.module("lucidButtconPopover", [])
         };
     }); 
 
-angular.module("lucidNotification", [])
-    .directive('lucidNotification', function() {
+angular.module("lucidNotification", ['appConfig'])
+    .directive('lucidNotification', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -6164,12 +6320,12 @@ angular.module("lucidNotification", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/notification/lucid-notification.html",
+            templateUrl: config.componentsURL + 'notification/lucid-notification.html',
         };
     }); 
 
-angular.module("lucidSelect", [])
-    .directive('lucidSelect', function($document) {
+angular.module("lucidSelect", ['appConfig'])
+    .directive('lucidSelect', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -6177,7 +6333,7 @@ angular.module("lucidSelect", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/select/lucid-select.html",
+            templateUrl: config.componentsURL + 'select/lucid-select.html',
 
             controller: function($scope) {
                 $scope.selectedOption = $scope.options[0];
@@ -6196,8 +6352,8 @@ angular.module("lucidSelect", [])
         };
     });
 
-angular.module("lucidButton", [])
-    .directive('lucidButton', function() {
+angular.module("lucidButton", ['appConfig'])
+    .directive('lucidButton', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -6206,12 +6362,12 @@ angular.module("lucidButton", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/button/lucid-button.html",
+            templateUrl: config.componentsURL + 'button/lucid-button.html',
         };
     }); 
 
-angular.module('lucidShapeLibrary', [])
-    .directive('lucidShapeLibrary', function($document) {
+angular.module('lucidShapeLibrary', ['appConfig'])
+    .directive('lucidShapeLibrary', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -6220,7 +6376,7 @@ angular.module('lucidShapeLibrary', [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/shape-library/lucid-shape-library.html",
+            templateUrl: config.componentsURL + 'shape-library/lucid-shape-library.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {
@@ -6235,141 +6391,4 @@ angular.module('lucidShapeLibrary', [])
             }
         };
     }); 
-
-/*global angular : true fixes codekit error*/
-
-//@codekit-prepend "canvas/lucid-canvas-data.js"
-//@codekit-prepend "input-stepper/lucid-input-stepper.js"
-//@codekit-prepend "color-picker/lucid-color-picker.js"
-//@codekit-prepend "popover-menu/lucid-popover-menu.js"
-//@codekit-prepend "path-style/lucid-path-style.js"
-//@codekit-prepend "text-align/lucid-text-align.js"
-//@codekit-prepend "more-drawer/lucid-more-drawer.js"
-//@codekit-prepend "border-options/lucid-border-options.js"
-//@codekit-prepend "text-options/lucid-text-options.js"
-//@codekit-prepend "line-options/lucid-line-options.js"
-//@codekit-prepend "position-options/lucid-position-options.js"
-//@codekit-prepend "shadow-options/lucid-shadow-options.js"
-//@codekit-prepend "modal/lucid-modal.js"
-//@codekit-prepend "shape/lucid-shape.js"
-//@codekit-prepend "finger-tabs/lucid-finger-tabs.js"
-//@codekit-prepend "buttcon-popover/lucid-buttcon-popover.js"
-//@codekit-prepend "notification/lucid-notification.js"
-//@codekit-prepend "select/lucid-select.js"
-//@codekit-prepend "button/lucid-button.js"
-
-
-//@codekit-prepend "shape-library/lucid-shape-library.js"
-
-angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlign', 'lucidInputStepper', 'lucidPopoverMenu','lucidColorPicker','lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover','lucidNotification', 'lucidSelect', 'lucidButton'])
-.directive('ngdEnter', function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
-            if (event.which === 13) {
-                scope.$apply(function() {
-                    scope.$eval(attrs.ngEnter);
-                });
-                event.preventDefault();
-            }
-        });
-    };
-})
-
-
-////////////////////      REUSABLE DIRECTIVES      //////////////////////
-//on enter
-.directive('ngEnter', function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
-            if (event.which === 13) {
-                scope.$apply(function() {
-                    scope.$eval(attrs.ngEnter);
-                });
-
-                event.preventDefault();
-            }
-        });
-    };
-})
-
-//escape
-.directive('escKey', function() {
-    return function(scope, element, attrs) {
-        element.bind('keydown keypress', function(event) {
-            if (event.which === 27) { // 27 = esc key
-                scope.$apply(function() {
-                    scope.$eval(attrs.escKey);
-                });
-
-                event.preventDefault();
-            }
-        });
-    };
-})
-//right click
-.directive('ngRightClick', function($parse) {
-    return function(scope, element, attrs) {
-        var fn = $parse(attrs.ngRightClick);
-        element.bind('contextmenu', function(event) {
-            scope.$apply(function() {
-                event.preventDefault();
-                fn(scope, {
-                    $event: event
-                });
-            });
-        });
-    };
-})
-
-
-////////////////////      Filters      //////////////////////
-
-///filter unique objects
-.filter('unique', function() {
-
-    return function(items, filterOn) {
-
-        if (filterOn === false) {
-            return items;
-        }
-
-        if ((filterOn || angular.isUndefined(filterOn)) && angular.isArray(items)) {
-            //var hashCheck = {}, 
-            var newItems = [];
-
-            var extractValueToCompare = function(item) {
-                if (angular.isObject(item) && angular.isString(filterOn)) {
-                    return item[filterOn];
-                } else {
-                    return item;
-                }
-            };
-
-            angular.forEach(items, function(item) {
-                //var valueToCheck, 
-                var isDuplicate = false;
-
-                for (var i = 0; i < newItems.length; i++) {
-                    if (angular.equals(extractValueToCompare(newItems[i]), extractValueToCompare(item))) {
-                        isDuplicate = true;
-                        break;
-                    }
-                }
-                if (!isDuplicate) {
-                    newItems.push(item);
-                }
-
-            });
-            items = newItems;
-        }
-        return items;
-    };
-})
-
-//filter used to send svgs as html
-.filter("sanitize", ['$sce', function($sce) {
-    return function(htmlCode) {
-        return $sce.trustAsHtml(htmlCode);
-    };
-}]);
 

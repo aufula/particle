@@ -1,5 +1,5 @@
-angular.module('lucidShape', [])
-    .directive('lucidShape', function() {
+angular.module('lucidShape', ['appConfig'])
+    .directive('lucidShape', function(config) {
         return {
             restrict: 'E',
             scope: {
@@ -9,7 +9,7 @@ angular.module('lucidShape', [])
                 text: '='
             },
             replace: true,
-            templateUrl: "components/0.0/shape/lucid-shape.html",
+            templateUrl: config.componentsURL + 'shape/lucid-shape.html',
         };
     })
     .directive('lucidDraggable', ['$document', function($document) {

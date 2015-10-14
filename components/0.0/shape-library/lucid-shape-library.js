@@ -1,5 +1,5 @@
-angular.module('lucidShapeLibrary', [])
-    .directive('lucidShapeLibrary', function($document) {
+angular.module('lucidShapeLibrary', ['appConfig'])
+    .directive('lucidShapeLibrary', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -8,7 +8,7 @@ angular.module('lucidShapeLibrary', [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/shape-library/lucid-shape-library.html",
+            templateUrl: config.componentsURL + 'shape-library/lucid-shape-library.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {

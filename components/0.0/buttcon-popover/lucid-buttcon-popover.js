@@ -1,5 +1,5 @@
-angular.module("lucidButtconPopover", [])
-    .directive('lucidButtconPopover', function($document) {
+angular.module("lucidButtconPopover", ['appConfig'])
+    .directive('lucidButtconPopover', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -8,7 +8,7 @@ angular.module("lucidButtconPopover", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/buttcon-popover/lucid-buttcon-popover.html",
+            templateUrl: config.componentsURL + 'buttcon-popover/lucid-buttcon-popover.html',
             link: function(scope, el) {
                 $document.on('click', function(e) {
                     if (el[0].contains(e.target)) {

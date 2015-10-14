@@ -1,5 +1,5 @@
-angular.module("lucidPopoverMenu", [])
-    .directive('lucidPopoverMenu', function($document) {
+angular.module("lucidPopoverMenu", ['appConfig'])
+    .directive('lucidPopoverMenu', function($document, config) {
         return {
             restrict: 'E',
             scope: {
@@ -7,7 +7,7 @@ angular.module("lucidPopoverMenu", [])
             },
             replace: true,
             transclude: true,
-            templateUrl: "components/0.0/popover-menu/lucid-popover-menu.html",
+            templateUrl: config.componentsURL + 'popover-menu/lucid-popover-menu.html',
 
             link: function(scope, el) {
                 $document.on('click', function(e) {
