@@ -1,5 +1,8 @@
 @drawer-transition: .35s ease-in-out all;
 .lucid-drawer-wrapper {
+    .lucid-wrapper-overflow-hidden {
+        overflow: hidden;
+    }
     .lucid-show-more-drawer-button {
         position: relative;
         background-color: #66737f;
@@ -45,9 +48,25 @@
         }
         &.ng-hide {
             opacity: 0;
+            &.top-handle-height {
+                height: 0 !important;
+            }
         }
         &.ng-animate {
             transition: @drawer-transition;
+        }
+    }
+    &.top-handle {
+        .lucid-show-more-drawer-button {
+            border-radius: 0;
+            .lucid-drawer-more-icon {
+                transform: rotateZ(180deg);
+                transform-origin: center;
+                &.lucid-drawer-open {
+                    transform: rotateZ(0deg);
+                    transform-origin: center;
+                }
+            }
         }
     }
 }

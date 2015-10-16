@@ -208,6 +208,9 @@ img {
 .lucid-popover-menu .lucid-input-stepper .lucid-down {
   right: 2px;
 }
+.lucid-drawer-wrapper .lucid-wrapper-overflow-hidden {
+  overflow: hidden;
+}
 .lucid-drawer-wrapper .lucid-show-more-drawer-button {
   position: relative;
   background-color: #66737f;
@@ -255,8 +258,22 @@ img {
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-hide {
   opacity: 0;
 }
+.lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-hide.top-handle-height {
+  height: 0 !important;
+}
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
   transition: 0.35s ease-in-out all;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
+  border-radius: 0;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
+  transform: rotateZ(180deg);
+  transform-origin: center;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
+  transform: rotateZ(0deg);
+  transform-origin: center;
 }
 .lucid-popover-menu {
   background-color: #f1f1f1;
@@ -329,11 +346,11 @@ img {
   box-sizing: border-box;
 }
 .lucid-color-picker .lucid-popover-menu:after {
-  border-bottom: 10px #dcdcdc solid;
+  border-bottom: 10px #DCDCDC solid;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top {
   padding: 10px;
-  background-color: #dcdcdc;
+  background-color: #DCDCDC;
   border-radius: 5px 5px 0 0;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch {
@@ -343,7 +360,7 @@ img {
   background: #FFF;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-buttcon {
-  background: #f1f1f1;
+  background: #F1F1F1;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-buttcon:hover {
   background: #fff;
@@ -356,9 +373,9 @@ img {
   padding: 0 10px;
   box-sizing: border-box;
   display: inline-block;
-  background-color: #f1f1f1;
+  background-color: #F1F1F1;
   cursor: pointer;
-  border-left: 1px solid #dcdcdc;
+  border-left: 1px solid #DCDCDC;
   width: 33%;
   text-align: center;
 }
@@ -382,7 +399,7 @@ img {
   bottom: 2px;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle .swatch.lucid-transparent-swatch {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #ffffff !important;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #FFF !important;
   background-size: 6px !important;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .make-default-swatch {
@@ -393,7 +410,7 @@ img {
   text-align: left;
   padding: 10px;
   position: relative;
-  background: #f1f1f1;
+  background: #F1F1F1;
   z-index: 1;
 }
 .lucid-color-picker .lucid-popover-menu ul.lucid-grayscale-colors {
@@ -478,7 +495,7 @@ img {
   position: relative;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.lucid-transparent {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #ffffff;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #FFF;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.blank {
   cursor: auto;
@@ -800,7 +817,7 @@ img {
 }
 .lucid-finger-tabs .lucid-finger-tab.selected {
   color: #fff;
-  background-color: #77818c;
+  background-color: #77818C;
 }
 .lucid-finger-tabs .lucid-finger-tab.selected:after {
   position: absolute;
@@ -847,14 +864,14 @@ img {
   transition: 0.15s ease-in-out background-color;
 }
 .lucid-button.lucid-blue {
-  background-color: #29aae1;
+  background-color: #29AAE1;
   color: #fff;
 }
 .lucid-button.lucid-blue:hover {
   background-color: #3cb9e5;
 }
 .lucid-button.lucid-green {
-  background-color: #8bc326;
+  background-color: #8BC326;
   color: #fff;
 }
 .lucid-button.lucid-yellow {
@@ -912,7 +929,7 @@ img {
   background: url(../components/0.0/icon/img/info-circle-blue.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-information button {
-  background-color: #29aae1;
+  background-color: #29AAE1;
 }
 .lucid-notification.lucid-notification-complete {
   background-color: #e9f2d9;
@@ -921,7 +938,7 @@ img {
   background: url(../components/0.0/icon/img/check-circle-green.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-complete button {
-  background-color: #8bc326;
+  background-color: #8BC326;
 }
 .lucid-notification.lucid-notification-alert {
   background-color: #fff3e1;
@@ -995,7 +1012,7 @@ img {
   background: #F5F5F5;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active {
-  background: #77818c;
+  background: #77818C;
   color: #fff;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active:hover {

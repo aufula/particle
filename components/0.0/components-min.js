@@ -6087,11 +6087,22 @@ angular.module("lucidMoreDrawer", ['appConfig'])
             restrict: 'E',
             scope: {
                 showdrawer: '=',
-                height: '='
+                height: '@',
+                tophandle: '@',
+                more: '@',
+                less:'@'
             },
             replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'more-drawer/lucid-more-drawer.html',
+            compile: function(element, attrs) {
+                if (!attrs.more){
+                    attrs.more = 'More';
+                }
+                if (!attrs.less){
+                    attrs.less = 'Less';
+                }
+            }
         };
     }); 
 

@@ -1,7 +1,7 @@
 <div class="lucid-modal-wrapper" ng-hide="!showmodal">
     <div ng-hide="!showmodal" class="lucid-modal" style="width: {{width}}px; height:{{height}}px;">
         <header><span class="lucid-modal-title">{{title}}</span>
-            <lucid-icon class="lucid-close-modal" size="22" icon="'x-white'" ng-click="showmodal=false"></lucid-icon>
+            <img class="lucid-close-modal lucid-icon-22" src="http://lucidsoftware.github.io/particle/components/0.0/icon/img/x-white.svg" ng-click="showmodal=false"></lucid-icon>
         </header>
         <div style="height:{{height - 42 - 45}}px">
             <ng-transclude></ng-transclude>
