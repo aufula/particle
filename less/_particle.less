@@ -1,66 +1,29 @@
 #sidebar #logo {
     position: relative;
-    //transform: scale(3);
     transform-origin: top left;
     overflow: hidden;
+    svg{
+        overflow:visible;
+    }
 }
 
 @origin-x: 0;
 @origin-y: 0;
 .particle-group {
-    filter: url("#fancy-goo");
-    transform: scale(.12);
-    transform-origin: top left;
-    top: 19px;
-    left: 12px;
     position: absolute;
-    width: 270px;
-    height: 270px;
+    left: 20px;
+    top: 28px;
+    width: 215px;
     .particle {
-        background: #B2E1F5;
-        width: 40px;
-        height: 40px;
-        border-radius: 100%;
-        position: absolute;
-        margin-left: -20px;
-        margin-top: -20px;
+        transform:translate(0,0);
         opacity: 0;
         &.duplicate {
             transition: all .25s linear;
             opacity: 1;
         }
-        &.particle-1 {
-            left: @origin-x + 88px;
-            top: @origin-y + 88px;
-        }
-        &.particle-2 {
-            left: @origin-x + 88px;
-            top: @origin-y + 141px;
-        }
-        &.particle-3 {
-            left: @origin-x + 88px;
-            top: @origin-y + 196px;
-        }
-        &.particle-4 {
-            left: @origin-x + 142px;
-            top: @origin-y + 196px;
-        }
-        &.particle-5 {
-            left: @origin-x + 197px;
-            top: @origin-y + 196px;
-        }
         &.branch-1 {
-            margin-left: 0;
-            margin-top: 0;
-            width: 14px;
-            height: 90px;
-            border-radius: 0;
-            transform: rotateZ(-45deg);
-            transform-origin: left top;
-            left: @origin-x + 87px;
-            top: @origin-y + 148px;
             opacity: 1;
-            transition: all .25s ease-in-out;
+            transition: all .2s ease-in-out;
         }
     }
     &.explode-particle {
@@ -69,45 +32,60 @@
                 animation: particle-1 7s infinite linear;
                 opacity: 1;
                 &.duplicate {
-                    left: @origin-x + 888px;
-                    top: @origin-y + -188px;
+                    transform:translate(88px, -188px);
+                    animation:none;
+                }
+                &.reverse {
+                    animation-direction:reverse;
                 }
             }
             &.particle-2 {
-                animation: particle-2 6s infinite linear;
+                animation: particle-2 10s infinite linear;
                 opacity: 1;
                 &.duplicate {
-                    left: @origin-x + -188px;
-                    top: @origin-y + 441px;
+                    transform:translate(-18px, 47px);
+                    animation:none;
+                }
+                &.reverse {
+                    animation-direction:reverse;
                 }
             }
             &.particle-3 {
                 animation: particle-3 9s infinite linear;
                 opacity: 1;
                 &.duplicate {
-                    left: @origin-x + -188px;
-                    top: @origin-y + -196px;
+                    transform:translate(18px, 50px);
+                    animation:none;
+                }
+                &.reverse {
+                    animation-direction:reverse;
                 }
             }
             &.particle-4 {
                 animation: particle-4 9s infinite linear;
                 opacity: 1;
                 &.duplicate {
-                    left: @origin-x + 2042px;
-                    top: @origin-y + 96px;
+                    transform:translate(225px, 10px);
+                    animation:none;
+                }
+                &.reverse {
+                    animation-direction:reverse;
                 }
             }
             &.particle-5 {
                 animation: particle-5 8s infinite linear;
                 opacity: 1;
                 &.duplicate {
-                    left: @origin-x + 497px;
-                    top: @origin-y + 696px;
+                    transform:translate(50px, 70px);
+                    animation:none;
+                }
+                &.reverse {
+                    animation-direction:reverse;
                 }
             }
             &.branch-1 {
-                width: 0;
-                height: 0;
+                opacity:0;
+                transform:translate(30px, 30px);
             }
         }
     }
@@ -118,85 +96,89 @@
         transform: translate(0, 0);
     }
     15% {
-        transform: translate(1188px, -218px);
+        transform: translate(118px, -28px);
     }
     55% {
-        transform: translate(1888px, 380px);
+        transform: translate(188px, 49px);
     }
     // 50%  {transform: translate(100px, 100px);}
     100% {
         transform: translate(0, 0);
     }
 }
+
 @keyframes particle-2 {
     0% {
         transform: translate(0, 0);
     }
     5% {
-        transform: translate(-170px, -218px);
+        transform: translate(-23px, -21px);
     }
     7% {
-        transform: translate(-100px, -275px);
+        transform: translate(-15px, -35px);
     }
     45% {
-        transform: translate(1408px, 360px);
+        transform: translate(150px, 42px);
     }
     60% {
-        transform: translate(1888px, 160px);
+        transform: translate(222px, 16px);
     }
     100% {
         transform: translate(0, 0);
     }
 }
+
 @keyframes particle-3 {
     0% {
         transform: translate(0, 0);
     }
     5% {
-        transform: translate(-180px, 218px);
+        transform: translate(-24px, 25px);
     }
     8% {
-        transform: translate(-130px, 300px);
+        transform: translate(-13px, 34px);
     }
     65% {
-        transform: translate(1888px, 100px);
+        transform: translate(224px, 10px);
     }
     100% {
         transform: translate(0, 0);
     }
 }
+
 @keyframes particle-4 {
     0% {
         transform: translate(0, 0);
     }
     8% {
-        transform: translate(130px, 290px);
+        transform: translate(13px, 35px);
     }
     45% {
-        transform: translate(1800px, 100px);
+        transform: translate(215px, 10px);
     }
     85% {
-        transform: translate(130px, -340px);
+        transform: translate(13px, -40px);
     }
     100% {
         transform: translate(0, 0);
     }
 }
+
 @keyframes particle-5 {
     0% {
         transform: translate(0, 0);
     }
     15% {
-        transform: translate(1188px, 288px);
+        transform: translate(118px, 35px);
     }
     35% {
-        transform: translate(1778px, -100px);
+        transform: translate(210px, -10px);
     }
     70% {
-        transform: translate(300px, -320px);
+        transform: translate(30px, -40px);
     }
     80% {
-        transform: translate(-290px, -280px);
+        transform: translate(-37px, -28px);
     }
     100% {
         transform: translate(0, 0);
