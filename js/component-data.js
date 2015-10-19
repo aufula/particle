@@ -16,12 +16,29 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "icon",
                     "type": "URL",
-                    "details": "insert URL of icon you'd like to use (should be white)."
+                    "details": "insert URL of icon (should be white)."
                 }]
             }, {
                 "title": "Input Stepper",
                 "componentid": "input-stepper",
-                "description": "this component is used in the optionbar, the page color, etc. explain more..."
+                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "inputs": [{
+                    "name": "number",
+                    "type": "number",
+                    "details": "Initial value of input."
+                }, {
+                    "name": "unit",
+                    "type": "text",
+                    "details": "Insert unit to be placed after number (px, in, pt)"
+                }, {
+                    "name": "step",
+                    "type": "number",
+                    "details": "How much number is increased or decreased when clicking the up/down arrows"
+                }, {
+                    "name": "width",
+                    "type": "number",
+                    "details": "how wide the input should be (includes arrows)."
+                }]
             }, {
                 "title": "Select Dropdown",
                 "componentid": "select",
@@ -30,7 +47,7 @@ angular.module('lucidComponentFactory', [])
                     "name": "options",
                     "type": "Array",
                     "details": "List out the options in an array. ['One', 'Two', 'Three']"
-                }],
+                }]
 
             }, {
                 "title": "Icon",
@@ -55,6 +72,15 @@ angular.module('lucidComponentFactory', [])
                 "title": "More Drawer",
                 "componentid": "more-drawer",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "inputs": [{
+                    "name": "height",
+                    "type": "number",
+                    "details": "Insert the height the drawer should open."
+                }, {
+                    "name": "options",
+                    "type": "Array",
+                    "details": "List out the options in an array. ['One', 'Two', 'Three']"
+                }]
 
             }, {
                 "title": "Notifications",
@@ -64,13 +90,29 @@ angular.module('lucidComponentFactory', [])
                     "name": "type",
                     "type": "text",
                     "details": "options are: information, complete, error, alert"
+                }, {
+                    "name": "button",
+                    "type": "text",
+                    "details": "insert the text for the button. If blank, there won't be a button"
                 }],
 
             }, {
                 "title": "Finger Tabs",
                 "componentid": "finger-tabs",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
-
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Create a name for the finger tab."
+                }, {
+                    "name": "icon",
+                    "type": "URL",
+                    "details": "If you want an icon put the non selected state icon here."
+                }, {
+                    "name": "iconselected",
+                    "type": "URL",
+                    "details": "If you want an icon put the selected state icon here."
+                }],
             }, {
                 "title": "Modal",
                 "componentid": "modal",

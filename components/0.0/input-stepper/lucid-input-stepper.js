@@ -3,19 +3,19 @@ angular.module('lucidInputStepper', ['appConfig'])
         return {
             restrict: 'AE',
             scope: {
-                append: '=',
-                step: '=',
-                ngModel: '=',
-                width: '='
+                unit: '@',
+                step: '@',
+                number: '=',
+                width: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope) {
                 $scope.stepUp = function() {
-                    $scope.ngModel = parseInt($scope.ngModel) + parseInt($scope.step);
+                    $scope.number = parseInt($scope.number) + parseInt($scope.step);
                 };
                 $scope.stepDown = function() {
-                    $scope.ngModel = parseInt($scope.ngModel) + parseInt(-$scope.step);
+                    $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
                 };
             }
         };

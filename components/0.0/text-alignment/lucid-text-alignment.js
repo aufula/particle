@@ -8,7 +8,7 @@ angular.module('lucidTextAlignment', ['appConfig'])
                 selected: '='
             },
             replace: true,
-            templateUrl: config.componentsURL + 'text-align/lucid-text-align.html',
+            templateUrl: config.componentsURL + 'text-alignment/lucid-text-alignment.html',
 
             controller: function($scope) {
 
