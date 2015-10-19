@@ -44,7 +44,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'dndLists', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapesLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'dndLists', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapesLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides'])
 
 .directive('ngdEnter', function() {
     return function(scope, element, attrs) {
@@ -6243,10 +6243,10 @@ angular.module("lucidFingerTabs", ['appConfig'])
             }]
         };
     })
-    .directive('lucidFingerTab', function() {
+    .directive('lucidFingerTab', function(config) {
         return {
             restrict: 'E',
-            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tab.html',
+            templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tab.html',
             transclude: true,
             replace: true,
             scope: {
@@ -7020,7 +7020,7 @@ angular.module("lucidShapesManager", ['appConfig'])
     });
 
 angular.module("lucidSlides", ['appConfig'])
-    .directive('lucidSlides', function(config, canvasData) {
+    .directive('lucidSlides', function(config) {
         return {
             restrict: 'E',
             replace: true,
@@ -7043,6 +7043,56 @@ angular.module("lucidSlides", ['appConfig'])
                     "width": 400
                 }];
 
+            }
+        };
+    });
+
+angular.module("lucidSavedStyles", ['appConfig'])
+    .directive('lucidSavedStyles', function(config, $document) {
+        return {
+            restrict: 'E',
+            scope: false,
+            replace: true,
+            templateUrl: config.componentsURL + 'saved-styles/lucid-saved-styles.html',
+
+            controller: function($scope) {
+                $scope.compareSwatch = function(selected, theme) {
+                    //console.log(JSON.stringify(selected) === JSON.stringify(theme));
+                    return JSON.stringify(selected) === JSON.stringify(theme);
+                };
+                $scope.compareToSavedSwatches = function(swatch) {
+                    var sameSwatch = 0;
+                    angular.forEach($scope.savedstyles, function(savedstyle) {
+                        if ($scope.compareSwatch(swatch, savedstyle)) {
+                            sameSwatch += +1;
+                        }
+                    });
+                    if (sameSwatch > 0) {
+                        return false;
+                    } else {
+                        return true;
+                    }
+                };
+
+                $scope.showpopup = false;
+                $scope.toggleMenu = function() {
+                    $scope.showpopup = !$scope.showpopup;
+                };
+                $scope.closeMenu = function() {
+                    $scope.showpopup = false;
+                };
+            },
+
+            link: function(scope, el) {
+                $document.on('click', function(e) {
+                    if (el[0].contains(e.target)) {
+                        return;
+                    } else {
+                        scope.showpopup = false;
+                        //console.log(scope.showpopup +" hide popup");
+                        scope.$apply();
+                    }
+                });
             }
         };
     });
@@ -7174,56 +7224,6 @@ angular.module("lucidChartBlock", ['appConfig'])
                         return;
                     } else {
                         scope.showcontextMenu = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
-            }
-        };
-    });
-
-angular.module("lucidSavedStyles", ['appConfig'])
-    .directive('lucidSavedStyles', function(config, $document) {
-        return {
-            restrict: 'E',
-            scope: false,
-            replace: true,
-            templateUrl: config.componentsURL + 'saved-styles/lucid-saved-styles.html',
-
-            controller: function($scope) {
-                $scope.compareSwatch = function(selected, theme) {
-                    //console.log(JSON.stringify(selected) === JSON.stringify(theme));
-                    return JSON.stringify(selected) === JSON.stringify(theme);
-                };
-                $scope.compareToSavedSwatches = function(swatch) {
-                    var sameSwatch = 0;
-                    angular.forEach($scope.savedstyles, function(savedstyle) {
-                        if ($scope.compareSwatch(swatch, savedstyle)) {
-                            sameSwatch += +1;
-                        }
-                    });
-                    if (sameSwatch > 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                };
-
-                $scope.showpopup = false;
-                $scope.toggleMenu = function() {
-                    $scope.showpopup = !$scope.showpopup;
-                };
-                $scope.closeMenu = function() {
-                    $scope.showpopup = false;
-                };
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopup = false;
                         //console.log(scope.showpopup +" hide popup");
                         scope.$apply();
                     }

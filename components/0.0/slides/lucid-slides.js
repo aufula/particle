@@ -1,5 +1,5 @@
 angular.module("lucidSlides", ['appConfig'])
-    .directive('lucidSlides', function(config, canvasData) {
+    .directive('lucidSlides', function(config) {
         return {
             restrict: 'E',
             replace: true,

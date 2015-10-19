@@ -25,10 +25,10 @@ angular.module("lucidFingerTabs", ['appConfig'])
             }]
         };
     })
-    .directive('lucidFingerTab', function() {
+    .directive('lucidFingerTab', function(config) {
         return {
             restrict: 'E',
-            templateUrl: 'components/0.0/finger-tabs/lucid-finger-tab.html',
+            templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tab.html',
             transclude: true,
             replace: true,
             scope: {

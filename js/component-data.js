@@ -80,6 +80,10 @@ angular.module('lucidComponentFactory', [])
                     "name": "options",
                     "type": "Array",
                     "details": "List out the options in an array. ['One', 'Two', 'Three']"
+                }, {
+                    "name": "tophandle",
+                    "type": "true",
+                    "details": "If true, drawer will open upwards. Only tested on a fixed bottom position."
                 }]
 
             }, {

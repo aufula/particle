@@ -158,6 +158,8 @@ img {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: background 0.15s ease-in-out;
+          transition: background 0.15s ease-in-out;
 }
 .lucid-input-stepper {
   position: relative;
@@ -215,7 +217,7 @@ img {
   background: #fff;
 }
 .lucid-popover-menu .lucid-input-stepper .lucid-input {
-  padding-right: 12px;
+  padding-right: 26px;
 }
 .lucid-popover-menu .lucid-input-stepper .lucid-up,
 .lucid-popover-menu .lucid-input-stepper .lucid-down {
@@ -278,6 +280,7 @@ img {
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-hide.top-handle-height {
   height: 0 !important;
+  padding: 0;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
@@ -567,6 +570,9 @@ img {
   opacity: 1;
   -webkit-transition: all 0.1s ease-in-out;
           transition: all 0.1s ease-in-out;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-color-inputs {
+  text-align: center;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-color-inputs li {
   display: inline-block;
@@ -1081,6 +1087,8 @@ img {
   padding: 0 5px 0 8px;
   background: #f1f1f1;
   border-radius: 3px;
+  -webkit-transition: background 0.2s ease-in-out;
+          transition: background 0.2s ease-in-out;
 }
 .lucid-popover-menu .lucid-select-wrapper:hover {
   background: #fff;
@@ -1401,7 +1409,7 @@ img {
 }
 .lucid-shapes-scroll {
   background: #D6D6D6;
-  height: calc(40vh);
+  height: calc(100vh - 60px);
   overflow-y: scroll;
 }
 .lucid-scroll-inner-wrap {
@@ -1595,6 +1603,7 @@ img {
   position: absolute;
   z-index: 10;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
   -webkit-transition: margin 1s ease-in-out;
           transition: margin 1s ease-in-out;
 }
