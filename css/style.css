@@ -309,10 +309,7 @@ img {
   top: 55px;
   margin-top: 0;
   opacity: 1;
-}
-.lucid-popover-menu ul {
-  padding: 0;
-  margin: 0;
+  text-align: left;
 }
 .lucid-popover-menu:after {
   content: '';
@@ -332,12 +329,19 @@ img {
   -webkit-transition: .1s all linear;
           transition: .1s all linear;
 }
+.lucid-popover-menu ul {
+  padding: 0;
+  margin: 0;
+}
 .lucid-popover-menu .lucid-wrapper-overflow-hidden {
   overflow: hidden;
   border-radius: 3px;
 }
 .lucid-popover-menu .lucid-buttcon.active {
   background-color: #fff;
+}
+.lucid-saved-styles .lucid-popover-menu {
+  padding: 10px;
 }
 .lucid-buttcon-wrapper {
   position: relative;
@@ -1084,6 +1088,604 @@ img {
 .lucid-popover-menu .lucid-selected-option {
   border: none;
 }
+.lucid-canvas {
+  width: 900px;
+  height: 690px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-size: 904px;
+}
+.lucid-canvas .lucid-canvas-layer {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+.lucid-saved-styles .lucid-dropdown-title {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.lucid-saved-styles .lucid-swatch-square {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-transition: 0.1s ease-in-out background;
+          transition: 0.1s ease-in-out background;
+  vertical-align: top;
+}
+.lucid-saved-styles .lucid-swatch-square .lucid-swatch-check {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+}
+.lucid-saved-styles .lucid-swatch-square .lucid-swatch-check img {
+  -webkit-transform: scale(0.01);
+      -ms-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.1s ease-in-out all;
+          transition: 0.1s ease-in-out all;
+}
+.lucid-saved-styles .lucid-swatch-square:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.lucid-saved-styles .lucid-swatch-square.lucid-selected {
+  background: rgba(0, 0, 0, 0.1);
+}
+.lucid-saved-styles .lucid-swatch-square.lucid-selected .lucid-swatch-check img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.lucid-saved-styles .lucid-swatch-square.lucid-swatch-plus {
+  padding: 2px;
+  cursor: pointer;
+}
+.lucid-saved-styles .lucid-swatch-square.lucid-swatch-plus img {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  border-radius: 3px;
+}
+.lucid-saved-styles .lucid-swatch-square.lucid-swatch-shadow .lucid-selected-swatch {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+.lucid-saved-styles .lucid-swatch-square .lucid-selected-swatch {
+  width: 30px;
+  height: 30px;
+  line-height: 25px;
+  font-size: 18px;
+  border: 2px solid;
+  text-align: center;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+}
+.lucid-chart-block {
+  position: absolute;
+  border: 1px solid;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.lucid-chart-block .lucid-svg-background {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100%;
+  background: transparent;
+  border: none;
+}
+.lucid-chart-block .lucid-outer-block-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+.lucid-chart-block .lucid-inner-block {
+  display: table-cell;
+}
+.lucid-chart-block img.lucid-block-comment {
+  width: 25px;
+  position: absolute;
+  top: -5px;
+  right: -40px;
+  margin-left: 0;
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition: all ease-in-out 0.1s;
+          transition: all ease-in-out 0.1s;
+}
+.lucid-chart-block img.lucid-block-comment.ng-hide {
+  right: -35px;
+  opacity: 0;
+}
+.lucid-chart-block .lucid-selected-block {
+  position: absolute;
+  top: -8px;
+  left: -8px;
+  bottom: -8px;
+  right: -8px;
+  border: #F98D00 1px solid;
+  z-index: 0;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag {
+  border: #F98D00 1px solid;
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background-color: rgba(249, 141, 0, 0.5);
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-left {
+  top: -6px;
+  left: -6px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-right {
+  top: -6px;
+  right: -6px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-bottom-right {
+  bottom: -6px;
+  right: -6px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-bottom-left {
+  bottom: -6px;
+  left: -6px;
+}
+.lucid-chart-block.ng-enter {
+  -webkit-transform: scaleX(0.25) scaleY(0.667);
+      -ms-transform: scaleX(0.25) scaleY(0.667);
+          transform: scaleX(0.25) scaleY(0.667);
+}
+.lucid-chart-block.ng-enter-active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+}
+.lucid-chart-block.ng-animate {
+  -webkit-transition: .25s;
+          transition: .25s;
+}
+.lucid-context-menu {
+  background: #fff;
+  padding: 5px 0;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  text-align: left;
+  color: #3d4752;
+  /* Hide Dropdowns by Default */
+  /* Display Dropdowns on Hover */
+  /* Fisrt Tier Dropdown */
+  /* Second, Third and more Tiers */
+  /* Change this in order to change the Dropdown symbol */
+}
+.lucid-context-menu.ng-hide {
+  opacity: 0;
+}
+.lucid-context-menu.ng-animate {
+  -webkit-transition: .1s all linear;
+          transition: .1s all linear;
+}
+.lucid-context-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+.lucid-context-menu ul li {
+  display: inline-block;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 2px 12px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.lucid-context-menu ul li:hover {
+  background: #f1f1f1;
+}
+.lucid-context-menu ul li a {
+  display: block;
+  padding: 0 10px;
+  color: #FFF;
+  text-decoration: none;
+}
+.lucid-context-menu ul li a.saving {
+  color: #ccc;
+}
+.lucid-context-menu ul li span.hotkey {
+  position: absolute;
+  right: 7px;
+  top: 0;
+  bottom: 0;
+  color: #999;
+}
+.lucid-context-menu ul li li {
+  background: #fff;
+}
+.lucid-context-menu ul li li.dropdown-divider {
+  border-bottom: 1px solid #f1f1f1;
+}
+.lucid-context-menu ul li li a {
+  color: #3d4752;
+}
+.lucid-context-menu ul li li a:hover {
+  background-color: #f1f1f1;
+}
+.lucid-context-menu ul ul {
+  display: none;
+  position: absolute;
+  padding: 5px 0;
+  background: #FFF;
+  top: - 5px;
+  left: 200px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.lucid-context-menu ul li:hover > ul {
+  display: inherit;
+  top: -5px;
+}
+.lucid-context-menu ul li {
+  width: 200px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+.lucid-context-menu ul ul ul {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  z-index: -1;
+}
+.lucid-context-menu ul li.lucid-menu-more:after {
+  font-family: FontAwesome;
+  content: "\f0da";
+  position: absolute;
+  right: 6px;
+}
+.lucid-shapes-panel {
+  background: #D6D6D6;
+  width: 250px;
+  top: 0;
+  height: 100%;
+  border-right: 1px solid #999;
+  -webkit-transition: 0.3s ease-in-out background;
+          transition: 0.3s ease-in-out background;
+  z-index: 6;
+}
+.lucid-shapes-panel .lucid-shapes-header {
+  padding: 18px 15px;
+  background: #e8e9ea;
+  height: 60px;
+  box-sizing: border-box;
+  border-bottom: 1px solid #b7b7b7;
+  text-align: left;
+}
+.lucid-shapes-panel .lucid-shapes-header .lucid-more-shapes {
+  line-height: 22px;
+  cursor: pointer;
+}
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-gear,
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-import {
+  width: 22px;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-transition: -webkit-transform 0.5s ease-out;
+          transition: transform 0.5s ease-out;
+}
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-import {
+  float: right;
+  opacity: 1;
+}
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-import.ng-hide {
+  opacity: 0;
+}
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-import.ng-animate {
+  -webkit-transition: 0.3s all ease-in-out;
+          transition: 0.3s all ease-in-out;
+}
+.lucid-shapes-scroll {
+  background: #D6D6D6;
+  height: calc(40vh);
+  overflow-y: scroll;
+}
+.lucid-scroll-inner-wrap {
+  padding: 10px;
+}
+.lucid-group-drop-area {
+  min-height: calc(-60vh);
+}
+.dndPlaceholder {
+  margin: 0;
+  height: 0;
+  display: block;
+  position: relative;
+}
+.dndPlaceholder:after {
+  content: "";
+  display: block;
+  width: 100%;
+  position: absolute;
+  height: 2px;
+  margin-top: 5px;
+  background: #29AAE1;
+}
+.dndPlaceholder.ng-enter {
+  -webkit-transform: scale(0.01);
+      -ms-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+}
+.dndPlaceholder.ng-enter-active {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.dndPlaceholder.ng-animate {
+  -webkit-transition: .25s;
+          transition: .25s;
+}
+.dndDraggingSource {
+  display: none !important;
+}
+.lucid-manage-shapes {
+  background: #B2B2B2;
+  border-right: none;
+}
+.lucid-manage-shapes .lucid-shapegroup-left {
+  padding-right: 5px;
+  box-sizing: border-box;
+  width: 463px;
+}
+.lucid-manage-shapes .lucid-shapegroup-right {
+  width: 50%;
+  float: right;
+  padding-left: 5px;
+  box-sizing: border-box;
+}
+.lucid-manage-shapes .lucid-shape-group {
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  background: #D8D8D8;
+}
+.lucid-manage-shapes .lucid-shape-group .shape-group-name {
+  font-weight: 300;
+}
+.lucid-manage-shapes .lucid-shape-group .lucid-drop-area {
+  position: absolute;
+  top: 38px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+.lucid-manage-shapes .lucid-shapes-scroll {
+  background: #B2B2B2;
+}
+.lucid-manage-shapes .shape-group-top {
+  cursor: move;
+  padding: 8px 10px;
+  background: #77818C;
+  color: #FFF;
+  border-radius: 4px 4px 0 0;
+  border-top: 2px solid #F89820;
+}
+.lucid-manage-shapes .shape-group-top.lucid-custom-library {
+  border-color: #29AAE1;
+}
+.lucid-manage-shapes .lucid-shape-group:hover .shape-group-top {
+  background: #858e98;
+}
+.lucid-manage-shapes .lucid-shapes-gear {
+  -webkit-transform: rotateZ(90deg);
+          transform: rotateZ(90deg);
+}
+.lucid-shape-manager {
+  position: absolute;
+  top: 0;
+  width: calc(-151vw);
+  bottom: 0;
+  left: 250px;
+  background: rgba(61, 71, 82, 0.95);
+  z-index: -1;
+  margin-left: 0;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar {
+  background: #77818C;
+  height: 59px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library {
+  background: #29AAE1;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  line-height: 29px;
+  padding: 0 10px;
+  vertical-align: top;
+  height: 29px;
+  cursor: pointer;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container {
+  display: inline-block;
+  width: 200px;
+  position: absolute;
+  left: 50%;
+  margin-left: -100px;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input {
+  width: 100%;
+  height: 29px;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #FFF;
+  background: rgba(255, 255, 255, 0.3);
+  font-weight: 100;
+  font-family: "Source Sans Pro";
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input::-webkit-input-placeholder {
+  color: #fff;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container .lucid-search-icon {
+  width: 18px;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-close-icon {
+  float: right;
+  margin-top: 2px;
+  cursor: pointer;
+}
+.lucid-shape-manager .lucid-shapes-scroll {
+  background: transparent;
+}
+.lucid-shape-manager .lucid-scroll-inner-wrap {
+  padding: 30px;
+}
+.lucid-shape-manager .scrollable .scrollable-slider {
+  background: #333;
+}
+.lucid-shape-manager .lucid-shape-group {
+  margin-top: 30px;
+}
+.lucid-shape-manager .lucid-shape-group:first-child {
+  margin-top: 0;
+}
+.lucid-shape-manager .lucid-shape-group ul {
+  max-height: 139px;
+  overflow: hidden;
+  -webkit-transition: all 0.3s ease-in-out;
+          transition: all 0.3s ease-in-out;
+}
+.lucid-shape-manager .lucid-shape-group ul.lucid-expand-shape-drawer {
+  max-height: 1000px;
+}
+.lucid-shape-manager.ng-hide {
+  margin-left: -100vw;
+}
+.lucid-shape-manager.ng-animate {
+  -webkit-transition: 0.5s ease-out all;
+          transition: 0.5s ease-out all;
+}
+.lucid-themes-drawer {
+  margin-top: 17px;
+  left: -15px;
+  width: 100vw;
+  background-color: #DDDDDD;
+  position: absolute;
+  z-index: 10;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
+  -webkit-transition: margin 1s ease-in-out;
+          transition: margin 1s ease-in-out;
+}
+.lucid-themes-drawer .lucid-themes-drawer-slide {
+  padding: 10px;
+  -webkit-transition: margin ease-in-out 0.25s;
+          transition: margin ease-in-out 0.25s;
+}
+.lucid-themes-drawer .theme-group {
+  display: inline-block;
+  padding: 10px;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 4px;
+  color: #828282;
+  -webkit-transition: 0.1s ease-in-out all;
+          transition: 0.1s ease-in-out all;
+}
+.lucid-themes-drawer .theme-group .lucid-image {
+  display: block;
+  margin-bottom: 5px;
+}
+.lucid-themes-drawer .theme-group.lucid-new-theme:hover {
+  background: transparent;
+}
+.lucid-themes-drawer .theme-group.lucid-new-theme .lucid-image {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg) center center no-repeat;
+  width: 100px;
+  height: 75px;
+  border: 2px dashed #999;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+}
+.lucid-themes-drawer .theme-group .lucid-theme-title {
+  font-size: 14px;
+}
+.lucid-themes-drawer .theme-group:hover,
+.lucid-themes-drawer .theme-group.active {
+  background-color: #A5AEB7;
+  color: #fff;
+}
+.lucid-themes-drawer.ng-hide .lucid-themes-drawer-slide {
+  margin-top: -166px;
+}
+.lucid-chart-block,
+.lucid-canvas {
+  -webkit-transition: 0.2s ease-in-out background-color, 0.2s ease-in-out color, 0.2s ease-in-out border;
+          transition: 0.2s ease-in-out background-color, 0.2s ease-in-out color, 0.2s ease-in-out border;
+}
+.lucid-slide {
+  position: absolute;
+  color: orange;
+  border: 1px solid;
+  z-index: 2;
+  opacity: 1;
+  -webkit-transition: all ease-in-out 0.1s;
+          transition: all ease-in-out 0.1s;
+}
+.lucid-slide.ng-hide {
+  opacity: 0;
+}
+.lucid-slide .lucid-slide-corner {
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  position: absolute;
+}
+.lucid-slide .lucid-top-left {
+  border-bottom: none;
+  border-right: none;
+  left: 0;
+  top: 0;
+}
+.lucid-slide .lucid-top-right {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+}
+.lucid-slide .lucid-bottom-right {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+.lucid-slide .lucid-bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -1315,7 +1917,6 @@ p.small-body {
 }
 #sidebar > ul {
   text-align: left;
-  overflow: scroll;
   max-height: 75%;
   margin-top: 40px;
 }

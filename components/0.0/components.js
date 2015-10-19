@@ -19,8 +19,13 @@
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-
-//@codekit-append "shape-library/lucid-shape-library.js"
+//@codekit-append "canvas/lucid-canvas.js"
+//@codekit-append "chart-block/lucid-chart-block.js"
+//@codekit-append "saved-styles/lucid-saved-styles.js"
+//@codekit-append "themes/lucid-themes.js"
+//@codekit-append "shapes-library/lucid-shapes-library.js"
+//@codekit-append "shapes-manager/lucid-shapes-manager.js"
+//@codekit-append "slides/lucid-slides.js"
 
 angular.module('appConfig', [])
 
@@ -39,7 +44,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'dndLists', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapesLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes'])
 
 .directive('ngdEnter', function() {
     return function(scope, element, attrs) {

@@ -125,7 +125,7 @@ angular.module('lucidComponentFactory', [])
 
             }, {
                 "title": "Shape Library",
-                "componentid": "shape-library",
+                "componentid": "shapes-library",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
 
             }]
@@ -136,6 +136,11 @@ angular.module('lucidComponentFactory', [])
             "components": [{
                 "title": "Color Picker",
                 "componentid": "color-picker",
+                "description": "Copy and paste component as is.",
+
+            }, {
+                "title": "Themes",
+                "componentid": "themes",
                 "description": "Copy and paste component as is.",
 
             }, {
@@ -173,12 +178,26 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "shadow-options",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
 
+            }, {
+                "title": "Saved Styles",
+                "componentid": "saved-styles",
+                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+
             }]
         }, {
             //form components
             "groupname": "Forms",
             "groupid": "forms",
-            "components": []
+            "components": [{
+                "title": "Canvas",
+                "componentid": "canvas",
+                "description": "Copy and paste component as is.",
+
+            }, {
+                "title": "Shapes Manager",
+                "componentid": "shapes-manager",
+                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+            }]
         }];
         return service;
     });

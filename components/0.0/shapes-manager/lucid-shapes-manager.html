@@ -1,0 +1,101 @@
+<div class="lucid-shapes-panel-wrapper" selected=selectedBlock manageshapes=manageShapes>
+    <div class="lucid-shapes-panel" ng-class="{ 'lucid-manage-shapes': manageshapes }">
+        <div class="lucid-pinned-shapes-panel">
+            <header class="lucid-shapes-header">
+                <span ng-click="manageshapes=!manageshapes">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-shapes-gear">
+                <span class="lucid-more-shapes">Shapes</span>
+                </span>
+                <img ng-click="importShapes=!importShapes" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-import-bluesteel.svg" ng-hide="manageshapes" class="lucid-shapes-import">
+            </header>
+            <div class="lucid-shapes-scroll">
+                <div class="lucid-scroll-inner-wrap">
+                    <ul dnd-list="shapegroups" dnd-drop="pinShapeGroup(item)" class="lucid-group-drop-area">
+                        <li ng-repeat="shapegroup in shapegroups" dnd-draggable="shapegroup" dnd-effect-allowed="move" dnd-moved="shapegroups.splice($index, 1)" ng-if="shapegroup.pinned" class="lucid-shape-group">
+                        	<lucid-shapes-library shapegroup="shapegroup"></lucid-shapes-library>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div ng-drag-clone="" class="ng-binding" draggable="false">
+                <div ng-bind-html="clonedData.svg | sanitize"></div>
+            </div>
+        </div>
+        <div class="lucid-shape-manager lucid-manage-shapes" ng-show="manageshapes">
+            <div class="lucid-shape-manager-top-bar">
+                <button class="lucid-new-library lucid-button">+ New Library</button>
+                <div class="lucid-search-container">
+                    <input type="text" placeholder="Search Shapes" ng-model="searchShapes">
+                    <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
+                </div>
+                <img ng-click="manageshapes=false" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="lucid-close-icon">
+            </div>
+            <div class="lucid-shapes-scroll">
+                <div class="lucid-scroll-inner-wrap">
+                    <ul dnd-list="shapegroups" dnd-drop="unPinShapeGroup(item)" class="lucid-shapegroup-left">
+
+                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes" dnd-draggable="shapegroup" dnd-effect-allowed="move" dnd-moved="shapegroups.splice($index, 1)" dnd-type="'pinned'" class="lucid-shape-group" ng-class="{ 'lucid-even' : $even, 'lucid-odd' : $odd}" ng-if="!shapegroup.pinned">
+                            <div class="shape-group-top" ng-class="{'lucid-custom-library' : shapegroup.custom }">
+                                <div class="lucid-pin-icon" ng-click="pinShapeGroup(shapegroup)">
+                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
+                                </div>
+                                <span class="shape-group-name"> {{shapegroup.groupname}}</span>
+                                <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
+                                    <i class="lucid-icon lucid-trash" ng-click="importShapes=true"></i>
+                                    <i class="lucid-icon lucid-edit"></i>
+                                    <i class="lucid-icon lucid-share"></i>
+                                    <i class="lucid-icon lucid-import"></i>
+                                </div>
+                            </div>
+                            <ul ng-class="{ 'lucid-expand-shape-drawer' : showdrawer}">
+                                <li class="lucid-shape" ng-drag="true" draggable="false" ng-drag-data="shape" data-allow-transform="true" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes | filter:searchShapes track by $index" ng-hide="$index>29 && !showdrawer">
+                                    <div>
+                                        <div ng-bind-html="shape.svg | sanitize"> </div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
+                                <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
+                            </div>
+                            <div class="lucid-show-more-drawer-button" ng-click="showdrawer=!showdrawer" ng-class="{'lucid-drawer-open': showdrawer}" ng-show="shapegroup.shapes.length > 30">
+                                <div class="lucid-drawer-center-text">
+                                    <div class="lucid-drawer-button-text" ng-hide="showdrawer">+ {{shapegroup.shapes.length - 30}} More</div>
+                                    <div class="lucid-drawer-button-text" ng-show="showdrawer">Less</div>
+                                    <div class="lucid-drawer-more-icon">
+                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
+                                            <g id="Page-1" stroke="none" stroke-width="1" fill="#29AAE1" fill-rule="evenodd">
+                                                <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_" />
+                                            </g>
+                                        </svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <!-- repeat filter right -->
+            </div>
+        </div>
+        <!-- Modals down here -->
+        <lucid-modal showmodal="importShapes" width="590" height="460" title="Import Shapes" confirm="Import" cancel="Cancel">
+            <!-- Insert modal content here -->
+            <lucid-finger-tabs>
+                <lucid-finger-tab name="On your computer" selected>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placholder-import-dialog.png">
+                </lucid-finger-tab>
+                <lucid-finger-tab name="Dropbox">
+                    Tab 2 again
+                </lucid-finger-tab>
+                <lucid-finger-tab name="Google Drive">
+                    Tab 3
+                </lucid-finger-tab>
+                <lucid-finger-tab name="Facebook">
+                    Tab 4
+                </lucid-finger-tab>
+                <lucid-finger-tab name="Flickr">
+                    Tab 5
+                </lucid-finger-tab>
+            </lucid-finger-tabs>
+        </lucid-modal>
+    </div>
+</div>

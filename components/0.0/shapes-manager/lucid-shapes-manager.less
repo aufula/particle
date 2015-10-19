@@ -1,0 +1,287 @@
+@shapes-panel-width: 250px;
+.lucid-shapes-panel {
+    //shapes panel stuff
+    background: #D6D6D6;
+    width: @shapes-panel-width;
+    //position: absolute;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid #999;
+    transition: .3s ease-in-out background;
+    z-index: 6;
+    .lucid-shapes-header {
+        padding: 18px 15px;
+        background: #e8e9ea;
+        //line-height: 59px;
+        height: 60px;
+        box-sizing: border-box;
+        border-bottom: 1px solid #b7b7b7;
+        text-align: left;
+        .lucid-more-shapes {
+            line-height: 22px;
+            cursor: pointer;
+        }
+        .lucid-shapes-gear,
+        .lucid-shapes-import {
+            width: 22px;
+            vertical-align: top;
+            cursor: pointer;
+            transition: transform .5s ease-out;
+        }
+        .lucid-shapes-import {
+            float: right;
+            opacity: 1;
+            &.ng-hide {
+                opacity: 0;
+            }
+            &.ng-animate {
+                transition: .3s all ease-in-out;
+            }
+        }
+    }
+}
+
+.lucid-shapes-scroll {
+    background: #D6D6D6;
+    height: calc(100vh - 60px);
+    overflow-y: scroll;
+}
+
+.lucid-scroll-inner-wrap {
+    padding: 10px;
+}
+
+.lucid-group-drop-area {
+    min-height: calc(100vh - 160px);
+}
+
+.dndPlaceholder {
+    // background: #ccc;
+    margin: 0;
+    height: 0;
+    display: block;
+    position: relative;
+    &:after {
+        content: "";
+        display: block;
+        width: 100%;
+        position: absolute;
+        height: 2px;
+        margin-top: 5px;
+        background: @blue;
+    }
+    &.ng-enter {
+        transform: scale(.01);
+        opacity: 0;
+    }
+    &.ng-enter-active {
+        transform: scale(1);
+        opacity: 1;
+    }
+    &.ng-animate {
+        transition: .25s;
+    }
+}
+
+.dndDraggingSource {
+    display: none !important;
+}
+
+//when managing shapes this class is added for transitions on shape panel
+.lucid-manage-shapes {
+    background: #B2B2B2;
+    border-right: none;
+    .lucid-shapegroup-left {
+        padding-right: 5px;
+        box-sizing: border-box;
+        width: 463px;
+        // -webkit-column-count: 2;
+        // -moz-column-count: 2;
+        // column-count: 2;
+        // -moz-column-gap: 50%;
+        // -webkit-column-gap: 50%;
+        // column-gap: 2%;
+        // -moz-column-width: 50%;
+        // -webkit-column-width: 50%;
+        // column-width: 50%;
+    }
+    .lucid-shapegroup-right {
+        width: 50%;
+        float: right;
+        padding-left: 5px;
+        box-sizing: border-box;
+    }
+    .lucid-shape-group {
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        background: #D8D8D8;
+        //transform-origin: top;
+        // &.ng-enter {
+        //     max-height: 0;
+        //     opacity: 0;
+        // }
+        // &.ng-enter-active {
+        //     max-height: 500px;
+        //     opacity: 1;
+        // }
+        // &.ng-leave {
+        //     margin: 0;
+        //     max-height: 500px;
+        //     opacity: 1;
+        // }
+        // &.ng-leave-active {
+        //     max-height: 0;
+        //     opacity: 0;
+        // }
+        // &.ng-animate {
+        //     transition: .35s ease-in-out;
+        // }
+        .shape-group-name {
+            font-weight: 300;
+        }
+        .lucid-drop-area {
+            position: absolute;
+            top: 38px;
+            left: 2px;
+            right: 2px;
+            bottom: 2px;
+        }
+    }
+    .lucid-shapes-scroll {
+        background: #B2B2B2;
+    }
+    .shape-group-top {
+        cursor: move;
+        padding: 8px 10px;
+        background: @blue-steel-2;
+        color: #FFF;
+        border-radius: 4px 4px 0 0;
+        @lucid-orange: #F89820;
+        border-top: 2px solid @lucid-orange;
+        &.lucid-custom-library {
+            border-color: @blue;
+        }
+    }
+    .lucid-shape-group:hover {
+        .shape-group-top {
+            background: #858e98
+        }
+    }
+    .lucid-shapes-gear {
+        transform: rotateZ(90deg);
+    }
+}
+
+.lucid-shape-manager {
+    position: absolute;
+    top: 0;
+    width: calc(100vw - @shapes-panel-width - 1px);
+    bottom: 0;
+    left: @shapes-panel-width;
+    background: rgba(61, 71, 82, 0.95);
+    z-index: -1;
+    margin-left: 0;
+    .lucid-shape-manager-top-bar {
+        background: @blue-steel-2;
+        height: 59px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        .lucid-new-library {
+            background: @blue;
+            //height:30px;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 14px;
+            line-height: 29px;
+            padding: 0 10px;
+            vertical-align: top;
+            height: 29px;
+            cursor: pointer;
+        }
+        .lucid-search-container {
+            display: inline-block;
+            width: 200px;
+            position: absolute;
+            left: 50%;
+            margin-left: -100px;
+            input {
+                width: 100%;
+                height: 29px;
+                border: none;
+                border-radius: 4px;
+                font-size: 15px;
+                padding: 0 10px;
+                box-sizing: border-box;
+                color: #FFF;
+                background: rgba(255, 255, 255, .3);
+                font-weight: 100;
+                font-family: "Source Sans Pro";
+                &::-webkit-input-placeholder {
+                    color: #fff;
+                    //font-family:"Source Sans Pro";
+                }
+            }
+            .lucid-search-icon {
+                width: 18px;
+                position: absolute;
+                top: 5px;
+                right: 7px;
+            }
+        }
+        .lucid-close-icon {
+            float: right;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+    }
+    .lucid-shapes-scroll {
+        background: transparent;
+        //width:calc(100vw - @shapes-panel-width);
+        //width: 800px;
+    }
+    .lucid-scroll-inner-wrap {
+        padding: 30px;
+    }
+    .scrollable .scrollable-slider {
+        background: #333;
+    }
+    .dndPlaceholder {
+        //float: left;
+        //margin: 10px;
+    }
+    .lucid-shape-group {
+        //float: left;
+        //width: 100%;
+        margin-top: 30px;
+        //width: calc(50% - 20px);
+        // max-width:460px;
+        // width:100%;
+        &:first-child {
+            margin-top: 0;
+        }
+        ul {
+            max-height: 139px;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            &.lucid-expand-shape-drawer {
+                max-height: 1000px;
+            }
+        }
+        &.lucid-odd {
+            //    float: left; //right;
+        }
+        &.lucid-even {
+            //    float: left;
+        }
+        .shape-group-top {
+            // height: 38px;
+            //line-height: 22px;
+        }
+    }
+    &.ng-hide {
+        margin-left: -100vw;
+    }
+    &.ng-animate {
+        transition: .5s ease-out all;
+    }
+}
