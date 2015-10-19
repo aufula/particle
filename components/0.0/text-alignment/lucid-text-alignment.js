@@ -1,7 +1,7 @@
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module('lucidTextAlign', ['appConfig'])
-    .directive('lucidTextAlign', function($document, config) {
+angular.module('lucidTextAlignment', ['appConfig'])
+    .directive('lucidTextAlignment', function($document, config) {
         return {
             restrict: 'E',
             scope: {

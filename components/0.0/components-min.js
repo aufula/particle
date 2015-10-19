@@ -5,7 +5,7 @@
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
 //@codekit-append "path-style/lucid-path-style.js"
-//@codekit-append "text-align/lucid-text-align.js"
+//@codekit-append "text-alignment/lucid-text-alignment.js"
 //@codekit-append "more-drawer/lucid-more-drawer.js"
 //@codekit-append "border-options/lucid-border-options.js"
 //@codekit-append "text-options/lucid-text-options.js"
@@ -19,7 +19,6 @@
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-
 
 //@codekit-append "shape-library/lucid-shape-library.js"
 
@@ -40,7 +39,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlign', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton'])
+angular.module("lucidComponents", ['ngAnimate', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeLibrary', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton'])
 
 .directive('ngdEnter', function() {
     return function(scope, element, attrs) {
@@ -5923,8 +5922,8 @@ angular.module("lucidPathStyle", ['appConfig'])
 
 /*global angular : true fixes codekit error*/
 /*global SVGMorpheus : true fixes codekit error*/
-angular.module('lucidTextAlign', ['appConfig'])
-    .directive('lucidTextAlign', function($document, config) {
+angular.module('lucidTextAlignment', ['appConfig'])
+    .directive('lucidTextAlignment', function($document, config) {
         return {
             restrict: 'E',
             scope: {

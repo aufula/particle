@@ -97,8 +97,8 @@ angular.module('lucidComponentFactory', [])
                 "description": "Copy and paste component as is.",
 
             }, {
-                "title": "Text Align",
-                "componentid": "text-align",
+                "title": "Text Alignment",
+                "componentid": "text-alignment",
                 "description": "this component .......",
 
             }, {
