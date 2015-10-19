@@ -1,10 +1,12 @@
+/*global angular : true fixes codekit error*/
 angular.module("lucidSnippets", [])
     .factory('lucidSnippets', function() {
 
         var snippets = [{
             'title': 'Show Panels: ng-click',
             'codepen': 'http://codepen.io/corysmc/embed/ZbXeMq/?height=350&theme-id=19963&default-tab=result',
-            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{hideleft}}  and {{hideright}} to true or false.'
+            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{hideleft}}  and {{hideright}} to true or false.',
+            'starterfile' : 'http://codepen.io/corysmc/pen/XmzvQP'
         }, {
             'title': 'Show Panels: ng-hide',
             'codepen': 'http://codepen.io/corysmc/embed/GpMWXj/?height=350&theme-id=19963&default-tab=result',
@@ -20,19 +22,20 @@ angular.module("lucidSnippets", [])
         }, {
             'title': 'Select Dropdown: ng-click',
             'codepen': 'http://codepen.io/corysmc/embed/avyYpE/?height=350&theme-id=19963&default-tab=result',
-            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{selectedFont}} to the font that is clicked. Note: We also use ng-init to assign an inital state to the variable {{selectedFont}}.'
+            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{selectedFont}} to the font that is clicked. Note: We also use ng-init to assign an inital state to the variable {{selectedFont}}.',
+            'starterfile': 'http://codepen.io/corysmc/pen/YyYKqy'
         }, {
             'title': 'Select Dropdown: ng-show',
             'codepen': 'http://codepen.io/corysmc/embed/JYyLyv/?height=350&theme-id=19963&default-tab=result',
-            'description': 'If we want to show/hide an element on the page we use ng-show. ng-show will show an element if the assigned value is true, and it will hide the block if it\'s value is false. (the opposite is true with ng-hide). Using ng-click we can assign this variable when a user clicks another element. The "!" means \'not\' in code, this allows us to toggle between true and false (show and hide).'
+            'description': 'ng-show will show an element if the assigned value is true, and it will hide the block if it\'s value is false. Using ng-click we can assign this variable when a user clicks another element. The "!" means \'not\' in code, this allows us to toggle between true and false (show and hide).'
         }, {
             'title': 'Select Dropdown: ng-class',
             'codepen': 'http://codepen.io/corysmc/embed/meMxBY/?height=350&theme-id=19963&default-tab=result',
-            'description': 'In our dropdown example we want to show which font is selected. We can do that by adding a class to the current {{selectedFont}}. Using ng-class we can add a class dependent on our {{selectedFont}} variable. '
+            'description': 'In our dropdown example we want to show which font is selected. We can do that by adding a class to the current {{selectedFont}}. Using ng-class we can add a class dependent on our {{selectedFont}} variable. See code for example.'
         }, {
             'title': 'Select Dropdown: ng-repeat',
             'codepen': 'http://codepen.io/corysmc/embed/vNJRWP/?height=350&theme-id=19963&default-tab=result',
-            'description': 'You\'ll notice we have a lot of repeated html and angular expressions in our examples above. Anytime you are repeating html ask yourself if ng-repeat can be used. This makes it very easy to add a font to our list without having to recode anything. NOTE: when using ng-repeat in order to assign a avariable outside the repeat you need to use $parent.selectedFont.'
+            'description': 'You\'ll notice we have a lot of repeated html and angular expressions in our examples above. Anytime you are repeating html ask yourself if ng-repeat can be used. This makes it very easy to add a font to our list without having to recode anything. NOTE: when using ng-repeat in order to assign a variable outside the repeat you need to use $parent.selectedFont.'
         }];
         return snippets;
     });

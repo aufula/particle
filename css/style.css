@@ -1492,6 +1492,10 @@ p.small-body {
   background: rgba(0, 0, 0, 0.1);
   padding: 0 3px;
 }
+.snippet-starter {
+  text-decoration: underline;
+  color: #2FB3E5;
+}
 .icon-list-container {
   margin: 30px 0;
   background: #f0f0f0;
@@ -1594,19 +1598,6 @@ p.small-body {
 }
 .hljs {
   padding: 1em;
-}
-.code-embed-container-push {
-  height: 300px;
-}
-.code-embed-container {
-  position: fixed;
-  bottom: 0;
-  left: 250px;
-  right: 0;
-  background: #fff;
-}
-.code-embed-container .lucid-drawer-wrapper .lucid-popover-menu-drawer {
-  padding: 0;
 }
 #sidebar #logo {
   position: relative;

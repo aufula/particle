@@ -1,6 +1,8 @@
-<h1>Angular Snippets - For Designers</h1>
+<h1>Angular for Designers</h1>
 <div class="hr"></div>
-<p>We've put together a lot of code snippets to help designers use angularjs to make interactive prototypes. These are all done using pure angularjs and ng-animate. If you go through these examples top to bottom, you should have a basic understanding of how to use angular to your advantage. There is so much you can do with angular, but these examples focus on quick, fast, and dirty code for prototyping an interactive interface.</p>
+<p>We've put together a lot of code snippets to help designers use angularjs to make interactive prototypes. These are all done using pure angularjs and ng-animate. These examples help teach a basic understanding of how to build quick, fast, and dirty code for prototyping an interactive interface.</p>
+
+<p>The "Starter File" at the beginning of each example gives you the HTML and CSS you need to build the example. Follow the examples in order, and add the code to the starter file. Inside each codepen there are comments that draw your attention to code we are changing.</p>
 <div class="icon-search ng-scope">
     <input ng-model="searchResults" placeholder="Search Snippets">
     <img src="components/0.0/icon/img/search-dark.svg">
@@ -8,6 +10,7 @@
 <div ng-repeat="snippet in snippets | filter: searchResults">
     <h2>{{snippet.title}}</h2>
     <p>{{snippet.description}}</p>
+    <p ng-if="snippet.starterfile">Starter File: <a target="_blank" class="snippet-starter" href="{{snippet.starterfile}}">{{snippet.starterfile}}</a></p>
     <iframe class="codepen-iframe" ng-if="snippet.codepen" height='350' scrolling='no' ng-src='{{getIframeSrc(snippet.codepen)}}' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;'>
     </iframe>
 </div>
