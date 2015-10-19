@@ -34,8 +34,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.0/" //local dev
-    //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+    //'componentsURL': "/components/0.0/" //local dev
+    'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
 
 });
 
