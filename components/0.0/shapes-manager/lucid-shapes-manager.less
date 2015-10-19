@@ -52,7 +52,7 @@
 }
 
 .lucid-group-drop-area {
-    min-height: calc(100vh - 160px);
+    min-height: calc(~"100vh - 160px");
 }
 
 .dndPlaceholder {
@@ -175,7 +175,7 @@
 .lucid-shape-manager {
     position: absolute;
     top: 0;
-    width: calc(100vw - @shapes-panel-width - 1px);
+    width: ~"calc(100vw - @{shapes-panel-width} - 1px)";
     bottom: 0;
     left: @shapes-panel-width;
     background: rgba(61, 71, 82, 0.95);

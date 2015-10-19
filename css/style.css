@@ -1416,7 +1416,7 @@ img {
   padding: 10px;
 }
 .lucid-group-drop-area {
-  min-height: calc(-60vh);
+  min-height: calc(100vh - 160px);
 }
 .dndPlaceholder {
   margin: 0;
@@ -1506,7 +1506,7 @@ img {
 .lucid-shape-manager {
   position: absolute;
   top: 0;
-  width: calc(-151vw);
+  width: calc(100vw - 250px - 1px);
   bottom: 0;
   left: 250px;
   background: rgba(61, 71, 82, 0.95);
