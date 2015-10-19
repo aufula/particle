@@ -1622,7 +1622,6 @@ p.small-body {
   position: absolute;
   left: 20px;
   top: 28px;
-  width: 215px;
 }
 .particle-group .particle {
   -webkit-transform: translate(0, 0);
