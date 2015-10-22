@@ -3,7 +3,7 @@
     //shapes panel stuff
     background: #D6D6D6;
     width: @shapes-panel-width;
-    //position: absolute;
+    position: relative;
     top: 0;
     height: 100%;
     border-right: 1px solid #999;
@@ -22,15 +22,15 @@
             cursor: pointer;
         }
         .lucid-shapes-gear,
-        .lucid-shapes-import {
-            width: 22px;
+        .lucid-shapes-search {
             vertical-align: top;
             cursor: pointer;
             transition: transform .5s ease-out;
         }
-        .lucid-shapes-import {
+        .lucid-shapes-search {
             float: right;
             opacity: 1;
+            //width:18px;
             &.ng-hide {
                 opacity: 0;
             }
@@ -55,61 +55,32 @@
     min-height: calc(~"100vh - 160px");
 }
 
-.dndPlaceholder {
-    // background: #ccc;
-    margin: 0;
-    height: 0;
-    display: block;
-    position: relative;
-    &:after {
-        content: "";
-        display: block;
-        width: 100%;
-        position: absolute;
-        height: 2px;
-        margin-top: 5px;
-        background: @blue;
-    }
-    &.ng-enter {
-        transform: scale(.01);
-        opacity: 0;
-    }
-    &.ng-enter-active {
-        transform: scale(1);
-        opacity: 1;
-    }
-    &.ng-animate {
-        transition: .25s;
-    }
-}
-
-.dndDraggingSource {
-    display: none !important;
-}
-
 //when managing shapes this class is added for transitions on shape panel
-.lucid-manage-shapes {
+.lucid-managing-shapes {
     background: #B2B2B2;
     border-right: none;
     .lucid-shapegroup-left {
         padding-right: 5px;
         box-sizing: border-box;
-        width: 463px;
-        // -webkit-column-count: 2;
-        // -moz-column-count: 2;
-        // column-count: 2;
-        // -moz-column-gap: 50%;
-        // -webkit-column-gap: 50%;
-        // column-gap: 2%;
-        // -moz-column-width: 50%;
-        // -webkit-column-width: 50%;
-        // column-width: 50%;
+        //width: 463px;
+        -webkit-column-count: 2;
+        -moz-column-count: 2;
+        column-count: 2;
+        -moz-column-gap: 50%;
+        -webkit-column-gap: 50%;
+        column-gap: 2%;
+        -moz-column-width: 50%;
+        -webkit-column-width: 50%;
+        column-width: 50%;
     }
     .lucid-shapegroup-right {
         width: 50%;
         float: right;
         padding-left: 5px;
         box-sizing: border-box;
+    }
+    .lucid-shape-group-wrapper{
+        margin-bottom:10px;
     }
     .lucid-shape-group {
         border-radius: 4px;
@@ -156,11 +127,6 @@
         background: @blue-steel-2;
         color: #FFF;
         border-radius: 4px 4px 0 0;
-        @lucid-orange: #F89820;
-        border-top: 2px solid @lucid-orange;
-        &.lucid-custom-library {
-            border-color: @blue;
-        }
     }
     .lucid-shape-group:hover {
         .shape-group-top {
@@ -169,6 +135,20 @@
     }
     .lucid-shapes-gear {
         transform: rotateZ(90deg);
+    }
+    .lucid-shape-group-top-right-icons{
+        float:right;
+        .pipe-right{
+            font-size:14px;
+            font-weight: 300;
+            border-right:1px solid @blue-steel-3;
+            padding-right:10px;
+            margin-right:10px;
+            vertical-align: top;
+        }
+        .lucid-icon-22{
+            width:18px;
+        }
     }
 }
 
@@ -186,7 +166,9 @@
         height: 59px;
         padding: 15px 20px;
         box-sizing: border-box;
+        text-align: left;
         .lucid-new-library {
+            float: left;
             background: @blue;
             //height:30px;
             border-radius: 4px;
@@ -201,9 +183,9 @@
         .lucid-search-container {
             display: inline-block;
             width: 200px;
-            position: absolute;
-            left: 50%;
-            margin-left: -100px;
+            position: relative;
+            margin-left: 10px;
+            float: left;
             input {
                 width: 100%;
                 height: 29px;
@@ -245,10 +227,71 @@
     .scrollable .scrollable-slider {
         background: #333;
     }
-    .dndPlaceholder {
-        //float: left;
-        //margin: 10px;
+    .lucid-shapes-manager-divider {
+        position: relative;
+        width: 100%;
+        padding: 20px 0;
+        .divider-inner {
+            position: relative;
+            height: 20px;
+            display: table;
+            width: 100%;
+        }
+        .divider-title {
+            display: table-cell;
+            color: @blue-steel-2;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 20px;
+            white-space: nowrap;
+            padding-right: 20px;
+            font-size: 14px;
+        }
+        .divider-line {
+            display: table-cell;
+            width: 100%;
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 10px;
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: @blue-steel-2;
+            }
+        }
     }
+    .dndPlaceholder {
+        // background: #ccc;
+        margin: 0;
+        height: 0;
+        display: block;
+        position: relative;
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            position: absolute;
+            height: 2px;
+            margin-top: 5px;
+            background: @blue;
+        }
+        &.ng-enter {
+            transform: scale(.01);
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        &.ng-animate {
+            transition: .25s;
+        }
+    }
+    // .dndDraggingSource {
+    //     display: none !important;
+    // }
     .lucid-shape-group {
         //float: left;
         //width: 100%;
@@ -276,6 +319,15 @@
         .shape-group-top {
             // height: 38px;
             //line-height: 22px;
+        }
+    }
+    .lucid-drawer-wrapper .lucid-show-more-drawer-button {
+        background-color: #BFBFBF;
+        .lucid-drawer-button-text {
+            color: #5A5A5A;
+        }
+        svg g {
+            fill: #5A5A5A;
         }
     }
     &.ng-hide {

@@ -126,12 +126,57 @@ angular.module('lucidComponentFactory', [])
                 "title": "Shape",
                 "componentid": "shape",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "inputs": [{
+                    "name": "shape",
+                    "type": "text",
+                    "details": "options are: block, container, cylinder, decision, polygon, rectangle, star, terminal, text, triangle"
+                }, {
+                    "name": "fill",
+                    "type": "Hex Value",
+                    "details": "Color to fill the shape"
+                }, {
+                    "name": "strokecolor",
+                    "type": "Hex Value",
+                    "details": "Color for stroke"
+                }, {
+                    "name": "textcolor",
+                    "type": "Hex Value",
+                    "details": "Color for text"
+                }, {
+                    "name": "width",
+                    "type": "number",
+                    "details": "width of shape"
+                }, {
+                    "name": "height",
+                    "type": "number",
+                    "details": "height of shape"
+                }, {
+                    "name": "strokewidth",
+                    "type": "number",
+                    "details": "width of stroke"
+                }, {
+                    "name": "radius",
+                    "type": "number",
+                    "details": "radius of shape"
+                }],
 
             }, {
-                "title": "Shape Library",
-                "componentid": "shapes-library",
+                "title": "Shape Group",
+                "componentid": "shape-group",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
-
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Name the Shape Library"
+                }, {
+                    "name": "shapes",
+                    "type": "array",
+                    "details": "Insert array of data for shapes. See code for examples."
+                }, {
+                    "name": "custom",
+                    "type": "true",
+                    "details": "If custom is true than shapes can be dragged into this library"
+                }]
             }]
         }, {
             //Toolbar Components
@@ -190,14 +235,23 @@ angular.module('lucidComponentFactory', [])
             }]
         }, {
             //form components
-            "groupname": "Forms",
-            "groupid": "forms",
+            "groupname": "Prototypes",
+            "groupid": "prototypes",
             "components": [{
                 "title": "Canvas",
                 "componentid": "canvas",
                 "description": "Copy and paste component as is.",
 
             }, {
+                "title": "Shapes Manager",
+                "componentid": "shapes-manager",
+                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+            }]
+        }, {
+            //form components
+            "groupname": "Shapes",
+            "groupid": "shapes",
+            "components": [{
                 "title": "Shapes Manager",
                 "componentid": "shapes-manager",
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",

@@ -1,0 +1,5 @@
+<svg ng-attr-width="{{width}}px" ng-attr-height="{{height}}px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="{{strokecolor}}" stroke-width="{{strokewidth}}" fill="{{fill}}">
+        <ellipse cx="15" cy="15" rx="13" ry="13"></ellipse>
+    </g>
+</svg>

@@ -1,0 +1,34 @@
+<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom }">
+    <ul dnd-list="shapes"
+        dnd-allowed-types="[custom]"
+        dnd-horizontal-list="true"
+        dnd-external-sources="true"
+        dnd-dragover="dragoverCallback(event, index, external, type)"
+        dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
+        dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
+        class="itemlist">
+        <div class="shape-group-top">
+            <span class="shape-group-name"> {{name}}</span>
+            <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-bluesteel.svg" ng-show="manageshapes" ng-click="unPinShapeGroup(shapegroup)">
+        </div>
+        <li ng-repeat="shape in shapes"
+            dnd-draggable="shape"
+            dnd-type="'true'"
+            dnd-effect-allowed="{{dragEffect}}"
+            dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
+            dnd-moved="shapes.splice($index, 1); logEvent('Item moved', event)"
+            dnd-copied="logEvent('Item copied', event)"
+            dnd-canceled="logEvent('Drag operation canceled', event)"
+            dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
+            class="lucid-shape">  
+
+            <lucid-shape ng-if="!shape.svg" shape="{{shape.name}}" fill="{{shape.fill}}" strokecolor="{{shape.stroke}}" textcolor="{{shape.text}}" height="28" width="28" strokewidth="{{shape.strokewidth}}" radius="{{shape.radius}}">
+            </lucid-shape>
+            <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
+
+        </li>
+    </ul>
+    <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
+        <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
+    </div>
+</div>

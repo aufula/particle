@@ -1,13 +1,18 @@
-
 .lucid-shape-group {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-top: 10px;
-    transition: .3s ease-in-out background, .2s ease-out margin;
+    transition: .3s ease-in-out background, .2s ease-out margin, .3s ease-in-out opacity;
     text-align: left;
-    &:first-child {
-        margin-top: 0;
+    opacity: 1;
+    &.disabled {
+        opacity: .5;
+    }
+    &.custom-library {
+        z-index: 100;
+        .dndDraggingSource {
+            display: none !important;
+        }
     }
     ul {
         min-height: 48px;
@@ -19,9 +24,9 @@
         right: 0;
         bottom: 0;
         border: 2px solid transparent;
-        &.drag-enter {
-            border: 2px dashed #999;
-        }
+        // &.drag-enter {
+        //     border: 2px dashed #999;
+        // }
         .lucid-save-shapes-hint {
             font-style: italic;
             color: #777;
@@ -30,13 +35,6 @@
             padding: 10px;
         }
     }
-    // .lucid-svg-container {
-    //     width: 100%;
-    //     height: auto;
-    //     .lucid-svg-background {
-    //         transform: scale(.5);
-    //     }
-    // }
     .shape-group-top {
         //height: 30px;
         background-color: #C1C1C1; //#E0E0E0;
@@ -46,46 +44,37 @@
         transition: .3s ease-in-out;
         box-sizing: border-box;
         line-height: 20px;
-        text-align:left;
-        .lucid-shape-group-top-right-icons {
-            float: right;
-            opacity: 0;
-            transition: .4s ease-in-out all;
-            .lucid-icon {
-                float: right;
-                width: 22px;
-                height: 22px;
-                cursor: pointer;
-                margin-left: 10px;
-                &.lucid-trash {
-                    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-trash-white.svg) no-repeat center center;
-                }
-                &.lucid-share {
-                    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-person-white.svg) no-repeat center center;
-                }
-                &.lucid-edit {
-                    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-edit-pencil-white.svg) no-repeat center center;
-                }
-                &.lucid-import {
-                    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-import-white.svg) no-repeat center center;
-                }
-            }
-        }
+        text-align: left;
+        // .lucid-shape-group-top-right-icons {
+        //     float: right;
+        //     opacity: 0;
+        //     transition: .4s ease-in-out all;
+        //     .lucid-icon {
+        //         float: right;
+        //         width: 22px;
+        //         height: 22px;
+        //         cursor: pointer;
+        //         margin-left: 10px;
+        //         &.lucid-trash {
+        //             background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-trash-white.svg) no-repeat center center;
+        //         }
+        //         &.lucid-share {
+        //             background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-person-white.svg) no-repeat center center;
+        //         }
+        //         &.lucid-edit {
+        //             background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-edit-pencil-white.svg) no-repeat center center;
+        //         }
+        //         &.lucid-import {
+        //             background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-import-white.svg) no-repeat center center;
+        //         }
+        //     }
+        // }
+        //mopve to shapes manager?
     }
     &:hover {
         //make hover on parent card, not just top section
         .lucid-shape-group-top-right-icons {
             opacity: 1;
-        }
-    }
-    .minimize-icon {
-        display: none;
-        position: absolute;
-        top: 8px;
-        left: 13px;
-        cursor: pointer;
-        g {
-            fill: #777777;
         }
     }
     .shape-group-name {
@@ -121,7 +110,8 @@
         margin-top: 0;
         border-radius: 2px;
     }
-    .lucid-shape {
+    .lucid-shape,
+    .dndPlaceholder {
         display: inline-block;
         width: 30px;
         height: 30px;
@@ -129,6 +119,7 @@
         position: relative;
         z-index: 1;
         transform: scale(1);
+        vertical-align: top;
         &.ng-enter {
             transform: scale(.01);
             opacity: 0;
@@ -139,6 +130,9 @@
         }
         &.ng-animate {
             transition: .25s;
+        }
+        &.ng-leave-active {
+            transition: none;
         }
         svg {
             vertical-align: -webkit-baseline-middle;
