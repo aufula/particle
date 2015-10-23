@@ -1,14 +1,32 @@
 <div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes }">
-    <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
-        <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
-                <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
-            </g>
-        </svg>
+    <div class="pin-library">
+        <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
     </div>
     <div class="shape-group-top">
-        <span class="shape-group-name"> {{name}}</span>
-        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.unPinShapeGroup(shapegroup)">
+        
+        <span class="edit-in-place shape-group-name" ng-bind="name" ng-show="!$parent.shapegroup.edit"></span>
+        <input id="name-input" class="edit-in-place" placeholder="Group Name" ng-model="name" ng-show="$parent.shapegroup.edit" ng-enter="$parent.shapegroup.edit=false" click-outside="$parent.shapegroup.edit=false"  outside-if-not="name-input, new-shapegroup"></input>
+
+        <div class="lucid-shape-group-top-right-icons" ng-show="custom">
+            <span class="pipe-right">Import</span>
+            
+            <div class="lucid-select-wrapper gear-dropdown">
+                <div class="selected-option-wrapper" ng-click="showdropdown = !showdropdown">
+                    <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg" ng-click="optionmenu=!optionmenu">
+                </div>
+                <div class="lucid-select-dropdown" ng-show="showdropdown" ng-click="showdropdown=false">
+                    <ul>
+                        <li class="lucid-select-option">Share</li>
+                        <li class="lucid-select-option" ng-click="$parent.shapegroup.edit=true">Rename</li>
+                        <li class="lucid-select-option">Duplicate</li>
+                        <li class="lucid-select-option" ng-click="$parent.customshapes.splice($index, 1)">Delete</li>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+
     </div>
     <div class="slide-toggle" ng-hide="hideshapes">
         <ul dnd-list="shapes"

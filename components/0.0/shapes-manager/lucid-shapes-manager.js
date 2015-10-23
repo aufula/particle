@@ -1,5 +1,5 @@
 angular.module("lucidShapesManager", ['appConfig'])
-    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes) {
+    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes, customShapes) {
         return {
             restrict: 'E',
             scope: {
@@ -11,12 +11,16 @@ angular.module("lucidShapesManager", ['appConfig'])
             controller: function($scope) {
                 $scope.shapegroups = shapesData;
                 $scope.pinnedgroups = pinnedShapes;
+                $scope.customshapes = customShapes;
                 $scope.newCustomGroup = function() {
                     var newGroup = {
-                        "groupname": "Shape Group Name",
-                        "custom": true
+                        "groupname": "",
+                        "custom": true,
+                        "edit": "true",
+                        "shapes": []
                     };
-                    $scope.shapegroups.splice(0, 0, newGroup);
+                    //$scope.customshapes.push(newGroup);
+                    $scope.customshapes.splice(0, 0, newGroup)
                 }
                 $scope.pinShapeGroup = function(item) {
                     $scope.$broadcast('content.changed', 1000);
@@ -60,6 +64,94 @@ angular.module("lucidShapesManager", ['appConfig'])
                 };
             }
         };
+    })
+    .directive('lucidShapeGroupManage', function($document, config) {
+        return {
+            restrict: 'E',
+            scope: {
+                name: '@',
+                shapes: '=',
+                custom: '@',
+            },
+            replace: true,
+            transclude: true,
+            templateUrl: config.componentsURL + 'shapes-manager/lucid-shape-group-manage.html',
+            controller: function($scope) {
+                //from demo
+                if ($scope.custom) {
+                    $scope.dragEffect = 'copyMove';
+                } else {
+                    $scope.dragEffect = 'copy';
+                }
+
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    $scope.logListEvent('dragged over', event, index, external, type);
+                    // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+                    return index; // < 10;
+                };
+
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    $scope.logListEvent('dropped at', event, index, external, type);
+                    if (external) {
+                        if (allowedType === 'shape') return false;
+                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
+
+                $scope.logEvent = function(message, event) {
+                    console.log(message, '(triggered by the following', event.type, 'event)');
+                    console.log(event);
+                };
+
+                $scope.logListEvent = function(action, event, index, external, type) {
+                    var message = external ? 'External ' : '';
+                    message += type + ' element is ' + action + ' position ' + index;
+                    $scope.logEvent(message, event);
+                };
+            },
+        };
+    })
+    .factory('customShapes', function() {
+
+        var customShapes = [{
+            "groupname": "My Saved Shapes",
+            "shapes": [{
+                "name": "text",
+                "tags": "Standard",
+                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
+                "shapepanel": true,
+                "customcolor": false,
+                "swatchtype": "text",
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#8D8D8D",
+                    "border": "transparent"
+                },
+                "swatchnumber": 2,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "INSERT TEXT",
+                    "size": "12px",
+                },
+
+                "padding": 5,
+                "metrics": {
+                    "z": 2,
+                    "x": 390,
+                    "y": 139,
+                    "width": 120,
+                    "height": 45
+                }
+            }],
+            "custom": true,
+            "pinned": true
+        }]
+        return customShapes
     })
     .factory('pinnedShapes', function() {
 
@@ -356,47 +448,11 @@ angular.module("lucidShapesManager", ['appConfig'])
             }],
             "pinned": true
         }];
-        return pinnedShapes
+        return pinnedShapes;
     })
     .factory('shapesData', function() {
 
         var lucidShapes = [{
-            "groupname": "My Saved Shapes",
-            "shapes": [{
-                "name": "text",
-                "tags": "Standard",
-                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
-                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
-                "shapepanel": true,
-                "customcolor": false,
-                "swatchtype": "text",
-                "swatch": {
-                    "fill": "transparent",
-                    "text": "#8D8D8D",
-                    "border": "transparent"
-                },
-                "swatchnumber": 2,
-                "borderwidth": 3,
-                "borderstyle": "solid",
-                "text": {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "center",
-                    "text": "INSERT TEXT",
-                    "size": "12px",
-                },
-
-                "padding": 5,
-                "metrics": {
-                    "z": 2,
-                    "x": 390,
-                    "y": 139,
-                    "width": 120,
-                    "height": 45
-                }
-            }],
-            "custom": true,
-            "pinned": true
-        }, {
             "groupname": "Standard",
             "shapes": [{
                 "name": "text",

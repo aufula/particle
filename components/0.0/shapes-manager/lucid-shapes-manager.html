@@ -23,7 +23,7 @@
                             dnd-moved="pinnedgroups.splice($index, 1)"
                             class="lucid-shape-group-wrapper">
 
-                        	<lucid-shape-group shapes="shapegroup.shapes" name="{{shapegroup.groupname}} {{shapegroup.custom}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
+                        	<lucid-shape-group shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
                         </li>
                     </ul>
                 </div>
@@ -34,7 +34,7 @@
         </div>
         <div class="lucid-shape-manager lucid-manage-shapes" ng-show="manageshapes">
             <div class="lucid-shape-manager-top-bar">
-                <button class="lucid-new-library lucid-button" ng-click="newCustomGroup()">+ Custom Group</button>
+                <button id="new-shapegroup" class="lucid-new-library lucid-button" ng-click="newCustomGroup()">+ Custom Group</button>
                 <div class="lucid-search-container">
                     <input type="text" placeholder="Search Shapes" ng-model="searchShapes">
                     <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
@@ -52,112 +52,48 @@
                             <div class="divider-line"></div>
                         </div>
                     </div>
-                    <ul dnd-list="shapegroups"
+                    <ul dnd-list="customshapes"
                         dnd-allowed-types="['containerType']"
                         dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
-                        dnd-drop="dropCallback(event, index, item, external, type, 'pinned'), unPinShapeGroup(item)"
-                        class="lucid-shapegroup-left">
-                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
+                        dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
+                        class="lucid-shapegroup-columns">
+                        <li ng-repeat="shapegroup in customshapes | filter:searchShapes"
                             dnd-draggable="shapegroup"
-                            dnd-type="'pinned'"
+                            dnd-type="'containerType'"
                             dnd-effect-allowed="move"
-                            dnd-moved="shapegroups.splice($index, 1)"
-                            class="lucid-shape-group"
-                            ng-class="{ 'lucid-even' : $even, 'lucid-odd' : $odd}" 
-                            ng-if="shapegroup.custom">
+                            dnd-moved="customshapes.splice($index, 1)"
+                            class="lucid-shape-group-wrapper"
+                            ng-class-odd="'odd'"
+                            ng-class-even="'even'">
 
-                            <div class="shape-group-top" ng-class="{'lucid-custom-library' : shapegroup.custom }">
-                                <div class="lucid-pin-icon" ng-click="pinShapeGroup(shapegroup)">
-                                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
-                                </div>
-                                <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                <span class="pipe-right">Import</span>
-                                <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
-                                    <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg">
-                                </div>
-                            </div>
-                            <ul ng-class="{ 'lucid-expand-shape-drawer' : showdrawer}">
-                                <li class="lucid-shape" ng-drag="true" draggable="false" ng-drag-data="shape" data-allow-transform="true" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes | filter:searchShapes track by $index" ng-hide="$index>29 && !showdrawer">
-                                    <div>
-                                        <div ng-bind-html="shape.svg | sanitize"> </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
-                                <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
-                            </div>
-                            <div class="lucid-show-more-drawer-button" ng-click="showdrawer=!showdrawer" ng-class="{'lucid-drawer-open': showdrawer}" ng-show="shapegroup.shapes.length > 30">
-                                <div class="lucid-drawer-center-text">
-                                    <div class="lucid-drawer-button-text" ng-hide="showdrawer">+ {{shapegroup.shapes.length - 30}} More</div>
-                                    <div class="lucid-drawer-button-text" ng-show="showdrawer">Less</div>
-                                    <div class="lucid-drawer-more-icon">
-                                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
-                                            <g id="Page-1" stroke="none" stroke-width="1" fill="#29AAE1" fill-rule="evenodd">
-                                                <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_" />
-                                            </g>
-                                        </svg>
-                                    </div>
-                                </div>
-                            </div>
+                            <lucid-shape-group-manage shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
+
                         </li>
                     </ul>
                     <div class="lucid-shapes-manager-divider">
                         <div class="divider-inner">
                             <div class="divider-title">
-                                CUSTOM SHAPE GROUPS
+                                LUCIDCHART SHAPE GROUPS
                             </div>
                             <div class="divider-line"></div>
                         </div>
                     </div>
-                    <ul dnd-list="shapegroups"
-                        dnd-allowed-types="['containerType']"
+                    <ul
                         dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
-                        dnd-drop="dropCallback(event, index, item, external, type, 'pinned'), unPinShapeGroup(item)"
-                        class="lucid-shapegroup-left">
+                        dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
+                        class="lucid-shapegroup-columns">
                         <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
                             dnd-draggable="shapegroup"
-                            dnd-type="'pinned'"
+                            dnd-type="'containerType'"
                             dnd-effect-allowed="move"
                             dnd-moved="shapegroups.splice($index, 1)"
-                            class="lucid-shape-group"
-                            ng-class="{ 'lucid-even' : $even, 'lucid-odd' : $odd}" 
-                            ng-if="!shapegroup.custom">
+                            class="lucid-shape-group-wrapper"
+                            ng-class-odd="'odd'"
+                            ng-class-even="'even'">
 
-                            <div class="lucid-drawer-wrapper">
-                                <ul ng-class="{ 'lucid-expand-shape-drawer' : showdrawer}">
-                                    <div class="shape-group-top" ng-class="{'lucid-custom-library' : shapegroup.custom }">
-                                        <div class="lucid-pin-icon" ng-click="pinShapeGroup(shapegroup)">
-                                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
-                                        </div>
-                                        <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                        <span class="pipe-right">Import</span>
-                                        <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
-                                            <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg">
-                                        </div>
-                                    </div>
-                                    <li class="lucid-shape" ng-drag="true" draggable="false" ng-drag-data="shape" data-allow-transform="true" ng-center-anchor="true" ng-repeat="shape in shapegroup.shapes | filter:searchShapes track by $index" ng-hide="$index>29 && !showdrawer">
-                                        <div>
-                                            <div ng-bind-html="shape.svg | sanitize"> </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                                <div class="lucid-show-more-drawer-button" ng-click="showdrawer=!showdrawer" ng-class="{'lucid-drawer-open': showdrawer}" ng-show="shapegroup.shapes.length > 30">
-                                    <div class="lucid-drawer-center-text">
-                                        <div class="lucid-drawer-button-text" ng-hide="showdrawer">+ {{shapegroup.shapes.length - 30}} More</div>
-                                        <div class="lucid-drawer-button-text" ng-show="showdrawer">Less</div>
-                                        <div class="lucid-drawer-more-icon" ng-class="{'lucid-drawer-open': showdrawer}" style="">
-                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
-                                                <g id="Page-1" stroke="none" stroke-width="1" fill="#29AAE1" fill-rule="evenodd">
-                                                    <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_"></path>
-                                                </g>
-                                            </svg>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
+                            <lucid-shape-group-manage shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
                         </li>
                     </ul>
 

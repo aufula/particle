@@ -146,6 +146,11 @@ body {
 img {
   max-width: 100%;
 }
+input {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+  font-weight: 100;
+}
 .lucid-input {
   background: transparent;
   padding: 0;
@@ -635,12 +640,42 @@ img {
 }
 .lucid-shape-group.custom-library {
   z-index: 100;
+  opacity: 1;
+  -webkit-transition: 0.25s ease-in-out opacity;
+          transition: 0.25s ease-in-out opacity;
 }
 .lucid-shape-group.custom-library .dndDraggingSource {
-  display: none !important;
+  opacity: 0;
 }
-.lucid-shape-group ul {
-  min-height: 48px;
+.lucid-shape-group .slide-toggle {
+  overflow: hidden;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+}
+.lucid-shape-group .slide-toggle > ul {
+  min-height: 44px;
+}
+.lucid-shape-group .lucid-hide-shapes-icon {
+  z-index: 1;
+  position: absolute;
+  height: 22px;
+  padding: 5px 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-shape-group .lucid-hide-shapes-icon svg g {
+  -webkit-transform: rotateZ(0);
+          transform: rotateZ(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-shape-group.lucid-hide-shapes .lucid-hide-shapes-icon svg g {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
 }
 .lucid-shape-group .lucid-drop-area {
   position: absolute;
@@ -659,14 +694,16 @@ img {
 }
 .lucid-shape-group .shape-group-top {
   background-color: #C1C1C1;
-  padding: 5px 10px;
+  padding: 0 10px;
   position: relative;
   color: #555;
   -webkit-transition: 0.3s ease-in-out;
           transition: 0.3s ease-in-out;
   box-sizing: border-box;
-  line-height: 20px;
+  height: 30px;
+  line-height: 30px;
   text-align: left;
+  z-index: 0;
 }
 .lucid-shape-group:hover .lucid-shape-group-top-right-icons {
   opacity: 1;
@@ -674,8 +711,11 @@ img {
 .lucid-shape-group .shape-group-name {
   font-size: 16px;
   font-weight: 500;
+  padding-left: 15px;
+  display: inline-block;
 }
 .lucid-shape-group .lucid-close-icon {
+  z-index: 1;
   width: 18px;
   height: 18px;
   position: absolute;
@@ -714,6 +754,7 @@ img {
       -ms-transform: scale(1);
           transform: scale(1);
   vertical-align: top;
+  text-align: center;
 }
 .lucid-shape-group .lucid-shape.ng-enter,
 .lucid-shape-group .dndPlaceholder.ng-enter {
@@ -948,6 +989,7 @@ img {
 .lucid-icon-22 {
   width: 22px;
   height: 22px;
+  vertical-align: top;
 }
 .lucid-notification {
   padding: 20px 15px 20px 48px;
@@ -1401,52 +1443,105 @@ img {
   background: #B2B2B2;
   border-right: none;
 }
-.lucid-managing-shapes .lucid-shapegroup-left {
-  padding-right: 5px;
-  box-sizing: border-box;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  column-count: 2;
-  -moz-column-gap: 50%;
-  -webkit-column-gap: 50%;
-  column-gap: 2%;
-  -moz-column-width: 50%;
-  -webkit-column-width: 50%;
-  column-width: 50%;
-}
-.lucid-managing-shapes .lucid-shapegroup-right {
-  width: 50%;
-  float: right;
-  padding-left: 5px;
-  box-sizing: border-box;
-}
 .lucid-managing-shapes .lucid-shape-group-wrapper {
   margin-bottom: 10px;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter {
+  margin-top: -84px;
+  opacity: 0;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave-active {
+  margin-top: -84px;
+  opacity: 0;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate {
+  -webkit-transition: .25s;
+          transition: .25s;
 }
 .lucid-managing-shapes .lucid-shape-group {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background: #D8D8D8;
 }
+.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon {
+  padding: 8px 2px;
+}
+.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g {
+  fill: #fff;
+}
 .lucid-managing-shapes .lucid-shape-group .shape-group-name {
   font-weight: 300;
-}
-.lucid-managing-shapes .lucid-shape-group .lucid-drop-area {
-  position: absolute;
-  top: 38px;
-  left: 2px;
-  right: 2px;
-  bottom: 2px;
 }
 .lucid-managing-shapes .lucid-shapes-scroll {
   background: #B2B2B2;
 }
+.lucid-managing-shapes .pin-library {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  padding: 8px 6px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px 0 0 0;
+  width: 34px;
+  height: 40px;
+  cursor: pointer;
+}
+.lucid-managing-shapes .pin-library.pinned {
+  background: rgba(0, 0, 0, 0.5);
+}
 .lucid-managing-shapes .shape-group-top {
   cursor: move;
-  padding: 8px 10px;
+  padding: 0 10px;
+  height: 40px;
+  line-height: 40px;
   background: #77818C;
   color: #FFF;
   border-radius: 4px 4px 0 0;
+}
+.lucid-managing-shapes .shape-group-top input {
+  padding: 10px 0;
+  margin-left: 35px;
+  height: 20px;
+  line-height: 20px;
+  background: transparent;
+  color: #fff;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #fff;
+  width: 180px;
+  font-size: 14px;
+}
+.lucid-managing-shapes .shape-group-top input::-webkit-input-placeholder {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+.lucid-managing-shapes .shape-group-top input::-moz-placeholder {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+.lucid-managing-shapes .shape-group-top input:-ms-input-placeholder {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+.lucid-managing-shapes .shape-group-top input::placeholder {
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.5);
+  font-weight: 100;
+}
+.lucid-managing-shapes .lucid-hide-shapes .shape-group-top {
+  border-radius: 4px;
 }
 .lucid-managing-shapes .lucid-shape-group:hover .shape-group-top {
   background: #858e98;
@@ -1468,11 +1563,14 @@ img {
 }
 .lucid-managing-shapes .lucid-shape-group-top-right-icons .lucid-icon-22 {
   width: 18px;
+  cursor: pointer;
+  position: relative;
+  top: 8px;
 }
 .lucid-shape-manager {
   position: absolute;
   top: 0;
-  width: calc(100vw - 250px - 1px);
+  width: calc(100vw - 250px );
   bottom: 0;
   left: 250px;
   background: rgba(61, 71, 82, 0.95);
@@ -1508,15 +1606,13 @@ img {
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input {
   width: 100%;
   height: 29px;
+  line-height: 29px;
   border: none;
   border-radius: 4px;
-  font-size: 15px;
   padding: 0 10px;
   box-sizing: border-box;
   color: #FFF;
   background: rgba(255, 255, 255, 0.3);
-  font-weight: 100;
-  font-family: "Source Sans Pro";
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input::-webkit-input-placeholder {
   color: #fff;
@@ -1536,7 +1632,7 @@ img {
   background: transparent;
 }
 .lucid-shape-manager .lucid-scroll-inner-wrap {
-  padding: 30px;
+  padding: 20px;
 }
 .lucid-shape-manager .scrollable .scrollable-slider {
   background: #333;
@@ -1544,11 +1640,11 @@ img {
 .lucid-shape-manager .lucid-shapes-manager-divider {
   position: relative;
   width: 100%;
-  padding: 20px 0;
+  padding-bottom: 20px;
 }
 .lucid-shape-manager .lucid-shapes-manager-divider .divider-inner {
   position: relative;
-  height: 20px;
+  height: 14px;
   display: table;
   width: 100%;
 }
@@ -1557,7 +1653,7 @@ img {
   color: #77818C;
   text-transform: uppercase;
   text-align: left;
-  line-height: 20px;
+  line-height: 14px;
   white-space: nowrap;
   padding-right: 20px;
   font-size: 14px;
@@ -1570,48 +1666,24 @@ img {
 .lucid-shape-manager .lucid-shapes-manager-divider .divider-line:after {
   position: absolute;
   left: 0;
-  top: 10px;
+  top: 7px;
   content: '';
   height: 1px;
   width: 100%;
   background: #77818C;
 }
-.lucid-shape-manager .dndPlaceholder {
-  margin: 0;
-  height: 0;
-  display: block;
-  position: relative;
+.lucid-shape-manager .lucid-shape-group-wrapper {
+  margin-bottom: 0px;
+  width: calc(50% - 10px);
 }
-.lucid-shape-manager .dndPlaceholder:after {
-  content: "";
-  display: block;
-  width: 100%;
-  position: absolute;
-  height: 2px;
-  margin-top: 5px;
-  background: #29AAE1;
+.lucid-shape-manager .lucid-shape-group-wrapper.even {
+  float: right;
 }
-.lucid-shape-manager .dndPlaceholder.ng-enter {
-  -webkit-transform: scale(0.01);
-      -ms-transform: scale(0.01);
-          transform: scale(0.01);
-  opacity: 0;
-}
-.lucid-shape-manager .dndPlaceholder.ng-enter-active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-  opacity: 1;
-}
-.lucid-shape-manager .dndPlaceholder.ng-animate {
-  -webkit-transition: .25s;
-          transition: .25s;
+.lucid-shape-manager .lucid-shape-group-wrapper.odd {
+  float: left;
 }
 .lucid-shape-manager .lucid-shape-group {
-  margin-top: 30px;
-}
-.lucid-shape-manager .lucid-shape-group:first-child {
-  margin-top: 0;
+  margin-bottom: 20px;
 }
 .lucid-shape-manager .lucid-shape-group ul {
   max-height: 139px;
@@ -1621,6 +1693,24 @@ img {
 }
 .lucid-shape-manager .lucid-shape-group ul.lucid-expand-shape-drawer {
   max-height: 1000px;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .shape-group-name {
+  padding-left: 35px;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown {
+  positoin: relative;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown {
+  position: absolute;
+  right: 0;
+  width: 145px;
+  left: inherit;
+  color: #5a5a5a;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown .lucid-select-option {
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 13px;
 }
 .lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button {
   background-color: #BFBFBF;

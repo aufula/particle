@@ -46,18 +46,6 @@ angular.module('appConfig', [])
 
 angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides'])
 
-.directive('ngdEnter', function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
-            if (event.which === 13) {
-                scope.$apply(function() {
-                    scope.$eval(attrs.ngEnter);
-                });
-                event.preventDefault();
-            }
-        });
-    };
-})
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
@@ -105,6 +93,68 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData'
         });
     };
 })
+
+//outside
+///options click-outside="closeThis()" outside-if-not="my-button, other-button" my-button is an id of another element.
+.directive('clickOutside', function ($document, $parse) {
+        return {
+            restrict: 'A',
+            link: function($scope, elem, attr) {
+                var classList = (attr.outsideIfNot !== undefined) ? attr.outsideIfNot.replace(', ', ',').split(',') : [],
+                    fn = $parse(attr['clickOutside']);
+
+                // add the elements id so it is not counted in the click listening
+                if (attr.id !== undefined) {
+                    classList.push(attr.id);
+                }
+
+                var eventHandler = function(e) {
+
+                    //check if our element already hiden
+                    if(angular.element(elem).hasClass("ng-hide")){
+                        return;
+                    }
+
+                    var i = 0,
+                        element;
+
+                    // if there is no click target, no point going on
+                    if (!e || !e.target) {
+                        return;
+                    }
+
+                    // loop through the available elements, looking for classes in the class list that might match and so will eat
+                    for (element = e.target; element; element = element.parentNode) {
+                        var id = element.id,
+                            classNames = element.className,
+                            l = classList.length;
+
+                        // loop through the elements id's and classnames looking for exceptions
+                        for (i = 0; i < l; i++) {
+                            // check for id's or classes, but only if they exist in the first place
+                            if ((id !== undefined && id.indexOf(classList[i]) > -1) || (classNames && classNames.indexOf(classList[i]) > -1)) {
+                                // now let's exit out as it is an element that has been defined as being ignored for clicking outside
+                                return;
+                            }
+                        }
+                    }
+
+                    // if we have got this far, then we are good to go with processing the command passed in via the click-outside attribute
+                    return $scope.$apply(function () {
+                        return fn($scope);
+                    });
+                };
+
+                // assign the document click handler to a variable so we can un-register it when the directive is destroyed
+                $document.on('click', eventHandler);
+
+                // when the scope is destroyed, clean up the documents click handler as we don't want it hanging around
+                $scope.$on('$destroy', function() {
+                    $document.off('click', eventHandler);
+                });
+            }
+        };
+    })
 
 
 ////////////////////      Filters      //////////////////////
@@ -2372,12 +2422,11 @@ angular.module('lucidShapeGroup', ['appConfig', 'dndLists'])
                 //         }
                 //     }
                 // };
-                
+
                 //from demo
-                if ($scope.custom){
+                if ($scope.custom) {
                     $scope.dragEffect = 'copyMove';
-                }
-                else {
+                } else {
                     $scope.dragEffect = 'copy';
                 }
 
@@ -2406,12 +2455,127 @@ angular.module('lucidShapeGroup', ['appConfig', 'dndLists'])
                     message += type + ' element is ' + action + ' position ' + index;
                     $scope.logEvent(message, event);
                 };
+            },
+        };
+    })
+    .animation('.slide-toggle', ['$animateCss', function($animateCss) {
+        var lastId = 0;
+        var _cache = {};
+
+        function getId(el) {
+            var id = el[0].getAttribute("data-slide-toggle");
+            if (!id) {
+                id = ++lastId;
+                el[0].setAttribute("data-slide-toggle", id);
+            }
+            return id;
+        }
+
+        function getState(id) {
+            var state = _cache[id];
+            if (!state) {
+                state = {};
+                _cache[id] = state;
+            }
+            return state;
+        }
+
+        function generateRunner(closing, state, animator, element, doneFn) {
+            return function() {
+                state.animating = true;
+                state.animator = animator;
+                state.doneFn = doneFn;
+                animator.start().finally(function() {
+                    if (closing && state.doneFn === doneFn) {
+                        element[0].style.height = '';
+                    }
+                    state.animating = false;
+                    state.animator = undefined;
+                    state.doneFn();
+                });
+            }
+        }
+
+        return {
+            addClass: function(element, className, doneFn) {
+                if (className == 'ng-hide') {
+                    var state = getState(getId(element));
+                    var height = (state.animating && state.height) ?
+                        state.height : element[0].offsetHeight;
+
+                    var animator = $animateCss(element, {
+                        from: {
+                            height: height + 'px',
+                            opacity: 1
+                        },
+                        to: {
+                            height: '0px',
+                            opacity: 0
+                        }
+                    });
+                    if (animator) {
+                        if (state.animating) {
+                            state.doneFn =
+                                generateRunner(true,
+                                    state,
+                                    animator,
+                                    element,
+                                    doneFn);
+                            return state.animator.end();
+                        } else {
+                            state.height = height;
+                            return generateRunner(true,
+                                state,
+                                animator,
+                                element,
+                                doneFn)();
+                        }
+                    }
+                }
+                doneFn();
+            },
+            removeClass: function(element, className, doneFn) {
+                if (className == 'ng-hide') {
+                    var state = getState(getId(element));
+                    var height = (state.animating && state.height) ?
+                        state.height : element[0].offsetHeight;
+
+                    var animator = $animateCss(element, {
+                        from: {
+                            height: '0px',
+                            opacity: 0
+                        },
+                        to: {
+                            height: height + 'px',
+                            opacity: 1
+                        }
+                    });
+
+                    if (animator) {
+                        if (state.animating) {
+                            state.doneFn = generateRunner(false,
+                                state,
+                                animator,
+                                element,
+                                doneFn);
+                            return state.animator.end();
+                        } else {
+                            state.height = height;
+                            return generateRunner(false,
+                                state,
+                                animator,
+                                element,
+                                doneFn)();
+                        }
+                    }
+                }
+                doneFn();
             }
         };
-    });
+    }]);
 
 angular.module("lucidShapesManager", ['appConfig'])
-    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes) {
+    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes, customShapes) {
         return {
             restrict: 'E',
             scope: {
@@ -2423,12 +2587,16 @@ angular.module("lucidShapesManager", ['appConfig'])
             controller: function($scope) {
                 $scope.shapegroups = shapesData;
                 $scope.pinnedgroups = pinnedShapes;
+                $scope.customshapes = customShapes;
                 $scope.newCustomGroup = function() {
                     var newGroup = {
-                        "groupname": "Shape Group Name",
-                        "custom": true
+                        "groupname": "",
+                        "custom": true,
+                        "edit": "true",
+                        "shapes": []
                     };
-                    $scope.shapegroups.splice(0, 0, newGroup);
+                    //$scope.customshapes.push(newGroup);
+                    $scope.customshapes.splice(0, 0, newGroup)
                 }
                 $scope.pinShapeGroup = function(item) {
                     $scope.$broadcast('content.changed', 1000);
@@ -2472,6 +2640,94 @@ angular.module("lucidShapesManager", ['appConfig'])
                 };
             }
         };
+    })
+    .directive('lucidShapeGroupManage', function($document, config) {
+        return {
+            restrict: 'E',
+            scope: {
+                name: '@',
+                shapes: '=',
+                custom: '@',
+            },
+            replace: true,
+            transclude: true,
+            templateUrl: config.componentsURL + 'shapes-manager/lucid-shape-group-manage.html',
+            controller: function($scope) {
+                //from demo
+                if ($scope.custom) {
+                    $scope.dragEffect = 'copyMove';
+                } else {
+                    $scope.dragEffect = 'copy';
+                }
+
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    $scope.logListEvent('dragged over', event, index, external, type);
+                    // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+                    return index; // < 10;
+                };
+
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    $scope.logListEvent('dropped at', event, index, external, type);
+                    if (external) {
+                        if (allowedType === 'shape') return false;
+                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
+
+                $scope.logEvent = function(message, event) {
+                    console.log(message, '(triggered by the following', event.type, 'event)');
+                    console.log(event);
+                };
+
+                $scope.logListEvent = function(action, event, index, external, type) {
+                    var message = external ? 'External ' : '';
+                    message += type + ' element is ' + action + ' position ' + index;
+                    $scope.logEvent(message, event);
+                };
+            },
+        };
+    })
+    .factory('customShapes', function() {
+
+        var customShapes = [{
+            "groupname": "My Saved Shapes",
+            "shapes": [{
+                "name": "text",
+                "tags": "Standard",
+                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
+                "shapepanel": true,
+                "customcolor": false,
+                "swatchtype": "text",
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#8D8D8D",
+                    "border": "transparent"
+                },
+                "swatchnumber": 2,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "INSERT TEXT",
+                    "size": "12px",
+                },
+
+                "padding": 5,
+                "metrics": {
+                    "z": 2,
+                    "x": 390,
+                    "y": 139,
+                    "width": 120,
+                    "height": 45
+                }
+            }],
+            "custom": true,
+            "pinned": true
+        }]
+        return customShapes
     })
     .factory('pinnedShapes', function() {
 
@@ -2768,47 +3024,11 @@ angular.module("lucidShapesManager", ['appConfig'])
             }],
             "pinned": true
         }];
-        return pinnedShapes
+        return pinnedShapes;
     })
     .factory('shapesData', function() {
 
         var lucidShapes = [{
-            "groupname": "My Saved Shapes",
-            "shapes": [{
-                "name": "text",
-                "tags": "Standard",
-                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
-                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
-                "shapepanel": true,
-                "customcolor": false,
-                "swatchtype": "text",
-                "swatch": {
-                    "fill": "transparent",
-                    "text": "#8D8D8D",
-                    "border": "transparent"
-                },
-                "swatchnumber": 2,
-                "borderwidth": 3,
-                "borderstyle": "solid",
-                "text": {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "center",
-                    "text": "INSERT TEXT",
-                    "size": "12px",
-                },
-
-                "padding": 5,
-                "metrics": {
-                    "z": 2,
-                    "x": 390,
-                    "y": 139,
-                    "width": 120,
-                    "height": 45
-                }
-            }],
-            "custom": true,
-            "pinned": true
-        }, {
             "groupname": "Standard",
             "shapes": [{
                 "name": "text",

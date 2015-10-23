@@ -233,29 +233,33 @@ angular.module('lucidComponentFactory', [])
                 "description": "this component is used in the optionbar, the page color, etc. explain more...",
 
             }]
-        }, {
-            //form components
-            "groupname": "Prototypes",
-            "groupid": "prototypes",
-            "components": [{
-                "title": "Canvas",
-                "componentid": "canvas",
-                "description": "Copy and paste component as is.",
+        }, 
+        // {
+        //     //form components
+        //     "groupname": "Prototypes",
+        //     "groupid": "prototypes",
+        //     "components": [{
+        //         "title": "Canvas",
+        //         "componentid": "canvas",
+        //         "description": "Copy and paste component as is.",
 
-            }, {
-                "title": "Shapes Manager",
-                "componentid": "shapes-manager",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
-            }]
-        }, {
-            //form components
-            "groupname": "Shapes",
-            "groupid": "shapes",
-            "components": [{
-                "title": "Shapes Manager",
-                "componentid": "shapes-manager",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
-            }]
-        }];
+        //     }, {
+        //         "title": "Shapes Manager",
+        //         "componentid": "shapes-manager",
+        //         "description": "this component is used in the optionbar, the page color, etc. explain more...",
+        //     }]
+        // }, 
+        // {
+        //     //form components
+        //     "groupname": "Shapes",
+        //     "groupid": "shapes",
+        //     "components": [{
+        //         "title": "Shapes Manager",
+        //         "componentid": "shapes-manager",
+        //         "description": "this component is used in the optionbar, the page color, etc. explain more...",
+        //     }]
+        // }
+
+        ];
         return service;
     });
