@@ -8,7 +8,7 @@
     </div>
     <div class="shape-group-top">
         <span class="shape-group-name"> {{name}}</span>
-        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.unPinShapeGroup(shapegroup)">
+        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.pinGroup($parent.shapegroup)">
     </div>
     <div class="slide-toggle" ng-hide="hideshapes">
         <ul dnd-list="shapes"
@@ -18,7 +18,7 @@
             dnd-dragover="dragoverCallback(event, index, external, type)"
             dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-            class="itemlist">
+            class="shapes-wrapper">
             <li ng-repeat="shape in shapes"
                 dnd-draggable="shape"
                 dnd-type="'true'"

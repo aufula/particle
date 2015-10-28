@@ -1,18 +1,32 @@
 <div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes }">
-    <div class="pin-library">
+    <div class="pin-library" ng-click="$parent.pinGroup($parent.shapegroup)" ng-class="{'pinned': $parent.isItPinned($parent.shapegroup)}">
         <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
     </div>
     <div class="shape-group-top">
         
         <span class="edit-in-place shape-group-name" ng-bind="name" ng-show="!$parent.shapegroup.edit"></span>
-        <input id="name-input" class="edit-in-place" placeholder="Group Name" ng-model="name" ng-show="$parent.shapegroup.edit" ng-enter="$parent.shapegroup.edit=false" click-outside="$parent.shapegroup.edit=false"  outside-if-not="name-input, new-shapegroup"></input>
+        <input id="name-input" class="edit-in-place" placeholder="Group Name" ng-model="name" ng-show="$parent.shapegroup.edit" ng-enter="$parent.shapegroup.edit=false" click-outside="$parent.shapegroup.edit=false"  outside-if-not="name-input, new-shapegroup" dnd-nodrag></input>
 
         <div class="lucid-shape-group-top-right-icons" ng-show="custom">
-            <span class="pipe-right">Import</span>
             
+            <div class="lucid-select-wrapper import-dropdown">
+                <div id="import-dropdown-{{$parent.$index}}" class="selected-option-wrapper" ng-click="importoptions = true">
+                    <span class="pipe-right">Import</span>
+                </div>
+                <div class="lucid-select-dropdown" ng-show="importoptions" ng-click="importoptions=false">
+                    <ul>
+                        <li class="lucid-select-option">Your Computer</li>
+                        <li class="lucid-select-option" ng-click="$parent.openWindow('https://www.dropbox.com/chooser')">Dropbox</li>
+                        <li class="lucid-select-option">Google Drive</li>
+                        <li class="lucid-select-option">Facebook</li>
+                        <li class="lucid-select-option">Flickr</li>
+                    </ul>
+                </div>
+            </div>
+
             <div class="lucid-select-wrapper gear-dropdown">
-                <div class="selected-option-wrapper" ng-click="showdropdown = !showdropdown">
-                    <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg" ng-click="optionmenu=!optionmenu">
+                <div id="gear-dropdown-{{$parent.$index}}" class="selected-option-wrapper" ng-click="showdropdown = true">
+                    <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg">
                 </div>
                 <div class="lucid-select-dropdown" ng-show="showdropdown" ng-click="showdropdown=false">
                     <ul>
@@ -36,7 +50,8 @@
             dnd-dragover="dragoverCallback(event, index, external, type)"
             dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-            class="itemlist">
+            class="shapes-wrapper"
+            ng-class="{'lucid-drawer-open': showdrawer}">
             <li ng-repeat="shape in shapes"
                 dnd-draggable="shape"
                 dnd-type="'true'"
@@ -53,6 +68,21 @@
 
             </li>
         </ul>
+        <div class="lucid-drawer-wrapper" ng-if="shapes.length>30">
+            <div class="lucid-show-more-drawer-button" ng-click="$parent.showdrawer = !$parent.showdrawer">
+                <div class="lucid-drawer-center-text">
+                    <div class="lucid-drawer-button-text" ng-hide="showdrawer" style="">More</div>
+                    <div class="lucid-drawer-button-text" ng-show="showdrawer" style="">Less</div>
+                    <div class="lucid-drawer-more-icon" ng-class="{'lucid-drawer-open': showdrawer}">
+                        <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
+                            <g id="Page-1" stroke="none" stroke-width="1" fill="#29AAE1" fill-rule="evenodd">
+                                <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_"></path>
+                            </g>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
     <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
         <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>

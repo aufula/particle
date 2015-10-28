@@ -1,5 +1,5 @@
 angular.module("lucidShapesManager", ['appConfig'])
-    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes, customShapes) {
+    .directive('lucidShapesManager', function(config, shapesData, pinnedShapes, customShapes, $document, $timeout) {
         return {
             restrict: 'E',
             scope: {
@@ -9,6 +9,7 @@ angular.module("lucidShapesManager", ['appConfig'])
             replace: true,
             templateUrl: config.componentsURL + 'shapes-manager/lucid-shapes-manager.html',
             controller: function($scope) {
+
                 $scope.shapegroups = shapesData;
                 $scope.pinnedgroups = pinnedShapes;
                 $scope.customshapes = customShapes;
@@ -20,21 +21,39 @@ angular.module("lucidShapesManager", ['appConfig'])
                         "shapes": []
                     };
                     //$scope.customshapes.push(newGroup);
+
                     $scope.customshapes.splice(0, 0, newGroup)
                 }
-                $scope.pinShapeGroup = function(item) {
-                    $scope.$broadcast('content.changed', 1000);
-                    item.pinned = true;
-                    return item;
+                $scope.isItPinned = function(shapegroup) {
+                    var index = $scope.pinnedgroups.indexOf(shapegroup);
+                    if (index == -1) {
+
+                        return false;
+                    } else {
+                        return true;
+                    }
                 };
-                $scope.unPinShapeGroup = function(item) {
-                    $scope.$broadcast('content.changed', 1000);
-                    item.pinned = false;
-                    return item;
+
+                $scope.pinGroup = function(shapegroup) {
+                    var index = $scope.pinnedgroups.indexOf(shapegroup);
+                    var length = $scope.pinnedgroups.length;
+                    console.log(index);
+                    if (index == -1) {
+                        $scope.pinnedgroups.splice(length, 0, shapegroup);
+                        var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight
+                        console.log('overflow: ', overflow)
+                        if (overflow) {
+                            $scope.overflowMessage = true;
+                            $scope.overflowMessageTitle = shapegroup.groupname;
+                            $timeout(function() {
+                                $scope.overflowMessage = false;
+                            }, 2000);
+                        }
+
+                    } else {
+                        $scope.pinnedgroups.splice(index, 1)
+                    }
                 };
-                $scope.$evalAsync(function() {
-                    $scope.$broadcast('content.changed', 1000);
-                });
 
                 //from demo
                 $scope.dragoverCallback = function(event, index, external, type) {
@@ -62,6 +81,9 @@ angular.module("lucidShapesManager", ['appConfig'])
                     message += type + ' element is ' + action + ' position ' + index;
                     $scope.logEvent(message, event);
                 };
+                $scope.openWindow = function(url) {
+                    window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
+                }
             }
         };
     })
@@ -109,7 +131,15 @@ angular.module("lucidShapesManager", ['appConfig'])
                     message += type + ' element is ' + action + ' position ' + index;
                     $scope.logEvent(message, event);
                 };
-            },
+            }
+        };
+    })
+    .directive('lucidImportOptions', function(config) {
+        return {
+            restrict: 'E',
+            scope: {},
+            replace: true,
+            templateUrl: config.componentsURL + 'shapes-manager/lucid-import-options.html',
         };
     })
     .factory('customShapes', function() {

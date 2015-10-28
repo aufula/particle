@@ -19,17 +19,18 @@
     .slide-toggle {
         overflow: hidden;
         transition: all .5s;
-        >ul{
-            min-height:44px;
+        width: 100%;
+        >ul {
+            min-height: 44px;
         }
     }
     .lucid-hide-shapes-icon {
         z-index: 1;
         position: absolute;
-        height: 22px;
+        height: 30px;
         padding: 5px 2px;
         cursor: pointer;
-        transition:all .25s ease-in-out;
+        transition: all .25s ease-in-out;
         svg g {
             transform: rotateZ(0);
             transform-origin: center;
@@ -63,13 +64,12 @@
     }
     .shape-group-top {
         background-color: #C1C1C1; //#E0E0E0;
-        padding: 0 10px;
+        padding: 7px 10px;
         position: relative;
         color: #555;
         transition: .3s ease-in-out;
         box-sizing: border-box;
-        height:30px;
-        line-height: 30px;
+        height: 30px;
         text-align: left;
         z-index: 0;
     }
@@ -81,11 +81,11 @@
     }
     .shape-group-name {
         //text-transform: uppercase;
+        line-height: 16px;
         font-size: 16px;
         font-weight: 500;
         padding-left: 15px;
-        display:inline-block;
-
+        display: inline-block;
         //transition: .2s ease-in-out;
     }
     .lucid-close-icon {
@@ -94,12 +94,13 @@
         height: 18px;
         position: absolute;
         right: 8px;
-        top: 9px;
+        top: 11px;
         cursor: pointer;
         opacity: 1;
         margin-top: 0;
         &.ng-hide {
             opacity: 0;
+            top: 9px;
         }
         &.ng-animate {
             transition: .3s all ease-in-out;
@@ -108,13 +109,14 @@
     .lucid-pin-icon {
         width: 22px;
         height: 22px;
-        float: left;
+        //float: left;
         margin-right: 10px;
         cursor: pointer;
         opacity: 1;
         margin-top: 0;
         border-radius: 2px;
     }
+
     .lucid-shape,
     .dndPlaceholder {
         display: inline-block;
@@ -146,5 +148,9 @@
             height: 28px;
             fill: #333;
         }
+    }
+    .dndPlaceholder {
+        background: rgba(0, 0, 0, .2);
+        border-radius: 2px;
     }
 }

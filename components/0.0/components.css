@@ -149,7 +149,6 @@ img {
 input {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
-  font-weight: 100;
 }
 .lucid-input {
   background: transparent;
@@ -651,6 +650,7 @@ input {
   overflow: hidden;
   -webkit-transition: all .5s;
           transition: all .5s;
+  width: 100%;
 }
 .lucid-shape-group .slide-toggle > ul {
   min-height: 44px;
@@ -658,7 +658,7 @@ input {
 .lucid-shape-group .lucid-hide-shapes-icon {
   z-index: 1;
   position: absolute;
-  height: 22px;
+  height: 30px;
   padding: 5px 2px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
@@ -694,14 +694,13 @@ input {
 }
 .lucid-shape-group .shape-group-top {
   background-color: #C1C1C1;
-  padding: 0 10px;
+  padding: 7px 10px;
   position: relative;
   color: #555;
   -webkit-transition: 0.3s ease-in-out;
           transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 30px;
-  line-height: 30px;
   text-align: left;
   z-index: 0;
 }
@@ -709,6 +708,7 @@ input {
   opacity: 1;
 }
 .lucid-shape-group .shape-group-name {
+  line-height: 16px;
   font-size: 16px;
   font-weight: 500;
   padding-left: 15px;
@@ -720,13 +720,14 @@ input {
   height: 18px;
   position: absolute;
   right: 8px;
-  top: 9px;
+  top: 11px;
   cursor: pointer;
   opacity: 1;
   margin-top: 0;
 }
 .lucid-shape-group .lucid-close-icon.ng-hide {
   opacity: 0;
+  top: 9px;
 }
 .lucid-shape-group .lucid-close-icon.ng-animate {
   -webkit-transition: 0.3s all ease-in-out;
@@ -735,7 +736,6 @@ input {
 .lucid-shape-group .lucid-pin-icon {
   width: 22px;
   height: 22px;
-  float: left;
   margin-right: 10px;
   cursor: pointer;
   opacity: 1;
@@ -786,6 +786,10 @@ input {
   width: 28px;
   height: 28px;
   fill: #333;
+}
+.lucid-shape-group .dndPlaceholder {
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
 }
 .lucid-modal-wrapper {
   position: relative;
@@ -1124,6 +1128,7 @@ input {
   top: 0;
   left: 0;
   background-size: 904px;
+  z-index: 0;
 }
 .lucid-canvas .lucid-canvas-layer {
   width: 100%;
@@ -1394,9 +1399,12 @@ input {
   top: 0;
   height: 100%;
   border-right: 1px solid #999;
-  -webkit-transition: 0.3s ease-in-out background;
-          transition: 0.3s ease-in-out background;
+  -webkit-transition: 0.35s ease-in-out background, 0.35s ease-in-out width;
+          transition: 0.35s ease-in-out background, 0.35s ease-in-out width;
+  -webkit-transition-delay: .25s;
+          transition-delay: .25s;
   z-index: 6;
+  opacity: 1;
 }
 .lucid-shapes-panel .lucid-shapes-header {
   padding: 18px 15px;
@@ -1428,62 +1436,112 @@ input {
   -webkit-transition: 0.3s all ease-in-out;
           transition: 0.3s all ease-in-out;
 }
-.lucid-shapes-scroll {
+.lucid-shapes-panel .lucid-shapes-scroll {
   background: #D6D6D6;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 114px);
   overflow-y: scroll;
+  -webkit-transition: padding 0.25s ease-in-out;
+          transition: padding 0.25s ease-in-out;
+  -webkit-transition-delay: .35s;
+          transition-delay: .35s;
+  padding-bottom: 50px;
 }
-.lucid-scroll-inner-wrap {
+.lucid-shapes-panel .lucid-shapes-scroll::-webkit-scrollbar {
+  display: none;
+}
+.lucid-shapes-panel .lucid-scroll-inner-wrap {
   padding: 10px;
+  -webkit-transition: 0.25s ease-in-out;
+          transition: 0.25s ease-in-out;
 }
-.lucid-group-drop-area {
+.lucid-shapes-panel .lucid-group-drop-area {
   min-height: calc(100vh - 160px);
 }
-.lucid-managing-shapes {
-  background: #B2B2B2;
-  border-right: none;
-}
-.lucid-managing-shapes .lucid-shape-group-wrapper {
+.lucid-shapes-panel .lucid-shape-group-wrapper {
   margin-bottom: 10px;
 }
-.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter {
+.overflow-message {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  background: #29AAE1;
+  padding: 0 20px;
+  z-index: 1;
+  color: #fff;
+}
+.overflow-message.ng-hide {
+  bottom: -50px;
+}
+.overflow-message.ng-animate {
+  -webkit-transition: bottom 0.3s ease-in-out;
+          transition: bottom 0.3s ease-in-out;
+}
+.lucid-managing-shapes,
+.lucid-manage-shapes {
+  background: #B2B2B2;
+  border-right: none;
+  width: 250px;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper,
+.lucid-manage-shapes .lucid-shape-group-wrapper {
+  margin-bottom: 10px;
+  position: relative;
+  z-index: 1;
+}
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-enter {
   margin-top: -84px;
   opacity: 0;
 }
-.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter-active {
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter-active,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-enter-active {
   margin-top: 0;
   opacity: 1;
 }
-.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave {
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-leave {
   margin-top: 0;
   opacity: 1;
 }
-.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave-active {
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave-active,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-leave-active {
   margin-top: -84px;
   opacity: 0;
 }
-.lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate {
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-animate {
   -webkit-transition: .25s;
           transition: .25s;
+  z-index: 0;
 }
-.lucid-managing-shapes .lucid-shape-group {
+.lucid-managing-shapes .lucid-shape-group,
+.lucid-manage-shapes .lucid-shape-group {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   background: #D8D8D8;
 }
-.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon {
-  padding: 8px 2px;
+.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon,
+.lucid-manage-shapes .lucid-shape-group .lucid-hide-shapes-icon {
+  padding: 10px 2px;
+  height: 40px;
 }
-.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g {
+.lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g,
+.lucid-manage-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g {
   fill: #fff;
 }
-.lucid-managing-shapes .lucid-shape-group .shape-group-name {
+.lucid-managing-shapes .lucid-shape-group .shape-group-name,
+.lucid-manage-shapes .lucid-shape-group .shape-group-name {
   font-weight: 300;
 }
-.lucid-managing-shapes .lucid-shapes-scroll {
+.lucid-managing-shapes .lucid-shapes-scroll,
+.lucid-manage-shapes .lucid-shapes-scroll {
   background: #B2B2B2;
+  padding-bottom: 0;
 }
-.lucid-managing-shapes .pin-library {
+.lucid-managing-shapes .pin-library,
+.lucid-manage-shapes .pin-library {
   position: absolute;
   top: 0;
   left: 0;
@@ -1495,19 +1553,36 @@ input {
   height: 40px;
   cursor: pointer;
 }
-.lucid-managing-shapes .pin-library.pinned {
-  background: rgba(0, 0, 0, 0.5);
+.lucid-managing-shapes .pin-library .lucid-icon-22,
+.lucid-manage-shapes .pin-library .lucid-icon-22 {
+  -webkit-transition: 0.25s ease-out -webkit-transform;
+          transition: 0.25s ease-out transform;
 }
-.lucid-managing-shapes .shape-group-top {
+.lucid-managing-shapes .pin-library.pinned,
+.lucid-manage-shapes .pin-library.pinned {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.25s ease-in-out background;
+          transition: 0.25s ease-in-out background;
+}
+.lucid-managing-shapes .pin-library.pinned .lucid-icon-22,
+.lucid-manage-shapes .pin-library.pinned .lucid-icon-22 {
+  -webkit-transform: rotateZ(-45deg);
+          transform: rotateZ(-45deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.lucid-managing-shapes .shape-group-top,
+.lucid-manage-shapes .shape-group-top {
   cursor: move;
-  padding: 0 10px;
+  padding: 12px 10px;
   height: 40px;
-  line-height: 40px;
   background: #77818C;
   color: #FFF;
   border-radius: 4px 4px 0 0;
 }
-.lucid-managing-shapes .shape-group-top input {
+.lucid-managing-shapes .shape-group-top input,
+.lucid-manage-shapes .shape-group-top input {
   padding: 10px 0;
   margin-left: 35px;
   height: 20px;
@@ -1520,40 +1595,49 @@ input {
   width: 180px;
   font-size: 14px;
 }
-.lucid-managing-shapes .shape-group-top input::-webkit-input-placeholder {
+.lucid-managing-shapes .shape-group-top input::-webkit-input-placeholder,
+.lucid-manage-shapes .shape-group-top input::-webkit-input-placeholder {
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
 }
-.lucid-managing-shapes .shape-group-top input::-moz-placeholder {
+.lucid-managing-shapes .shape-group-top input::-moz-placeholder,
+.lucid-manage-shapes .shape-group-top input::-moz-placeholder {
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
 }
-.lucid-managing-shapes .shape-group-top input:-ms-input-placeholder {
+.lucid-managing-shapes .shape-group-top input:-ms-input-placeholder,
+.lucid-manage-shapes .shape-group-top input:-ms-input-placeholder {
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
 }
-.lucid-managing-shapes .shape-group-top input::placeholder {
+.lucid-managing-shapes .shape-group-top input::placeholder,
+.lucid-manage-shapes .shape-group-top input::placeholder {
   font-style: italic;
   color: rgba(255, 255, 255, 0.5);
   font-weight: 100;
 }
-.lucid-managing-shapes .lucid-hide-shapes .shape-group-top {
+.lucid-managing-shapes .lucid-hide-shapes .shape-group-top,
+.lucid-manage-shapes .lucid-hide-shapes .shape-group-top {
   border-radius: 4px;
 }
-.lucid-managing-shapes .lucid-shape-group:hover .shape-group-top {
+.lucid-managing-shapes .lucid-shape-group:hover .shape-group-top,
+.lucid-manage-shapes .lucid-shape-group:hover .shape-group-top {
   background: #858e98;
 }
-.lucid-managing-shapes .lucid-shapes-gear {
+.lucid-managing-shapes .lucid-shapes-gear,
+.lucid-manage-shapes .lucid-shapes-gear {
   -webkit-transform: rotateZ(90deg);
           transform: rotateZ(90deg);
 }
-.lucid-managing-shapes .lucid-shape-group-top-right-icons {
+.lucid-managing-shapes .lucid-shape-group-top-right-icons,
+.lucid-manage-shapes .lucid-shape-group-top-right-icons {
   float: right;
 }
-.lucid-managing-shapes .lucid-shape-group-top-right-icons .pipe-right {
+.lucid-managing-shapes .lucid-shape-group-top-right-icons .pipe-right,
+.lucid-manage-shapes .lucid-shape-group-top-right-icons .pipe-right {
   font-size: 14px;
   font-weight: 300;
   border-right: 1px solid #95A8BA;
@@ -1561,11 +1645,12 @@ input {
   margin-right: 10px;
   vertical-align: top;
 }
-.lucid-managing-shapes .lucid-shape-group-top-right-icons .lucid-icon-22 {
+.lucid-managing-shapes .lucid-shape-group-top-right-icons .lucid-icon-22,
+.lucid-manage-shapes .lucid-shape-group-top-right-icons .lucid-icon-22 {
   width: 18px;
   cursor: pointer;
   position: relative;
-  top: 8px;
+  top: -5px;
 }
 .lucid-shape-manager {
   position: absolute;
@@ -1628,8 +1713,32 @@ input {
   margin-top: 2px;
   cursor: pointer;
 }
+.lucid-shape-manager .top-bar-inner {
+  opacity: 1;
+}
+.lucid-shape-manager .top-bar-inner.ng-hide {
+  opacity: 0;
+}
+.lucid-shape-manager .top-bar-inner.ng-animate {
+  -webkit-transition: 0.25s ease-in-out all;
+          transition: 0.25s ease-in-out all;
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
+}
 .lucid-shape-manager .lucid-shapes-scroll {
   background: transparent;
+  opacity: 1;
+  -webkit-transition: 0.25s ease-in-out all;
+          transition: 0.25s ease-in-out all;
+}
+.lucid-shape-manager .lucid-shapes-scroll.ng-hide {
+  opacity: 0;
+}
+.lucid-shape-manager .lucid-shapes-scroll.ng-animate {
+  -webkit-transition: 0.25s ease-in-out opacity;
+          transition: 0.25s ease-in-out opacity;
+  -webkit-transition-delay: .75s;
+          transition-delay: .75s;
 }
 .lucid-shape-manager .lucid-scroll-inner-wrap {
   padding: 20px;
@@ -1672,6 +1781,11 @@ input {
   width: 100%;
   background: #77818C;
 }
+.lucid-shape-manager .lucid-shape-group-wrapper.ng-animate {
+  -webkit-transition: .5s;
+          transition: .5s;
+  z-index: 0;
+}
 .lucid-shape-manager .lucid-shape-group-wrapper {
   margin-bottom: 0px;
   width: calc(50% - 10px);
@@ -1685,29 +1799,36 @@ input {
 .lucid-shape-manager .lucid-shape-group {
   margin-bottom: 20px;
 }
-.lucid-shape-manager .lucid-shape-group ul {
-  max-height: 139px;
+.lucid-shape-manager .lucid-shape-group .shapes-wrapper {
+  max-height: 162px;
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
           transition: all 0.3s ease-in-out;
+  padding: 15px;
 }
-.lucid-shape-manager .lucid-shape-group ul.lucid-expand-shape-drawer {
-  max-height: 1000px;
+.lucid-shape-manager .lucid-shape-group .shapes-wrapper.lucid-drawer-open {
+  max-height: 600px;
 }
 .lucid-shape-manager .lucid-shape-group .shape-group-top .shape-group-name {
   padding-left: 35px;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown {
-  positoin: relative;
+.lucid-shape-manager .lucid-shape-group .shape-group-top .selected-option-wrapper {
+  overflow: visible;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown {
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown,
+.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown {
+  position: relative;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown,
+.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown {
   position: absolute;
   right: 0;
   width: 145px;
   left: inherit;
   color: #5a5a5a;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown .lucid-select-option {
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown .lucid-select-option,
+.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown .lucid-select-option {
   line-height: 30px;
   font-size: 14px;
   padding: 0 13px;
@@ -1723,10 +1844,38 @@ input {
 }
 .lucid-shape-manager.ng-hide {
   margin-left: -100vw;
+  opacity: 0;
 }
 .lucid-shape-manager.ng-animate {
   -webkit-transition: 0.5s ease-out all;
           transition: 0.5s ease-out all;
+}
+.lucid-shape-manager.ng-animate.ng-hide-remove {
+  -webkit-transition: 0.5s ease-out all;
+          transition: 0.5s ease-out all;
+  -webkit-transition-delay: .25s;
+          transition-delay: .25s;
+}
+.import-options {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  padding: 8px 15px;
+  border-top: 1px solid #B7B7B7;
+  width: 100%;
+  background: #E8E9EA;
+  z-index: 1;
+}
+.import-options > img {
+  mix-blend-mode: multiply;
+  cursor: pointer;
+}
+.import-options.ng-hide {
+  bottom: -50px;
+}
+.import-options.ng-animate {
+  -webkit-transition: 0.25s ease-in-out all;
+          transition: 0.25s ease-in-out all;
 }
 .lucid-themes-drawer {
   margin-top: 17px;
@@ -1827,4 +1976,45 @@ input {
   left: 0;
   border-top: none;
   border-right: none;
+}
+.settings-drawer {
+  position: fixed;
+  bottom: 0;
+  left: 250px;
+  width: calc(100vw - 250px);
+}
+.settings-drawer .settings-drawer-top {
+  background: #3d4752;
+  color: #fff;
+  height: 32px;
+  position: relative;
+}
+.settings-drawer .settings-drawer-top .lucid-button-icon {
+  background: transparent;
+  left: 0;
+  position: absolute;
+  top: 2px;
+}
+.settings-drawer .settings-drawer-top .lucid-button-icon .lucid-icon-14 {
+  width: 18px;
+  height: 18px;
+  margin-top: 0;
+}
+.settings-drawer .settings-drawer-top .chat-img {
+  height: 32px;
+  position: absolute;
+  right: 0px;
+  top: 0;
+}
+.settings-drawer .settings-drawer-content {
+  text-align: left;
+  background: #EEEEEE;
+  margin-bottom: 0;
+}
+.settings-drawer .settings-drawer-content.ng-hide {
+  margin-bottom: -144px;
+}
+.settings-drawer .settings-drawer-content.ng-animate {
+  -webkit-transition: all 0.35s ease-out;
+          transition: all 0.35s ease-out;
 }
