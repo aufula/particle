@@ -157,7 +157,7 @@ input {
   border-bottom: 1px solid #77818C;
   box-sizing: border-box;
   font-size: 14px;
-  height: 27px;
+  height: 28px;
   color: #3d4752;
   width: 100%;
   outline: none;
@@ -171,6 +171,7 @@ input {
   box-sizing: border-box;
   display: inline-block;
   font-family: 'Source Sans Pro', sans-serif;
+  vertical-align: top;
 }
 .lucid-input-stepper .lucid-input {
   padding-right: 28px;
@@ -208,9 +209,6 @@ input {
       -ms-transform-origin: center;
           transform-origin: center;
 }
-.lucid-input-stepper:hover .lucid-input {
-  background: #FFF;
-}
 .lucid-popover-menu .lucid-input {
   background: #F1F1F1;
   border-bottom: none;
@@ -222,6 +220,9 @@ input {
 }
 .lucid-popover-menu .lucid-input-stepper .lucid-input {
   padding-right: 26px;
+}
+.lucid-popover-menu .lucid-input-stepper:hover .lucid-input {
+  background: #FFF;
 }
 .lucid-popover-menu .lucid-input-stepper .lucid-up,
 .lucid-popover-menu .lucid-input-stepper .lucid-down {
@@ -370,9 +371,6 @@ input {
 .lucid-buttcon img,
 .lucid-buttcon svg {
   max-width: 100%;
-}
-.lucid-buttcon:hover {
-  background: #fff;
 }
 .lucid-text-alignment .lucid-popover-menu .lucid-buttcon,
 .lucid-path-style .lucid-popover-menu .lucid-buttcon {
@@ -595,6 +593,7 @@ input {
 .lucid-color-picker .lucid-popover-menu .lucid-hex-title {
   font-size: 14px;
   display: inline-block;
+  line-height: 28px;
   padding-right: 5px;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-advanced-color {
@@ -1055,6 +1054,7 @@ input {
   position: relative;
   display: inline-block;
   font-size: 14px;
+  vertical-align: top;
 }
 .lucid-select-wrapper .selected-option-wrapper {
   height: 28px;
@@ -1079,7 +1079,7 @@ input {
   text-align: left;
   display: block;
   cursor: pointer;
-  border-bottom: 1px solid #3d4752;
+  border-bottom: 1px solid #77818C;
   padding: 8px 18px 5px 0;
 }
 .lucid-select-wrapper .lucid-select-dropdown {
@@ -1886,11 +1886,20 @@ input {
   z-index: 10;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  -webkit-transition: margin 1s ease-in-out;
-          transition: margin 1s ease-in-out;
+}
+.lucid-themes-drawer.ng-hide {
+  -webkit-transition: .25s;
+          transition: .25s;
 }
 .lucid-themes-drawer .lucid-themes-drawer-slide {
   padding: 10px;
+  text-align: left;
+  margin: 0;
+}
+.lucid-themes-drawer .lucid-themes-drawer-slide.ng-hide {
+  margin-top: -166px;
+}
+.lucid-themes-drawer .lucid-themes-drawer-slide.ng-animate {
   -webkit-transition: margin ease-in-out 0.25s;
           transition: margin ease-in-out 0.25s;
 }
@@ -1926,9 +1935,6 @@ input {
 .lucid-themes-drawer .theme-group.active {
   background-color: #A5AEB7;
   color: #fff;
-}
-.lucid-themes-drawer.ng-hide .lucid-themes-drawer-slide {
-  margin-top: -166px;
 }
 .lucid-chart-block,
 .lucid-canvas {
@@ -1982,6 +1988,7 @@ input {
   bottom: 0;
   left: 250px;
   width: calc(100vw - 250px);
+  z-index: 1;
 }
 .settings-drawer .settings-drawer-top {
   background: #3d4752;
@@ -2003,7 +2010,7 @@ input {
 .settings-drawer .settings-drawer-top .chat-img {
   height: 32px;
   position: absolute;
-  right: 0px;
+  right: 70px;
   top: 0;
 }
 .settings-drawer .settings-drawer-content {
@@ -2015,8 +2022,8 @@ input {
   margin-bottom: -144px;
 }
 .settings-drawer .settings-drawer-content.ng-animate {
-  -webkit-transition: all 0.35s ease-out;
-          transition: all 0.35s ease-out;
+  -webkit-transition: all 0.35s ease-in-out;
+          transition: all 0.35s ease-in-out;
 }
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126

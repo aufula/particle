@@ -3,6 +3,7 @@
     bottom: 0;
     left: @manage-shapes-panel-width;
     width:  ~"calc(100vw - @{manage-shapes-panel-width})";
+    z-index: 1;
     .settings-drawer-top {
         background: @blue-steel;
         color: #fff;
@@ -22,7 +23,7 @@
         .chat-img {
             height: 32px;
             position: absolute;
-            right: 0px;
+            right: 70px;
             top: 0;
         }
     }
@@ -34,7 +35,7 @@
             margin-bottom: -144px;
         }
         &.ng-animate{
-            transition: all .35s ease-out;
+            transition: all .35s ease-in-out;
         }
     }
 }

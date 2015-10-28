@@ -1,4 +1,4 @@
-/*global angular : true fixes codekit error*/
+/*global angular : true fixes codekit error*/ 
 angular.module("lucidColorPicker", ['appConfig'])
     .directive('lucidColorPicker', function($document, config) {
         return {
@@ -10,33 +10,6 @@ angular.module("lucidColorPicker", ['appConfig'])
             templateUrl: config.componentsURL + 'color-picker/lucid-color-picker.html',
 
             controller: function($scope) {
-
-                //$scope.blockElements = canvasData;
-                $scope.selected = {
-                    "swatchnumber": 1,
-                    "borderwidth": 3,
-                    "borderstyle": "solid",
-                    "swatch": {
-                        "fill": "#ffffff",
-                        "text": "#868686",
-                        "border": "#868686"
-                    },
-                    "text": {
-                        "verticalalignment": "middle",
-                        "horizontalalignment": "center",
-                        "text": "EMPLOYEE NAME",
-                        "size": "12px",
-                    },
-
-                    "padding": 10,
-                    "metrics": {
-                        "z": 2,
-                        "x": 390,
-                        "y": 139,
-                        "width": 120,
-                        "height": 45
-                    }
-                };
                 $scope.opacity = '100%';
                 $scope.swatchpanel = 'Fill';
                 $scope.showpopup = false;
@@ -64,35 +37,13 @@ angular.module("lucidColorPicker", ['appConfig'])
             }
         };
     })
-    .directive('lucidColorPickerOptions', function() {
+    .directive('lucidColorPickerOptions', function(config) {
         return {
             restrict: 'E',
             scope: {
                 color: '=',
             },
-            template: '<div class="swatch-colors">' +
-                '                <ul class="lucid-grayscale-colors">' +
-                '                    <li class="lucid-square lucid-transparent" ng-click="color = \'transparent\'; selected.customcolor=true">' +
-                '                        <div class="lucid-selected-color" ng-class="{\'lucid-selected\': color == \'transparent\'}">' +
-                '                            <div class="lucid-inset-shadow"></div>' +
-                '                        </div>' +
-                '                    </li>' +
-                '                    <li class="lucid-square blank"></li>' +
-                '                    <li class="lucid-square blank"></li>' +
-                '                    <li class="lucid-square" ng-repeat="color in lucidcolorpickergrayscale" style="background-color:{{color.hex}}" ng-click="$parent.color = color.hex; $parent.selected.customcolor=true">' +
-                '                        <div class="lucid-selected-color" ng-class="{\'lucid-selected\': $parent.color == color.hex}">' +
-                '                            <div class="lucid-inset-shadow"></div>' +
-                '                        </div>' +
-                '                    </li>' +
-                '                </ul>' +
-                '                <ul class="lucid-colorpicker-colors">' +
-                '                    <li class="lucid-square" ng-repeat="color in lucidcolorpickercolors" style="background-color:{{color.hex}}" ng-click="$parent.color = color.hex; $parent.selected.customcolor=true">' +
-                '                        <div class="lucid-selected-color" ng-class="{\'lucid-selected\': $parent.color == color.hex}">' +
-                '                            <div class="lucid-inset-shadow"></div>' +
-                '                        </div>' +
-                '                    </li>' +
-                '                </ul>' +
-                '            </div>',
+            templateUrl: config.componentsURL + 'color-picker/lucid-color-picker-options.html',
             controller: function($scope) {
                 $scope.lucidcolorpickergrayscale = [{
                     "hex": "#ffffff",

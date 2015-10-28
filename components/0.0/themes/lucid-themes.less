@@ -7,10 +7,20 @@
     position: absolute;
     z-index: 10;
     box-shadow: 0 3px 5px rgba(0, 0, 0, .1);
-    overflow:hidden;
+    overflow: hidden;
+    &.ng-hide {
+        transition: .25s;
+    }
     .lucid-themes-drawer-slide {
         padding: 10px;
-        transition: margin ease-in-out .25s;
+        text-align: left;
+        margin: 0;
+        &.ng-hide {
+            margin-top: -166px; //height of drawer
+        }
+        &.ng-animate {
+            transition: margin ease-in-out .25s;
+        }
     }
     .theme-group {
         display: inline-block;
@@ -46,16 +56,10 @@
             color: #fff;
         }
     }
-    transition: margin 1s ease-in-out;
-    &.ng-hide {
-        .lucid-themes-drawer-slide {
-            margin-top: -166px; //height of drawer
-        }
-    }
 }
 
 //theme switch transitions... necessary?
 .lucid-chart-block,
 .lucid-canvas {
-    transition: .2s ease-in-out background-color, .2s ease-in-out color, .2s ease-in-out border ;//don't put transition all - delays draggin of elements
+    transition: .2s ease-in-out background-color, .2s ease-in-out color, .2s ease-in-out border; //don't put transition all - delays draggin of elements
 }
