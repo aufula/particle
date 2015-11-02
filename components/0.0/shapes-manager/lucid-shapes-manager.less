@@ -60,25 +60,30 @@
     }
     .lucid-shape-group-wrapper {
         margin-bottom: 10px;
+        &.left-panel {
+            z-index: 1;
+        }
     }
 }
-.overflow-message{
-    position:absolute;
-    bottom:0;
-    width:100%;
-    height:40px;
+
+.overflow-message {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
     line-height: 40px;
-    background:@blue;
+    background: @blue;
     padding: 0 20px;
     z-index: 1;
-    color:#fff;
-    &.ng-hide{
-        bottom:-50px;
+    color: #fff;
+    &.ng-hide {
+        bottom: -50px;
     }
-    &.ng-animate{
+    &.ng-animate {
         transition: bottom .3s ease-in-out;
     }
 }
+
 //when managing shapes this class is added for transitions on shape panel
 @manage-shapes-panel-width: 250px;
 .lucid-managing-shapes,
@@ -105,7 +110,7 @@
     .lucid-shape-group-wrapper {
         margin-bottom: 10px;
         position: relative;
-        z-index:1;
+        //z-index:1;
         &.ng-enter {
             margin-top: -84px;
             opacity: 0;
@@ -121,6 +126,10 @@
         &.ng-leave-active {
             margin-top: -84px;
             opacity: 0;
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: 1.5s;
+            transition-duration: 0s;
         }
         &.ng-animate {
             transition: .25s;
@@ -177,22 +186,23 @@
         color: #FFF;
         border-radius: 4px 4px 0 0;
         input {
-            padding: 10px 0;
+            font-style: italic;
+            padding: 0;
             margin-left: 35px;
-            height: 20px;
-            line-height: 20px;
+            //height: 16px;
+            line-height: 16px;
             background: transparent;
             color: #fff;
             border: none;
             outline: none;
-            border-bottom: 1px solid #fff;
+            //border-bottom: 1px solid #fff;
             width: 180px;
-            font-size: 14px;
-            &::placeholder {
-                font-style: italic;
-                color: rgba(255, 255, 255, .5);
-                font-weight: 100;
-            }
+            font-size: 16px;
+            // &::placeholder {
+            //     font-style: italic;
+            //     color: rgba(255, 255, 255, .5);
+            //     font-weight: 100;
+            // }
         }
     }
     .lucid-hide-shapes .shape-group-top {
@@ -321,6 +331,7 @@
         position: relative;
         width: 100%;
         padding-bottom: 20px;
+        float: left;
         .divider-inner {
             position: relative;
             height: 14px;
@@ -425,6 +436,7 @@
             .gear-dropdown,
             .import-dropdown {
                 position: relative;
+                cursor: pointer;
                 .lucid-select-dropdown {
                     position: absolute;
                     right: 0;
@@ -435,6 +447,28 @@
                         line-height: 30px;
                         font-size: 14px;
                         padding: 0 13px;
+                    }
+                    >ul {
+                        >li {
+                            //padding: 14px 10px;
+                            //display: inline-block;
+                            >img {
+                                cursor: pointer;
+                                top:3px;
+                                left:-3px;
+                            }
+                            .hidden-file-upload {
+                                width: 22px;
+                                height: 22px;
+                                position: absolute;
+                                opacity: 0;
+                                overflow: hidden;
+                                cursor: pointer;
+                                &::-webkit-file-upload-button {
+                                    cursor: pointer;
+                                }
+                            }
+                        }
                     }
                 }
             }

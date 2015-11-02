@@ -25,9 +25,11 @@
 //@codekit-append "themes/lucid-themes.js"
 //@codekit-append "shape-group/lucid-shape-group.js"
 //@codekit-append "shapes-manager/lucid-shapes-manager.js"
+//@codekit-append "shapes-manager/lucid-shapes-data.js"
 //@codekit-append "slides/lucid-slides.js"
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "settings-drawer/lucid-settings-drawer.js"
+
 
 angular.module('appConfig', [])
 

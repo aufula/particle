@@ -8,7 +8,7 @@
     </div>
     <div class="shape-group-top">
         <span class="shape-group-name"> {{name}}</span>
-        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.pinGroup($parent.shapegroup)">
+        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.shapegroup.pinned = false">
     </div>
     <div class="slide-toggle" ng-hide="hideshapes">
         <ul dnd-list="shapes"
@@ -28,7 +28,8 @@
                 dnd-copied="logEvent('Item copied', event)"
                 dnd-canceled="logEvent('Drag operation canceled', event)"
                 dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                class="lucid-shape">  
+                class="lucid-shape repeat-animation">  
+                
                 <lucid-shape ng-if="!shape.svg" shape="{{shape.name}}" fill="{{shape.fill}}" strokecolor="{{shape.stroke}}" textcolor="{{shape.text}}" height="28" width="28" strokewidth="{{shape.strokewidth}}" radius="{{shape.radius}}">
                 </lucid-shape>
                 <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
