@@ -1279,7 +1279,11 @@ input {
   -webkit-transition: .25s;
           transition: .25s;
 }
+[lucid-context-menu] {
+  cursor: pointer;
+}
 .lucid-context-menu {
+  position: fixed;
   background: #fff;
   padding: 5px 0;
   min-width: 200px;
@@ -1292,13 +1296,6 @@ input {
   /* Fisrt Tier Dropdown */
   /* Second, Third and more Tiers */
   /* Change this in order to change the Dropdown symbol */
-}
-.lucid-context-menu.ng-hide {
-  opacity: 0;
-}
-.lucid-context-menu.ng-animate {
-  -webkit-transition: .1s all linear;
-          transition: .1s all linear;
 }
 .lucid-context-menu ul {
   padding: 0;
@@ -1313,6 +1310,7 @@ input {
   padding: 2px 12px;
   width: 100%;
   box-sizing: border-box;
+  cursor: pointer;
 }
 .lucid-context-menu ul li:hover {
   background: #f1f1f1;
@@ -1370,7 +1368,7 @@ input {
   left: 200px;
   z-index: -1;
 }
-.lucid-context-menu ul li.lucid-menu-more:after {
+.lucid-context-menu ul li.lucid-context-more:after {
   font-family: FontAwesome;
   content: "\f0da";
   position: absolute;
@@ -1895,17 +1893,22 @@ input {
   -webkit-transition: 0.5s ease-in-out all;
           transition: 0.5s ease-in-out all;
 }
+.import-options .show-import-options > ul {
+  text-align: center;
+  font-size: 0;
+}
 .import-options .show-import-options > ul > li {
+  position: relative;
   padding: 14px 10px;
   display: inline-block;
-}
-.import-options .show-import-options > ul > li > img {
   cursor: pointer;
 }
 .import-options .show-import-options > ul > li .hidden-file-upload {
-  width: 22px;
-  height: 22px;
   position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 50px;
   opacity: 0;
   overflow: hidden;
   cursor: pointer;
@@ -2060,4 +2063,169 @@ input {
 .settings-drawer .settings-drawer-content.ng-animate {
   -webkit-transition: all 0.35s ease-in-out;
           transition: all 0.35s ease-in-out;
+}
+.pages {
+  height: 200px;
+}
+.pages > li {
+  float: left;
+}
+.lucid-page {
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  width: 170px;
+  min-height: 152px;
+  vertical-align: top;
+  border-radius: 4px;
+  -webkit-transition: background .2s;
+          transition: background .2s;
+}
+.lucid-page.current-page {
+  background: #A5AEB7;
+}
+.lucid-page.current-page .master-icon {
+  background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
+  background-size: 22px;
+}
+.lucid-page.current-page h4 {
+  color: #fff;
+}
+.lucid-page:hover .page-thumb,
+.lucid-page:hover .blank-page {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+}
+.lucid-page:hover .close {
+  opacity: 1;
+}
+.lucid-page .center-image {
+  display: table;
+  height: 135px;
+}
+.lucid-page .center-image .center-image-container {
+  display: table-cell;
+  vertical-align: middle;
+  width: 170px;
+}
+.lucid-page .image-container {
+  padding: 10px;
+  position: relative;
+  display: inline-block;
+}
+.lucid-page .page-thumb,
+.lucid-page .blank-page {
+  width: 150px;
+  max-height: 120px;
+  background: #fff;
+  border-radius: 1px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  -webkit-transition: top 0.2s, box-shadow 0.2s;
+          transition: top 0.2s, box-shadow 0.2s;
+  margin: 0 auto;
+}
+.lucid-page .blank-page {
+  height: 70px;
+}
+.lucid-page .close {
+  width: 18px;
+  height: 18px;
+  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
+  background-position: center center;
+  position: absolute;
+  top: 3px;
+  right: 2px;
+  opacity: 0;
+  -webkit-transition: opacity .2s;
+  transition: opacity .2s;
+}
+.lucid-page .master-icon {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+  vertical-align: top;
+  background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat left center;
+  background-size: 22px;
+  display: none;
+}
+.lucid-page .is-master {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+  background: #29AAE1;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #29AAE1;
+}
+.lucid-page .is-master .master-applied-icon {
+  background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat right top;
+  width: 22px;
+  height: 22px;
+  background-size: 22px;
+  margin: 2px auto;
+}
+.lucid-page .master-applied {
+  position: absolute;
+  bottom: 0px;
+  right: 3px;
+  background: #fff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #77818C;
+}
+.lucid-page .master-applied .master-applied-icon {
+  background: url(/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
+  width: 22px;
+  height: 22px;
+  background-size: 22px;
+  margin: 2px auto;
+}
+.lucid-page h4 {
+  display: inline-block;
+  margin: 0 auto 10px;
+  max-width: 150px;
+  font-size: 12px;
+  line-height: 1.4;
+  color: #828282;
+  -webkit-transition: color .1s;
+  transition: color .1s;
+  height: 16px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.lucid-page h4:hover {
+  color: #5a5a5a;
+}
+.lucid-page.add-new .plus-container {
+  width: 150px;
+  height: 100px;
+  margin: 10px;
+  background: none;
+  border: 2px dashed #999;
+  box-shadow: none;
+  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 30%;
+  -webkit-transition: background-size 0.2s;
+  transition: background-size 0.2s;
+}
+.lucid-page .sortable-ghost {
+  opacity: .5 !important;
+}
+.lucid-page .rename-page-modal-content {
+  padding: 15px;
+  text-align: left;
+}
+.lucid-page .rename-page-modal-content span {
+  font-size: 14px;
+}
+.lucid-page .rename-page-modal-content input {
+  margin-top: 10px;
+  width: 100%;
 }

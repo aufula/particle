@@ -14,13 +14,13 @@ angular.module("lucidContextMenu", ['appConfig'])
         scope: {
           'callback': '&lucidContextMenu',
           'disabled': '&contextMenuDisabled',
-          'closeCallback': '&contextMenuClose'
+          'closeCallback': '&lucidContextMenuClose'
         },
         link: function($scope, $element, $attrs) {
           var opened = false;
 
           function open(event, menuElement) {
-            menuElement.addClass('open');
+            menuElement.removeClass('ng-hide');
 
             var doc = $document[0].documentElement;
             var docLeft = (window.pageXOffset || doc.scrollLeft) -
@@ -50,7 +50,7 @@ angular.module("lucidContextMenu", ['appConfig'])
           }
 
           function close(menuElement) {
-            menuElement.removeClass('open');
+            menuElement.addClass('ng-hide');
 
             if (opened) {
               $scope.closeCallback();

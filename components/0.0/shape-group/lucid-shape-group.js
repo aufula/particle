@@ -42,30 +42,31 @@ angular.module('lucidShapeGroup', ['appConfig'])
                 }
 
                 $scope.dragoverCallback = function(event, index, external, type) {
-                    $scope.logListEvent('dragged over', event, index, external, type);
-                    // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+                    //$scope.logListEvent('dragged over', event, index, external, type);
                     return index; // < 10;
                 };
 
                 $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                    $scope.logListEvent('dropped at', event, index, external, type);
+                    //$scope.logListEvent('dropped at', event, index, external, type);
                     if (external) {
-                        if (allowedType === 'shape') return false;
+                        if (allowedType === 'shape') {
+                            return false;
+                        }
                         //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
                     }
                     return item;
                 };
 
-                $scope.logEvent = function(message, event) {
-                    console.log(message, '(triggered by the following', event.type, 'event)');
-                    console.log(event);
-                };
+                // $scope.logEvent = function(message, event) {
+                //     console.log(message, '(triggered by the following', event.type, 'event)');
+                //     console.log(event);
+                // };
 
-                $scope.logListEvent = function(action, event, index, external, type) {
-                    var message = external ? 'External ' : '';
-                    message += type + ' element is ' + action + ' position ' + index;
-                    $scope.logEvent(message, event);
-                };
+                // $scope.logListEvent = function(action, event, index, external, type) {
+                //     var message = external ? 'External ' : '';
+                //     message += type + ' element is ' + action + ' position ' + index;
+                //     $scope.logEvent(message, event);
+                // };
             },
         };
     })
@@ -104,12 +105,12 @@ angular.module('lucidShapeGroup', ['appConfig'])
                     state.animator = undefined;
                     state.doneFn();
                 });
-            }
+            };
         }
 
         return {
             addClass: function(element, className, doneFn) {
-                if (className == 'ng-hide') {
+                if (className === 'ng-hide') {
                     var state = getState(getId(element));
                     var height = (state.animating && state.height) ?
                         state.height : element[0].offsetHeight;
@@ -146,7 +147,7 @@ angular.module('lucidShapeGroup', ['appConfig'])
                 doneFn();
             },
             removeClass: function(element, className, doneFn) {
-                if (className == 'ng-hide') {
+                if (className === 'ng-hide') {
                     var state = getState(getId(element));
                     var height = (state.animating && state.height) ?
                         state.height : element[0].offsetHeight;

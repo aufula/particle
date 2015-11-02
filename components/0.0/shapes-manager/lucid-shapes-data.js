@@ -4703,8 +4703,8 @@ angular.module("lucidShapesData", ['appConfig'])
                 return customShapes;
             },
             addGroup: function(newgroup) {
-                console.log(newgroup);
-                lucidShapes.splice(0, 0, newgroup)
+                //console.log(newgroup);
+                lucidShapes.splice(0, 0, newgroup);
             }
         };
     });

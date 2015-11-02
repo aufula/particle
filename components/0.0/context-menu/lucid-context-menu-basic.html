@@ -1,12 +1,11 @@
-<div lucid-context-menu class="panel panel-default position-fixed" data-target="menu-1">
-    Stuff inside the div for an example.
-    <br> More stuff.
-    <div id="menu-1" class="lucid-select-dropdown" style="position:fixed;display:none;">
+<div lucid-context-menu data-target="menu-1">
+    <div>Right Click me to see context menu</div>
+</div>
+    <div id="menu-1" class="lucid-context-menu">
     <ul>
         <li class="lucid-select-option">Share</li>
-        <li class="lucid-select-option" ng-click="$parent.shapegroup.edit=true">Rename</li>
+        <li class="lucid-select-option">Rename</li>
         <li class="lucid-select-option">Duplicate</li>
-        <li class="lucid-select-option" ng-click="$parent.customshapes.splice($index, 1)">Delete</li>
+        <li class="lucid-select-option">Delete</li>
     </ul>
-</div>
 </div>

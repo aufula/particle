@@ -1,0 +1,52 @@
+<div>
+    <div class="lucid-page"
+        lucid-context-menu
+        data-target="page-context-{{ id }}"
+        ng-class="{'current-page': selected == id}"
+        ng-click="selected = id">
+        <div class="center-image">
+            <div class="center-image-container">
+                <div class="image-container">
+                    <img class="page-thumb" ng-src="{{thumbnail}}" ng-if="thumbnail">
+                    <div class="blank-page" ng-if="!thumbnail"></div>
+                    <div class="master-applied" ng-if="masterapplied">
+                        <div class="master-applied-icon"></div>
+                    </div>
+                    <div class="is-master" ng-if="master">
+                        <div class="master-applied-icon"></div>
+                    </div>
+                    <div class="close"></div>
+                </div>
+            </div>
+        </div>
+        <span>
+            <div class="master-icon" ng-if="master"></div>
+            <h4 ng-click="renameModal=true">{{name}}<span ng-if="master"> (master)</span></h4>
+        </span>
+        <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel">
+            <div class="rename-page-modal-content">
+                <span>Enter a new page title:</span>
+                <input type="text" ng-model="name">
+            </div>
+        </lucid-modal>
+        <!-- Right Click Context Menu -->
+        <div id="page-context-{{ id }}" class="lucid-context-menu">
+            <ul>
+                <li ng-click="renameModal=true">Rename</li>
+                <li>Duplicate</li>
+                <li ng-click="$parent.customshapes.splice($index, 1)">Delete</li>
+                <li ng-show="!master" ng-click="master = true">convert to Master Layer</li>
+                <li ng-show="master" ng-click="master = false">Convert to Page</li>
+                <li class="lucid-context-more" ng-show="!masterapplied">Apply Master Layer
+                    <ul>
+                        <li ng-click="masterapplied = true">
+                            New Title
+                        </li>
+                    </ul>
+                </li>
+                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
+                <li>Duplicate</li>
+            </ul>
+        </div>
+    </div>
+</div>

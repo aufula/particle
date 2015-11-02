@@ -1,5 +1,10 @@
 /*global angular : true fixes codekit error*/
 
+//libraries
+//@codekit-append "../../lib/Sortable.min.js"
+//@codekit-append "../../lib/ng-sortable.js"
+
+//components
 //@codekit-append "canvas/lucid-canvas-data.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
@@ -29,6 +34,8 @@
 //@codekit-append "slides/lucid-slides.js"
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "settings-drawer/lucid-settings-drawer.js"
+//@codekit-append "page/lucid-page.js"
+
 
 
 angular.module('appConfig', [])
@@ -48,7 +55,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'ng-sortable'])
 
 
 

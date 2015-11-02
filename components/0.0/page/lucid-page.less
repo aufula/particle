@@ -1,0 +1,191 @@
+.pages{
+    height:200px;
+    >li{
+        float:left;
+    }
+}
+
+.lucid-page {
+    //float: left;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 170px;
+    min-height: 152px;
+    vertical-align: top;
+    border-radius: 4px;
+    transition: background .2s;
+    &.current-page {
+        background: #A5AEB7;
+        .master-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
+            background-size: 22px;
+        }
+        h4 {
+            color: #fff;
+        }
+    }
+    &:hover {
+        .page-thumb,
+        .blank-page {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        .close {
+            opacity: 1;
+        }
+    }
+    .center-image {
+        display: table;
+        height: 135px;
+        .center-image-container {
+            display: table-cell;
+            vertical-align: middle;
+            width:170px;
+        }
+    }
+    .image-container {
+        padding: 10px;
+        position: relative;
+        display: inline-block;
+    }
+    .page-thumb,
+    .blank-page {
+        width: 150px;
+        max-height: 120px;
+        background: #fff;
+        border-radius: 1px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        //margin: 10px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        position: relative;
+        transition: top 0.2s, box-shadow 0.2s;
+        margin: 0 auto;
+    }
+    .blank-page {
+        height: 70px;
+    }
+    .close {
+        width: 18px;
+        height: 18px;
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
+        background-position: center center;
+        position: absolute;
+        top: 3px;
+        right: 2px;
+        opacity: 0;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+    }
+    .master-icon {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        vertical-align: top;
+        background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat left center;
+        background-size: 22px;
+        display:none;
+    }
+// .is-master{display:none;}
+
+    // .master-applied {
+    //     border-top: 49px solid @blue;
+    //     border-left: 39px solid transparent;
+    //     position: absolute;
+    //     top: 10px;
+    //     right: 10px;
+    //     .master-applied-icon {
+    //         background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat right top;
+    //         width:22px;
+    //         height:22px;
+    //         background-size:22px;
+    //         top:-44px;
+    //         right:0;
+    //         position:absolute;
+    //     }
+    // }
+
+    .is-master {
+        position: absolute;
+        bottom: 0px;
+        right: 3px;
+        background: @blue;
+        width:32px;
+        height:32px;
+        border-radius:50%;
+        border: 2px solid @blue;
+        .master-applied-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat right top;
+            width:22px;
+            height:22px;
+            background-size:22px;
+            margin: 2px auto;
+        }
+    }
+
+
+    .master-applied {
+        position: absolute;
+        bottom: 0px;
+        right: 3px;
+        background: #fff;
+        width:32px;
+        height:32px;
+        border-radius:50%;
+        border: 2px solid @blue-steel-2;
+        .master-applied-icon {
+            background: url(/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
+            width:22px;
+            height:22px;
+            background-size:22px;
+            margin: 2px auto;
+        }
+    }
+
+
+    h4 {
+        display: inline-block;
+        margin: 0 auto 10px;
+        max-width: 150px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #828282;
+        -webkit-transition: color .1s;
+        transition: color .1s;
+        height:16px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space: nowrap;
+        &:hover {
+            color: #5a5a5a;
+        }
+    }
+    &.add-new .plus-container {
+        width: 150px;
+        height: 100px;
+        margin: 10px;
+        background: none;
+        border: 2px dashed #999;
+        box-shadow: none;
+        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: 30%;
+        -webkit-transition: background-size 0.2s;
+        transition: background-size 0.2s;
+    }
+    .sortable-ghost {
+        opacity: .5 !important;
+    }
+    .rename-page-modal-content {
+        padding: 15px;
+        text-align: left;
+        span {
+            font-size: 14px;
+        }
+        input {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+}
