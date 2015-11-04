@@ -35,7 +35,7 @@
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "settings-drawer/lucid-settings-drawer.js"
 //@codekit-append "page/lucid-page.js"
-
+//@codekit-append "pages/lucid-pages.js"
 
 
 angular.module('appConfig', [])
@@ -55,7 +55,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'ng-sortable'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'ng-sortable'])
 
 
 
@@ -112,7 +112,7 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData'
             restrict: 'A',
             link: function($scope, elem, attr) {
                 var classList = (attr.outsideIfNot !== undefined) ? attr.outsideIfNot.replace(', ', ',').split(',') : [],
-                    fn = $parse(attr['clickOutside']);
+                    fn = $parse(attr.clickOutside);
 
                 // add the elements id so it is not counted in the click listening
                 if (attr.id !== undefined) {

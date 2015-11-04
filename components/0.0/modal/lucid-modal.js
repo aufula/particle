@@ -10,6 +10,7 @@ angular.module("lucidModal", ['appConfig'])
                 confirm: '@',
                 cancel: '@',
                 icon: '@',
+                confirmFunction: '&'
             },
             replace: true,
             transclude: true,

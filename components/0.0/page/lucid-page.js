@@ -1,13 +1,9 @@
 angular.module("lucidPage", ['appConfig'])
-    .directive('lucidPage', function(config, $document, shapesData) {
+    .directive('lucidPage', function(config) {
         return {
             restrict: 'E',
             scope: {
-                thumbnail: "@",
-                master: "@",
-                masterapplied: "@",
-                name: "@",
-                id: "@",
+                page: '=',
                 selected: '='
             },
             replace: true,
@@ -16,6 +12,11 @@ angular.module("lucidPage", ['appConfig'])
                 if(!$scope.selected){
                     $scope.selected = 1;
                 }
+                $scope.renameData = {};
+                $scope.renamePage = function(rename){
+                    $scope.page.name = rename;
+                    //console.log(rename);
+                };
             }
         };
     });

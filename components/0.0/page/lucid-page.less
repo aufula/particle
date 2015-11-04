@@ -1,7 +1,7 @@
-.pages{
-    height:200px;
-    >li{
-        float:left;
+.pages {
+    height: 200px;
+    >li {
+        float: left;
     }
 }
 
@@ -11,7 +11,7 @@
     cursor: pointer;
     text-align: center;
     width: 170px;
-    min-height: 152px;
+    height: 158px;
     vertical-align: top;
     border-radius: 4px;
     transition: background .2s;
@@ -25,22 +25,13 @@
             color: #fff;
         }
     }
-    &:hover {
-        .page-thumb,
-        .blank-page {
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
-        }
-        .close {
-            opacity: 1;
-        }
-    }
     .center-image {
         display: table;
         height: 135px;
         .center-image-container {
             display: table-cell;
             vertical-align: middle;
-            width:170px;
+            width: 170px;
         }
     }
     .image-container {
@@ -48,24 +39,29 @@
         position: relative;
         display: inline-block;
     }
-    .page-thumb,
-    .blank-page {
+    .page-thumb-wrapper {
+        position: relative;
+        overflow: hidden;
         width: 150px;
         max-height: 120px;
         background: #fff;
         border-radius: 1px;
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-        //margin: 10px;
-        background-position: center center;
-        background-repeat: no-repeat;
-        position: relative;
         transition: top 0.2s, box-shadow 0.2s;
         margin: 0 auto;
     }
-    .blank-page {
-        height: 70px;
+    &:hover {
+        .page-thumb-wrapper {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        .page-x {
+            opacity: 1;
+        }
     }
-    .close {
+    .blank-page {
+        height: 100px;
+    }
+    .page-x {
         width: 18px;
         height: 18px;
         background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
@@ -77,72 +73,42 @@
         -webkit-transition: opacity .2s;
         transition: opacity .2s;
     }
-    .master-icon {
-        width: 22px;
-        height: 22px;
-        display: inline-block;
-        vertical-align: top;
-        background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat left center;
-        background-size: 22px;
-        display:none;
-    }
-// .is-master{display:none;}
-
-    // .master-applied {
-    //     border-top: 49px solid @blue;
-    //     border-left: 39px solid transparent;
-    //     position: absolute;
-    //     top: 10px;
-    //     right: 10px;
-    //     .master-applied-icon {
-    //         background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat right top;
-    //         width:22px;
-    //         height:22px;
-    //         background-size:22px;
-    //         top:-44px;
-    //         right:0;
-    //         position:absolute;
-    //     }
-    // }
-
-    .is-master {
+    .master-page {
         position: absolute;
-        bottom: 0px;
-        right: 3px;
-        background: @blue;
-        width:32px;
-        height:32px;
-        border-radius:50%;
-        border: 2px solid @blue;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 32px;
+        background: rgba(41, 170, 225, .3);
         .master-applied-icon {
-            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat right top;
-            width:22px;
-            height:22px;
-            background-size:22px;
-            margin: 2px auto;
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+            background-size: 22px;
+        }
+        >span {
+            color: @blue-steel-2;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        &.ng-enter {
+            top: -32px;
+        }
+        &.ng-enter-active,
+        &.ng-leave {
+            top: 0;
+        }
+        &.ng-leave-active {
+            top: -32px;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out all;
         }
     }
-
-
-    .master-applied {
-        position: absolute;
-        bottom: 0px;
-        right: 3px;
-        background: #fff;
-        width:32px;
-        height:32px;
-        border-radius:50%;
-        border: 2px solid @blue-steel-2;
-        .master-applied-icon {
-            background: url(/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
-            width:22px;
-            height:22px;
-            background-size:22px;
-            margin: 2px auto;
-        }
-    }
-
-
     h4 {
         display: inline-block;
         margin: 0 auto 10px;
@@ -152,30 +118,13 @@
         color: #828282;
         -webkit-transition: color .1s;
         transition: color .1s;
-        height:16px;
-        overflow:hidden;
-        text-overflow:ellipsis;
+        height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
         white-space: nowrap;
         &:hover {
             color: #5a5a5a;
         }
-    }
-    &.add-new .plus-container {
-        width: 150px;
-        height: 100px;
-        margin: 10px;
-        background: none;
-        border: 2px dashed #999;
-        box-shadow: none;
-        background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
-        background-position: center center;
-        background-repeat: no-repeat;
-        background-size: 30%;
-        -webkit-transition: background-size 0.2s;
-        transition: background-size 0.2s;
-    }
-    .sortable-ghost {
-        opacity: .5 !important;
     }
     .rename-page-modal-content {
         padding: 15px;
