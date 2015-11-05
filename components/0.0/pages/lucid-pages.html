@@ -1,7 +1,7 @@
 <div class="lucid-pages">
     <div class="lucid-pages-wrapper">
         <ul ng-sortable="sortConfig">
-            <li ng-repeat="page in pages">
+            <li ng-repeat="page in pages track by page.id">
                 <lucid-page page="page" selected="$parent.selectedPage">
                 </lucid-page>
             </li>
