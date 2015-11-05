@@ -2238,14 +2238,18 @@ input {
           transform: translateX(0px);
 }
 .lucid-pages .lucid-pages-wrapper > ul > li.ng-leave-active,
-.lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active {
+.lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active,
+.lucid-pages .lucid-pages-wrapper > ul > li .ng-leave,
+.lucid-pages .lucid-pages-wrapper .add-new-page .ng-leave {
   -webkit-animation: PageAnimation 0.4s ease-in-out;
           animation: PageAnimation 0.4s ease-in-out;
   -webkit-animation-direction: reverse;
           animation-direction: reverse;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li.ng-leave-active h4,
-.lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active h4 {
+.lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active h4,
+.lucid-pages .lucid-pages-wrapper > ul > li .ng-leave h4,
+.lucid-pages .lucid-pages-wrapper .add-new-page .ng-leave h4 {
   -webkit-transform: translateX(-40px);
       -ms-transform: translateX(-40px);
           transform: translateX(-40px);

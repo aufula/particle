@@ -21,7 +21,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Input Stepper",
                 "componentid": "input-stepper",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "number",
                     "type": "number",
@@ -42,7 +42,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Select Dropdown",
                 "componentid": "select",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "options",
                     "type": "Array",
@@ -52,7 +52,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Icon",
                 "componentid": "icon",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Buttcon Popover",
@@ -71,7 +71,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "More Drawer",
                 "componentid": "more-drawer",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "height",
                     "type": "number",
@@ -89,7 +89,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Notifications",
                 "componentid": "notification",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "type",
                     "type": "text",
@@ -103,7 +103,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Finger Tabs",
                 "componentid": "finger-tabs",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "name",
                     "type": "text",
@@ -120,12 +120,41 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Modal",
                 "componentid": "modal",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "name": "showmodal",
+                    "type": "variable",
+                    "details": "Insert a variable, when variable is true, modal will show."
+                }, {
+                    "name": "title",
+                    "type": "text",
+                    "details": "Title of modal. Shows in the header bar."
+                }, {
+                    "name": "width",
+                    "type": "number",
+                    "details": "width of modal."
+                }, {
+                    "name": "height",
+                    "type": "number",
+                    "details": "height of modal"
+                }, {
+                    "name": "confirm",
+                    "type": "text",
+                    "details": "Text to be displayed inside of confirm button"
+                }, {
+                    "name": "cancel",
+                    "type": "text",
+                    "details": "Text to be displayed inside of cancel button"
+                }, {
+                    "name": "confirm-function",
+                    "type": "function",
+                    "details": "Function called when user clicks confirm (see page directive for example)."
+                }],
 
             }, {
                 "title": "Shape",
                 "componentid": "shape",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "shape",
                     "type": "text",
@@ -163,7 +192,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Shape Group",
                 "componentid": "shape-group",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "name": "name",
                     "type": "text",
@@ -176,6 +205,61 @@ angular.module('lucidComponentFactory', [])
                     "name": "custom",
                     "type": "true",
                     "details": "If custom is true than shapes can be dragged into this library"
+                }]
+            }, {
+                "title": "Context Menu",
+                "componentid": "context-menu",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Name the Shape Library"
+                }, {
+                    "name": "shapes",
+                    "type": "array",
+                    "details": "Insert array of data for shapes. See code for examples."
+                }, {
+                    "name": "custom",
+                    "type": "true",
+                    "details": "If custom is true than shapes can be dragged into this library"
+                }]
+            }, {
+                "title": "Page",
+                "componentid": "page",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Name the Page"
+                }, {
+                    "name": "master",
+                    "type": "true",
+                    "details": "If master is true, displays as master"
+                }, {
+                    "name": "masterapplied",
+                    "type": "true",
+                    "details": "If masterapplied is true than displays appropriately"
+                }, {
+                    "name": "selected",
+                    "type": "true",
+                    "details": "If selected is true will show selected page state."
+                }]
+            }, {
+                "title": "Pages",
+                "componentid": "pages",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Name the Page"
+                }, {
+                    "name": "master",
+                    "type": "true",
+                    "details": "If master is true, displays as master"
+                }, {
+                    "name": "selected",
+                    "type": "true",
+                    "details": "If selected is true will show selected page state."
                 }]
             }]
         }, {
@@ -200,43 +284,44 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Path Style",
                 "componentid": "path-style",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Border Options",
                 "componentid": "border-options",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Text Options",
                 "componentid": "text-options",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Line Options",
                 "componentid": "line-options",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Position Options",
                 "componentid": "position-options",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Shadow Options",
                 "componentid": "shadow-options",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
                 "title": "Saved Styles",
                 "componentid": "saved-styles",
-                "description": "this component is used in the optionbar, the page color, etc. explain more...",
+                "description": "this component is used in the optionbar, the page color, etc.",
 
             }]
         }, 
+
         // {
-        //     //form components
-        //     "groupname": "Prototypes",
+        //     //PROTOTYPE
+        //     "groupname": "Prototype",
         //     "groupid": "prototypes",
         //     "components": [{
         //         "title": "Canvas",
@@ -246,17 +331,11 @@ angular.module('lucidComponentFactory', [])
         //     }, {
         //         "title": "Shapes Manager",
         //         "componentid": "shapes-manager",
-        //         "description": "this component is used in the optionbar, the page color, etc. explain more...",
-        //     }]
-        // }, 
-        // {
-        //     //form components
-        //     "groupname": "Shapes",
-        //     "groupid": "shapes",
-        //     "components": [{
-        //         "title": "Shapes Manager",
-        //         "componentid": "shapes-manager",
-        //         "description": "this component is used in the optionbar, the page color, etc. explain more...",
+        //         "description": "this component is used in the optionbar, the page color, etc.",
+        //     }, {
+        //         "title": "Settings Drawer",
+        //         "componentid": "settings-drawer",
+        //         "description": "this component is used in the optionbar, the page color, etc.",
         //     }]
         // }
 

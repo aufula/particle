@@ -50,8 +50,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    //'componentsURL': "/components/0.0/" //local dev
-    'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+    'componentsURL': "/components/0.0/" //local dev
+    //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
 
 });
 
@@ -7661,8 +7661,8 @@ angular.module("lucidContextMenu", ['appConfig'])
           'closeCallback': '&lucidContextMenuClose'
         },
         link: function($scope, $element, $attrs) {
-
           var opened = false;
+
           function open(event, menuElement) {
             menuElement.removeClass('ng-hide');
 
@@ -7788,8 +7788,9 @@ angular.module("lucidPage", ['appConfig'])
                 }
                 $scope.renameData = {};
                 $scope.renamePage = function(rename){
-                    $scope.page.name = rename;
                     //console.log(rename);
+                    $scope.page.name = rename;
+                    //console.log($scope.page.name);
                 };
             }
         };
@@ -7814,13 +7815,24 @@ angular.module("lucidPages", ['appConfig', 'lucidPage'])
                 };
                 $scope.addPage = function(){
                 	var length = $scope.pages.length;
-                	var uniqueID = new Date();
+                	var uniqueID = new Date().getTime();
                 	var newPage = {
                 		name: 'New Page ' +(+length + 1),
                 		id: uniqueID,
                 	};
                 	$scope.pages.splice(length,0,newPage);
                 	$scope.selectedPage = uniqueID;
+                };
+                $scope.duplicatePage = function(page, index){
+                    var newpage = JSON.parse(JSON.stringify(page))
+                    var newindex = +index +1
+                    var uniqueID = new Date().getTime();
+
+                    newpage.id = uniqueID;
+                    newpage.name = page.name + ' Copy';
+                     $scope.pages.splice(newindex,0,newpage);
+                    // $scope.selectedPage = uniqueID;
+                    console.log(newpage, index);
                 };
             }
         };
