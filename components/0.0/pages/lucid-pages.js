@@ -34,7 +34,7 @@ angular.module("lucidPages", ['appConfig', 'lucidPage'])
                     newpage.name = page.name + ' Copy';
                      $scope.pages.splice(newindex,0,newpage);
                     // $scope.selectedPage = uniqueID;
-                    console.log(newpage, index);
+                    //console.log(newpage, index);
                 };
             }
         };

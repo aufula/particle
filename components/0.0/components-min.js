@@ -50,8 +50,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.0/" //local dev
-    //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+    //'componentsURL': "/components/0.0/" //local dev
+    'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
 
 });
 
@@ -7788,9 +7788,8 @@ angular.module("lucidPage", ['appConfig'])
                 }
                 $scope.renameData = {};
                 $scope.renamePage = function(rename){
-                    //console.log(rename);
                     $scope.page.name = rename;
-                    //console.log($scope.page.name);
+                    //console.log(rename);
                 };
             }
         };
@@ -7832,7 +7831,7 @@ angular.module("lucidPages", ['appConfig', 'lucidPage'])
                     newpage.name = page.name + ' Copy';
                      $scope.pages.splice(newindex,0,newpage);
                     // $scope.selectedPage = uniqueID;
-                    console.log(newpage, index);
+                    //console.log(newpage, index);
                 };
             }
         };
