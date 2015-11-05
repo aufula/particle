@@ -2083,7 +2083,7 @@ input {
           transition: background .2s;
 }
 .lucid-page.current-page {
-  background: #A5AEB7;
+  background: #AFB7BF;
 }
 .lucid-page.current-page .master-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
@@ -2206,7 +2206,7 @@ input {
 }
 .lucid-pages .lucid-pages-wrapper {
   padding: 20px;
-  background: #c4c4c4;
+  background: #C4C4C4;
   display: block;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li,
