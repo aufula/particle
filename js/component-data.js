@@ -236,10 +236,6 @@ angular.module('lucidComponentFactory', [])
                     "type": "true",
                     "details": "If master is true, displays as master"
                 }, {
-                    "name": "masterapplied",
-                    "type": "true",
-                    "details": "If masterapplied is true than displays appropriately"
-                }, {
                     "name": "selected",
                     "type": "true",
                     "details": "If selected is true will show selected page state."
