@@ -1,8 +1,17 @@
 /*global angular : true fixes codekit error*/
 
 //libraries
-//@codekit-append "../../lib/Sortable.min.js"
-//@codekit-append "../../lib/ng-sortable.js"
+//@codekit-prepend "../../lib/angular/angular.min.js"
+//@codekit-prepend "../../lib/angular/angular-animate.min.js"
+
+
+//@codekit-prepend "../../lib/Sortable.min.js"
+//@codekit-prepend "../../lib/ng-sortable.js"
+
+//@codekit-append "../../lib/svg-morpheus.js"
+//@codekit-append "../../lib/ngDraggable.js"
+//@codekit-append "../../lib/angular-drag-and-drop-lists.min.min.js"
+
 
 //components
 //@codekit-append "canvas/lucid-canvas-data.js"
