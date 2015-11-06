@@ -309,6 +309,9 @@ input {
       -ms-transform-origin: center;
           transform-origin: center;
 }
+.hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
+  display: none;
+}
 .lucid-popover-menu {
   background-color: #f1f1f1;
   border-radius: 4px;
@@ -1855,6 +1858,7 @@ input {
   z-index: 1;
   height: 50px;
   overflow: hidden;
+  text-align: center;
 }
 .import-options.ng-hide {
   bottom: -50px;

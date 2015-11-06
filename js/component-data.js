@@ -298,11 +298,6 @@ angular.module('lucidComponentFactory', [])
                 "description": "this component is used in the optionbar, the page color, etc.",
 
             }, {
-                "title": "Position Options",
-                "componentid": "position-options",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
                 "title": "Shadow Options",
                 "componentid": "shadow-options",
                 "description": "this component is used in the optionbar, the page color, etc.",
