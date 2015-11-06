@@ -1,5 +1,5 @@
 angular.module("lucidPages", ['appConfig', 'lucidPage'])
-    .directive('lucidPages', function(config) {
+    .directive('lucidPages', function(config, $timeout) {
         return {
             restrict: 'E',
             scope: {
@@ -33,6 +33,9 @@ angular.module("lucidPages", ['appConfig', 'lucidPage'])
                     newpage.id = uniqueID;
                     newpage.name = page.name + ' Copy';
                      $scope.pages.splice(newindex,0,newpage);
+                     $timeout(function() {
+                        $scope.selectedPage = uniqueID;
+                    }, 10);
                     // $scope.selectedPage = uniqueID;
                     //console.log(newpage, index);
                 };

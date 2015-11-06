@@ -10,7 +10,7 @@
 
 //@codekit-append "../../lib/svg-morpheus.js"
 //@codekit-append "../../lib/ngDraggable.js"
-//@codekit-append "../../lib/angular-drag-and-drop-lists.min.min.js"
+//@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
 
 //components
@@ -65,7 +65,6 @@ angular.module('appConfig', [])
 });
 
 angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'ng-sortable'])
-
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
