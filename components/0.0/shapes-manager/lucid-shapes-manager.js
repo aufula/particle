@@ -11,8 +11,9 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
             controller: function($scope) {
 
                 $scope.shapegroups = shapesData.all();
-                $scope.pinnedgroups = shapesData.pinned();
+                // $scope.pinnedgroups = shapesData.pinned();
                 $scope.customshapes = shapesData.custom();
+                
                 $scope.newCustomGroup = function() {
                     var newGroup = {
                         "groupname": "New Group",
@@ -118,21 +119,21 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                     }
                     // console.log(showdrawer, 'ran');
                 };
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    //$scope.logListEvent('dragged over', event, index, external, type);
+                    return index; // < 10;
+                };
 
-                // $scope.dragoverCallback = function(event, index, external, type) {
-                //     $scope.logListEvent('dragged over', event, index, external, type);
-                //     // Disallow dropping in the third row. Could also be done with dnd-disable-if.
-                //     return index; // < 10;
-                // };
-
-                // $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                //     $scope.logListEvent('dropped at', event, index, external, type);
-                //     if (external) {
-                //         if (allowedType === 'shape') return false;
-                //         //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                //     }
-                //     return item;
-                // };
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    //$scope.logListEvent('dropped at', event, index, external, type);
+                    if (external) {
+                        if (allowedType === 'shape') {
+                            return false;
+                        }
+                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
 
                 // $scope.logEvent = function(message, event) {
                 //     console.log(message, '(triggered by the following', event.type, 'event)');

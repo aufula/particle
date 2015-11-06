@@ -308,28 +308,7 @@ angular.module('lucidComponentFactory', [])
                 "description": "this component is used in the optionbar, the page color, etc.",
 
             }]
-        }, 
-
-        // {
-        //     //PROTOTYPE
-        //     "groupname": "Prototype",
-        //     "groupid": "prototypes",
-        //     "components": [{
-        //         "title": "Canvas",
-        //         "componentid": "canvas",
-        //         "description": "Copy and paste component as is.",
-
-        //     }, {
-        //         "title": "Shapes Manager",
-        //         "componentid": "shapes-manager",
-        //         "description": "this component is used in the optionbar, the page color, etc.",
-        //     }, {
-        //         "title": "Settings Drawer",
-        //         "componentid": "settings-drawer",
-        //         "description": "this component is used in the optionbar, the page color, etc.",
-        //     }]
-        // }
-
+        }
         ];
         return service;
     });

@@ -2,25 +2,27 @@
     <div class="lucid-page"
         lucid-context-menu
         data-target="page-context-{{ page.id }}"
-        ng-class="{'current-page': selected == page.id}"
-        ng-click="selected = page.id">
+        ng-class="{'current-page': $root.currentPage == page}"
+        ng-click="$root.currentPage = page">
         <div class="center-image">
             <div class="center-image-container">
                 <div class="image-container">
                     <div class="page-thumb-wrapper">
                         <img class="page-thumb" ng-src="{{page.thumb}}" ng-if="page.thumb">
                         <div class="blank-page" ng-if="!page.thumb"></div>
-                        <div class="master-page" ng-if="page.master">
+                        <div class="master-page lucid-animate" ng-show="page.master">
                             <div class="master-applied-icon"></div>
                             <span>MASTER PAGE</span>
+                        </div> 
+                        <div class="master-page lucid-animate" ng-show="page.masterapplied">
+                            <span>MASTER APPLIED</span>
                         </div>   
                     </div>
-                    <div class="page-x" ng-click="$parent.pages.splice($parent.$index, 1)"></div>
+                    <div class="page-x" ng-click="$parent.deletePage(page, $parent.$index)"></div>
                 </div>
             </div>
         </div>
         <span>
-            <div class="master-icon" ng-if="page.master"></div>
             <h4 ng-click="renameModal=true">{{page.name}}</h4>
         </span>
         <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel" confirm-function="renamePage(renameData.name)">
@@ -34,17 +36,19 @@
             <ul>
                 <li ng-click="renameModal=true">Rename</li>
                 <li ng-click="$parent.duplicatePage(page, $parent.$index)">Duplicate</li>
-                <li ng-click="$parent.pages.splice($parent.$index, 1)">Delete</li>
-                <li ng-show="!page.master" ng-click="page.master = true">convert to Master Layer</li>
+                <li ng-click="$parent.deletePage(page, $parent.$index)">Delete</li>
+                <li class="context-divider"></li>
+                <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Layer</li>
                 <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
-<!--                 <li class="lucid-context-more" ng-show="!masterapplied">Apply Master Layer
+                <li ng-show="page.master" ng-click="$parent.applyMasterAll()">Apply Master to All</li>
+                <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Layer
                     <ul>
-                        <li ng-click="masterapplied = true">
-                            New Title
+                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                            {{master.name}}
                         </li>
                     </ul>
                 </li>
-                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li> -->
+                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
                 
             </ul>
         </div>

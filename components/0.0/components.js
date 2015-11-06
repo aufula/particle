@@ -12,7 +12,7 @@
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
 //components
-//@codekit-append "canvas/lucid-canvas-data.js"
+//@codekit-append "themes/lucid-themes-data.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
@@ -31,7 +31,6 @@
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-//@codekit-append "canvas/lucid-canvas.js"
 //@codekit-append "chart-block/lucid-chart-block.js"
 //@codekit-append "saved-styles/lucid-saved-styles.js"
 //@codekit-append "themes/lucid-themes.js"
@@ -43,9 +42,17 @@
 //@codekit-append "settings-drawer/lucid-settings-drawer.js"
 //@codekit-append "page/lucid-page.js"
 //@codekit-append "pages/lucid-pages.js"
+//@codekit-append "pages/lucid-pages-data.js"
+//@codekit-append "canvas/lucid-canvas.js"
 
 
 angular.module('appConfig', [])
+
+// .config(['$animateProvider', function($animateProvider){
+//   // restrict animation to elements with the bi-animate css class with a regexp.
+//   // note: "bi-*" is our css namespace at @Bringr.
+//   $animateProvider.classNameFilter(/lucid-animate/);
+// }])
 
 .config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -62,7 +69,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'ng-sortable'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////

@@ -1,47 +1,11 @@
-<div lucid-context-menu class="panel panel-default position-fixed"
-     data-target="menu-1">
-Stuff inside the div for an example.<br>
-More stuff.
+<div lucid-context-menu data-target="menu-1">
+    <div>Right Click me to see context menu</div>
 </div>
-
-<div class="dropdown position-fixed" id="menu-1">
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a class="pointer" role="menuitem" tabindex="1"
-         ng-click="panel.highlight = true">
-         Select Panel {{ $index + 1 }}
-      </a>
-    </li>
-    <li>
-      <a class="pointer" role="menuitem" tabindex="2"
-         ng-click="panel.highlight = false">
-         Deselect Panel  {{ $index + 1 }}
-      </a>
-    </li>
-    <li>
-      <a class="pointer" role="menuitem" tabindex="3"
-         ng-click="panel.expanded = true">
-         Expand Panel {{ $index + 1 }}
-      </a>
-    </li>
-    <li>
-      <a class="pointer" role="menuitem" tabindex="4"
-         ng-click="panel.expanded = false">
-         Contract Panel {{ $index + 1 }}
-      </a>
-    </li>
-    <li>
-      <a class="pointer" role="menuitem" tabindex="5"
-         ng-click="addPanel()">
-         Add a panel
-      </a>
-    </li>
-    <li>
-      <a href="https://github.com/ianwalter/ng-context-menu"
-         role="menuitem"
-         tabindex="-1">
-         ng-context-menu on GitHub
-      </a>
-    </li>
-  </ul>
+    <div id="menu-1" class="lucid-context-menu">
+    <ul>
+        <li class="lucid-select-option">Share</li>
+        <li class="lucid-select-option">Rename</li>
+        <li class="lucid-select-option">Duplicate</li>
+        <li class="lucid-select-option">Delete</li>
+    </ul>
 </div>

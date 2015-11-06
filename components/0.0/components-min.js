@@ -377,7 +377,7 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 
 	var expando = 'Sortable:ng-sortable';
 
-	angular.module('ng-sortable', [])
+	angular.module('ngSortable', [])
 		.constant('ngSortableVersion', '0.4.0')
 		.constant('ngSortableConfig', {})
 		.directive('ngSortable', ['$parse', 'ngSortableConfig', function ($parse, ngSortableConfig) {
@@ -552,7 +552,7 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
 //components
-//@codekit-append "canvas/lucid-canvas-data.js"
+//@codekit-append "themes/lucid-themes-data.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
@@ -571,7 +571,6 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-//@codekit-append "canvas/lucid-canvas.js"
 //@codekit-append "chart-block/lucid-chart-block.js"
 //@codekit-append "saved-styles/lucid-saved-styles.js"
 //@codekit-append "themes/lucid-themes.js"
@@ -583,9 +582,17 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "settings-drawer/lucid-settings-drawer.js"
 //@codekit-append "page/lucid-page.js"
 //@codekit-append "pages/lucid-pages.js"
+//@codekit-append "pages/lucid-pages-data.js"
+//@codekit-append "canvas/lucid-canvas.js"
 
 
 angular.module('appConfig', [])
+
+// .config(['$animateProvider', function($animateProvider){
+//   // restrict animation to elements with the bi-animate css class with a regexp.
+//   // note: "bi-*" is our css namespace at @Bringr.
+//   $animateProvider.classNameFilter(/lucid-animate/);
+// }])
 
 .config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -602,7 +609,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidCanvasData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'ng-sortable'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
@@ -1426,823 +1433,208 @@ angular.module("dndLists",[]).directive("dndDraggable",["$parse","$timeout","dnd
 
 
 /*global angular : true fixes codekit error*/
-angular.module('lucidCanvasData', [])
-    .factory('canvasData', function() {
-
-        var blockElements = [{
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "comment": {
-                "text": "yep this is a comment"
-            },
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME 1",
-                "size": "12px",
-            },
-
-            "padding": 5,
-            "metrics": {
-                "z": 2,
-                "x": 390,
-                "y": 139,
-                "width": 120,
-                "height": 45
-            },
-            "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><rect id="Rectangle-32-Copy-3" sketch:type="MSShapeGroup" x="1" y="2" width="28" height="26" rx="2"></rect></g>'
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 393,
-                "y": 245,
-                "width": 120,
-                "height": 45
-            },
-
+angular.module('lucidThemesData', [])
+    .factory('lucidThemesData', function() {
+        var lucidThemes = [{
+            "name": "Standard",
+            "pagecolor": "#ffffff",
+            "linecolor": "#999999",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-default-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "radius": 5
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "text": "#ffffff",
+                    "border": "#ee5b42"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                }
+            }]
 
         }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 625,
-                "y": 245,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 157,
-                "y": 245,
-                "width": 120,
-                "height": 45
-            },
-
+            "name": "Blueprint",
+            "pagecolor": "#4187ad",
+            "linecolor": "#99d2f2",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-blueprint-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#3b5878",
+                    "text": "#ffffff",
+                    "border": "#2d435c"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#99d2f2",
+                    "text": "#ffffff",
+                    "border": "#99d2f2"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ff8f80",
+                    "text": "#3b5878",
+                    "border": "#ff8f80"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ffdf71",
+                    "text": "#3b5878",
+                    "border": "#ffdf71"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#3b5878",
+                    "border": "#a3d977"
+                }
+            }]
 
         }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 77,
-                "y": 335,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 202,
-                "y": 335,
-                "width": 120,
-                "height": 45
-            },
-
+            "name": "Boardroom",
+            "pagecolor": "#3e3e3e",
+            "linecolor": "#cccccc",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-boardroom-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#666666",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "border": "#ee5b42",
+                    "text": "#ffffff"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "border": "#6db7c4",
+                    "text": "#ffffff"
+                },
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                }
+            }]
 
         }, {
-            "comment": {
-                "text": "yep this is a comment"
+            "name": "Sandstorm",
+            "pagecolor": "#fff9ed",
+            "linecolor": "#999999",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-sandstorm-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#ffe5b6",
+                    "text": "#666666",
+                    "border": "#666666"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "border": "#ee5b42",
+                    "text": "#ffffff"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#f0b74c",
+                    "border": "#f0b74c",
+                    "text": "#ffffff"
+                },
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                }
+            }]
 
-            },
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 327,
-                "y": 335,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 563,
-                "y": 335,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ee5b42",
-                "text": "#ffffff",
-                "border": "#ee5b42"
-            },
-            "swatchnumber": 4,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 688,
-                "y": 335,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME0",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 688,
-                "y": 425,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 563,
-                "y": 425,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            },
-            "swatchnumber": 5,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 563,
-                "y": 515,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "swatchnumber": 1,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 262,
-                "y": 425,
-                "width": 120,
-                "height": 45
-            },
-
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            },
-            "swatchnumber": 6,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "EMPLOYEE NAME",
-                "size": "12px",
-            },
-
-            "padding": 10,
-            "metrics": {
-                "z": 2,
-                "x": 137,
-                "y": 425,
-                "width": 120,
-                "height": 45
-            },
-
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            },
-            "swatchnumber": 6,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "text": "",
-                "size": "12px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "font": "Source Sans Pro",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 591,
-                "y": 626,
-                "width": 22,
-                "height": 22
-            },
-            "radius": 15,
-            "z": 2
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            },
-            "swatchnumber": 5,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "text": "",
-                "size": "12px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "font": "Source Sans Pro",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 433,
-                "y": 626,
-                "width": 22,
-                "height": 22
-            },
-            "radius": 15,
-            "z": 2
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "#ee5b42",
-                "text": "#ffffff",
-                "border": "#ee5b42"
-            },
-            "swatchnumber": 4,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "text": "",
-                "size": "12px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "font": "Source Sans Pro",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 245,
-                "y": 626,
-                "width": 22,
-                "height": 22
-            },
-            "radius": 15,
-            "z": 2
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "transparent",
-                "text": "#ee5b42",
-                "border": "transparent"
-            },
-            "swatchtype": "text",
-            "swatchnumber": 4,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "text": "5+ YEAR TENURE",
-                "size": "13px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "left",
-                "font": "Oswald, sans-serif",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 272,
-                "y": 625,
-                "width": 150,
-                "height": 22
-            },
-            "radius": 0,
-            "z": 2
-        }, {
-            "swatchtype": "text",
-            "customcolor": false,
-            "swatch": {
-                "fill": "transparent",
-                "text": "#a3d977",
-                "border": "transparent"
-            },
-            "swatchnumber": 5,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "text": {
-                "text": "NEW HIRE (MONTHS)",
-                "size": "13px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "left",
-                "font": "Oswald, sans-serif",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 463,
-                "y": 625,
-                "width": 125,
-                "height": 22
-            },
-            "radius": 0,
-            "z": 2
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "transparent",
-                "text": "#6db7c4",
-                "border": "transparent"
-            },
-            "swatchnumber": 6,
-            "borderwidth": 3,
-            "borderstyle": "solid",
-            "swatchtype": "text",
-            "text": {
-                "text": "INTERN",
-                "size": "13px",
-                "verticalalignment": "middle",
-                "horizontalalignment": "left",
-                "font": "Oswald, sans-serif",
-            },
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 617,
-                "y": 625,
-                "width": 125,
-                "height": 22
-            },
-            "radius": 0,
-            "z": 2
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "transparent",
-                "text": "#999999",
-                "border": "transparent"
-            },
-            "swatchnumber": 2,
-            "borderwidth": 3,
-            "swatchtype": "text",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "COMPANY NAME",
-                "size": "24px",
-                "weight": "light",
-                "letterspacing": "0px",
-                "font": "Oswald, sans-serif"
-            },
-
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 342,
-                "y": 15,
-                "width": 220,
-                "height": 35
-            },
-            "radius": 0
-        }, {
-            "customcolor": false,
-            "swatch": {
-                "fill": "transparent",
-                "text": "#999999",
-                "border": "transparent"
-            },
-            "swatchnumber": 2,
-            "borderwidth": 3,
-            "swatchtype": "text",
-            "text": {
-                "verticalalignment": "middle",
-                "horizontalalignment": "center",
-                "text": "DEPARTMENT NAME",
-                "size": "12px",
-                "weight": "light",
-                "letterspacing": "-1px",
-                "font": "sans-serif"
-            },
-
-            "padding": 0,
-            "metrics": {
-                "z": 2,
-                "x": 342,
-                "y": 53,
-                "width": 220,
-                "height": 14
-            },
-            "radius": 0
         }];
-        return blockElements;
-    })
-
-
-///stores themes data
-.factory('lucidThemesData', function() {
-    var lucidThemes = [{
-        "name": "Standard",
-        "pagecolor": "#ffffff",
-        "linecolor": "#999999",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-default-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "radius": 5
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "text": "#ffffff",
-                "border": "#ee5b42"
-            }
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            }
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            }
-        }]
-
-    }, {
-        "name": "Blueprint",
-        "pagecolor": "#4187ad",
-        "linecolor": "#99d2f2",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-blueprint-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#3b5878",
-                "text": "#ffffff",
-                "border": "#2d435c"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
-        }, {
-            "swatch": {
-                "fill": "#99d2f2",
-                "text": "#ffffff",
-                "border": "#99d2f2"
-            }
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ff8f80",
-                "text": "#3b5878",
-                "border": "#ff8f80"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ffdf71",
-                "text": "#3b5878",
-                "border": "#ffdf71"
-            }
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#3b5878",
-                "border": "#a3d977"
-            }
-        }]
-
-    }, {
-        "name": "Boardroom",
-        "pagecolor": "#3e3e3e",
-        "linecolor": "#cccccc",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-boardroom-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#666666",
-                "text": "#ffffff",
-                "border": "#999999"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "border": "#ee5b42",
-                "text": "#ffffff"
-            }
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "border": "#6db7c4",
-                "text": "#ffffff"
-            },
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            }
-        }]
-
-    }, {
-        "name": "Sandstorm",
-        "pagecolor": "#fff9ed",
-        "linecolor": "#999999",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-sandstorm-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#ffe5b6",
-                "text": "#666666",
-                "border": "#666666"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "border": "#ee5b42",
-                "text": "#ffffff"
-            }
-        }, {
-            "swatch": {
-                "fill": "#f0b74c",
-                "border": "#f0b74c",
-                "text": "#ffffff"
-            },
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            }
-        }]
-
-    }];
-    return lucidThemes;
-});
+        return lucidThemes;
+    });
 
 angular.module('lucidInputStepper', ['appConfig'])
     .directive('lucidInputStepper', function(config) {
@@ -2794,7 +2186,7 @@ angular.module('lucidShape', ['appConfig'])
             replace: true,
             templateUrl: config.componentsURL + 'shape/lucid-shape.html',
             compile: function(element, attrs) {
-                if (!attrs.shape) {
+                if (!attrs.shape || attrs.shape == "" || attrs.shape == null) {
                     attrs.shape = 'block';
                 }
 
@@ -2958,209 +2350,20 @@ angular.module("lucidButton", ['appConfig'])
         };
     }); 
 
-angular.module("lucidCanvas", ['appConfig'])
-    .directive('lucidCanvas', function(config, canvasData) {
-        return {
-            restrict: 'E',
-            scope: false,
-            templateUrl: config.componentsURL + 'canvas/lucid-canvas.html',
-            controller: function($scope) {
-
-                $scope.defaultBlock = {
-                    "text": {
-                        "verticalalignment": "middle",
-                        "horizontalalignment": "center",
-                        "text": "",
-                        "size": "12px"
-                    },
-                    "swatch": {
-                        "fill": "#FFFFFF",
-                        "text": "#333",
-                        "border": "#333"
-                    },
-                    "padding": 10,
-                    "metrics": {
-                        "z": 2,
-                        "x": 390,
-                        "y": 139,
-                        "width": 120,
-                        "height": 45
-                    }
-                };
-                $scope.blockElements = canvasData;
-                $scope.editThisBlock = function(block) {
-                    $scope.selectedBlock = block;
-                    //console.log(block.swatch);
-                };
-                $scope.onDropComplete = function(data, event) {
-                    if (data && !$scope.manageShapes) {
-                        var index = $scope.blockElements.indexOf(data);
-                        //console.log('shape', index);
-                        if (index === -1) {
-                            var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
-                            var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
-                            //data.metrics = {};
-                            //console.log(data, event);
-                            data.metrics.x = event.x - canvasX - data.metrics.width / 2; //center block as it drops on canvas and expands
-                            data.metrics.y = event.y - canvasY - data.metrics.height / 2;
-
-                            var newblock = JSON.parse(JSON.stringify(data));
-                            $scope.blockElements.push(newblock);
-                            //console.log('dropped on canvas', newblock, 'current array', $scope.blockElements);
-                        }
-
-                    }
-
-                };
-                $scope.onDragSuccess = function(data, event) {
-                    if (event.x > 250) {
-                        var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
-                        var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
-                        //console.log('drag success', data, event);
-                        if (data) {
-                            data.metrics.x = event.x - canvasX - event.element.centerX;
-                            data.metrics.y = event.y - canvasY - event.element.centerY;
-                            data.shapepanel = false;
-                        }
-                    }
-                    // if (event.x < 220) {
-                    //     console.log('dropped in shapes'); //not sure how else to fix this.
-                    // }
-                    //console.log(data.metrics.x, data.metrics.y);
-                    //console.log('drag success');
-                };
-                $scope.savedStyles = [];
-                $scope.addSavedStyle = function(block) {
-                    var savethis = {
-                        "fill": block.swatch.fill,
-                        "text": block.swatch.text,
-                        "border": block.swatch.border
-                    };
-                    $scope.savedStyles.push(savethis);
-                    //console.log(savethis);
-                };
-                $scope.lucidBackgroundColor = '#FFF';
-                $scope.switchTheme = function(theme) {
-                    $scope.lucidBackgroundColor = theme.pagecolor;
-                    $scope.lucidLineColor = theme.linecolor;
-
-                    angular.forEach($scope.blockElements, function(block) {
-                        if (block) {
-                            if (block.customcolor) {
-                                return;
-                            }
-                            var num = block.swatchnumber - 1;
-                            var themeswatch = theme.swatches[num]; //get swatch from theme
-                            //console.log(block);
-                            //block.swatch = themeswatch.swatch
-
-                            if (block.swatchtype === 'text') {
-                                //console.log('this is text', block.swatchtype);
-                                block.swatch.text = themeswatch.swatch.fill;
-                                block.swatch.border = 'transparent';
-                                block.swatch.fill = 'transparent';
-                                //console.log(block.swatch);
-                            }
-                            if (block.swatchtype !== 'text') {
-                                block.swatch.text = themeswatch.swatch.text;
-                                block.swatch.border = themeswatch.swatch.border;
-                                block.swatch.fill = themeswatch.swatch.fill;
-                            }
-                        }
-                    });
-                    //console.log(theme);
-                };
-                $scope.lucidLineColor = "#999999";
-                $scope.lucidLines = [{
-                    "points": "450 184 450 240",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "450 184 450 213 217 213 217 240",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "450 184 450 213 686 213 686 240",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "217 290 217 313 135 313 135 330",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "217 290 217 313 260 313 260 330",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "217 290 217 313 388 313 388 330",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "686 290 686 313 622 313 622 330",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "686 290 686 313 747 313 747 330",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "260 380 260 402 193 402 193 420",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "260 380 260 402 320 402 320 420",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "622 380 622 420",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "622 380 622 402 747 402 747 420",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "622 470 622 510",
-                    "endarrow": true,
-                    "width": 2
-                }, {
-                    "points": "6 78 894 78",
-                    "width": 1
-                }, {
-                    "points": "6 616 894 616",
-                    "width": 1
-                }, {
-                    "points": "6 659 894 659",
-                    "width": 1
-                }];
-            }
-        };
-    });
-
 angular.module("lucidChartBlock", ['appConfig'])
     .directive('lucidChartBlock', function(config, $document, shapesData) {
         return {
             restrict: 'E',
             scope: {
                 block: '=',
-                selected: '=',
                 addsavedstyle: '=',
-                showcomments: '=',
                 currenttheme: '=',
-                contextmenu: '='
             },
             replace: true,
             templateUrl: config.componentsURL + 'chart-block/lucid-chart-block.html',
             controller: function($scope) {
                 $scope.shapegroups = shapesData;
                 $scope.saveShape = function(data, shapegroup) {
-
-                    //var newblock = JSON.parse(JSON.stringify(selected));
-                    //console.log(selected, shapegroup);
-                    //$scope.shapegroups.shapegroup.shapes.push(newblock);
-
-                    //var index = $scope.shapegroups.shapegroup.indexOf(data);
-                    //console.log(index);
                     var newblock = JSON.parse(JSON.stringify(data));
 
                     newblock.shapepanel = true;
@@ -3170,40 +2373,40 @@ angular.module("lucidChartBlock", ['appConfig'])
                     //console.log("shape saved to shapegroup", newblock);
                 };
 
-                $scope.showcontextMenu = false;
-                $scope.showcontextMenuPosition = function(block) {
-                    function getPosition(e) {
-                        var posx = 0;
-                        var posy = 0;
+                //$scope.showcontextMenu = false;
+                // $scope.showcontextMenuPosition = function(block) {
+                //     function getPosition(e) {
+                //         var posx = 0;
+                //         var posy = 0;
 
-                        if (!e) {
-                            var e = window.event;
-                        }
+                //         if (!e) {
+                //             var e = window.event;
+                //         }
 
-                        if (e.pageX || e.pageY) {
-                            posx = e.pageX;
-                            posy = e.pageY;
-                        } else if (e.clientX || e.clientY) {
-                            posx = e.clientX + document.body.scrollLeft +
-                                document.documentElement.scrollLeft;
-                            posy = e.clientY + document.body.scrollTop +
-                                document.documentElement.scrollTop;
-                        }
-                        //console.log(posx, posy)
-                        return {
-                            x: posx,
-                            y: posy
-                        };
-                    }
-                    if ($scope.selected === block) {
-                        $scope.showcontextMenu = true;
-                        var menuPosition = getPosition();
-                        $scope.contextMenu = {};
-                        $scope.contextMenu.left = menuPosition.x;
-                        $scope.contextMenu.top = menuPosition.y;
-                        // console.log($scope.contextMenu);
-                    }
-                };
+                //         if (e.pageX || e.pageY) {
+                //             posx = e.pageX;
+                //             posy = e.pageY;
+                //         } else if (e.clientX || e.clientY) {
+                //             posx = e.clientX + document.body.scrollLeft +
+                //                 document.documentElement.scrollLeft;
+                //             posy = e.clientY + document.body.scrollTop +
+                //                 document.documentElement.scrollTop;
+                //         }
+                //         //console.log(posx, posy)
+                //         return {
+                //             x: posx,
+                //             y: posy
+                //         };
+                //     }
+                //     if ($scope.selected === block) {
+                //         $scope.showcontextMenu = true;
+                //         var menuPosition = getPosition();
+                //         $scope.contextMenu = {};
+                //         $scope.contextMenu.left = menuPosition.x;
+                //         $scope.contextMenu.top = menuPosition.y;
+                //         // console.log($scope.contextMenu);
+                //     }
+                // };
 
                 $scope.removeCustomColor = function(block) {
 
@@ -3236,15 +2439,15 @@ angular.module("lucidChartBlock", ['appConfig'])
                         event.preventDefault();
                     }
                 });
-                el.bind('mousedown', function() {
-                    //e.stopPropagation();
-                    //console.log(e);
-                    //scope.selected = scope.block;
-                    scope.$root.selectedBlock = scope.block;
-                    console.log(scope.block);
-                    //scope.$root.changealignment(scope.block.text.verticalalignment, scope.block.text.horizontalalignment);
-                    scope.edittext = false;
-                });
+                // el.bind('mousedown', function() {
+                //     //e.stopPropagation();
+                //     //console.log(e);
+                //     //scope.selected = scope.block;
+                //     scope.$root.selectedBlock = scope.block;
+                //     console.log(scope.block);
+                //     //scope.$root.changealignment(scope.block.text.verticalalignment, scope.block.text.horizontalalignment);
+                //     scope.edittext = false;
+                // });
                 el.bind('contextmenu', function() {
                     scope.showcontextMenu = true;
                     scope.edittext = false;
@@ -3329,16 +2532,46 @@ angular.module("lucidThemes", ['appConfig'])
             scope: {
                 selected: '=',
                 currenttheme: '=',
-                switchtheme: '='
             },
             replace: true,
             templateUrl: config.componentsURL + 'themes/lucid-themes.html',
 
-            controller: function($scope) {
+            controller: function($scope, $rootScope) {
 
                 $scope.themes = lucidThemesData;
                 $scope.currenttheme = $scope.themes[0];
                 $scope.viewthemes = false;
+
+                $scope.switchTheme = function(theme) {
+                    $rootScope.currentPage.canvasBG = theme.pagecolor;
+                    $rootScope.currentPage.linecolor = theme.linecolor;
+
+                    angular.forEach($rootScope.currentPage.blocks, function(block) {
+                        if (block) {
+                            if (block.customcolor) {
+                                return;
+                            }
+                            var num = block.swatchnumber - 1;
+                            var themeswatch = theme.swatches[num]; //get swatch from theme
+                            //console.log(block);
+                            //block.swatch = themeswatch.swatch
+
+                            if (block.swatchtype === 'text') {
+                                //console.log('this is text', block.swatchtype);
+                                block.swatch.text = themeswatch.swatch.fill;
+                                block.swatch.border = 'transparent';
+                                block.swatch.fill = 'transparent';
+                                //console.log(block.swatch);
+                            }
+                            if (block.swatchtype !== 'text') {
+                                block.swatch.text = themeswatch.swatch.text;
+                                block.swatch.border = themeswatch.swatch.border;
+                                block.swatch.fill = themeswatch.swatch.fill;
+                            }
+                        }
+                    });
+                    //console.log(theme);
+                };
             },
 
             link: function(scope, el) {
@@ -3355,206 +2588,206 @@ angular.module("lucidThemes", ['appConfig'])
         };
     })
     .factory('lucidThemesData', function() {
-    var lucidThemes = [{
-        "name": "Standard",
-        "pagecolor": "#ffffff",
-        "linecolor": "#999999",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-default-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#ffffff",
-                "text": "#333333",
-                "border": "#666666"
-            },
-            "radius": 5
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "text": "#ffffff",
-                "border": "#ee5b42"
-            }
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            }
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            }
-        }]
+        var lucidThemes = [{
+            "name": "Standard",
+            "pagecolor": "#ffffff",
+            "linecolor": "#999999",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-default-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "radius": 5
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "text": "#ffffff",
+                    "border": "#ee5b42"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                }
+            }]
 
-    }, {
-        "name": "Blueprint",
-        "pagecolor": "#4187ad",
-        "linecolor": "#99d2f2",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-blueprint-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#3b5878",
-                "text": "#ffffff",
-                "border": "#2d435c"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
         }, {
-            "swatch": {
-                "fill": "#99d2f2",
-                "text": "#ffffff",
-                "border": "#99d2f2"
-            }
-        }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ff8f80",
-                "text": "#3b5878",
-                "border": "#ff8f80"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ffdf71",
-                "text": "#3b5878",
-                "border": "#ffdf71"
-            }
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#3b5878",
-                "border": "#a3d977"
-            }
-        }]
+            "name": "Blueprint",
+            "pagecolor": "#4187ad",
+            "linecolor": "#99d2f2",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-blueprint-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#3b5878",
+                    "text": "#ffffff",
+                    "border": "#2d435c"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#99d2f2",
+                    "text": "#ffffff",
+                    "border": "#99d2f2"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ff8f80",
+                    "text": "#3b5878",
+                    "border": "#ff8f80"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ffdf71",
+                    "text": "#3b5878",
+                    "border": "#ffdf71"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#3b5878",
+                    "border": "#a3d977"
+                }
+            }]
 
-    }, {
-        "name": "Boardroom",
-        "pagecolor": "#3e3e3e",
-        "linecolor": "#cccccc",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-boardroom-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#666666",
-                "text": "#ffffff",
-                "border": "#999999"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
         }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "border": "#ee5b42",
-                "text": "#ffffff"
-            }
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "border": "#6db7c4",
-                "text": "#ffffff"
-            },
-        }, {
-            "swatch": {
-                "fill": "#a3d977",
-                "text": "#ffffff",
-                "border": "#a3d977"
-            }
-        }]
+            "name": "Boardroom",
+            "pagecolor": "#3e3e3e",
+            "linecolor": "#cccccc",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-boardroom-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#666666",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "border": "#ee5b42",
+                    "text": "#ffffff"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "border": "#6db7c4",
+                    "text": "#ffffff"
+                },
+            }, {
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                }
+            }]
 
-    }, {
-        "name": "Sandstorm",
-        "pagecolor": "#fff9ed",
-        "linecolor": "#999999",
-        "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-sandstorm-theme-thumbnail_360.jpg",
-        "swatches": [{
-            "swatch": {
-                "fill": "#ffe5b6",
-                "text": "#666666",
-                "border": "#666666"
-            },
-            "shadow": {
-                "shadow": false,
-                "blur": 10,
-                "x": 2,
-                "y": 3,
-                "color": "rgba(0,0,0,0)"
-            },
-            "radius": 0
         }, {
-            "swatch": {
-                "fill": "#999999",
-                "text": "#ffffff",
-                "border": "#999999"
-            }
-        }, {
-            "swatch": {
-                "fill": "#cccccc",
-                "text": "#ffffff",
-                "border": "#cccccc"
-            }
-        }, {
-            "swatch": {
-                "fill": "#ee5b42",
-                "border": "#ee5b42",
-                "text": "#ffffff"
-            }
-        }, {
-            "swatch": {
-                "fill": "#f0b74c",
-                "border": "#f0b74c",
-                "text": "#ffffff"
-            },
-        }, {
-            "swatch": {
-                "fill": "#6db7c4",
-                "text": "#ffffff",
-                "border": "#6db7c4"
-            }
-        }]
+            "name": "Sandstorm",
+            "pagecolor": "#fff9ed",
+            "linecolor": "#999999",
+            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-sandstorm-theme-thumbnail_360.jpg",
+            "swatches": [{
+                "swatch": {
+                    "fill": "#ffe5b6",
+                    "text": "#666666",
+                    "border": "#666666"
+                },
+                "shadow": {
+                    "shadow": false,
+                    "blur": 10,
+                    "x": 2,
+                    "y": 3,
+                    "color": "rgba(0,0,0,0)"
+                },
+                "radius": 0
+            }, {
+                "swatch": {
+                    "fill": "#999999",
+                    "text": "#ffffff",
+                    "border": "#999999"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#cccccc",
+                    "text": "#ffffff",
+                    "border": "#cccccc"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "border": "#ee5b42",
+                    "text": "#ffffff"
+                }
+            }, {
+                "swatch": {
+                    "fill": "#f0b74c",
+                    "border": "#f0b74c",
+                    "text": "#ffffff"
+                },
+            }, {
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                }
+            }]
 
-    }];
-    return lucidThemes;
-});
+        }];
+        return lucidThemes;
+    });
 
 angular.module('lucidShapeGroup', ['appConfig'])
     .directive('lucidShapeGroup', function($document, config) {
@@ -3569,28 +2802,28 @@ angular.module('lucidShapeGroup', ['appConfig'])
             transclude: true,
             templateUrl: config.componentsURL + 'shape-group/lucid-shape-group.html',
             controller: function($scope) {
-                $scope.onDropComplete = function(data, event, shapegroup) {
-                    //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
-                    if (data) {
-                        var index = shapegroup.shapes.indexOf(data);
-                        //console.log('shape', index);
+                // $scope.onDropComplete = function(data, event, shapegroup) {
+                //     //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
+                //     if (data) {
+                //         var index = shapegroup.shapes.indexOf(data);
+                //         //console.log('shape', index);
 
-                        if (index === -1) {
-                            //var index = $scope.shapegroups.shapegroup.indexOf(data);
-                            //console.log(index);
-                            var newblock = JSON.parse(JSON.stringify(data));
+                //         if (index === -1) {
+                //             //var index = $scope.shapegroups.shapegroup.indexOf(data);
+                //             //console.log(index);
+                //             var newblock = JSON.parse(JSON.stringify(data));
 
-                            newblock.shapepanel = true;
-                            newblock.customcolor = true;
-                            if (!newblock.url) {
-                                //this is here so that we can save any shape from the library for reuse.
-                                newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
-                            }
-                            shapegroup.shapes.push(newblock);
-                            //console.log("shape saved to shapegroup", newblock);
-                        }
-                    }
-                };
+                //             newblock.shapepanel = true;
+                //             newblock.customcolor = true;
+                //             if (!newblock.url) {
+                //                 //this is here so that we can save any shape from the library for reuse.
+                //                 newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
+                //             }
+                //             shapegroup.shapes.push(newblock);
+                //             //console.log("shape saved to shapegroup", newblock);
+                //         }
+                //     }
+                // };
 
                 //from demo
                 if ($scope.custom) {
@@ -3606,8 +2839,10 @@ angular.module('lucidShapeGroup', ['appConfig'])
 
                 $scope.dropCallback = function(event, index, item, external, type, allowedType) {
                     //$scope.logListEvent('dropped at', event, index, external, type);
+                    console.log('dropped in saved shapes', item);
                     if (external) {
-                        if (allowedType === 'shape') {
+                        console.log('dropped in saved shapes', item);
+                        if (allowedType === 'true') {
                             return false;
                         }
                         //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
@@ -3757,8 +2992,9 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
             controller: function($scope) {
 
                 $scope.shapegroups = shapesData.all();
-                $scope.pinnedgroups = shapesData.pinned();
+                // $scope.pinnedgroups = shapesData.pinned();
                 $scope.customshapes = shapesData.custom();
+                
                 $scope.newCustomGroup = function() {
                     var newGroup = {
                         "groupname": "New Group",
@@ -3864,21 +3100,21 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                     }
                     // console.log(showdrawer, 'ran');
                 };
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    //$scope.logListEvent('dragged over', event, index, external, type);
+                    return index; // < 10;
+                };
 
-                // $scope.dragoverCallback = function(event, index, external, type) {
-                //     $scope.logListEvent('dragged over', event, index, external, type);
-                //     // Disallow dropping in the third row. Could also be done with dnd-disable-if.
-                //     return index; // < 10;
-                // };
-
-                // $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                //     $scope.logListEvent('dropped at', event, index, external, type);
-                //     if (external) {
-                //         if (allowedType === 'shape') return false;
-                //         //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                //     }
-                //     return item;
-                // };
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    //$scope.logListEvent('dropped at', event, index, external, type);
+                    if (external) {
+                        if (allowedType === 'shape') {
+                            return false;
+                        }
+                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
 
                 // $scope.logEvent = function(message, event) {
                 //     console.log(message, '(triggered by the following', event.type, 'event)');
@@ -8805,16 +8041,17 @@ angular.module("lucidPage", ['appConfig'])
         };
     });
 
-angular.module("lucidPages", ['appConfig', 'lucidPage'])
-    .directive('lucidPages', function(config, $timeout) {
+angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
+    .directive('lucidPages', function(config, $timeout, pagesData) {
         return {
             restrict: 'E',
-            scope: {
-                pages: "="
-            },
+            scope: {},
             replace: true,
             templateUrl: config.componentsURL + 'pages/lucid-pages.html',
-            controller: function($scope) {
+            controller: function($scope, $rootScope) {
+                $rootScope.pages = pagesData;
+                $rootScope.currentPage = pagesData[0];
+
                 $scope.sortConfig = {
                     group: 'foobar',
                     animation: 150,
@@ -8822,29 +8059,873 @@ angular.module("lucidPages", ['appConfig', 'lucidPage'])
                     //     // @see https://github.com/RubaXa/Sortable/blob/master/ng-sortable.js#L18-L24
                     // }
                 };
-                $scope.addPage = function(){
-                	var length = $scope.pages.length;
-                	var uniqueID = new Date().getTime();
-                	var newPage = {
-                		name: 'New Page ' +(+length + 1),
-                		id: uniqueID,
-                	};
-                	$scope.pages.splice(length,0,newPage);
-                	$scope.selectedPage = uniqueID;
+                $scope.addPage = function() {
+                    var length = $rootScope.pages.length;
+                    var uniqueID = new Date().getTime();
+                    var newPage = {
+                        name: 'New Page ' + (+length + 1),
+                        id: uniqueID,
+                    };
+                    $rootScope.pages.splice(length, 0, newPage);
+                    $rootScope.currentPage = newPage;
                 };
-                $scope.duplicatePage = function(page, index){
-                    var newpage = JSON.parse(JSON.stringify(page))
-                    var newindex = +index +1
+                $scope.duplicatePage = function(page, index) {
+                    var newPage = JSON.parse(JSON.stringify(page))
+                    var newindex = +index + 1
                     var uniqueID = new Date().getTime();
 
-                    newpage.id = uniqueID;
-                    newpage.name = page.name + ' Copy';
-                     $scope.pages.splice(newindex,0,newpage);
-                     $timeout(function() {
-                        $scope.selectedPage = uniqueID;
+                    newPage.id = uniqueID;
+                    newPage.name = page.name + ' Copy';
+                    $rootScope.pages.splice(newindex, 0, newPage);
+                    $timeout(function() {
+                        $rootScope.currentPage = newPage;
                     }, 10);
                     // $scope.selectedPage = uniqueID;
                     //console.log(newpage, index);
+                };
+                $rootScope.masterPageCount = function() {
+                    var masterPageCount = [];
+                    angular.forEach($rootScope.pages, function(page) {
+                        if (page.master) {
+                            masterPageCount.push(page);
+                        }
+                        //console.log(masterPageCount);
+                        
+                    });
+                    return masterPageCount;
+                };
+                $scope.deletePage = function(page, index) {
+                    $rootScope.pages.splice(index, 1);
+                    //console.log(page, index);
+                    $timeout(function() {
+                        if ($rootScope.pages[index]) {
+                            $rootScope.currentPage = $rootScope.pages[index];
+                        } else {
+                            $rootScope.currentPage = $rootScope.pages[index - 1];
+                        }
+                    }, 10);
+                };
+                $scope.applyMaster = function(page){
+                    page.masterapplied = true;
+                    console.log('page', page)
+                    $timeout(function() {
+                        page.masterapplied = false;
+                    }, 2000);
+                };
+                $scope.applyMasterAll = function(){
+                    console.log('master applied to all')
+                    angular.forEach($rootScope.pages, function(page) {
+                        if (!page.master) {
+                            $scope.applyMaster(page);
+                        }
+                        
+                    });
+                    
+                };
+
+            }
+        };
+    });
+
+/*global angular : true fixes codekit error*/
+angular.module('lucidPagesData', [])
+    .factory('pagesData', function() {
+        //this factory will contain page data, block elements, positoins etc.
+        var lucidPages = [{
+            'name': 'Page 1',
+            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template-white.png',
+            'id': 14543,
+            'canvasBG': '#FFF',
+            'blocks': [{
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "comment": {
+                    "text": "yep this is a comment"
+                },
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME 1",
+                    "size": "12px",
+                },
+
+                "padding": 5,
+                "metrics": {
+                    "z": 2,
+                    "x": 390,
+                    "y": 139,
+                    "width": 120,
+                    "height": 45
+                },
+                "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><rect id="Rectangle-32-Copy-3" sketch:type="MSShapeGroup" x="1" y="2" width="28" height="26" rx="2"></rect></g>'
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 393,
+                    "y": 245,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 625,
+                    "y": 245,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 157,
+                    "y": 245,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 77,
+                    "y": 335,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 202,
+                    "y": 335,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "comment": {
+                    "text": "yep this is a comment"
+
+                },
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 327,
+                    "y": 335,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 563,
+                    "y": 335,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "text": "#ffffff",
+                    "border": "#ee5b42"
+                },
+                "swatchnumber": 4,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 688,
+                    "y": 335,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME0",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 688,
+                    "y": 425,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 563,
+                    "y": 425,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                },
+                "swatchnumber": 5,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 563,
+                    "y": 515,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#333333",
+                    "border": "#666666"
+                },
+                "swatchnumber": 1,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 262,
+                    "y": 425,
+                    "width": 120,
+                    "height": 45
+                },
+
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                },
+                "swatchnumber": 6,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "EMPLOYEE NAME",
+                    "size": "12px",
+                },
+
+                "padding": 10,
+                "metrics": {
+                    "z": 2,
+                    "x": 137,
+                    "y": 425,
+                    "width": 120,
+                    "height": 45
+                },
+
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#6db7c4",
+                    "text": "#ffffff",
+                    "border": "#6db7c4"
+                },
+                "swatchnumber": 6,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "text": "",
+                    "size": "12px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "font": "Source Sans Pro",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 591,
+                    "y": 626,
+                    "width": 22,
+                    "height": 22
+                },
+                "radius": 15,
+                "z": 2
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#a3d977",
+                    "text": "#ffffff",
+                    "border": "#a3d977"
+                },
+                "swatchnumber": 5,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "text": "",
+                    "size": "12px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "font": "Source Sans Pro",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 433,
+                    "y": 626,
+                    "width": 22,
+                    "height": 22
+                },
+                "radius": 15,
+                "z": 2
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "#ee5b42",
+                    "text": "#ffffff",
+                    "border": "#ee5b42"
+                },
+                "swatchnumber": 4,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "text": "",
+                    "size": "12px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "font": "Source Sans Pro",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 245,
+                    "y": 626,
+                    "width": 22,
+                    "height": 22
+                },
+                "radius": 15,
+                "z": 2
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#ee5b42",
+                    "border": "transparent"
+                },
+                "swatchtype": "text",
+                "swatchnumber": 4,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "text": "5+ YEAR TENURE",
+                    "size": "13px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "left",
+                    "font": "Oswald, sans-serif",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 272,
+                    "y": 625,
+                    "width": 150,
+                    "height": 22
+                },
+                "radius": 0,
+                "z": 2
+            }, {
+                "swatchtype": "text",
+                "customcolor": false,
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#a3d977",
+                    "border": "transparent"
+                },
+                "swatchnumber": 5,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "text": "NEW HIRE (MONTHS)",
+                    "size": "13px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "left",
+                    "font": "Oswald, sans-serif",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 463,
+                    "y": 625,
+                    "width": 125,
+                    "height": 22
+                },
+                "radius": 0,
+                "z": 2
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#6db7c4",
+                    "border": "transparent"
+                },
+                "swatchnumber": 6,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "swatchtype": "text",
+                "text": {
+                    "text": "INTERN",
+                    "size": "13px",
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "left",
+                    "font": "Oswald, sans-serif",
+                },
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 617,
+                    "y": 625,
+                    "width": 125,
+                    "height": 22
+                },
+                "radius": 0,
+                "z": 2
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#999999",
+                    "border": "transparent"
+                },
+                "swatchnumber": 2,
+                "borderwidth": 3,
+                "swatchtype": "text",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "COMPANY NAME",
+                    "size": "24px",
+                    "weight": "light",
+                    "letterspacing": "0px",
+                    "font": "Oswald, sans-serif"
+                },
+
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 342,
+                    "y": 15,
+                    "width": 220,
+                    "height": 35
+                },
+                "radius": 0
+            }, {
+                "customcolor": false,
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#999999",
+                    "border": "transparent"
+                },
+                "swatchnumber": 2,
+                "borderwidth": 3,
+                "swatchtype": "text",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "DEPARTMENT NAME",
+                    "size": "12px",
+                    "weight": "light",
+                    "letterspacing": "-1px",
+                    "font": "sans-serif"
+                },
+
+                "padding": 0,
+                "metrics": {
+                    "z": 2,
+                    "x": 342,
+                    "y": 53,
+                    "width": 220,
+                    "height": 14
+                },
+                "radius": 0
+            }],
+            'lines': [{
+                "points": "450 184 450 240",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "450 184 450 213 217 213 217 240",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "450 184 450 213 686 213 686 240",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "217 290 217 313 135 313 135 330",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "217 290 217 313 260 313 260 330",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "217 290 217 313 388 313 388 330",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "686 290 686 313 622 313 622 330",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "686 290 686 313 747 313 747 330",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "260 380 260 402 193 402 193 420",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "260 380 260 402 320 402 320 420",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "622 380 622 420",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "622 380 622 402 747 402 747 420",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "622 470 622 510",
+                "endarrow": true,
+                "width": 2,
+            }, {
+                "points": "6 78 894 78",
+                "width": 1,
+            }, {
+                "points": "6 616 894 616",
+                "width": 1,
+            }, {
+                "points": "6 659 894 659",
+                "width": 1,
+            }],
+            'linecolor': '#999'
+        }, {
+            'name': 'Page 2',
+            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template-white.png',
+            'id': 2353
+        }, {
+            'name': 'Page 13',
+            'id': 33456789
+        }];
+        return lucidPages;
+    });
+
+angular.module("lucidCanvas", ['appConfig'])
+    .directive('lucidCanvas', function(config) {
+        return {
+            restrict: 'E',
+            scope: {},
+            templateUrl: config.componentsURL + 'canvas/lucid-canvas.html',
+            controller: function($scope, $rootScope) {
+
+                // $scope.defaultBlock = {
+                //     "text": {
+                //         "verticalalignment": "middle",
+                //         "horizontalalignment": "center",
+                //         "text": "",
+                //         "size": "12px"
+                //     },
+                //     "swatch": {
+                //         "fill": "#FFFFFF",
+                //         "text": "#333",
+                //         "border": "#333"
+                //     },
+                //     "padding": 10,
+                //     "metrics": {
+                //         "z": 2,
+                //         "x": 390,
+                //         "y": 139,
+                //         "width": 120,
+                //         "height": 45
+                //     }
+                // };
+                // $scope.blockElements = $rootScope.currentPage.canvas;
+                // $scope.editThisBlock = function(block) {
+                //     $scope.selectedBlock = block;
+                //     //console.log(block.swatch);
+                // };
+                $scope.blocks = $rootScope.currentPage.blocks;
+
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    //$scope.logListEvent('dragged over', event, index, external, type);
+                    return index; // < 10;
+                };
+
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    //$scope.logListEvent('dropped at', event, index, external, type);
+                    console.log('dropped in saved shapes', item);
+                    if (external) {
+                        console.log('dropped in saved shapes', item);
+                        if (allowedType === 'true') {
+                            return false;
+                        }
+                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
+
+
+
+
+                // $scope.onDropComplete = function(data, event) {
+                //     if (data && !$scope.manageShapes) {
+                //         var index = $scope.blockElements.indexOf(data);
+                //         //console.log('shape', index);
+                //         if (index === -1) {
+                //             var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
+                //             var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
+                //             //data.metrics = {};
+                //             //console.log(data, event);
+                //             data.metrics.x = event.x - canvasX - data.metrics.width / 2; //center block as it drops on canvas and expands
+                //             data.metrics.y = event.y - canvasY - data.metrics.height / 2;
+
+                //             var newblock = JSON.parse(JSON.stringify(data));
+                //             $scope.blockElements.push(newblock);
+                //             //console.log('dropped on canvas', newblock, 'current array', $scope.blockElements);
+                //         }
+
+                //     }
+
+                // };
+                // $scope.onDragSuccess = function(data, event) {
+                //     if (event.x > 250) {
+                //         var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
+                //         var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
+                //         //console.log('drag success', data, event);
+                //         if (data) {
+                //             data.metrics.x = event.x - canvasX - event.element.centerX;
+                //             data.metrics.y = event.y - canvasY - event.element.centerY;
+                //             data.shapepanel = false;
+                //         }
+                //     }
+                //     // if (event.x < 220) {
+                //     //     console.log('dropped in shapes'); //not sure how else to fix this.
+                //     // }
+                //     //console.log(data.metrics.x, data.metrics.y);
+                //     //console.log('drag success');
+                // };
+
+
+
+
+
+                $scope.savedStyles = [];
+                $scope.addSavedStyle = function(block) {
+                    var savethis = {
+                        "fill": block.swatch.fill,
+                        "text": block.swatch.text,
+                        "border": block.swatch.border
+                    };
+                    $scope.savedStyles.push(savethis);
+                    //console.log(savethis);
                 };
             }
         };

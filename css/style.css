@@ -1123,6 +1123,17 @@ input {
   height: 100%;
   position: absolute;
 }
+.lucid-canvas > ul {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.lucid-canvas > ul > li {
+  position: absolute;
+}
 .lucid-saved-styles .lucid-dropdown-title {
   font-size: 14px;
   padding-bottom: 5px;
@@ -1318,6 +1329,12 @@ input {
 }
 .lucid-context-menu ul li:hover {
   background: #f1f1f1;
+}
+.lucid-context-menu ul li.context-divider {
+  background: #e5e5e5;
+  height: 1px;
+  margin: 5px 0;
+  padding: 0;
 }
 .lucid-context-menu ul li a {
   display: block;
@@ -2151,6 +2168,9 @@ input {
   right: 0px;
   height: 32px;
   background: rgba(41, 170, 225, 0.3);
+  top: 0;
+  -webkit-transition: 0.35s ease-in-out all;
+          transition: 0.35s ease-in-out all;
 }
 .lucid-page .master-page .master-applied-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
@@ -2167,19 +2187,8 @@ input {
   font-size: 14px;
   font-weight: 300;
 }
-.lucid-page .master-page.ng-enter {
+.lucid-page .master-page.ng-hide {
   top: -32px;
-}
-.lucid-page .master-page.ng-enter-active,
-.lucid-page .master-page.ng-leave {
-  top: 0;
-}
-.lucid-page .master-page.ng-leave-active {
-  top: -32px;
-}
-.lucid-page .master-page.ng-animate {
-  -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
 }
 .lucid-page h4 {
   display: inline-block;

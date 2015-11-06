@@ -4,24 +4,14 @@ angular.module("lucidChartBlock", ['appConfig'])
             restrict: 'E',
             scope: {
                 block: '=',
-                selected: '=',
                 addsavedstyle: '=',
-                showcomments: '=',
                 currenttheme: '=',
-                contextmenu: '='
             },
             replace: true,
             templateUrl: config.componentsURL + 'chart-block/lucid-chart-block.html',
             controller: function($scope) {
                 $scope.shapegroups = shapesData;
                 $scope.saveShape = function(data, shapegroup) {
-
-                    //var newblock = JSON.parse(JSON.stringify(selected));
-                    //console.log(selected, shapegroup);
-                    //$scope.shapegroups.shapegroup.shapes.push(newblock);
-
-                    //var index = $scope.shapegroups.shapegroup.indexOf(data);
-                    //console.log(index);
                     var newblock = JSON.parse(JSON.stringify(data));
 
                     newblock.shapepanel = true;
@@ -31,40 +21,40 @@ angular.module("lucidChartBlock", ['appConfig'])
                     //console.log("shape saved to shapegroup", newblock);
                 };
 
-                $scope.showcontextMenu = false;
-                $scope.showcontextMenuPosition = function(block) {
-                    function getPosition(e) {
-                        var posx = 0;
-                        var posy = 0;
+                //$scope.showcontextMenu = false;
+                // $scope.showcontextMenuPosition = function(block) {
+                //     function getPosition(e) {
+                //         var posx = 0;
+                //         var posy = 0;
 
-                        if (!e) {
-                            var e = window.event;
-                        }
+                //         if (!e) {
+                //             var e = window.event;
+                //         }
 
-                        if (e.pageX || e.pageY) {
-                            posx = e.pageX;
-                            posy = e.pageY;
-                        } else if (e.clientX || e.clientY) {
-                            posx = e.clientX + document.body.scrollLeft +
-                                document.documentElement.scrollLeft;
-                            posy = e.clientY + document.body.scrollTop +
-                                document.documentElement.scrollTop;
-                        }
-                        //console.log(posx, posy)
-                        return {
-                            x: posx,
-                            y: posy
-                        };
-                    }
-                    if ($scope.selected === block) {
-                        $scope.showcontextMenu = true;
-                        var menuPosition = getPosition();
-                        $scope.contextMenu = {};
-                        $scope.contextMenu.left = menuPosition.x;
-                        $scope.contextMenu.top = menuPosition.y;
-                        // console.log($scope.contextMenu);
-                    }
-                };
+                //         if (e.pageX || e.pageY) {
+                //             posx = e.pageX;
+                //             posy = e.pageY;
+                //         } else if (e.clientX || e.clientY) {
+                //             posx = e.clientX + document.body.scrollLeft +
+                //                 document.documentElement.scrollLeft;
+                //             posy = e.clientY + document.body.scrollTop +
+                //                 document.documentElement.scrollTop;
+                //         }
+                //         //console.log(posx, posy)
+                //         return {
+                //             x: posx,
+                //             y: posy
+                //         };
+                //     }
+                //     if ($scope.selected === block) {
+                //         $scope.showcontextMenu = true;
+                //         var menuPosition = getPosition();
+                //         $scope.contextMenu = {};
+                //         $scope.contextMenu.left = menuPosition.x;
+                //         $scope.contextMenu.top = menuPosition.y;
+                //         // console.log($scope.contextMenu);
+                //     }
+                // };
 
                 $scope.removeCustomColor = function(block) {
 
@@ -97,15 +87,15 @@ angular.module("lucidChartBlock", ['appConfig'])
                         event.preventDefault();
                     }
                 });
-                el.bind('mousedown', function() {
-                    //e.stopPropagation();
-                    //console.log(e);
-                    //scope.selected = scope.block;
-                    scope.$root.selectedBlock = scope.block;
-                    console.log(scope.block);
-                    //scope.$root.changealignment(scope.block.text.verticalalignment, scope.block.text.horizontalalignment);
-                    scope.edittext = false;
-                });
+                // el.bind('mousedown', function() {
+                //     //e.stopPropagation();
+                //     //console.log(e);
+                //     //scope.selected = scope.block;
+                //     scope.$root.selectedBlock = scope.block;
+                //     console.log(scope.block);
+                //     //scope.$root.changealignment(scope.block.text.verticalalignment, scope.block.text.horizontalalignment);
+                //     scope.edittext = false;
+                // });
                 el.bind('contextmenu', function() {
                     scope.showcontextMenu = true;
                     scope.edittext = false;

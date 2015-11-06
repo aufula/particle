@@ -19,7 +19,7 @@ angular.module('lucidShape', ['appConfig'])
             replace: true,
             templateUrl: config.componentsURL + 'shape/lucid-shape.html',
             compile: function(element, attrs) {
-                if (!attrs.shape) {
+                if (!attrs.shape || attrs.shape == "" || attrs.shape == null) {
                     attrs.shape = 'block';
                 }
 
