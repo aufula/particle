@@ -544,14 +544,12 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-prepend "../../lib/angular/angular.min.js"
 //@codekit-prepend "../../lib/angular/angular-animate.min.js"
 
-
 //@codekit-prepend "../../lib/Sortable.min.js"
 //@codekit-prepend "../../lib/ng-sortable.js"
 
 //@codekit-append "../../lib/svg-morpheus.js"
 //@codekit-append "../../lib/ngDraggable.js"
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
-
 
 //components
 //@codekit-append "canvas/lucid-canvas-data.js"
@@ -599,8 +597,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.0/" //local dev
-    //'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
+    //'componentsURL': "/components/0.0/" //local dev
+    'componentsURL': "http://lucidsoftware.github.io/particle/components/0.0/" //github
 
 });
 
