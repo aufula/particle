@@ -21,7 +21,7 @@
                             dnd-type="'containerType'"
                             dnd-effect-allowed="move"
                             dnd-moved="pinnedgroups.splice($index, 1)"
-                            class="lucid-shape-group-wrapper left-panel repeat-animation">
+                            class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
 
                         	<lucid-shape-group shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
                         </li>
@@ -32,9 +32,9 @@
                 <div ng-bind-html="clonedData.svg | sanitize"></div>
             </div> -->
             <lucid-import-options ng-show="!$root.manageshapes"></lucid-import-options>
-            <div class="overflow-message" ng-show="overflowMessage">"{{overflowMessageTitle}}" Pinned</div>
+            <div class="overflow-message lucid-animate" ng-show="overflowMessage">"{{overflowMessageTitle}}" Pinned</div>
         </div>
-        <div class="lucid-shape-manager lucid-manage-shapes" ng-show="$root.manageshapes">
+        <div class="lucid-shape-manager lucid-manage-shapes lucid-animate" ng-show="$root.manageshapes">
             <div class="lucid-shape-manager-top-bar">
                 <div class="top-bar-inner" ng-show="$root.manageshapes">
                     <button id="new-shapegroup" class="lucid-new-library lucid-button" ng-click="newCustomGroup()">+ Custom Group</button>

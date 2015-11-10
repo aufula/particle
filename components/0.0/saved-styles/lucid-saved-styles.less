@@ -3,6 +3,9 @@
         font-size: 14px;
         padding-bottom: 5px;
     }
+    .swatch-colors>ul{
+        font-size:0;
+    }
     .lucid-swatch-square {
         width: 36px;
         height: 36px;
@@ -14,6 +17,15 @@
         display: inline-block;
         transition: .1s ease-in-out background;
         vertical-align: top;
+        &.ng-enter{
+            margin-right:-36px;
+        }
+        &.ng-enter-active{
+            margin-right:0;
+        }
+        &.ng-animate{
+            transition: margin .4s ease-in-out;
+        }
         .lucid-swatch-check {
             position: absolute;
             right: -4px;

@@ -588,11 +588,11 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 
 angular.module('appConfig', [])
 
-// .config(['$animateProvider', function($animateProvider){
-//   // restrict animation to elements with the bi-animate css class with a regexp.
-//   // note: "bi-*" is our css namespace at @Bringr.
-//   $animateProvider.classNameFilter(/lucid-animate/);
-// }])
+.config(['$animateProvider', function($animateProvider){
+  // restrict animation to elements with the lucid-animate css class with a regexp.
+  // this should improve animation performance
+  $animateProvider.classNameFilter(/lucid-animate/);
+}])
 
 .config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
@@ -2502,25 +2502,16 @@ angular.module("lucidSavedStyles", ['appConfig'])
                     }
                 };
 
-                $scope.showpopup = false;
-                $scope.toggleMenu = function() {
-                    $scope.showpopup = !$scope.showpopup;
+                $scope.savedStyles = [];
+                $scope.addSavedStyle = function(block) {
+                    var savethis = {
+                        "fill": block.swatch.fill,
+                        "text": block.swatch.text,
+                        "border": block.swatch.border
+                    };
+                    $scope.savedStyles.push(savethis);
+                    console.log(savethis);
                 };
-                $scope.closeMenu = function() {
-                    $scope.showpopup = false;
-                };
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopup = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
             }
         };
     });
@@ -8045,7 +8036,9 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
     .directive('lucidPages', function(config, $timeout, pagesData) {
         return {
             restrict: 'E',
-            scope: {},
+            scope: {
+                showpages: '='
+            },
             replace: true,
             templateUrl: config.componentsURL + 'pages/lucid-pages.html',
             controller: function($scope, $rootScope) {
@@ -8067,7 +8060,9 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                         id: uniqueID,
                     };
                     $rootScope.pages.splice(length, 0, newPage);
-                    $rootScope.currentPage = newPage;
+                    $timeout(function() {
+                        $rootScope.currentPage = newPage;
+                    }, 10); //delay so it selects after transition
                 };
                 $scope.duplicatePage = function(page, index) {
                     var newPage = JSON.parse(JSON.stringify(page))
@@ -8090,7 +8085,7 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                             masterPageCount.push(page);
                         }
                         //console.log(masterPageCount);
-                        
+
                     });
                     return masterPageCount;
                 };
@@ -8105,22 +8100,22 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                         }
                     }, 10);
                 };
-                $scope.applyMaster = function(page){
+                $scope.applyMaster = function(page) {
                     page.masterapplied = true;
                     console.log('page', page)
                     $timeout(function() {
                         page.masterapplied = false;
                     }, 2000);
                 };
-                $scope.applyMasterAll = function(){
+                $scope.applyMasterAll = function() {
                     console.log('master applied to all')
                     angular.forEach($rootScope.pages, function(page) {
                         if (!page.master) {
                             $scope.applyMaster(page);
                         }
-                        
+
                     });
-                    
+
                 };
 
             }
@@ -8912,21 +8907,6 @@ angular.module("lucidCanvas", ['appConfig'])
                 //     //console.log(data.metrics.x, data.metrics.y);
                 //     //console.log('drag success');
                 // };
-
-
-
-
-
-                $scope.savedStyles = [];
-                $scope.addSavedStyle = function(block) {
-                    var savethis = {
-                        "fill": block.swatch.fill,
-                        "text": block.swatch.text,
-                        "border": block.swatch.border
-                    };
-                    $scope.savedStyles.push(savethis);
-                    //console.log(savethis);
-                };
             }
         };
     });

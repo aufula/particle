@@ -92,21 +92,6 @@ angular.module("lucidCanvas", ['appConfig'])
                 //     //console.log(data.metrics.x, data.metrics.y);
                 //     //console.log('drag success');
                 // };
-
-
-
-
-
-                $scope.savedStyles = [];
-                $scope.addSavedStyle = function(block) {
-                    var savethis = {
-                        "fill": block.swatch.fill,
-                        "text": block.swatch.text,
-                        "border": block.swatch.border
-                    };
-                    $scope.savedStyles.push(savethis);
-                    //console.log(savethis);
-                };
             }
         };
     });

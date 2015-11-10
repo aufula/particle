@@ -2,7 +2,9 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
     .directive('lucidPages', function(config, $timeout, pagesData) {
         return {
             restrict: 'E',
-            scope: {},
+            scope: {
+                showpages: '='
+            },
             replace: true,
             templateUrl: config.componentsURL + 'pages/lucid-pages.html',
             controller: function($scope, $rootScope) {
@@ -24,7 +26,9 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                         id: uniqueID,
                     };
                     $rootScope.pages.splice(length, 0, newPage);
-                    $rootScope.currentPage = newPage;
+                    $timeout(function() {
+                        $rootScope.currentPage = newPage;
+                    }, 10); //delay so it selects after transition
                 };
                 $scope.duplicatePage = function(page, index) {
                     var newPage = JSON.parse(JSON.stringify(page))
@@ -47,7 +51,7 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                             masterPageCount.push(page);
                         }
                         //console.log(masterPageCount);
-                        
+
                     });
                     return masterPageCount;
                 };
@@ -62,22 +66,22 @@ angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
                         }
                     }, 10);
                 };
-                $scope.applyMaster = function(page){
+                $scope.applyMaster = function(page) {
                     page.masterapplied = true;
                     console.log('page', page)
                     $timeout(function() {
                         page.masterapplied = false;
                     }, 2000);
                 };
-                $scope.applyMasterAll = function(){
+                $scope.applyMasterAll = function() {
                     console.log('master applied to all')
                     angular.forEach($rootScope.pages, function(page) {
                         if (!page.master) {
                             $scope.applyMaster(page);
                         }
-                        
+
                     });
-                    
+
                 };
 
             }

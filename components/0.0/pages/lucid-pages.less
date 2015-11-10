@@ -20,6 +20,12 @@
             &.sortable-ghost {
                 opacity: .5 !important;
             }
+            &.ng-enter{
+                animation: PageAnimation .4s ease-out;
+                h4 {
+                    transform: translateX(-40px);
+                }
+            }
             &.ng-enter-active{
                 animation: PageAnimation .4s ease-out;
                 h4 {
@@ -43,7 +49,7 @@
                     margin-right:-(@page-card-width);
                     opacity:0;
                 }
-                50%{
+                40%{
                     opacity:0;
                 }
                 100% {

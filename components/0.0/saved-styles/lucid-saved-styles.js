@@ -25,25 +25,16 @@ angular.module("lucidSavedStyles", ['appConfig'])
                     }
                 };
 
-                $scope.showpopup = false;
-                $scope.toggleMenu = function() {
-                    $scope.showpopup = !$scope.showpopup;
+                $scope.savedStyles = [];
+                $scope.addSavedStyle = function(block) {
+                    var savethis = {
+                        "fill": block.swatch.fill,
+                        "text": block.swatch.text,
+                        "border": block.swatch.border
+                    };
+                    $scope.savedStyles.push(savethis);
+                    console.log(savethis);
                 };
-                $scope.closeMenu = function() {
-                    $scope.showpopup = false;
-                };
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopup = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
             }
         };
     });

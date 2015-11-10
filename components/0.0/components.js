@@ -48,11 +48,11 @@
 
 angular.module('appConfig', [])
 
-// .config(['$animateProvider', function($animateProvider){
-//   // restrict animation to elements with the bi-animate css class with a regexp.
-//   // note: "bi-*" is our css namespace at @Bringr.
-//   $animateProvider.classNameFilter(/lucid-animate/);
-// }])
+.config(['$animateProvider', function($animateProvider){
+  // restrict animation to elements with the lucid-animate css class with a regexp.
+  // this should improve animation performance
+  $animateProvider.classNameFilter(/lucid-animate/);
+}])
 
 .config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([

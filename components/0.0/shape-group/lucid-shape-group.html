@@ -10,7 +10,7 @@
         <span class="shape-group-name"> {{name}}</span>
         <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.shapegroup.pinned = false">
     </div>
-    <div class="slide-toggle" ng-hide="hideshapes">
+    <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
         <ul dnd-list="shapes"
             dnd-allowed-types="[custom]"
             dnd-horizontal-list="true"
@@ -28,7 +28,7 @@
                 dnd-copied="logEvent('Item copied', event)"
                 dnd-canceled="logEvent('Drag operation canceled', event)"
                 dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                class="lucid-shape repeat-animation">  
+                class="lucid-shape repeat-animation lucid-animate">  
                 
                 <lucid-shape ng-if="!shape.svg" shape="{{shape.name}}" fill="{{shape.fill}}" strokecolor="{{shape.stroke}}" textcolor="{{shape.text}}" height="28" width="28" strokewidth="{{shape.strokewidth}}" radius="{{shape.radius}}">
                 </lucid-shape>

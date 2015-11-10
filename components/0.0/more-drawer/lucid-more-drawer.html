@@ -1,6 +1,6 @@
 <div class="lucid-drawer-wrapper" ng-class="{'top-handle':tophandle}">
     <div class="lucid-wrapper-overflow-hidden" ng-if="!tophandle">
-        <div class="lucid-popover-menu-drawer" ng-show="showdrawer" style="margin-top:-{{height}}px" ng-class="{'lucid-drawer-open': showdrawer}">
+        <div class="lucid-popover-menu-drawer lucid-animate" ng-show="showdrawer" style="margin-top:-{{height}}px" ng-class="{'lucid-drawer-open': showdrawer}">
             <ng-transclude>
             </ng-transclude>
         </div>
@@ -19,7 +19,7 @@
         </div>
     </div>
     <div class="lucid-wrapper-overflow-hidden" ng-if="tophandle">
-        <div class="lucid-popover-menu-drawer top-handle-height" ng-show="showdrawer" style="height:{{height}}px" ng-class="{'lucid-drawer-open': showdrawer}">
+        <div class="lucid-popover-menu-drawer top-handle-height lucid-animate" ng-show="showdrawer" style="height:{{height}}px" ng-class="{'lucid-drawer-open': showdrawer}">
             <ng-transclude>
             </ng-transclude>
         </div>

@@ -3,7 +3,8 @@
         lucid-context-menu
         data-target="page-context-{{ page.id }}"
         ng-class="{'current-page': $root.currentPage == page}"
-        ng-click="$root.currentPage = page">
+        ng-click="$root.currentPage = page"
+        ng-dblclick="$root.currentPage = page; $parent.$parent.showpages = false">
         <div class="center-image">
             <div class="center-image-container">
                 <div class="image-container">
@@ -23,7 +24,7 @@
             </div>
         </div>
         <span>
-            <h4 ng-click="renameModal=true">{{page.name}}</h4>
+            <h4 ng-click="renameModal=true" class="lucid-animate">{{page.name}}</h4>
         </span>
         <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel" confirm-function="renamePage(renameData.name)">
             <div class="rename-page-modal-content">

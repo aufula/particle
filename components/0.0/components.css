@@ -1138,6 +1138,9 @@ input {
   font-size: 14px;
   padding-bottom: 5px;
 }
+.lucid-saved-styles .swatch-colors > ul {
+  font-size: 0;
+}
 .lucid-saved-styles .lucid-swatch-square {
   width: 36px;
   height: 36px;
@@ -1150,6 +1153,16 @@ input {
   -webkit-transition: 0.1s ease-in-out background;
           transition: 0.1s ease-in-out background;
   vertical-align: top;
+}
+.lucid-saved-styles .lucid-swatch-square.ng-enter {
+  margin-right: -36px;
+}
+.lucid-saved-styles .lucid-swatch-square.ng-enter-active {
+  margin-right: 0;
+}
+.lucid-saved-styles .lucid-swatch-square.ng-animate {
+  -webkit-transition: margin 0.4s ease-in-out;
+          transition: margin 0.4s ease-in-out;
 }
 .lucid-saved-styles .lucid-swatch-square .lucid-swatch-check {
   position: absolute;
@@ -2169,8 +2182,6 @@ input {
   height: 32px;
   background: rgba(41, 170, 225, 0.3);
   top: 0;
-  -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
 }
 .lucid-page .master-page .master-applied-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
@@ -2189,6 +2200,10 @@ input {
 }
 .lucid-page .master-page.ng-hide {
   top: -32px;
+}
+.lucid-page .master-page.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+          transition: 0.35s ease-in-out all;
 }
 .lucid-page h4 {
   display: inline-block;
@@ -2240,6 +2255,17 @@ input {
 .lucid-pages .lucid-pages-wrapper .add-new-page.sortable-ghost {
   opacity: .5 !important;
 }
+.lucid-pages .lucid-pages-wrapper > ul > li.ng-enter,
+.lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter {
+  -webkit-animation: PageAnimation 0.4s ease-out;
+          animation: PageAnimation 0.4s ease-out;
+}
+.lucid-pages .lucid-pages-wrapper > ul > li.ng-enter h4,
+.lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter h4 {
+  -webkit-transform: translateX(-40px);
+      -ms-transform: translateX(-40px);
+          transform: translateX(-40px);
+}
 .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter-active,
 .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter-active {
   -webkit-animation: PageAnimation 0.4s ease-out;
@@ -2278,7 +2304,7 @@ input {
     margin-right: -170px;
     opacity: 0;
   }
-  50% {
+  40% {
     opacity: 0;
   }
   100% {
@@ -2291,7 +2317,7 @@ input {
     margin-right: -170px;
     opacity: 0;
   }
-  50% {
+  40% {
     opacity: 0;
   }
   100% {
