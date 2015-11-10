@@ -2063,7 +2063,7 @@ input {
   bottom: 0;
   left: 250px;
   width: calc(100vw - 250px);
-  z-index: 0;
+  z-index: 1;
 }
 .settings-drawer .settings-drawer-top {
   background: #3d4752;
