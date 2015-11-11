@@ -56,20 +56,21 @@
                             <div class="divider-line"></div>
                         </div>
                     </div>
-                    <ul dnd-list="customshapes"
+                    <ul dnd-list="shapegroups"
                         dnd-allowed-types="['containerType']"
                         dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
                         dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
                         class="lucid-shapegroup-columns">
-                        <li ng-repeat="shapegroup in customshapes | filter:searchShapes"
+                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
                             dnd-draggable="shapegroup"
                             dnd-type="'containerType'"
                             dnd-effect-allowed="move"
-                            dnd-moved="customshapes.splice($index, 1)"
+                            dnd-moved="shapegroups.splice($index, 1)"
                             class="lucid-shape-group-wrapper lucid-animate"
                             ng-class-odd="'odd'"
-                            ng-class-even="'even'">
+                            ng-class-even="'even'"
+                            ng-if="shapegroup.custom">
 
                             <lucid-shape-group-manage shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
 
@@ -99,31 +100,8 @@
                             <lucid-shape-group-manage shapes="shapegroup.shapes" name="{{shapegroup.groupname}}" custom="{{shapegroup.custom}}"></lucid-shape-group>
                         </li>
                     </ul>
-
                 </div>
-                <!-- repeat filter right -->
             </div>
         </div>
-        <!-- Modals down here -->
-        <lucid-modal showmodal="importShapes" width="590" height="460" title="Import Shapes" confirm="Import" cancel="Cancel">
-            <!-- Insert modal content here -->
-            <lucid-finger-tabs>
-                <lucid-finger-tab name="On your computer" selected>
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placholder-import-dialog.png">
-                </lucid-finger-tab>
-                <lucid-finger-tab name="Dropbox">
-                    Tab 2 again
-                </lucid-finger-tab>
-                <lucid-finger-tab name="Google Drive">
-                    Tab 3
-                </lucid-finger-tab>
-                <lucid-finger-tab name="Facebook">
-                    Tab 4
-                </lucid-finger-tab>
-                <lucid-finger-tab name="Flickr">
-                    Tab 5
-                </lucid-finger-tab>
-            </lucid-finger-tabs>
-        </lucid-modal>
     </div>
 </div>

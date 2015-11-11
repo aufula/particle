@@ -648,7 +648,7 @@ input {
 .lucid-shape-group.custom-library .dndDraggingSource {
   opacity: 0;
 }
-.lucid-shape-group.custom-library ul > li:first-child {
+.lucid-shape-group.custom-library ul > li.lucid-shape:first-child {
   display: none;
 }
 .lucid-shape-group.custom-library.dragging-shape ul {

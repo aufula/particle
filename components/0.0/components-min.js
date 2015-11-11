@@ -2985,7 +2985,7 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
 
                 $scope.shapegroups = shapesData.all();
                 // $scope.pinnedgroups = shapesData.pinned();
-                $scope.customshapes = shapesData.custom();
+                //$scope.customshapes = shapesData.custom();
                 
                 $scope.newCustomGroup = function() {
                     var newGroup = {
@@ -2994,17 +2994,16 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                         "edit": true,
                         "shapes": [{'fake':'fake'}],
                     };
-                    $scope.customshapes.splice(0, 0, newGroup);
+                    shapesData.addGroup(newGroup);
+                    //$scope.customshapes.splice(0, 0, newGroup);
                 };
                 $scope.editName = function(shapegroup, index) {
-                    console.log(shapegroup, index);
                     shapegroup.edit = true;
                     var elementID = 'name-input-' + index;
                     $timeout(function() {
                         document.getElementById(elementID).select();
                     }, 10);
                     shapegroup.edit = true;
-                    console.log(shapegroup.edit, index);
                 };
                 $scope.pinnedCount = 5; //used to always pin to bottom
                 $scope.pinGroup = function(shapegroup) {
@@ -3146,6 +3145,43 @@ angular.module("lucidShapesData", ['appConfig'])
     .factory('shapesData', function() {
 
         var lucidShapes = [{
+            "groupname": "My Saved Shapes",
+            "shapes": [{
+                "name": "text",
+                "tags": "Standard",
+                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
+                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
+                "shapepanel": true,
+                "customcolor": false,
+                "swatchtype": "text",
+                "swatch": {
+                    "fill": "transparent",
+                    "text": "#8D8D8D",
+                    "border": "transparent"
+                },
+                "swatchnumber": 2,
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "INSERT TEXT",
+                    "size": "12px",
+                },
+
+                "padding": 5,
+                "metrics": {
+                    "z": 2,
+                    "x": 390,
+                    "y": 139,
+                    "width": 120,
+                    "height": 45
+                }
+            }],
+            "custom": true,
+            "pinned": true,
+            "pinnedOrder": 1
+        }, {
             "groupname": "Standard",
             "shapes": [{
                 "name": "text",
@@ -7783,71 +7819,39 @@ angular.module("lucidShapesData", ['appConfig'])
                 "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke-width="2" stroke="#979797" fill="#FFFFFF"><polygon id="Star-1-Copy-4" sketch:type="MSShapeGroup" points="15 23 6.77100647 27.3262379 8.34260439 18.163119 1.68520877 11.6737621 10.8855032 10.336881 15 2 19.1144968 10.336881 28.3147912 11.6737621 21.6573956 18.163119 23.2289935 27.3262379 "/></g></g></svg>'
             }],
             "pinned": false,
-        }, {
-            "groupname": "My Saved Shapes",
-            "shapes": [{
-                "name": "text",
-                "tags": "Standard",
-                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
-                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
-                "shapepanel": true,
-                "customcolor": false,
-                "swatchtype": "text",
-                "swatch": {
-                    "fill": "transparent",
-                    "text": "#8D8D8D",
-                    "border": "transparent"
-                },
-                "swatchnumber": 2,
-                "borderwidth": 3,
-                "borderstyle": "solid",
-                "text": {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "center",
-                    "text": "INSERT TEXT",
-                    "size": "12px",
-                },
-
-                "padding": 5,
-                "metrics": {
-                    "z": 2,
-                    "x": 390,
-                    "y": 139,
-                    "width": 120,
-                    "height": 45
-                }
-            }],
-            "custom": true,
-            "pinned": true,
-            "pinnedOrder": 1
         }];
         return {
             all: function() {
                 return lucidShapes;
             },
-            pinned: function() {
-                var pinnedShapes = [];
-
-
-                angular.forEach(lucidShapes, function(shapegroup) {
-                        if (shapegroup.pinned) {
-                            pinnedShapes.push(shapegroup);
-                        }
-                    });
-
-                return pinnedShapes;
+            rename: function(shapegroup, index){
+                console.log('edit 1', lucidShapes[index]);
+                lucidShapes[index].edit = 'true';
+                console.log('edit', lucidShapes[index]);
             },
-            custom: function() {
-                var customShapes = [];
-                angular.forEach(lucidShapes, function(shapegroup) {
-                        if (shapegroup.custom) {
-                            customShapes.push(shapegroup);
-                        }
-                    });
-                return customShapes;
-            },
+            // pinned: function() {
+            //     var pinnedShapes = [];
+
+
+            //     angular.forEach(lucidShapes, function(shapegroup) {
+            //             if (shapegroup.pinned) {
+            //                 pinnedShapes.push(shapegroup);
+            //             }
+            //         });
+
+            //     return pinnedShapes;
+            // },
+            // custom: function() {
+            //     var customShapes = [];
+            //     angular.forEach(lucidShapes, function(shapegroup) {
+            //             if (shapegroup.custom) {
+            //                 customShapes.push(shapegroup);
+            //             }
+            //         });
+            //     return customShapes;
+            // },
             addGroup: function(newgroup) {
-                //console.log(newgroup);
+                console.log(newgroup);
                 lucidShapes.splice(0, 0, newgroup);
             }
         };

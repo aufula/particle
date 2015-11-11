@@ -5,7 +5,7 @@
     <div class="shape-group-top">
         
         <span class="edit-in-place shape-group-name" ng-bind="name" ng-show="!$parent.shapegroup.edit"></span>
-        <input id="name-input-{{$parent.$index}}" class="edit-in-place" placeholder="Group Name" ng-model="name" ng-show="$parent.shapegroup.edit" ng-enter="$parent.shapegroup.edit=false" click-outside="$parent.shapegroup.edit=false"  outside-if-not="name-input, new-shapegroup" dnd-nodrag select-on-load></input>
+        <input id="name-input-{{$parent.$index}}" class="edit-in-place" placeholder="Group Name" ng-model="name" ng-show="$parent.shapegroup.edit" ng-enter="$parent.shapegroup.edit=false" click-ooutside="$parent.shapegroup.edit=false"  outside-if-not="name-input, new-shapegroup" dnd-nodrag select-on-load></input>
 
         <div class="lucid-shape-group-top-right-icons" ng-show="custom">
             
@@ -49,7 +49,7 @@
                         <li class="lucid-select-option">Share</li>
                         <li class="lucid-select-option" ng-click="$parent.editName($parent.shapegroup, $parent.$index)">Rename</li>
                         <li class="lucid-select-option">Duplicate</li>
-                        <li class="lucid-select-option" ng-click="$parent.customshapes.splice($index, 1)">Delete</li>
+                        <li class="lucid-select-option" ng-click="$parent.shapegroups.splice($index, 1)">Delete</li>
 
                     </ul>
                 </div>
