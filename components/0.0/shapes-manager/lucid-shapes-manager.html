@@ -83,12 +83,11 @@
                             <div class="divider-line"></div>
                         </div>
                     </div>
-                    <ul
-                        dnd-external-sources="true"
+                    <ul dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
                         dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
                         class="lucid-shapegroup-columns">
-                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:5"
+                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:6"
                             dnd-draggable="shapegroup"
                             dnd-type="'containerType'"
                             dnd-effect-allowed="copy"

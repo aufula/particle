@@ -76,7 +76,7 @@
                 dnd-copied="logEvent('Item copied', event)"
                 dnd-canceled="logEvent('Drag operation canceled', event)"
                 dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                class="lucid-shape repeat-animation">  
+                class="lucid-shape repeat-animation lucid-animate">  
                 <lucid-shape ng-if="!shape.svg" shape="{{shape.name}}" fill="{{shape.fill}}" strokecolor="{{shape.stroke}}" textcolor="{{shape.text}}" height="28" width="28" strokewidth="{{shape.strokewidth}}" radius="{{shape.radius}}">
                 </lucid-shape>
                 <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
