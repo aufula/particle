@@ -1,4 +1,4 @@
-<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes }">
+<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && custom }">
     <div class="pin-library" ng-click="$parent.pinGroup($parent.shapegroup)" ng-class="{'pinned': $parent.shapegroup.pinned}">
         <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
     </div>
@@ -57,6 +57,9 @@
         </div>
     </div>
     <div class="slide-toggle" ng-hide="hideshapes">
+        <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="custom">
+            <span class="lucid-save-shapes-hint" ng-hide="shapes.length > 1">Drag shapes here to reuse</span>
+        </div>
         <ul dnd-list="shapes"
             dnd-allowed-types="[custom]"
             dnd-horizontal-list="true"

@@ -19,18 +19,19 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                         "groupname": "New Group",
                         "custom": true,
                         "edit": true,
-                        "shapes": [],
+                        "shapes": [{'fake':'fake'}],
                     };
                     $scope.customshapes.splice(0, 0, newGroup);
                 };
                 $scope.editName = function(shapegroup, index) {
-                    //console.log(shapegroup, index);
+                    console.log(shapegroup, index);
                     shapegroup.edit = true;
                     var elementID = 'name-input-' + index;
                     $timeout(function() {
                         document.getElementById(elementID).select();
                     }, 10);
-
+                    shapegroup.edit = true;
+                    console.log(shapegroup.edit, index);
                 };
                 $scope.pinnedCount = 5; //used to always pin to bottom
                 $scope.pinGroup = function(shapegroup) {

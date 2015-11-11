@@ -1,4 +1,4 @@
-<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes }">
+<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && custom }">
     <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
         <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
             <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
@@ -11,6 +11,9 @@
         <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.shapegroup.pinned = false">
     </div>
     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
+        <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="custom">
+            <span class="lucid-save-shapes-hint" ng-hide="shapes.length > 1">Drag shapes here to reuse</span>
+        </div>
         <ul dnd-list="shapes"
             dnd-allowed-types="[custom]"
             dnd-horizontal-list="true"
@@ -37,7 +40,5 @@
             </li>
         </ul>
     </div>
-    <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
-        <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
-    </div>
+    
 </div>

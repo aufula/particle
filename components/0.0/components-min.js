@@ -2992,18 +2992,19 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                         "groupname": "New Group",
                         "custom": true,
                         "edit": true,
-                        "shapes": [],
+                        "shapes": [{'fake':'fake'}],
                     };
                     $scope.customshapes.splice(0, 0, newGroup);
                 };
                 $scope.editName = function(shapegroup, index) {
-                    //console.log(shapegroup, index);
+                    console.log(shapegroup, index);
                     shapegroup.edit = true;
                     var elementID = 'name-input-' + index;
                     $timeout(function() {
                         document.getElementById(elementID).select();
                     }, 10);
-
+                    shapegroup.edit = true;
+                    console.log(shapegroup.edit, index);
                 };
                 $scope.pinnedCount = 5; //used to always pin to bottom
                 $scope.pinGroup = function(shapegroup) {
@@ -8187,7 +8188,6 @@ angular.module('lucidPagesData', [])
                     "width": 120,
                     "height": 45
                 },
-                "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g class="lucid-shapes-fill-stroke" stroke="#666666" stroke-width="2" fill="#FFFFFF"><rect x="1" y="2" width="28" height="26" rx="2"></rect></g>'
 
 
             }, {

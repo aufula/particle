@@ -15,6 +15,18 @@
         .dndDraggingSource {
             opacity: 0;
         }
+        //for quick fix first element
+        ul {
+            >li:first-child {
+                display: none;
+            }
+        }
+        &.dragging-shape {
+            ul {
+                position: relative;
+                z-index: 1;
+            }
+        }
     }
     .slide-toggle {
         overflow: hidden;
@@ -45,6 +57,7 @@
         }
     }
     .lucid-drop-area {
+        transition: all .25s ease-in-out;
         position: absolute;
         top: 32px;
         left: 0;
@@ -113,7 +126,7 @@
         height: 30px;
         margin: 7px 7.9px;
         position: relative;
-        z-index: 1;
+        //z-index: 1;
         transform: scale(1);
         vertical-align: top;
         text-align: center;

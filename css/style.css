@@ -648,6 +648,13 @@ input {
 .lucid-shape-group.custom-library .dndDraggingSource {
   opacity: 0;
 }
+.lucid-shape-group.custom-library ul > li:first-child {
+  display: none;
+}
+.lucid-shape-group.custom-library.dragging-shape ul {
+  position: relative;
+  z-index: 1;
+}
 .lucid-shape-group .slide-toggle {
   overflow: hidden;
   -webkit-transition: all .5s;
@@ -680,6 +687,8 @@ input {
           transform: rotateZ(-90deg);
 }
 .lucid-shape-group .lucid-drop-area {
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
   position: absolute;
   top: 32px;
   left: 0;
@@ -740,7 +749,6 @@ input {
   height: 30px;
   margin: 7px 7.9px;
   position: relative;
-  z-index: 1;
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
@@ -1619,6 +1627,10 @@ input {
   width: 180px;
   font-size: 16px;
 }
+.lucid-managing-shapes .lucid-drop-area,
+.lucid-manage-shapes .lucid-drop-area {
+  top: 40px;
+}
 .lucid-managing-shapes .lucid-hide-shapes .shape-group-top,
 .lucid-manage-shapes .lucid-hide-shapes .shape-group-top {
   border-radius: 4px;
@@ -1840,6 +1852,8 @@ input {
   cursor: pointer;
   top: 3px;
   left: -3px;
+  width: 22px;
+  height: 22px;
 }
 .lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload,
 .lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload {
