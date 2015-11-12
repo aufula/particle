@@ -2,24 +2,36 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
     .directive('lucidShapesManager', function(config, shapesData, $document, $timeout) {
         return {
             restrict: 'E',
-            scope: {
-                selected: '=',
-                manageshapes: '='
-            },
+            scope: {},
             replace: true,
             templateUrl: config.componentsURL + 'shapes-manager/lucid-shapes-manager.html',
-            controller: function($scope) {
+            controller: function($scope, $rootScope, $window) {
 
                 $scope.shapegroups = shapesData.all();
                 // $scope.pinnedgroups = shapesData.pinned();
                 //$scope.customshapes = shapesData.custom();
-                
+                // $scope.manageShapes = function(){
+                //     $rootScope.manageshapes=!$rootScope.manageshapes;
+                //     console.log('manage');
+                //     $timeout(function() {
+                //         $scope.managingshapesopen = !$scope.managingshapesopen;
+                //     }, 900);
+
+                // }
+                // $scope.visibleBlocks = function() {
+                //     var elements = ($scope.scroll/200) +5;
+                //     console.log($scope.scroll);
+                //     return elements;
+                // };
+
                 $scope.newCustomGroup = function() {
                     var newGroup = {
                         "groupname": "New Group",
                         "custom": true,
                         "edit": true,
-                        "shapes": [{'fake':'fake'}],
+                        "shapes": [{
+                            'fake': 'fake'
+                        }],
                     };
                     shapesData.addGroup(newGroup);
                     //$scope.customshapes.splice(0, 0, newGroup);
@@ -165,5 +177,22 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
             scope: {},
             replace: true,
             templateUrl: config.componentsURL + 'shapes-manager/lucid-import-options.html',
+        };
+    })
+    .directive('scrollPosition', function($window) {
+        return {
+            scope: {
+                scroll: '=scrollPosition'
+            },
+            link: function(scope, element, attrs) {
+                var windowEl = angular.element($window);
+                var handler = function() {
+                    scope.scroll = $window.pageYOffset;
+                }
+                windowEl.on('scroll', scope.$apply.bind(scope, handler));
+                //windowEl.on('scroll', console.log('scrolltop'));
+                
+                handler();
+            }
         };
     });

@@ -1,5 +1,5 @@
 angular.module("lucidChartBlock", ['appConfig'])
-    .directive('lucidChartBlock', function(config, $document, shapesData) {
+    .directive('lucidChartBlock', function(config, shapesData) {
         return {
             restrict: 'E',
             scope: {
@@ -20,42 +20,6 @@ angular.module("lucidChartBlock", ['appConfig'])
                     shapegroup.shapes.push(newblock);
                     //console.log("shape saved to shapegroup", newblock);
                 };
-
-                //$scope.showcontextMenu = false;
-                // $scope.showcontextMenuPosition = function(block) {
-                //     function getPosition(e) {
-                //         var posx = 0;
-                //         var posy = 0;
-
-                //         if (!e) {
-                //             var e = window.event;
-                //         }
-
-                //         if (e.pageX || e.pageY) {
-                //             posx = e.pageX;
-                //             posy = e.pageY;
-                //         } else if (e.clientX || e.clientY) {
-                //             posx = e.clientX + document.body.scrollLeft +
-                //                 document.documentElement.scrollLeft;
-                //             posy = e.clientY + document.body.scrollTop +
-                //                 document.documentElement.scrollTop;
-                //         }
-                //         //console.log(posx, posy)
-                //         return {
-                //             x: posx,
-                //             y: posy
-                //         };
-                //     }
-                //     if ($scope.selected === block) {
-                //         $scope.showcontextMenu = true;
-                //         var menuPosition = getPosition();
-                //         $scope.contextMenu = {};
-                //         $scope.contextMenu.left = menuPosition.x;
-                //         $scope.contextMenu.top = menuPosition.y;
-                //         // console.log($scope.contextMenu);
-                //     }
-                // };
-
                 $scope.removeCustomColor = function(block) {
 
                     var num = block.swatchnumber - 1;
@@ -79,46 +43,6 @@ angular.module("lucidChartBlock", ['appConfig'])
                     //console.log(theme);
                 };
 
-            },
-            link: function(scope, el) {
-                el.bind("keydown keypress", function(event) {
-                    if (event.which === 13) {
-                        scope.edittext = false;
-                        event.preventDefault();
-                    }
-                });
-                // el.bind('mousedown', function() {
-                //     //e.stopPropagation();
-                //     //console.log(e);
-                //     //scope.selected = scope.block;
-                //     scope.$root.selectedBlock = scope.block;
-                //     console.log(scope.block);
-                //     //scope.$root.changealignment(scope.block.text.verticalalignment, scope.block.text.horizontalalignment);
-                //     scope.edittext = false;
-                // });
-                el.bind('contextmenu', function() {
-                    scope.showcontextMenu = true;
-                    scope.edittext = false;
-                });
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showcontextMenu = false;
-                        scope.edittext = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
-                $document.on('contextmenu', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showcontextMenu = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
             }
         };
     });

@@ -1,5 +1,5 @@
 angular.module("lucidSavedStyles", ['appConfig'])
-    .directive('lucidSavedStyles', function(config, $document) {
+    .directive('lucidSavedStyles', function(config) {
         return {
             restrict: 'E',
             scope: false,
@@ -33,7 +33,7 @@ angular.module("lucidSavedStyles", ['appConfig'])
                         "border": block.swatch.border
                     };
                     $scope.savedStyles.push(savethis);
-                    console.log(savethis);
+                    //console.log(savethis);
                 };
             }
         };

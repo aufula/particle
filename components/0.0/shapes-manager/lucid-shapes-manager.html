@@ -51,7 +51,7 @@
                     <div class="lucid-shapes-manager-divider">
                         <div class="divider-inner">
                             <div class="divider-title">
-                                CUSTOM SHAPE GROUPS
+                                CUSTOM SHAPE GROUPS {{scroll}}
                             </div>
                             <div class="divider-line"></div>
                         </div>
@@ -61,7 +61,8 @@
                         dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
                         dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
-                        class="lucid-shapegroup-columns">
+                        class="lucid-shapegroup-columns"
+                        scroll-position="scroll">
                         <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
                             dnd-draggable="shapegroup"
                             dnd-type="'containerType'"
@@ -79,7 +80,7 @@
                     <div class="lucid-shapes-manager-divider">
                         <div class="divider-inner">
                             <div class="divider-title">
-                                LUCIDCHART SHAPE GROUPS
+                                LUCIDCHART SHAPE GROUPS {{scroll}}
                             </div>
                             <div class="divider-line"></div>
                         </div>
@@ -88,7 +89,7 @@
                         dnd-dragover="dragoverCallback(event, index, external, type)"
                         dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
                         class="lucid-shapegroup-columns">
-                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:6"
+                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:5"
                             dnd-draggable="shapegroup"
                             dnd-type="'containerType'"
                             dnd-effect-allowed="copy"

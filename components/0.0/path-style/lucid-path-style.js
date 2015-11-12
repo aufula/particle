@@ -16,21 +16,21 @@ angular.module("lucidPathStyle", ['appConfig'])
                 $scope.changePath = function(path) {
                     if (path === 'straight') {
                         lucidPath.to('lucid-straight-path', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (path === 'curved') {
                         lucidPath.to('lucid-curve-path', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (path === 'angle') {
                         lucidPath.to('lucid-angle-path', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });

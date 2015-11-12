@@ -230,4 +230,22 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData'
     return function(htmlCode) {
         return $sce.trustAsHtml(htmlCode);
     };
-}]);
+}])
+
+//this improves performance on ng-repeats that don't need a watch.
+.directive('ngOnce', function($timeout) {
+        return {
+            restrict: 'EA',
+            priority: 500,
+            transclude: true,
+            template: '<div ng-transclude></div>',
+            compile: function(tElement, tAttrs, transclude) {
+                //console.log([tElement, tAttrs, transclude])
+                return function postLink(scope, iElement, iAttrs, controller) {
+                    $timeout(scope.$destroy.bind(scope), 0);
+                    //scope.$destroy()
+                    //console.log([scope, iElement, iAttrs, controller]);
+                }
+            }
+        };
+    });

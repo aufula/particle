@@ -11,11 +11,11 @@ angular.module('lucidShapeGroup', ['appConfig'])
             transclude: true,
             templateUrl: config.componentsURL + 'shape-group/lucid-shape-group.html',
             controller: function($scope) {
-                $scope.onDropComplete = function(data, event) {
+                $scope.onDropComplete = function(data) {
                     //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
                     if (data) {
                         var index = $scope.shapes.indexOf(data);
-                        console.log('shape', index);
+                        //console.log('shape', index);
 
                         if (index === -1) {
                             //var index = $scope.shapegroups.shapegroup.indexOf(data);
@@ -41,7 +41,7 @@ angular.module('lucidShapeGroup', ['appConfig'])
                     $scope.dragEffect = 'copy';
                 }
 
-                $scope.dragoverCallback = function(event, index, external, type) {
+                $scope.dragoverCallback = function(event, index) {
                     //$scope.logListEvent('dragged over', event, index, external, type);
                     return index; // < 10;
                 };
@@ -51,7 +51,7 @@ angular.module('lucidShapeGroup', ['appConfig'])
                     //console.log('dropped in saved shapes', item);
                     $scope.onDropComplete(item, event);
                     if (external) {
-                        console.log('external', item);
+                        //console.log('external', item);
                         if (allowedType === 'true') {
                             return false;
                         }

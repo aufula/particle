@@ -22,6 +22,9 @@
             line-height: 22px;
             cursor: pointer;
         }
+        .manage-shapes-button{
+            cursor: pointer;
+        }
         .lucid-shapes-gear,
         .lucid-shapes-search {
             vertical-align: top;
@@ -326,6 +329,7 @@
     }
     .lucid-scroll-inner-wrap {
         padding: 20px;
+        height:10000px;
     }
     .scrollable .scrollable-slider {
         background: #333;
@@ -444,6 +448,7 @@
                     position: absolute;
                     right: 0;
                     width: 145px;
+                    min-width:145px;
                     left: inherit;
                     color: #5a5a5a;
                     .lucid-select-option {
@@ -477,6 +482,10 @@
                         }
                     }
                 }
+            }
+            .gear-dropdown .lucid-select-dropdown{
+                width: 110px;
+                min-width: 110px;
             }
         }
     }

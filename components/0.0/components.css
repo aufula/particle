@@ -1442,6 +1442,9 @@ input {
   line-height: 22px;
   cursor: pointer;
 }
+.lucid-shapes-panel .lucid-shapes-header .manage-shapes-button {
+  cursor: pointer;
+}
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-gear,
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search {
   vertical-align: top;
@@ -1754,6 +1757,7 @@ input {
 }
 .lucid-shape-manager .lucid-scroll-inner-wrap {
   padding: 20px;
+  height: 10000px;
 }
 .lucid-shape-manager .scrollable .scrollable-slider {
   background: #333;
@@ -1838,6 +1842,7 @@ input {
   position: absolute;
   right: 0;
   width: 145px;
+  min-width: 145px;
   left: inherit;
   color: #5a5a5a;
 }
@@ -1868,6 +1873,10 @@ input {
 .lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload::-webkit-file-upload-button,
 .lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload::-webkit-file-upload-button {
   cursor: pointer;
+}
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown {
+  width: 110px;
+  min-width: 110px;
 }
 .lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button {
   background-color: #BFBFBF;
