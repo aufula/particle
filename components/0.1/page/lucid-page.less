@@ -1,0 +1,135 @@
+.pages {
+    height: 200px;
+    >li {
+        float: left;
+    }
+}
+
+.lucid-page {
+    //float: left;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 170px;
+    height: 158px;
+    vertical-align: top;
+    border-radius: 4px;
+    transition: background .2s;
+    &.current-page {
+        background: #AFB7BF;
+        .master-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
+            background-size: 22px;
+        }
+        h4 {
+            color: #fff;
+        }
+    }
+    .center-image {
+        display: table;
+        height: 135px;
+        .center-image-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 170px;
+        }
+    }
+    .image-container {
+        padding: 10px;
+        position: relative;
+        display: inline-block;
+    }
+    .page-thumb-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 150px;
+        max-height: 120px;
+        background: #fff;
+        border-radius: 1px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: top 0.2s, box-shadow 0.2s;
+        margin: 0 auto;
+    }
+    &:hover {
+        .page-thumb-wrapper {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        .page-x {
+            opacity: 1;
+        }
+    }
+    .blank-page {
+        height: 100px;
+    }
+    .page-x {
+        width: 18px;
+        height: 18px;
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
+        background-position: center center;
+        position: absolute;
+        top: 3px;
+        right: 2px;
+        opacity: 0;
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
+    }
+    .master-page {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 32px;
+        background: rgba(41, 170, 225, .3);
+        .master-applied-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+            background-size: 22px;
+        }
+        >span {
+            color: @blue-steel-2;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        top:0;
+        
+        &.ng-hide {
+            top: -32px;
+        }
+        &.ng-animate{
+            transition: .35s ease-in-out all;
+        }
+    }
+    h4 {
+        display: inline-block;
+        margin: 0 auto 10px;
+        max-width: 150px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #828282;
+        -webkit-transition: color .1s;
+        transition: color .1s;
+        height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:hover {
+            color: #5a5a5a;
+        }
+    }
+    .rename-page-modal-content {
+        padding: 15px;
+        text-align: left;
+        span {
+            font-size: 14px;
+        }
+        input {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+}

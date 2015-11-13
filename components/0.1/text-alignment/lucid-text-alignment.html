@@ -1,0 +1,64 @@
+<div class="lucid-buttcon-wrapper lucid-text-alignment" selected="selectedBlock">
+    <div class="lucid-buttcon" ng-click="showpopup = !showpopup">
+        <svg id="lucid-text-align" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve">
+            <g id="lucid-text-bottom-right">
+                <polygon fill="#3D4752" points="11.5,8.3 8,5 10,5 10,2 13,2 13,5 15,5  " />
+                <rect x="4" y="18" fill="#3D4752" width="16" height="2" />
+                <rect x="9" y="14" fill="#3D4752" width="11" height="2" />
+                <rect x="5" y="10" fill="#3D4752" width="15" height="2" />
+            </g>
+            <g id="lucid-text-bottom-center">
+                <polygon fill="#3D4752" points="11,8.3 7.5,5 9.5,5 9.5,2 12.5,2 12.5,5 14.5,5  " />
+                <rect x="3" y="18" fill="#3D4752" width="16" height="2" />
+                <rect x="5" y="14" fill="#3D4752" width="12" height="2" />
+                <rect x="4" y="10" fill="#3D4752" width="14" height="2" />
+            </g>
+            <g id="lucid-text-bottom-left">
+                <polygon fill="#3D4752" points="10.5,8.3 7,5 9,5 9,2 12,2 12,5 14,5  " />
+                <rect x="2" y="18" fill="#3D4752" width="16" height="2" />
+                <rect x="2" y="14" fill="#3D4752" width="11" height="2" />
+                <rect x="2" y="10" fill="#3D4752" width="15" height="2" />
+            </g>
+            <g id="lucid-text-middle-right">
+                <rect x="5" y="14" fill="#3D4752" width="15" height="2" />
+                <rect x="9" y="10" fill="#3D4752" width="11" height="2" />
+                <rect x="4" y="6" fill="#3D4752" width="16" height="2" />
+            </g>
+            <g id="lucid-text-middle-left">
+                <rect x="2" y="14" fill="#3D4752" width="15" height="2" />
+                <rect x="2" y="10" fill="#3D4752" width="11" height="2" />
+                <rect x="2" y="6" fill="#3D4752" width="16" height="2" />
+            </g>
+            <g id="lucid-text-top-right">
+                <polygon fill="#3D4752" points="11.5,13.7 15,17 13,17 13,20 10,20 10,17 8,17  " />
+                <rect x="5" y="10" fill="#3D4752" width="15" height="2" />
+                <rect x="9" y="6" fill="#3D4752" width="11" height="2" />
+                <rect x="4" y="2" fill="#3D4752" width="16" height="2" />
+            </g>
+            <g id="lucid-text-top-center">
+                <polygon fill="#3D4752" points="11,13.7 14.5,17 12.5,17 12.5,20 9.5,20 9.5,17 7.5,17  " />
+                <rect x="4" y="10" fill="#3D4752" width="14" height="2" />
+                <rect x="5" y="6" fill="#3D4752" width="12" height="2" />
+                <rect x="3" y="2" fill="#3D4752" width="16" height="2" />
+            </g>
+            <g id="lucid-text-top-left">
+                <polygon fill="#3D4752" points="10.5,13.7 14,17 12,17 12,20 9,20 9,17 7,17  " />
+                <rect x="2" y="10" fill="#3D4752" width="15" height="2" />
+                <rect x="2" y="6" fill="#3D4752" width="11" height="2" />
+                <rect x="2" y="2" fill="#3D4752" width="16" height="2" />
+            </g>
+            <g id="lucid-text-middle-center">
+                <rect x="4" y="14" fill="#3D4752" width="14" height="2" />
+                <rect x="5" y="10" fill="#3D4752" width="12" height="2" />
+                <rect x="3" y="6" fill="#3D4752" width="16" height="2" />
+            </g>
+        </svg>
+    </div>
+    <lucid-popover-menu width="96" ng-show="showpopup">
+        <div class="lucid-wrapper-overflow-hidden">
+            <ul>
+                <li class="lucid-buttcon" ng-repeat="align in alignment" ng-class="{active: align.verticalalignment == selected.text.verticalalignment && align.horizontalalignment == selected.text.horizontalalignment}" ng-click="$parent.selected.text.verticalalignment = align.verticalalignment; $parent.selected.text.horizontalalignment = align.horizontalalignment; changeAlignment(align.verticalalignment, align.horizontalalignment);"><img class="lucid-button-icon" ng-src="{{align.icon}}"></li>
+            </ul>
+        </div>
+    </lucid-popover-menu>
+</div>

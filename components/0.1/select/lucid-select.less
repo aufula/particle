@@ -1,0 +1,72 @@
+.lucid-select-wrapper {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: top;
+    .selected-option-wrapper {
+        height: 28px;
+        overflow: hidden;
+        position:relative;
+        .select-dropdown-arrow {
+            position: absolute;
+            background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-spinner-handle.svg) center center no-repeat;
+            width: 10px;
+            height: 14px;
+            right: 0px;
+            cursor: pointer;
+            top: 10px;
+            transform: rotateX(180deg);
+            transform-origin: center;
+        }
+    }
+    .lucid-selected-option {
+        text-align: left;
+        display: block;
+        cursor: pointer;
+        border-bottom: 1px solid @blue-steel-2;
+        padding: 8px 18px 5px 0;
+    }
+    .lucid-select-dropdown {
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 32px;
+        left: 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        padding: 6px 0;
+        background: #fff;
+        min-width: 200px;
+        .lucid-select-option {
+            cursor: pointer;
+            padding: 5px 20px;
+            text-align: left;
+            &:hover {
+                background: #F5F5F5;
+            }
+            &.active{
+                background: @blue-steel-2;
+                color:#fff;
+                &:hover{
+                    opacity:.9;
+                }
+            }
+            
+        }
+    }
+}
+
+///Styles inside popover menu///
+.lucid-popover-menu {
+    .lucid-select-wrapper{
+        padding: 0 5px 0 8px;
+        background: @light-grey;
+        border-radius: 3px;
+        transition: background .2s ease-in-out;
+        &:hover{
+            background:#fff;
+        }
+    }
+    .lucid-selected-option {
+        border: none;
+    }
+}

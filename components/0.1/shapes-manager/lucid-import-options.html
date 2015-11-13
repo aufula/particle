@@ -1,0 +1,26 @@
+<div class="import-options" ng-click="showOptions();" >
+	<div class="import-to-canvas lucid-animate" ng-show="!importOptions">
+		<img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/import-shape-dark.svg">
+		<span>Import to Canvas</span>
+	</div>
+    <div class="show-import-options lucid-animate" ng-show="importOptions">
+        <ul>
+            <li>
+                <input type="file" class="hidden-file-upload">
+                <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg">
+            </li>
+            <li ng-click="$parent.openWindow('https://www.dropbox.com/chooser')">
+                <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-dropbox-bluesteel-22px.svg">
+            </li>
+            <li ng-click="$parent.openWindow('https://accounts.google.com/login?hl=en')">
+                <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-googledrive-bluesteel-22px.svg">
+            </li>
+            <li ng-click="$parent.openWindow('https://m.facebook.com/')">
+                <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-facebook-bluesteel-22px.svg">
+            </li>
+            <li ng-click="$parent.openWindow('https://login.yahoo.com/config/login?.src=flickrsignin')">
+                <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-flickr-bluesteel-22px.svg">
+            </li>
+        </ul>
+    </div>
+</div>

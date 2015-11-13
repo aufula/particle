@@ -1,0 +1,162 @@
+.lucid-shape-group {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    transition: .3s ease-in-out background, .2s ease-out margin, .3s ease-in-out opacity;
+    text-align: left;
+    opacity: 1;
+    &.disabled {
+        opacity: .5;
+    }
+    &.custom-library {
+        //z-index: 100;
+        opacity: 1;
+        transition: .25s ease-in-out opacity;
+        .dndDraggingSource {
+            opacity: 0;
+        }
+        //for quick fix first element
+        ul {
+            >li.lucid-shape:first-child {
+                display: none;
+            }
+        }
+        &.dragging-shape {
+            ul {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+    .slide-toggle {
+        overflow: hidden;
+        transition: all .5s;
+        width: 100%;
+        >ul {
+            min-height: 44px;
+        }
+    }
+    .lucid-hide-shapes-icon {
+        z-index: 1;
+        position: absolute;
+        height: 30px;
+        padding: 5px 2px;
+        cursor: pointer;
+        transition: all .25s ease-in-out;
+        svg g {
+            transform: rotateZ(0);
+            transform-origin: center;
+            transition: all .25s ease-in-out;
+        }
+    }
+    &.lucid-hide-shapes {
+        .lucid-hide-shapes-icon {
+            svg g {
+                transform: rotateZ(-90deg);
+            }
+        }
+    }
+    .lucid-drop-area {
+        transition: all .25s ease-in-out;
+        position: absolute;
+        top: 32px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border: 2px solid transparent;
+        // &.drag-enter {
+        //     border: 2px dashed #999;
+        // }
+        .lucid-save-shapes-hint {
+            font-style: italic;
+            color: #777;
+            text-align: center;
+            display: block;
+            padding: 10px;
+        }
+    }
+    .shape-group-top {
+        background-color: #C1C1C1; //#E0E0E0;
+        padding: 7px 10px;
+        position: relative;
+        color: #555;
+        transition: .3s ease-in-out;
+        box-sizing: border-box;
+        height: 30px;
+        text-align: left;
+        //z-index: 0;
+    }
+    &:hover {
+        //make hover on parent card, not just top section
+        .lucid-shape-group-top-right-icons {
+            opacity: 1;
+        }
+    }
+    .shape-group-name {
+        //text-transform: uppercase;
+        line-height: 16px;
+        font-size: 16px;
+        font-weight: 500;
+        padding-left: 15px;
+        display: inline-block;
+        //transition: .2s ease-in-out;
+    }
+    .lucid-close-icon {
+        //z-index: 1;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 8px;
+        top: 11px;
+        cursor: pointer;
+        opacity: 1;
+        margin-top: 0;
+        &.ng-hide {
+            opacity: 0;
+            top: 9px;
+        }
+        &.ng-animate {
+            transition: .3s all ease-in-out;
+        }
+    }
+    .lucid-shape,
+    .dndPlaceholder {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 7px 7.9px;
+        position: relative;
+        //z-index: 1;
+        transform: scale(1);
+        vertical-align: top;
+        text-align: center;
+        &.ng-enter {
+            transform: scale(.01);
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        &.ng-animate {
+            transition: .25s;
+        }
+        &.ng-leave-active {
+            transition: none;
+        }
+        // &.repeat-animation.ng-enter-stagger {
+        //     transition-delay: 0.05s;
+        //     transition-duration: 0s;
+        // }
+        svg {
+            vertical-align: -webkit-baseline-middle;
+            width: 28px;
+            height: 28px;
+            fill: #333;
+        }
+    }
+    .dndPlaceholder {
+        // background: rgba(0, 0, 0, .2);
+        // border-radius: 2px;
+    }
+}

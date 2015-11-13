@@ -1,0 +1,11 @@
+<div class="lucid-buttcon-wrapper" currenttheme=currentTheme>
+    <div class="lucid-buttcon" ng-click="viewthemes = !viewthemes"> <img class="lucid-button-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-themes-bluesteel.svg"></div>
+    <div class="lucid-themes-drawer lucid-animate" ng-show="viewthemes">
+        <div class="lucid-themes-drawer-slide lucid-animate" ng-show="viewthemes">
+            <div class="theme-group" ng-repeat="theme in themes" ng-class="{'active': theme == currenttheme}" ng-mouseover="$parent.switchTheme(theme)" ng-mouseleave="$parent.switchTheme(currenttheme)" ng-click="$parent.currenttheme=theme; $parent.viewthemes=false; $parent.switchTheme(theme);"> <img class="lucid-image" ng-src="{{theme.thumbnail}}"> <span class="lucid-theme-title">{{theme.name}}</span> </div>
+            <div class="theme-group lucid-new-theme">
+                <div class="lucid-image"></div>
+            </div>
+        </div>
+    </div>
+</div>

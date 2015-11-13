@@ -1,0 +1,223 @@
+<html ng-app="particleApp">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="../components.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="../components-min.js"></script>
+    <script src="js/app.js"></script>
+</head>
+
+<body>
+    <div id="sidebar" class="reversed-text">
+        <ul>
+            <li style="background-color: #77818C;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
+            <li class="no-propagate">
+                <a href="http://s.codepen.io/team/lucidsoftware/debug/944b732e7d71a1fb50537f7278783fee?"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-folder-orange.svg" class="icon" />Go to Documents</a>
+            </li>
+            <li>New document</li>
+            <li>Save as...</li>
+            <li>Copy document</li>
+            <li>Download</li>
+            <li>Print</li>
+            <li>Quit</li>
+        </ul>
+    </div>
+    <div id="wrapper">
+        <div id="main-header">
+            <div class="left"><a href="#" class="document-name reversed-text">Company Org Chart</a></div>
+            <div class="center">
+                <div class="page-count">{{$root.pages.length}}</div>
+                <a href="#" class="page-name reversed-text" ng-click="showPages = !showPages">
+                    <span class="dd-arrow">{{$root.currentPage.name}}</span>
+                </a>
+                <div class="lucid-buttcon master-page-compass lucid-animate" ng-click="showMasterPopover = !showMasterPopover" ng-show="$root.masterPageCount().length>0">
+                <img src="http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg" class="lucid-icon-22">
+                <lucid-popover-menu ng-show="showMasterPopover" width="200">
+                <div class="lucid-context-menu">
+                    <ul>
+                        <li ng-show="!$root.currentPage.master" ng-click="$root.currentPage.master = true">Convert to Master Layer</li>
+                        <li ng-show="$root.currentPage.master" ng-click="$root.currentPage.master = false">Convert to Page</li>
+                        <li class="lucid-context-more">Apply Master Layer
+                            <ul>
+                                <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                    {{master.name}}
+                                </li>
+                            </ul>
+                        </li>
+                        <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
+                        
+                    </ul>
+                </div>
+                </lucid-popover-menu>
+                </div>
+
+                <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
+            </div>
+            <div id="documents"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
+            <div class="right">
+                <div class="help">?</div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg" class="bell" /><span class="line"></span>
+                <a href="#" class="parent account"> <span class="dd-arrow reversed-text">janedoe@gmail.com</span>
+                    <ul class="submenu">
+                        <li class="settings-trigger">User Settings</li>
+                        <li>Logout</li>
+                    </ul>
+                </a>
+            </div>
+        </div>
+        <div id="present-header">
+            <div class="left"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/lucidchart-logo.svg" class="logo present" /><a href="#" class="document-name present reversed-text exit-fullscreen">Back to Editor (ESC)</a></div>
+            <div class="center">
+                <a href="#" class="page-name reversed-text">
+                    <div class="page-count">{{$root.pages.length}}</div><span class="dd-arrow">{{$root.currentPage.name}}</span></a>
+            </div>
+        </div>
+        <div id="page-list">
+            <div ng-show="showPages" class="page-drawer lucid-animate">
+                <lucid-pages showpages="showPages"></lucid-pages>
+            </div>
+        </div>
+        <div id="main-container">
+            <div class="page-container">
+                <div style="display: block;" class="page page-1">
+                    <lucid-canvas></lucid-canvas>
+                </div>
+                <div class="page page-2"></div>
+                <div class="page page-3"></div>
+            </div>
+            <lucid-shapes-manager id="left-bar"></lucid-shapes-manager>
+            <div id="option-bar" class="group">
+                <ul>
+                    <li>
+                        <lucid-themes></lucid-themes>
+                    </li>
+                    <span class="line"></span>
+                    <li class="font-choices">
+                        <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']"></lucid-select>
+                    </li>
+                    <li>
+                        <lucid-input-stepper step="1" width="50" number="12" unit="pt"></lucid-input-stepper>
+                    </li><span class="line"></span>
+                    <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+                    <li class="small middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+                    <li class="middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+                    <li class="middle">
+                        <lucid-text-alignment></lucid-text-alignment>
+                    </li>
+                    <li>
+                        <lucid-text-options></lucid-text-options>
+                    </li><span class="line"></span>
+                    <li class="left">
+                        <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
+                    </li>
+                    <li class="middle">
+                        <lucid-saved-styles></lucid-saved-styles>
+                    </li>
+                    <li class="middle">
+                        <lucid-border-options></lucid-border-options>
+                    </li>
+                    <li>
+                        <lucid-shadow-options></lucid-shadow-options>
+                    </li><span class="line"></span>
+                    <li class="left">
+                        <lucid-path-style></lucid-path-style>
+                    </li>
+                    <li class="middle">
+                        <lucid-line-options></lucid-line-options>
+                    </li>
+                    <li class="right">
+                        <lucid-input-stepper step="1" width="50" number="14" unit="pt"></lucid-input-stepper>
+                    </li><span class="line"></span>
+                    <li class="buttcon no-component toggle left"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lock-bluesteel.svg" /></li>
+                    <li class="buttcon no-component toggle middle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-magnet-bluesteel.svg" /></li>
+                    <li class="buttcon no-component middle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addcomment-bluesteel.svg" /></li>
+                    <li class="buttcon no-component toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-link-bluesteel.svg" /></li>
+                    <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" /></li>
+                </ul>
+            </div>
+            <div id="right-dock">
+                <div ng-click="showComments=false; showSlides=false" data-panel="#share" class="icon-wrapper">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
+                </div>
+                <div ng-click="showComments=false; showSlides=false" data-panel="#interact" class="icon-wrapper">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-layers-mode.svg" class="full" /></div><span>Layers</span>
+                </div>
+                <div ng-click="showComments=!showComments; showSlides=false" data-panel="#comments" class="icon-wrapper">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comments-mode.svg" class="full" /></div><span>Comments</span>
+                </div>
+                <div ng-click="showSlides=!showSlides; showComments=false" data-panel="#present" class="icon-wrapper">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-present-mode.svg" class="full" /></div><span>Present</span>
+                </div>
+                <div ng-click="showComments=false; showSlides=false" data-panel="#history" class="icon-wrapper">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
+                </div>
+                <div class="right-panel">
+                    <div id="share" class="container">
+                        <header>Share<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-share-2.png" />
+                    </div>
+                    <div id="interact" class="container">
+                        <header>Layers<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-2.png" />
+                    </div>
+                    <div id="comments" class="container">
+                        <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-2.png" />
+                        <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-footer.png" /></footer>
+                    </div>
+                    <div id="present" class="container">
+                        <header>Present<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-2.png" />
+                        <footer id="present-trigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-footer.png" /></footer>
+                    </div>
+                    <div id="history" class="container">
+                        <header>History<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history.png" />
+                    </div>
+                </div>
+            </div>
+            <lucid-settings-drawer> </lucid-settings-drawer>
+            <div id="ruler-vert" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-vert.png" /></div>
+            <div id="ruler-hor" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-hor.png" /></div>
+            
+        </div>
+    </div>
+    <div id="modal">
+        <div class="shade">
+            <div id="rename-modal" class="modal-container">
+                <header>
+                    <h2>Rename page</h2>
+                </header>
+                <div class="content">
+                    <h3>Enter a new page title:</h3>
+                    <input type="text" value="test" />
+                </div>
+                <footer>
+                    <button class="submit">Submit</button>
+                    <button class="cancel">Cancel</button>
+                </footer>
+            </div>
+            <div id="settings-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-settings.png" />
+                <div class="cancel"></div>
+                <div class="close"></div>
+            </div>
+            <div id="shapes-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-shapespopover.png" />
+                <div class="cancel"></div>
+                <div class="close"></div>
+            </div>
+            <div id="help-modal" class="modal-container">
+                <header>
+                    <h2>Help</h2>
+                </header>
+                <div class="content">
+                    <h3>What can we help you find?</h3>
+                    <input type="text" placeholder="Ex: &quot;Export my document&quot;" />
+                </div>
+                <footer>
+                    <button class="submit">Submit</button>
+                    <button class="cancel">Cancel</button>
+                </footer>
+            </div>
+            <div id="import-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placholder-import-dialog.png" />
+                <div class="cancel"></div>
+                <div class="close"></div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

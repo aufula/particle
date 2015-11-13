@@ -1,0 +1,42 @@
+
+.lucid-slide {
+    position: absolute;
+    color: orange;
+    border: 1px solid;
+    z-index: 2;
+    opacity: 1;
+    transition: all ease-in-out .1s;
+    &.ng-hide {
+        opacity: 0;
+    }
+    .lucid-slide-corner {
+        width: 8px;
+        height: 8px;
+        border: 2px solid;
+        position: absolute;
+    }
+    .lucid-top-left {
+        border-bottom: none;
+        border-right: none;
+        left: 0;
+        top: 0;
+    }
+    .lucid-top-right {
+        top: 0;
+        right: 0;
+        border-bottom: none;
+        border-left: none;
+    }
+    .lucid-bottom-right {
+        bottom: 0;
+        right: 0;
+        border-top: none;
+        border-left: none;
+    }
+    .lucid-bottom-left {
+        bottom: 0;
+        left: 0;
+        border-top: none;
+        border-right: none;
+    }
+}

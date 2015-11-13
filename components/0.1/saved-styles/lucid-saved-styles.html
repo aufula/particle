@@ -1,0 +1,18 @@
+<div class="lucid-buttcon-wrapper lucid-saved-styles" 
+currenttheme=currentTheme>
+    <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-paint-bluesteel.svg" width="200">
+        <div class="swatch-colors">
+            <div class="lucid-dropdown-title">Saved Styles:</div>
+            <ul>
+                <li class="lucid-swatch-square lucid-animate" 
+                ng-class="{'lucid-selected': compareSwatch($root.selectedBlock.swatch, swatch), 'lucid-swatch-shadow': swatch.shadow.shadow}" 
+                ng-repeat="swatch in savedStyles track by $index" 
+                ng-click="$root.selectedBlock.swatch.fill = swatch.fill; $root.selectedBlock.swatch.text = swatch.text; $root.selectedBlock.swatch.border = swatch.border; $root.selectedBlock.customcolor=true">
+                    <div class="lucid-selected-swatch" style="background-color:{{swatch.fill}}; border-color:{{swatch.border}};"> <span style="color:{{swatch.text}}">A</span> </div>
+                    <div class="lucid-swatch-check"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-swatch-check.svg"></div>
+                </li>
+                <li class="lucid-swatch-square lucid-swatch-plus" ng-click="addSavedStyle($root.selectedBlock); $root.selectedBlock.customcolor=true"> <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-light.svg"> </li>
+            </ul>
+        </div>
+    </lucid-buttcon-popover>
+</div>

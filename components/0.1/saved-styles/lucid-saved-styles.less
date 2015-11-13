@@ -1,0 +1,80 @@
+.lucid-saved-styles {
+    .lucid-dropdown-title {
+        font-size: 14px;
+        padding-bottom: 5px;
+    }
+    .swatch-colors>ul{
+        font-size:0;
+    }
+    .lucid-swatch-square {
+        width: 36px;
+        height: 36px;
+        position: relative;
+        background: rgba(0, 0, 0, 0);
+        border-radius: 4px;
+        padding: 3px;
+        box-sizing: border-box;
+        display: inline-block;
+        transition: .1s ease-in-out background;
+        vertical-align: top;
+        &.ng-enter{
+            margin-right:-36px;
+        }
+        &.ng-enter-active{
+            margin-right:0;
+        }
+        &.ng-animate{
+            transition: margin .4s ease-in-out;
+        }
+        .lucid-swatch-check {
+            position: absolute;
+            right: -4px;
+            top: -4px;
+            width: 14px;
+            height: 14px;
+            z-index: 3;
+            img {
+                transform: scale(.01);
+                opacity: 0;
+                transform-origin: center;
+                transition: .1s ease-in-out all;
+            }
+        }
+        &:hover {
+            background: rgba(0, 0, 0, .05);
+        }
+        &.lucid-selected {
+            background: rgba(0, 0, 0, .1);
+        }
+        &.lucid-selected .lucid-swatch-check img {
+            transform: scale(1);
+            opacity: 1;
+        }
+        &.lucid-swatch-plus {
+            padding: 2px;
+            //background: rgba(0, 0, 0, .1);
+            cursor: pointer;
+            img {
+                border: 3px solid rgba(0, 0, 0, .1);
+                padding: 2px;
+                border-radius: 3px;
+            }
+        }
+        &.lucid-swatch-shadow .lucid-selected-swatch {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, .5);
+        }
+        .lucid-selected-swatch {
+            width: 30px;
+            height: 30px;
+            box-sizing: border-box;
+            line-height: 25px; //height minus border
+            font-size: 18px;
+            border: 2px solid;
+            text-align: center;
+            box-sizing: border-box;
+            cursor: pointer;
+            display: inline-block;
+            position: relative;
+        }
+    }
+}

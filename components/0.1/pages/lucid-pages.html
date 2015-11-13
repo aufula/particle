@@ -1,0 +1,13 @@
+<div class="lucid-pages">
+    <div class="lucid-pages-wrapper">
+        <ul ng-sortable="sortConfig">
+            <li ng-repeat="page in $root.pages track by page.id" class="lucid-animate">
+                <lucid-page page="page" selected="$parent.selectedPage">
+                </lucid-page>
+            </li>
+        </ul>
+        <div class="add-new-page lucid-animate" draggable="false">
+            <div class="plus-container" ng-click="addPage()"></div>
+        </div>
+    </div>
+</div>

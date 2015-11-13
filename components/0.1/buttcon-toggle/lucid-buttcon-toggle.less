@@ -1,0 +1,35 @@
+.lucid-buttcon-toggle-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor:pointer;
+    .lucid-buttcon-toggle-image {
+        width: 22px;
+        height: 22px;
+        display:inline-block;
+        svg>g{
+                transition: all .25s ease-in-out;
+                // path, polygon, rect{
+                //     transition: all .25s ease-in-out;
+                // }
+            }
+    }
+    .lucid-toggle-label {
+        font-size: 10px;
+        color: #5a5a5a;
+        transition: all .25s ease-in-out;
+        text-transform: uppercase;
+    }
+    &.active{
+        .lucid-buttcon-toggle-image{
+            svg>g{
+                fill: @blue;
+                // path, polygon, rect{
+                //     fill: @blue;
+                // }
+            }
+        }
+        .lucid-toggle-label{
+            color: @blue;
+        }
+    }
+}

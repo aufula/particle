@@ -6,6 +6,19 @@ angular.module('lucidComponentFactory', [])
             "groupname": "Particles",
             "groupid": "particles",
             "components": [{
+                "title": "Buttcon Label",
+                "componentid": "buttcon-toggle",
+                "description": "Buttons can be created by adding a class",
+                "inputs": [{
+                    "name": "color",
+                    "type": "text",
+                    "details": "colors available: blue, red, green, yellow, grey"
+                }, {
+                    "name": "icon",
+                    "type": "URL",
+                    "details": "insert URL of icon (should be white)."
+                }]
+            }, {
                 "title": "Buttons",
                 "componentid": "button",
                 "description": "Buttons can be created by adding a class",

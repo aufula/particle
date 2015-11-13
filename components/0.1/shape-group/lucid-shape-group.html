@@ -1,0 +1,44 @@
+<div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && custom }">
+    <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
+        <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+            <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+            </g>
+        </svg>
+    </div>
+    <div class="shape-group-top">
+        <span class="shape-group-name"> {{name}}</span>
+        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.shapegroup.pinned = false">
+    </div>
+    <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
+        <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="custom">
+            <span class="lucid-save-shapes-hint" ng-hide="shapes.length > 1">Drag shapes here to reuse</span>
+        </div>
+        <ul dnd-list="shapes"
+            dnd-allowed-types="[custom]"
+            dnd-horizontal-list="true"
+            dnd-external-sources="true"
+            dnd-dragover="dragoverCallback(event, index, external, type)"
+            dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
+            dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
+            class="shapes-wrapper">
+            <li ng-repeat="shape in shapes"
+                dnd-draggable="shape"
+                dnd-type="'true'"
+                dnd-effect-allowed="{{dragEffect}}"
+                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
+                dnd-moved="shapes.splice($index, 1); logEvent('Item moved', event)"
+                dnd-copied="logEvent('Item copied', event)"
+                dnd-canceled="logEvent('Drag operation canceled', event)"
+                dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
+                class="lucid-shape repeat-animation lucid-animate">  
+                
+                <lucid-shape ng-if="!shape.svg" shape="{{shape.name}}" fill="{{shape.fill}}" strokecolor="{{shape.stroke}}" textcolor="{{shape.text}}" height="28" width="28" strokewidth="{{shape.strokewidth}}" radius="{{shape.radius}}">
+                </lucid-shape>
+                <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
+
+            </li>
+        </ul>
+    </div>
+    
+</div>

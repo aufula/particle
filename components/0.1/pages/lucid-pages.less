@@ -1,0 +1,82 @@
+@page-card-width: 170px;
+.lucid-pages {
+    .lucid-pages-wrapper {
+        padding: 20px;
+        background: #C4C4C4;
+        display: block;
+        >ul>li,
+        .add-new-page {
+            cursor: pointer;
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            width: @page-card-width;
+            min-height: 152px;
+            vertical-align: top;
+            border-radius: 4px;
+            transition: background .2s;
+            position: relative;
+            //z-index: 1;
+            &.sortable-ghost {
+                opacity: .5 !important;
+            }
+            &.ng-enter{
+                animation: PageAnimation .4s ease-out;
+                h4 {
+                    transform: translateX(-40px);
+                }
+            }
+            &.ng-enter-active{
+                animation: PageAnimation .4s ease-out;
+                h4 {
+                    transform: translateX(0px);
+                }
+            }
+            &.ng-leave-active, .ng-leave {
+                animation: PageAnimation .4s ease-in-out;
+                animation-direction: reverse;
+                h4 {
+                    transform: translateX(-40px);
+                }
+            }
+            &.ng-animate {
+                h4 {
+                    transition: .4s ease-in-out all;
+                }
+            }
+            @keyframes PageAnimation {
+                0% {
+                    margin-right:-(@page-card-width);
+                    opacity:0;
+                }
+                40%{
+                    opacity:0;
+                }
+                100% {
+                    margin-right:0;
+                    opacity:1;
+                }
+            }
+        }
+        .plus-container {
+            width: 150px;
+            height: 100px;
+            margin: 20px 10px;
+            background: none;
+            border: 2px dashed #999;
+            box-shadow: none;
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 30%;
+            -webkit-transition: background-size 0.2s;
+            transition: background-size 0.2s;
+        }
+        &:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+    }
+}

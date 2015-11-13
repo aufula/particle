@@ -1,0 +1,33 @@
+<div>
+    <div ng-click="$root.selectedBlock = block" 
+        currenttheme="currentTheme" 
+        addsavedstyle="addSavedStyle" 
+        class="lucid-chart-block" 
+        ng-right-click="contextmenu(block);" 
+        lucid-context-menu 
+        data-target="block-context-{{ block.$index }}" 
+        style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
+        <div class="lucid-outer-block-table">
+            <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
+                <input type="text" ng-model="block.text.text" ng-show="edittext">
+            </div>
+        </div>
+        <div class="lucid-selected-block" ng-show="$root.selectedBlock == block">
+            <div class="lucid-corner-drag lucid-top-left"></div>
+            <div class="lucid-corner-drag lucid-top-right"></div>
+            <div class="lucid-corner-drag lucid-bottom-right"></div>
+            <div class="lucid-corner-drag lucid-bottom-left"></div>
+        </div> <img class="lucid-block-comment lucid-animate" ng-show="block.comment && $root.showComments" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comment-yellow.svg">
+    </div>
+    <div id="block-context-{{ block.$index }}" class="lucid-context-menu ng-hide">
+        <ul>
+            <li ng-click="addsavedstyle(block); selected.customcolor = true; showcontextMenu=false"> <span> Save Block Style</span> </li>
+            <li ng-show="selected.customcolor" ng-click="selected.customcolor = false; showcontextMenu=false; removeCustomColor(selected)"> <span>Remove Custom Style</span> </li>
+            <li class="lucid-context-more"> <span>Save Shape</span>
+                <ul>
+                    <li ng-repeat="shapegroup in shapegroups" ng-if="shapegroup.custom" ng-click="saveShape(selected, shapegroup); $parent.$parent.showcontextMenu=false"> <span>{{shapegroup.groupname}}</span> </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</div>

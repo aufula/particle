@@ -1,0 +1,33 @@
+<div id="lucid-canvas" class="lucid-canvas" ng-drop="true" ng-drop-success="onDropComplete($data,$event)" style="background-color:{{$root.currentPage.canvasBG}};"> 
+    <div class="lucid-canvas-layer" ng-click="editThisBlock(defaultBlock);"></div>
+    <svg xmlns="http://www.w3.org/2000/svg" width="900" height="690" viewBox="0 0 900 690">
+        <marker id="triangle" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="strokeWidth" markerWidth="4" fill="{{$root.currentPage.linecolor}}" markerHeight="3" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 z" />
+        </marker>
+        <polyline ng-repeat="line in $root.currentPage.lines" xmlns="http://www.w3.org/2000/svg" ng-attr-points="{{line.points}}" ng-attr-marker-end="{{line.endarrow && 'url(#triangle)' || '' }}" fill="transparent" stroke="{{$root.currentPage.linecolor}}" stroke-width="{{line.width}}" />
+    </svg>
+        <ul dnd-list="$root.currentPage.blocks"
+            dnd-allowed-types="['true']"
+            dnd-horizontal-list="true"
+            dnd-external-sources="true"
+            dnd-dragover="dragoverCallback(event, index, external, type)"
+            dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
+            dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+            <li ng-repeat="block in $root.currentPage.blocks track by $index"
+                dnd-draggable="block"
+                dnd-type="'true'"
+                dnd-effect-allowed="moveCopy"
+                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
+                dnd-moved="logEvent('Item moved', event)"
+                dnd-copied="logEvent('Item copied', event)"
+                dnd-canceled="logEvent('Drag operation canceled', event)"
+                dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
+                style="left:{{block.metrics.x}}px; top:{{block.metrics.y}}px;">  
+                    <lucid-chart-block block="block"></lucid-chart-block>
+            </li> 
+        </ul>
+
+
+    <lucid-slides ng-show="$root.showSlides"></lucid-slides>
+    <lucid-context-menu></lucid-context-menu>
+</div>
