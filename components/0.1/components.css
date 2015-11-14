@@ -693,6 +693,7 @@ input {
 }
 .lucid-colorpicker-placeholder {
   padding: 15px 16px;
+  height: 186px;
 }
 .lucid-color-inputs {
   display: none!important;

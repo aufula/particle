@@ -2994,17 +2994,19 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                         shapegroup.pinnedOrder = $scope.pinnedCount;
                         //show message if not in display
                         $scope.showPinMessage(shapegroup);
+                        //console.log('pin');
                 };
                 $scope.unPinGroup = function(shapegroup) {
                     var group = shapesData.get(shapegroup.id);
                         group.pinned = false;
-                        console.log('unpinned')
+                        //console.log('unpin');
                 };
                 $scope.togglePin = function(shapegroup){
+                    var group = shapesData.get(shapegroup.id);
                     if(shapegroup.pinned){
                         $scope.unPinGroup(shapegroup);
                     }
-                    if(!shapegroup.pinned){
+                    else{
                         $scope.pinGroup(shapegroup);
                     }
                 };

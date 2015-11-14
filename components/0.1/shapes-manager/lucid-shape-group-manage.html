@@ -1,5 +1,5 @@
 <div class="lucid-shape-group" ng-class="{ 'custom-library' : custom, 'disabled' : $root.draggingshape && !custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && custom }">
-    <div class="pin-library" ng-click="$parent.pinGroup($parent.shapegroup)" ng-class="{'pinned': $parent.shapegroup.pinned}">
+    <div class="pin-library" ng-click="$parent.togglePin($parent.shapegroup)" ng-class="{'pinned': $parent.shapegroup.pinned}">
         <img class="lucid-icon-22" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg">
     </div>
     <div class="shape-group-top">
