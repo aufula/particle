@@ -2,6 +2,7 @@ angular.module("lucidShapesData", ['appConfig'])
     .factory('shapesData', function() {
 
         var lucidShapes = [{
+            "id": 1,
             "groupname": "My Saved Shapes",
             "shapes": [{
                 "name": "text",
@@ -39,6 +40,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": true,
             "pinnedOrder": 1
         }, {
+            "id": 2,
             "groupname": "Standard",
             "shapes": [{
                 "name": "text",
@@ -167,6 +169,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 2
 
         }, {
+            "id": 3,
             "groupname": "Flowchart",
             "shapes": [{
                 "name": "Rectangle",
@@ -298,6 +301,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 3
 
         }, {
+            "id": 4,
             "groupname": "Containers",
             "shapes": [{
                 "name": "Rectangle",
@@ -359,6 +363,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 4
 
         }, {
+            "id": 5,
             "groupname": "Shapes",
             "shapes": [{
                 "name": "Rectangle",
@@ -455,6 +460,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 5
 
         }, {
+            "id": 6,
             "groupname": "Android Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -688,6 +694,7 @@ angular.module("lucidShapesData", ['appConfig'])
                 "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><ellipse id="Oval-9-Copy-4" sketch:type="MSShapeGroup" cx="15" cy="15" rx="13" ry="13"></ellipse></g></g></svg>'
             }],
         }, {
+            "id": 7,
             "groupname": "Entity Relationship",
             "shapes": [{
                 "name": "Rectangle",
@@ -718,6 +725,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 8,
             "groupname": "iOS Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -1182,6 +1190,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false
         }, {
+            "id": 9,
             "groupname": "Site Maps",
             "shapes": [{
                 "name": "Rectangle",
@@ -1366,6 +1375,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false
         }, {
+            "id": 10,
             "groupname": "UI Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -1771,6 +1781,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 11,
             "groupname": "UML",
             "shapes": [{
                 "name": "Rectangle",
@@ -2226,6 +2237,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 12,
             "groupname": "BPMN 2.0",
             "shapes": [{
                 "name": "Rectangle",
@@ -2355,6 +2367,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 13,
             "groupname": "Data Flow",
             "shapes": [{
                 "name": "Rectangle",
@@ -2484,6 +2497,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 14,
             "groupname": "Org Charts",
             "shapes": [{
                 "name": "Rectangle",
@@ -2613,6 +2627,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 15,
             "groupname": "Tables",
             "shapes": [{
                 "name": "Rectangle",
@@ -2742,6 +2757,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 16,
             "groupname": "Value Stream",
             "shapes": [{
                 "name": "Rectangle",
@@ -2871,6 +2887,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 17,
             "groupname": "AWS Architecture",
             "shapes": [{
                 "name": "Rectangle",
@@ -3000,6 +3017,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 18,
             "groupname": "Azure",
             "shapes": [{
                 "name": "Rectangle",
@@ -3129,6 +3147,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 19,
             "groupname": "Cisco Network Icons",
             "shapes": [{
                 "name": "Rectangle",
@@ -3258,6 +3277,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 20,
             "groupname": "Network Infrastructure",
             "shapes": [{
                 "name": "Rectangle",
@@ -3387,6 +3407,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 21,
             "groupname": "Server Rack Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -3516,6 +3537,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 22,
             "groupname": "Tech Clipart",
             "shapes": [{
                 "name": "Rectangle",
@@ -3645,6 +3667,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 23,
             "groupname": "User Images",
             "shapes": [{
                 "name": "Rectangle",
@@ -3774,6 +3797,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 24,
             "groupname": "Circuit Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -3903,6 +3927,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 25,
             "groupname": "Enterprise Integration",
             "shapes": [{
                 "name": "Rectangle",
@@ -4032,6 +4057,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 26,
             "groupname": "Equations",
             "shapes": [{
                 "name": "Rectangle",
@@ -4161,6 +4187,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 27,
             "groupname": "Floor Plans",
             "shapes": [{
                 "name": "Rectangle",
@@ -4290,6 +4317,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 28,
             "groupname": "Mind Mapping",
             "shapes": [{
                 "name": "Rectangle",
@@ -4419,6 +4447,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 29,
             "groupname": "Process Engineering",
             "shapes": [{
                 "name": "Rectangle",
@@ -4548,6 +4577,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 30,
             "groupname": "Venn Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -4686,27 +4716,13 @@ angular.module("lucidShapesData", ['appConfig'])
                 lucidShapes[index].edit = 'true';
                 console.log('edit', lucidShapes[index]);
             },
-            // pinned: function() {
-            //     var pinnedShapes = [];
-
-
-            //     angular.forEach(lucidShapes, function(shapegroup) {
-            //             if (shapegroup.pinned) {
-            //                 pinnedShapes.push(shapegroup);
-            //             }
-            //         });
-
-            //     return pinnedShapes;
-            // },
-            // custom: function() {
-            //     var customShapes = [];
-            //     angular.forEach(lucidShapes, function(shapegroup) {
-            //             if (shapegroup.custom) {
-            //                 customShapes.push(shapegroup);
-            //             }
-            //         });
-            //     return customShapes;
-            // },
+            get: function(id) {
+                return lucidShapes.filter(function(obj) {
+                    if (obj.id === id) {
+                        return obj;
+                    }
+                })[0];
+            },
             addGroup: function(newgroup) {
                 console.log(newgroup);
                 lucidShapes.splice(0, 0, newgroup);

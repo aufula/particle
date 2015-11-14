@@ -14,7 +14,7 @@
                         dnd-allowed-types="['containerType']"
                         dnd-external-sources="true"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
-                        dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
+                        dnd-drop="pinGroup(item); dropCallback(event, index, item, external, type, 'containerType')"
                         class="lucid-group-drop-area">
                         <li ng-repeat="shapegroup in shapegroups | filter:{pinned:'true'} | orderBy:'pinnedOrder'"
                             dnd-draggable="shapegroup"
@@ -51,7 +51,7 @@
                     <div class="lucid-shapes-manager-divider">
                         <div class="divider-inner">
                             <div class="divider-title">
-                                CUSTOM SHAPE GROUPS {{scroll}}
+                                CUSTOM SHAPE GROUPS
                             </div>
                             <div class="divider-line"></div>
                         </div>
@@ -80,16 +80,19 @@
                     <div class="lucid-shapes-manager-divider">
                         <div class="divider-inner">
                             <div class="divider-title">
-                                LUCIDCHART SHAPE GROUPS {{scroll}}
+                                LUCIDCHART SHAPE GROUPS
                             </div>
                             <div class="divider-line"></div>
                         </div>
                     </div>
-                    <ul dnd-external-sources="true"
+
+                    <ul dnd-list = "shapegroups"
+                        dnd-external-sources="true"
+                        dnd-allowed-types="['containerType']"
                         dnd-dragover="dragoverCallback(event, index, external, type)"
-                        dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
+                        dnd-drop="unPinGroup(item); dropCallback(event, index, item, external, type, 'containerType')"
                         class="lucid-shapegroup-columns">
-                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:5"
+                        <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:5 track by shapegroup.id"
                             dnd-draggable="shapegroup"
                             dnd-type="'containerType'"
                             dnd-effect-allowed="copy"

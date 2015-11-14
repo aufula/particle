@@ -44,17 +44,33 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                     }, 10);
                     shapegroup.edit = true;
                 };
-                $scope.pinnedCount = 5; //used to always pin to bottom
+                
+                $scope.pinnedCount = 5; //current loaded number of pinned libraries.
+
                 $scope.pinGroup = function(shapegroup) {
-                    if (!shapegroup.pinned) {
-                        //always pin to bottom
-                        $scope.pinnedCount += 1;
+                        var group = shapesData.get(shapegroup.id);
+                        group.pinned = true;
+                        
+                        $scope.pinnedCount += 1; //always pin to bottom
                         shapegroup.pinnedOrder = $scope.pinnedCount;
-
-                        //pin shape
-                        shapegroup.pinned = !shapegroup.pinned;
-
-                        //add message
+                        //show message if not in display
+                        $scope.showPinMessage(shapegroup);
+                };
+                $scope.unPinGroup = function(shapegroup) {
+                    var group = shapesData.get(shapegroup.id);
+                        group.pinned = false;
+                        console.log('unpinned')
+                };
+                $scope.togglePin = function(shapegroup){
+                    if(shapegroup.pinned){
+                        $scope.unPinGroup(shapegroup);
+                    }
+                    if(!shapegroup.pinned){
+                        $scope.pinGroup(shapegroup);
+                    }
+                };
+                $scope.showPinMessage = function(shapegroup){
+                    //add message
                         var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
                         //console.log('overflow: ', overflow)
                         if (overflow) {
@@ -64,9 +80,6 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                                 $scope.overflowMessage = false;
                             }, 2000);
                         }
-                    } else {
-                        shapegroup.pinned = false;
-                    }
                 };
                 $scope.openWindow = function(url) {
                     window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");

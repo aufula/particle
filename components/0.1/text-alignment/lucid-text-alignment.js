@@ -27,7 +27,7 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     $scope.selected.text.horizontalalignment = horizontal;
                     if (vertical === 'top' && horizontal === 'left') {
                         lucidPath.to('lucid-text-top-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -35,14 +35,14 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     }
                     if (vertical === 'top' && horizontal === 'center') {
                         lucidPath.to('lucid-text-top-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'top' && horizontal === 'right') {
                         lucidPath.to('lucid-text-top-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -50,21 +50,21 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     //middle
                     if (vertical === 'middle' && horizontal === 'left') {
                         lucidPath.to('lucid-text-middle-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'middle' && horizontal === 'center') {
                         lucidPath.to('lucid-text-middle-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'middle' && horizontal === 'right') {
                         lucidPath.to('lucid-text-middle-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -74,21 +74,21 @@ angular.module('lucidTextAlignment', ['appConfig'])
 
                     if (vertical === 'bottom' && horizontal === 'left') {
                         lucidPath.to('lucid-text-bottom-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'bottom' && horizontal === 'center') {
                         lucidPath.to('lucid-text-bottom-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'bottom' && horizontal === 'right') {
                         lucidPath.to('lucid-text-bottom-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });

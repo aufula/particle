@@ -10,9 +10,5 @@ angular.module("lucidButtconToggle", ['appConfig'])
             },
             replace: true,
             templateUrl: config.componentsURL + 'buttcon-toggle/lucid-buttcon-toggle.html',
-
-            controller: function($scope) {
-                console.log('loaded buttcon toggle');
-            },
         };
     });

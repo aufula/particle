@@ -609,8 +609,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.1/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/0.1/" //github
+    //'componentsURL': "/components/0.1/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/0.1/" //github
 
 });
 
@@ -1944,7 +1944,7 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     $scope.selected.text.horizontalalignment = horizontal;
                     if (vertical === 'top' && horizontal === 'left') {
                         lucidPath.to('lucid-text-top-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -1952,14 +1952,14 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     }
                     if (vertical === 'top' && horizontal === 'center') {
                         lucidPath.to('lucid-text-top-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'top' && horizontal === 'right') {
                         lucidPath.to('lucid-text-top-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -1967,21 +1967,21 @@ angular.module('lucidTextAlignment', ['appConfig'])
                     //middle
                     if (vertical === 'middle' && horizontal === 'left') {
                         lucidPath.to('lucid-text-middle-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'middle' && horizontal === 'center') {
                         lucidPath.to('lucid-text-middle-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'middle' && horizontal === 'right') {
                         lucidPath.to('lucid-text-middle-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -1991,21 +1991,21 @@ angular.module('lucidTextAlignment', ['appConfig'])
 
                     if (vertical === 'bottom' && horizontal === 'left') {
                         lucidPath.to('lucid-text-bottom-left', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'bottom' && horizontal === 'center') {
                         lucidPath.to('lucid-text-bottom-center', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
                     }
                     if (vertical === 'bottom' && horizontal === 'right') {
                         lucidPath.to('lucid-text-bottom-right', {
-                            duration: 300,
+                            duration: 400,
                             easing: 'quad-out',
                             rotation: 'none'
                         });
@@ -2333,10 +2333,6 @@ angular.module("lucidButtconToggle", ['appConfig'])
             },
             replace: true,
             templateUrl: config.componentsURL + 'buttcon-toggle/lucid-buttcon-toggle.html',
-
-            controller: function($scope) {
-                console.log('loaded buttcon toggle');
-            },
         };
     });
 
@@ -2987,17 +2983,33 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                     }, 10);
                     shapegroup.edit = true;
                 };
-                $scope.pinnedCount = 5; //used to always pin to bottom
+                
+                $scope.pinnedCount = 5; //current loaded number of pinned libraries.
+
                 $scope.pinGroup = function(shapegroup) {
-                    if (!shapegroup.pinned) {
-                        //always pin to bottom
-                        $scope.pinnedCount += 1;
+                        var group = shapesData.get(shapegroup.id);
+                        group.pinned = true;
+                        
+                        $scope.pinnedCount += 1; //always pin to bottom
                         shapegroup.pinnedOrder = $scope.pinnedCount;
-
-                        //pin shape
-                        shapegroup.pinned = !shapegroup.pinned;
-
-                        //add message
+                        //show message if not in display
+                        $scope.showPinMessage(shapegroup);
+                };
+                $scope.unPinGroup = function(shapegroup) {
+                    var group = shapesData.get(shapegroup.id);
+                        group.pinned = false;
+                        console.log('unpinned')
+                };
+                $scope.togglePin = function(shapegroup){
+                    if(shapegroup.pinned){
+                        $scope.unPinGroup(shapegroup);
+                    }
+                    if(!shapegroup.pinned){
+                        $scope.pinGroup(shapegroup);
+                    }
+                };
+                $scope.showPinMessage = function(shapegroup){
+                    //add message
                         var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
                         //console.log('overflow: ', overflow)
                         if (overflow) {
@@ -3007,9 +3019,6 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                                 $scope.overflowMessage = false;
                             }, 2000);
                         }
-                    } else {
-                        shapegroup.pinned = false;
-                    }
                 };
                 $scope.openWindow = function(url) {
                     window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
@@ -3153,6 +3162,7 @@ angular.module("lucidShapesData", ['appConfig'])
     .factory('shapesData', function() {
 
         var lucidShapes = [{
+            "id": 1,
             "groupname": "My Saved Shapes",
             "shapes": [{
                 "name": "text",
@@ -3190,6 +3200,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": true,
             "pinnedOrder": 1
         }, {
+            "id": 2,
             "groupname": "Standard",
             "shapes": [{
                 "name": "text",
@@ -3318,6 +3329,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 2
 
         }, {
+            "id": 3,
             "groupname": "Flowchart",
             "shapes": [{
                 "name": "Rectangle",
@@ -3449,6 +3461,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 3
 
         }, {
+            "id": 4,
             "groupname": "Containers",
             "shapes": [{
                 "name": "Rectangle",
@@ -3510,6 +3523,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 4
 
         }, {
+            "id": 5,
             "groupname": "Shapes",
             "shapes": [{
                 "name": "Rectangle",
@@ -3606,6 +3620,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinnedOrder": 5
 
         }, {
+            "id": 6,
             "groupname": "Android Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -3839,6 +3854,7 @@ angular.module("lucidShapesData", ['appConfig'])
                 "svg": '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-shapes-fill-stroke" sketch:type="MSArtboardGroup" stroke="#979797" stroke-width="2" fill="#FFFFFF"><ellipse id="Oval-9-Copy-4" sketch:type="MSShapeGroup" cx="15" cy="15" rx="13" ry="13"></ellipse></g></g></svg>'
             }],
         }, {
+            "id": 7,
             "groupname": "Entity Relationship",
             "shapes": [{
                 "name": "Rectangle",
@@ -3869,6 +3885,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 8,
             "groupname": "iOS Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -4333,6 +4350,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false
         }, {
+            "id": 9,
             "groupname": "Site Maps",
             "shapes": [{
                 "name": "Rectangle",
@@ -4517,6 +4535,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false
         }, {
+            "id": 10,
             "groupname": "UI Mockups",
             "shapes": [{
                 "name": "Rectangle",
@@ -4922,6 +4941,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 11,
             "groupname": "UML",
             "shapes": [{
                 "name": "Rectangle",
@@ -5377,6 +5397,7 @@ angular.module("lucidShapesData", ['appConfig'])
             "pinned": false
 
         }, {
+            "id": 12,
             "groupname": "BPMN 2.0",
             "shapes": [{
                 "name": "Rectangle",
@@ -5506,6 +5527,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 13,
             "groupname": "Data Flow",
             "shapes": [{
                 "name": "Rectangle",
@@ -5635,6 +5657,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 14,
             "groupname": "Org Charts",
             "shapes": [{
                 "name": "Rectangle",
@@ -5764,6 +5787,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 15,
             "groupname": "Tables",
             "shapes": [{
                 "name": "Rectangle",
@@ -5893,6 +5917,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 16,
             "groupname": "Value Stream",
             "shapes": [{
                 "name": "Rectangle",
@@ -6022,6 +6047,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 17,
             "groupname": "AWS Architecture",
             "shapes": [{
                 "name": "Rectangle",
@@ -6151,6 +6177,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 18,
             "groupname": "Azure",
             "shapes": [{
                 "name": "Rectangle",
@@ -6280,6 +6307,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 19,
             "groupname": "Cisco Network Icons",
             "shapes": [{
                 "name": "Rectangle",
@@ -6409,6 +6437,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 20,
             "groupname": "Network Infrastructure",
             "shapes": [{
                 "name": "Rectangle",
@@ -6538,6 +6567,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 21,
             "groupname": "Server Rack Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -6667,6 +6697,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 22,
             "groupname": "Tech Clipart",
             "shapes": [{
                 "name": "Rectangle",
@@ -6796,6 +6827,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 23,
             "groupname": "User Images",
             "shapes": [{
                 "name": "Rectangle",
@@ -6925,6 +6957,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 24,
             "groupname": "Circuit Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -7054,6 +7087,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 25,
             "groupname": "Enterprise Integration",
             "shapes": [{
                 "name": "Rectangle",
@@ -7183,6 +7217,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 26,
             "groupname": "Equations",
             "shapes": [{
                 "name": "Rectangle",
@@ -7312,6 +7347,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 27,
             "groupname": "Floor Plans",
             "shapes": [{
                 "name": "Rectangle",
@@ -7441,6 +7477,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 28,
             "groupname": "Mind Mapping",
             "shapes": [{
                 "name": "Rectangle",
@@ -7570,6 +7607,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 29,
             "groupname": "Process Engineering",
             "shapes": [{
                 "name": "Rectangle",
@@ -7699,6 +7737,7 @@ angular.module("lucidShapesData", ['appConfig'])
             }],
             "pinned": false,
         }, {
+            "id": 30,
             "groupname": "Venn Diagrams",
             "shapes": [{
                 "name": "Rectangle",
@@ -7837,27 +7876,13 @@ angular.module("lucidShapesData", ['appConfig'])
                 lucidShapes[index].edit = 'true';
                 console.log('edit', lucidShapes[index]);
             },
-            // pinned: function() {
-            //     var pinnedShapes = [];
-
-
-            //     angular.forEach(lucidShapes, function(shapegroup) {
-            //             if (shapegroup.pinned) {
-            //                 pinnedShapes.push(shapegroup);
-            //             }
-            //         });
-
-            //     return pinnedShapes;
-            // },
-            // custom: function() {
-            //     var customShapes = [];
-            //     angular.forEach(lucidShapes, function(shapegroup) {
-            //             if (shapegroup.custom) {
-            //                 customShapes.push(shapegroup);
-            //             }
-            //         });
-            //     return customShapes;
-            // },
+            get: function(id) {
+                return lucidShapes.filter(function(obj) {
+                    if (obj.id === id) {
+                        return obj;
+                    }
+                })[0];
+            },
             addGroup: function(newgroup) {
                 console.log(newgroup);
                 lucidShapes.splice(0, 0, newgroup);
