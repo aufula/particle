@@ -28,6 +28,7 @@
 //@codekit-append "shape/lucid-shape.js"
 //@codekit-append "finger-tabs/lucid-finger-tabs.js"
 //@codekit-append "buttcon-popover/lucid-buttcon-popover.js"
+//@codekit-append "collapse-bar/lucid-collapse-bar.js"
 
 //@codekit-append "buttcon-toggle/lucid-buttcon-toggle.js"
 
@@ -74,7 +75,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable', 'lucidCollapseBar'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////

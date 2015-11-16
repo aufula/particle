@@ -8,6 +8,16 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
             controller: function($scope, $rootScope, $window) {
 
                 $scope.shapegroups = shapesData.all();
+
+                $scope.clickShapes = function(){
+                    if(!$scope.searchshapes){
+                    $rootScope.manageshapes=!$rootScope.manageshapes
+                    }
+                    else{
+                        $scope.searchshapes = false;
+                    }
+                }
+
                 // $scope.pinnedgroups = shapesData.pinned();
                 //$scope.customshapes = shapesData.custom();
                 // $scope.manageShapes = function(){

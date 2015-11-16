@@ -2,13 +2,65 @@
     <div class="lucid-shapes-panel" ng-class="{ 'lucid-managing-shapes': $root.manageshapes }">
         <div class="lucid-pinned-shapes-panel">
             <header class="lucid-shapes-header">
-                <span ng-click="$root.manageshapes=!$root.manageshapes">
+                <span ng-click="clickShapes();">
                 <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
                 <span class="lucid-more-shapes">Shapes</span>
                 </span>
-                <img src="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" ng-hide="$root.manageshapes" class="lucid-icon-22 lucid-shapes-search">
+
+<!-- start import to canvas -->
+                <lucid-buttcon-popover ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/import-shape-dark.svg" width="165" class="import-dropdown lucid-animate" showpopover="importToCanvas">
+                    <div class="lucid-select-wrapper">
+                        <div class="lucid-select-dropdown">
+                            <ul>
+                                <li class="lucid-select-option">
+                                    <input type="file" class="hidden-file-upload">
+                                    <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg">
+                                    Computer
+                                </li>
+                                <li class="lucid-select-option" ng-click="openWindow('https://www.dropbox.com/chooser')">
+                                    <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-dropbox-bluesteel-22px.svg">
+                                    Dropbox
+                                </li>
+                                <li class="lucid-select-option" ng-click="openWindow('https://accounts.google.com/login?hl=en')">
+                                    <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-googledrive-bluesteel-22px.svg">
+                                    Google Drive
+                                </li>
+                                <li class="lucid-select-option" ng-click="openWindow('https://m.facebook.com/')">
+                                    <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-facebook-bluesteel-22px.svg">
+                                    Facebook
+                                </li>
+                                <li class="lucid-select-option" ng-click="openWindow('https://login.yahoo.com/config/login?.src=flickrsignin')">
+                                    <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-flickr-bluesteel-22px.svg">
+                                    Flickr
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </lucid-buttcon-popover>
+
+<!-- end import to canvas -->
+                <img src="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" ng-hide="$root.manageshapes" class="lucid-icon-22 lucid-shapes-search lucid-animate" ng-click="searchshapes = !searchshapes">
             </header>
-            <div id="left-panel-shapes" class="lucid-shapes-scroll">
+            <div class="search-shapes lucid-animate" ng-show="searchshapes">
+                <div class="search-shapes-input lucid-animate" ng-show="searchshapes">
+                    <input type="text" placeholder="Search shapes and images...">
+                    <span class="more-shapes">More</span>
+                </div>
+                <div class="search-groups-wrapper">
+                    <lucid-shape-group name="Lucidchart Shapes" shapes="[{name:'block', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'},{name:'container', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'},{name:'star', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'},{name:'polygon', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'}, {name:'container', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'},{name:'star', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'},{name:'polygon', fill:'#fff', stroke:'#888', height:'22', width:'22', strokewidth:'2', radius:'2', text:'#777'}]"></lucid-shape-group>
+                    <lucid-collapse-bar title="Google">
+                        <ul class="placeholder-elements">
+                            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        </ul>
+                    </lucid-collapse-bar>
+                    <lucid-collapse-bar title="Iconfinder">
+                    <ul class="placeholder-elements">
+                            <li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li>
+                        </ul>
+                    </lucid-collapse-bar>
+                </div>
+            </div>
+            <div id="left-panel-shapes" class="lucid-shapes-scroll lucid-animate" ng-hide="searchshapes">
                 <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">
                     <ul dnd-list="shapegroups"
                         dnd-allowed-types="['containerType']"

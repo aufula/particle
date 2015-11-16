@@ -1556,6 +1556,13 @@ input {
 .lucid-shapes-panel .lucid-shapes-scroll::-webkit-scrollbar {
   display: none;
 }
+.lucid-shapes-panel .lucid-shapes-scroll.ng-hide {
+  opacity: 0;
+}
+.lucid-shapes-panel .lucid-shapes-scroll.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+          transition: 0.35s ease-in-out all;
+}
 .lucid-shapes-panel .lucid-scroll-inner-wrap {
   padding: 10px;
   -webkit-transition: 0.25s ease-in-out;
@@ -1982,7 +1989,134 @@ input {
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
 }
+.import-dropdown.lucid-buttcon-wrapper {
+  cursor: pointer;
+  position: absolute;
+  right: 46px;
+  top: 13px;
+  opacity: 1;
+}
+.import-dropdown.lucid-buttcon-wrapper.ng-hide {
+  opacity: 0;
+}
+.import-dropdown.lucid-buttcon-wrapper.ng-animate {
+  -webkit-transition: 0.25s ease-in-out all;
+          transition: 0.25s ease-in-out all;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-popover-menu {
+  top: 45;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-popover-menu:after {
+  border-bottom: 10px #fff solid;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper {
+  width: 100%;
+  background: #fff;
+  padding: 0;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown {
+  left: inherit;
+  color: #5a5a5a;
+  top: 0;
+  min-width: 0;
+  width: 100%;
+  box-shadow: none;
+  position: relative;
+  background: transparent;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+  line-height: 30px;
+  font-size: 14px;
+  padding: 0 13px;
+  height: 30px;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option > img {
+  margin: 3px 5px 0 0;
+  vertical-align: top;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown > ul > li > img {
+  cursor: pointer;
+  top: 3px;
+  left: -3px;
+  width: 22px;
+  height: 22px;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown > ul > li .hidden-file-upload {
+  width: 100%;
+  height: 30px;
+  position: absolute;
+  margin: 0;
+  opacity: 0;
+  overflow: hidden;
+  cursor: pointer;
+}
+.import-dropdown.lucid-buttcon-wrapper .lucid-select-wrapper .lucid-select-dropdown > ul > li .hidden-file-upload::-webkit-file-upload-button {
+  cursor: pointer;
+}
+.search-shapes {
+  position: absolute;
+  top: 60px;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  overflow: hidden;
+}
+.search-shapes .search-groups-wrapper {
+  padding: 10px;
+}
+.search-shapes .search-shapes-input {
+  background: #77818C;
+  padding: 5px 10px;
+}
+.search-shapes .search-shapes-input > input {
+  width: 80%;
+  height: 29px;
+  line-height: 29px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #777;
+  background: #fff;
+  font-weight: 100;
+}
+.search-shapes .search-shapes-input > input::-webkit-input-placeholder {
+  font-style: italic;
+  color: #ccc;
+}
+.search-shapes .search-shapes-input > span {
+  margin-left: 10px;
+  font-size: 14px;
+  color: #95A8BA;
+  cursor: pointer;
+}
+.search-shapes .search-shapes-input.ng-hide {
+  margin-top: -39px;
+}
+.search-shapes .search-shapes-input.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+          transition: 0.35s ease-in-out all;
+}
+.search-shapes.ng-hide {
+  opacity: 0;
+}
+.search-shapes.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+          transition: 0.35s ease-in-out all;
+}
+.search-shapes .lucid-shape-group .shape-group-top {
+  border-radius: 4px;
+}
+.search-shapes .placeholder-elements > li {
+  width: 30px;
+  height: 30px;
+  background: #999;
+  display: inline-block;
+  margin: 7px 7.9px;
+  border-radius: 3px;
+}
 .import-options {
+  display: none;
   position: absolute;
   bottom: 0px;
   left: 0;
@@ -2448,4 +2582,66 @@ input {
   display: block;
   height: 0;
   clear: both;
+}
+.lucid-collapse-bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  opacity: 1;
+  vertical-align: top;
+}
+.lucid-collapse-bar .collapse-bar-top {
+  background-color: #C1C1C1;
+  padding: 7px 10px;
+  position: relative;
+  color: #555;
+  -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  height: 30px;
+  text-align: left;
+  border-radius: 4px;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  padding: 5px 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg g {
+  -webkit-transform: rotateZ(0);
+          transform: rotateZ(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg g {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+.lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 15px;
+  display: inline-block;
+}
+.lucid-collapse-bar .collapse-bar-top.no-collapse .lucid-hide-content-icon {
+  display: none;
+}
+.lucid-collapse-bar .collapse-bar-top.no-collapse .collapse-bar-name {
+  padding-left: 0;
+}
+.lucid-collapse-bar .lucid-collapse-bar-content {
+  overflow: hidden;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+  width: 100%;
 }

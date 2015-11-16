@@ -1,0 +1,55 @@
+.lucid-collapse-bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  -webkit-transition: 0.3s ease-in-out background, 0.2s ease-out margin, 0.3s ease-in-out opacity;
+          transition: 0.3s ease-in-out background, 0.2s ease-out margin, 0.3s ease-in-out opacity;
+  text-align: left;
+  opacity: 1;
+}
+.lucid-collapse-bar .collapse-bar-name {
+  line-height: 16px;
+  font-size: 16px;
+  font-weight: 500;
+  padding-left: 15px;
+  display: inline-block;
+}
+.lucid-collapse-bar .collapse-bar-name .lucid-hide-shapes-icon {
+  z-index: 1;
+  position: absolute;
+  height: 30px;
+  padding: 5px 2px;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-name .lucid-hide-shapes-icon svg g {
+  -webkit-transform: rotateZ(0);
+          transform: rotateZ(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-name.lucid-hide-shapes .lucid-hide-shapes-icon svg g {
+  -webkit-transform: rotateZ(-90deg);
+          transform: rotateZ(-90deg);
+}
+.lucid-collapse-bar .collapse-bar-name .collapse-bar-top {
+  background-color: #C1C1C1;
+  padding: 7px 10px;
+  position: relative;
+  color: #555;
+  -webkit-transition: 0.3s ease-in-out;
+          transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  height: 30px;
+  text-align: left;
+}
+.lucid-collapse-bar .lucid-collapse-bar-content {
+  overflow: hidden;
+  -webkit-transition: all .5s;
+          transition: all .5s;
+  width: 100%;
+}
