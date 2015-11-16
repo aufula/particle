@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="53px" height="44px" viewBox="0 0 53 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="56px" height="47px" viewBox="0 0 56 47" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
     <title>drop-shapes</title>
     <desc>Created with Sketch.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(-90.000000, -12.000000)">
+        <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(-89.000000, -11.000000)">
             <g id="drop-shapes" transform="translate(90.000000, 12.000000)">
                 <rect id="Rectangle-14" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup" x="6" y="0" width="39" height="20" rx="10"></rect>
                 <path d="M17,28 L35,12 L53,28 L35,44 L17,28 Z" id="Stroke-11" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
