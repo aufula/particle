@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="54px" height="45px" viewBox="0 0 54 45" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+<svg width="53px" height="44px" viewBox="0 0 53 44" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
     <!-- Generator: Sketch 3.4.2 (15857) - http://www.bohemiancoding.com/sketch -->
     <title>drop-shapes</title>
     <desc>Created with Sketch.</desc>
@@ -7,13 +7,13 @@
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="Group-Copy" sketch:type="MSLayerGroup" transform="translate(-90.000000, -12.000000)">
             <g id="drop-shapes" transform="translate(90.000000, 12.000000)">
-                <rect id="Rectangle-14" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup" x="6.5" y="0.726643599" width="39" height="19.0657439" rx="50"></rect>
-                <path d="M17,28.8235294 L35.1333333,12.7681661 L53.2666667,28.8235294 L35.1333333,44.8788927 L17,28.8235294 Z" id="Stroke-11" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
-                <g id="Text" transform="translate(0.000000, 13.269896)">
+                <rect id="Rectangle-14" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup" x="6" y="0" width="39" height="20" rx="10"></rect>
+                <path d="M17,28 L35,12 L53,28 L35,44 L17,28 Z" id="Stroke-11" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup"></path>
+                <g id="Text" transform="translate(0.000000, 13.000000)">
                     <g id="Rectangle-13-+-T">
-                        <rect id="Rectangle-13" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="0" width="29.5" height="24.083045" rx="3"></rect>
+                        <rect id="Rectangle-13" stroke="#B7B7B7" stroke-width="2" fill="#D8D8D8" sketch:type="MSShapeGroup" x="0" y="0" width="30" height="24" rx="3"></rect>
                         <text id="T" sketch:type="MSTextLayer" font-family="Baskerville" font-size="19" font-weight="normal" sketch:alignment="middle" fill="#B5B5B5">
-                            <tspan x="8.04051893" y="18.2427469">T</tspan>
+                            <tspan x="8.37133789" y="18.2384615">T</tspan>
                         </text>
                     </g>
                 </g>
