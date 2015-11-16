@@ -83,9 +83,15 @@
                 height: 40px;
                 cursor: pointer;
                 user-select: none;
-                transition: all .3s;
+                transition: all .1s linear;
                 &.active {
                     border-bottom: 4px solid @blue;
+                }
+                &.component-inputs{
+                    opacity:1;
+                    &.ng-hide{
+                        opacity:0;
+                    }
                 }
             }
         }

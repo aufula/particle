@@ -270,6 +270,19 @@ angular.module('lucidComponentFactory', [])
                     "type": "true",
                     "details": "If selected is true will show selected page state."
                 }]
+            }, {
+                "title": "Collapse Bar",
+                "componentid": "collapse-bar",
+                "description": "Used to separate data and settings",
+                "inputs": [{
+                    "name": "title",
+                    "type": "text",
+                    "details": "Name the top bar"
+                }, {
+                    "name": "collapsible",
+                    "type": "true/false",
+                    "details": "*Not required. Set to false if you do not want element to collapse"
+                }]
             }]
         }, {
             //Toolbar Components
@@ -321,7 +334,6 @@ angular.module('lucidComponentFactory', [])
                 "description": "this component is used in the optionbar, the page color, etc.",
 
             }]
-        }
-        ];
+        }];
         return service;
     });

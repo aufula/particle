@@ -359,11 +359,17 @@ p.small-body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  -webkit-transition: all .1s linear;
+          transition: all .1s linear;
 }
 .code-preview .drawer > header span.active {
   border-bottom: 4px solid #29AAE1;
+}
+.code-preview .drawer > header span.component-inputs {
+  opacity: 1;
+}
+.code-preview .drawer > header span.component-inputs.ng-hide {
+  opacity: 0;
 }
 .code-preview .drawer .scroll-area {
   overflow: scroll;
