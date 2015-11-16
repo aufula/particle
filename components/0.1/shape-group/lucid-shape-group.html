@@ -11,8 +11,9 @@
         <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="$parent.shapegroup.pinned = false">
     </div>
     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
-        <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="custom">
-            <span class="lucid-save-shapes-hint" ng-hide="shapes.length > 1">Drag shapes here to reuse</span>
+        <div class="zero-state" ng-if="custom && shapes.length == 1">
+            <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
+            <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
         </div>
         <ul dnd-list="shapes"
             dnd-allowed-types="[custom]"
@@ -21,7 +22,8 @@
             dnd-dragover="dragoverCallback(event, index, external, type)"
             dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-            class="shapes-wrapper">
+            class="shapes-wrapper"
+            ng-class="{'zero-state-height': custom && shapes.length == 1}">
             <li ng-repeat="shape in shapes"
                 dnd-draggable="shape"
                 dnd-type="'true'"
@@ -39,6 +41,7 @@
 
             </li>
         </ul>
+
     </div>
     
 </div>

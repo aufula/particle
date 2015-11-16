@@ -150,7 +150,6 @@ img {
 input {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
-  font-weight: 100;
 }
 .lucid-input {
   background: transparent;
@@ -736,6 +735,11 @@ input {
 }
 .lucid-shape-group .slide-toggle > ul {
   min-height: 44px;
+  -webkit-transition: all 0.25s ease-in-out;
+          transition: all 0.25s ease-in-out;
+}
+.lucid-shape-group .slide-toggle > ul.zero-state-height {
+  min-height: 100px;
 }
 .lucid-shape-group .lucid-hide-shapes-icon {
   z-index: 1;
@@ -759,22 +763,25 @@ input {
   -webkit-transform: rotateZ(-90deg);
           transform: rotateZ(-90deg);
 }
-.lucid-shape-group .lucid-drop-area {
+.lucid-shape-group .zero-state {
   -webkit-transition: all 0.25s ease-in-out;
           transition: all 0.25s ease-in-out;
   position: absolute;
   top: 32px;
+  padding-top: 10px;
   left: 0;
   right: 0;
   bottom: 0;
   border: 2px solid transparent;
+  text-align: center;
 }
-.lucid-shape-group .lucid-drop-area .lucid-save-shapes-hint {
+.lucid-shape-group .zero-state .lucid-save-shapes-hint {
   font-style: italic;
   color: #777;
   text-align: center;
   display: block;
   padding: 10px;
+  font-size: 14px;
 }
 .lucid-shape-group .shape-group-top {
   background-color: #C1C1C1;
@@ -1703,8 +1710,8 @@ input {
   width: 180px;
   font-size: 16px;
 }
-.lucid-managing-shapes .lucid-drop-area,
-.lucid-manage-shapes .lucid-drop-area {
+.lucid-managing-shapes .zero-state,
+.lucid-manage-shapes .zero-state {
   top: 40px;
 }
 .lucid-managing-shapes .lucid-hide-shapes .shape-group-top,
@@ -1786,6 +1793,7 @@ input {
   box-sizing: border-box;
   color: #FFF;
   background: rgba(255, 255, 255, 0.3);
+  font-weight: 100;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input::-webkit-input-placeholder {
   color: #fff;

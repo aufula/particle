@@ -34,6 +34,10 @@
         width: 100%;
         >ul {
             min-height: 44px;
+            transition: all .25s ease-in-out;
+            &.zero-state-height{
+                min-height: 100px;
+            }
         }
     }
     .lucid-hide-shapes-icon {
@@ -56,23 +60,26 @@
             }
         }
     }
-    .lucid-drop-area {
+    .zero-state {
         transition: all .25s ease-in-out;
         position: absolute;
         top: 32px;
+        padding-top:10px;
         left: 0;
         right: 0;
         bottom: 0;
         border: 2px solid transparent;
-        // &.drag-enter {
-        //     border: 2px dashed #999;
-        // }
+        text-align: center;
         .lucid-save-shapes-hint {
             font-style: italic;
             color: #777;
             text-align: center;
             display: block;
             padding: 10px;
+            font-size: 14px;
+        }
+        >img{
+            
         }
     }
     .shape-group-top {
