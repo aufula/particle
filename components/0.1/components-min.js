@@ -2994,12 +2994,12 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                         shapegroup.pinnedOrder = $scope.pinnedCount;
                         //show message if not in display
                         $scope.showPinMessage(shapegroup);
-                        //console.log('pin');
+                        console.log('pin');
                 };
                 $scope.unPinGroup = function(shapegroup) {
                     var group = shapesData.get(shapegroup.id);
                         group.pinned = false;
-                        //console.log('unpin');
+                        console.log('unpin');
                 };
                 $scope.togglePin = function(shapegroup){
                     var group = shapesData.get(shapegroup.id);
@@ -3027,31 +3027,31 @@ angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
                 };
 
                 //from demo
-                // $scope.dragoverCallback = function(event, index, external, type) {
-                //     $scope.logListEvent('dragged over', event, index, external, type);
-                //     // Disallow dropping in the third row. Could also be done with dnd-disable-if.
-                //     return index; // < 10;
-                // };
+                $scope.dragoverCallback = function(event, index, external, type) {
+                    $scope.logListEvent('dragged over', event, index, external, type);
+                    // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+                    return index; // < 10;
+                };
 
-                // $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                //     $scope.logListEvent('dropped at', event, index, external, type);
-                //     if (external) {
-                //         //if (allowedType === 'itemType' && !item.label) return false;
-                //         if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                //     }
-                //     return item;
-                // };
+                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+                    $scope.logListEvent('dropped at', event, index, external, type);
+                    if (external) {
+                        //if (allowedType === 'itemType' && !item.label) return false;
+                        if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                    }
+                    return item;
+                };
 
-                // $scope.logEvent = function(message, event) {
-                //     console.log(message, '(triggered by the following', event.type, 'event)');
-                //     console.log(event);
-                // };
+                $scope.logEvent = function(message, event) {
+                    console.log(message, '(triggered by the following', event.type, 'event)');
+                    console.log(event);
+                };
 
-                // $scope.logListEvent = function(action, event, index, external, type) {
-                //     var message = external ? 'External ' : '';
-                //     message += type + ' element is ' + action + ' position ' + index;
-                //     $scope.logEvent(message, event);
-                // };
+                $scope.logListEvent = function(action, event, index, external, type) {
+                    var message = external ? 'External ' : '';
+                    message += type + ' element is ' + action + ' position ' + index;
+                    $scope.logEvent(message, event);
+                };
 
 
             }
