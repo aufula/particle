@@ -31,26 +31,24 @@
                     <span class="dd-arrow">{{$root.currentPage.name}}</span>
                 </a>
                 <div class="lucid-buttcon master-page-compass lucid-animate" ng-click="showMasterPopover = !showMasterPopover" ng-show="$root.masterPageCount().length>0">
-                <img src="http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg" class="lucid-icon-22">
-                <lucid-popover-menu ng-show="showMasterPopover" width="200">
-                <div class="lucid-context-menu">
-                    <ul>
-                        <li ng-show="!$root.currentPage.master" ng-click="$root.currentPage.master = true">Convert to Master Layer</li>
-                        <li ng-show="$root.currentPage.master" ng-click="$root.currentPage.master = false">Convert to Page</li>
-                        <li class="lucid-context-more">Apply Master Layer
+                    <img src="http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg" class="lucid-icon-22">
+                    <lucid-popover-menu ng-show="showMasterPopover" width="200">
+                        <div class="lucid-context-menu">
                             <ul>
-                                <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
-                                    {{master.name}}
+                                <li ng-show="!$root.currentPage.master" ng-click="$root.currentPage.master = true">Convert to Master Layer</li>
+                                <li ng-show="$root.currentPage.master" ng-click="$root.currentPage.master = false">Convert to Page</li>
+                                <li class="lucid-context-more">Apply Master Layer
+                                    <ul>
+                                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                            {{master.name}}
+                                        </li>
+                                    </ul>
                                 </li>
+                                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
                             </ul>
-                        </li>
-                        <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
-                        
-                    </ul>
+                        </div>
+                    </lucid-popover-menu>
                 </div>
-                </lucid-popover-menu>
-                </div>
-
                 <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
             </div>
             <div id="documents"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
@@ -134,90 +132,120 @@
                     <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" /></li>
                 </ul>
             </div>
-            <div id="right-dock">
-                <div ng-click="showComments=false; showSlides=false" data-panel="#share" class="icon-wrapper">
+            <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock }">
+                <div data-panel="#details" class="icon-wrapper" ng-class="{active: openTab == 'details'}" ng-click="setTab('details');">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-details-bluesteel-22px.svg" class="full" /></div><span>Details</span>
+                </div>
+                <div data-panel="#share" class="icon-wrapper" ng-class="{active: openTab == 'share'}" ng-click="setTab('share');">
                     <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
                 </div>
-                <div ng-click="showComments=false; showSlides=false" data-panel="#interact" class="icon-wrapper">
+                <div data-panel="#interact" class="icon-wrapper" ng-class="{active: openTab == 'layers'}" ng-click="setTab('layers');">
                     <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-layers-mode.svg" class="full" /></div><span>Layers</span>
                 </div>
-                <div ng-click="showComments=!showComments; showSlides=false" data-panel="#comments" class="icon-wrapper">
+                <div data-panel="#comments" class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="setTab('comments');">
                     <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comments-mode.svg" class="full" /></div><span>Comments</span>
                 </div>
-                <div ng-click="showSlides=!showSlides; showComments=false" data-panel="#present" class="icon-wrapper">
-                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-present-mode.svg" class="full" /></div><span>Present</span>
+                <div data-panel="#present" class="icon-wrapper" ng-class="{active: openTab == 'present'}" ng-click="setTab('present');">
+                    <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-presentation-bluesteel.svg" class="full" /></div><span>Present</span>
                 </div>
-                <div ng-click="showComments=false; showSlides=false" data-panel="#history" class="icon-wrapper">
+                <div data-panel="#history" class="icon-wrapper" ng-class="{active: openTab == 'history'}" ng-click="setTab('history');">
                     <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
                 </div>
                 <div class="right-panel">
-                    <div id="share" class="container">
-                        <header>Share<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-share-2.png" />
+                    <div id="details" class="container" ng-show="openTab === 'details'">
+                        <header>Details<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-details-v4.png" />
                     </div>
-                    <div id="interact" class="container">
-                        <header>Layers<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-2.png" />
+                    <div id="share" class="container" ng-controller="ShareCtrl" ng-show="openTab === 'share'">
+                        <header>Share<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header>
+                        <section>
+                            <div class="group">
+                                <div class="add-button" ng-click="showPopup();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-more-shapes-plus-grey.svg" />Add</div>
+                                <div class="options">Options</div>
+                                <div class="add-popup" ng-show="showing">
+                                    <input type="text" placeholder="Add person, email, or group" ng-model="dummyData.name">
+                                    <select ng-model="dummyData.role">
+                                        <option>Editor</option>
+                                        <option>Commenter</option>
+                                        <option>Viewer</option>
+                                    </select>
+                                    <div id="push" ng-click="addPerson(dummyData);">Add</div>
+                                </div>
+                            </div>
+                            <ul class="collaborators">
+                                <li class="lucid-animate" ng-repeat="person in collaborators">
+                                    <div class="image-container" ng-click="showPermissions = !showPermissions;"><img class="avatar" ng-src="{{ person.image }}" ng-if="person.image" /><img class="pencil" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-edit-pencil-white.svg" /></div>
+                                    <span>{{ person.name }}</span>
+                                    <img class="delete" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeXsmall-bluesteel.svg" ng-click="collaborators.splice($index, 1);" />
+                                    <div class="permissions" ng-show="showPermissions">
+                                        <ul>
+                                            <li class="active">Editor</li>
+                                            <li>Commenter</li>
+                                            <li>Viewer</li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </section>
                     </div>
-                    <div id="comments" class="container">
-                        <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-2.png" />
-                        <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-footer.png" /></footer>
+                    <div id="interact" class="container" ng-show="openTab === 'layers'">
+                        <header>Layers<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-v4.png" />
                     </div>
-                    <div id="present" class="container">
-                        <header>Present<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-2.png" />
-                        <footer id="present-trigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-footer.png" /></footer>
+                    <div id="comments" class="container" ng-show="openTab === 'comments'">
+                        <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-v4.png" />
                     </div>
-                    <div id="history" class="container">
-                        <header>History<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history.png" />
+                    <div id="present" class="container" ng-show="openTab === 'present'">
+                        <header>Present<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-v4.png" />
+                        <footer id="present-trigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-2-v4.png" /></footer>
+                    </div>
+                    <div id="history" class="container" ng-show="openTab === 'history'">
+                        <header>History<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"/></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-top-v4.png" />
+                        <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-bottom-v4.png"></footer>
                     </div>
                 </div>
-            </div>
-            <lucid-settings-drawer> </lucid-settings-drawer>
-            <div id="ruler-vert" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-vert.png" /></div>
-            <div id="ruler-hor" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-hor.png" /></div>
-            
-        </div>
-    </div>
-    <div id="modal">
-        <div class="shade">
-            <div id="rename-modal" class="modal-container">
-                <header>
-                    <h2>Rename page</h2>
-                </header>
-                <div class="content">
-                    <h3>Enter a new page title:</h3>
-                    <input type="text" value="test" />
-                </div>
-                <footer>
-                    <button class="submit">Submit</button>
-                    <button class="cancel">Cancel</button>
-                </footer>
-            </div>
-            <div id="settings-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-settings.png" />
-                <div class="cancel"></div>
-                <div class="close"></div>
-            </div>
-            <div id="shapes-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-shapespopover.png" />
-                <div class="cancel"></div>
-                <div class="close"></div>
-            </div>
-            <div id="help-modal" class="modal-container">
-                <header>
-                    <h2>Help</h2>
-                </header>
-                <div class="content">
-                    <h3>What can we help you find?</h3>
-                    <input type="text" placeholder="Ex: &quot;Export my document&quot;" />
-                </div>
-                <footer>
-                    <button class="submit">Submit</button>
-                    <button class="cancel">Cancel</button>
-                </footer>
-            </div>
-            <div id="import-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placholder-import-dialog.png" />
-                <div class="cancel"></div>
-                <div class="close"></div>
             </div>
         </div>
-    </div>
+        <div id="modal">
+            <div class="shade">
+                <div id="rename-modal" class="modal-container">
+                    <header>
+                        <h2>Rename page</h2>
+                    </header>
+                    <div class="content">
+                        <h3>Enter a new page title:</h3>
+                        <input type="text" value="test" />
+                    </div>
+                    <footer>
+                        <button class="submit">Submit</button>
+                        <button class="cancel">Cancel</button>
+                    </footer>
+                </div>
+                <div id="settings-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-settings.png" />
+                    <div class="cancel"></div>
+                    <div class="close"></div>
+                </div>
+                <div id="shapes-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-shapespopover.png" />
+                    <div class="cancel"></div>
+                    <div class="close"></div>
+                </div>
+                <div id="help-modal" class="modal-container">
+                    <header>
+                        <h2>Help</h2>
+                    </header>
+                    <div class="content">
+                        <h3>What can we help you find?</h3>
+                        <input type="text" placeholder="Ex: &quot;Export my document&quot;" />
+                    </div>
+                    <footer>
+                        <button class="submit">Submit</button>
+                        <button class="cancel">Cancel</button>
+                    </footer>
+                </div>
+                <div id="import-modal" class="modal-container fake-modal"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placholder-import-dialog.png" />
+                    <div class="cancel"></div>
+                    <div class="close"></div>
+                </div>
+            </div>
+        </div>
 </body>
 
 </html>
