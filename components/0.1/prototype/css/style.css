@@ -27,18 +27,14 @@ html {
 body {
   font-family: "Source Sans Pro", sans-serif;
   background: #3d4752;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #wrapper {
   position: relative;
   height: 100%;
   width: 100%;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-  -webkit-transition: margin .3s;
-          transition: margin .3s;
+  transition: margin .3s;
 }
 #wrapper.with-sidebar {
   margin-left: 200px;
@@ -64,18 +60,15 @@ a {
 .show-shapes .shape-manager {
   width: 100%;
   opacity: 1;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .show-shapes .shape-manager > header {
   margin-left: 0;
-  -webkit-transition: all .6s;
-          transition: all .6s;
+  transition: all .6s;
 }
 .show-shapes .shape-manager .inner-content {
   opacity: 1;
-  -webkit-transition: opacity 0.3s ease-in-out 0.3s;
-          transition: opacity 0.3s ease-in-out 0.3s;
+  transition: opacity 0.3s ease-in-out 0.3s;
 }
 .show-shapes #left-bar,
 .show-shapes #left-bar #shapes {
@@ -114,9 +107,7 @@ a {
   padding: 5px;
 }
 .show-shapes #more-shapes img {
-  -webkit-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-          transform: rotate(90deg);
+  transform: rotate(90deg);
 }
 .shape-manager {
   position: absolute;
@@ -128,8 +119,7 @@ a {
   height: 100%;
   background: rgba(61, 71, 82, 0.95);
   z-index: 6;
-  -webkit-transition: all 0.3s 0.1s ease-in-out;
-          transition: all 0.3s 0.1s ease-in-out;
+  transition: all 0.3s 0.1s ease-in-out;
 }
 .shape-manager .right {
   float: right;
@@ -143,8 +133,7 @@ a {
   padding: 0 30px;
   text-align: center;
   margin-left: -200px;
-  -webkit-transition: all .1s .5s;
-          transition: all .1s .5s;
+  transition: all .1s .5s;
 }
 .shape-manager > header .search-container {
   position: relative;
@@ -187,8 +176,7 @@ a {
 }
 .shape-manager .inner-content {
   opacity: 0;
-  -webkit-transition: opacity 0.1s ease-in-out;
-          transition: opacity 0.1s ease-in-out;
+  transition: opacity 0.1s ease-in-out;
   height: 100%;
 }
 .shape-manager .inner-content .wrapper {
@@ -198,12 +186,8 @@ a {
   padding-bottom: 60px;
 }
 .shape-manager .inner-content .wrapper > section > ul {
-  -webkit-column-width: 300px;
-     -moz-column-width: 300px;
-          column-width: 300px;
-  -webkit-column-count: 2;
-     -moz-column-count: 2;
-          column-count: 2;
+  column-width: 300px;
+  column-count: 2;
 }
 .shape-manager .inner-content .wrapper > section > ul > li {
   background: #D8D8D8;
@@ -211,8 +195,7 @@ a {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   margin: 0 20px 40px;
   overflow: hidden;
-  -webkit-column-break-inside: avoid;
-          break-inside: avoid;
+  break-inside: avoid;
   page-break-inside: avoid;
 }
 .shape-manager .inner-content .wrapper > section > ul > li.sortable-ghost {
@@ -227,8 +210,7 @@ a {
   border-radius: 4px 4px 0 0;
   color: #fff;
   min-width: 150px;
-  -webkit-transition: background .1s;
-          transition: background .1s;
+  transition: background .1s;
 }
 .shape-manager .inner-content .wrapper > section > ul > li header .shape-count {
   background: #3d4752;
@@ -253,8 +235,7 @@ a {
   background: #3d4752;
   border-radius: 4px;
   margin-top: -3px;
-  -webkit-transition: background .2s;
-          transition: background .2s;
+  transition: background .2s;
 }
 .shape-manager .inner-content .wrapper > section > ul > li header .close {
   display: none;
@@ -275,8 +256,7 @@ a {
   top: 0;
   width: 100%;
   z-index: 7;
-  -webkit-transition: top .3s;
-          transition: top .3s;
+  transition: top .3s;
 }
 #main-header .dd-arrow {
   position: relative;
@@ -398,23 +378,17 @@ a {
   vertical-align: top;
   margin-top: -5px;
   margin-left: 0;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   opacity: 1;
-  -webkit-transition: 0.5s ease-in-out all;
-          transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 #main-header .master-page-compass.ng-hide {
   margin-left: -32px;
-  -webkit-transform: scale(0.8);
-      -ms-transform: scale(0.8);
-          transform: scale(0.8);
+  transform: scale(0.8);
   opacity: 0;
 }
 #main-header .master-page-compass.ng-animate {
-  -webkit-transition: 0.5s ease-in-out all;
-          transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 #main-header .master-page-compass .lucid-popover-menu {
   top: 50px;
@@ -442,8 +416,7 @@ a {
   opacity: 0;
 }
 #main-header .master-page-text.ng-animate {
-  -webkit-transition: 0.5s ease-in-out opacity;
-          transition: 0.5s ease-in-out opacity;
+  transition: 0.5s ease-in-out opacity;
 }
 #main-header .status {
   font-size: 14px;
@@ -462,8 +435,7 @@ a {
   top: -60px;
   width: 100%;
   z-index: 7;
-  -webkit-transition: top .3s;
-          transition: top .3s;
+  transition: top .3s;
 }
 #present-header .dd-arrow {
   position: relative;
@@ -566,8 +538,7 @@ a {
   font-weight: 400;
   margin: 0;
   font-size: 14px;
-  -webkit-transition: background .1s;
-          transition: background .1s;
+  transition: background .1s;
 }
 .parent .submenu li:hover {
   background: rgba(230, 230, 230, 0.5);
@@ -578,8 +549,7 @@ a {
   display: inline-block;
   margin-top: 54px;
   position: relative;
-  -webkit-transition: all .3s;
-          transition: all .3s;
+  transition: all .3s;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/grid-bg-new.png') center;
 }
 #main-container .page-container {
@@ -605,8 +575,7 @@ a {
   opacity: 0;
   color: white;
   padding: 0 20px;
-  -webkit-transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
-          transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
+  transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
 }
 #presentation-footer .slide-stepper {
   display: inline-block;
@@ -629,8 +598,7 @@ a {
   background: #3d4752;
   width: 100%;
   padding: 0 50px 0 250px;
-  -webkit-transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
-          transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
+  transition: opacity 0.3s, padding 0.3s ease-in-out, bottom 0.3s;
 }
 #main-footer .left {
   height: 22px;
@@ -667,8 +635,7 @@ a {
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
   cursor: pointer;
   background: transparent;
-  -webkit-transition: background .1s;
-          transition: background .1s;
+  transition: background .1s;
 }
 #sidebar ul li:hover {
   background: rgba(255, 255, 255, 0.15);
@@ -683,8 +650,7 @@ a {
   position: absolute;
   background: #c4c4c4;
   opacity: 1;
-  -webkit-transition: opacity 0.3s, left 0.3s ease-in-out;
-          transition: opacity 0.3s, left 0.3s ease-in-out;
+  transition: opacity 0.3s, left 0.3s ease-in-out;
 }
 #ruler-vert {
   top: 60px;
@@ -712,8 +678,7 @@ a {
   top: 0;
   height: 100%;
   z-index: 7;
-  -webkit-transition: opacity 0.3s, left 0.3s ease-in-out;
-          transition: opacity 0.3s, left 0.3s ease-in-out;
+  transition: opacity 0.3s, left 0.3s ease-in-out;
   border-right: 1px solid #b7b7b7;
 }
 #left-bar > header {
@@ -722,8 +687,7 @@ a {
   line-height: 59px;
   height: 60px;
   border-bottom: 1px solid #b7b7b7;
-  -webkit-transition: opacity .3s;
-          transition: opacity .3s;
+  transition: opacity .3s;
   position: relative;
   z-index: 2;
 }
@@ -755,20 +719,17 @@ a {
   overflow: scroll;
 }
 #left-bar #shapes li {
-  -webkit-transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, margin 0.3s ease-in-out;
-          transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, margin 0.3s ease-in-out;
+  transition: box-shadow 0.3s ease-in-out, background 0.3s ease-in-out, margin 0.3s ease-in-out;
 }
 #left-bar section {
   background: #d6d6d6;
-  -webkit-transition: background .3s;
-          transition: background .3s;
+  transition: background .3s;
 }
 #left-bar section header {
   background-color: #c1c1c1;
   padding: 5px 10px;
   z-index: 2;
-  -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 #left-bar section header .shape-count {
   display: none;
@@ -857,8 +818,7 @@ a {
   position: relative;
   top: -59px;
   margin-bottom: -60px;
-  -webkit-transition: all .2s;
-          transition: all .2s;
+  transition: all .2s;
 }
 #search.show-search {
   top: 0;
@@ -893,11 +853,8 @@ a {
   cursor: pointer;
 }
 #more-shapes img {
-  -webkit-transition: -webkit-transform .3s;
-          transition: transform .3s;
-  -webkit-transform: rotate(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotate(0deg);
+  transition: transform .3s;
+  transform: rotate(0deg);
 }
 #option-bar {
   width: 100%;
@@ -907,8 +864,7 @@ a {
   height: 60px;
   top: 0;
   border-bottom: 1px solid #b7b7b7;
-  -webkit-transition: opacity .3s, top .3s;
-          transition: opacity .3s, top .3s;
+  transition: opacity .3s, top .3s;
 }
 #option-bar .lucid-popover-menu {
   z-index: 99;
@@ -916,20 +872,15 @@ a {
 #option-bar > ul {
   margin-left: 265px;
   margin-top: 10px;
-  -webkit-transition: margin 0.3s ease-in-out;
-          transition: margin 0.3s ease-in-out;
+  transition: margin 0.3s ease-in-out;
 }
 #option-bar > ul > li {
   display: inline-block;
   border-radius: 4px;
-  -webkit-transition: all .1s;
-          transition: all .1s;
+  transition: all .1s;
   vertical-align: top;
   min-width: 32px;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
   border-radius: 0;
 }
 #option-bar > ul > li.small {
@@ -1030,12 +981,10 @@ a {
   margin-top: -198px;
 }
 .page-drawer.ng-animate {
-  -webkit-transition: 0.5s ease-in-out !important;
-          transition: 0.5s ease-in-out !important;
+  transition: 0.5s ease-in-out !important;
 }
 .page-drawer.ng-animate .lucid-pages-wrapper {
-  -webkit-transition: 0.5s ease-in-out !important;
-          transition: 0.5s ease-in-out !important;
+  transition: 0.5s ease-in-out !important;
 }
 #page-list {
   overflow: hidden;
@@ -1056,8 +1005,7 @@ a {
   min-height: 152px;
   vertical-align: top;
   border-radius: 4px;
-  -webkit-transition: background .2s;
-          transition: background .2s;
+  transition: background .2s;
 }
 #page-list > li.active {
   background: #A5AEB7;
@@ -1081,8 +1029,7 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   position: relative;
-  -webkit-transition: top 0.2s, box-shadow 0.2s;
-          transition: top 0.2s, box-shadow 0.2s;
+  transition: top 0.2s, box-shadow 0.2s;
 }
 #page-list > li .close {
   width: 18px;
@@ -1093,8 +1040,7 @@ a {
   top: -7px;
   right: -7px;
   opacity: 0;
-  -webkit-transition: opacity .2s;
-          transition: opacity .2s;
+  transition: opacity .2s;
 }
 #page-list > li h4 {
   display: inline-block;
@@ -1103,8 +1049,7 @@ a {
   font-size: 12px;
   line-height: 1.4;
   color: #828282;
-  -webkit-transition: color .1s;
-          transition: color .1s;
+  transition: color .1s;
 }
 #page-list > li h4:hover {
   color: #5a5a5a;
@@ -1120,8 +1065,7 @@ a {
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 30%;
-  -webkit-transition: background-size 0.2s;
-          transition: background-size 0.2s;
+  transition: background-size 0.2s;
 }
 #page-list .sortable-ghost {
   opacity: .5 !important;
@@ -1136,8 +1080,7 @@ a {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 5;
-  -webkit-transition: right 0.3s ease-out, opacity 0.3s;
-          transition: right 0.3s ease-out, opacity 0.3s;
+  transition: right 0.3s ease-out, opacity 0.3s;
   padding-top: 34px;
   border-left: 1px solid #d2d2d2;
 }
@@ -1146,8 +1089,7 @@ a {
   color: #77818C;
   font-size: 10px;
   cursor: pointer;
-  -webkit-transition: color ease-in-out 0.1s, background 0.1s;
-          transition: color ease-in-out 0.1s, background 0.1s;
+  transition: color ease-in-out 0.1s, background 0.1s;
   padding: 14px 0;
   position: relative;
   margin-left: -1px;
@@ -1208,7 +1150,6 @@ a {
   right: 250px;
 }
 #right-dock.open .right-panel .container {
-  display: none;
   position: absolute;
   width: 100%;
 }
