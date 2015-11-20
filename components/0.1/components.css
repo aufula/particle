@@ -164,7 +164,7 @@ input {
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
   -webkit-transition: background 0.15s ease-in-out;
-          transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
 }
 .lucid-input-stepper {
   position: relative;
@@ -257,7 +257,7 @@ input {
   top: 10px;
   right: 0;
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
   font-size: 0;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon g {
@@ -265,6 +265,7 @@ input {
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
   -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
           transform: rotateZ(180deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
@@ -277,7 +278,7 @@ input {
   opacity: 1;
   margin-top: 0;
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
   margin-top: 0px !important;
@@ -291,13 +292,14 @@ input {
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
   border-radius: 0;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
   -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
           transform: rotateZ(180deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
@@ -305,6 +307,7 @@ input {
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
   -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotate(0deg);
           transform: rotateZ(0deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
@@ -340,7 +343,7 @@ input {
 }
 .lucid-popover-menu.ng-animate {
   -webkit-transition: .1s all linear;
-          transition: .1s all linear;
+  transition: .1s all linear;
 }
 .lucid-popover-menu ul {
   padding: 0;
@@ -393,13 +396,13 @@ input {
 }
 .lucid-buttcon-toggle-wrapper .lucid-buttcon-toggle-image svg > g {
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-buttcon-toggle-wrapper .lucid-toggle-label {
   font-size: 10px;
   color: #5a5a5a;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   text-transform: uppercase;
 }
 .lucid-buttcon-toggle-wrapper.active .lucid-buttcon-toggle-image svg > g {
@@ -502,7 +505,7 @@ input {
   box-sizing: border-box;
   display: inline-block;
   -webkit-transition: 0.1s ease-in-out background;
-          transition: 0.1s ease-in-out background;
+  transition: 0.1s ease-in-out background;
   vertical-align: top;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check {
@@ -522,7 +525,7 @@ input {
       -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: 0.1s ease-in-out all;
-          transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square:hover {
   background: rgba(0, 0, 0, 0.05);
@@ -585,7 +588,7 @@ input {
   z-index: 2;
   opacity: 1;
   -webkit-transition: all 0.1s ease-in-out;
-          transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-color-inputs {
   text-align: center;
@@ -651,7 +654,7 @@ input {
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-image #Fill-5,
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-image #Fill-3 {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-image.active #Fill-1 {
   fill: #29AAE1;
@@ -665,7 +668,7 @@ input {
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-radial defs stop {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-radial.active defs stop {
   stop-color: #29AAE1;
@@ -675,7 +678,7 @@ input {
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-linear defs stop {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-linear.active defs stop {
   stop-color: #29AAE1;
@@ -685,7 +688,7 @@ input {
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-solid rect {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon-toggle-wrapper.colorpicker-fill-solid.active rect {
   fill: #29AAE1;
@@ -705,7 +708,7 @@ input {
   display: inline-block;
   width: 100%;
   -webkit-transition: 0.3s ease-in-out background, 0.2s ease-out margin, 0.3s ease-in-out opacity;
-          transition: 0.3s ease-in-out background, 0.2s ease-out margin, 0.3s ease-in-out opacity;
+  transition: 0.3s ease-in-out background, 0.2s ease-out margin, 0.3s ease-in-out opacity;
   text-align: left;
   opacity: 1;
 }
@@ -715,7 +718,7 @@ input {
 .lucid-shape-group.custom-library {
   opacity: 1;
   -webkit-transition: 0.25s ease-in-out opacity;
-          transition: 0.25s ease-in-out opacity;
+  transition: 0.25s ease-in-out opacity;
 }
 .lucid-shape-group.custom-library .dndDraggingSource {
   opacity: 0;
@@ -730,13 +733,13 @@ input {
 .lucid-shape-group .slide-toggle {
   overflow: hidden;
   -webkit-transition: all .5s;
-          transition: all .5s;
+  transition: all .5s;
   width: 100%;
 }
 .lucid-shape-group .slide-toggle > ul {
   min-height: 44px;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-shape-group .slide-toggle > ul.zero-state-height {
   min-height: 100px;
@@ -748,24 +751,26 @@ input {
   padding: 5px 2px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-shape-group .lucid-hide-shapes-icon svg g {
   -webkit-transform: rotateZ(0);
+      -ms-transform: rotate(0);
           transform: rotateZ(0);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-shape-group.lucid-hide-shapes .lucid-hide-shapes-icon svg g {
   -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotate(-90deg);
           transform: rotateZ(-90deg);
 }
 .lucid-shape-group .zero-state {
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
   position: absolute;
   top: 32px;
   padding-top: 10px;
@@ -789,7 +794,7 @@ input {
   position: relative;
   color: #555;
   -webkit-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 30px;
   text-align: left;
@@ -820,7 +825,7 @@ input {
 }
 .lucid-shape-group .lucid-close-icon.ng-animate {
   -webkit-transition: 0.3s all ease-in-out;
-          transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 .lucid-shape-group .lucid-shape,
 .lucid-shape-group .dndPlaceholder {
@@ -852,12 +857,12 @@ input {
 .lucid-shape-group .lucid-shape.ng-animate,
 .lucid-shape-group .dndPlaceholder.ng-animate {
   -webkit-transition: .25s;
-          transition: .25s;
+  transition: .25s;
 }
 .lucid-shape-group .lucid-shape.ng-leave-active,
 .lucid-shape-group .dndPlaceholder.ng-leave-active {
   -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 .lucid-shape-group .lucid-shape svg,
 .lucid-shape-group .dndPlaceholder svg {
@@ -875,7 +880,7 @@ input {
 }
 .lucid-modal-wrapper.ng-animate {
   -webkit-transition: 0.35s ease-in-out;
-          transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal {
   position: fixed;
@@ -898,7 +903,7 @@ input {
 }
 .lucid-modal-wrapper .lucid-modal.ng-animate {
   -webkit-transition: 0.35s ease-in-out;
-          transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal > header {
   background: #3d4752;
@@ -1022,7 +1027,7 @@ input {
   height: 28px;
   whitespace: nowrap;
   -webkit-transition: 0.15s ease-in-out background-color;
-          transition: 0.15s ease-in-out background-color;
+  transition: 0.15s ease-in-out background-color;
 }
 .lucid-button.lucid-blue {
   background-color: #29AAE1;
@@ -1054,16 +1059,17 @@ input {
   background-color: #B5B5B5;
 }
 .lucid-button.lucid-button-icon {
-  padding-left: 10px;
+  padding-left: 7px;
 }
-.lucid-button.lucid-button-icon .lucid-icon-14 {
+.lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
-  margin-top: 2px;
-  margin-right: 5px;
+  margin-top: 0px;
+  margin-right: 3px;
 }
-.lucid-icon-14 {
-  width: 14px;
-  height: 14px;
+.lucid-icon-18 {
+  width: 18px;
+  height: 18px;
+  vertical-align: top;
 }
 .lucid-icon-22 {
   width: 22px;
@@ -1189,7 +1195,7 @@ input {
   background: #f1f1f1;
   border-radius: 3px;
   -webkit-transition: background 0.2s ease-in-out;
-          transition: background 0.2s ease-in-out;
+  transition: background 0.2s ease-in-out;
 }
 .lucid-popover-menu .lucid-select-wrapper:hover {
   background: #fff;
@@ -1204,7 +1210,6 @@ input {
   top: 0;
   left: 0;
   background-size: 904px;
-  z-index: 0;
 }
 .lucid-canvas .lucid-canvas-layer {
   width: 100%;
@@ -1239,7 +1244,7 @@ input {
   box-sizing: border-box;
   display: inline-block;
   -webkit-transition: 0.1s ease-in-out background;
-          transition: 0.1s ease-in-out background;
+  transition: 0.1s ease-in-out background;
   vertical-align: top;
 }
 .lucid-saved-styles .lucid-swatch-square.ng-enter {
@@ -1250,7 +1255,7 @@ input {
 }
 .lucid-saved-styles .lucid-swatch-square.ng-animate {
   -webkit-transition: margin 0.4s ease-in-out;
-          transition: margin 0.4s ease-in-out;
+  transition: margin 0.4s ease-in-out;
 }
 .lucid-saved-styles .lucid-swatch-square .lucid-swatch-check {
   position: absolute;
@@ -1269,7 +1274,7 @@ input {
       -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: 0.1s ease-in-out all;
-          transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
 }
 .lucid-saved-styles .lucid-swatch-square:hover {
   background: rgba(0, 0, 0, 0.05);
@@ -1343,7 +1348,7 @@ input {
   opacity: 1;
   z-index: 1;
   -webkit-transition: all ease-in-out 0.1s;
-          transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
 }
 .lucid-chart-block img.lucid-block-comment.ng-hide {
   right: -35px;
@@ -1393,7 +1398,7 @@ input {
 }
 .lucid-chart-block.ng-animate {
   -webkit-transition: .25s;
-          transition: .25s;
+  transition: .25s;
 }
 [lucid-context-menu] {
   cursor: pointer;
@@ -1504,7 +1509,7 @@ input {
   height: 100%;
   border-right: 1px solid #999;
   -webkit-transition: 0.35s ease-in-out background, 0.35s ease-in-out width;
-          transition: 0.35s ease-in-out background, 0.35s ease-in-out width;
+  transition: 0.35s ease-in-out background, 0.35s ease-in-out width;
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
   z-index: 6;
@@ -1530,7 +1535,9 @@ input {
   vertical-align: top;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s ease-out;
-          transition: transform 0.5s ease-out;
+  transition: -webkit-transform 0.5s ease-out;
+  transition: transform 0.5s ease-out;
+  transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search {
   float: right;
@@ -1541,14 +1548,14 @@ input {
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search.ng-animate {
   -webkit-transition: 0.3s all ease-in-out;
-          transition: 0.3s all ease-in-out;
+  transition: 0.3s all ease-in-out;
 }
 .lucid-shapes-panel .lucid-shapes-scroll {
   background: #D6D6D6;
   height: calc(100vh - 114px);
   overflow-y: scroll;
   -webkit-transition: padding 0.25s ease-in-out;
-          transition: padding 0.25s ease-in-out;
+  transition: padding 0.25s ease-in-out;
   -webkit-transition-delay: .35s;
           transition-delay: .35s;
   padding-bottom: 50px;
@@ -1561,12 +1568,12 @@ input {
 }
 .lucid-shapes-panel .lucid-shapes-scroll.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-shapes-panel .lucid-scroll-inner-wrap {
   padding: 10px;
   -webkit-transition: 0.25s ease-in-out;
-          transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 .lucid-shapes-panel .lucid-group-drop-area {
   min-height: calc(100vh - 160px);
@@ -1593,7 +1600,7 @@ input {
 }
 .overflow-message.ng-animate {
   -webkit-transition: bottom 0.3s ease-in-out;
-          transition: bottom 0.3s ease-in-out;
+  transition: bottom 0.3s ease-in-out;
 }
 .lucid-managing-shapes,
 .lucid-manage-shapes {
@@ -1636,7 +1643,7 @@ input {
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate,
 .lucid-manage-shapes .lucid-shape-group-wrapper.ng-animate {
   -webkit-transition: .25s;
-          transition: .25s;
+  transition: .25s;
   z-index: 0;
 }
 .lucid-managing-shapes .lucid-shape-group,
@@ -1678,18 +1685,19 @@ input {
 }
 .lucid-managing-shapes .pin-library .lucid-icon-22,
 .lucid-manage-shapes .pin-library .lucid-icon-22 {
-  -webkit-transition: 0.25s ease-out -webkit-transform;
-          transition: 0.25s ease-out transform;
+  -webkit-transition: 0.25s ease-out transform;
+  transition: 0.25s ease-out transform;
 }
 .lucid-managing-shapes .pin-library.pinned,
 .lucid-manage-shapes .pin-library.pinned {
   background: rgba(0, 0, 0, 0.5);
   -webkit-transition: 0.25s ease-in-out background;
-          transition: 0.25s ease-in-out background;
+  transition: 0.25s ease-in-out background;
 }
 .lucid-managing-shapes .pin-library.pinned .lucid-icon-22,
 .lucid-manage-shapes .pin-library.pinned .lucid-icon-22 {
   -webkit-transform: rotateZ(-45deg);
+      -ms-transform: rotate(-45deg);
           transform: rotateZ(-45deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
@@ -1732,6 +1740,7 @@ input {
 .lucid-managing-shapes .lucid-shapes-gear,
 .lucid-manage-shapes .lucid-shapes-gear {
   -webkit-transform: rotateZ(90deg);
+      -ms-transform: rotate(90deg);
           transform: rotateZ(90deg);
 }
 .lucid-managing-shapes .lucid-shape-group-top-right-icons,
@@ -1773,15 +1782,6 @@ input {
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library {
   float: left;
-  background: #29AAE1;
-  border-radius: 4px;
-  color: #fff;
-  font-size: 14px;
-  line-height: 29px;
-  padding: 0 10px;
-  vertical-align: top;
-  height: 29px;
-  cursor: pointer;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container {
   display: inline-block;
@@ -1824,7 +1824,7 @@ input {
 }
 .lucid-shape-manager .top-bar-inner.ng-animate {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
   -webkit-transition-delay: .75s;
           transition-delay: .75s;
 }
@@ -1832,14 +1832,14 @@ input {
   background: transparent;
   opacity: 1;
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-shape-manager .lucid-shapes-scroll.ng-hide {
   opacity: 0;
 }
 .lucid-shape-manager .lucid-shapes-scroll.ng-animate {
   -webkit-transition: 0.25s ease-in-out opacity;
-          transition: 0.25s ease-in-out opacity;
+  transition: 0.25s ease-in-out opacity;
   -webkit-transition-delay: .75s;
           transition-delay: .75s;
 }
@@ -1888,7 +1888,7 @@ input {
 }
 .lucid-shape-manager .lucid-shape-group-wrapper.ng-animate {
   -webkit-transition: .5s;
-          transition: .5s;
+  transition: .5s;
   z-index: 0;
 }
 .lucid-shape-manager .lucid-shape-group-wrapper {
@@ -1908,7 +1908,7 @@ input {
   max-height: 162px;
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
-          transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   padding: 15px;
 }
 .lucid-shape-manager .lucid-shape-group .shapes-wrapper.lucid-drawer-open {
@@ -1981,11 +1981,11 @@ input {
 }
 .lucid-shape-manager.ng-animate {
   -webkit-transition: 0.5s ease-out all;
-          transition: 0.5s ease-out all;
+  transition: 0.5s ease-out all;
 }
 .lucid-shape-manager.ng-animate.ng-hide-remove {
   -webkit-transition: 0.5s ease-out all;
-          transition: 0.5s ease-out all;
+  transition: 0.5s ease-out all;
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
 }
@@ -2001,7 +2001,7 @@ input {
 }
 .import-dropdown.lucid-buttcon-wrapper.ng-animate {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .import-dropdown.lucid-buttcon-wrapper .lucid-popover-menu {
   top: 45;
@@ -2095,14 +2095,14 @@ input {
 }
 .search-shapes .search-shapes-input.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .search-shapes.ng-hide {
   opacity: 0;
 }
 .search-shapes.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .search-shapes .lucid-shape-group .shape-group-top {
   border-radius: 4px;
@@ -2133,7 +2133,7 @@ input {
 }
 .import-options.ng-animate {
   -webkit-transition: 0.25s ease-in-out all;
-          transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .import-options .import-to-canvas {
   padding: 14px;
@@ -2152,7 +2152,7 @@ input {
 }
 .import-options .import-to-canvas.ng-animate {
   -webkit-transition: 0.5s ease-in-out all;
-          transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 .import-options .show-import-options {
   position: absolute;
@@ -2165,7 +2165,7 @@ input {
 }
 .import-options .show-import-options.ng-animate {
   -webkit-transition: 0.5s ease-in-out all;
-          transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 .import-options .show-import-options > ul {
   text-align: center;
@@ -2202,7 +2202,7 @@ input {
 }
 .lucid-themes-drawer.ng-hide {
   -webkit-transition: .25s;
-          transition: .25s;
+  transition: .25s;
 }
 .lucid-themes-drawer .lucid-themes-drawer-slide {
   padding: 10px;
@@ -2214,7 +2214,7 @@ input {
 }
 .lucid-themes-drawer .lucid-themes-drawer-slide.ng-animate {
   -webkit-transition: margin ease-in-out 0.25s;
-          transition: margin ease-in-out 0.25s;
+  transition: margin ease-in-out 0.25s;
 }
 .lucid-themes-drawer .theme-group {
   display: inline-block;
@@ -2224,7 +2224,7 @@ input {
   border-radius: 4px;
   color: #828282;
   -webkit-transition: 0.1s ease-in-out all;
-          transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
 }
 .lucid-themes-drawer .theme-group .lucid-image {
   display: block;
@@ -2252,7 +2252,7 @@ input {
 .lucid-chart-block,
 .lucid-canvas {
   -webkit-transition: 0.2s ease-in-out background-color, 0.2s ease-in-out color, 0.2s ease-in-out border;
-          transition: 0.2s ease-in-out background-color, 0.2s ease-in-out color, 0.2s ease-in-out border;
+  transition: 0.2s ease-in-out background-color, 0.2s ease-in-out color, 0.2s ease-in-out border;
 }
 .lucid-slide {
   position: absolute;
@@ -2261,7 +2261,7 @@ input {
   z-index: 2;
   opacity: 1;
   -webkit-transition: all ease-in-out 0.1s;
-          transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
 }
 .lucid-slide.ng-hide {
   opacity: 0;
@@ -2336,7 +2336,7 @@ input {
 }
 .settings-drawer .settings-drawer-content.ng-animate {
   -webkit-transition: all 0.35s ease-in-out;
-          transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
 }
 .pages {
   height: 200px;
@@ -2353,7 +2353,7 @@ input {
   vertical-align: top;
   border-radius: 4px;
   -webkit-transition: background .2s;
-          transition: background .2s;
+  transition: background .2s;
 }
 .lucid-page.current-page {
   background: #AFB7BF;
@@ -2388,7 +2388,7 @@ input {
   border-radius: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   -webkit-transition: top 0.2s, box-shadow 0.2s;
-          transition: top 0.2s, box-shadow 0.2s;
+  transition: top 0.2s, box-shadow 0.2s;
   margin: 0 auto;
 }
 .lucid-page:hover .page-thumb-wrapper {
@@ -2441,7 +2441,7 @@ input {
 }
 .lucid-page .master-page.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .lucid-page h4 {
   display: inline-block;
@@ -2486,7 +2486,7 @@ input {
   vertical-align: top;
   border-radius: 4px;
   -webkit-transition: background .2s;
-          transition: background .2s;
+  transition: background .2s;
   position: relative;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li.sortable-ghost,
@@ -2535,7 +2535,7 @@ input {
 .lucid-pages .lucid-pages-wrapper > ul > li.ng-animate h4,
 .lucid-pages .lucid-pages-wrapper .add-new-page.ng-animate h4 {
   -webkit-transition: 0.4s ease-in-out all;
-          transition: 0.4s ease-in-out all;
+  transition: 0.4s ease-in-out all;
 }
 @-webkit-keyframes PageAnimation {
   0% {
@@ -2597,7 +2597,7 @@ input {
   position: relative;
   color: #555;
   -webkit-transition: 0.3s ease-in-out;
-          transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 30px;
   text-align: left;
@@ -2611,19 +2611,21 @@ input {
   padding: 5px 2px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg g {
   -webkit-transform: rotateZ(0);
+      -ms-transform: rotate(0);
           transform: rotateZ(0);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg g {
   -webkit-transform: rotateZ(-90deg);
+      -ms-transform: rotate(-90deg);
           transform: rotateZ(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
@@ -2642,6 +2644,6 @@ input {
 .lucid-collapse-bar .lucid-collapse-bar-content {
   overflow: hidden;
   -webkit-transition: all .5s;
-          transition: all .5s;
+  transition: all .5s;
   width: 100%;
 }

@@ -23,12 +23,15 @@
             dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
             class="shapes-wrapper"
-            ng-class="{'zero-state-height': custom && shapes.length == 1}">
-            <li ng-repeat="shape in shapes"
+            ng-class="{'zero-state-height': custom && shapes.length == 1}"
+
+            ng-drop="true" 
+            ng-drop-success="onDropComplete($data, $event, shapegroup, shapes)">
+            <li ng-repeat="shape in shapes track by $index"
                 dnd-draggable="shape"
                 dnd-type="'true'"
                 dnd-effect-allowed="{{dragEffect}}"
-                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
+                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true; $root.dragFromCanvas = true"
                 dnd-moved="shapes.splice($index, 1); logEvent('Item moved', event)"
                 dnd-copied="logEvent('Item copied', event)"
                 dnd-canceled="logEvent('Drag operation canceled', event)"
@@ -41,7 +44,6 @@
 
             </li>
         </ul>
-
     </div>
     
 </div>
