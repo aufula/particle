@@ -592,8 +592,8 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/1.0/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/1.0/" //github
+    //'componentsURL': "/components/1.0/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/1.0/" //github
 
 });
 
