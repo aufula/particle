@@ -309,7 +309,68 @@ angular.module('particleApp', ['lucidComponents'])
 
         }];
     })
-    .controller('shapesManagerCtrl', function($scope, $rootScope, $window, lucidShapesData) {
+    .controller('shapeGroupCtrl', function($scope) {
+        $scope.onDropComplete = function(data) {
+            //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
+            if (data) {
+                var index = $scope.shapes.indexOf(data);
+                //console.log('shape', index);
+
+                if (index === -1) {
+                    //var index = $scope.shapegroups.shapegroup.indexOf(data);
+                    //console.log(index);
+                    var newblock = JSON.parse(JSON.stringify(data));
+
+                    newblock.shapepanel = true;
+                    newblock.customcolor = true;
+                    if (!newblock.url) {
+                        //this is here so that we can save any shape from the library for reuse.
+                        newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
+                    }
+                    $scope.shapes.push(newblock);
+                    //console.log("shape saved to shapegroup", newblock);
+                }
+            }
+        };
+
+        //from demo
+        if ($scope.custom) {
+            $scope.dragEffect = 'copyMove';
+        } else {
+            $scope.dragEffect = 'copy';
+        }
+
+        $scope.dragoverCallback = function(event, index) {
+            //$scope.logListEvent('dragged over', event, index, external, type);
+            return index; // < 10;
+        };
+
+        $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+            //$scope.logListEvent('dropped at', event, index, external, type);
+            //console.log('dropped in saved shapes', item);
+            $scope.onDropComplete(item, event);
+            if (external) {
+                //console.log('external', item);
+                if (allowedType === 'true') {
+                    return false;
+                }
+                //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+            }
+            //return item;
+        };
+
+        // $scope.logEvent = function(message, event) {
+        //     console.log(message, '(triggered by the following', event.type, 'event)');
+        //     console.log(event);
+        // };
+
+        // $scope.logListEvent = function(action, event, index, external, type) {
+        //     var message = external ? 'External ' : '';
+        //     message += type + ' element is ' + action + ' position ' + index;
+        //     $scope.logEvent(message, event);
+        // };
+    })
+    .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
 
         $scope.shapegroups = lucidShapesData.all();
 
@@ -319,7 +380,7 @@ angular.module('particleApp', ['lucidComponents'])
             } else {
                 $scope.searchshapes = false;
             }
-        }
+        };
 
         // $scope.pinnedgroups = lucidShapesData.pinned();
         //$scope.customshapes = lucidShapesData.custom();
@@ -427,4 +488,63 @@ angular.module('particleApp', ['lucidComponents'])
         };
 
 
+    })
+    .controller('canvasCtrl', function($scope, $rootScope, pagesData) {
+        $rootScope.currentPage = pagesData[0]; /// this should be in pages once pages are built out
+        $scope.blocks = $rootScope.currentPage.blocks;
+
+        $scope.dragoverCallback = function(event, index, external, type) {
+            //$scope.logListEvent('dragged over', event, index, external, type);
+            return index; // < 10;
+        };
+
+        $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+            //$scope.logListEvent('dropped at', event, index, external, type);
+            console.log('dropped in saved shapes', item);
+            if (external) {
+                console.log('dropped in saved shapes', item);
+                if (allowedType === 'true') {
+                    return false;
+                }
+                //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+            }
+            return item;
+        };
+        $scope.onDropComplete = function(data, event) {
+            if (data) {
+                var index = $rootScope.currentPage.blocks.indexOf(data);
+                //console.log('shape', index);
+                if (index === -1) {
+                    var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
+                    var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
+                    //data.metrics = {};
+                    //console.log(data, event);
+                    data.metrics.x = event.x - canvasX - data.metrics.width / 2; //center block as it drops on canvas and expands
+                    data.metrics.y = event.y - canvasY - data.metrics.height / 2;
+
+                    var newblock = JSON.parse(JSON.stringify(data));
+                    $scope.blockElements.push(newblock);
+                    //console.log('dropped on canvas', newblock, 'current array', $scope.blockElements);
+                }
+
+            }
+
+        };
+        $scope.onDragSuccess = function(data, event) {
+            if (event.x > 250) {
+                var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
+                var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
+                //console.log('drag success', data, event);
+                if (data) {
+                    data.metrics.x = event.x - canvasX - event.element.centerX;
+                    data.metrics.y = event.y - canvasY - event.element.centerY;
+                    data.shapepanel = false;
+                }
+            }
+            // if (event.x < 220) {
+            //     console.log('dropped in shapes'); //not sure how else to fix this.
+            // }
+            //console.log(data.metrics.x, data.metrics.y);
+            //console.log('drag success');
+        };
     });
