@@ -6,20 +6,20 @@ angular.module('particleApp', ['lucidComponents'])
 .controller('ShareCtrl', function($scope) {
 
   $scope.showPopup = function() {
-    $scope.showing = true;
-    $scope.dummyData = {
+    $scope.showing = true; // show popup
+    $scope.dummyData = { // empty form data
       name: "",
       role: "Editor"
     };
   };
 
   $scope.addPerson = function(item) {
-    $scope.collaborators.push(item);
-    $scope.showing = false;
-    $scope.dummyData = {};
+    $scope.collaborators.push(item); // add the data
+    $scope.showing = false; // hide the popup
+    $scope.dummyData = {}; // reset the form data
   };
 
-  $scope.collaborators = [{
+  $scope.collaborators = [{ // Fake data (feel free to change)
     name: "Ryan Contreras",
     role: "Owner",
     image: "https://s3.amazonaws.com/uifaces/faces/twitter/zack415/128.jpg"

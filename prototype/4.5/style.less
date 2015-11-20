@@ -1,3 +1,53 @@
+/////////////////////////////////////////////
+//                 SETUP                   //
+/////////////////////////////////////////////
+
+@orange: #F78D1E;
+@border-color: #b7b7b7;
+@blue-steel: #3d4752;
+@blue-steel-secondary: #77818C;
+@lucid-blue: #29AAE1;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body, html {
+  height: 100vh;
+  overflow: hidden;
+}
+body {
+  font-family: "Source Sans Pro", sans-serif;
+  background: #3d4752;
+  user-select: none;
+}
+#wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  box-shadow: -10px 0 30px rgba(0,0,0,.25);
+  transition: margin .3s;
+  &.with-mega-menu {
+    margin-left: 200px;
+    #main-container {
+      opacity: .5;
+    }
+    #left-bar, #option-bar, #right-dock, #main-footer, .ruler {
+      opacity: 0;
+    }
+  }
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+.reversed-text {
+  font-weight: 300;
+  letter-spacing: .5px;
+}
+
+
+
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Add Ons <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 @addOnTeal: #64b9cc;
@@ -321,50 +371,6 @@ li.lucid-select-option {
 }
 .lucid-shape-manager .lucid-shapes-scroll{
   background: transparent;
-}
-
-@orange: #F78D1E;
-@border-color: #b7b7b7;
-@blue-steel: #3d4752;
-@blue-steel-secondary: #77818C;
-@lucid-blue: #29AAE1;
-
-*, *:before, *:after {
-	box-sizing: border-box;
-}
-
-body, html {
-	height: 100vh;
-	overflow: hidden;
-}
-body {
-	font-family: "Source Sans Pro", sans-serif;
-  background: #3d4752;
-  user-select: none;
-}
-#wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  box-shadow: -10px 0 30px rgba(0,0,0,.25);
-  transition: margin .3s;
-  &.withsidebar {
-    margin-left: 200px;
-    #main-container {
-      opacity: .5;
-    }
-    #left-bar, #option-bar, #right-dock, #main-footer, .ruler {
-      opacity: 0;
-    }
-  }
-}
-a {
-	text-decoration: none;
-	color: inherit;
-}
-.reversed-text {
-  font-weight: 300;
-  letter-spacing: .5px;
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> More Shapes <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -846,7 +852,7 @@ a {
 }
 
 
-#sidebar {
+#mega-menu{
   //z-index:-1;//to show modals on top;
   position: absolute;
   top: 0;
@@ -936,13 +942,13 @@ a {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Left Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 #left-bar {
-	background: #c4c4c4;
-	width: 250px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	z-index: 7;
+  background: #c4c4c4;
+  width: 250px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  z-index: 7;
   transition: opacity .3s, left .3s ease-in-out;
   border-right: 1px solid @border-color;
 }
@@ -1002,13 +1008,13 @@ a {
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Option Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 #option-bar {
-	width: 100%;
-	z-index: 5;
+  width: 100%;
+  z-index: 5;
   padding: 2px 0;
-	background: #e8e9ea;
-	height: 60px;
+  background: #e8e9ea;
+  height: 60px;
   top: 0;
-	border-bottom: 1px solid @border-color;
+  border-bottom: 1px solid @border-color;
   transition: opacity .3s, top .3s;
   .lucid-popover-menu {
     z-index: 99;
@@ -1074,43 +1080,62 @@ a {
 }
 #page-list {
   overflow:hidden;
-	position: relative;
-	top: 54px;
+  position: relative;
+  top: 54px;
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Right Doc <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 #right-dock {
-	position: absolute;
-	top: 60px;
-	right: 0;
-	width: 70px;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  width: 70px;
   height: 100%;
-	background: #E0E0E0;
-	box-shadow: 0px 2px 5px rgba(0,0,0, .2);
-	text-align: center;
-	z-index: 7;
+  background: #E0E0E0;
+  box-shadow: 0px 2px 5px rgba(0,0,0, .2);
+  text-align: center;
+  z-index: 7;
   transition: right .3s ease-out, opacity .3s;
   padding-top: 10px;
   border-left: 1px solid #d2d2d2;
-	.icon-wrapper {
-		text-transform: uppercase;
-		color: #77818C;
-		font-size: 10px;
-		cursor: pointer;
-		transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
-		padding: 14px 0;
+  .icon-wrapper {
+    text-transform: uppercase;
+    color: #77818C;
+    font-size: 10px;
+    cursor: pointer;
+    transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
+    padding: 14px 0;
     position: relative;
     margin-left: -1px;
     transform:scale(1);
     margin: 0;
-    &.ng-hide {
-     transform: scale(0);
-      margin: -32px 0;
-    }
     .orange {
       color: #EB7D30;
+    }
+    &:first-of-type {
+      padding-top: 15px;
+    }
+    &:hover, &.active {
+      color: @blue-steel;
+    }
+    &.active {
+      background: #EBECED;
+      border-radius: 4px 0 0 4px;
+      box-shadow: 0 0px 7px rgba(0,0,0,.15);
+    }
+    &.ng-animate {
+      .tooltip { // use this to delay the tooltip coming in
+        transition: opacity .5s .5s;
+      }
+    }
+    &.ng-hide {
+      transform: scale(0);
+      margin: -32px 0;
+      .tooltip {
+        opacity: 0;
+      }
     }
     .tooltip {
       background: @orange;
@@ -1125,10 +1150,10 @@ a {
       font-size: 14px;
       text-transform: none;
       padding: 10px;
-      transition: all .2s;
+      transition: opacity .2s;
       opacity: 1;
       transform: scale(1);
-      &:after {
+      &:after { // the arrow
         content: '';
         width: 0;
         height: 0;
@@ -1139,29 +1164,20 @@ a {
         top: 9px;
         right: -8px;
       }
-      &.ng-hide {
+      &.ng-animate {
+        transition: opacity .2s;
+      }
+      &.ng-hide { // for hiding the tooltip on click
         opacity: 0;
-        transform: scale(0);
       }
     }
-		&:first-of-type {
-			padding-top: 15px;
-		}
-		&:hover, &.active {
-			color: @blue-steel;
-		}
-    &.active {
-      background: #EBECED;
-      border-radius: 4px 0 0 4px;
-      box-shadow: 0 0px 7px rgba(0,0,0,.15);
-    }
-	}
-	.icon {
-		width: 22px;
+  }
+  .icon {
+    width: 22px;
     height: 26px;
-		position: relative;
-		margin: auto;
-	}
+    position: relative;
+    margin: auto;
+  }
   .right-panel {
     position: absolute;
     top: 0;
@@ -1207,14 +1223,28 @@ a {
   }
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Clear Fix <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 
 .settings-drawer {
   .settings-drawer-top {
     height: 40px;
     padding-top: 20px;
+    button{
+      color:#fff;
+      padding:10px;
+    }
+    .lucid-icon-18{
+      vertical-align:top;
+      margin-top:-4px;
+      margin-right:5px;
+      width:22px;
+    }
   }
 }
+
+////////////////////////////////////////////////////
+//                  Clear Fix                     //
+////////////////////////////////////////////////////
 
 .group:after {
   content: "";

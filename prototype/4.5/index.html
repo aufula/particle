@@ -1,0 +1,268 @@
+<html ng-app="particleApp">
+<head>
+    <link rel="stylesheet" type="text/css" href="../../components/0.1/components.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="../../components/0.1/components-min.js"></script>
+    <script src="app.js"></script>
+</head>
+<body ng-init="showMegaMenu=false" ng-click="showMegaMenu=false">
+  <div id="mega-menu" class="reversed-text">
+    <ul>
+      <li style="background-color: #77818C;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
+      <li class="no-propagate">
+        <a href="http://s.codepen.io/team/lucidsoftware/debug/944b732e7d71a1fb50537f7278783fee?"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-folder-orange.svg" class="icon" />Go to Documents</a>
+      </li>
+      <li>New document</li>
+      <li>Save as...</li>
+      <li>Copy document</li>
+      <li>Download</li>
+      <li>Print</li>
+      <li>Quit</li>
+    </ul>
+  </div>
+  <div id="wrapper" ng-class="{'with-mega-menu' : showMegaMenu}">
+    <div id="main-header">
+      <div class="left"><a href="#" class="document-name reversed-text">Company Org Chart</a></div>
+      <div class="center">
+                <div class="page-count">{{$root.pages.length}}</div>
+                <a href="#" class="page-name reversed-text" ng-click="showPages = !showPages">
+                    <span class="dd-arrow">{{$root.currentPage.name}}</span>
+                </a>
+                <div class="lucid-buttcon master-page-compass lucid-animate" ng-click="showMasterPopover = !showMasterPopover" ng-show="$root.masterPageCount().length>0">
+                    <img src="http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg" class="lucid-icon-22">
+                    <lucid-popover-menu ng-show="showMasterPopover" width="200">
+                        <div class="lucid-context-menu">
+                            <ul>
+                                <li ng-show="!$root.currentPage.master" ng-click="$root.currentPage.master = true">Convert to Master Layer</li>
+                                <li ng-show="$root.currentPage.master" ng-click="$root.currentPage.master = false">Convert to Page</li>
+                                <li class="lucid-context-more">Apply Master Layer
+                                    <ul>
+                                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                            {{master.name}}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
+                            </ul>
+                        </div>
+                    </lucid-popover-menu>
+                </div>
+                <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
+            </div>
+      <div id="documents" ng-click="showMegaMenu=!showMegaMenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
+      <div class="right">
+        <div class="help">?</div>
+        <div class="bell" ng-init="showAlert=true" ng-click="showNotifications = !showNotifications; showAlert=false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg"/>
+          <div class="bubble lucid-animate" ng-show="showAlert">1</div>
+          <div class="lucid-popover-menu lucid-animate" style="width: 311px; left: -140.5px;" ng-show="showNotifications">
+            <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
+            <div class="notifications"><img ng-click="addOnsModal=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
+          </div>
+        </div>
+        <span class="line"></span>
+        <a href="#" class="account" ng-click="showDropdown=!showDropdown"><span class="dd-arrow reversed-text">dsmith@gmail.com</span>
+          <div class="lucid-context-menu" ng-show="showDropdown">
+            <ul>
+              <li>Account Settings</li>
+              <li>Log out</li>
+            </ul>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div id="page-list">
+      <div class="page-drawer lucid-animate" ng-show="showPages">
+        <!-- start page drawer -->
+        <lucid-pages showpages="showPages"></lucid-pages>
+        <!-- end page drawer -->
+      </div>
+    </div>
+    <div id="main-container">
+      <div class="page-container">
+        <div style="display: block;" class="page page-1">
+          <lucid-canvas></lucid-canvas>
+        </div>
+        <div class="page page-2"></div>
+        <div class="page page-3"></div>
+      </div>
+      <!-- start shapes manager -->
+      <div id="left-bar" class="lucid-shapes-panel-wrapper" ng-controller="ShapesManagerCtrl">
+        <lucid-shapes-manager></lucid-shapes-manager>
+      </div>
+      <!-- end shapes manager -->
+      <div id="option-bar" class="group">
+        <ul>
+<!-- BEGIN TOP TOOLBAR -->
+          <li class="left">
+            <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
+          </li>
+          <li><span class="line"></span>
+          <li>
+            <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" style="margin: 0 10px 0 5px;"></lucid-select>
+          </li>
+          <li>
+            <lucid-input-stepper step="1" width="50" number="12" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
+          </li>
+          <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+          <li class="small middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+          <li class="middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+          <li class="middle">
+            <lucid-text-alignment></lucid-text-alignment>
+          </li>
+          <li class="middle toggle">
+            <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-textoptions-bluesteel-22px.svg" width="322">
+              <div style="padding:10px"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-textoptions-top-v4.png" /></div>
+              <div class="secondary-gray"><img class="gray-bottom" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-textoptions-bottom-v4.png" /></div>
+            </lucid-buttcon-popover></li><span class="line"></span>
+          <li>
+            <lucid-shadow-options></lucid-shadow-options>
+          </li>
+          <li class="middle">
+            <lucid-border-options></lucid-border-options>
+          </li><span class="line"></span>
+          <li class="left">
+            <lucid-path-style></lucid-path-style>
+          </li>
+          <li class="middle">
+            <lucid-line-options></lucid-line-options>
+          </li>
+          <li class="right">
+            <lucid-input-stepper step="1" width="40" number="3" unit="px" style="margin-left: 5px;"></lucid-input-stepper>
+          <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" /></li>
+        </ul>
+      </div>
+<!-- END TOP TOOLBAR -->
+<!-- RIGHT DOCK -->
+      <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock }">
+        <!-- RIGHT DOCK ICONS --->
+        <div class="icon-wrapper" ng-click="addOnsModal=true">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
+        </div>
+        <!-- ADD ONS MODAL --->
+        <lucid-modal showmodal="addOnsModal" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
+          <ul class="add-ons">
+            <li class="green">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-present.png"/>
+              <footer class="reversed-text"><h4>Presentation Mode</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnPresent=!$parent.$parent.addOnPresent;">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="steel">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-history.png"/>
+              <footer class="reversed-text"><h4>History Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnHistory=!$parent.$parent.addOnHistory;">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="teal">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-mockups.png"/>
+              <footer class="reversed-text"><h4>Mockups</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="blue">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-themes.png"/>
+              <footer class="reversed-text"><h4>Diagram Themes</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="red">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-hangouts.png"/>
+              <footer class="reversed-text"><h4>Google Chat</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="steel">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-navigator.png"/>
+              <footer class="reversed-text"><h4>Navigator Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+          </ul>
+        </lucid-modal>
+        <!-- END ADD ONS MODAL -->
+        <div class="icon-wrapper" ng-class="{active: openTab == 'details'}" ng-click="setTab('details');">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-details-bluesteel-22px.svg" class="full" /></div><span>Details</span>
+        </div>
+        <div class="icon-wrapper" ng-class="{active: openTab == 'share'}" ng-click="setTab('share');">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
+        </div>
+        <div class="icon-wrapper" ng-class="{active: openTab == 'layers'}" ng-click="setTab('layers');">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-layers-mode.svg" class="full" /></div><span>Layers</span>
+        </div>
+        <div class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="setTab('comments');">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comments-mode.svg" class="full" /></div><span>Comments</span>
+        </div>
+        <div ng-show="addOnPresent" class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="setTab('present'); showTooltipPresent=false">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-presentation-bluesteel.svg" class="full" /></div><span>Present</span>
+          <div class="tooltip lucid-animate" ng-show="showTooltipPresent">Presentation Mode</div>
+        </div>
+        <div class="icon-wrapper lucid-animate" ng-show="addOnHistory" ng-class="{active: openTab == 'history'}" ng-click="setTab('history'); showTooltipHistory=false;">
+          <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
+          <div class="tooltip lucid-animate" ng-show="showTooltipHistory">Revision history</div>
+        </div>
+        <!-- END RIGHT DOCK ICONS -->
+        <!-- RIGHT DOCK PANEL CONTENT -->
+        <div class="right-panel">
+          <div id="details" class="container" ng-show="openTab === 'details'">
+            <header>Details<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-details-v4.png" />
+          </div>
+          <!-- SHARE PANEL --->
+          <div id="share" class="container" ng-controller="ShareCtrl" ng-show="openTab === 'share'" ng-click="showing=false;">
+            <header>Share<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');"
+              /></header>
+            <section>
+              <div class="group">
+                <div class="add-button" ng-click="showPopup(); $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-more-shapes-plus-grey.svg" />Add</div>
+                <div class="options">Options</div>
+                <div class="add-popup" ng-show="showing" ng-click="$event.stopPropagation();">
+                  <input type="text" placeholder="Add person, email, or group" ng-model="dummyData.name">
+                  <select ng-model="dummyData.role">
+                    <option>Editor</option>
+                    <option>Commenter</option>
+                    <option>Viewer</option>
+                  </select>
+                  <div id="push" ng-click="addPerson(dummyData);">Add</div>
+                </div>
+              </div>
+              <ul class="collaborators">
+                <li class="lucid-animate" ng-repeat="person in collaborators">
+                  <div class="image-container" ng-click="showPermissions = !showPermissions;"><img class="avatar" ng-src="{{ person.image }}" ng-if="person.image" /><img class="pencil" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-edit-pencil-white.svg" /></div>
+                  <span>{{ person.name }}</span>
+                  <img class="delete" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeXsmall-bluesteel.svg" ng-click="collaborators.splice($index, 1);" />
+                  <div class="permissions" ng-show="showPermissions">
+                    <ul>
+                      <li class="active">Editor</li>
+                      <li>Commenter</li>
+                      <li>Viewer</li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </section>
+          </div>
+          <!-- END SHARE PANEL CONTENT -->
+          <div id="interact" class="container" ng-show="openTab === 'layers'">
+            <header>Layers<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-v4.png" />
+          </div>
+          <div id="comments" class="container" ng-show="openTab === 'comments'">
+            <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-v4.png" />
+          </div>
+          <div id="present" class="container" ng-show="openTab === 'present'">
+            <header>Present<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-v4.png" />
+            <footer id="present-trigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-2-v4.png" /></footer>
+          </div>
+          <div id="history" class="container" ng-show="openTab === 'history'">
+            <header>History<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-top-v4.png" />
+            <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-bottom-v4.png"></footer>
+          </div>
+        </div>
+      </div>
+      <!-- END RIGHT DOCK -->
+      <!-- START CANVAS FOOTER -->
+      <footer class="settings-drawer">
+        <div class="settings-drawer-top">
+          <lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-wrench-white.svg" color="blue"  ng-click="showdrawer = !showdrawer">Page Settings</lucid-button>
+          <img class="chat-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-chat.png" class="right" />
+        </div>
+        <div class="settings-drawer-content lucid-animate" ng-show="showdrawer">
+          <img width="918" style="max-width: 918px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/page-settings-drawer-1.png">
+        </div>
+      </footer>
+      <!-- END CANVAS FOOTER -->
+      <div id="ruler-vert" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-vert.png" /></div>
+      <div id="ruler-hor" class="ruler"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-ruler-hor.png" /></div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
