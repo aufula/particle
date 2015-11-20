@@ -551,44 +551,26 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "../../lib/ngDraggable.js"
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
-//components
-//@codekit-append "themes/lucid-themes-data.js"
+//include components js
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
-//@codekit-append "path-style/lucid-path-style.js"
-//@codekit-append "text-alignment/lucid-text-alignment.js"
 //@codekit-append "more-drawer/lucid-more-drawer.js"
-//@codekit-append "border-options/lucid-border-options.js"
-//@codekit-append "text-options/lucid-text-options.js"
-//@codekit-append "line-options/lucid-line-options.js"
-//@codekit-append "position-options/lucid-position-options.js"
-//@codekit-append "shadow-options/lucid-shadow-options.js"
 //@codekit-append "modal/lucid-modal.js"
-//@codekit-append "shape/lucid-shape.js"
 //@codekit-append "finger-tabs/lucid-finger-tabs.js"
 //@codekit-append "buttcon-popover/lucid-buttcon-popover.js"
 //@codekit-append "collapse-bar/lucid-collapse-bar.js"
-
 //@codekit-append "buttcon-toggle/lucid-buttcon-toggle.js"
-
-
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-//@codekit-append "chart-block/lucid-chart-block.js"
-//@codekit-append "saved-styles/lucid-saved-styles.js"
-//@codekit-append "themes/lucid-themes.js"
-//@codekit-append "shape-group/lucid-shape-group.js"
-//@codekit-append "shapes-manager/lucid-shapes-manager.js"
-//@codekit-append "shapes-manager/lucid-shapes-data.js"
-//@codekit-append "slides/lucid-slides.js"
 //@codekit-append "context-menu/lucid-context-menu.js"
-//@codekit-append "settings-drawer/lucid-settings-drawer.js"
-//@codekit-append "page/lucid-page.js"
-//@codekit-append "pages/lucid-pages.js"
+
+//include Data JS
+//@codekit-append "themes/lucid-themes-data.js"
+//@codekit-append "shapes-manager/lucid-shapes-data.js"
 //@codekit-append "pages/lucid-pages-data.js"
-//@codekit-append "canvas/lucid-canvas.js"
+
 
 
 
@@ -610,12 +592,12 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.1/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/0.1/" //github
+    //'componentsURL': "/components/1.0/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/1.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable', 'lucidCollapseBar'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidCollapseBar'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
@@ -1456,210 +1438,6 @@ angular.module("ngDraggable", [])
 angular.module("dndLists",[]).directive("dndDraggable",["$parse","$timeout","dndDropEffectWorkaround","dndDragTypeWorkaround",function(e,n,r,t){return function(a,o,d){o.attr("draggable","true"),d.dndDisableIf&&a.$watch(d.dndDisableIf,function(e){o.attr("draggable",!e)}),o.on("dragstart",function(i){i=i.originalEvent||i,i.dataTransfer.setData("Text",angular.toJson(a.$eval(d.dndDraggable))),i.dataTransfer.effectAllowed=d.dndEffectAllowed||"move",o.addClass("dndDragging"),n(function(){o.addClass("dndDraggingSource")},0),r.dropEffect="none",t.isDragging=!0,t.dragType=d.dndType?a.$eval(d.dndType):void 0,e(d.dndDragstart)(a,{event:i}),i.stopPropagation()}),o.on("dragend",function(i){i=i.originalEvent||i;var f=r.dropEffect;a.$apply(function(){switch(f){case"move":e(d.dndMoved)(a,{event:i});break;case"copy":e(d.dndCopied)(a,{event:i});break;case"none":e(d.dndCanceled)(a,{event:i})}e(d.dndDragend)(a,{event:i,dropEffect:f})}),o.removeClass("dndDragging"),n(function(){o.removeClass("dndDraggingSource")},0),t.isDragging=!1,i.stopPropagation()}),o.on("click",function(n){d.dndSelected&&(n=n.originalEvent||n,a.$apply(function(){e(d.dndSelected)(a,{event:n})}),n.stopPropagation())}),o.on("selectstart",function(){this.dragDrop&&this.dragDrop()})}}]).directive("dndList",["$parse","$timeout","dndDropEffectWorkaround","dndDragTypeWorkaround",function(e,n,r,t){return function(a,o,d){function i(e,n,r){var t=y?e.offsetX||e.layerX:e.offsetY||e.layerY,a=y?n.offsetWidth:n.offsetHeight,o=y?n.offsetLeft:n.offsetTop;return o=r?o:0,o+a/2>t}function f(){var e;return angular.forEach(o.children(),function(n){var r=angular.element(n);r.hasClass("dndPlaceholder")&&(e=r)}),e||angular.element("<li class='dndPlaceholder'></li>")}function l(){return Array.prototype.indexOf.call(D.children,v)}function g(e){if(!t.isDragging&&!E)return!1;if(!c(e.dataTransfer.types))return!1;if(d.dndAllowedTypes&&t.isDragging){var n=a.$eval(d.dndAllowedTypes);if(angular.isArray(n)&&-1===n.indexOf(t.dragType))return!1}return d.dndDisableIf&&a.$eval(d.dndDisableIf)?!1:!0}function s(){return p.remove(),o.removeClass("dndDragover"),!0}function u(n,r,o,d){return e(n)(a,{event:r,index:o,item:d||void 0,external:!t.isDragging,type:t.isDragging?t.dragType:void 0})}function c(e){if(!e)return!0;for(var n=0;n<e.length;n++)if("Text"===e[n]||"text/plain"===e[n])return!0;return!1}var p=f(),v=p[0],D=o[0];p.remove();var y=d.dndHorizontalList&&a.$eval(d.dndHorizontalList),E=d.dndExternalSources&&a.$eval(d.dndExternalSources);o.on("dragover",function(e){if(e=e.originalEvent||e,!g(e))return!0;if(v.parentNode!=D&&o.append(p),e.target!==D){for(var n=e.target;n.parentNode!==D&&n.parentNode;)n=n.parentNode;n.parentNode===D&&n!==v&&(i(e,n)?D.insertBefore(v,n):D.insertBefore(v,n.nextSibling))}else if(i(e,v,!0))for(;v.previousElementSibling&&(i(e,v.previousElementSibling,!0)||0===v.previousElementSibling.offsetHeight);)D.insertBefore(v,v.previousElementSibling);else for(;v.nextElementSibling&&!i(e,v.nextElementSibling,!0);)D.insertBefore(v,v.nextElementSibling.nextElementSibling);return d.dndDragover&&!u(d.dndDragover,e,l())?s():(o.addClass("dndDragover"),e.preventDefault(),e.stopPropagation(),!1)}),o.on("drop",function(e){if(e=e.originalEvent||e,!g(e))return!0;e.preventDefault();var n,t=e.dataTransfer.getData("Text")||e.dataTransfer.getData("text/plain");try{n=JSON.parse(t)}catch(o){return s()}var i=l();if(d.dndDrop&&(n=u(d.dndDrop,e,i,n),!n))return s();var f=a.$eval(d.dndList);return a.$apply(function(){f.splice(i,0,n)}),u(d.dndInserted,e,i,n),r.dropEffect="none"===e.dataTransfer.dropEffect?"copy"===e.dataTransfer.effectAllowed||"move"===e.dataTransfer.effectAllowed?e.dataTransfer.effectAllowed:e.ctrlKey?"copy":"move":e.dataTransfer.dropEffect,s(),e.stopPropagation(),!1}),o.on("dragleave",function(e){e=e.originalEvent||e,o.removeClass("dndDragover"),n(function(){o.hasClass("dndDragover")||p.remove()},100)})}}]).directive("dndNodrag",function(){return function(e,n){n.attr("draggable","true"),n.on("dragstart",function(e){e=e.originalEvent||e,e.dataTransfer.types&&e.dataTransfer.types.length||e.preventDefault(),e.stopPropagation()}),n.on("dragend",function(e){e=e.originalEvent||e,e.stopPropagation()})}}).factory("dndDragTypeWorkaround",function(){return{}}).factory("dndDropEffectWorkaround",function(){return{}});
 
 
-/*global angular : true fixes codekit error*/
-angular.module('lucidThemesData', [])
-    .factory('lucidThemesData', function() {
-        var lucidThemes = [{
-            "name": "Standard",
-            "pagecolor": "#ffffff",
-            "linecolor": "#999999",
-            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-default-theme-thumbnail_360.jpg",
-            "swatches": [{
-                "swatch": {
-                    "fill": "#ffffff",
-                    "text": "#333333",
-                    "border": "#666666"
-                },
-                "radius": 5
-            }, {
-                "swatch": {
-                    "fill": "#999999",
-                    "text": "#ffffff",
-                    "border": "#999999"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#cccccc",
-                    "text": "#ffffff",
-                    "border": "#cccccc"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#ee5b42",
-                    "text": "#ffffff",
-                    "border": "#ee5b42"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#6db7c4",
-                    "text": "#ffffff",
-                    "border": "#6db7c4"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#a3d977",
-                    "text": "#ffffff",
-                    "border": "#a3d977"
-                }
-            }]
-
-        }, {
-            "name": "Blueprint",
-            "pagecolor": "#4187ad",
-            "linecolor": "#99d2f2",
-            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-blueprint-theme-thumbnail_360.jpg",
-            "swatches": [{
-                "swatch": {
-                    "fill": "#3b5878",
-                    "text": "#ffffff",
-                    "border": "#2d435c"
-                },
-                "shadow": {
-                    "shadow": false,
-                    "blur": 10,
-                    "x": 2,
-                    "y": 3,
-                    "color": "rgba(0,0,0,0)"
-                },
-                "radius": 0
-            }, {
-                "swatch": {
-                    "fill": "#99d2f2",
-                    "text": "#ffffff",
-                    "border": "#99d2f2"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#999999",
-                    "text": "#ffffff",
-                    "border": "#999999"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#ff8f80",
-                    "text": "#3b5878",
-                    "border": "#ff8f80"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#ffdf71",
-                    "text": "#3b5878",
-                    "border": "#ffdf71"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#a3d977",
-                    "text": "#3b5878",
-                    "border": "#a3d977"
-                }
-            }]
-
-        }, {
-            "name": "Boardroom",
-            "pagecolor": "#3e3e3e",
-            "linecolor": "#cccccc",
-            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-boardroom-theme-thumbnail_360.jpg",
-            "swatches": [{
-                "swatch": {
-                    "fill": "#666666",
-                    "text": "#ffffff",
-                    "border": "#999999"
-                },
-                "shadow": {
-                    "shadow": false,
-                    "blur": 10,
-                    "x": 2,
-                    "y": 3,
-                    "color": "rgba(0,0,0,0)"
-                },
-                "radius": 0
-            }, {
-                "swatch": {
-                    "fill": "#999999",
-                    "text": "#ffffff",
-                    "border": "#999999"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#cccccc",
-                    "text": "#ffffff",
-                    "border": "#cccccc"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#ee5b42",
-                    "border": "#ee5b42",
-                    "text": "#ffffff"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#6db7c4",
-                    "border": "#6db7c4",
-                    "text": "#ffffff"
-                },
-            }, {
-                "swatch": {
-                    "fill": "#a3d977",
-                    "text": "#ffffff",
-                    "border": "#a3d977"
-                }
-            }]
-
-        }, {
-            "name": "Sandstorm",
-            "pagecolor": "#fff9ed",
-            "linecolor": "#999999",
-            "thumbnail": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/asset-sandstorm-theme-thumbnail_360.jpg",
-            "swatches": [{
-                "swatch": {
-                    "fill": "#ffe5b6",
-                    "text": "#666666",
-                    "border": "#666666"
-                },
-                "shadow": {
-                    "shadow": false,
-                    "blur": 10,
-                    "x": 2,
-                    "y": 3,
-                    "color": "rgba(0,0,0,0)"
-                },
-                "radius": 0
-            }, {
-                "swatch": {
-                    "fill": "#999999",
-                    "text": "#ffffff",
-                    "border": "#999999"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#cccccc",
-                    "text": "#ffffff",
-                    "border": "#cccccc"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#ee5b42",
-                    "border": "#ee5b42",
-                    "text": "#ffffff"
-                }
-            }, {
-                "swatch": {
-                    "fill": "#f0b74c",
-                    "border": "#f0b74c",
-                    "text": "#ffffff"
-                },
-            }, {
-                "swatch": {
-                    "fill": "#6db7c4",
-                    "text": "#ffffff",
-                    "border": "#6db7c4"
-                }
-            }]
-
-        }];
-        return lucidThemes;
-    });
-
 angular.module('lucidInputStepper', ['appConfig'])
     .directive('lucidInputStepper', function(config) {
         return {
@@ -1850,232 +1628,6 @@ angular.module("lucidPopoverMenu", ['appConfig'])
         };
     }); 
 
-/*global angular : true fixes codekit error*/
-/*global SVGMorpheus : true fixes codekit error*/
-angular.module("lucidPathStyle", ['appConfig'])
-    .directive('lucidPathStyle', function($document, config) {
-        return {
-            restrict: 'E',
-            scope: {
-                icon: '=',
-            },
-            replace: true,
-            transclude: true,
-            templateUrl: config.componentsURL + 'path-style/lucid-path-style.html',
-
-            controller: function($scope) {
-                var lucidPath = new SVGMorpheus('#lucid-path-style');
-                $scope.changePath = function(path) {
-                    if (path === 'straight') {
-                        lucidPath.to('lucid-straight-path', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (path === 'curved') {
-                        lucidPath.to('lucid-curve-path', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (path === 'angle') {
-                        lucidPath.to('lucid-angle-path', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    $scope.showpopover = false;
-                };
-                $scope.pathstyles = [{
-                    "name": "curved",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-curved-bluesteel.svg",
-                }, {
-                    "name": "angle",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-angle-bluesteel.svg",
-                }, {
-                    "name": "straight",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-straight-bluesteel.svg",
-                }];
-                $scope.pathstyle = $scope.pathstyles[0];
-
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopover = false;
-                        scope.$apply();
-                    }
-                });
-            }
-        };
-    });
-
-/*global angular : true fixes codekit error*/
-/*global SVGMorpheus : true fixes codekit error*/
-angular.module('lucidTextAlignment', ['appConfig'])
-    .directive('lucidTextAlignment', function($document, config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'text-alignment/lucid-text-alignment.html',
-
-            controller: function($scope) {
-
-                var lucidPath = new SVGMorpheus('#lucid-text-align');
-                //set default state if no object is selected
-                    if(!$scope.selected){
-                        $scope.selected={};
-                        $scope.selected.text={
-                            "verticalalignment": "middle",
-                            "horizontalalignment": "center"
-                        };
-                    }
-
-                $scope.changeAlignment = function(vertical, horizontal) {
-                    $scope.selected.text.verticalalignment = vertical;
-                    $scope.selected.text.horizontalalignment = horizontal;
-                    if (vertical === 'top' && horizontal === 'left') {
-                        lucidPath.to('lucid-text-top-left', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-
-                    }
-                    if (vertical === 'top' && horizontal === 'center') {
-                        lucidPath.to('lucid-text-top-center', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (vertical === 'top' && horizontal === 'right') {
-                        lucidPath.to('lucid-text-top-right', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    //middle
-                    if (vertical === 'middle' && horizontal === 'left') {
-                        lucidPath.to('lucid-text-middle-left', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (vertical === 'middle' && horizontal === 'center') {
-                        lucidPath.to('lucid-text-middle-center', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (vertical === 'middle' && horizontal === 'right') {
-                        lucidPath.to('lucid-text-middle-right', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-
-                    //bottom
-
-                    if (vertical === 'bottom' && horizontal === 'left') {
-                        lucidPath.to('lucid-text-bottom-left', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (vertical === 'bottom' && horizontal === 'center') {
-                        lucidPath.to('lucid-text-bottom-center', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    if (vertical === 'bottom' && horizontal === 'right') {
-                        lucidPath.to('lucid-text-bottom-right', {
-                            duration: 400,
-                            easing: 'quad-out',
-                            rotation: 'none'
-                        });
-                    }
-                    $scope.showpopup = false;
-
-                };
-                $scope.alignment = [{
-                    "verticalalignment": "top",
-                    "horizontalalignment": "left",
-                    "name": "top-left",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-left-bluesteel.svg",
-                }, {
-                    "verticalalignment": "top",
-                    "horizontalalignment": "center",
-                    "name": "top-center",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-center-bluesteel.svg",
-                }, {
-                    "verticalalignment": "top",
-                    "horizontalalignment": "right",
-                    "name": "top-right",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-right-bluesteel.svg",
-                }, {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "left",
-                    "name": "center-left",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-left-bluesteel.svg",
-                }, {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "center",
-                    "name": "center-center",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-center-bluesteel.svg",
-                }, {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "right",
-                    "name": "center-right",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-right-bluesteel.svg",
-                }, {
-                    "verticalalignment": "bottom",
-                    "horizontalalignment": "left",
-                    "name": "bottom-left",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-left-bluesteel.svg",
-                }, {
-                    "verticalalignment": "bottom",
-                    "horizontalalignment": "center",
-                    "name": "bottom-center",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-center-bluesteel.svg",
-                }, {
-                    "verticalalignment": "bottom",
-                    "horizontalalignment": "right",
-                    "name": "bottom-right",
-                    "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-right-bluesteel.svg",
-
-                }];
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopup = false;
-                        scope.$apply();
-                    }
-                });
-            }
-        };
-    });
-
 angular.module("lucidMoreDrawer", ['appConfig'])
     .directive('lucidMoreDrawer', function(config) {
         return {
@@ -2100,66 +1652,6 @@ angular.module("lucidMoreDrawer", ['appConfig'])
             }
         };
     }); 
-
-angular.module('lucidBorderOptions', ['appConfig'])
-    .directive('lucidBorderOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: false,
-            templateUrl: config.componentsURL + 'border-options/lucid-border-options.html',
-        };
-    });
-
-angular.module('lucidTextOptions', ['appConfig'])
-    .directive('lucidTextOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: false,
-            templateUrl: config.componentsURL + 'text-options/lucid-text-options.html',
-        };
-    });
-
-angular.module('lucidLineOptions', ['appConfig'])
-    .directive('lucidLineOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: false,
-            templateUrl: config.componentsURL + 'line-options/lucid-line-options.html',
-        };
-    });
-
-angular.module('lucidPositionOptions', ['appConfig'])
-    .directive('lucidPositionOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: false,
-            templateUrl: config.componentsURL + 'position-options/lucid-position-options.html',
-        };
-    });
-
-angular.module('lucidShadowOptions', ['appConfig'])
-    .directive('lucidShadowOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '='
-            },
-            replace: false,
-            templateUrl: config.componentsURL + 'shadow-options/lucid-shadow-options.html',
-        };
-    });
 
 angular.module("lucidModal", ['appConfig'])
     .directive('lucidModal', function($document, config) {
@@ -2192,68 +1684,6 @@ angular.module("lucidModal", ['appConfig'])
             }
         };
     }); 
-
-angular.module('lucidShape', ['appConfig'])
-    .directive('lucidShape', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                shape: '@',
-                fill: '@',
-                strokecolor: '@',
-                textcolor: '@',
-                width: '@',
-                height: '@',
-                strokewidth: '@',
-                radius: '@'
-
-                // color: '=',
-                // line: '=',
-                // text: '='
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'shape/lucid-shape.html',
-            controller: function($scope){
-                $scope.componentsURL = config.componentsURL;
-            },
-            compile: function(element, attrs) {
-
-                if (!attrs.shape || attrs.shape === "" || attrs.shape === null) {
-                    attrs.shape = 'block';
-                }
-
-                if (!attrs.fill) {
-                    attrs.fill = '#fff';
-                }
-
-                if (!attrs.strokecolor) {
-                    attrs.strokecolor = '#999';
-                }
-
-                if (!attrs.textcolor) {
-                    attrs.textcolor = '#333';
-                }
-
-                if (!attrs.width) {
-                    attrs.width = '28';
-                }
-
-                if (!attrs.height) {
-                    attrs.height = '28';
-                }
-
-                if (!attrs.strokewidth) {
-                    attrs.strokewidth = '2';
-                }
-
-                if (!attrs.radius) {
-                    attrs.radius = '2';
-                }
-
-            }
-
-        };
-    });
 
 angular.module("lucidFingerTabs", ['appConfig'])
 .directive('lucidFingerTabs', function(config) {
@@ -2526,158 +1956,128 @@ angular.module("lucidButton", ['appConfig'])
         };
     }); 
 
-angular.module("lucidChartBlock", ['appConfig'])
-    .directive('lucidChartBlock', function(config, shapesData) {
-        return {
-            restrict: 'E',
-            scope: {
-                block: '=',
-                addsavedstyle: '=',
-                currenttheme: '=',
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'chart-block/lucid-chart-block.html',
-            controller: function($scope) {
-                $scope.shapegroups = shapesData;
-                $scope.saveShape = function(data, shapegroup) {
-                    var newblock = JSON.parse(JSON.stringify(data));
+angular.module("lucidContextMenu", ['appConfig'])
+.factory('ContextMenuService', function() {
+    return {
+      element: null,
+      menuElement: null
+    };
+  })
+  .directive('lucidContextMenu', [
+    '$document',
+    'ContextMenuService',
+    function($document, ContextMenuService) {
+      return {
+        restrict: 'A',
+        scope: {
+          'callback': '&lucidContextMenu',
+          'disabled': '&contextMenuDisabled',
+          'closeCallback': '&lucidContextMenuClose'
+        },
+        link: function($scope, $element, $attrs) {
+          var opened = false;
 
-                    newblock.shapepanel = true;
-                    newblock.customcolor = true;
-                    newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
-                    shapegroup.shapes.push(newblock);
-                    //console.log("shape saved to shapegroup", newblock);
-                };
-                $scope.removeCustomColor = function(block) {
+          function open(event, menuElement) {
+            menuElement.removeClass('ng-hide');
 
-                    var num = block.swatchnumber - 1;
-                    var themeswatch = $scope.currenttheme.swatches[num]; //get swatch from theme
-                    //console.log(block);
-                    //block.swatch = themeswatch.swatch
+            var doc = $document[0].documentElement;
+            var docLeft = (window.pageXOffset || doc.scrollLeft) -
+                          (doc.clientLeft || 0),
+                docTop = (window.pageYOffset || doc.scrollTop) -
+                         (doc.clientTop || 0),
+                elementWidth = menuElement[0].scrollWidth,
+                elementHeight = menuElement[0].scrollHeight;
+            var docWidth = doc.clientWidth + docLeft,
+              docHeight = doc.clientHeight + docTop,
+              totalWidth = elementWidth + event.pageX,
+              totalHeight = elementHeight + event.pageY,
+              left = Math.max(event.pageX - docLeft, 0),
+              top = Math.max(event.pageY - docTop, 0);
 
-                    if (block.swatchtype === 'text') {
-                        //console.log('this is text', block.swatchtype);
-                        block.swatch.text = themeswatch.swatch.fill;
-                        block.swatch.border = 'transparent';
-                        block.swatch.fill = 'transparent';
-                        //console.log(block.swatch);
-                    }
-                    if (block.swatchtype !== 'text') {
-                        block.swatch.text = themeswatch.swatch.text;
-                        block.swatch.border = themeswatch.swatch.border;
-                        block.swatch.fill = themeswatch.swatch.fill;
-                    }
-
-                    //console.log(theme);
-                };
-
+            if (totalWidth > docWidth) {
+              left = left - (totalWidth - docWidth);
             }
-        };
-    });
 
-angular.module("lucidSavedStyles", ['appConfig'])
-    .directive('lucidSavedStyles', function(config) {
-        return {
-            restrict: 'E',
-            scope: false,
-            replace: true,
-            templateUrl: config.componentsURL + 'saved-styles/lucid-saved-styles.html',
-
-            controller: function($scope) {
-                $scope.compareSwatch = function(selected, theme) {
-                    //console.log(JSON.stringify(selected) === JSON.stringify(theme));
-                    return JSON.stringify(selected) === JSON.stringify(theme);
-                };
-                $scope.compareToSavedSwatches = function(swatch) {
-                    var sameSwatch = 0;
-                    angular.forEach($scope.savedstyles, function(savedstyle) {
-                        if ($scope.compareSwatch(swatch, savedstyle)) {
-                            sameSwatch += +1;
-                        }
-                    });
-                    if (sameSwatch > 0) {
-                        return false;
-                    } else {
-                        return true;
-                    }
-                };
-
-                $scope.savedStyles = [];
-                $scope.addSavedStyle = function(block) {
-                    var savethis = {
-                        "fill": block.swatch.fill,
-                        "text": block.swatch.text,
-                        "border": block.swatch.border
-                    };
-                    $scope.savedStyles.push(savethis);
-                    //console.log(savethis);
-                };
+            if (totalHeight > docHeight) {
+              top = top - (totalHeight - docHeight);
             }
-        };
-    });
 
-angular.module("lucidThemes", ['appConfig'])
-    .directive('lucidThemes', function(config, $document, lucidThemesData) {
-        return {
-            restrict: 'E',
-            scope: {
-                selected: '=',
-                currenttheme: '=',
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'themes/lucid-themes.html',
+            menuElement.css('top', top + 'px');
+            menuElement.css('left', left + 'px');
+            opened = true;
+          }
 
-            controller: function($scope, $rootScope) {
+          function close(menuElement) {
+            menuElement.addClass('ng-hide');
 
-                $scope.themes = lucidThemesData;
-                $scope.currenttheme = $scope.themes[0];
-                $scope.viewthemes = false;
-
-                $scope.switchTheme = function(theme) {
-                    $rootScope.currentPage.canvasBG = theme.pagecolor;
-                    $rootScope.currentPage.linecolor = theme.linecolor;
-
-                    angular.forEach($rootScope.currentPage.blocks, function(block) {
-                        if (block) {
-                            if (block.customcolor) {
-                                return;
-                            }
-                            var num = block.swatchnumber - 1;
-                            var themeswatch = theme.swatches[num]; //get swatch from theme
-                            //console.log(block);
-                            //block.swatch = themeswatch.swatch
-
-                            if (block.swatchtype === 'text') {
-                                //console.log('this is text', block.swatchtype);
-                                block.swatch.text = themeswatch.swatch.fill;
-                                block.swatch.border = 'transparent';
-                                block.swatch.fill = 'transparent';
-                                //console.log(block.swatch);
-                            }
-                            if (block.swatchtype !== 'text') {
-                                block.swatch.text = themeswatch.swatch.text;
-                                block.swatch.border = themeswatch.swatch.border;
-                                block.swatch.fill = themeswatch.swatch.fill;
-                            }
-                        }
-                    });
-                    //console.log(theme);
-                };
-            },
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.viewthemes = false;
-                        //console.log(scope.showpopup +" hide popup");
-                        scope.$apply();
-                    }
-                });
+            if (opened) {
+              $scope.closeCallback();
             }
-        };
-    })
+
+            opened = false;
+          }
+
+          $element.bind('contextmenu', function(event) {
+            if (!$scope.disabled()) {
+              if (ContextMenuService.menuElement !== null) {
+                close(ContextMenuService.menuElement);
+              }
+              ContextMenuService.menuElement = angular.element(
+                document.getElementById($attrs.target)
+              );
+              ContextMenuService.element = event.target;
+              //console.log('set', ContextMenuService.element);
+
+              event.preventDefault();
+              event.stopPropagation();
+              $scope.$apply(function() {
+                $scope.callback({ $event: event });
+              });
+              $scope.$apply(function() {
+                open(event, ContextMenuService.menuElement);
+              });
+            }
+          });
+
+          function handleKeyUpEvent(event) {
+            //console.log('keyup');
+            if (!$scope.disabled() && opened && event.keyCode === 27) {
+              $scope.$apply(function() {
+                close(ContextMenuService.menuElement);
+              });
+            }
+          }
+
+          function handleClickEvent(event) {
+            if (!$scope.disabled() &&
+              opened &&
+              (event.button !== 2 ||
+               event.target !== ContextMenuService.element)) {
+              $scope.$apply(function() {
+                close(ContextMenuService.menuElement);
+              });
+            }
+          }
+
+          $document.bind('keyup', handleKeyUpEvent);
+          // Firefox treats a right-click as a click and a contextmenu event
+          // while other browsers just treat it as a contextmenu event
+          $document.bind('click', handleClickEvent);
+          $document.bind('contextmenu', handleClickEvent);
+
+          $scope.$on('$destroy', function() {
+            //console.log('destroy');
+            $document.unbind('keyup', handleKeyUpEvent);
+            $document.unbind('click', handleClickEvent);
+            $document.unbind('contextmenu', handleClickEvent);
+          });
+        }
+      };
+    }
+  ]);
+
+/*global angular : true fixes codekit error*/
+angular.module('lucidThemesData', [])
     .factory('lucidThemesData', function() {
         var lucidThemes = [{
             "name": "Standard",
@@ -2880,432 +2280,8 @@ angular.module("lucidThemes", ['appConfig'])
         return lucidThemes;
     });
 
-angular.module('lucidShapeGroup', ['appConfig'])
-    .directive('lucidShapeGroup', function($document, config) {
-        return {
-            restrict: 'E',
-            scope: {
-                name: '@',
-                shapes: '=',
-                custom: '@'
-            },
-            replace: true,
-            transclude: true,
-            templateUrl: config.componentsURL + 'shape-group/lucid-shape-group.html',
-            controller: function($scope) {
-                $scope.onDropComplete = function(data) {
-                    //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
-                    if (data) {
-                        var index = $scope.shapes.indexOf(data);
-                        //console.log('shape', index);
-
-                        if (index === -1) {
-                            //var index = $scope.shapegroups.shapegroup.indexOf(data);
-                            //console.log(index);
-                            var newblock = JSON.parse(JSON.stringify(data));
-
-                            newblock.shapepanel = true;
-                            newblock.customcolor = true;
-                            if (!newblock.url) {
-                                //this is here so that we can save any shape from the library for reuse.
-                                newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
-                            }
-                            $scope.shapes.push(newblock);
-                            //console.log("shape saved to shapegroup", newblock);
-                        }
-                    }
-                };
-
-                //from demo
-                if ($scope.custom) {
-                    $scope.dragEffect = 'copyMove';
-                } else {
-                    $scope.dragEffect = 'copy';
-                }
-
-                $scope.dragoverCallback = function(event, index) {
-                    //$scope.logListEvent('dragged over', event, index, external, type);
-                    return index; // < 10;
-                };
-
-                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                    //$scope.logListEvent('dropped at', event, index, external, type);
-                    //console.log('dropped in saved shapes', item);
-                    $scope.onDropComplete(item, event);
-                    if (external) {
-                        //console.log('external', item);
-                        if (allowedType === 'true') {
-                            return false;
-                        }
-                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                    }
-                    //return item;
-                };
-
-                // $scope.logEvent = function(message, event) {
-                //     console.log(message, '(triggered by the following', event.type, 'event)');
-                //     console.log(event);
-                // };
-
-                // $scope.logListEvent = function(action, event, index, external, type) {
-                //     var message = external ? 'External ' : '';
-                //     message += type + ' element is ' + action + ' position ' + index;
-                //     $scope.logEvent(message, event);
-                // };
-            },
-        };
-    })
-    .animation('.slide-toggle', ['$animateCss', function($animateCss) {
-        var lastId = 0;
-        var _cache = {};
-
-        function getId(el) {
-            var id = el[0].getAttribute("data-slide-toggle");
-            if (!id) {
-                id = ++lastId;
-                el[0].setAttribute("data-slide-toggle", id);
-            }
-            return id;
-        }
-
-        function getState(id) {
-            var state = _cache[id];
-            if (!state) {
-                state = {};
-                _cache[id] = state;
-            }
-            return state;
-        }
-
-        function generateRunner(closing, state, animator, element, doneFn) {
-            return function() {
-                state.animating = true;
-                state.animator = animator;
-                state.doneFn = doneFn;
-                animator.start().finally(function() {
-                    if (closing && state.doneFn === doneFn) {
-                        element[0].style.height = '';
-                    }
-                    state.animating = false;
-                    state.animator = undefined;
-                    state.doneFn();
-                });
-            };
-        }
-
-        return {
-            addClass: function(element, className, doneFn) {
-                if (className === 'ng-hide') {
-                    var state = getState(getId(element));
-                    var height = (state.animating && state.height) ?
-                        state.height : element[0].offsetHeight;
-
-                    var animator = $animateCss(element, {
-                        from: {
-                            height: height + 'px',
-                            opacity: 1
-                        },
-                        to: {
-                            height: '0px',
-                            opacity: 0
-                        }
-                    });
-                    if (animator) {
-                        if (state.animating) {
-                            state.doneFn =
-                                generateRunner(true,
-                                    state,
-                                    animator,
-                                    element,
-                                    doneFn);
-                            return state.animator.end();
-                        } else {
-                            state.height = height;
-                            return generateRunner(true,
-                                state,
-                                animator,
-                                element,
-                                doneFn)();
-                        }
-                    }
-                }
-                doneFn();
-            },
-            removeClass: function(element, className, doneFn) {
-                if (className === 'ng-hide') {
-                    var state = getState(getId(element));
-                    var height = (state.animating && state.height) ?
-                        state.height : element[0].offsetHeight;
-
-                    var animator = $animateCss(element, {
-                        from: {
-                            height: '0px',
-                            opacity: 0
-                        },
-                        to: {
-                            height: height + 'px',
-                            opacity: 1
-                        }
-                    });
-
-                    if (animator) {
-                        if (state.animating) {
-                            state.doneFn = generateRunner(false,
-                                state,
-                                animator,
-                                element,
-                                doneFn);
-                            return state.animator.end();
-                        } else {
-                            state.height = height;
-                            return generateRunner(false,
-                                state,
-                                animator,
-                                element,
-                                doneFn)();
-                        }
-                    }
-                }
-                doneFn();
-            }
-        };
-    }]);
-
-angular.module("lucidShapesManager", ['appConfig', 'lucidShapesData'])
-    .directive('lucidShapesManager', function(config, shapesData, $document, $timeout) {
-        return {
-            restrict: 'E',
-            scope: {},
-            replace: true,
-            templateUrl: config.componentsURL + 'shapes-manager/lucid-shapes-manager.html',
-            controller: function($scope, $rootScope, $window) {
-
-                $scope.shapegroups = shapesData.all();
-
-                $scope.clickShapes = function(){
-                    if(!$scope.searchshapes){
-                    $rootScope.manageshapes=!$rootScope.manageshapes
-                    }
-                    else{
-                        $scope.searchshapes = false;
-                    }
-                }
-
-                // $scope.pinnedgroups = shapesData.pinned();
-                //$scope.customshapes = shapesData.custom();
-                // $scope.manageShapes = function(){
-                //     $rootScope.manageshapes=!$rootScope.manageshapes;
-                //     console.log('manage');
-                //     $timeout(function() {
-                //         $scope.managingshapesopen = !$scope.managingshapesopen;
-                //     }, 900);
-
-                // }
-                // $scope.visibleBlocks = function() {
-                //     var elements = ($scope.scroll/200) +5;
-                //     console.log($scope.scroll);
-                //     return elements;
-                // };
-
-                $scope.newCustomGroup = function() {
-                    var newGroup = {
-                        "groupname": "New Group",
-                        "custom": true,
-                        "edit": true,
-                        "shapes": [{
-                            'fake': 'fake'
-                        }],
-                    };
-                    shapesData.addGroup(newGroup);
-                    //$scope.customshapes.splice(0, 0, newGroup);
-                };
-                $scope.editName = function(shapegroup, index) {
-                    shapegroup.edit = true;
-                    var elementID = 'name-input-' + index;
-                    $timeout(function() {
-                        document.getElementById(elementID).select();
-                    }, 10);
-                    shapegroup.edit = true;
-                };
-                
-                $scope.pinnedCount = 5; //current loaded number of pinned libraries.
-
-                $scope.pinGroup = function(shapegroup) {
-                        var group = shapesData.get(shapegroup.id);
-                        group.pinned = true;
-                        
-                        $scope.pinnedCount += 1; //always pin to bottom
-                        shapegroup.pinnedOrder = $scope.pinnedCount;
-                        //show message if not in display
-                        $scope.showPinMessage(shapegroup);
-                        console.log('pin');
-                };
-                $scope.unPinGroup = function(shapegroup) {
-                    var group = shapesData.get(shapegroup.id);
-                        group.pinned = false;
-                        console.log('unpin');
-                };
-                $scope.togglePin = function(shapegroup){
-                    var group = shapesData.get(shapegroup.id);
-                    if(shapegroup.pinned){
-                        $scope.unPinGroup(shapegroup);
-                    }
-                    else{
-                        $scope.pinGroup(shapegroup);
-                    }
-                };
-                $scope.showPinMessage = function(shapegroup){
-                    //add message
-                        var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
-                        //console.log('overflow: ', overflow)
-                        if (overflow) {
-                            $scope.overflowMessage = true;
-                            $scope.overflowMessageTitle = shapegroup.groupname;
-                            $timeout(function() {
-                                $scope.overflowMessage = false;
-                            }, 2000);
-                        }
-                };
-                $scope.openWindow = function(url) {
-                    window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
-                };
-
-                //from demo
-                $scope.dragoverCallback = function(event, index, external, type) {
-                    $scope.logListEvent('dragged over', event, index, external, type);
-                    // Disallow dropping in the third row. Could also be done with dnd-disable-if.
-                    return index; // < 10;
-                };
-
-                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                    $scope.logListEvent('dropped at', event, index, external, type);
-                    if (external) {
-                        //if (allowedType === 'itemType' && !item.label) return false;
-                        if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                    }
-                    return item;
-                };
-
-                $scope.logEvent = function(message, event) {
-                    console.log(message, '(triggered by the following', event.type, 'event)');
-                    console.log(event);
-                };
-
-                $scope.logListEvent = function(action, event, index, external, type) {
-                    var message = external ? 'External ' : '';
-                    message += type + ' element is ' + action + ' position ' + index;
-                    $scope.logEvent(message, event);
-                };
-
-
-            }
-        };
-    })
-    .directive('lucidShapeGroupManage', function($document, config) {
-        return {
-            restrict: 'E',
-            scope: {
-                name: '@',
-                shapes: '=',
-                custom: '@',
-            },
-            replace: true,
-            transclude: true,
-            templateUrl: config.componentsURL + 'shapes-manager/lucid-shape-group-manage.html',
-            controller: function($scope) {
-                //from demo
-                if ($scope.custom) {
-                    $scope.dragEffect = 'copyMove';
-                } else {
-                    $scope.dragEffect = 'copy';
-                }
-
-                $scope.shapecount = 30;
-                $scope.shapeCount = function(showdrawer) {
-                    if (showdrawer) {
-                        $scope.shapecount = 300;
-                    } else {
-                        $scope.shapecount = 30;
-                    }
-                    // console.log(showdrawer, 'ran');
-                };
-                $scope.dragoverCallback = function(event, index, external, type) {
-                    //$scope.logListEvent('dragged over', event, index, external, type);
-                    return index; // < 10;
-                };
-
-                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                    //$scope.logListEvent('dropped at', event, index, external, type);
-                    if (external) {
-                        if (allowedType === 'shape') {
-                            return false;
-                        }
-                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                    }
-                    return item;
-                };
-
-                // $scope.logEvent = function(message, event) {
-                //     console.log(message, '(triggered by the following', event.type, 'event)');
-                //     console.log(event);
-                // };
-
-                // $scope.logListEvent = function(action, event, index, external, type) {
-                //     var message = external ? 'External ' : '';
-                //     message += type + ' element is ' + action + ' position ' + index;
-                //     $scope.logEvent(message, event);
-                // };
-            }
-        };
-    })
-    .directive('selectOnLoad', function($timeout) {
-        // Linker function
-        return {
-            restrict: 'A',
-            link: function(scope, element) {
-                $timeout(function() {
-                    element[0].select();
-                });
-            }
-        };
-    })
-    .directive('lucidImportOptions', function(config) {
-        return {
-            restrict: 'E',
-            scope: {},
-            replace: true,
-            templateUrl: config.componentsURL + 'shapes-manager/lucid-import-options.html',
-            controller: function($scope, $timeout){
-                $scope.showOptions = function(){
-                    $scope.importOptions = true;
-                    //five second delay, then hide import options
-                    $timeout(function() {
-                        $scope.importOptions = false
-                    }, 5000);
-                }
-            }
-        };
-    })
-    .directive('scrollPosition', function($window) {
-        return {
-            scope: {
-                scroll: '=scrollPosition'
-            },
-            link: function(scope, element, attrs) {
-                var windowEl = angular.element($window);
-                var handler = function() {
-                    scope.scroll = $window.pageYOffset;
-                }
-                windowEl.on('scroll', scope.$apply.bind(scope, handler));
-                //windowEl.on('scroll', console.log('scrolltop'));
-                
-                handler();
-            }
-        };
-    });
-
 angular.module("lucidShapesData", ['appConfig'])
-    .factory('shapesData', function() {
+    .factory('lucidShapesData', function() {
 
         var lucidShapes = [{
             "id": 1,
@@ -8036,277 +7012,6 @@ angular.module("lucidShapesData", ['appConfig'])
         };
     });
 
-angular.module("lucidSlides", ['appConfig'])
-    .directive('lucidSlides', function(config) {
-        return {
-            restrict: 'E',
-            replace: true,
-            templateUrl: config.componentsURL + 'slides/lucid-slides.html',
-            controller: function($scope) {
-                $scope.lucidSlides = [{
-                    "x": 368,
-                    "y": 100,
-                    "height": 120,
-                    "width": 160
-                }, {
-                    "x": 60,
-                    "y": 210,
-                    "height": 300,
-                    "width": 400
-                }, {
-                    "x": 480,
-                    "y": 300,
-                    "height": 300,
-                    "width": 400
-                }];
-
-            }
-        };
-    });
-
-angular.module("lucidContextMenu", ['appConfig'])
-.factory('ContextMenuService', function() {
-    return {
-      element: null,
-      menuElement: null
-    };
-  })
-  .directive('lucidContextMenu', [
-    '$document',
-    'ContextMenuService',
-    function($document, ContextMenuService) {
-      return {
-        restrict: 'A',
-        scope: {
-          'callback': '&lucidContextMenu',
-          'disabled': '&contextMenuDisabled',
-          'closeCallback': '&lucidContextMenuClose'
-        },
-        link: function($scope, $element, $attrs) {
-          var opened = false;
-
-          function open(event, menuElement) {
-            menuElement.removeClass('ng-hide');
-
-            var doc = $document[0].documentElement;
-            var docLeft = (window.pageXOffset || doc.scrollLeft) -
-                          (doc.clientLeft || 0),
-                docTop = (window.pageYOffset || doc.scrollTop) -
-                         (doc.clientTop || 0),
-                elementWidth = menuElement[0].scrollWidth,
-                elementHeight = menuElement[0].scrollHeight;
-            var docWidth = doc.clientWidth + docLeft,
-              docHeight = doc.clientHeight + docTop,
-              totalWidth = elementWidth + event.pageX,
-              totalHeight = elementHeight + event.pageY,
-              left = Math.max(event.pageX - docLeft, 0),
-              top = Math.max(event.pageY - docTop, 0);
-
-            if (totalWidth > docWidth) {
-              left = left - (totalWidth - docWidth);
-            }
-
-            if (totalHeight > docHeight) {
-              top = top - (totalHeight - docHeight);
-            }
-
-            menuElement.css('top', top + 'px');
-            menuElement.css('left', left + 'px');
-            opened = true;
-          }
-
-          function close(menuElement) {
-            menuElement.addClass('ng-hide');
-
-            if (opened) {
-              $scope.closeCallback();
-            }
-
-            opened = false;
-          }
-
-          $element.bind('contextmenu', function(event) {
-            if (!$scope.disabled()) {
-              if (ContextMenuService.menuElement !== null) {
-                close(ContextMenuService.menuElement);
-              }
-              ContextMenuService.menuElement = angular.element(
-                document.getElementById($attrs.target)
-              );
-              ContextMenuService.element = event.target;
-              //console.log('set', ContextMenuService.element);
-
-              event.preventDefault();
-              event.stopPropagation();
-              $scope.$apply(function() {
-                $scope.callback({ $event: event });
-              });
-              $scope.$apply(function() {
-                open(event, ContextMenuService.menuElement);
-              });
-            }
-          });
-
-          function handleKeyUpEvent(event) {
-            //console.log('keyup');
-            if (!$scope.disabled() && opened && event.keyCode === 27) {
-              $scope.$apply(function() {
-                close(ContextMenuService.menuElement);
-              });
-            }
-          }
-
-          function handleClickEvent(event) {
-            if (!$scope.disabled() &&
-              opened &&
-              (event.button !== 2 ||
-               event.target !== ContextMenuService.element)) {
-              $scope.$apply(function() {
-                close(ContextMenuService.menuElement);
-              });
-            }
-          }
-
-          $document.bind('keyup', handleKeyUpEvent);
-          // Firefox treats a right-click as a click and a contextmenu event
-          // while other browsers just treat it as a contextmenu event
-          $document.bind('click', handleClickEvent);
-          $document.bind('contextmenu', handleClickEvent);
-
-          $scope.$on('$destroy', function() {
-            //console.log('destroy');
-            $document.unbind('keyup', handleKeyUpEvent);
-            $document.unbind('click', handleClickEvent);
-            $document.unbind('contextmenu', handleClickEvent);
-          });
-        }
-      };
-    }
-  ]);
-
-angular.module("lucidSettingsDrawer", ['appConfig'])
-    .directive('lucidSettingsDrawer', function(config) {
-        return {
-            restrict: 'E',
-            scope: {},
-            replace: true,
-            templateUrl: config.componentsURL + 'settings-drawer/lucid-settings-drawer.html',
-        };
-    }); 
-
-angular.module("lucidPage", ['appConfig'])
-    .directive('lucidPage', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                page: '=',
-                selected: '='
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'page/lucid-page.html',
-            controller: function($scope) {
-                if(!$scope.selected){
-                    $scope.selected = 1;
-                }
-                $scope.renameData = {};
-                $scope.renamePage = function(rename){
-                    $scope.page.name = rename;
-                    //console.log(rename);
-                };
-            }
-        };
-    });
-
-angular.module("lucidPages", ['appConfig', 'lucidPage', 'lucidPagesData'])
-    .directive('lucidPages', function(config, $timeout, pagesData) {
-        return {
-            restrict: 'E',
-            scope: {
-                showpages: '='
-            },
-            replace: true,
-            templateUrl: config.componentsURL + 'pages/lucid-pages.html',
-            controller: function($scope, $rootScope) {
-                $rootScope.pages = pagesData;
-                $rootScope.currentPage = pagesData[0];
-
-                $scope.sortConfig = {
-                    group: 'foobar',
-                    animation: 150,
-                    // onSort: function( /** ngSortEvent */ evt) {
-                    //     // @see https://github.com/RubaXa/Sortable/blob/master/ng-sortable.js#L18-L24
-                    // }
-                };
-                $scope.addPage = function() {
-                    var length = $rootScope.pages.length;
-                    var uniqueID = new Date().getTime();
-                    var newPage = {
-                        name: 'New Page ' + (+length + 1),
-                        id: uniqueID,
-                    };
-                    $rootScope.pages.splice(length, 0, newPage);
-                    $timeout(function() {
-                        $rootScope.currentPage = newPage;
-                    }, 10); //delay so it selects after transition
-                };
-                $scope.duplicatePage = function(page, index) {
-                    var newPage = JSON.parse(JSON.stringify(page))
-                    var newindex = +index + 1
-                    var uniqueID = new Date().getTime();
-
-                    newPage.id = uniqueID;
-                    newPage.name = page.name + ' Copy';
-                    $rootScope.pages.splice(newindex, 0, newPage);
-                    $timeout(function() {
-                        $rootScope.currentPage = newPage;
-                    }, 10);
-                    // $scope.selectedPage = uniqueID;
-                    //console.log(newpage, index);
-                };
-                $rootScope.masterPageCount = function() {
-                    var masterPageCount = [];
-                    angular.forEach($rootScope.pages, function(page) {
-                        if (page.master) {
-                            masterPageCount.push(page);
-                        }
-                        //console.log(masterPageCount);
-
-                    });
-                    return masterPageCount;
-                };
-                $scope.deletePage = function(page, index) {
-                    $rootScope.pages.splice(index, 1);
-                    //console.log(page, index);
-                    $timeout(function() {
-                        if ($rootScope.pages[index]) {
-                            $rootScope.currentPage = $rootScope.pages[index];
-                        } else {
-                            $rootScope.currentPage = $rootScope.pages[index - 1];
-                        }
-                    }, 10);
-                };
-                $scope.applyMaster = function(page) {
-                    page.masterapplied = true;
-                    console.log('page', page)
-                    $timeout(function() {
-                        page.masterapplied = false;
-                    }, 2000);
-                };
-                $scope.applyMasterAll = function() {
-                    console.log('master applied to all')
-                    angular.forEach($rootScope.pages, function(page) {
-                        if (!page.master) {
-                            $scope.applyMaster(page);
-                        }
-
-                    });
-
-                };
-
-            }
-        };
-    });
-
 /*global angular : true fixes codekit error*/
 angular.module('lucidPagesData', [])
     .factory('pagesData', function() {
@@ -8996,73 +7701,5 @@ angular.module('lucidPagesData', [])
             'id': 33456789
         }];
         return lucidPages;
-    });
-
-angular.module("lucidCanvas", ['appConfig'])
-    .directive('lucidCanvas', function(config) {
-        return {
-            restrict: 'E',
-            scope: {},
-            templateUrl: config.componentsURL + 'canvas/lucid-canvas.html',
-            controller: function($scope, $rootScope) {
-
-                $scope.blocks = $rootScope.currentPage.blocks;
-
-                $scope.dragoverCallback = function(event, index, external, type) {
-                    //$scope.logListEvent('dragged over', event, index, external, type);
-                    return index; // < 10;
-                };
-
-                $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-                    //$scope.logListEvent('dropped at', event, index, external, type);
-                    console.log('dropped in saved shapes', item);
-                    if (external) {
-                        console.log('dropped in saved shapes', item);
-                        if (allowedType === 'true') {
-                            return false;
-                        }
-                        //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-                    }
-                    return item;
-                };
-                $scope.onDropComplete = function(data, event) {
-                    if (data) {
-                        var index = $rootScope.currentPage.blocks.indexOf(data);
-                        //console.log('shape', index);
-                        if (index === -1) {
-                            var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
-                            var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
-                            //data.metrics = {};
-                            //console.log(data, event);
-                            data.metrics.x = event.x - canvasX - data.metrics.width / 2; //center block as it drops on canvas and expands
-                            data.metrics.y = event.y - canvasY - data.metrics.height / 2;
-
-                            var newblock = JSON.parse(JSON.stringify(data));
-                            $scope.blockElements.push(newblock);
-                            //console.log('dropped on canvas', newblock, 'current array', $scope.blockElements);
-                        }
-
-                    }
-
-                };
-                $scope.onDragSuccess = function(data, event) {
-                    if (event.x > 250) {
-                        var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
-                        var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
-                        //console.log('drag success', data, event);
-                        if (data) {
-                            data.metrics.x = event.x - canvasX - event.element.centerX;
-                            data.metrics.y = event.y - canvasY - event.element.centerY;
-                            data.shapepanel = false;
-                        }
-                    }
-                    // if (event.x < 220) {
-                    //     console.log('dropped in shapes'); //not sure how else to fix this.
-                    // }
-                    //console.log(data.metrics.x, data.metrics.y);
-                    //console.log('drag success');
-                };
-            }
-        };
     });
 

@@ -1,0 +1,106 @@
+[lucid-context-menu]{
+    cursor:pointer;
+}
+.lucid-context-menu {
+    @dropdown-menu-width: 200px;
+    position: fixed;
+    background: #fff;
+    padding: 5px 0;
+    //border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+    z-index: 10;
+    text-align: left;
+    color: @blue-steel;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        li {
+            display: inline-block;
+            line-height: 20px;
+            font-size: 14px;
+            padding: 2px 12px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor:pointer;
+            &:hover {
+                background: @light-grey;
+            }
+            &.context-divider{
+                background:@secondary-grey;
+                height:1px;
+                margin: 5px 0;
+                padding:0;
+            }
+            a {
+                display: block;
+                padding: 0 10px;
+                color: #FFF;
+                //font-size:20px;
+                //line-height: 60px;
+                text-decoration: none;
+                &.saving {
+                    color: #ccc;
+                }
+            }
+            span.hotkey {
+                position: absolute;
+                right: 7px;
+                top: 0;
+                bottom: 0;
+                color: #999;
+            }
+            li {
+                //line-height: 30px;
+                background: #fff;
+                &.dropdown-divider {
+                    border-bottom: 1px solid #f1f1f1;
+                }
+                a {
+                    color: @blue-steel;
+                    &:hover {
+                        background-color: #f1f1f1;
+                    }
+                }
+            }
+        }
+    }
+    /* Hide Dropdowns by Default */
+    ul ul {
+        display: none;
+        position: absolute;
+        padding: 5px 0;
+        background: #FFF;
+        top: - 5px;
+        left: @dropdown-menu-width;
+        box-shadow: 0 3px 5px rgba(0, 0, 0, .3);
+    }
+    /* Display Dropdowns on Hover */
+    ul li:hover > ul {
+        display: inherit;
+        top: -5px;
+    }
+    /* Fisrt Tier Dropdown */
+    ul li {
+        width: @dropdown-menu-width;
+        float: none;
+        display: list-item;
+        position: relative;
+    }
+    /* Second, Third and more Tiers */
+    ul ul ul {
+        position: absolute;
+        top: 0px;
+        left: @dropdown-menu-width;
+        z-index: -1;
+    }
+    /* Change this in order to change the Dropdown symbol */
+    ul li.lucid-context-more:after {
+        font-family: FontAwesome;
+        content: "\f0da";
+        position: absolute;
+        right: 6px;
+    }
+}

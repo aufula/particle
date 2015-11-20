@@ -11,44 +11,26 @@
 //@codekit-append "../../lib/ngDraggable.js"
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
-//components
-//@codekit-append "themes/lucid-themes-data.js"
+//include components js
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
-//@codekit-append "path-style/lucid-path-style.js"
-//@codekit-append "text-alignment/lucid-text-alignment.js"
 //@codekit-append "more-drawer/lucid-more-drawer.js"
-//@codekit-append "border-options/lucid-border-options.js"
-//@codekit-append "text-options/lucid-text-options.js"
-//@codekit-append "line-options/lucid-line-options.js"
-//@codekit-append "position-options/lucid-position-options.js"
-//@codekit-append "shadow-options/lucid-shadow-options.js"
 //@codekit-append "modal/lucid-modal.js"
-//@codekit-append "shape/lucid-shape.js"
 //@codekit-append "finger-tabs/lucid-finger-tabs.js"
 //@codekit-append "buttcon-popover/lucid-buttcon-popover.js"
 //@codekit-append "collapse-bar/lucid-collapse-bar.js"
-
 //@codekit-append "buttcon-toggle/lucid-buttcon-toggle.js"
-
-
 //@codekit-append "notification/lucid-notification.js"
 //@codekit-append "select/lucid-select.js"
 //@codekit-append "button/lucid-button.js"
-//@codekit-append "chart-block/lucid-chart-block.js"
-//@codekit-append "saved-styles/lucid-saved-styles.js"
-//@codekit-append "themes/lucid-themes.js"
-//@codekit-append "shape-group/lucid-shape-group.js"
-//@codekit-append "shapes-manager/lucid-shapes-manager.js"
-//@codekit-append "shapes-manager/lucid-shapes-data.js"
-//@codekit-append "slides/lucid-slides.js"
 //@codekit-append "context-menu/lucid-context-menu.js"
-//@codekit-append "settings-drawer/lucid-settings-drawer.js"
-//@codekit-append "page/lucid-page.js"
-//@codekit-append "pages/lucid-pages.js"
+
+//include Data JS
+//@codekit-append "themes/lucid-themes-data.js"
+//@codekit-append "shapes-manager/lucid-shapes-data.js"
 //@codekit-append "pages/lucid-pages-data.js"
-//@codekit-append "canvas/lucid-canvas.js"
+
 
 
 
@@ -70,12 +52,12 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/0.1/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/0.1/" //github
+    //'componentsURL': "/components/1.0/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/1.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'lucidThemesData', 'lucidTextAlignment', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidColorPicker', 'lucidPathStyle', 'lucidMoreDrawer', 'lucidBorderOptions', 'lucidTextOptions', 'lucidLineOptions', 'lucidPositionOptions', 'lucidShadowOptions', 'lucidShape', 'lucidShapeGroup', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidChartBlock', 'lucidCanvas', 'lucidShapesManager', 'lucidSavedStyles', 'lucidThemes', 'lucidSlides', 'lucidContextMenu', 'dndLists', 'lucidSettingsDrawer', 'lucidPage', 'lucidPages', 'lucidPagesData', 'ngSortable', 'lucidCollapseBar'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle','lucidNotification', 'lucidSelect', 'lucidButton', 'lucidCollapseBar'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////

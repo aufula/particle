@@ -1,0 +1,25 @@
+<div class="lucid-buttcon-wrapper lucid-path-style">
+    <div class="lucid-buttcon">
+        <svg ng-click="showpopover=!showpopover" id="lucid-path-style" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
+            <g id="lucid-straight-path">
+                <path stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5,19l3-3l8-8l3-3" />
+                <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
+                <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
+            <g id="lucid-angle-path">
+                <path fill="none" stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.4,19H12V5h7.6" />
+                <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
+                <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
+            <g id="lucid-curve-path">
+                <path fill="none" stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5,19.7v-3   C5,10.2,10.2,5,16.6,5h3" />
+                <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
+                <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
+        </svg>
+    </div>
+    <lucid-popover-menu width="32" ng-show="showpopover">
+        <div class="lucid-wrapper-overflow-hidden">
+            <ul>
+                <li class="lucid-buttcon" ng-class="{active: $parent.pathstyle.name == path.name}" ng-repeat="path in pathstyles" ng-click="$parent.pathstyle = path; $parent.showpopover=false; changePath(path.name)"><img class="lucid-button-icon" ng-src="{{path.icon}}"></li>
+            </ul>
+        </div>
+    </lucid-popover-menu>
+</div>

@@ -1,0 +1,91 @@
+.lucid-input {
+    background: transparent;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid @blue-steel-2;
+    box-sizing: border-box;
+    font-size: 14px;
+    height: 28px;
+    color: @blue-steel;
+    width: 100%;
+    outline: none;
+    font-family: @font-stack;
+    transition: background .15s ease-in-out;
+}
+
+.lucid-input-stepper {
+    position: relative;
+    font-size: 14px;
+    box-sizing: border-box;
+    display: inline-block;
+    font-family: @font-stack;
+    vertical-align: top;
+    .lucid-input {
+        padding-right: 28px;
+        text-align: right;
+    }
+    .lucid-input-unit {
+        position: absolute;
+        top: 6px;
+        right: 13px;
+        font-size: 14px;
+        color: @blue-steel;
+    }
+    .lucid-up,
+    .lucid-down {
+        position: absolute;
+        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-spinner-handle.svg) center center no-repeat;
+        width: 10px;
+        height: 14px;
+        right: 0px;
+        cursor: pointer;
+        //border-left: 1px solid #E5E5E5;
+        opacity: .5;
+        &:hover {
+            opacity: 1;
+        }
+    }
+    .lucid-up {
+        top: 1px;
+        //border-radius: 0 3px 0 0;
+    }
+    .lucid-down {
+        bottom: 1px;
+        transform: rotateX(180deg);
+        transform-origin: center;
+        //border-radius: 0 0 3px 0;
+    }
+    &:hover {
+        .lucid-input {
+            //background:#FFF;
+        }
+    }
+}
+
+//stepper appears different when inside a popover menu
+.lucid-popover-menu {
+    .lucid-input {
+        background: #F1F1F1;
+        border-bottom: none;
+        border-bottom: none;
+        padding: 0 7px;
+        border-radius: 3px;
+        &:hover {
+            background: #fff;
+        }
+    }
+    .lucid-input-stepper {
+        .lucid-input {
+            padding-right: 26px;
+        }
+        &:hover {
+            .lucid-input {
+                background: #FFF;
+            }
+        }
+        .lucid-up,
+        .lucid-down {
+            right: 2px;
+        }
+    }
+}

@@ -1,0 +1,16 @@
+<div class="lucid-select-wrapper">
+    <div class="selected-option-wrapper" ng-click="showdropdown = !showdropdown">
+        <div class="selected-options">
+            <div class="select-dropdown-arrow"></div>
+            <span class="lucid-selected-option">{{selectedOption}}</span>
+            <span class="lucid-selected-option" ng-repeat="option in options track by $index">{{option}}</span>
+        </div>
+    </div>
+    <div class="lucid-select-dropdown" ng-show="showdropdown">
+        <ul>
+            <li class="lucid-select-option" ng-class="{active: option == selectedOption}" ng-repeat="option in options" ng-click="$parent.selectedOption = option; $parent.showdropdown = false;">
+                {{option}}
+            </li>
+        </ul>
+    </div>
+</div>
