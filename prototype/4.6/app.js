@@ -328,7 +328,7 @@ angular.module('particleApp', ['lucidComponents'])
     .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
 
         $scope.shapegroups = lucidShapesData.all();
-
+        $rootScope.manageshapes = false;
         $scope.clickShapes = function() {
             if (!$scope.searchshapes) {
                 $rootScope.manageshapes = !$rootScope.manageshapes
@@ -338,7 +338,7 @@ angular.module('particleApp', ['lucidComponents'])
         };
 
         $scope.dropFromCanvas = function(data, event, shapegroup) {
-            console.log('dropped in saved shapes', data, event, shapegroup);
+
             if (data) {
                 var index = shapegroup.shapes.indexOf(data);
                 //console.log('shape', index);
@@ -355,22 +355,22 @@ angular.module('particleApp', ['lucidComponents'])
                         newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
                     }
                     shapegroup.shapes.push(newblock);
-                    //console.log("shape saved to shapegroup", newblock);
                 }
             }
+            console.log('dropped in saved shapes', data, event, shapegroup);
         };
 
 
         /////// START DRAGGING SHAPES STUFF
 
         $scope.dragoverCallback = function(event, index, external, type) {
-            $scope.logListEvent('dragged over', event, index, external, type);
+            //$scope.logListEvent('dragged over', event, index, external, type);
             // Disallow dropping in the third row. Could also be done with dnd-disable-if.
             return index < 10;
         };
 
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-            $scope.logListEvent('dropped at', event, index, external, type);
+            //$scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
                 if (allowedType === 'itemType' && !item.label) return false;
                 if (allowedType === 'containerType' && !angular.isArray(item)) return false;
@@ -378,16 +378,16 @@ angular.module('particleApp', ['lucidComponents'])
             return item;
         };
 
-        $scope.logEvent = function(message, event) {
-            console.log(message, '(triggered by the following', event.type, 'event)');
-            console.log(event);
-        };
+        // $scope.logEvent = function(message, event) {
+        //     console.log(message, '(triggered by the following', event.type, 'event)');
+        //     console.log(event);
+        // };
 
-        $scope.logListEvent = function(action, event, index, external, type) {
-            var message = external ? 'External ' : '';
-            message += type + ' element is ' + action + ' position ' + index;
-            $scope.logEvent(message, event);
-        };
+        // $scope.logListEvent = function(action, event, index, external, type) {
+        //     var message = external ? 'External ' : '';
+        //     message += type + ' element is ' + action + ' position ' + index;
+        //     $scope.logEvent(message, event);
+        // };
 
         /////// END DRAGGIN SHAPES STUFF
 
@@ -473,40 +473,78 @@ angular.module('particleApp', ['lucidComponents'])
         }];
         $scope.blocks = $rootScope.currentPage.blocks;
 
+        /////// START DRAGGING SHAPES STUFF
+
         $scope.dragoverCallback = function(event, index, external, type) {
-            //$scope.logListEvent('dragged over', event, index, external, type);
-            return index; // < 10;
+            $scope.logListEvent('dragged over canvas', event, index, external, type);
+            // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+            return index < 10;
         };
 
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-            //$scope.logListEvent('dropped at', event, index, external, type);
-            console.log('dropped in saved shapes', item);
+            $scope.logListEvent('dropped at canvas', event, index, external, type);
             if (external) {
-                console.log('dropped in saved shapes', item);
-                if (allowedType === 'true') {
-                    return false;
-                }
-                //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                if (allowedType === 'itemType' && !item.label) return false;
+                if (allowedType === 'containerType' && !angular.isArray(item)) return false;
             }
             return item;
         };
-        $scope.onDropComplete = function(data, event) {
-            console.log('dropped to canvas', data);
-            if (data) {
-                var index = $rootScope.currentPage.blocks.indexOf(data);
-                //console.log('shape', index);
-                if (index === -1) {
-                    var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
-                    var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
-                    //data.metrics = {};
-                    //console.log(data, event);
-                    data.metrics.x = event.x - canvasX - data.metrics.width / 2; //center block as it drops on canvas and expands
-                    data.metrics.y = event.y - canvasY - data.metrics.height / 2;
 
-                    var newblock = JSON.parse(JSON.stringify(data));
-                    $scope.blockElements.push(newblock);
-                    //console.log('dropped on canvas', newblock, 'current array', $scope.blockElements);
+        // $scope.logEvent = function(message, event) {
+        //     console.log(message, '(triggered by the following', event.type, 'event)');
+        //     console.log(event);
+        // };
+
+        // $scope.logListEvent = function(action, event, index, external, type) {
+        //     var message = external ? 'External ' : '';
+        //     message += type + ' element is ' + action + ' position ' + index;
+        //     $scope.logEvent(message, event);
+        // };
+
+        /////// END DRAGGIN SHAPES STUFF
+
+        $scope.dropToCanvas = function(item, event) {
+
+            var index = $rootScope.currentPage.blocks.indexOf(item)
+
+            if (index === -1) {
+                //if dragging shape with no metrics such as a star, etc.
+                if (!item.metrics) {
+                    item = {
+                        "customcolor": false,
+                        "swatch": {
+                            "fill": "#ffffff",
+                            "text": "#333333",
+                            "border": "#666666"
+                        },
+                        "swatchnumber": 1,
+                        "borderwidth": 3,
+                        "borderstyle": "solid",
+                        "text": {
+                            "verticalalignment": "middle",
+                            "horizontalalignment": "center",
+                            "text": item.name,
+                            "size": "12px"
+                        },
+                        "padding": 10,
+                        "metrics": {
+                            "z": 2,
+                            "width": 120,
+                            "height": 45
+                        },
+                        "shapepanel": false
+                    };
                 }
+                //set the position based on where it dropped and the width of the block.
+                var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
+                var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
+
+                item.metrics.x = event.pageX - canvasX - (item.metrics.width / 2);
+                item.metrics.y = event.pageY - canvasY - (item.metrics.height / 2);
+
+                console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
+
+                $rootScope.currentPage.blocks.push(item);
 
             }
 

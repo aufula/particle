@@ -2336,38 +2336,7 @@ angular.module("lucidShapesData", ['appConfig'])
         var lucidShapes = [{
             "id": 1,
             "groupname": "My Saved Shapes",
-            "shapes": [{
-                "name": "text",
-                "tags": "Standard",
-                "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shapes-text.svg",
-                "svg": '<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="30px" height="30px" viewBox="0 0 30 30" version="1.1"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"><g class="lucid-fill-text" sketch:type="MSArtboardGroup" font-size="29" font-family="Baskerville" fill="#828282" font-weight="526"><text id="T" sketch:type="MSTextLayer"><tspan x="5" y="25">T</tspan></text></g></g></svg>',
-                "shapepanel": true,
-                "customcolor": false,
-                "swatchtype": "text",
-                "swatch": {
-                    "fill": "transparent",
-                    "text": "#8D8D8D",
-                    "border": "transparent"
-                },
-                "swatchnumber": 2,
-                "borderwidth": 3,
-                "borderstyle": "solid",
-                "text": {
-                    "verticalalignment": "middle",
-                    "horizontalalignment": "center",
-                    "text": "INSERT TEXT",
-                    "size": "12px",
-                },
-
-                "padding": 5,
-                "metrics": {
-                    "z": 2,
-                    "x": 390,
-                    "y": 139,
-                    "width": 120,
-                    "height": 45
-                }
-            }],
+            "shapes": [],
             "custom": 'custom',
             "pinned": true,
             "pinnedOrder": 1

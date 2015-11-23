@@ -431,11 +431,11 @@ a {
             opacity: 0;
         }
         //for quick fix first element
-        ul {
-            >li.lucid-shape:first-child {
-                display: none;
-            }
-        }
+        // ul {
+        //     >li.lucid-shape:first-child {
+        //         display: none;
+        //     }
+        // }
         &.dragging-shape {
             ul {
                 position: relative;
@@ -702,9 +702,9 @@ a {
     //     -webkit-column-width: 50%;
     //     column-width: 50%;
     // }
-    .lucid-scroll-inner-wrap {
-        padding: 20px 10px;
-    }
+    // .lucid-scroll-inner-wrap {
+    //     padding: 20px 10px;
+    // }
     .lucid-shape-group-wrapper {
         margin-bottom: 10px;
         position: relative;
@@ -896,13 +896,13 @@ a {
         }
         &.ng-animate {
             transition: .25s ease-in-out all;
-            transition-delay: .75s;
+            transition-delay: 2.75s;
         }
     }
     .lucid-shapes-scroll {
         background: transparent;
         opacity: 1;
-        //transition: .25s ease-in-out all;
+        transition: .25s ease-in-out all;
         &.ng-hide {
             opacity: 0;
         }
@@ -915,6 +915,7 @@ a {
     }
     .lucid-scroll-inner-wrap {
         padding: 20px;
+        height: 10000px;
     }
     .scrollable .scrollable-slider {
         background: #333;
@@ -1800,7 +1801,9 @@ a {
     top: 54px;
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page List <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+// START PAGES 
+/////////////////////////////
 @page-card-width: 170px;
 .lucid-pages {
     .lucid-pages-wrapper {
@@ -1882,36 +1885,6 @@ a {
             height: 0;
             clear: both;
         }
-    }
-}
-
-.page-drawer {
-    .lucid-pages-wrapper {
-        margin-top: 0px;
-    }
-    &.ng-hide {
-        .lucid-pages-wrapper {
-            margin-top: -198px;
-        }
-    }
-    &.ng-animate {
-        .lucid-pages-wrapper {
-            transition: .5s ease-in-out !important;
-        }
-        transition:.5s ease-in-out!important;
-    }
-}
-
-#page-list {
-    overflow: hidden;
-    position: relative;
-    top: 54px;
-}
-
-.pages {
-    height: 200px;
-    >li {
-        float: left;
     }
 }
 
@@ -2000,7 +1973,7 @@ a {
             background-size: 22px;
         }
         >span {
-            color: @blue-steel-secondary;
+            color: @blue-steel-2;
             line-height: 32px;
             font-size: 14px;
             font-weight: 300;
@@ -2008,6 +1981,9 @@ a {
         top:0;
         &.ng-hide {
             top: -32px;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
         }
     }
     h4 {
@@ -2041,16 +2017,28 @@ a {
 }
 
 //////////////////////////////
+// END PAGES 
+/////////////////////////////
+//////////////////////////////
 // START CANVAS
 /////////////////////////////
+.lucid-canvas{
+    >ul{
+        position:absolute;
+        width:100%;
+        height: 690px;
+        top:0;
+        left:0;
+    }
+}
 .lucid-chart-block {
     position: absolute;
     border: 1px solid;
     //display: table;
     box-sizing: border-box;
     cursor: pointer;
-    &.manage-shapes{
-        z-index:0 !important;
+    &.manage-shapes {
+        z-index: 0 !important;
     }
     .lucid-svg-background {
         width: 100%;
@@ -2192,7 +2180,6 @@ a {
     transition: right .3s ease-out, opacity .3s, z-index .2s linear;
     padding-top: 10px;
     border-left: 1px solid #d2d2d2;
-    
     &.manage-shapes {
         transition-delay: .2s;
         z-index: 1;
