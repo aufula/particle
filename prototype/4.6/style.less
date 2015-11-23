@@ -1,368 +1,359 @@
-
 /////////////////////////////////////////////////
 //START VARIABLES
 ////////////////////////////////////////////////
-
-@font-stack: 'Source Sans Pro', sans-serif;
+@font-stack: 'Source Sans Pro',
+sans-serif;
 //
 // Blue Steel
 @blue-steel: #3d4752;
 @blue-steel-2: #77818C;
 @blue-steel-3: #95A8BA;
 @blue-steel-dark: #212C35;
-
 // Grey
 @light-grey: #f1f1f1;
 @secondary-grey: #e5e5e5;
-
 // Green
 @green: #8BC326;
 @light-green: #e9f2d9;
-
 // Red
 @red: #ed6058;
 @red-hover: #f18079;
 @light-red: #fbdcda;
-
 // Yellow
 @yellow: #ffaf46;
 @light-yellow: #fff3e1;
-
 // Blue
 @blue: #29AAE1;
-@blue-hover: #3cb9e5; 
+@blue-hover: #3cb9e5;
 @light-blue: #d6e9f1;
-
-
 /////////////////////////////////////////////////
 //END VARIABLES
 ////////////////////////////////////////////////
-
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Add Ons <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 @addOnTeal: #64b9cc;
 @addOnBlue: #2e8099;
 @addOnRed: #ed6058;
 @addOnSteel: #505d68;
 @addOnGreen: #8cbf3f;
 .add-ons {
-  padding: 10px;
-  li {
-    width: 222px;
-    height: 178px;
-    position: relative;
-    float: left;
-    margin: 10px;
-    cursor: pointer;
-    overflow: hidden;
-    .thumb {
-      width: 100%;
-    }
-    
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Colors <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-    
-    &.teal {
-      border: 1px solid @addOnTeal;
-      footer {
-        background: @addOnTeal;
-        button {
-          background: @addOnBlue;
-          &:hover {
-            background: #145766;
-          }
-        }
-      }
-    }
-    &.blue {
-      border: 1px solid @addOnBlue;
-      footer {
-        background: @addOnBlue;
-        button {
-          background: #145766;
-          &:hover {
-            background: #0f414c;
-          }
-        }
-      }
-    }
-    &.red {
-      border: 1px solid @addOnRed;
-      footer {
-        background: @addOnRed;
-        button {
-          background: #b2403d;
-          &:hover {
-            background: #993636;
-          }
-        }
-      }
-    }
-    &.steel {
-      border: 1px solid @addOnSteel;
-      footer {
-        background: @addOnSteel;
-        button {
-          background: @blue-steel;
-          &:hover {
-            background: darken(@blue-steel, 10%);
-          }
-        }
-      }
-    }
-    &.green {
-      border: 1px solid @addOnGreen;
-      footer {
-        background: @addOnGreen;
-        button {
-          background: #619900;
-          &:hover {
-            background: #517f00;
-          }
-        }
-      }
-    }
-    footer {
-      background: #999;
-      color: #fff;
-      height: 94px;
-      position: absolute;
-      bottom: -40px;
-      width: 100%;
-      transition: bottom .2s ease-in-out;
-      h4 {
-        text-align: left;
-        padding: 8px 10px;
-      }
-      .stars {
-        position: absolute;
-        bottom: 48px;
-        left: 8px;
-      }
-      span {
-        float: right;
-        margin-right: 10px
-      }
-      button {
-        display: block;
-        margin: auto;
-        clear: both;
+    padding: 10px;
+    li {
+        width: 222px;
+        height: 178px;
         position: relative;
-        top: 10px;
-        letter-spacing: .5px;
-      }
-    } 
-    // hover styles
-    &:hover {
-      footer {
-        bottom: 0;
-      }
+        float: left;
+        margin: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        .thumb {
+            width: 100%;
+        }
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Colors <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        &.teal {
+            border: 1px solid @addOnTeal;
+            footer {
+                background: @addOnTeal;
+                button {
+                    background: @addOnBlue;
+                    &:hover {
+                        background: #145766;
+                    }
+                }
+            }
+        }
+        &.blue {
+            border: 1px solid @addOnBlue;
+            footer {
+                background: @addOnBlue;
+                button {
+                    background: #145766;
+                    &:hover {
+                        background: #0f414c;
+                    }
+                }
+            }
+        }
+        &.red {
+            border: 1px solid @addOnRed;
+            footer {
+                background: @addOnRed;
+                button {
+                    background: #b2403d;
+                    &:hover {
+                        background: #993636;
+                    }
+                }
+            }
+        }
+        &.steel {
+            border: 1px solid @addOnSteel;
+            footer {
+                background: @addOnSteel;
+                button {
+                    background: @blue-steel;
+                    &:hover {
+                        background: darken(@blue-steel, 10%);
+                    }
+                }
+            }
+        }
+        &.green {
+            border: 1px solid @addOnGreen;
+            footer {
+                background: @addOnGreen;
+                button {
+                    background: #619900;
+                    &:hover {
+                        background: #517f00;
+                    }
+                }
+            }
+        }
+        footer {
+            background: #999;
+            color: #fff;
+            height: 94px;
+            position: absolute;
+            bottom: -40px;
+            width: 100%;
+            transition: bottom .2s ease-in-out;
+            h4 {
+                text-align: left;
+                padding: 8px 10px;
+            }
+            .stars {
+                position: absolute;
+                bottom: 48px;
+                left: 8px;
+            }
+            span {
+                float: right;
+                margin-right: 10px
+            }
+            button {
+                display: block;
+                margin: auto;
+                clear: both;
+                position: relative;
+                top: 10px;
+                letter-spacing: .5px;
+            }
+        }
+        // hover styles
+        &:hover {
+            footer {
+                bottom: 0;
+            }
+        }
     }
-  }
 }
 
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Share Stuff <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 #share {
-  section {
-    padding: 15px;
-  }
-  .add-button {
-    float: left;
-    font-size: 14px;
-    cursor: pointer;
-    img {
-      width: 18px !important;
-      display: inline;
-      margin-right: 5px;
-      position: relative;
-      vertical-align: middle;
-      top: -2px;
+    section {
+        padding: 15px;
     }
-  }
-  .group {
-    position: relative;
-  }
-  .add-popup {
-    position: absolute;
-    top: 30px;
-    padding: 10px;
-    background: #f0f0f0;
-    box-shadow: 0 2px 8px rgba(0,0,0,.5);
-    border-radius: 4px;
-    width: 200px;
-    z-index: 10;
-    &:after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-right: 10px solid transparent;
-      border-left: 10px solid transparent;
-      border-bottom: 10px solid #ccc;
-      position: absolute;
-      top: -10px;
-      left: 10px;
-    }
-    input {
-      width: 100%;
-      text-indent: 5px;
-      margin-bottom: 5px;
-    }
-    select {
-      float: left;
-    }
-    #push {
-      color: #2C84B5;
-      font-size: 14px;
-      float: right;
-      margin-top: 2px;
-      margin-right: 3px;
-      cursor: pointer;
-    }
-  }
-  .options {
-    float: right;
-    font-size: 14px;
-    color: #2C84B5;
-    cursor: pointer;
-  }
-  ul.collaborators {
-    margin-top: 15px;
-  > li {
-    height: 30px;
-    background: white;
-    //overflow: hidden;
-    text-align: left;
-    font-size: 14px;
-    border-radius: 4px;
-    margin-bottom: 10px;
-    transition: all .2s;
-    position: relative;
-    cursor: pointer;
-    &.ng-enter {
-      opacity: 0;
-      height: 0;
-    }
-    &.ng-enter-active {
-      opacity: 1;
-      height: 30px;
-    }
-    &.ng-leave {
-      opacity: 1;
-      height: 30px;
-    }
-    &.ng-leave-active {
-      opacity: 0;
-      height: 0;
-    }
-    .image-container {
-      float: left;
-      width: 30px !important;
-      height: 30px;
-      background: @blue-steel-secondary;
-      border-radius: 4px 0 0 4px;
-      overflow: hidden;
-      img {
-        border-radius: 4px 0 0 4px;
-      }
-    }
-    .pencil, .avatar, .delete {
-      transition: opacity .2s;
-    }
-    .pencil, .delete {
-      position: absolute;
-      top: 3px;
-      width: 22px !important;
-      opacity: 0;
-    }
-    .avatar {
-      opacity: 1;
-    }
-    .delete {
-      right: 3px;
-      opacity: 0;
-    }
-    .pencil {
-      left: 5px;
-    }
-    &:hover {
-      .avatar {
-        opacity: 0;
-      }
-      .pencil, .delete {
-        opacity: 1;
-      }
-    }
-    span {
-      display: inline-block;
-      margin: 7px 0 0 10px;
-    }
-  }
-  }
-  .permissions {
-    position: absolute;
-    top: 40px;
-    left: -35px;
-    background: #f0f0f0;
-    padding: 10px;
-    box-shadow: 0 0 5px rgba(0,0,0,.5);
-    border-radius: 4px;
-    z-index: 11;
-    li {
-      margin-bottom: 5px;
-      padding-left: 15px;
-      position: relative;
-      &.active {
-        &:before {
-          content: '';
-          background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-checkmark-bluesteel.svg');
-          background-repeat: no-repeat;
-          position: absolute;
-          top: 1px;
-          left: -2px;
-          width: 14px;
-          display: block;
-          height: 22px;
+    .add-button {
+        float: left;
+        font-size: 14px;
+        cursor: pointer;
+        img {
+            width: 18px !important;
+            display: inline;
+            margin-right: 5px;
+            position: relative;
+            vertical-align: middle;
+            top: -2px;
         }
-      }
     }
-    &:after {
-      content: '';
-      width: 0;
-      height: 0;
-      border-right: 10px solid transparent;
-      border-left: 10px solid transparent;
-      border-bottom: 10px solid #ccc;
-      position: absolute;
-      top: -10px;
-      left: 40px;
+    .group {
+        position: relative;
     }
-  }
+    .add-popup {
+        position: absolute;
+        top: 30px;
+        padding: 10px;
+        background: #f0f0f0;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, .5);
+        border-radius: 4px;
+        width: 200px;
+        z-index: 10;
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid #ccc;
+            position: absolute;
+            top: -10px;
+            left: 10px;
+        }
+        input {
+            width: 100%;
+            text-indent: 5px;
+            margin-bottom: 5px;
+        }
+        select {
+            float: left;
+        }
+        #push {
+            color: #2C84B5;
+            font-size: 14px;
+            float: right;
+            margin-top: 2px;
+            margin-right: 3px;
+            cursor: pointer;
+        }
+    }
+    .options {
+        float: right;
+        font-size: 14px;
+        color: #2C84B5;
+        cursor: pointer;
+    }
+    ul.collaborators {
+        margin-top: 15px;
+        > li {
+            height: 30px;
+            background: white;
+            //overflow: hidden;
+            text-align: left;
+            font-size: 14px;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            transition: all .2s;
+            position: relative;
+            cursor: pointer;
+            &.ng-enter {
+                opacity: 0;
+                height: 0;
+            }
+            &.ng-enter-active {
+                opacity: 1;
+                height: 30px;
+            }
+            &.ng-leave {
+                opacity: 1;
+                height: 30px;
+            }
+            &.ng-leave-active {
+                opacity: 0;
+                height: 0;
+            }
+            .image-container {
+                float: left;
+                width: 30px !important;
+                height: 30px;
+                background: @blue-steel-secondary;
+                border-radius: 4px 0 0 4px;
+                overflow: hidden;
+                img {
+                    border-radius: 4px 0 0 4px;
+                }
+            }
+            .pencil,
+            .avatar,
+            .delete {
+                transition: opacity .2s;
+            }
+            .pencil,
+            .delete {
+                position: absolute;
+                top: 3px;
+                width: 22px !important;
+                opacity: 0;
+            }
+            .avatar {
+                opacity: 1;
+            }
+            .delete {
+                right: 3px;
+                opacity: 0;
+            }
+            .pencil {
+                left: 5px;
+            }
+            &:hover {
+                .avatar {
+                    opacity: 0;
+                }
+                .pencil,
+                .delete {
+                    opacity: 1;
+                }
+            }
+            span {
+                display: inline-block;
+                margin: 7px 0 0 10px;
+            }
+        }
+    }
+    .permissions {
+        position: absolute;
+        top: 40px;
+        left: -35px;
+        background: #f0f0f0;
+        padding: 10px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, .5);
+        border-radius: 4px;
+        z-index: 11;
+        li {
+            margin-bottom: 5px;
+            padding-left: 15px;
+            position: relative;
+            &.active {
+                &:before {
+                    content: '';
+                    background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-checkmark-bluesteel.svg');
+                    background-repeat: no-repeat;
+                    position: absolute;
+                    top: 1px;
+                    left: -2px;
+                    width: 14px;
+                    display: block;
+                    height: 22px;
+                }
+            }
+        }
+        &:after {
+            content: '';
+            width: 0;
+            height: 0;
+            border-right: 10px solid transparent;
+            border-left: 10px solid transparent;
+            border-bottom: 10px solid #ccc;
+            position: absolute;
+            top: -10px;
+            left: 40px;
+        }
+    }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Not Share Stuff ???? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-.lucid-shapes-header >span{
-  cursor:pointer;
+.lucid-shapes-header >span {
+    cursor: pointer;
 }
+
 li.lucid-select-option {
     display: block !important;
 }
-.lucid-shape-manager{
-  z-index:-1;
+
+.lucid-shape-manager {
+    z-index: -1;
 }
-.lucid-shapes-scroll{
-  background:#D6D6D6;
-  overflow-y:scroll;
+
+.lucid-shapes-scroll {
+    background: #D6D6D6;
+    overflow-y: scroll;
 }
-.lucid-manage-shapes .lucid-shapes-scroll{
-  background: #B2B2B2;
+
+.lucid-manage-shapes .lucid-shapes-scroll {
+    background: #B2B2B2;
 }
-.lucid-shape-manager .lucid-shapes-scroll{
-  background: transparent;
+
+.lucid-shape-manager .lucid-shapes-scroll {
+    background: transparent;
 }
 
 @orange: #F78D1E;
@@ -370,49 +361,58 @@ li.lucid-select-option {
 @blue-steel: #3d4752;
 @blue-steel-secondary: #77818C;
 @lucid-blue: #29AAE1;
-
-*, *:before, *:after {
-	box-sizing: border-box;
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
 }
 
-body, html {
-	height: 100vh;
-	overflow: hidden;
+body,
+html {
+    height: 100vh;
+    overflow: hidden;
 }
+
 body {
-	font-family: "Source Sans Pro", sans-serif;
-  background: #3d4752;
-  user-select: none;
+    font-family: "Source Sans Pro", sans-serif;
+    background: #3d4752;
+    user-select: none;
 }
+
 #wrapper {
-  position: relative;
-  height: 100%;
-  width: 100%;
-  box-shadow: -10px 0 30px rgba(0,0,0,.25);
-  transition: margin .3s;
-  &.withsidebar {
-    margin-left: 200px;
-    #main-container {
-      opacity: .5;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    box-shadow: -10px 0 30px rgba(0, 0, 0, .25);
+    transition: margin .3s;
+    &.with-mega-menu {
+        margin-left: 200px;
+        #main-container {
+            opacity: .5;
+        }
+        #left-bar,
+        #option-bar,
+        #right-dock,
+        #main-footer,
+        .ruler {
+            opacity: 0;
+        }
     }
-    #left-bar, #option-bar, #right-dock, #main-footer, .ruler {
-      opacity: 0;
-    }
-  }
 }
+
 a {
-	text-decoration: none;
-	color: inherit;
+    text-decoration: none;
+    color: inherit;
 }
+
 .reversed-text {
-  font-weight: 300;
-  letter-spacing: .5px;
+    font-weight: 300;
+    letter-spacing: .5px;
 }
 
 /////////////////////////////////////////////////
 //START SHAPE GROUP
 ////////////////////////////////////////////////
-
 .lucid-shape-group {
     position: relative;
     display: inline-block;
@@ -435,7 +435,7 @@ a {
             >li.lucid-shape:first-child {
                 display: none;
             }
-        } 
+        }
         &.dragging-shape {
             ul {
                 position: relative;
@@ -450,7 +450,7 @@ a {
         >ul {
             min-height: 44px;
             transition: all .25s ease-in-out;
-            &.zero-state-height{
+            &.zero-state-height {
                 min-height: 100px;
             }
         }
@@ -479,7 +479,7 @@ a {
         transition: all .25s ease-in-out;
         position: absolute;
         top: 32px;
-        padding-top:10px;
+        padding-top: 10px;
         left: 0;
         right: 0;
         bottom: 0;
@@ -493,9 +493,7 @@ a {
             padding: 10px;
             font-size: 14px;
         }
-        >img{
-            
-        }
+        >img {}
     }
     .shape-group-top {
         background-color: #C1C1C1; //#E0E0E0;
@@ -583,11 +581,9 @@ a {
     }
 }
 
-
 /////////////////////////////////////////////////
 //END SHAPE GROUP
 ////////////////////////////////////////////////
-
 /////////////////////////////////////////////////
 //START SHAPES MANAGER
 ////////////////////////////////////////////////
@@ -1240,7 +1236,7 @@ a {
 
 ///// IMPORT OPTIONS INSIDE SHAPE MANAGER
 .import-options {
-    display:none;
+    display: none;
     position: absolute;
     bottom: 0px;
     left: 0;
@@ -1250,13 +1246,13 @@ a {
     z-index: 1;
     height: 50px;
     overflow: hidden;
-    text-align:center;
+    text-align: center;
     &.ng-hide {
         bottom: -50px;
     }
     &.ng-animate {
         transition: .25s ease-in-out all;
-    } 
+    }
     .import-to-canvas {
         padding: 14px;
         line-height: 22px;
@@ -1315,95 +1311,91 @@ a {
 /////////////////////////////////////////////////
 //END SHAPES MANAGER
 ////////////////////////////////////////////////
-
-
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Layout Header <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 #main-header {
-  z-index: 1;
-  height: 54px;
-  background: @blue-steel;
-  color: #fff;
-  position: absolute;
-  text-align: center;
-  top: 0;
-  width: 100%;
-  transition: top .3s;
-  .dd-arrow {
-    position: relative;
-    padding-right: 17px;
-    &:after {
-        display: inline-block;
-        width: 0;
-        height: 0;
-        content: '';
-        border-top: 5px solid white;
-        border-left: 4px solid transparent;
-        border-right: 4px solid transparent;
-        position: absolute;
-        top: 6px;
-        right: 0;
-    }
-  }
-  .help {
-      background: #b7b7b7;
-      width: 20px;
-      height: 20px;
-      padding-top: 2px;
-      text-align: center;
-      color: @blue-steel;
-      border-radius: 999px;
-      font-weight: bold;
-      vertical-align: middle;
-      cursor: pointer;
-      display: inline-block;
-    }
-  .left {
-    width: 33%;
-    float: left;
-    padding-left: 70px;
-    margin-top: 15px;
-    text-align: left;
-  }
-  .center {
-    //position: absolute;
-    //top: 0;
-    //left: 0;
-    //width: 100%;
-    width: 33%;
-    float: left;
+    z-index: 1;
+    height: 54px;
+    background: @blue-steel;
+    color: #fff;
+    position: absolute;
     text-align: center;
-    padding-top: 15px;
-  }
-  .right {
-      float: left;
-      width: 33%;
-      text-align: right;
-      margin-top: 10px;
-      padding-right: 10px;
-  }
-  #documents {
-      display: inline-block;
-      background: #F78D1E;
-      height: 54px;
-      width: 54px;
-      vertical-align: middle;
-      margin-right: 15px;
-      text-align: center;
-      cursor: pointer;
-      position: absolute;
-      top: 0;
-      left: 0;
-      img {
-          width: 100%;
-      }
-      span {
-        font-size: 10px;
-        letter-spacing: 1px;
+    top: 0;
+    width: 100%;
+    transition: top .3s;
+    .dd-arrow {
         position: relative;
-        top: -6px;
-      }
+        padding-right: 17px;
+        &:after {
+            display: inline-block;
+            width: 0;
+            height: 0;
+            content: '';
+            border-top: 5px solid white;
+            border-left: 4px solid transparent;
+            border-right: 4px solid transparent;
+            position: absolute;
+            top: 6px;
+            right: 0;
+        }
+    }
+    .help {
+        background: #b7b7b7;
+        width: 20px;
+        height: 20px;
+        padding-top: 2px;
+        text-align: center;
+        color: @blue-steel;
+        border-radius: 999px;
+        font-weight: bold;
+        vertical-align: middle;
+        cursor: pointer;
+        display: inline-block;
+    }
+    .left {
+        width: 33%;
+        float: left;
+        padding-left: 70px;
+        margin-top: 15px;
+        text-align: left;
+    }
+    .center {
+        //position: absolute;
+        //top: 0;
+        //left: 0;
+        //width: 100%;
+        width: 33%;
+        float: left;
+        text-align: center;
+        padding-top: 15px;
+    }
+    .right {
+        float: left;
+        width: 33%;
+        text-align: right;
+        margin-top: 10px;
+        padding-right: 10px;
+    }
+    #documents {
+        display: inline-block;
+        background: #F78D1E;
+        height: 54px;
+        width: 54px;
+        vertical-align: middle;
+        margin-right: 15px;
+        text-align: center;
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        img {
+            width: 100%;
+        }
+        span {
+            font-size: 10px;
+            letter-spacing: 1px;
+            position: relative;
+            top: -6px;
+        }
     }
     .document-name {
         color: #fff;
@@ -1411,7 +1403,7 @@ a {
         height: 20px;
     }
     .present {
-      display: none;
+        display: none;
     }
     span.line {
         display: inline-block;
@@ -1425,25 +1417,24 @@ a {
         font-size: 14px;
         vertical-align: middle;
         position: relative;
-      .lucid-context-menu {
-        top: 40px;
-        right: 30px;
-      }
+        .lucid-context-menu {
+            top: 40px;
+            right: 30px;
+        }
     }
     .page-name {
-      height: 20px;
-      vertical-align: middle;
-      padding: 0 10px;
-      span {
-        max-width: 200px;
-        display: inline-block;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
         height: 20px;
         vertical-align: middle;
-      }
-      
+        padding: 0 10px;
+        span {
+            max-width: 200px;
+            display: inline-block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 20px;
+            vertical-align: middle;
+        }
     }
     .page-count {
         display: inline-block;
@@ -1456,8 +1447,8 @@ a {
         vertical-align: middle;
         margin: -2px 10px 0;
         vertical-align: middle;
-      }
-      .master-page-compass {
+    }
+    .master-page-compass {
         vertical-align: top;
         margin-top: -5px;
         margin-left: 0;
@@ -1494,10 +1485,10 @@ a {
         vertical-align: top;
         position: fixed;
         opacity: 1;
-        &.ng-hide{
-            opacity:0;
+        &.ng-hide {
+            opacity: 0;
         }
-        &.ng-animate{
+        &.ng-animate {
             transition: .5s ease-in-out opacity; //match time of compass
         }
     }
@@ -1510,53 +1501,52 @@ a {
         margin-left: 20px;
         display: inline-block;
         position: relative;
-      .bubble {
-        background: @lucid-blue;
-        border-radius: 50%;
-        width: 16px;
-        height: 16px;
-        font-size: 14px;
-        text-align: center;
-        text-indent: 1px;
-        position: absolute;
-        bottom: -5px;
-        right: -7px;
-        transition: all .2s;
-        &.ng-hide {
-          opacity: 0;
-          transform: scale(0);
+        .bubble {
+            background: @lucid-blue;
+            border-radius: 50%;
+            width: 16px;
+            height: 16px;
+            font-size: 14px;
+            text-align: center;
+            text-indent: 1px;
+            position: absolute;
+            bottom: -5px;
+            right: -7px;
+            transition: all .2s;
+            &.ng-hide {
+                opacity: 0;
+                transform: scale(0);
+            }
         }
-      }
-      header {
-        background: @blue-steel-secondary;
-        height: 44px;
-        line-height: 44px;
-        padding: 0 15px;
-        font-weight: 600;
-        letter-spacing: .5px;
-        border-radius: 4px 4px 0 0;
-        img {
-          float: right;
-          margin-top: 12px;
+        header {
+            background: @blue-steel-secondary;
+            height: 44px;
+            line-height: 44px;
+            padding: 0 15px;
+            font-weight: 600;
+            letter-spacing: .5px;
+            border-radius: 4px 4px 0 0;
+            img {
+                float: right;
+                margin-top: 12px;
+            }
         }
-      }
-      .notifications {
-        margin-bottom: 100px;
-        border-bottom: 1px solid #D2D2D2;
-        cursor: pointer;
-      }
-      .lucid-popover-menu {
-        background: white;
-        &:after {
-          border-bottom-color: @blue-steel-secondary;
+        .notifications {
+            margin-bottom: 100px;
+            border-bottom: 1px solid #D2D2D2;
+            cursor: pointer;
         }
-      }
+        .lucid-popover-menu {
+            background: white;
+            &:after {
+                border-bottom-color: @blue-steel-secondary;
+            }
+        }
     }
 }
 
-
 #main-container {
-    z-index:0; //added so popovers stay on top
+    z-index: 0; //added so popovers stay on top
     height: ~"calc(100% - 54px)";
     width: 100%;
     display: inline-block;
@@ -1571,7 +1561,7 @@ a {
         left: 294px;
         //border: 2px solid #ccc;
         //overflow: hidden;
-        box-shadow: 0 2px 20px rgba(0,0,0,.25);
+        box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
         background: #fff;
         height: 694px;
         min-width: 904px;
@@ -1581,379 +1571,954 @@ a {
     }
 }
 
-
 #sidebar {
-  //z-index:-1;//to show modals on top;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 200px;
-  height: 100%;
-  //background: #3d4752;
-  ul {
-    li {
-      line-height: 53px;
-      color: #fff;
-      padding-left: 20px;
-      border-bottom: 1px solid rgba(255,255,255,.15);
-      cursor: pointer;
-      background: transparent;
-      transition: background .1s;
-      &:hover {
-        background: rgba(255,255,255,.15);
-      }
-      img {
-        vertical-align: middle;
-        width: 22px;
-        margin-right: 10px;
-        margin-bottom: 4px;
-      }
+    //z-index:-1;//to show modals on top;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    //background: #3d4752;
+    ul {
+        li {
+            line-height: 53px;
+            color: #fff;
+            padding-left: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, .15);
+            cursor: pointer;
+            background: transparent;
+            transition: background .1s;
+            &:hover {
+                background: rgba(255, 255, 255, .15);
+            }
+            img {
+                vertical-align: middle;
+                width: 22px;
+                margin-right: 10px;
+                margin-bottom: 4px;
+            }
+        }
     }
-  }
 }
 
 .ruler {
-  position: absolute;
-  background: #c4c4c4;
-  opacity: 1;
-  transition: opacity .3s, left .3s ease-in-out;
+    position: absolute;
+    background: #c4c4c4;
+    opacity: 1;
+    transition: opacity .3s, left .3s ease-in-out;
 }
 
 #ruler-vert {
-  top: 60px;
-  left: 250px;
-  height: 100%;
-  box-shadow: 2px 5px 10px rgba(0,0,0,.4);
-  img {
-    width: 26px;
-  }
+    top: 60px;
+    left: 250px;
+    height: 100%;
+    box-shadow: 2px 5px 10px rgba(0, 0, 0, .4);
+    img {
+        width: 26px;
+    }
 }
+
 #ruler-hor {
-  top: 60px;
-  left: 250px;
-  width: 100%;
-  box-shadow: 28px 3px 10px rgba(0,0,0,.4);
-  img {
-    height: 26px;
-  }
+    top: 60px;
+    left: 250px;
+    width: 100%;
+    box-shadow: 28px 3px 10px rgba(0, 0, 0, .4);
+    img {
+        height: 26px;
+    }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Account Drop Down <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 .parent {
-  position: relative;
-  .submenu {
-    position: absolute;
-    right: 0;
-    top: 17px;
-    background: white;
-    width: 175px;
-    margin-top: 8px;
-    padding: 6px 0;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-    z-index: 20;
-    display: none;
-    li {
-      color: #5a5a5a;
-      width: 100%;
-      padding: 6px 14px;
-      padding-left: 18px;
-      font-weight: 400;
-      margin: 0;
-      font-size: 14px;
-      transition: background .1s;
-      &:hover {
-        background: rgba(230,230,230,.5);
-      }
+    position: relative;
+    .submenu {
+        position: absolute;
+        right: 0;
+        top: 17px;
+        background: white;
+        width: 175px;
+        margin-top: 8px;
+        padding: 6px 0;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+        z-index: 20;
+        display: none;
+        li {
+            color: #5a5a5a;
+            width: 100%;
+            padding: 6px 14px;
+            padding-left: 18px;
+            font-weight: 400;
+            margin: 0;
+            font-size: 14px;
+            transition: background .1s;
+            &:hover {
+                background: rgba(230, 230, 230, .5);
+            }
+        }
     }
-  }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Left Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 #left-bar {
-	background: #c4c4c4;
-	width: 250px;
-	position: absolute;
-	left: 0;
-	top: 0;
-	height: 100%;
-	z-index: 7;
-  transition: opacity .3s, left .3s ease-in-out;
-  border-right: 1px solid @border-color;
+    background: #c4c4c4;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 7;
+    transition: opacity .3s, left .3s ease-in-out;
+    border-right: 1px solid @border-color;
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Layout <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 .left-panel-hidden {
-  #left-bar {
-    left: -250px;
-    opacity: 0;
-  }
-  #option-bar > ul {
-    margin-left: 10px;
-  }
-  #main-footer {
-    padding-left: 0;
-  }
-  #ruler-vert, #ruler-hor {
-    left: 0;
-  }
+    #left-bar {
+        left: -250px;
+        opacity: 0;
+    }
+    #option-bar > ul {
+        margin-left: 10px;
+    }
+    #main-footer {
+        padding-left: 0;
+    }
+    #ruler-vert,
+    #ruler-hor {
+        left: 0;
+    }
 }
 
 .right-panel-hidden {
-  #right-dock, #right-dock.open {
-    right: -75px;
-  }
+    #right-dock,
+    #right-dock.open {
+        right: -75px;
+    }
 }
 
 .header-hidden {
-  #main-header {
-    top: -54px;
-  }
-  #main-container {
-    margin-top: 0;
-    height: 100%;
-  }
+    #main-header {
+        top: -54px;
+    }
+    #main-container {
+        margin-top: 0;
+        height: 100%;
+    }
 }
 
 .footer-hidden {
-  #main-footer {
-    bottom: -40px;
-  }
+    #main-footer {
+        bottom: -40px;
+    }
 }
 
 .toolbar-hidden {
-  #option-bar {
-    position: relative;
-    top: -60px;
-    opacity: 0;
-  }
-  .ruler {
-    opacity: 0;
-  }
+    #option-bar {
+        position: relative;
+        top: -60px;
+        opacity: 0;
+    }
+    .ruler {
+        opacity: 0;
+    }
 }
 
-
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Option Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
 #option-bar {
-	width: 100%;
-	z-index: 5;
-  padding: 2px 0;
-	background: #e8e9ea;
-	height: 60px;
-  top: 0;
-	border-bottom: 1px solid @border-color;
-  transition: opacity .3s, top .3s;
-  .lucid-popover-menu {
-    z-index: 99;
-  }
-  .secondary-gray {
-    background-color: #e5e5e5;
-    padding: 10px;
-  }
-  > ul {
-    margin-left: 265px;
-    margin-top: 10px;
-    transition: margin .3s ease-in-out;
-    > li {
-      display: inline-block;
-      border-radius: 4px;
-      transition: all .1s;
-      vertical-align: top;
-      min-width: 32px;
-      user-select: none;
-      border-radius: 0;
-      &.small {
-        margin-right: -4px;
-        border-radius: 4px 0 0 4px;
-      }
+    width: 100%;
+    z-index: 5;
+    padding: 2px 0;
+    background: #e8e9ea;
+    height: 60px;
+    top: 0;
+    border-bottom: 1px solid @border-color;
+    transition: opacity .3s, top .3s;
+    .lucid-popover-menu {
+        z-index: 99;
     }
-    .line {
-      display: inline-block;
-      width: 1px;
-      background: #ccc;
-      height: 30px;
-      margin: 0 5px 0 10px;
+    .secondary-gray {
+        background-color: #e5e5e5;
+        padding: 10px;
     }
-  }
+    > ul {
+        margin-left: 265px;
+        margin-top: 10px;
+        transition: margin .3s ease-in-out;
+        > li {
+            display: inline-block;
+            border-radius: 4px;
+            transition: all .1s;
+            vertical-align: top;
+            min-width: 32px;
+            user-select: none;
+            border-radius: 0;
+            &.small {
+                margin-right: -4px;
+                border-radius: 4px 0 0 4px;
+            }
+        }
+        .line {
+            display: inline-block;
+            width: 1px;
+            background: #ccc;
+            height: 30px;
+            margin: 0 5px 0 10px;
+        }
+    }
 }
 
 #full-screen-toggle {
-  float: right;
-  cursor: pointer;
-  margin-right: 10px;
-  margin-top: 5px;
-  img {
-    width: 22px;
-  }
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+    img {
+        width: 22px;
+    }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page List <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-.page-drawer{
-  .lucid-pages-wrapper{
-      margin-top:0px;
+.page-drawer {
+    .lucid-pages-wrapper {
+        margin-top: 0px;
     }
-  &.ng-hide{
-    .lucid-pages-wrapper{
-      margin-top:-198px;
-    }
-  }
-  &.ng-animate{
-    .lucid-pages-wrapper{
-      transition:.5s ease-in-out !important;
-    }
-    transition:.5s ease-in-out!important;
-  }
-}
-#page-list {
-  overflow:hidden;
-	position: relative;
-	top: 54px;
-}
-
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Right Doc <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-
-#right-dock {
-	position: absolute;
-	top: 60px;
-	right: 0;
-	width: 70px;
-  height: 100%;
-	background: #E0E0E0;
-	box-shadow: 0px 2px 5px rgba(0,0,0, .2);
-	text-align: center;
-	z-index: 7;
-  transition: right .3s ease-out, opacity .3s;
-  padding-top: 10px;
-  border-left: 1px solid #d2d2d2;
-	.icon-wrapper {
-		text-transform: uppercase;
-		color: #77818C;
-		font-size: 10px;
-		cursor: pointer;
-		transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
-		padding: 14px 0;
-    position: relative;
-    margin-left: -1px;
-    transform:scale(1);
-    margin: 0;
     &.ng-hide {
-     transform: scale(0);
-      margin: -32px 0;
+        .lucid-pages-wrapper {
+            margin-top: -198px;
+        }
     }
-    .orange {
-      color: #EB7D30;
+    &.ng-animate {
+        .lucid-pages-wrapper {
+            transition: .5s ease-in-out !important;
+        }
+        transition:.5s ease-in-out!important;
     }
-    .tooltip {
-      background: @orange;
-      color: white;
-      border-radius: 4px;
-      box-shadow: 0 2px 15px fade(@orange, 70%);
-      position: absolute;
-      right: 75px;
-      top: 10px;
-      width: 150px;
-      text-align: left;
-      font-size: 14px;
-      text-transform: none;
-      padding: 10px;
-      transition: all .2s;
-      opacity: 1;
-      transform: scale(1);
-      &:after {
-        content: '';
-        width: 0;
-        height: 0;
-        border-left: 8px solid @orange;
-        border-top: 8px solid transparent;
-        border-bottom: 8px solid transparent;
+}
+
+#page-list {
+    overflow: hidden;
+    position: relative;
+    top: 54px;
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page List <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+@page-card-width: 170px;
+.lucid-pages {
+    .lucid-pages-wrapper {
+        padding: 20px;
+        background: #C4C4C4;
+        display: block;
+        >ul>li,
+        .add-new-page {
+            cursor: pointer;
+            float: left;
+            cursor: pointer;
+            text-align: center;
+            width: @page-card-width;
+            min-height: 152px;
+            vertical-align: top;
+            border-radius: 4px;
+            transition: background .2s;
+            position: relative;
+            //z-index: 1;
+            &.sortable-ghost {
+                opacity: .5 !important;
+            }
+            &.ng-enter {
+                animation: PageAnimation .4s ease-out;
+                h4 {
+                    transform: translateX(-40px);
+                }
+            }
+            &.ng-enter-active {
+                animation: PageAnimation .4s ease-out;
+                h4 {
+                    transform: translateX(0px);
+                }
+            }
+            &.ng-leave-active,
+            .ng-leave {
+                animation: PageAnimation .4s ease-in-out;
+                animation-direction: reverse;
+                h4 {
+                    transform: translateX(-40px);
+                }
+            }
+            &.ng-animate {
+                h4 {
+                    transition: .4s ease-in-out all;
+                }
+            }
+            @keyframes PageAnimation {
+                0% {
+                    margin-right: -(@page-card-width);
+                    opacity: 0;
+                }
+                40% {
+                    opacity: 0;
+                }
+                100% {
+                    margin-right: 0;
+                    opacity: 1;
+                }
+            }
+        }
+        .plus-container {
+            width: 150px;
+            height: 100px;
+            margin: 20px 10px;
+            background: none;
+            border: 2px dashed #999;
+            box-shadow: none;
+            background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 30%;
+            -webkit-transition: background-size 0.2s;
+            transition: background-size 0.2s;
+        }
+        &:after {
+            content: "";
+            display: block;
+            height: 0;
+            clear: both;
+        }
+    }
+}
+
+.page-drawer {
+    .lucid-pages-wrapper {
+        margin-top: 0px;
+    }
+    &.ng-hide {
+        .lucid-pages-wrapper {
+            margin-top: -198px;
+        }
+    }
+    &.ng-animate {
+        .lucid-pages-wrapper {
+            transition: .5s ease-in-out !important;
+        }
+        transition:.5s ease-in-out!important;
+    }
+}
+
+#page-list {
+    overflow: hidden;
+    position: relative;
+    top: 54px;
+}
+
+.pages {
+    height: 200px;
+    >li {
+        float: left;
+    }
+}
+
+.lucid-page {
+    //float: left;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    width: 170px;
+    height: 158px;
+    vertical-align: top;
+    border-radius: 4px;
+    transition: background .2s;
+    &.current-page {
+        background: #AFB7BF;
+        .master-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
+            background-size: 22px;
+        }
+        h4 {
+            color: #fff;
+        }
+    }
+    .center-image {
+        display: table;
+        height: 135px;
+        .center-image-container {
+            display: table-cell;
+            vertical-align: middle;
+            width: 170px;
+        }
+    }
+    .image-container {
+        padding: 10px;
+        position: relative;
+        display: inline-block;
+    }
+    .page-thumb-wrapper {
+        position: relative;
+        overflow: hidden;
+        width: 150px;
+        max-height: 120px;
+        background: #fff;
+        border-radius: 1px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        transition: top 0.2s, box-shadow 0.2s;
+        margin: 0 auto;
+    }
+    &:hover {
+        .page-thumb-wrapper {
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        .page-x {
+            opacity: 1;
+        }
+    }
+    .blank-page {
+        height: 100px;
+    }
+    .page-x {
+        width: 18px;
+        height: 18px;
+        background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
+        background-position: center center;
         position: absolute;
-        top: 9px;
-        right: -8px;
-      }
-      &.ng-hide {
+        top: 3px;
+        right: 2px;
         opacity: 0;
-        transform: scale(0);
-      }
+        -webkit-transition: opacity .2s;
+        transition: opacity .2s;
     }
-		&:first-of-type {
-			padding-top: 15px;
-		}
-		&:hover, &.active {
-			color: @blue-steel;
-		}
-    &.active {
-      background: #EBECED;
-      border-radius: 4px 0 0 4px;
-      box-shadow: 0 0px 7px rgba(0,0,0,.15);
+    .master-page {
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        right: 0px;
+        height: 32px;
+        background: rgba(41, 170, 225, .3);
+        .master-applied-icon {
+            background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-2bluesteel-22px.svg) no-repeat right top;
+            position: absolute;
+            top: 5px;
+            left: 10px;
+            width: 22px;
+            height: 22px;
+            background-size: 22px;
+        }
+        >span {
+            color: @blue-steel-secondary;
+            line-height: 32px;
+            font-size: 14px;
+            font-weight: 300;
+        }
+        top:0;
+        &.ng-hide {
+            top: -32px;
+        }
+        #right-dock {
+            position: absolute;
+            top: 60px;
+            right: 0;
+            width: 70px;
+            height: 100%;
+            background: #E0E0E0;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+            text-align: center;
+            z-index: 7;
+            transition: right .3s ease-out, opacity .3s;
+            padding-top: 10px;
+            border-left: 1px solid #d2d2d2;
+            .icon-wrapper {
+                text-transform: uppercase;
+                color: #77818C;
+                font-size: 10px;
+                cursor: pointer;
+                transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
+                padding: 14px 0;
+                position: relative;
+                margin-left: -1px;
+                transform: scale(1);
+                margin: 0;
+                .orange {
+                    color: #EB7D30;
+                }
+                &:first-of-type {
+                    padding-top: 15px;
+                }
+                &:hover,
+                &.active {
+                    color: @blue-steel;
+                }
+                &.active {
+                    background: #EBECED;
+                    border-radius: 4px 0 0 4px;
+                    box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
+                }
+                &.ng-animate {
+                    .tooltip {
+                        // use this to delay the tooltip coming in
+                        transition: opacity .5s .5s;
+                    }
+                }
+                &.ng-hide {
+                    transform: scale(0);
+                    margin: -32px 0;
+                    .tooltip {
+                        opacity: 0;
+                    }
+                }
+                .tooltip {
+                    background: @orange;
+                    color: white;
+                    border-radius: 4px;
+                    box-shadow: 0 2px 15px fade(@orange, 70%);
+                    position: absolute;
+                    right: 75px;
+                    top: 10px;
+                    width: 150px;
+                    text-align: left;
+                    font-size: 14px;
+                    text-transform: none;
+                    padding: 10px;
+                    transition: opacity .2s;
+                    opacity: 1;
+                    transform: scale(1);
+                    &:after {
+                        // the arrow
+                        content: '';
+                        width: 0;
+                        height: 0;
+                        border-left: 8px solid @orange;
+                        border-top: 8px solid transparent;
+                        border-bottom: 8px solid transparent;
+                        position: absolute;
+                        top: 9px;
+                        right: -8px;
+                    }
+                    &.ng-animate {
+                        transition: opacity .2s;
+                    }
+                    &.ng-hide {
+                        // for hiding the tooltip on click
+                        opacity: 0;
+                    }
+                }
+            }
+            .icon {
+                width: 22px;
+                height: 26px;
+                position: relative;
+                margin: auto;
+            }
+            .right-panel {
+                position: absolute;
+                top: 0;
+                right: -250px;
+                width: 250px;
+                height: 100%;
+                background: #EBECED;
+                .container {
+                    height: ~"calc(100% - 58px)";
+                }
+                header {
+                    background: #596470;
+                    padding: 10px 15px;
+                    color: #fff;
+                    text-align: left;
+                    font-size: 14px;
+                    position: relative;
+                    img {
+                        width: 22px;
+                        position: absolute;
+                        right: 10px;
+                        top: 6px;
+                        cursor: pointer;
+                    }
+                }
+                footer {
+                    position: absolute;
+                    bottom: 0;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+            &.open {
+                right: 250px;
+                .right-panel {
+                    .container {
+                        //display: none;
+                        position: absolute;
+                        width: 100%;
+                    }
+                }
+            }
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
+        }
     }
-	}
-	.icon {
-		width: 22px;
-    height: 26px;
-		position: relative;
-		margin: auto;
-	}
-  .right-panel {
+    h4 {
+        display: inline-block;
+        margin: 0 auto 10px;
+        max-width: 150px;
+        font-size: 12px;
+        line-height: 1.4;
+        color: #828282;
+        -webkit-transition: color .1s;
+        transition: color .1s;
+        height: 16px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        &:hover {
+            color: #5a5a5a;
+        }
+    }
+    .rename-page-modal-content {
+        padding: 15px;
+        text-align: left;
+        span {
+            font-size: 14px;
+        }
+        input {
+            margin-top: 10px;
+            width: 100%;
+        }
+    }
+}
+
+//////////////////////////////
+// START CANVAS
+/////////////////////////////
+.lucid-chart-block {
     position: absolute;
-    top: 0;
-    right: -250px;
-    width: 250px;
-    height: 100%;
-    background: #EBECED;
-    .container {
-      height: ~"calc(100% - 58px)";
-    }
-    header {
-      background: #596470;
-      padding: 10px 15px;
-      color: #fff;
-      text-align: left;
-      font-size: 14px;
-      position: relative;
-      img {
-        width: 22px;
-        position: absolute;
-        right: 10px;
-        top: 6px;
-        cursor: pointer;
-      }
-    }
-    footer {
-      position: absolute;
-      bottom: 0;
-    }
-    img {
-      width: 100%;
-    }
-  }
-  &.open {
-    right: 250px;
-    .right-panel {
-      .container {
-        //display: none;
-        position: absolute;
+    border: 1px solid;
+    //display: table;
+    box-sizing: border-box;
+    cursor: pointer;
+    //z-index:1;
+    .lucid-svg-background {
         width: 100%;
-      }
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+        //z-index:0;
+        background: transparent;
+        border: none;
     }
-  }
+    .lucid-outer-block-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+    .lucid-inner-block {
+        display: table-cell;
+    }
+    img.lucid-block-comment {
+        width: 25px;
+        position: absolute;
+        top: -5px;
+        right: -40px;
+        margin-left: 0;
+        opacity: 1;
+        z-index: 1;
+        transition: all ease-in-out .1s;
+        &.ng-hide {
+            right: -35px;
+            opacity: 0;
+        }
+    }
+    .lucid-selected-block {
+        position: absolute;
+        top: -8px;
+        left: -8px;
+        bottom: -8px;
+        right: -8px;
+        border: #F98D00 1px solid;
+        z-index: 0;
+        .lucid-corner-drag {
+            border: #F98D00 1px solid;
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background-color: rgba(249, 141, 0, .5);
+            &.lucid-top-left {
+                top: -6px;
+                left: -6px;
+            }
+            &.lucid-top-right {
+                top: -6px;
+                right: -6px;
+            }
+            &.lucid-bottom-right {
+                bottom: -6px;
+                right: -6px;
+            }
+            &.lucid-bottom-left {
+                bottom: -6px;
+                left: -6px;
+            }
+        }
+    }
+    &.ng-enter {
+        transform: scaleX(.25) scaleY(.667);
+    }
+    &.ng-enter-active {
+        transform: scale(1);
+    }
+    &.ng-animate {
+        transition: .25s;
+    }
+}
+
+// presentation slides
+.lucid-slide {
+    position: absolute;
+    color: orange;
+    border: 1px solid;
+    z-index: 2;
+    opacity: 1;
+    transition: all ease-in-out .1s;
+    &.ng-hide {
+        opacity: 0;
+    }
+    .lucid-slide-corner {
+        width: 8px;
+        height: 8px;
+        border: 2px solid;
+        position: absolute;
+    }
+    .lucid-top-left {
+        border-bottom: none;
+        border-right: none;
+        left: 0;
+        top: 0;
+    }
+    .lucid-top-right {
+        top: 0;
+        right: 0;
+        border-bottom: none;
+        border-left: none;
+    }
+    .lucid-bottom-right {
+        bottom: 0;
+        right: 0;
+        border-top: none;
+        border-left: none;
+    }
+    .lucid-bottom-left {
+        bottom: 0;
+        left: 0;
+        border-top: none;
+        border-right: none;
+    }
+}
+
+//end presentation slides
+//////////////////////////////
+// END CANVAS
+//////////////////////////////
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Right Doc <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+#right-dock {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 70px;
+    height: 100%;
+    background: #E0E0E0;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
+    text-align: center;
+    z-index: 7;
+    transition: right .3s ease-out, opacity .3s;
+    padding-top: 10px;
+    border-left: 1px solid #d2d2d2;
+    .icon-wrapper {
+        text-transform: uppercase;
+        color: #77818C;
+        font-size: 10px;
+        cursor: pointer;
+        transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
+        padding: 14px 0;
+        position: relative;
+        margin-left: -1px;
+        transform: scale(1);
+        margin: 0;
+        .orange {
+            color: #EB7D30;
+        }
+        &:first-of-type {
+            padding-top: 15px;
+        }
+        &:hover,
+        &.active {
+            color: @blue-steel;
+        }
+        &.active {
+            background: #EBECED;
+            border-radius: 4px 0 0 4px;
+            box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
+        }
+        &.ng-animate {
+            .tooltip {
+                // use this to delay the tooltip coming in
+                transition: opacity .5s .5s;
+            }
+        }
+        &.ng-hide {
+            transform: scale(0);
+            margin: -32px 0;
+            .tooltip {
+                opacity: 0;
+            }
+        }
+        .tooltip {
+            background: @orange;
+            color: white;
+            border-radius: 4px;
+            box-shadow: 0 2px 15px fade(@orange, 70%);
+            position: absolute;
+            right: 75px;
+            top: 10px;
+            width: 150px;
+            text-align: left;
+            font-size: 14px;
+            text-transform: none;
+            padding: 10px;
+            transition: opacity .2s;
+            opacity: 1;
+            transform: scale(1);
+            &:after {
+                // the arrow
+                content: '';
+                width: 0;
+                height: 0;
+                border-left: 8px solid @orange;
+                border-top: 8px solid transparent;
+                border-bottom: 8px solid transparent;
+                position: absolute;
+                top: 9px;
+                right: -8px;
+            }
+            &.ng-animate {
+                transition: opacity .2s;
+            }
+            &.ng-hide {
+                // for hiding the tooltip on click
+                opacity: 0;
+            }
+        }
+    }
+    .icon {
+        width: 22px;
+        height: 26px;
+        position: relative;
+        margin: auto;
+    }
+    .right-panel {
+        position: absolute;
+        top: 0;
+        right: -250px;
+        width: 250px;
+        height: 100%;
+        background: #EBECED;
+        .container {
+            height: ~"calc(100% - 58px)";
+            opacity: 1;
+            &.ng-animate {
+              transition: .25s ease-in-out all; // just used to delay hiding panel
+            }
+        }
+        header {
+            background: #596470;
+            padding: 10px 15px;
+            color: #fff;
+            text-align: left;
+            font-size: 14px;
+            position: relative;
+            img {
+                width: 22px;
+                position: absolute;
+                right: 10px;
+                top: 6px;
+                cursor: pointer;
+            }
+        }
+        footer {
+            position: absolute;
+            bottom: 0;
+        }
+        img {
+            width: 100%;
+        }
+    }
+    &.open {
+        right: 250px;
+        .right-panel {
+            .container {
+                //display: none;
+                position: absolute;
+                width: 100%;
+                opacity: 1;
+                &.ng-hide {
+                    opacity: 0;
+                }
+                &.ng-animate {
+                    transition: 0s ease-in-out all;
+                }
+            }
+        }
+    }
+}
+
+// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER / PAGE SETTINGS DRAWER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+.settings-drawer {
+    position: absolute;
+    transition: all .3s ease-in-out;
+    bottom: 0;
+    left: @manage-shapes-panel-width;
+    width: ~"calc(100vw - @{manage-shapes-panel-width})";
+    z-index: 2;
+    .settings-drawer-top {
+        background: @blue-steel;
+        color: #fff;
+        height: 32px;
+        position: relative;
+        .lucid-button-icon {
+            background: transparent;
+            left: 0;
+            position: absolute;
+            top: 2px;
+            color: #fff;
+            .lucid-icon-14 {
+                width: 18px;
+                height: 18px;
+                margin-top: 0;
+            }
+        }
+        .chat-img {
+            height: 32px;
+            position: absolute;
+            right: 70px;
+            top: 0;
+        }
+    }
+    .settings-drawer-content {
+        text-align: left;
+        background: #EEEEEE;
+        margin-bottom: 0;
+        &.ng-hide {
+            margin-bottom: -144px;
+        }
+        &.ng-animate {
+            transition: all .35s ease-in-out;
+        }
+    }
 }
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Clear Fix <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-
-.settings-drawer {
-  .settings-drawer-top {
-    height: 40px;
-    padding-top: 20px;
-  }
-}
-
 .group:after {
-  content: "";
-  display: table;
-  clear: both;
+    content: "";
+    display: table;
+    clear: both;
 }

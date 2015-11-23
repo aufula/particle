@@ -4,21 +4,17 @@ angular.module("lucidButtconPopover", ['appConfig'])
             restrict: 'E',
             scope: {
                 icon: '@',
-                width: '@'
+                width: '@',
+                showpopover: '='
             },
             replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'buttcon-popover/lucid-buttcon-popover.html',
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopover = false;
-                        //console.log("hide popup");
-                        scope.$apply();
-                    }
-                });
+            controller: function($scope){
+                $scope.hide = function(){
+                    showpopover = false;
+                    console.log('hide from controller');
+                }
             }
         };
-    }); 
+    })

@@ -293,46 +293,6 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "color-picker",
                 "description": "Copy and paste component as is.",
 
-            }, {
-                "title": "Themes",
-                "componentid": "themes",
-                "description": "Copy and paste component as is.",
-
-            }, {
-                "title": "Text Alignment",
-                "componentid": "text-alignment",
-                "description": "this component .......",
-
-            }, {
-                "title": "Path Style",
-                "componentid": "path-style",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
-                "title": "Border Options",
-                "componentid": "border-options",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
-                "title": "Text Options",
-                "componentid": "text-options",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
-                "title": "Line Options",
-                "componentid": "line-options",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
-                "title": "Shadow Options",
-                "componentid": "shadow-options",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
-            }, {
-                "title": "Saved Styles",
-                "componentid": "saved-styles",
-                "description": "this component is used in the optionbar, the page color, etc.",
-
             }]
         }];
         return service;

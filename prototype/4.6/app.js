@@ -45,8 +45,10 @@ angular.module('particleApp', ['lucidComponents'])
 
             if ($scope.openTab === "comments") { // Turn on frames and comments
                 $rootScope.showComments = true;
+                $rootScope.showSlides = false;
             } else if ($scope.openTab === "present") {
                 $rootScope.showSlides = true;
+                $rootScope.showComments = false;
             } else {
                 $rootScope.showComments = false;
                 $rootScope.showSlides = false;
@@ -131,30 +133,34 @@ angular.module('particleApp', ['lucidComponents'])
                 if (!page.master) {
                     $scope.applyMaster(page);
                 }
-
             });
 
         };
     })
     .controller('linePathCtrl', function($scope) {
-        var lucidPath = new SVGMorpheus('#lucid-path-style');
+
+        angular.element(document).ready(function() {
+            $scope.lucidPath = new SVGMorpheus('#lucid-path-style');
+        });
+
+
         $scope.changePath = function(path) {
             if (path === 'straight') {
-                lucidPath.to('lucid-straight-path', {
+                $scope.lucidPath.to('lucid-straight-path', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (path === 'curved') {
-                lucidPath.to('lucid-curve-path', {
+                $scope.lucidPath.to('lucid-curve-path', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (path === 'angle') {
-                lucidPath.to('lucid-angle-path', {
+                $scope.lucidPath.to('lucid-angle-path', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
@@ -176,8 +182,9 @@ angular.module('particleApp', ['lucidComponents'])
 
     })
     .controller('textAlignmentCtrl', function($scope) {
-
-        var lucidPath = new SVGMorpheus('#lucid-text-align');
+        angular.element(document).ready(function() {
+            $scope.lucidPath = new SVGMorpheus('#lucid-text-align');
+        });
         //set default state if no object is selected
         if (!$scope.selected) {
             $scope.selected = {};
@@ -191,7 +198,7 @@ angular.module('particleApp', ['lucidComponents'])
             $scope.selected.text.verticalalignment = vertical;
             $scope.selected.text.horizontalalignment = horizontal;
             if (vertical === 'top' && horizontal === 'left') {
-                lucidPath.to('lucid-text-top-left', {
+                $scope.lucidPath.to('lucid-text-top-left', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
@@ -199,14 +206,14 @@ angular.module('particleApp', ['lucidComponents'])
 
             }
             if (vertical === 'top' && horizontal === 'center') {
-                lucidPath.to('lucid-text-top-center', {
+                $scope.lucidPath.to('lucid-text-top-center', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (vertical === 'top' && horizontal === 'right') {
-                lucidPath.to('lucid-text-top-right', {
+                $scope.lucidPath.to('lucid-text-top-right', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
@@ -214,21 +221,21 @@ angular.module('particleApp', ['lucidComponents'])
             }
             //middle
             if (vertical === 'middle' && horizontal === 'left') {
-                lucidPath.to('lucid-text-middle-left', {
+                $scope.lucidPath.to('lucid-text-middle-left', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (vertical === 'middle' && horizontal === 'center') {
-                lucidPath.to('lucid-text-middle-center', {
+                $scope.lucidPath.to('lucid-text-middle-center', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (vertical === 'middle' && horizontal === 'right') {
-                lucidPath.to('lucid-text-middle-right', {
+                $scope.lucidPath.to('lucid-text-middle-right', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
@@ -238,21 +245,21 @@ angular.module('particleApp', ['lucidComponents'])
             //bottom
 
             if (vertical === 'bottom' && horizontal === 'left') {
-                lucidPath.to('lucid-text-bottom-left', {
+                $scope.lucidPath.to('lucid-text-bottom-left', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (vertical === 'bottom' && horizontal === 'center') {
-                lucidPath.to('lucid-text-bottom-center', {
+                $scope.lucidPath.to('lucid-text-bottom-center', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
                 });
             }
             if (vertical === 'bottom' && horizontal === 'right') {
-                lucidPath.to('lucid-text-bottom-right', {
+                $scope.lucidPath.to('lucid-text-bottom-right', {
                     duration: 400,
                     easing: 'quad-out',
                     rotation: 'none'
@@ -310,10 +317,11 @@ angular.module('particleApp', ['lucidComponents'])
         }];
     })
     .controller('shapeGroupCtrl', function($scope) {
-        $scope.onDropComplete = function(data) {
-            //e.stopPropagation(); is there a way to stop this from happening on canvas? (shape manager)
+
+        $scope.onDropComplete = function(data, event, shapegroup) {
+            console.log('dropped in saved shapes', data, event, shapegroup);
             if (data) {
-                var index = $scope.shapes.indexOf(data);
+                var index = shapegroup.shapes.indexOf(data);
                 //console.log('shape', index);
 
                 if (index === -1) {
@@ -327,7 +335,7 @@ angular.module('particleApp', ['lucidComponents'])
                         //this is here so that we can save any shape from the library for reuse.
                         newblock.svg = '<svg width="30px" height="30px" viewBox="0 0 30 30" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(1, 2)" stroke="' + data.swatch.border + '" fill="' + data.swatch.fill + '"><rect stroke-width="2" x="0" y="0" width="28" height="26" rx="2"></rect><text font-family="Baskerville" font-size="18" font-weight="526" fill="' + data.swatch.text + '"><tspan x="7" y="19" stroke-width="0">T</tspan></text></g></svg>';
                     }
-                    $scope.shapes.push(newblock);
+                    shapegroup.shapes.push(newblock);
                     //console.log("shape saved to shapegroup", newblock);
                 }
             }
@@ -341,7 +349,7 @@ angular.module('particleApp', ['lucidComponents'])
         }
 
         $scope.dragoverCallback = function(event, index) {
-            //$scope.logListEvent('dragged over', event, index, external, type);
+            $scope.logListEvent('dragged inside shapegroup ctrl', event, index, external, type);
             return index; // < 10;
         };
 
@@ -359,16 +367,16 @@ angular.module('particleApp', ['lucidComponents'])
             //return item;
         };
 
-        // $scope.logEvent = function(message, event) {
-        //     console.log(message, '(triggered by the following', event.type, 'event)');
-        //     console.log(event);
-        // };
+        $scope.logEvent = function(message, event) {
+            console.log(message, '(triggered by the following in shapeGroupCtrl', event.type, 'event)');
+            console.log(event);
+        };
 
-        // $scope.logListEvent = function(action, event, index, external, type) {
-        //     var message = external ? 'External ' : '';
-        //     message += type + ' element is ' + action + ' position ' + index;
-        //     $scope.logEvent(message, event);
-        // };
+        $scope.logListEvent = function(action, event, index, external, type) {
+            var message = external ? 'External ' : '';
+            message += type + ' element is ' + action + ' position ' + index;
+            $scope.logEvent(message, event);
+        };
     })
     .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
 
@@ -477,7 +485,7 @@ angular.module('particleApp', ['lucidComponents'])
         };
 
         $scope.logEvent = function(message, event) {
-            console.log(message, '(triggered by the following', event.type, 'event)');
+            console.log(message, '(manager triggered by the following', event.type, 'event)');
             console.log(event);
         };
 
@@ -490,7 +498,23 @@ angular.module('particleApp', ['lucidComponents'])
 
     })
     .controller('canvasCtrl', function($scope, $rootScope, pagesData) {
-        $rootScope.currentPage = pagesData[0]; /// this should be in pages once pages are built out
+
+        $scope.lucidSlides = [{
+            "x": 368,
+            "y": 100,
+            "height": 120,
+            "width": 160
+        }, {
+            "x": 60,
+            "y": 210,
+            "height": 300,
+            "width": 400
+        }, {
+            "x": 480,
+            "y": 300,
+            "height": 300,
+            "width": 400
+        }];
         $scope.blocks = $rootScope.currentPage.blocks;
 
         $scope.dragoverCallback = function(event, index, external, type) {
@@ -511,6 +535,7 @@ angular.module('particleApp', ['lucidComponents'])
             return item;
         };
         $scope.onDropComplete = function(data, event) {
+            console.log('dropped to canvas', data);
             if (data) {
                 var index = $rootScope.currentPage.blocks.indexOf(data);
                 //console.log('shape', index);
@@ -546,5 +571,14 @@ angular.module('particleApp', ['lucidComponents'])
             // }
             //console.log(data.metrics.x, data.metrics.y);
             //console.log('drag success');
+        };
+    })
+    .controller('SinglePageCtrl', function($scope) {
+        if (!$scope.selected) {
+            $scope.selected = 1;
+        }
+        $scope.renameData = {};
+        $scope.renamePage = function(rename) {
+            $scope.page.name = rename;
         };
     });

@@ -5,7 +5,7 @@
     <script src="../../components/1.0/components-min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-init="showSidebar=false" ng-click="showSidebar=false">
+<body ng-init="showMegamenu=false" ng-click="showMegamenu=false">
   <div id="sidebar" class="reversed-text">
     <ul>
       <li style="background-color: #77818C;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
@@ -20,7 +20,7 @@
       <li>Quit</li>
     </ul>
   </div>
-  <div id="wrapper" ng-class="{'withsidebar' : showSidebar}">
+  <div id="wrapper" ng-class="{'with-mega-menu' : showMegamenu}">
     <div id="main-header">
       <div class="left"><a href="#" class="document-name reversed-text">Company Org Chart</a></div>
       <div class="center">
@@ -49,7 +49,7 @@
                 </div>
                 <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
             </div>
-      <div id="documents" ng-click="showSidebar=!showSidebar; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
+      <div id="documents" ng-click="showMegamenu=!showMegamenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
       <div class="right">
         <div class="help">?</div>
         <div class="bell" ng-init="showAlert=true" ng-click="showNotifications = !showNotifications; showAlert=false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg"/>
@@ -73,7 +73,75 @@
     <div id="page-list">
       <div class="page-drawer lucid-animate" ng-show="showPages">
         <!-- start page drawer -->
-        <lucid-pages showpages="showPages"></lucid-pages>
+        <!-- start page drawer -->
+        <div class="lucid-pages" ng-controller="PagesCtrl">
+          <div class="lucid-pages-wrapper">
+              <ul ng-sortable="sortConfig">
+                  <li ng-repeat="page in $root.pages track by page.id" class="lucid-animate" ng-controller="SinglePageCtrl">
+                      <div>
+    <div class="lucid-page"
+        lucid-context-menu
+        data-target="page-context-{{ page.id }}"
+        ng-class="{'current-page': $root.currentPage == page}"
+        ng-click="$root.currentPage = page"
+        ng-dblclick="$root.currentPage = page; $parent.$parent.showpages = false">
+        <div class="center-image">
+            <div class="center-image-container">
+                <div class="image-container">
+                    <div class="page-thumb-wrapper">
+                        <img class="page-thumb" ng-src="{{page.thumb}}" ng-if="page.thumb">
+                        <div class="blank-page" ng-if="!page.thumb"></div>
+                        <div class="master-page lucid-animate" ng-show="page.master">
+                            <div class="master-applied-icon"></div>
+                            <span>MASTER PAGE</span>
+                        </div> 
+                        <div class="master-page lucid-animate" ng-show="page.masterapplied">
+                            <span>MASTER APPLIED</span>
+                        </div>   
+                    </div>
+                    <div class="page-x" ng-click="$parent.deletePage(page, $parent.$index)"></div>
+                </div>
+            </div>
+        </div>
+        <span>
+            <h4 ng-click="renameModal=true" class="lucid-animate">{{page.name}}</h4>
+        </span>
+        <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel" confirm-function="renamePage(renameData.name)">
+            <div class="rename-page-modal-content">
+                <span>Enter a new page title:</span>
+                <input type="text" ng-init="renameData.name = page.name" ng-model="renameData.name">
+            </div>
+        </lucid-modal>
+        <!-- Right Click Context Menu -->
+        <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
+            <ul>
+                <li ng-click="renameModal=true">Rename</li>
+                <li ng-click="$parent.duplicatePage(page, $parent.$index)">Duplicate</li>
+                <li ng-click="$parent.deletePage(page, $parent.$index)">Delete</li>
+                <li class="context-divider"></li>
+                <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Layer</li>
+                <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
+                <li ng-show="page.master" ng-click="$parent.applyMasterAll()">Apply Master to All</li>
+                <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Layer
+                    <ul>
+                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                            {{master.name}}
+                        </li>
+                    </ul>
+                </li>
+                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+                  </li>
+              </ul>
+              <div class="add-new-page lucid-animate" draggable="false">
+                  <div class="plus-container" ng-click="addPage()"></div>
+              </div>
+          </div>
+      </div>
         <!-- end page drawer -->
       </div>
     </div>
@@ -83,7 +151,7 @@
       <div id="lucid-canvas" 
         class="lucid-canvas" 
         ng-drop="true" 
-        ng-drop-success="onDropComplete($data,$event)" 
+        ng-drop-success="dropToCanvas($data,$event)" 
         style="background-color:{{$root.currentPage.canvasBG}};" 
         ng-controller="canvasCtrl">
         <div class="lucid-canvas-layer" ng-click="editThisBlock(defaultBlock);"></div>
@@ -152,8 +220,17 @@
             </li>
             <!-- END CANVAS BLOCK/SHAPE -->
         </ul>
-        <lucid-slides ng-show="$root.showSlides"></lucid-slides>
-        <lucid-context-menu></lucid-context-menu>
+        <!-- START CANVAS SLIDES / PRESENT FRAMES -->
+        <div class="lucid-slide" 
+             ng-repeat="slide in lucidSlides" 
+             style="width:{{slide.width}}px; height:{{slide.height}}px; left:{{slide.x}}px; top:{{slide.y}}px;"
+             ng-show="$root.showSlides">
+            <div class="lucid-slide-corner lucid-top-left"></div>
+            <div class="lucid-slide-corner lucid-top-right"></div>
+            <div class="lucid-slide-corner lucid-bottom-right"></div>
+            <div class="lucid-slide-corner lucid-bottom-left"></div>
+        </div>
+        <!-- END CANVAS SLIDES / PRESENT FRAMES -->
       </div>
       <!-- END CANVAS -->
       </div>
@@ -234,63 +311,58 @@
                                   dnd-type="'containerType'"
                                   dnd-effect-allowed="move"
                                   dnd-moved="pinnedgroups.splice($index, 1)"
-                                  class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
+                                  class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate"
+                                  ng-controller="shapeGroupCtrl">
                                   <!-- START LEFT SHAPE GROUP -->
-                                  <div class="lucid-shape-group" 
-                                    ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }"
-                                    ng-controller="shapeGroupCtrl">
+                                  <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
-                                        <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                            <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
-                                                <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
-                                            </g>
-                                        </svg>
+                                      <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                        <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                                            <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+                                        </g>
+                                      </svg>
                                     </div>
                                     <div class="shape-group-top">
-                                        <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                        <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="shapegroup.pinned = false">
+                                      <span class="shape-group-name"> {{shapegroup.groupname}}</span>
+                                      <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="shapegroup.pinned = false">
                                     </div>
                                     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
-                                        <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 1">
-                                            <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
-                                            <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
-                                        </div>
-                                        <ul dnd-list="shapegroup.shapes"
-                                            dnd-allowed-types="[shapegroup.custom]"
-                                            dnd-horizontal-list="true"
-                                            dnd-external-sources="true"
-                                            dnd-dragover="dragoverCallback(event, index, external, type)"
-                                            dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
-                                            dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-                                            class="shapes-wrapper"
-                                            ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
+                                      <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 1">
+                                          <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
+                                          <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
+                                      </div>
+                                      <ul dnd-list="shapegroup.shapes"
+                                          dnd-allowed-types="[shapegroup.custom]"
+                                          dnd-horizontal-list="true"
+                                          dnd-external-sources="true"
+                                          dnd-dragover="dragoverCallback(event, index, external, type)"
+                                          dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
+                                          dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
+                                          class="shapes-wrapper"
+                                          ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
 
-                                            ng-drop="true" 
-                                            ng-drop-success="onDropComplete($data, $event, shapegroup, shapes)">
-                                            <li ng-repeat="shape in shapegroup.shapes track by $index"
-                                                dnd-draggable="shape"
-                                                dnd-type="'true'"
-                                                dnd-effect-allowed="{{dragEffect}}"
-                                                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true; $root.dragFromCanvas = true"
-                                                dnd-moved="shapes.splice($index, 1); logEvent('Item moved', event)"
-                                                dnd-copied="logEvent('Item copied', event)"
-                                                dnd-canceled="logEvent('Drag operation canceled', event)"
-                                                dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                                                class="lucid-shape repeat-animation lucid-animate">  
-                                                <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
-                                            </li>
-                                        </ul>
+                                          ng-drop="true" 
+                                          ng-drop-success="onDropComplete($data, $event, shapegroup, shapes)">
+                                          <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                              dnd-draggable="shape"
+                                              dnd-type="'true'"
+                                              dnd-effect-allowed="{{dragEffect}}"
+                                              dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true; $root.dragFromCanvas = true"
+                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-copied="logEvent('Item copied', event)"
+                                              dnd-canceled="logEvent('Drag operation canceled', event)"
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
+                                              class="lucid-shape repeat-animation lucid-animate">  
+                                              <div ng-bind-html="shape.svg | sanitize"> </div>
+                                          </li>
+                                      </ul>
                                     </div>
-                                    
-                                </div>
+                                  </div>
                                   <!-- END LEFT SHAPE GROUP -->
                               </li>
                           </ul>
                       </div>
                   </div>
-                  <!-- <div ng-drag-clone="" class="ng-binding" draggable="false">
-                      <div ng-bind-html="clonedData.svg | sanitize"></div>
-                  </div> -->
                   <lucid-import-options ng-show="!$root.manageshapes"></lucid-import-options>
                   <div class="overflow-message lucid-animate" ng-show="overflowMessage">"{{overflowMessageTitle}}" Pinned</div>
               </div>
@@ -334,7 +406,8 @@
                                   class="lucid-shape-group-wrapper lucid-animate"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'"
-                                  ng-if="shapegroup.custom">
+                                  ng-if="shapegroup.custom"
+                                  ng-controller="shapeGroupCtrl">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
@@ -408,7 +481,7 @@
                                             class="shapes-wrapper"
                                             ng-class="{'lucid-drawer-open': showdrawer, 'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}">
                                             <li ng-repeat="shape in shapegroup.shapes"
-                                                ng-if="$index < shapecount"
+                                                
                                                 dnd-draggable="shape"
                                                 dnd-type="'true'"
                                                 dnd-effect-allowed="{{dragEffect}}"
@@ -491,13 +564,14 @@
                                             dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
                                             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
                                             class="shapes-wrapper"
-                                            ng-class="{'lucid-drawer-open': showdrawer, 'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}">
+                                            ng-class="{'lucid-drawer-open': showdrawer, 'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
+                                            ng-controller="shapeGroupCtrl">
                                             <li ng-repeat="shape in shapegroup.shapes"
-                                                ng-if="$index < shapecount"
+                                                
                                                 dnd-draggable="shape"
                                                 dnd-type="'true'"
                                                 dnd-effect-allowed="{{dragEffect}}"
-                                                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
+                                                dnd-dragstart="logEvent('Started to drag a shape', event); $root.draggingshape=true;"
                                                 dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
                                                 dnd-copied="logEvent('Item copied', event)"
                                                 dnd-canceled="logEvent('Drag operation canceled', event)"
@@ -557,71 +631,17 @@
           <li class="small middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg" class="lucid-buttcon-icon" /></li>
           <li class="middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg" class="lucid-buttcon-icon" /></li>
           <!-- BEGIN TEXT ALIGNMENT -->
-          <li class="middle">
-            <div class="lucid-buttcon-wrapper lucid-text-alignment" ng-controller="textAlignmentCtrl">
-              <div class="lucid-buttcon" ng-click="showpopup = !showpopup">
-                  <svg id="lucid-text-align" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="22px" height="22px" viewBox="0 0 22 22" enable-background="new 0 0 22 22" xml:space="preserve">
-                      <g id="lucid-text-bottom-right">
-                          <polygon fill="#3D4752" points="11.5,8.3 8,5 10,5 10,2 13,2 13,5 15,5  " />
-                          <rect x="4" y="18" fill="#3D4752" width="16" height="2" />
-                          <rect x="9" y="14" fill="#3D4752" width="11" height="2" />
-                          <rect x="5" y="10" fill="#3D4752" width="15" height="2" />
-                      </g>
-                      <g id="lucid-text-bottom-center">
-                          <polygon fill="#3D4752" points="11,8.3 7.5,5 9.5,5 9.5,2 12.5,2 12.5,5 14.5,5  " />
-                          <rect x="3" y="18" fill="#3D4752" width="16" height="2" />
-                          <rect x="5" y="14" fill="#3D4752" width="12" height="2" />
-                          <rect x="4" y="10" fill="#3D4752" width="14" height="2" />
-                      </g>
-                      <g id="lucid-text-bottom-left">
-                          <polygon fill="#3D4752" points="10.5,8.3 7,5 9,5 9,2 12,2 12,5 14,5  " />
-                          <rect x="2" y="18" fill="#3D4752" width="16" height="2" />
-                          <rect x="2" y="14" fill="#3D4752" width="11" height="2" />
-                          <rect x="2" y="10" fill="#3D4752" width="15" height="2" />
-                      </g>
-                      <g id="lucid-text-middle-right">
-                          <rect x="5" y="14" fill="#3D4752" width="15" height="2" />
-                          <rect x="9" y="10" fill="#3D4752" width="11" height="2" />
-                          <rect x="4" y="6" fill="#3D4752" width="16" height="2" />
-                      </g>
-                      <g id="lucid-text-middle-left">
-                          <rect x="2" y="14" fill="#3D4752" width="15" height="2" />
-                          <rect x="2" y="10" fill="#3D4752" width="11" height="2" />
-                          <rect x="2" y="6" fill="#3D4752" width="16" height="2" />
-                      </g>
-                      <g id="lucid-text-top-right">
-                          <polygon fill="#3D4752" points="11.5,13.7 15,17 13,17 13,20 10,20 10,17 8,17  " />
-                          <rect x="5" y="10" fill="#3D4752" width="15" height="2" />
-                          <rect x="9" y="6" fill="#3D4752" width="11" height="2" />
-                          <rect x="4" y="2" fill="#3D4752" width="16" height="2" />
-                      </g>
-                      <g id="lucid-text-top-center">
-                          <polygon fill="#3D4752" points="11,13.7 14.5,17 12.5,17 12.5,20 9.5,20 9.5,17 7.5,17  " />
-                          <rect x="4" y="10" fill="#3D4752" width="14" height="2" />
-                          <rect x="5" y="6" fill="#3D4752" width="12" height="2" />
-                          <rect x="3" y="2" fill="#3D4752" width="16" height="2" />
-                      </g>
-                      <g id="lucid-text-top-left">
-                          <polygon fill="#3D4752" points="10.5,13.7 14,17 12,17 12,20 9,20 9,17 7,17  " />
-                          <rect x="2" y="10" fill="#3D4752" width="15" height="2" />
-                          <rect x="2" y="6" fill="#3D4752" width="11" height="2" />
-                          <rect x="2" y="2" fill="#3D4752" width="16" height="2" />
-                      </g>
-                      <g id="lucid-text-middle-center">
-                          <rect x="4" y="14" fill="#3D4752" width="14" height="2" />
-                          <rect x="5" y="10" fill="#3D4752" width="12" height="2" />
-                          <rect x="3" y="6" fill="#3D4752" width="16" height="2" />
-                      </g>
-                  </svg>
-              </div>
-              <lucid-popover-menu width="96" ng-show="showpopup">
-                  <div class="lucid-wrapper-overflow-hidden">
-                      <ul>
+          <li class="middle" ng-controller="textAlignmentCtrl">
+            <lucid-buttcon-popover 
+              icon="../../components/1.0/icon/img/morph-text-alignment.svg" 
+              width="96"
+              showpopover="textAlignment.show">
+                <div class="lucid-wrapper-overflow-hidden">
+                        <ul ng-click="textAlignment.show=false">
                           <li class="lucid-buttcon" ng-repeat="align in alignment" ng-class="{active: align.verticalalignment == selected.text.verticalalignment && align.horizontalalignment == selected.text.horizontalalignment}" ng-click="$parent.selected.text.verticalalignment = align.verticalalignment; $parent.selected.text.horizontalalignment = align.horizontalalignment; changeAlignment(align.verticalalignment, align.horizontalalignment);"><img class="lucid-button-icon" ng-src="{{align.icon}}"></li>
                       </ul>
-                  </div>
-              </lucid-popover-menu>
-          </div>
+                    </div>
+            </lucid-buttcon-popover>
           </li>
           <!-- END TEXT ALIGNMENT -->
           <!-- BEGIN TEXT OPTIONS -->
@@ -654,32 +674,17 @@
           <!-- BEGIN BORDER OPTIONS -->
           <span class="line"></span>
           <!-- BEGIN LINE PATH -->
-          <li class="left">
-            <div class="lucid-buttcon-wrapper lucid-path-style" ng-controller="linePathCtrl">
-                <div class="lucid-buttcon">
-                    <svg ng-click="showpopover=!showpopover" id="lucid-path-style" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" x="0px" y="0px" width="24px" height="24px" viewBox="0 0 24 24" enable-background="new 0 0 24 24" xml:space="preserve">
-                        <g id="lucid-straight-path">
-                            <path stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5,19l3-3l8-8l3-3" />
-                            <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
-                            <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
-                        <g id="lucid-angle-path">
-                            <path fill="none" stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4.4,19H12V5h7.6" />
-                            <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
-                            <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
-                        <g id="lucid-curve-path">
-                            <path fill="none" stroke="#3D4752" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5,19.7v-3   C5,10.2,10.2,5,16.6,5h3" />
-                            <ellipse fill="#3D4752" cx="19" cy="5" rx="3" ry="3" />
-                            <ellipse fill="#3D4752" cx="5" cy="19" rx="3" ry="3" /> </g>
-                    </svg>
-                </div>
-                <lucid-popover-menu width="32" ng-show="showpopover">
-                    <div class="lucid-wrapper-overflow-hidden">
-                        <ul>
-                            <li class="lucid-buttcon" ng-class="{active: $parent.pathstyle.name == path.name}" ng-repeat="path in pathstyles" ng-click="$parent.pathstyle = path; $parent.showpopover=false; changePath(path.name)"><img class="lucid-button-icon" ng-src="{{path.icon}}"></li>
+          <li class="left" ng-controller="linePathCtrl">
+            <lucid-buttcon-popover 
+              icon="../../components/1.0/icon/img/morph-path-style.svg" 
+              width="32"
+              showpopover="pathStylePopover.show">
+                <div class="lucid-wrapper-overflow-hidden">
+                        <ul ng-click="pathStylePopover.show=false">
+                            <li class="lucid-buttcon" ng-class="{active: $parent.pathstyle.name == path.name}" ng-repeat="path in pathstyles" ng-click="$parent.pathstyle = path; changePath(path.name)"><img class="lucid-button-icon" ng-src="{{path.icon}}"></li>
                         </ul>
                     </div>
-                </lucid-popover-menu>
-            </div>
+            </lucid-buttcon-popover>
           </li>
           <!-- END LINE PATH -->
           <!-- END LINE OPTIONS -->
@@ -813,7 +818,7 @@
       </div>
       <!-- END RIGHT DOCK -->
       <!-- START CANVAS FOOTER -->
-      <footer class="settings-drawer">
+      <footer class="settings-drawer" id="main-footer">
         <div class="settings-drawer-top">
           <lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-wrench-white.svg" color="blue"  ng-click="showdrawer = !showdrawer">Page Settings</lucid-button>
           <img class="chat-img" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-chat.png" class="right" />
@@ -828,6 +833,7 @@
     </div>
   </div>
   </div>
+  <!-- END WRAPPER -->
 </body>
 
 </html>
