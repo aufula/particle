@@ -702,9 +702,9 @@ a {
     //     -webkit-column-width: 50%;
     //     column-width: 50%;
     // }
-    // .lucid-scroll-inner-wrap {
-    //     padding: 20px 10px;
-    // }
+    .lucid-scroll-inner-wrap {
+        padding: 20px 10px;
+    }
     .lucid-shape-group-wrapper {
         margin-bottom: 10px;
         position: relative;
@@ -902,7 +902,7 @@ a {
     .lucid-shapes-scroll {
         background: transparent;
         opacity: 1;
-        transition: .25s ease-in-out all;
+        //transition: .25s ease-in-out all;
         &.ng-hide {
             opacity: 0;
         }
@@ -915,7 +915,6 @@ a {
     }
     .lucid-scroll-inner-wrap {
         padding: 20px;
-        height: 10000px;
     }
     .scrollable .scrollable-slider {
         background: #333;
@@ -2010,148 +2009,6 @@ a {
         &.ng-hide {
             top: -32px;
         }
-        #right-dock {
-            position: absolute;
-            top: 60px;
-            right: 0;
-            width: 70px;
-            height: 100%;
-            background: #E0E0E0;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
-            text-align: center;
-            z-index: 7;
-            transition: right .3s ease-out, opacity .3s;
-            padding-top: 10px;
-            border-left: 1px solid #d2d2d2;
-            .icon-wrapper {
-                text-transform: uppercase;
-                color: #77818C;
-                font-size: 10px;
-                cursor: pointer;
-                transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
-                padding: 14px 0;
-                position: relative;
-                margin-left: -1px;
-                transform: scale(1);
-                margin: 0;
-                .orange {
-                    color: #EB7D30;
-                }
-                &:first-of-type {
-                    padding-top: 15px;
-                }
-                &:hover,
-                &.active {
-                    color: @blue-steel;
-                }
-                &.active {
-                    background: #EBECED;
-                    border-radius: 4px 0 0 4px;
-                    box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
-                }
-                &.ng-animate {
-                    .tooltip {
-                        // use this to delay the tooltip coming in
-                        transition: opacity .5s .5s;
-                    }
-                }
-                &.ng-hide {
-                    transform: scale(0);
-                    margin: -32px 0;
-                    .tooltip {
-                        opacity: 0;
-                    }
-                }
-                .tooltip {
-                    background: @orange;
-                    color: white;
-                    border-radius: 4px;
-                    box-shadow: 0 2px 15px fade(@orange, 70%);
-                    position: absolute;
-                    right: 75px;
-                    top: 10px;
-                    width: 150px;
-                    text-align: left;
-                    font-size: 14px;
-                    text-transform: none;
-                    padding: 10px;
-                    transition: opacity .2s;
-                    opacity: 1;
-                    transform: scale(1);
-                    &:after {
-                        // the arrow
-                        content: '';
-                        width: 0;
-                        height: 0;
-                        border-left: 8px solid @orange;
-                        border-top: 8px solid transparent;
-                        border-bottom: 8px solid transparent;
-                        position: absolute;
-                        top: 9px;
-                        right: -8px;
-                    }
-                    &.ng-animate {
-                        transition: opacity .2s;
-                    }
-                    &.ng-hide {
-                        // for hiding the tooltip on click
-                        opacity: 0;
-                    }
-                }
-            }
-            .icon {
-                width: 22px;
-                height: 26px;
-                position: relative;
-                margin: auto;
-            }
-            .right-panel {
-                position: absolute;
-                top: 0;
-                right: -250px;
-                width: 250px;
-                height: 100%;
-                background: #EBECED;
-                .container {
-                    height: ~"calc(100% - 58px)";
-                }
-                header {
-                    background: #596470;
-                    padding: 10px 15px;
-                    color: #fff;
-                    text-align: left;
-                    font-size: 14px;
-                    position: relative;
-                    img {
-                        width: 22px;
-                        position: absolute;
-                        right: 10px;
-                        top: 6px;
-                        cursor: pointer;
-                    }
-                }
-                footer {
-                    position: absolute;
-                    bottom: 0;
-                }
-                img {
-                    width: 100%;
-                }
-            }
-            &.open {
-                right: 250px;
-                .right-panel {
-                    .container {
-                        //display: none;
-                        position: absolute;
-                        width: 100%;
-                    }
-                }
-            }
-        }
-        &.ng-animate {
-            transition: .35s ease-in-out all;
-        }
     }
     h4 {
         display: inline-block;
@@ -2192,7 +2049,9 @@ a {
     //display: table;
     box-sizing: border-box;
     cursor: pointer;
-    //z-index:1;
+    &.manage-shapes{
+        z-index:0 !important;
+    }
     .lucid-svg-background {
         width: 100%;
         position: absolute;
@@ -2330,9 +2189,14 @@ a {
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
     text-align: center;
     z-index: 7;
-    transition: right .3s ease-out, opacity .3s;
+    transition: right .3s ease-out, opacity .3s, z-index .2s linear;
     padding-top: 10px;
     border-left: 1px solid #d2d2d2;
+    
+    &.manage-shapes {
+        transition-delay: .2s;
+        z-index: 1;
+    }
     .icon-wrapper {
         text-transform: uppercase;
         color: #77818C;
@@ -2426,7 +2290,7 @@ a {
             height: ~"calc(100% - 58px)";
             opacity: 1;
             &.ng-animate {
-              transition: .25s ease-in-out all; // just used to delay hiding panel
+                transition: .25s ease-in-out all; // just used to delay hiding panel
             }
         }
         header {

@@ -137,11 +137,15 @@ angular.module('particleApp', ['lucidComponents'])
 
         };
     })
-    .controller('linePathCtrl', function($scope) {
+    .controller('linePathCtrl', function($scope, $timeout) {
 
-        angular.element(document).ready(function() {
+        // angular.element(document).ready(function() {
+        //     $scope.lucidPath = new SVGMorpheus('#lucid-path-style');
+        // });
+
+        $timeout(function() {
             $scope.lucidPath = new SVGMorpheus('#lucid-path-style');
-        });
+        }, 1400);
 
 
         $scope.changePath = function(path) {
@@ -181,10 +185,15 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pathstyle = $scope.pathstyles[0];
 
     })
-    .controller('textAlignmentCtrl', function($scope) {
-        angular.element(document).ready(function() {
+    .controller('textAlignmentCtrl', function($scope, $timeout) {
+
+        $timeout(function() {
             $scope.lucidPath = new SVGMorpheus('#lucid-text-align');
-        });
+        }, 1400);
+
+        // angular.element(document).ready(function() {
+        //     $scope.lucidPath = new SVGMorpheus('#lucid-text-align');
+        // });
         //set default state if no object is selected
         if (!$scope.selected) {
             $scope.selected = {};
@@ -316,9 +325,19 @@ angular.module('particleApp', ['lucidComponents'])
 
         }];
     })
-    .controller('shapeGroupCtrl', function($scope) {
+    .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
 
-        $scope.onDropComplete = function(data, event, shapegroup) {
+        $scope.shapegroups = lucidShapesData.all();
+
+        $scope.clickShapes = function() {
+            if (!$scope.searchshapes) {
+                $rootScope.manageshapes = !$rootScope.manageshapes
+            } else {
+                $scope.searchshapes = false;
+            }
+        };
+
+        $scope.dropFromCanvas = function(data, event, shapegroup) {
             console.log('dropped in saved shapes', data, event, shapegroup);
             if (data) {
                 var index = shapegroup.shapes.indexOf(data);
@@ -341,34 +360,26 @@ angular.module('particleApp', ['lucidComponents'])
             }
         };
 
-        //from demo
-        if ($scope.custom) {
-            $scope.dragEffect = 'copyMove';
-        } else {
-            $scope.dragEffect = 'copy';
-        }
 
-        $scope.dragoverCallback = function(event, index) {
-            $scope.logListEvent('dragged inside shapegroup ctrl', event, index, external, type);
-            return index; // < 10;
+        /////// START DRAGGING SHAPES STUFF
+
+        $scope.dragoverCallback = function(event, index, external, type) {
+            $scope.logListEvent('dragged over', event, index, external, type);
+            // Disallow dropping in the third row. Could also be done with dnd-disable-if.
+            return index < 10;
         };
 
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-            //$scope.logListEvent('dropped at', event, index, external, type);
-            //console.log('dropped in saved shapes', item);
-            $scope.onDropComplete(item, event);
+            $scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
-                //console.log('external', item);
-                if (allowedType === 'true') {
-                    return false;
-                }
-                //if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                if (allowedType === 'itemType' && !item.label) return false;
+                if (allowedType === 'containerType' && !angular.isArray(item)) return false;
             }
-            //return item;
+            return item;
         };
 
         $scope.logEvent = function(message, event) {
-            console.log(message, '(triggered by the following in shapeGroupCtrl', event.type, 'event)');
+            console.log(message, '(triggered by the following', event.type, 'event)');
             console.log(event);
         };
 
@@ -377,34 +388,8 @@ angular.module('particleApp', ['lucidComponents'])
             message += type + ' element is ' + action + ' position ' + index;
             $scope.logEvent(message, event);
         };
-    })
-    .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
 
-        $scope.shapegroups = lucidShapesData.all();
-
-        $scope.clickShapes = function() {
-            if (!$scope.searchshapes) {
-                $rootScope.manageshapes = !$rootScope.manageshapes
-            } else {
-                $scope.searchshapes = false;
-            }
-        };
-
-        // $scope.pinnedgroups = lucidShapesData.pinned();
-        //$scope.customshapes = lucidShapesData.custom();
-        // $scope.manageShapes = function(){
-        //     $rootScope.manageshapes=!$rootScope.manageshapes;
-        //     console.log('manage');
-        //     $timeout(function() {
-        //         $scope.managingshapesopen = !$scope.managingshapesopen;
-        //     }, 900);
-
-        // }
-        // $scope.visibleBlocks = function() {
-        //     var elements = ($scope.scroll/200) +5;
-        //     console.log($scope.scroll);
-        //     return elements;
-        // };
+        /////// END DRAGGIN SHAPES STUFF
 
         $scope.newCustomGroup = function() {
             var newGroup = {
@@ -467,35 +452,6 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.openWindow = function(url) {
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };
-
-        //from demo
-        $scope.dragoverCallback = function(event, index, external, type) {
-            $scope.logListEvent('dragged over', event, index, external, type);
-            // Disallow dropping in the third row. Could also be done with dnd-disable-if.
-            return index; // < 10;
-        };
-
-        $scope.dropCallback = function(event, index, item, external, type, allowedType) {
-            $scope.logListEvent('dropped at', event, index, external, type);
-            if (external) {
-                //if (allowedType === 'itemType' && !item.label) return false;
-                if (allowedType === 'containerType' && !angular.isArray(item)) return false;
-            }
-            return item;
-        };
-
-        $scope.logEvent = function(message, event) {
-            console.log(message, '(manager triggered by the following', event.type, 'event)');
-            console.log(event);
-        };
-
-        $scope.logListEvent = function(action, event, index, external, type) {
-            var message = external ? 'External ' : '';
-            message += type + ' element is ' + action + ' position ' + index;
-            $scope.logEvent(message, event);
-        };
-
-
     })
     .controller('canvasCtrl', function($scope, $rootScope, pagesData) {
 

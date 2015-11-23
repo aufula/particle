@@ -2368,7 +2368,7 @@ angular.module("lucidShapesData", ['appConfig'])
                     "height": 45
                 }
             }],
-            "custom": true,
+            "custom": 'custom',
             "pinned": true,
             "pinnedOrder": 1
         }, {

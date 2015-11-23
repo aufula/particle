@@ -184,15 +184,10 @@
             ng-drag="true" 
             ng-drag-data="block" 
             ng-drag-success="onDragSuccess($data,$event)" 
-            draggable="false" 
             ng-center-anchor="true" 
-            dnd-draggable="block"
-            block="block"
             ng-click="$root.selectedBlock = block" 
-            showcomments="showComments" 
-            currenttheme="currentTheme" 
-            addsavedstyle="addSavedStyle" 
             class="lucid-chart-block lucid-animate" 
+            ng-class="{'manage-shapes': $root.manageshapes}"
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
               <div class="lucid-outer-block-table" lucid-context-menu 
                data-target="block-context-{{ block.$index }}" >
@@ -304,15 +299,15 @@
                               dnd-allowed-types="['containerType']"
                               dnd-external-sources="true"
                               dnd-dragover="dragoverCallback(event, index, external, type)"
-                              dnd-drop="pinGroup(item); dropCallback(event, index, item, external, type, 'containerType')"
+                              dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
                               class="lucid-group-drop-area">
                               <li ng-repeat="shapegroup in shapegroups | filter:{pinned:'true'} | orderBy:'pinnedOrder'"
                                   dnd-draggable="shapegroup"
                                   dnd-type="'containerType'"
-                                  dnd-effect-allowed="move"
-                                  dnd-moved="pinnedgroups.splice($index, 1)"
-                                  class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate"
-                                  ng-controller="shapeGroupCtrl">
+                                  dnd-effect-allowed="copyMove"
+                                  dnd-moved="shapegroups.splice($index, 1)"
+
+                                  class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
                                   <!-- START LEFT SHAPE GROUP -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
@@ -331,27 +326,29 @@
                                           <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
                                           <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
                                       </div>
-                                      <ul dnd-list="shapegroup.shapes"
+                                      <ul class="shapes-wrapper"
+                                          ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
+                                          ng-drop="true"
+                                          ng-drop-success="dropFromCanvas($data,$event, shapegroup)"
+
+                                          dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
                                           dnd-horizontal-list="true"
                                           dnd-external-sources="true"
                                           dnd-dragover="dragoverCallback(event, index, external, type)"
-                                          dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
-                                          dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-                                          class="shapes-wrapper"
-                                          ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
+                                          dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                          dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
 
-                                          ng-drop="true" 
-                                          ng-drop-success="onDropComplete($data, $event, shapegroup, shapes)">
                                           <li ng-repeat="shape in shapegroup.shapes track by $index"
                                               dnd-draggable="shape"
-                                              dnd-type="'true'"
-                                              dnd-effect-allowed="{{dragEffect}}"
-                                              dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true; $root.dragFromCanvas = true"
-                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-type="'custom'"
+                                              dnd-effect-allowed="copyMove"
+                                              dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                              dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
                                               dnd-copied="logEvent('Item copied', event)"
                                               dnd-canceled="logEvent('Drag operation canceled', event)"
-                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
                                               class="lucid-shape repeat-animation lucid-animate">  
                                               <div ng-bind-html="shape.svg | sanitize"> </div>
                                           </li>
@@ -406,8 +403,7 @@
                                   class="lucid-shape-group-wrapper lucid-animate"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'"
-                                  ng-if="shapegroup.custom"
-                                  ng-controller="shapeGroupCtrl">
+                                  ng-if="shapegroup.custom">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
@@ -471,30 +467,34 @@
                                             <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
                                             <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
                                         </div>
-                                        <ul dnd-list="shapegroup.shapes"
-                                            dnd-allowed-types="[shapegroup.custom]"
-                                            dnd-horizontal-list="true"
-                                            dnd-external-sources="true"
-                                            dnd-dragover="dragoverCallback(event, index, external, type)"
-                                            dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
-                                            dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-                                            class="shapes-wrapper"
-                                            ng-class="{'lucid-drawer-open': showdrawer, 'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}">
-                                            <li ng-repeat="shape in shapegroup.shapes"
-                                                
-                                                dnd-draggable="shape"
-                                                dnd-type="'true'"
-                                                dnd-effect-allowed="{{dragEffect}}"
-                                                dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape=true;"
-                                                dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
-                                                dnd-copied="logEvent('Item copied', event)"
-                                                dnd-canceled="logEvent('Drag operation canceled', event)"
-                                                dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                                                class="lucid-shape repeat-animation lucid-animate"> 
-                                                <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
+                                        <ul class="shapes-wrapper"
+                                          ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
 
-                                            </li>
-                                        </ul>
+                                          dnd-list="shapegroup.shapes"
+                                          dnd-allowed-types="[shapegroup.custom]"
+                                          dnd-horizontal-list="true"
+                                          dnd-external-sources="true"
+                                          dnd-dragover="dragoverCallback(event, index, external, type)"
+                                          dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                          dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+
+                                          <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                              dnd-draggable="shape"
+                                              dnd-type="'custom'"
+                                              dnd-effect-allowed="copyMove"
+                                              dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                              dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-copied="logEvent('Item copied', event)"
+                                              dnd-canceled="logEvent('Drag operation canceled', event)"
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
+                                              class="lucid-shape repeat-animation lucid-animate">  
+                                              <div ng-bind-html="shape.svg | sanitize"> </div>
+                                          </li>
+                                      </ul>
+
+
+
                                         <div class="lucid-drawer-wrapper" ng-if="shapes.length>30">
                                             <div class="lucid-show-more-drawer-button" ng-click="$parent.showdrawer = !$parent.showdrawer; shapeCount($parent.showdrawer)">
                                                 <div class="lucid-drawer-center-text">
@@ -511,7 +511,7 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="lucid-drop-area" ng-drop="true" ng-drop-success="onDropComplete($data, $event, shapegroup)" ng-if="shapegroup.custom">
+                                    <div class="lucid-drop-area">
                                         <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
                                     </div>
                                 </div>
@@ -556,32 +556,30 @@
                                             <img src="http://particle.golucid.co/components/0.1/shape-group/drop-shapes.svg">
                                             <span class="lucid-save-shapes-hint">Drag shapes here to reuse</span>
                                         </div>
-                                        <ul dnd-list="shapegroup.shapes"
-                                            dnd-allowed-types="[shapegroup.custom]"
-                                            dnd-horizontal-list="true"
-                                            dnd-external-sources="true"
-                                            dnd-dragover="dragoverCallback(event, index, external, type)"
-                                            dnd-drop="dropCallback(event, index, item, external, type, 'shape')"
-                                            dnd-inserted="logEvent('Element was inserted at position ' + index, event)"
-                                            class="shapes-wrapper"
-                                            ng-class="{'lucid-drawer-open': showdrawer, 'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 1}"
-                                            ng-controller="shapeGroupCtrl">
-                                            <li ng-repeat="shape in shapegroup.shapes"
-                                                
-                                                dnd-draggable="shape"
-                                                dnd-type="'true'"
-                                                dnd-effect-allowed="{{dragEffect}}"
-                                                dnd-dragstart="logEvent('Started to drag a shape', event); $root.draggingshape=true;"
-                                                dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
-                                                dnd-copied="logEvent('Item copied', event)"
-                                                dnd-canceled="logEvent('Drag operation canceled', event)"
-                                                dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
-                                                class="lucid-shape repeat-animation lucid-animate"> 
+                                        <ul class="shapes-wrapper"
 
-                                                <div ng-if="shape.svg" ng-bind-html="shape.svg | sanitize"> </div>
+                                          dnd-list="shapegroup.shapes"
+                                          dnd-allowed-types="[shapegroup.custom]"
+                                          dnd-horizontal-list="true"
+                                          dnd-external-sources="true"
+                                          dnd-dragover="dragoverCallback(event, index, external, type)"
+                                          dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                          dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
 
-                                            </li>
-                                        </ul>
+                                          <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                              dnd-draggable="shape"
+                                              dnd-type="'custom'"
+                                              dnd-effect-allowed="copyMove"
+                                              dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                              dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-copied="logEvent('Item copied', event)"
+                                              dnd-canceled="logEvent('Drag operation canceled', event)"
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
+                                              class="lucid-shape repeat-animation lucid-animate">  
+                                              <div ng-bind-html="shape.svg | sanitize"> </div>
+                                          </li>
+                                      </ul>
                                         <div class="lucid-drawer-wrapper" ng-if="shapes.length>30">
                                             <div class="lucid-show-more-drawer-button" ng-click="$parent.showdrawer = !$parent.showdrawer; shapeCount($parent.showdrawer)">
                                                 <div class="lucid-drawer-center-text">
@@ -633,7 +631,7 @@
           <!-- BEGIN TEXT ALIGNMENT -->
           <li class="middle" ng-controller="textAlignmentCtrl">
             <lucid-buttcon-popover 
-              icon="../../components/1.0/icon/img/morph-text-alignment.svg" 
+              icon="http://particle.golucid.co/components/1.0/icon/img/morph-text-alignment.svg" 
               width="96"
               showpopover="textAlignment.show">
                 <div class="lucid-wrapper-overflow-hidden">
@@ -676,7 +674,7 @@
           <!-- BEGIN LINE PATH -->
           <li class="left" ng-controller="linePathCtrl">
             <lucid-buttcon-popover 
-              icon="../../components/1.0/icon/img/morph-path-style.svg" 
+              icon="http://particle.golucid.co/components/1.0/icon/img/morph-path-style.svg" 
               width="32"
               showpopover="pathStylePopover.show">
                 <div class="lucid-wrapper-overflow-hidden">
@@ -703,7 +701,7 @@
       </div>
 <!-- END TOP TOOLBAR -->
 <!-- RIGHT DOCK -->
-      <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock }">
+      <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- RIGHT DOCK ICONS --->
         <div class="icon-wrapper" ng-click="addOnsModal=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
