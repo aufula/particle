@@ -598,11 +598,11 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidCollapseBar'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtconPopover', 'lucidButtconToggle', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
-//on enter
+//hit enter key
 .directive('ngEnter', function() {
     return function(scope, element, attrs) {
         element.bind("keydown keypress", function(event) {
@@ -617,7 +617,7 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dn
     };
 })
 
-//escape
+//hit escape key
 .directive('escKey', function() {
     return function(scope, element, attrs) {
         element.bind('keydown keypress', function(event) {
@@ -647,8 +647,8 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dn
     };
 })
 
-//outside
-///options click-outside="closeThis()" outside-if-not="my-button, other-button" my-button is an id of another element.
+
+//click outside element
 .directive('clickOutside', function($document) {
 
     return {
@@ -669,58 +669,6 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dn
     }
 
 })
-
-
-////////////////////      Filters      //////////////////////
-
-///filter unique objects
-.filter('unique', function() {
-
-    return function(items, filterOn) {
-
-        if (filterOn === false) {
-            return items;
-        }
-
-        if ((filterOn || angular.isUndefined(filterOn)) && angular.isArray(items)) {
-            //var hashCheck = {}, 
-            var newItems = [];
-
-            var extractValueToCompare = function(item) {
-                if (angular.isObject(item) && angular.isString(filterOn)) {
-                    return item[filterOn];
-                } else {
-                    return item;
-                }
-            };
-
-            angular.forEach(items, function(item) {
-                //var valueToCheck, 
-                var isDuplicate = false;
-
-                for (var i = 0; i < newItems.length; i++) {
-                    if (angular.equals(extractValueToCompare(newItems[i]), extractValueToCompare(item))) {
-                        isDuplicate = true;
-                        break;
-                    }
-                }
-                if (!isDuplicate) {
-                    newItems.push(item);
-                }
-
-            });
-            items = newItems;
-        }
-        return items;
-    };
-})
-
-//filter used to send svgs as html
-.filter("sanitize", ['$sce', function($sce) {
-    return function(htmlCode) {
-        return $sce.trustAsHtml(htmlCode);
-    };
-}])
 
 //this improves performance on ng-repeats that don't need a watch.
 .directive('ngOnce', function($timeout) {
@@ -752,6 +700,20 @@ angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dn
         }
     };
 })
+
+////////////////////      Filters      //////////////////////
+
+//filter used to send svgs as html
+.filter("sanitize", ['$sce', function($sce) {
+    return function(htmlCode) {
+        return $sce.trustAsHtml(htmlCode);
+    };
+}])
+
+
+
+///////////////////      Animations      //////////////////////
+
 
 //this is used with shape libraries
 .animation('.slide-toggle', ['$animateCss', function($animateCss) {

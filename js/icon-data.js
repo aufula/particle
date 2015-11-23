@@ -4,7 +4,8 @@ angular.module("lucidIcons", [])
         var icons = [{
             "name": "Approved Icons",
             "icons": [{
-                "name": "check-circle-green"
+                "name": "check-circle-green",
+                "url": "http://particle.golucid.co/components/0.0/icon/img/check-circle-green.svg"
             }, {
                 "name": "html-white"
             }, {

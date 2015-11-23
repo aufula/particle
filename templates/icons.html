@@ -6,16 +6,24 @@
     <input ng-model="searchResults" placeholder="Search icons">
     <img src="components/0.0/icon/img/search-dark.svg">
 </div>
-<div ng-repeat="icongroup in icons | filter:searchResults" >
+<div ng-repeat="icongroup in icons | filter:searchResults">
     <h2>{{icongroup.name}}</h2>
     <div class="icon-list-container clearfix">
-        <div class="particle-icon-wrapper" ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
-            <div class="icon-container">
-                <a href="components/0.0/icon/img/{{icon.name}}.svg" download="{{icon.name}}.svg">
+        <div ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
+            <div class="particle-icon-wrapper" lucid-context-menu data-target="icon-context-{{$index}}">
+                <div class="icon-container">
                     <img ng-src="components/0.0/icon/img/{{icon.name}}.svg">
-                </a>
+                </div>
+                <h5>{{icon.name}}</h5>
             </div>
-            <h5>{{icon.name}}</h5>
+            <div id="icon-context-{{$index}}" class="lucid-context-menu ng-hide">
+                <ul>
+                    <a href="components/0.0/icon/img/{{icon.name}}.svg" download="{{icon.name}}.svg">
+                        <li class="lucid-select-option">Download</li>
+                    </a>
+                    <li class="lucid-select-option" clipboard text="icon.url">Copy URL</li>
+                </ul>
+            </div>
         </div>
     </div>
 </div>
