@@ -337,14 +337,19 @@ angular.module('particleApp', ['lucidComponents'])
             }
         };
 
-        $scope.copy = function(type){
-            if (type == 'custom'){
+        $scope.copy = function(type) {
+            if (type == 'custom') {
                 return 'copyMove'
-            }
-            else{
+            } else {
                 return 'copy'
             }
         }
+        $scope.$on('draggable:start', function(event, data) {
+            $rootScope.draggingshape = true;
+        });
+        $scope.$on('draggable:end', function(event, data) {
+            $rootScope.draggingshape = false;
+        });
 
         $scope.dropFromCanvas = function(data, event, shapegroup) {
 
@@ -367,7 +372,7 @@ angular.module('particleApp', ['lucidComponents'])
                 }
                 console.log('dropped in saved shapes', data, event, shapegroup);
             }
-            
+
         };
 
 
