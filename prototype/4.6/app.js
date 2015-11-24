@@ -553,6 +553,7 @@ angular.module('particleApp', ['lucidComponents'])
                 console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
 
                 $rootScope.currentPage.blocks.push(item);
+                $rootScope.selectedBlock = item;
 
             }
 
