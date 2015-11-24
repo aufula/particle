@@ -337,9 +337,18 @@ angular.module('particleApp', ['lucidComponents'])
             }
         };
 
+        $scope.copy = function(type){
+            if (type == 'custom'){
+                return 'copyMove'
+            }
+            else{
+                return 'copy'
+            }
+        }
+
         $scope.dropFromCanvas = function(data, event, shapegroup) {
 
-            if (data) {
+            if (data && shapegroup.custom) {
                 var index = shapegroup.shapes.indexOf(data);
                 //console.log('shape', index);
 
@@ -356,8 +365,9 @@ angular.module('particleApp', ['lucidComponents'])
                     }
                     shapegroup.shapes.push(newblock);
                 }
+                console.log('dropped in saved shapes', data, event, shapegroup);
             }
-            console.log('dropped in saved shapes', data, event, shapegroup);
+            
         };
 
 
@@ -394,11 +404,9 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.newCustomGroup = function() {
             var newGroup = {
                 "groupname": "New Group",
-                "custom": true,
+                "custom": 'custom',
                 "edit": true,
-                "shapes": [{
-                    'fake': 'fake'
-                }],
+                "shapes": [],
             };
             lucidShapesData.addGroup(newGroup);
             //$scope.customshapes.splice(0, 0, newGroup);
@@ -507,7 +515,7 @@ angular.module('particleApp', ['lucidComponents'])
 
             var index = $rootScope.currentPage.blocks.indexOf(item)
 
-            if (index === -1) {
+            if (index === -1 && item) {
                 //if dragging shape with no metrics such as a star, etc.
                 if (!item.metrics) {
                     item = {

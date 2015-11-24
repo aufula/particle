@@ -345,9 +345,9 @@
                                           <li ng-repeat="shape in shapegroup.shapes track by $index"
                                               dnd-draggable="shape"
                                               dnd-type="'custom'"
-                                              dnd-effect-allowed="copyMove"
+                                              dnd-effect-allowed="{{copy(shapegroup.custom)}}"
                                               dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
-                                              dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
                                               dnd-copied="logEvent('Item copied', event)"
                                               dnd-canceled="logEvent('Drag operation canceled', event)"
                                               dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
@@ -489,7 +489,7 @@
                                               dnd-type="'custom'"
                                               dnd-effect-allowed="copyMove"
                                               dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
-                                              dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
                                               dnd-copied="logEvent('Item copied', event)"
                                               dnd-canceled="logEvent('Drag operation canceled', event)"
                                               dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
@@ -516,9 +516,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="lucid-drop-area">
-                                        <span class="lucid-save-shapes-hint" ng-hide="shapegroup.shapes.length > 0">Drag shapes here to reuse</span>
                                     </div>
                                 </div>
                                   <!-- END SHAPE GROUP INSIDE MANAGER -->
