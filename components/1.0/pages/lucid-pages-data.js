@@ -678,13 +678,6 @@ angular.module('lucidPagesData', [])
                 "width": 1,
             }],
             'linecolor': '#999'
-        }, {
-            'name': 'Page 2',
-            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template-white.png',
-            'id': 2353
-        }, {
-            'name': 'Page 13',
-            'id': 33456789
         }];
         return lucidPages;
     });

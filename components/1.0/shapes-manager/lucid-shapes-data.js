@@ -4692,6 +4692,15 @@ angular.module("lucidShapesData", ['appConfig'])
                     }
                 })[0];
             },
+            pinned: function() {
+                var pinned = [];
+                lucidShapes.filter(function(obj) {
+                    if (obj.pinned) {
+                        pinned.push(obj)
+                    }
+                });
+                return pinned;
+            },
             addGroup: function(newgroup) {
                 console.log(newgroup);
                 lucidShapes.splice(0, 0, newgroup);

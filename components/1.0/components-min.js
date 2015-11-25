@@ -1505,11 +1505,26 @@ angular.module('lucidInputStepper', ['appConfig'])
             replace: true,
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope) {
+
+                $scope.stepperinput = $scope.number + $scope.unit;
+                $scope.removeText = function(){
+                    var text = $scope.stepperinput;
+                    var regex = /(\d+)/g;
+                    $scope.number = text.match(regex);
+                }
+                $scope.updateInput = function(){
+                    $scope.removeText();
+                    $scope.stepperinput = $scope.number + $scope.unit;
+                };
                 $scope.stepUp = function() {
+                    $scope.removeText();
                     $scope.number = parseInt($scope.number) + parseInt($scope.step);
+                    $scope.stepperinput = $scope.number + $scope.unit;
                 };
                 $scope.stepDown = function() {
+                    $scope.removeText();
                     $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
+                    $scope.stepperinput = $scope.number + $scope.unit;
                 };
             }
         };
@@ -7024,6 +7039,15 @@ angular.module("lucidShapesData", ['appConfig'])
                     }
                 })[0];
             },
+            pinned: function() {
+                var pinned = [];
+                lucidShapes.filter(function(obj) {
+                    if (obj.pinned) {
+                        pinned.push(obj)
+                    }
+                });
+                return pinned;
+            },
             addGroup: function(newgroup) {
                 console.log(newgroup);
                 lucidShapes.splice(0, 0, newgroup);
@@ -7711,13 +7735,6 @@ angular.module('lucidPagesData', [])
                 "width": 1,
             }],
             'linecolor': '#999'
-        }, {
-            'name': 'Page 2',
-            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template-white.png',
-            'id': 2353
-        }, {
-            'name': 'Page 13',
-            'id': 33456789
         }];
         return lucidPages;
     });
