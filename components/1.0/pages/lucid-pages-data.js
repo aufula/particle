@@ -24,7 +24,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME 1",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,
@@ -51,7 +51,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -78,7 +78,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -105,7 +105,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -132,7 +132,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -159,7 +159,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -190,7 +190,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -217,7 +217,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -244,7 +244,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -271,7 +271,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME0",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -298,7 +298,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -325,7 +325,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -352,7 +352,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -379,7 +379,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -403,7 +403,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -430,7 +430,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -457,7 +457,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -599,7 +599,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "DEPARTMENT NAME",
-                    "size": "12px",
+                    "size": 12,
                     "weight": "light",
                     "letterspacing": "-1px",
                     "font": "sans-serif"

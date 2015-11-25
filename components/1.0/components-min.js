@@ -1504,27 +1504,49 @@ angular.module('lucidInputStepper', ['appConfig'])
             },
             replace: true,
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
-            controller: function($scope) {
+            controller: function($scope, $interval) {
 
                 $scope.stepperinput = $scope.number + $scope.unit;
-                $scope.removeText = function(){
+                $scope.removeText = function() {
                     var text = $scope.stepperinput;
                     var regex = /(\d+)/g;
                     $scope.number = text.match(regex);
                 }
-                $scope.updateInput = function(){
+
+                $scope.updateInput = function() {
                     $scope.removeText();
                     $scope.stepperinput = $scope.number + $scope.unit;
                 };
                 $scope.stepUp = function() {
+                    //first step up instantly on click
                     $scope.removeText();
                     $scope.number = parseInt($scope.number) + parseInt($scope.step);
                     $scope.stepperinput = $scope.number + $scope.unit;
+                    //then continually step up if still holding.
+                    $promise = $interval(function() {
+                        $scope.removeText();
+                        $scope.number = parseInt($scope.number) + parseInt($scope.step);
+                        $scope.stepperinput = $scope.number + $scope.unit;
+
+                    }, 100);
+
                 };
                 $scope.stepDown = function() {
+
+                    //first step up instantly on click
                     $scope.removeText();
                     $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
                     $scope.stepperinput = $scope.number + $scope.unit;
+                    //then continually step up if still holding.
+                    $promise = $interval(function() {
+                        $scope.removeText();
+                        $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
+                        $scope.stepperinput = $scope.number + $scope.unit;
+
+                    }, 100);
+                };
+                $scope.mouseUp = function() {
+                    $interval.cancel($promise);
                 };
             }
         };
@@ -7081,7 +7103,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME 1",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,
@@ -7108,7 +7130,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7135,7 +7157,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7162,7 +7184,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7189,7 +7211,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7216,7 +7238,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7247,7 +7269,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7274,7 +7296,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7301,7 +7323,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7328,7 +7350,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME0",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7355,7 +7377,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7382,7 +7404,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7409,7 +7431,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7436,7 +7458,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "EMPLOYEE NAME",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 10,
@@ -7460,7 +7482,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -7487,7 +7509,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -7514,7 +7536,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "font": "Source Sans Pro",
@@ -7656,7 +7678,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "DEPARTMENT NAME",
-                    "size": "12px",
+                    "size": 12,
                     "weight": "light",
                     "letterspacing": "-1px",
                     "font": "sans-serif"
