@@ -7564,7 +7564,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "5+ YEAR TENURE",
-                    "size": "13px",
+                    "size": 13,
                     "verticalalignment": "middle",
                     "horizontalalignment": "left",
                     "font": "Oswald, sans-serif",
@@ -7620,7 +7620,7 @@ angular.module('lucidPagesData', [])
                 "swatchtype": "text",
                 "text": {
                     "text": "INTERN",
-                    "size": "13px",
+                    "size": 13,
                     "verticalalignment": "middle",
                     "horizontalalignment": "left",
                     "font": "Oswald, sans-serif",
@@ -7649,7 +7649,7 @@ angular.module('lucidPagesData', [])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "COMPANY NAME",
-                    "size": "24px",
+                    "size": 24,
                     "weight": "light",
                     "letterspacing": "0px",
                     "font": "Oswald, sans-serif"
