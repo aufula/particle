@@ -504,6 +504,8 @@ a {
         box-sizing: border-box;
         height: 30px;
         text-align: left;
+      font-size:14px;
+      border-radius:4px;
         //z-index: 0;
     }
     &:hover {
@@ -1581,13 +1583,16 @@ a {
     //background: #3d4752;
     ul {
         li {
-            line-height: 53px;
+            line-height: 40px;
             color: #fff;
             padding-left: 20px;
             border-bottom: 1px solid rgba(255, 255, 255, .15);
             cursor: pointer;
             background: transparent;
             transition: background .1s;
+            &:first-child{
+              line-height:53px;
+            }
             &:hover {
                 background: rgba(255, 255, 255, .15);
             }
@@ -1671,7 +1676,21 @@ a {
     border-right: 1px solid @border-color;
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Layout <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+//START CANVAS MODES
+//////////////////////////////
+@handle-width: 20px; //hover handle to show panels
+
+#left-bar{
+  .hover-handle{
+    position:absolute;
+    height:100%;
+    top:0;
+    width: @handle-width;
+    z-index:1;
+    right: -@handle-width;
+  }
+}
 .left-panel-hidden {
     #left-bar {
         left: -250px;
@@ -1689,10 +1708,52 @@ a {
     }
 }
 
+
+#right-dock{
+  .hover-handle{
+        position:absolute;
+        height:100%;
+        top:0;
+        width: @handle-width;
+        z-index:1;
+        left: -@handle-width;
+      } 
+}
 .right-panel-hidden {
     #right-dock,
     #right-dock.open {
-        right: -75px;
+      right: -75px;
+      
+    }
+}
+
+
+.footer-hidden {
+    #main-footer {
+        bottom: -40px;
+    }
+}
+#option-bar{
+  .hover-handle{
+    position:absolute;
+    height:@handle-width;
+    width:100%;
+    z-index:1;
+    bottom:-@handle-width*2;// below popovers 
+  } 
+}
+
+.toolbar-hidden {
+    #option-bar {
+        position: relative;
+        top: -60px;
+        opacity: 0;
+        .hover-handle{
+        bottom:-@handle-width;// top of page
+      } 
+    }
+    .ruler {
+        opacity: 0;
     }
 }
 
@@ -1705,28 +1766,15 @@ a {
         height: 100%;
     }
 }
-
-.footer-hidden {
-    #main-footer {
-        bottom: -40px;
-    }
-}
-
-.toolbar-hidden {
-    #option-bar {
-        position: relative;
-        top: -60px;
-        opacity: 0;
-    }
-    .ruler {
-        opacity: 0;
-    }
-}
+//////////////////////////////
+//END CANVAS MODES
+//////////////////////////////
 
 // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Option Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #option-bar {
     width: 100%;
-    z-index: 5;
+    //z-index: 5;
+    position:relative;
     padding: 2px 0;
     background: #e8e9ea;
     height: 60px;
@@ -2207,7 +2255,7 @@ a {
         }
         &.active {
             background: #EBECED;
-            border-radius: 4px 0 0 4px;
+            //border-radius: 4px 0 0 4px;
             box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
         }
         &.ng-animate {
@@ -2295,6 +2343,9 @@ a {
                 cursor: pointer;
             }
         }
+      .lucid-collapse-bar .collapse-bar-top {
+        background-color: #DCDBDC;
+      }
         footer {
             position: absolute;
             bottom: 0;

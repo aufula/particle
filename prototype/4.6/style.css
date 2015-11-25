@@ -440,6 +440,8 @@ a {
   box-sizing: border-box;
   height: 30px;
   text-align: left;
+  font-size: 14px;
+  border-radius: 4px;
 }
 .lucid-shape-group:hover .lucid-shape-group-top-right-icons {
   opacity: 1;
@@ -1471,7 +1473,7 @@ a {
   height: 100%;
 }
 #sidebar ul li {
-  line-height: 53px;
+  line-height: 40px;
   color: #fff;
   padding-left: 20px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -1479,6 +1481,9 @@ a {
   background: transparent;
   -webkit-transition: background .1s;
   transition: background .1s;
+}
+#sidebar ul li:first-child {
+  line-height: 53px;
 }
 #sidebar ul li:hover {
   background: rgba(255, 255, 255, 0.15);
@@ -1555,6 +1560,14 @@ a {
   transition: opacity 0.3s, left 0.3s ease-in-out;
   border-right: 1px solid #b7b7b7;
 }
+#left-bar .hover-handle {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 20px;
+  z-index: 1;
+  right: -20px;
+}
 .left-panel-hidden #left-bar {
   left: -250px;
   opacity: 0;
@@ -1569,9 +1582,38 @@ a {
 .left-panel-hidden #ruler-hor {
   left: 0;
 }
+#right-dock .hover-handle {
+  position: absolute;
+  height: 100%;
+  top: 0;
+  width: 20px;
+  z-index: 1;
+  left: -20px;
+}
 .right-panel-hidden #right-dock,
 .right-panel-hidden #right-dock.open {
   right: -75px;
+}
+.footer-hidden #main-footer {
+  bottom: -40px;
+}
+#option-bar .hover-handle {
+  position: absolute;
+  height: 20px;
+  width: 100%;
+  z-index: 1;
+  bottom: -40px;
+}
+.toolbar-hidden #option-bar {
+  position: relative;
+  top: -60px;
+  opacity: 0;
+}
+.toolbar-hidden #option-bar .hover-handle {
+  bottom: -20px;
+}
+.toolbar-hidden .ruler {
+  opacity: 0;
 }
 .header-hidden #main-header {
   top: -54px;
@@ -1580,20 +1622,9 @@ a {
   margin-top: 0;
   height: 100%;
 }
-.footer-hidden #main-footer {
-  bottom: -40px;
-}
-.toolbar-hidden #option-bar {
-  position: relative;
-  top: -60px;
-  opacity: 0;
-}
-.toolbar-hidden .ruler {
-  opacity: 0;
-}
 #option-bar {
   width: 100%;
-  z-index: 5;
+  position: relative;
   padding: 2px 0;
   background: #e8e9ea;
   height: 60px;
@@ -2095,7 +2126,6 @@ a {
 }
 #right-dock .icon-wrapper.active {
   background: #EBECED;
-  border-radius: 4px 0 0 4px;
   box-shadow: 0 0px 7px rgba(0, 0, 0, 0.15);
 }
 #right-dock .icon-wrapper.ng-animate .tooltip {
@@ -2185,6 +2215,9 @@ a {
   right: 10px;
   top: 6px;
   cursor: pointer;
+}
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
+  background-color: #DCDBDC;
 }
 #right-dock .right-panel footer {
   position: absolute;

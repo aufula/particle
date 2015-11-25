@@ -2,35 +2,114 @@
 /*global console : true fixes codekit error*/
 
 angular.module('particleApp', ['lucidComponents'])
+////////////////
+////START MAIN CTRL
+////////////////
+    .controller('mainCtrl', function($scope, $timeout) {
+        $scope.canvasmode = 0;
+        $scope.canvasMode = function() {
+            if ($scope.canvasmode === 0) {
+                $scope.hideLeftPanel = true;
+                $scope.hideRightPanel = true;
+                $scope.hideFooter = true;
 
-.controller('ShareCtrl', function($scope) {
+                $scope.canvasmode = 1;
+                console.log('Mode 1');
+                return;
+            }
+            if ($scope.canvasmode === 1) {
+                $scope.hideToolbar = true;
+                $scope.hideHeader = true;
+                $scope.canvasmode = 2;
+                console.log('Mode 2');
+                return;
+            }
+            if ($scope.canvasmode === 2) {
+                $scope.hideLeftPanel = false;
+                $scope.hideRightPanel = false;
+                $scope.hideFooter = false;
+                $scope.hideToolbar = false;
+                $scope.hideHeader = false;
+                $scope.canvasmode = 0;
+                console.log('Standard Canvas');
+                return;
+            }
 
-    $scope.showPopup = function() {
-        $scope.showing = true; // show popup
-        $scope.dummyData = { // empty form data
-            name: "",
-            role: "Editor"
         };
-    };
+        //Start function for showing and hiding panels
+        $scope.enterOptionBar = function() {
+            if (!$scope.hideHeader) {
+                $scope.hideHeader = true;
+                $scope.hideToolbar = true;
+            } else {
+                timer = $timeout(function() {
+                    $scope.hideHeader = false;
+                    $scope.hideToolbar = false;
+                    console.log('enter optionbar');
+                }, 250);
+            }
+        };
+        $scope.enterRightPanel = function() {
+            if (!$scope.hideRightPanel) {
+                //hide instantly
+                $scope.hideRightPanel = true;
+                //else wait to show
+            } else {
+                timer = $timeout(function() {
+                    $scope.hideRightPanel = false;
+                    console.log('enter right panel');
+                }, 250);
+            }
+        };
+        $scope.enterLeftPanel = function() {
+            if (!$scope.hideLeftPanel) {
+                //hide instantly
+                $scope.hideLeftPanel = true;
+                //else wait to show
+            } else {
+                timer = $timeout(function() {
+                    $scope.hideLeftPanel = false;
+                    console.log('enter left panel');
+                }, 250);
+            }
+        };
+        $scope.cancelHover = function() {
+            $timeout.cancel(timer);
+        };
+    })
+////////////////
+////START SHARE CTRL
+////////////////
+    .controller('ShareCtrl', function($scope) {
 
-    $scope.addPerson = function(item) {
-        $scope.collaborators.push(item); // add the data
-        $scope.showing = false; // hide the popup
-        $scope.dummyData = {}; // reset the form data
-    };
+        $scope.showPopup = function() {
+            $scope.showing = true; // show popup
+            $scope.dummyData = { // empty form data
+                name: "",
+                role: "Editor"
+            };
+        };
 
-    $scope.collaborators = [{ // Fake data (feel free to change)
-        name: "Ryan Contreras",
-        role: "Owner",
-        image: "https://s3.amazonaws.com/uifaces/faces/twitter/zack415/128.jpg"
-    }, {
-        name: "Dave Smith",
-        role: "Commenter",
-        image: "https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg"
-    }];
-})
+        $scope.addPerson = function(item) {
+            $scope.collaborators.push(item); // add the data
+            $scope.showing = false; // hide the popup
+            $scope.dummyData = {}; // reset the form data
+        };
 
-.controller('RightDockCtrl', function($scope, $rootScope) {
+        $scope.collaborators = [{ // Fake data (feel free to change)
+            name: "Ryan Contreras",
+            role: "Owner",
+            image: "https://s3.amazonaws.com/uifaces/faces/twitter/zack415/128.jpg"
+        }, {
+            name: "Dave Smith",
+            role: "Commenter",
+            image: "https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg"
+        }];
+    })
+////////////////
+////START RIGHT DOCK CTRL
+////////////////
+    .controller('RightDockCtrl', function($scope, $rootScope) {
         $scope.openTab = "";
         $scope.showTooltipPresent = true;
         $scope.showTooltipHistory = true;
@@ -61,16 +140,26 @@ angular.module('particleApp', ['lucidComponents'])
             }
         };
     })
+////////////////
+////START PAGES CTRL
+////////////////
     .controller('PagesCtrl', function($scope, $timeout, $rootScope, pagesData) {
         $rootScope.pages = pagesData;
         $rootScope.currentPage = pagesData[0];
 
-        $scope.sortConfig = {
-            group: 'foobar',
-            animation: 150,
-            // onSort: function( /** ngSortEvent */ evt) {
-            //     // @see https://github.com/RubaXa/Sortable/blob/master/ng-sortable.js#L18-L24
-            // }
+        $scope.changePage = function(page) {
+
+            var resetPage = {
+                name: page.name,
+                blocks: []
+            };
+            // this is used to keep the name the same, and empty the blocks on the page
+            // so that the blocks don't animate in every time the page loads.
+            // used with ng-if on the ul of items on the canvas.
+            $rootScope.currentPage = resetPage;
+            $timeout(function() {
+                $rootScope.currentPage = page;
+            }, 10);
         };
         $scope.addPage = function() {
             var length = $rootScope.pages.length;
@@ -78,6 +167,7 @@ angular.module('particleApp', ['lucidComponents'])
             var newPage = {
                 name: 'New Page ' + (+length + 1),
                 id: uniqueID,
+                blocks: [''] //empty block added so that the ul shows up
             };
             $rootScope.pages.splice(length, 0, newPage);
             $timeout(function() {
@@ -114,9 +204,9 @@ angular.module('particleApp', ['lucidComponents'])
             //console.log(page, index);
             $timeout(function() {
                 if ($rootScope.pages[index]) {
-                    $rootScope.currentPage = $rootScope.pages[index];
+                    $scope.changePage($rootScope.pages[index]);
                 } else {
-                    $rootScope.currentPage = $rootScope.pages[index - 1];
+                    $scope.changePage($rootScope.pages[index - 1]);
                 }
             }, 10);
         };
@@ -137,6 +227,18 @@ angular.module('particleApp', ['lucidComponents'])
 
         };
     })
+////////////////
+////START SINGLE PAGE CTRL
+////////////////
+    .controller('SinglePageCtrl', function($scope) {
+        $scope.renameData = {};
+        $scope.renamePage = function(rename) {
+            $scope.page.name = rename;
+        };
+    })
+////////////////
+////START LINE PATH CTRL
+////////////////
     .controller('linePathCtrl', function($scope, $timeout) {
 
         // angular.element(document).ready(function() {
@@ -146,7 +248,6 @@ angular.module('particleApp', ['lucidComponents'])
         $timeout(function() {
             $scope.lucidPath = new SVGMorpheus('#lucid-path-style');
         }, 1400);
-
 
         $scope.changePath = function(path) {
             if (path === 'straight') {
@@ -185,6 +286,9 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pathstyle = $scope.pathstyles[0];
 
     })
+////////////////
+////START TEXT ALIGNMENT CTRL
+////////////////
     .controller('textAlignmentCtrl', function($scope, $timeout) {
 
         $timeout(function() {
@@ -325,31 +429,34 @@ angular.module('particleApp', ['lucidComponents'])
 
         }];
     })
+////////////////
+////START SHAPES MANAGER CTRL
+////////////////
     .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
-
-        $scope.shapegroups = lucidShapesData.all();
-        $rootScope.manageshapes = false;
-        $scope.clickShapes = function() {
-            if (!$scope.searchshapes) {
-                $rootScope.manageshapes = !$rootScope.manageshapes
-            } else {
-                $scope.searchshapes = false;
-            }
-        };
-
-        $scope.copy = function(type) {
-            if (type == 'custom') {
-                return 'copyMove'
-            } else {
-                return 'copy'
-            }
-        }
         $scope.$on('draggable:start', function(event, data) {
             $rootScope.draggingshape = true;
         });
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
         });
+
+        $scope.shapegroups = lucidShapesData.all();
+        $rootScope.manageshapes = false;
+        $scope.clickShapes = function() {
+            if (!$scope.searchshapes) {
+                $rootScope.manageshapes = !$rootScope.manageshapes;
+            } else {
+                $scope.searchshapes = false;
+            }
+        };
+
+        $scope.copy = function(type) {
+            if (type === 'custom') {
+                return 'copyMove';
+            } else {
+                return 'copy';
+            }
+        };
 
         $scope.dropFromCanvas = function(data, event, shapegroup) {
 
@@ -375,7 +482,6 @@ angular.module('particleApp', ['lucidComponents'])
 
         };
 
-
         /////// START DRAGGING SHAPES STUFF
 
         $scope.dragoverCallback = function(event, index, external, type) {
@@ -387,8 +493,12 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
             //$scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
-                if (allowedType === 'itemType' && !item.label) return false;
-                if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                if (allowedType === 'itemType' && !item.label){
+                 return false;
+             }
+                if (allowedType === 'containerType' && !angular.isArray(item)){
+                   return false; 
+                } 
             }
             return item;
         };
@@ -438,8 +548,7 @@ angular.module('particleApp', ['lucidComponents'])
             console.log('pin');
         };
         $scope.unPinGroup = function(shapegroup) {
-            var group = lucidShapesData.get(shapegroup.id);
-            group.pinned = false;
+            lucidShapesData.get(shapegroup.id).pinned = false;
             console.log('unpin');
         };
         $scope.togglePin = function(shapegroup) {
@@ -466,7 +575,10 @@ angular.module('particleApp', ['lucidComponents'])
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };
     })
-    .controller('canvasCtrl', function($scope, $rootScope, pagesData) {
+////////////////
+////START CANVAS CTRL
+////////////////
+    .controller('canvasCtrl', function($scope, $rootScope) {
 
         $scope.lucidSlides = [{
             "x": 368,
@@ -497,8 +609,12 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
             $scope.logListEvent('dropped at canvas', event, index, external, type);
             if (external) {
-                if (allowedType === 'itemType' && !item.label) return false;
-                if (allowedType === 'containerType' && !angular.isArray(item)) return false;
+                if (allowedType === 'itemType' && !item.label){
+                  return false;  
+                } 
+                if (allowedType === 'containerType' && !angular.isArray(item)){
+                    return false;
+                }
             }
             return item;
         };
@@ -518,7 +634,7 @@ angular.module('particleApp', ['lucidComponents'])
 
         $scope.dropToCanvas = function(item, event) {
 
-            var index = $rootScope.currentPage.blocks.indexOf(item)
+            var index = $rootScope.currentPage.blocks.indexOf(item);
 
             if (index === -1 && item) {
                 //if dragging shape with no metrics such as a star, etc.
@@ -579,14 +695,5 @@ angular.module('particleApp', ['lucidComponents'])
             // }
             //console.log(data.metrics.x, data.metrics.y);
             //console.log('drag success');
-        };
-    })
-    .controller('SinglePageCtrl', function($scope) {
-        if (!$scope.selected) {
-            $scope.selected = 1;
-        }
-        $scope.renameData = {};
-        $scope.renamePage = function(rename) {
-            $scope.page.name = rename;
         };
     });

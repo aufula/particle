@@ -5,7 +5,7 @@
     <script src="../../components/1.0/components-min.js"></script>
     <script src="app.js"></script>
 </head>
-<body ng-init="showMegamenu=false" ng-click="showMegamenu=false">
+<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
   <div id="sidebar" class="reversed-text">
     <ul>
       <li style="background-color: #77818C;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
@@ -15,17 +15,19 @@
       <li>New document</li>
       <li>Save as...</li>
       <li>Copy document</li>
-      <li>Download</li>
+      <li>Share</li>
       <li>Print</li>
       <li>Quit</li>
     </ul>
   </div>
   <div id="wrapper" ng-class="{'with-mega-menu' : showMegamenu}">
-    <div id="main-header">
+        <!-- START MAIN HEADER PAGES WRAPPER -->
+    <div class="main-header-pages-wrapper" click-outside = "pages.show = false">
+      <div id="main-header">
       <div class="left"><a href="#" class="document-name reversed-text">Company Org Chart</a></div>
       <div class="center">
                 <div class="page-count">{{$root.pages.length}}</div>
-                <a href="#" class="page-name reversed-text" ng-click="showPages = !showPages">
+                <a href="#" class="page-name reversed-text" ng-click="pages.show = !pages.show">
                     <span class="dd-arrow">{{$root.currentPage.name}}</span>
                 </a>
                 <div class="lucid-buttcon master-page-compass lucid-animate" ng-click="showMasterPopover = !showMasterPopover" ng-show="$root.masterPageCount().length>0">
@@ -70,71 +72,71 @@
         </a>
       </div>
     </div>
-    <div id="page-list">
-      <div class="page-drawer lucid-animate" ng-show="showPages">
+      <div id="page-list">
+      <div class="page-drawer lucid-animate" ng-show="pages.show">
         <!-- start page drawer -->
         <!-- start page drawer -->
         <div class="lucid-pages" ng-controller="PagesCtrl">
           <div class="lucid-pages-wrapper">
-              <ul ng-sortable="sortConfig">
+              <ul ng-sortable="{group: 'pages',handle: '.page-thumb-wrapper', animation: 150}">
                   <li ng-repeat="page in $root.pages track by page.id" class="lucid-animate" ng-controller="SinglePageCtrl">
                       <div>
-    <div class="lucid-page"
-        lucid-context-menu
-        data-target="page-context-{{ page.id }}"
-        ng-class="{'current-page': $root.currentPage == page}"
-        ng-click="$root.currentPage = page"
-        ng-dblclick="$root.currentPage = page; $parent.$parent.showpages = false">
-        <div class="center-image">
-            <div class="center-image-container">
-                <div class="image-container">
-                    <div class="page-thumb-wrapper">
-                        <img class="page-thumb" ng-src="{{page.thumb}}" ng-if="page.thumb">
-                        <div class="blank-page" ng-if="!page.thumb"></div>
-                        <div class="master-page lucid-animate" ng-show="page.master">
-                            <div class="master-applied-icon"></div>
-                            <span>MASTER PAGE</span>
-                        </div> 
-                        <div class="master-page lucid-animate" ng-show="page.masterapplied">
-                            <span>MASTER APPLIED</span>
-                        </div>   
+                        <div class="lucid-page"
+                            lucid-context-menu
+                            data-target="page-context-{{ page.id }}"
+                            ng-class="{'current-page': $root.currentPage == page}"
+                            ng-click="changePage(page)"
+                            ng-dblclick="$root.currentPage = page; $parent.pages.show = false">
+                            <div class="center-image">
+                                <div class="center-image-container">
+                                    <div class="image-container">
+                                        <div class="page-thumb-wrapper">
+                                            <img class="page-thumb" ng-src="{{page.thumb}}" ng-if="page.thumb">
+                                            <div class="blank-page" ng-if="!page.thumb"></div>
+                                            <div class="master-page lucid-animate" ng-show="page.master">
+                                                <div class="master-applied-icon"></div>
+                                                <span>MASTER PAGE</span>
+                                            </div> 
+                                            <div class="master-page lucid-animate" ng-show="page.masterapplied">
+                                                <span>MASTER APPLIED</span>
+                                            </div>   
+                                        </div>
+                                        <div class="page-x" ng-click="$parent.deletePage(page, $parent.$index)"></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <span>
+                                <h4 ng-click="renameModal=true" class="lucid-animate">{{page.name}}</h4>
+                            </span>
+                            <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel" confirm-function="renamePage(renameData.name)">
+                                <div class="rename-page-modal-content">
+                                    <span>Enter a new page title:</span>
+                                    <input type="text" ng-init="renameData.name = page.name" ng-model="renameData.name">
+                                </div>
+                            </lucid-modal>
+                            <!-- Right Click Context Menu -->
+                            <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
+                                <ul>
+                                    <li ng-click="renameModal=true">Rename</li>
+                                    <li ng-click="$parent.duplicatePage(page, $parent.$index)">Duplicate</li>
+                                    <li ng-click="$parent.deletePage(page, $parent.$index)">Delete</li>
+                                    <li class="context-divider"></li>
+                                    <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Layer</li>
+                                    <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
+                                    <li ng-show="page.master" ng-click="$parent.applyMasterAll()">Apply Master to All</li>
+                                    <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Layer
+                                        <ul>
+                                            <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                                {{master.name}}
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
+
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="page-x" ng-click="$parent.deletePage(page, $parent.$index)"></div>
-                </div>
-            </div>
-        </div>
-        <span>
-            <h4 ng-click="renameModal=true" class="lucid-animate">{{page.name}}</h4>
-        </span>
-        <lucid-modal showmodal="renameModal" width="400" height="165" title="Rename Page" confirm="Rename" cancel="Cancel" confirm-function="renamePage(renameData.name)">
-            <div class="rename-page-modal-content">
-                <span>Enter a new page title:</span>
-                <input type="text" ng-init="renameData.name = page.name" ng-model="renameData.name">
-            </div>
-        </lucid-modal>
-        <!-- Right Click Context Menu -->
-        <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
-            <ul>
-                <li ng-click="renameModal=true">Rename</li>
-                <li ng-click="$parent.duplicatePage(page, $parent.$index)">Duplicate</li>
-                <li ng-click="$parent.deletePage(page, $parent.$index)">Delete</li>
-                <li class="context-divider"></li>
-                <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Layer</li>
-                <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
-                <li ng-show="page.master" ng-click="$parent.applyMasterAll()">Apply Master to All</li>
-                <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Layer
-                    <ul>
-                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
-                            {{master.name}}
-                        </li>
-                    </ul>
-                </li>
-                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Layer</li>
-                
-            </ul>
-        </div>
-    </div>
-</div>
                   </li>
               </ul>
               <div class="add-new-page lucid-animate" draggable="false">
@@ -145,6 +147,8 @@
         <!-- end page drawer -->
       </div>
     </div>
+    </div>
+    <!-- END PAGES AND MAIN HEADER WRAPPER -->
     <div id="main-container">
       <div class="page-container">
       <!-- START CANVAS -->
@@ -167,7 +171,7 @@
             dnd-allowed-types="['custom']"
             dnd-horizontal-list="true"
             dnd-external-sources="true"
-            
+            ng-if="$root.currentPage.blocks.length"            
 
             dnd-drop="dropToCanvas(item, event)"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"> 
@@ -183,7 +187,8 @@
             dnd-canceled="logEvent('Drag operation canceled', event)"
             dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
 
-            ng-repeat="block in $root.currentPage.blocks track by $index" 
+            ng-repeat="block in $root.currentPage.blocks track by $index"
+            ng-if="block.metrics"
             ng-drag="true" 
             ng-drag-data="block" 
             ng-drag-success="onDragSuccess($data,$event)" 
@@ -194,7 +199,7 @@
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
               <div class="lucid-outer-block-table" lucid-context-menu 
                data-target="block-context-{{ block.$index }}" >
-                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
+                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
                       <input type="text" ng-model="block.text.text" ng-show="edittext">
                   </div>
               </div>
@@ -203,7 +208,7 @@
                   <div class="lucid-corner-drag lucid-top-right"></div>
                   <div class="lucid-corner-drag lucid-bottom-right"></div>
                   <div class="lucid-corner-drag lucid-bottom-left"></div>
-              </div> <img class="lucid-block-comment lucid-animate" ng-show="block.comment && $root.showComments" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comment-yellow.svg">
+              </div> <img class="lucid-block-comment lucid-animate" ng-show="block.comment" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comment-yellow.svg">
               <div id="block-context-{{ block.$index }}" class="lucid-context-menu ng-hide">
                   <ul>
                       <li ng-click="addsavedstyle(block); selected.customcolor = true; showcontextMenu=false"> <span> Save Block Style</span> </li>
@@ -384,7 +389,7 @@
                       </div>
                   </div>
 
-                  <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes">
+                  <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes" ng-animate-children>
                       <div class="lucid-scroll-inner-wrap">
                           <div class="lucid-shapes-manager-divider">
                               <div class="divider-inner">
@@ -609,6 +614,7 @@
           </div>
       </div>
         <!-- END SHAPES MANAGER -->
+    <div class="hover-handle" ng-mouseenter="enterLeftPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>
       </div>
 <!-- END LEFT BAR -->
 <!-- BEGIN TOP TOOLBAR -->
@@ -696,8 +702,10 @@
           <!-- END LINE OPTIONS -->
           <li class="right">
             <lucid-input-stepper step="1" width="40" number="3" unit="px" style="margin-left: 5px;"></lucid-input-stepper>
-          <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" /></li>
-        </ul>
+          <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" ng-click="canvasMode()"/></li>
+        </ul> 
+ 
+  <div class="hover-handle" ng-mouseenter="enterOptionBar()" ng-mouseleave="cancelHover()" ng-if="canvasmode == 2"></div>
       </div>
 <!-- END TOP TOOLBAR -->
 <!-- RIGHT DOCK -->
@@ -761,7 +769,11 @@
         <!-- RIGHT DOCK PANEL CONTENT -->
         <div class="right-panel">
           <div id="details" class="container" ng-show="openTab === 'details'">
-            <header>Details<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-details-v4.png" />
+            <header>Details<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="setTab('');" /></header>
+            <div style="padding: 15px 15px 15px 16px;">
+            <lucid-collapse-bar title="Properties"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-details-v5.png" />
+              </lucid-collapse-bar>
+            </div>
           </div>
           <!-- SHARE PANEL --->
           <div id="share" class="container" ng-controller="ShareCtrl" ng-show="openTab === 'share'" ng-click="showing=false;">
@@ -813,6 +825,7 @@
             <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-bottom-v4.png"></footer>
           </div>
         </div>
+        <div class="hover-handle" ng-mouseenter="enterRightPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>
       </div>
       <!-- END RIGHT DOCK -->
       <!-- START CANVAS FOOTER -->
