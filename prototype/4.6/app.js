@@ -2,9 +2,9 @@
 /*global console : true fixes codekit error*/
 
 angular.module('particleApp', ['lucidComponents'])
-////////////////
-////START MAIN CTRL
-////////////////
+    ////////////////
+    ////START MAIN CTRL
+    ////////////////
     .controller('mainCtrl', function($scope, $timeout) {
         $scope.canvasmode = 0;
         $scope.canvasMode = function() {
@@ -77,9 +77,9 @@ angular.module('particleApp', ['lucidComponents'])
             $timeout.cancel(timer);
         };
     })
-////////////////
-////START SHARE CTRL
-////////////////
+    ////////////////
+    ////START SHARE CTRL
+    ////////////////
     .controller('ShareCtrl', function($scope) {
 
         $scope.showPopup = function() {
@@ -106,9 +106,9 @@ angular.module('particleApp', ['lucidComponents'])
             image: "https://s3.amazonaws.com/uifaces/faces/twitter/marcosmoralez/128.jpg"
         }];
     })
-////////////////
-////START RIGHT DOCK CTRL
-////////////////
+    ////////////////
+    ////START RIGHT DOCK CTRL
+    ////////////////
     .controller('RightDockCtrl', function($scope, $rootScope) {
         $scope.openTab = "";
         $scope.showTooltipPresent = true;
@@ -140,9 +140,9 @@ angular.module('particleApp', ['lucidComponents'])
             }
         };
     })
-////////////////
-////START PAGES CTRL
-////////////////
+    ////////////////
+    ////START PAGES CTRL
+    ////////////////
     .controller('PagesCtrl', function($scope, $timeout, $rootScope, pagesData) {
         $rootScope.pages = pagesData;
         $rootScope.currentPage = pagesData[0];
@@ -227,18 +227,18 @@ angular.module('particleApp', ['lucidComponents'])
 
         };
     })
-////////////////
-////START SINGLE PAGE CTRL
-////////////////
+    ////////////////
+    ////START SINGLE PAGE CTRL
+    ////////////////
     .controller('SinglePageCtrl', function($scope) {
         $scope.renameData = {};
         $scope.renamePage = function(rename) {
             $scope.page.name = rename;
         };
     })
-////////////////
-////START LINE PATH CTRL
-////////////////
+    ////////////////
+    ////START LINE PATH CTRL
+    ////////////////
     .controller('linePathCtrl', function($scope, $timeout) {
 
         // angular.element(document).ready(function() {
@@ -286,9 +286,9 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pathstyle = $scope.pathstyles[0];
 
     })
-////////////////
-////START TEXT ALIGNMENT CTRL
-////////////////
+    ////////////////
+    ////START TEXT ALIGNMENT CTRL
+    ////////////////
     .controller('textAlignmentCtrl', function($scope, $timeout) {
 
         $timeout(function() {
@@ -429,18 +429,43 @@ angular.module('particleApp', ['lucidComponents'])
 
         }];
     })
-////////////////
-////START SHAPES MANAGER CTRL
-////////////////
+    ////////////////
+    ////START SHAPES MANAGER CTRL
+    ////////////////
     .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
+
         $scope.$on('draggable:start', function(event, data) {
             $rootScope.draggingshape = true;
         });
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
         });
-
+        $scope.pinnedShapegroups = lucidShapesData.pinned();
         $scope.shapegroups = lucidShapesData.all();
+
+        $scope.updatePinned = function(){
+            $scope.pinnedShapegroups = lucidShapesData.pinned();
+            console.log('updatePinned');
+        }; 
+
+        //start drag and reoder shape groups
+        $scope.pinnedGroupsSort = {
+                group: {
+                    name: 'pinned',
+                    put: ['custom', 'lucid']
+                },
+                handle: '.shape-group-top',
+                animation: 150,
+                onAdd: function(evt) {
+                    var itemEl = evt.item; // dragged HTMLElement
+                    evt.from; // previous list
+                    //evt.item.pinned = true;
+                    console.log(evt.model.pinned, 'pinned in group sort')
+                }
+            }
+            //end drag and reorder shape groups
+
+
         $rootScope.manageshapes = false;
         $scope.clickShapes = function() {
             if (!$scope.searchshapes) {
@@ -493,12 +518,12 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
             //$scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
-                if (allowedType === 'itemType' && !item.label){
-                 return false;
-             }
-                if (allowedType === 'containerType' && !angular.isArray(item)){
-                   return false; 
-                } 
+                if (allowedType === 'itemType' && !item.label) {
+                    return false;
+                }
+                if (allowedType === 'containerType' && !angular.isArray(item)) {
+                    return false;
+                }
             }
             return item;
         };
@@ -546,10 +571,12 @@ angular.module('particleApp', ['lucidComponents'])
             //show message if not in display
             $scope.showPinMessage(shapegroup);
             console.log('pin');
+            $scope.updatePinned();
         };
         $scope.unPinGroup = function(shapegroup) {
             lucidShapesData.get(shapegroup.id).pinned = false;
             console.log('unpin');
+            $scope.updatePinned();
         };
         $scope.togglePin = function(shapegroup) {
             var group = lucidShapesData.get(shapegroup.id);
@@ -575,9 +602,9 @@ angular.module('particleApp', ['lucidComponents'])
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };
     })
-////////////////
-////START CANVAS CTRL
-////////////////
+    ////////////////
+    ////START CANVAS CTRL
+    ////////////////
     .controller('canvasCtrl', function($scope, $rootScope) {
 
         $scope.lucidSlides = [{
@@ -609,10 +636,10 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.dropCallback = function(event, index, item, external, type, allowedType) {
             $scope.logListEvent('dropped at canvas', event, index, external, type);
             if (external) {
-                if (allowedType === 'itemType' && !item.label){
-                  return false;  
-                } 
-                if (allowedType === 'containerType' && !angular.isArray(item)){
+                if (allowedType === 'itemType' && !item.label) {
+                    return false;
+                }
+                if (allowedType === 'containerType' && !angular.isArray(item)) {
                     return false;
                 }
             }

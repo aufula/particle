@@ -442,6 +442,7 @@ a {
   text-align: left;
   font-size: 14px;
   border-radius: 4px;
+  cursor: move;
 }
 .lucid-shape-group:hover .lucid-shape-group-top-right-icons {
   opacity: 1;
@@ -2215,9 +2216,6 @@ a {
   right: 10px;
   top: 6px;
   cursor: pointer;
-}
-#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
-  background-color: #DCDBDC;
 }
 #right-dock .right-panel footer {
   position: absolute;

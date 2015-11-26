@@ -303,17 +303,9 @@
                   </div>
                   <div id="left-panel-shapes" class="lucid-shapes-scroll lucid-animate" ng-hide="searchshapes">
                       <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">
-                          <ul dnd-list="shapegroups"
-                              dnd-allowed-types="['containerType']"
-                              dnd-external-sources="true"
-                              dnd-dragover="dragoverCallback(event, index, external, type)"
-                              dnd-drop="dropCallback(event, index, item, external, type, 'containerType')"
+                          <ul ng-sortable="pinnedGroupsSort"
                               class="lucid-group-drop-area">
-                              <li ng-repeat="shapegroup in shapegroups | filter:{pinned:'true'} | orderBy:'pinnedOrder'"
-                                  dnd-draggable="shapegroup"
-                                  dnd-type="'containerType'"
-                                  dnd-effect-allowed="copyMove"
-                                  dnd-moved="shapegroups.splice($index, 1)"
+                              <li ng-repeat="shapegroup in pinnedShapegroups"
 
                                   class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
                                   <!-- START LEFT SHAPE GROUP -->
@@ -327,7 +319,7 @@
                                     </div>
                                     <div class="shape-group-top">
                                       <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                      <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="shapegroup.pinned = false">
+                                      <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)">
                                     </div>
                                     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                       <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -337,12 +329,12 @@
                                       <ul class="shapes-wrapper"
                                           ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
                                           ng-drop="true"
-                                          ng-drop-success="dropFromCanvas($data,$event, shapegroup)"
+                                          ng-drop-success="dropFromCanvas($data, $event, shapegroup)"
 
                                           dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
                                           dnd-horizontal-list="true"
-                                          dnd-external-sources="true"
+                                          dnd-external-sources="false"
                                           dnd-dragover="dragoverCallback(event, index, external, type)"
                                           dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
                                           dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
@@ -399,18 +391,10 @@
                                   <div class="divider-line"></div>
                               </div>
                           </div>
-                          <ul dnd-list="shapegroups"
-                              dnd-allowed-types="['containerType']"
-                              dnd-external-sources="true"
-                              dnd-dragover="dragoverCallback(event, index, external, type)"
-                              dnd-drop="unPinGroup(item); dropCallback(event, index, item, external, type, 'containerType')"
+                          <ul ng-sortable="{group: {name: 'custom', pull:'clone' }, handle: '.shape-group-top', animation: 150}"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
                               <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
-                                  dnd-draggable="shapegroup"
-                                  dnd-type="'containerType'"
-                                  dnd-effect-allowed="copy"
-                                  dnd-moved="shapegroups.splice($index, 1)"
                                   class="lucid-shape-group-wrapper lucid-animate"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'"
@@ -484,7 +468,7 @@
                                           dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
                                           dnd-horizontal-list="true"
-                                          dnd-external-sources="true"
+                                          dnd-external-sources="false"
                                           dnd-dragover="dragoverCallback(event, index, external, type)"
                                           dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
                                           dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
@@ -534,18 +518,10 @@
                                   <div class="divider-line"></div>
                               </div>
                           </div>
-                          <ul dnd-list="shapegroups"
-                              dnd-allowed-types="['containerType']"
-                              dnd-external-sources="true"
-                              dnd-dragover="dragoverCallback(event, index, external, type)"
-                              dnd-drop="unPinGroup(item); dropCallback(event, index, item, external, type, 'containerType')"
+                          <ul ng-sortable="{sort: false, group: {name: 'lucid', pull: 'clone'}, handle: '.shape-group-top', animation: 150}"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
-                              <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | orderBy:'groupname' | limitTo:5 track by shapegroup.id"
-                                  dnd-draggable="shapegroup"
-                                  dnd-type="'containerType'"
-                                  dnd-effect-allowed="copy"
-                                  dnd-moved="shapegroups.splice($index, 1)"
+                              <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | limitTo:5"
                                   class="lucid-shape-group-wrapper lucid-animate"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'"
@@ -569,7 +545,7 @@
                                           dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
                                           dnd-horizontal-list="true"
-                                          dnd-external-sources="true"
+                                          dnd-external-sources="false"
                                           dnd-dragover="dragoverCallback(event, index, external, type)"
                                           dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
                                           dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
