@@ -1,0 +1,16 @@
+<div class="lucid-buttcon-wrapper">
+    <div class="lucid-buttcon" ng-click="showpopover = !showpopover">
+    	<!-- Use an icon for the image -->
+    	<img src="/components/0.0/icon/img/share-dark.svg" class="lucid-icon-22">
+    	<!-- OR Insert your own image -->
+    	<!-- <img src="imageurl"> -->
+    </div>
+    <lucid-popover-menu ng-show="showpopover" width="359">
+        <!--Insert popover menu content here, make sure you add a width, and use ng-show to toggle show/hide of popover menu-->
+        <div style="font-size:18px; padding: 10px">Insert popover contents here</div>
+        <lucid-more-drawer height="95">
+        <!-- insert drawer content here, or you can exclude the drawer all together -->
+            <span style="font-size:18px">Insert Drawer contents here.</span>
+        </lucid-more-drawer>
+    </lucid-popover-menu>
+</div>

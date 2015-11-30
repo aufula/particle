@@ -1,0 +1,61 @@
+.lucid-button {
+    padding: 0 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 200;
+    font-family: @font-stack;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    box-sizing: border-box;
+    height: 28px;
+    whitespace: nowrap;
+    transition:.15s ease-in-out background-color;
+
+    
+    
+    &.lucid-blue {
+        background-color: @blue;
+        color: #fff;
+        &:hover {
+            background-color: @blue-hover;
+        }
+    }
+    &.lucid-green {
+        background-color: @green;
+        color: #fff;
+        &:hover {
+            // background-color:@green-hover;
+        }
+    }
+    &.lucid-yellow {
+        background-color: @yellow;
+        color: #fff;
+        &:hover {
+            // background-color:@yellow-hover;
+        }
+    }
+    &.lucid-red {
+        background-color: @red;
+        color: #fff;
+        &:hover {
+            background-color: @red-hover;
+        }
+    }
+    &.lucid-cancel {
+        background-color: #A5A5A5;
+        color: #fff;
+        &:hover {
+            background-color: #B5B5B5;
+        }
+    }
+    &.lucid-button-icon {
+        padding-left:7px;
+        .lucid-icon-18 {
+            vertical-align: top;
+            margin-top: 0px;
+            margin-right: 3px;
+        }
+    }
+}

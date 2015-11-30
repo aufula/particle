@@ -1,0 +1,16 @@
+<div class="lucid-collapse-bar">
+    <div class="collapse-bar-top" ng-class="{'no-collapse': collapsible == 'false'}">
+        <div class="lucid-hide-content-icon" ng-click="hidecontent = !hidecontent" ng-class="{ 'lucid-hide-content': hidecontent}">
+            <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                    <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+                </g>
+            </svg>
+        </div>
+        <span class="collapse-bar-name">{{title}}</span>
+    </div>
+    <div class="lucid-collapse-bar-content lucid-animate" ng-hide="hidecontent">
+        <ng-transclude>
+        </ng-transclude>
+    </div>
+</div>
