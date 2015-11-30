@@ -6,13 +6,18 @@ angular.module('lucidInputStepper', ['appConfig'])
                 unit: '@',
                 step: '@',
                 number: '=',
-                width: '@'
+                width: '@',
+                label: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope, $interval) {
+                $promise = null;
+                
+                $scope.$watch('number + unit', function (newValue) {
+                    $scope.stepperinput = newValue;
+                });
 
-                $scope.stepperinput = $scope.number + $scope.unit;
                 $scope.removeText = function() {
                     var text = $scope.stepperinput;
                     var regex = /(\d+)/g;
@@ -21,6 +26,7 @@ angular.module('lucidInputStepper', ['appConfig'])
 
                 $scope.updateInput = function() {
                     $scope.removeText();
+                    $scope.number = parseInt($scope.number);
                     $scope.stepperinput = $scope.number + $scope.unit;
                 };
                 $scope.stepUp = function() {
@@ -42,7 +48,7 @@ angular.module('lucidInputStepper', ['appConfig'])
 
                     //first step down instantly on click
                     $scope.removeText();
-                    if($scope.number == 0){
+                    if ($scope.number == 0) {
                         //console.log('zero');
                         return;
                     }
@@ -52,17 +58,19 @@ angular.module('lucidInputStepper', ['appConfig'])
                     $promise = $interval(function() {
 
                         $scope.removeText();
-                        if($scope.number == 0){
-                        //console.log('zero');
-                        return;
-                    }
+                        if ($scope.number == 0) {
+                            //console.log('zero');
+                            return;
+                        }
                         $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
                         $scope.stepperinput = $scope.number + $scope.unit;
 
                     }, 100);
                 };
                 $scope.mouseUp = function() {
-                    $interval.cancel($promise);
+                    if ($promise) {
+                        $interval.cancel($promise);
+                    }
                 };
             }
         };

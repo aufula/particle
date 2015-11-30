@@ -20,13 +20,16 @@
             top:0;
             left:0;
             height: 30px;
-            padding: 5px 2px;
+            padding: 13px 9px 0;
             cursor: pointer;
             transition: all .25s ease-in-out;
             svg g {
                 transform: rotateZ(0);
                 transform-origin: center;
                 transition: all .25s ease-in-out;
+                path{
+                    fill: @blue-steel-2;
+                }
             }
             &.lucid-hide-content {
                 svg g {
@@ -37,7 +40,7 @@
         .collapse-bar-name {
             //text-transform: uppercase;
             line-height: 16px;
-            font-size: 16px;
+            font-size: 14px;
             font-weight: 500;
             padding-left: 15px;
             display: inline-block;

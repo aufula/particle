@@ -12,6 +12,7 @@
 //@codekit-append "../../lib/angular-drag-and-drop-lists.min.js"
 
 //include components js
+//@codekit-append "input/lucid-input.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
 //@codekit-append "popover-menu/lucid-popover-menu.js"
@@ -54,12 +55,12 @@ angular.module('appConfig', [])
 })
 
 .constant("config", {
-    'componentsURL': "/components/1.0/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/1.0/" //github
+    //'componentsURL': "/components/1.1/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/1.1/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////

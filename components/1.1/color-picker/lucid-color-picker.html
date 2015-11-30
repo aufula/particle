@@ -18,8 +18,26 @@
             <div ng-init="colorpicker.type='Solid'" ng-show="colorpicker.type == 'Solid'">
                 <lucid-color-picker-options color="selected.swatch.fill">
                 </lucid-color-picker-options>
-                <div class="color-hex-placeholder">
-                    <img src="http://particle.golucid.co/components/0.1/color-picker/colorpicker-hex-opacity.png">
+                <div>
+                    <ul class="color-hex-adjustments">
+                        <li>
+                            <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
+                        </li>
+                        <li>
+                            <lucid-input class="condensed" value="selected.swatch.fill" label="hex" width="60"></lucid-input>
+                        </li>
+                        <li>
+                            <div class="opacity-wrap">
+                                <div class="range-wrap">
+                                    <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
+                                </div>
+                                <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
+                                <div class="input-label">
+                                    <span>Opacity</span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
                 </div>
                 <ul class="lucid-color-inputs">
                     <li class="lucid-hex">
@@ -66,62 +84,77 @@
         <div ng-show="swatchpanel == 'Border' ">
             <lucid-color-picker-options color="selected.swatch.border">
             </lucid-color-picker-options>
-            <div class="color-hex-placeholder">
-                <img src="http://particle.golucid.co/components/0.1/color-picker/colorpicker-hex-opacity.png">
+            <div>
+                <ul class="color-hex-adjustments">
+                    <li>
+                        <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-input class="condensed" value="selected.swatch.border" label="hex" width="60"></lucid-input>
+                    </li>
+                    <li>
+                        <div class="opacity-wrap">
+                            <div class="range-wrap">
+                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
+                            </div>
+                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
+                            <div class="input-label">
+                                <span>Opacity</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="lucid-color-inputs">
-                <li class="lucid-hex">
-                    <span class="lucid-hex-title"></span>
-                    <input type="text" class="lucid-input lucid-hex" ng-model="selected.swatch.border">
-                </li>
-                <li>
-                    <div class="lucid-buttcon lucid-advanced-color"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-advanced-color.png"></div>
-                </li>
-                <li class="lucid-opacity">
-                    <span class="lucid-opacity-title">A:</span>
-                    <lucid-input-stepper number="100" unit="%" step="10" width="60"></lucid-input-stepper>
-                </li>
-            </ul>
         </div>
         <div ng-show="swatchpanel == 'Text'">
             <lucid-color-picker-options color="selected.swatch.text">
             </lucid-color-picker-options>
-            <div class="color-hex-placeholder">
-                <img src="http://particle.golucid.co/components/0.1/color-picker/colorpicker-hex-opacity.png">
+            <div>
+                <ul class="color-hex-adjustments">
+                    <li>
+                        <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-input class="condensed" value="selected.swatch.text" label="hex" width="60"></lucid-input>
+                    </li>
+                    <li>
+                        <div class="opacity-wrap">
+                            <div class="range-wrap">
+                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
+                            </div>
+                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
+                            <div class="input-label">
+                                <span>Opacity</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="lucid-color-inputs">
-                <li class="lucid-hex">
-                    <span class="lucid-hex-title"></span>
-                    <input type="text" class="lucid-input lucid-hex" ng-model="selected.swatch.text">
-                </li>
-                <li>
-                    <div class="lucid-buttcon lucid-advanced-color"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-advanced-color.png"></div>
-                </li>
-                <li class="lucid-opacity">
-                    <span class="lucid-opacity-title">A:</span>
-                    <lucid-input-stepper number="100" unit="%" step="10" width="60"></lucid-input-stepper>
-                </li>
-            </ul>
         </div>
         <div ng-show="swatchpanel == 'Line'">
             <lucid-color-picker-options color="selected.swatch.line">
             </lucid-color-picker-options>
-            <div class="color-hex-placeholder">
-                <img src="http://particle.golucid.co/components/0.1/color-picker/colorpicker-hex-opacity.png">
+            <div>
+                <ul class="color-hex-adjustments">
+                    <li>
+                        <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-input class="condensed" value="selected.swatch.line" label="hex" width="60"></lucid-input>
+                    </li>
+                    <li>
+                        <div class="opacity-wrap">
+                            <div class="range-wrap">
+                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
+                            </div>
+                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
+                            <div class="input-label">
+                                <span>Opacity</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            <ul class="lucid-color-inputs">
-                <li class="lucid-hex">
-                    <span class="lucid-hex-title"></span>
-                    <input type="text" class="lucid-input lucid-hex" ng-model="selected.swatch.text">
-                </li>
-                <li>
-                    <div class="lucid-buttcon lucid-advanced-color"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-advanced-color.png"></div>
-                </li>
-                <li class="lucid-opacity">
-                    <span class="lucid-opacity-title">A:</span>
-                    <lucid-input-stepper number="100" unit="%" step="10" width="60"></lucid-input-stepper>
-                </li>
-            </ul>
         </div>
     </div>
 </lucid-buttcon-popover>
