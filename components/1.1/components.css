@@ -662,54 +662,57 @@ input {
   width: 100%;
   top: 28px;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image #Fill-1,
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image #Fill-5,
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image #Fill-3 {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image.active #Fill-1 {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
   fill: #29AAE1;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image.active #Fill-3 {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-3 {
   fill: #29AAE1;
   opacity: .5;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-image.active #Fill-5 {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-5 {
   fill: #D2EBF9;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial defs stop {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial.active svg rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
   fill: inherit;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial.active defs stop {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop {
   stop-color: #29AAE1;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial.active defs stop:first-child {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop:first-child {
   stop-color: #D2EBF9;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear defs stop {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear.active svg rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
   fill: inherit;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear.active defs stop {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop {
   stop-color: #29AAE1;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear.active defs stop:first-child {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop:first-child {
   stop-color: #D2EBF9;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-solid rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-solid.active rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
   fill: #29AAE1;
+}
+.lucid-color-picker .lucid-buttcon.active {
+  background: transparent;
 }
 input[type=range] {
   -webkit-appearance: none;

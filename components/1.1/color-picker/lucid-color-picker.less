@@ -230,7 +230,7 @@
             }
         }
     }
-    .lucid-buttcon-label {
+    .lucid-buttcon {
         &.colorpicker-fill-image {
             #Fill-1,
             #Fill-5,
@@ -250,8 +250,6 @@
                 }
             }
         }
-    }
-    .lucid-buttcon-label {
         &.colorpicker-fill-radial {
             defs stop {
                 transition: .25s ease-in-out all;
@@ -293,6 +291,9 @@
                     fill: @blue;
                 }
             }
+        }
+        &.active{
+            background: transparent;
         }
     }
 }
