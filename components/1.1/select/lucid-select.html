@@ -1,10 +1,7 @@
 <div class="lucid-select-wrapper">
     <div class="selected-option-wrapper" ng-click="showdropdown = !showdropdown">
-        <div class="selected-options">
-            <div class="select-dropdown-arrow"></div>
-            <span class="lucid-selected-option">{{selectedOption}}</span>
-            <span class="lucid-selected-option" ng-repeat="option in options track by $index">{{option}}</span>
-        </div>
+        <ng-include class="dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
+        <span style="width: {{width}}px" class="lucid-selected-option">{{selectedOption}}</span>
     </div>
     <div class="lucid-select-dropdown" ng-show="showdropdown">
         <ul>

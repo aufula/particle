@@ -34,7 +34,6 @@ angular.module("lucidFingerTabs", ['appConfig'])
             scope: {
                 name: '@name',
                 icon: '@icon',
-                iconselected: '@iconselected'
             },
             require: '^lucidFingerTabs',
             link: function(scope, element, attrs, ctrl) {

@@ -1524,8 +1524,8 @@ angular.module('lucidInputStepper', ['appConfig'])
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: function($scope, $interval) {
                 $promise = null;
-                
-                $scope.$watch('number + unit', function (newValue) {
+
+                $scope.$watch('number + unit', function(newValue) {
                     $scope.stepperinput = newValue;
                 });
 
@@ -1583,6 +1583,11 @@ angular.module('lucidInputStepper', ['appConfig'])
                         $interval.cancel($promise);
                     }
                 };
+            },
+            compile: function(el, attrs) {
+                if (!attrs.step) {
+                    attrs.step = 1;
+                }
             }
         };
     });
@@ -1847,7 +1852,6 @@ angular.module("lucidFingerTabs", ['appConfig'])
             scope: {
                 name: '@name',
                 icon: '@icon',
-                iconselected: '@iconselected'
             },
             require: '^lucidFingerTabs',
             link: function(scope, element, attrs, ctrl) {
@@ -2041,6 +2045,7 @@ angular.module("lucidSelect", ['appConfig'])
             restrict: 'E',
             scope: {
                 options: '=',
+                width: '@'
             },
             replace: true,
             transclude: true,

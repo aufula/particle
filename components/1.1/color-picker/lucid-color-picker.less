@@ -235,7 +235,7 @@
             #Fill-1,
             #Fill-5,
             #Fill-3 {
-                transition: .25s ease-in-out all;
+                transition: .25s ease-in-out all; 
             }
             &.active {
                 #Fill-1 {
@@ -257,6 +257,9 @@
                 transition: .25s ease-in-out all;
             }
             &.active {
+                svg rect{
+                    fill:inherit;
+                }
                 defs stop {
                     stop-color: @blue;
                 }
@@ -270,6 +273,9 @@
                 transition: .25s ease-in-out all;
             }
             &.active {
+                svg rect{
+                    fill:inherit;
+                }
                 defs stop {
                     stop-color: @blue;
                 }

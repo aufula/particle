@@ -399,42 +399,40 @@ input {
   width: 32px;
   height: 32px;
   background: transparent;
-  display: block;
-  cursor: pointer;
   border-radius: 3px;
   position: relative;
   font-size: 0;
   display: inline-block;
   padding: 5px;
   box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
 }
 .lucid-buttcon img,
 .lucid-buttcon svg {
   max-width: 100%;
 }
-.lucid-buttcon-label {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  text-align: center;
-}
-.lucid-buttcon-label .lucid-buttcon-label-image {
+.lucid-buttcon .lucid-buttcon-image {
   width: 22px;
   height: 22px;
   display: inline-block;
 }
-.lucid-buttcon-label .lucid-buttcon-label-image svg > g {
+.lucid-buttcon .lucid-buttcon-image svg path,
+.lucid-buttcon .lucid-buttcon-image svg polygon,
+.lucid-buttcon .lucid-buttcon-image svg rect {
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
-.lucid-buttcon-label.active .lucid-buttcon-label-image svg > g {
+.lucid-buttcon .input-label {
+  text-align: center;
+}
+.lucid-buttcon.active .lucid-buttcon-image svg path,
+.lucid-buttcon.active .lucid-buttcon-image svg polygon,
+.lucid-buttcon.active .lucid-buttcon-image svg rect {
   fill: #29AAE1;
 }
-.lucid-buttcon-label.active .toggle-label {
+.lucid-buttcon.active .input-label {
   color: #29AAE1;
-}
-.lucid-buttcon-label .input-label {
-  text-align: center;
 }
 .lucid-buttcon-wrapper {
   position: relative;
@@ -679,6 +677,9 @@ input {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
+.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial.active svg rect {
+  fill: inherit;
+}
 .lucid-color-picker .lucid-buttcon-label.colorpicker-fill-radial.active defs stop {
   stop-color: #29AAE1;
 }
@@ -688,6 +689,9 @@ input {
 .lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear defs stop {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
+}
+.lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear.active svg rect {
+  fill: inherit;
 }
 .lucid-color-picker .lucid-buttcon-label.colorpicker-fill-linear.active defs stop {
   stop-color: #29AAE1;
@@ -902,13 +906,21 @@ input[type=range]:focus::-ms-fill-upper {
   height: 44px;
   font-size: 16px;
   padding: 0 15px;
-  line-height: 44px;
+  line-height: 42px;
   white-space: nowrap;
   font-weight: 300;
+}
+.lucid-finger-tabs .lucid-finger-tab svg path,
+.lucid-finger-tabs .lucid-finger-tab svg polygon {
+  fill: #3d4752;
 }
 .lucid-finger-tabs .lucid-finger-tab.selected {
   color: #fff;
   background-color: #77818C;
+}
+.lucid-finger-tabs .lucid-finger-tab.selected svg path,
+.lucid-finger-tabs .lucid-finger-tab.selected svg polygon {
+  fill: #FFF;
 }
 .lucid-finger-tabs .lucid-finger-tab.selected:after {
   position: absolute;
@@ -920,7 +932,7 @@ input[type=range]:focus::-ms-fill-upper {
   border-bottom: 10px solid transparent;
 }
 .lucid-finger-tabs .lucid-finger-tab .lucid-icon-22 {
-  margin: 10px 10px 0 0;
+  margin: 10px 6px 0 0;
   vertical-align: top;
 }
 .lucid-tab-content {
@@ -992,15 +1004,22 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 0px;
   margin-right: 3px;
 }
+.lucid-icon-18,
+.lucid-icon-22 {
+  vertical-align: top;
+  display: inline-block;
+}
+.lucid-icon-18 svg,
+.lucid-icon-22 svg {
+  vertical-align: top;
+}
 .lucid-icon-18 {
   width: 18px;
   height: 18px;
-  vertical-align: top;
 }
 .lucid-icon-22 {
   width: 22px;
   height: 22px;
-  vertical-align: top;
 }
 .lucid-notification {
   padding: 20px 15px 20px 48px;
@@ -1069,21 +1088,21 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
   position: relative;
 }
-.lucid-select-wrapper .selected-option-wrapper .select-dropdown-arrow {
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow {
   position: absolute;
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-spinner-handle.svg) center center no-repeat;
-  width: 10px;
-  height: 14px;
+  width: 8px;
+  height: 6px;
+  top: 13px;
   right: 0px;
   cursor: pointer;
-  top: 10px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
 }
-.lucid-select-wrapper .lucid-selected-option {
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg {
+  vertical-align: top;
+}
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg path {
+  fill: #77818C;
+}
+.lucid-select-wrapper .selected-option-wrapper .lucid-selected-option {
   text-align: left;
   display: block;
   cursor: pointer;
@@ -1099,12 +1118,14 @@ input[type=range]:focus::-ms-fill-upper {
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   padding: 6px 0;
   background: #fff;
-  min-width: 200px;
+  width: 100%;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
-  padding: 5px 20px;
+  padding: 5px 15px;
   text-align: left;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
   background: #F5F5F5;
@@ -1112,22 +1133,42 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active {
   background: #77818C;
   color: #fff;
+  font-weight: 200;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active:hover {
   opacity: .9;
 }
-.lucid-popover-menu .lucid-select-wrapper {
-  padding: 0 5px 0 8px;
-  background: #f1f1f1;
+.lucid-select-wrapper.condensed {
+  background: #FFF;
   border-radius: 3px;
   -webkit-transition: background 0.2s ease-in-out;
   transition: background 0.2s ease-in-out;
 }
-.lucid-popover-menu .lucid-select-wrapper:hover {
-  background: #fff;
+.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow {
+  top: 9px;
+  right: 7px;
 }
-.lucid-popover-menu .lucid-selected-option {
-  border: none;
+.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow svg path {
+  fill: #3d4752;
+}
+.lucid-select-wrapper.condensed .selected-option-wrapper .lucid-selected-option {
+  border: 1px solid #77818C;
+  border-radius: 3px;
+  height: 22px;
+  line-height: 20px;
+  padding: 0 20px 0 5px;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown {
+  top: 22px;
+  left: 0;
+  box-shadow: none;
+  padding: 6px 0;
+  background: #fff;
+  min-width: 0;
+  width: 100%;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown .lucid-select-option {
+  padding: 5px 10px;
 }
 [lucid-context-menu] {
   cursor: pointer;
@@ -1255,10 +1296,13 @@ input[type=range]:focus::-ms-fill-upper {
   top: 0;
   left: 0;
   height: 30px;
-  padding: 13px 9px 0;
+  padding: 13px 6px 0 12px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
+  vertical-align: top;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg g {
   -webkit-transform: rotateZ(0);
@@ -1279,7 +1323,8 @@ input[type=range]:focus::-ms-fill-upper {
           transform: rotateZ(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
-  line-height: 16px;
+  vertical-align: top;
+  line-height: 15px;
   font-size: 14px;
   font-weight: 500;
   padding-left: 15px;

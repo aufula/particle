@@ -4,6 +4,7 @@ angular.module("lucidSelect", ['appConfig'])
             restrict: 'E',
             scope: {
                 options: '=',
+                width: '@'
             },
             replace: true,
             transclude: true,

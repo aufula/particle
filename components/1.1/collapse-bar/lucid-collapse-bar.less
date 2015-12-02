@@ -17,18 +17,21 @@
         border-radius: 4px;
         .lucid-hide-content-icon {
             position: absolute;
-            top:0;
-            left:0;
+            top: 0;
+            left: 0;
             height: 30px;
-            padding: 13px 9px 0;
+            padding: 13px 6px 0 12px;
             cursor: pointer;
             transition: all .25s ease-in-out;
-            svg g {
-                transform: rotateZ(0);
-                transform-origin: center;
-                transition: all .25s ease-in-out;
-                path{
-                    fill: @blue-steel-2;
+            svg {
+                vertical-align: top;
+                g {
+                    transform: rotateZ(0);
+                    transform-origin: center;
+                    transition: all .25s ease-in-out;
+                    path {
+                        fill: @blue-steel-2;
+                    }
                 }
             }
             &.lucid-hide-content {
@@ -38,20 +41,20 @@
             }
         }
         .collapse-bar-name {
-            //text-transform: uppercase;
-            line-height: 16px;
+            vertical-align: top;
+            line-height: 15px;
             font-size: 14px;
             font-weight: 500;
             padding-left: 15px;
             display: inline-block;
             //transition: .2s ease-in-out;
         }
-        &.no-collapse{
-            .lucid-hide-content-icon{
+        &.no-collapse {
+            .lucid-hide-content-icon {
                 display: none;
             }
-            .collapse-bar-name{
-                padding-left:0;
+            .collapse-bar-name {
+                padding-left: 0;
             }
         }
     }

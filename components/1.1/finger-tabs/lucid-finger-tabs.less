@@ -22,12 +22,22 @@
         height: 44px;
         font-size: 16px;
         padding: 0 15px;
-        line-height: 44px;
+        line-height: 42px;
         white-space: nowrap;
         font-weight: 300;
+        svg{
+                path, polygon{
+                    fill:@blue-steel;
+                }
+            }
         &.selected {
             color: #fff;
             background-color: @blue-steel-2;
+            svg{
+                path, polygon{
+                    fill:#FFF;
+                }
+            }
             &:after {
                 position: absolute;
                 content: " ";
@@ -39,7 +49,7 @@
             }
         }
         .lucid-icon-22 {
-            margin: 10px 10px 0 0;
+            margin: 10px 6px 0 0;
             vertical-align: top;
         }
     }

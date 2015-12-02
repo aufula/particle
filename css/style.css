@@ -251,7 +251,7 @@ p.small-body {
   text-indent: 20px;
   display: block;
   -webkit-transition: background .1s;
-          transition: background .1s;
+  transition: background .1s;
   border: 0 solid transparent;
 }
 #sidebar > ul > li > a:hover {
@@ -319,7 +319,7 @@ p.small-body {
   bottom: -24px;
   left: 8px;
   -webkit-transition: all 0.25s ease-in-out;
-          transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 .code-preview .control:after.active {
   bottom: -14px;
@@ -338,7 +338,7 @@ p.small-body {
 }
 .code-preview .drawer-wrapper.ng-animate {
   -webkit-transition: height 0.3s ease-in-out;
-          transition: height 0.3s ease-in-out;
+  transition: height 0.3s ease-in-out;
 }
 .code-preview .drawer {
   position: relative;
@@ -360,7 +360,7 @@ p.small-body {
       -ms-user-select: none;
           user-select: none;
   -webkit-transition: all .1s linear;
-          transition: all .1s linear;
+  transition: all .1s linear;
 }
 .code-preview .drawer > header span.active {
   border-bottom: 4px solid #29AAE1;
@@ -385,7 +385,7 @@ p.small-body {
 }
 .code-preview .drawer .scroll-area.ng-animate {
   -webkit-transition: opacity .5s;
-          transition: opacity .5s;
+  transition: opacity .5s;
 }
 .code-preview .drawer .scroll-area .hljs {
   min-height: 160px;
@@ -396,6 +396,9 @@ p.small-body {
 }
 .code-preview .component-preview .component-preview-wrapper {
   display: inline-block;
+}
+.code-preview .spacer {
+  height: 20px;
 }
 .codepen-iframe {
   margin-bottom: 60px;
@@ -483,7 +486,7 @@ p.small-body {
 }
 .particle-icon-wrapper.ng-animate {
   -webkit-transition: 0.35s ease-in-out all;
-          transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
 }
 .particon {
   width: 22px;
@@ -552,13 +555,13 @@ p.small-body {
 }
 .particle-group .particle.duplicate {
   -webkit-transition: all .25s linear;
-          transition: all .25s linear;
+  transition: all .25s linear;
   opacity: 1;
 }
 .particle-group .particle.branch-1 {
   opacity: 1;
   -webkit-transition: all 0.2s ease-in-out;
-          transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .particle-group.explode-particle .particle.particle-1 {
   -webkit-animation: particle-1 7s infinite linear;
