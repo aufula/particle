@@ -6,30 +6,25 @@ angular.module('lucidComponentFactory', [])
             "groupname": "Particles",
             "groupid": "particles",
             "components": [{
-                "title": "Buttcon Label",
-                "componentid": "buttcon-toggle",
-                "description": "Buttons can be created by adding a class",
+                "title": "Input",
+                "componentid": "input",
+                "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "color",
+                    "name": "value",
                     "type": "text",
-                    "details": "colors available: blue, red, green, yellow, grey"
+                    "details": "Initial value of input."
                 }, {
-                    "name": "icon",
-                    "type": "URL",
-                    "details": "insert URL of icon (should be white)."
-                }]
-            }, {
-                "title": "Buttons",
-                "componentid": "button",
-                "description": "Buttons can be created by adding a class",
-                "inputs": [{
-                    "name": "color",
+                    "name": "width",
+                    "type": "number",
+                    "details": "how wide the input should be (includes arrows)."
+                }, {
+                    "name": "label",
                     "type": "text",
-                    "details": "colors available: blue, red, green, yellow, grey"
+                    "details": "Optional: if you want a label below the input."
                 }, {
-                    "name": "icon",
-                    "type": "URL",
-                    "details": "insert URL of icon (should be white)."
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
             }, {
                 "title": "Input Stepper",
@@ -51,6 +46,14 @@ angular.module('lucidComponentFactory', [])
                     "name": "width",
                     "type": "number",
                     "details": "how wide the input should be (includes arrows)."
+                }, {
+                    "name": "label",
+                    "type": "text",
+                    "details": "Optional: if you want a label below the input."
+                }, {
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
             }, {
                 "title": "Select Dropdown",
@@ -60,8 +63,75 @@ angular.module('lucidComponentFactory', [])
                     "name": "options",
                     "type": "Array",
                     "details": "List out the options in an array. ['One', 'Two', 'Three']"
+                }, {
+                    "name": "width",
+                    "type": "number",
+                    "details": "how wide the dropdown should be, *check when dropdown is open."
+                }, {
+                    "name": "label",
+                    "type": "text",
+                    "details": "Optional: if you want a label below the input."
+                }, {
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
 
+            }, {
+                "title": "Toggle",
+                "componentid": "toggle",
+                "description": "On/Off toggle state component used mostly in settings.",
+                "inputs": [{
+                    "name": "activetext",
+                    "type": "text",
+                    "details": "Optional: default is 'ON'"
+                }, {
+                    "name": "inactivetext",
+                    "type": "text",
+                    "details": "Optional: default is 'OFF'"
+                }, {
+                    "name": "width",
+                    "type": "number",
+                    "details": "Optional: used if you have alternate text. "
+                }, {
+                    "name": "label",
+                    "type": "text",
+                    "details": "Optional: add label to bottom of toggle"
+                }, {
+                    "name": "toggle",
+                    "type": "var",
+                    "details": "Optional: used to connect to existing variable."
+                }]
+            }, {
+                "title": "Buttcon",
+                "componentid": "buttcon",
+                "description": "Add a label to an icon, example is inside the colorpicker.",
+                "inputs": [{
+                    "name": "icon",
+                    "type": "URL",
+                    "details": "svg will be included inline so you can manipulate colors using css"
+                }, {
+                    "name": "label",
+                    "type": "text",
+                    "details": "Optional: add label to bottom of toggle"
+                }, {
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'active' class to color icon lucid blue"
+                }]
+            }, {
+                "title": "Buttons",
+                "componentid": "button",
+                "description": "Buttons can be created by adding a class",
+                "inputs": [{
+                    "name": "color",
+                    "type": "text",
+                    "details": "colors available: blue, red, green, yellow, grey"
+                }, {
+                    "name": "icon",
+                    "type": "URL",
+                    "details": "insert URL of icon (should be white)."
+                }]
             }, {
                 "title": "Icon",
                 "componentid": "icon",
@@ -124,11 +194,7 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "icon",
                     "type": "URL",
-                    "details": "If you want an icon put the non selected state icon here."
-                }, {
-                    "name": "iconselected",
-                    "type": "URL",
-                    "details": "If you want an icon put the selected state icon here."
+                    "details": "Optional: Insert URL of icon. Coloring SVG is added through css"
                 }],
             }, {
                 "title": "Modal",
@@ -169,17 +235,9 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "context-menu",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "name",
-                    "type": "text",
-                    "details": "Name the Shape Library"
-                }, {
-                    "name": "shapes",
-                    "type": "array",
-                    "details": "Insert array of data for shapes. See code for examples."
-                }, {
-                    "name": "custom",
-                    "type": "true",
-                    "details": "If custom is true than shapes can be dragged into this library"
+                    "name": "data-target",
+                    "type": "ID",
+                    "details": "Insert ID of context menu, that will show up when right clicked."
                 }]
             }, {
                 "title": "Collapse Bar",
@@ -192,7 +250,7 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "collapsible",
                     "type": "true/false",
-                    "details": "*Not required. Set to false if you do not want element to collapse"
+                    "details": "Optional: Set to false if you do not want element to collapse"
                 }]
             }]
         }, {

@@ -2,8 +2,6 @@ angular.module("lucidIcons", [])
     .factory('lucidIconFactory', function() {
 
         var icons = [{
-            "name": "Approved Icons",
-            "icons": [{
                 "name": "check-circle-green",
                 "url": "http://particle.golucid.co/components/0.0/icon/img/check-circle-green.svg"
             }, {
@@ -30,10 +28,7 @@ angular.module("lucidIcons", [])
                 "name": "share-white"
             }, {
                 "name": "trash-dark"
-            }]
-        }, {
-            "name": "Experimental Icons",
-            "icons": [{
+            }, {
                 "name": "add-comment-dark"
             }, {
                 "name": "alarm-grey"
@@ -179,7 +174,6 @@ angular.module("lucidIcons", [])
                 "name": "x-dark"
             }, {
                 "name": "x-white"
-            }]
-        }];
+            }];
         return icons;
     });

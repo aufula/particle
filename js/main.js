@@ -41,6 +41,10 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
     };
     $scope.icons = lucidIconFactory;
 
+    angular.forEach($scope.icons, function(icon){
+        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name +'.svg';
+    });
+
     //this pulls in the component groups for the sidebar//
     $scope.componentGroups = lucidComponentFactory;
 
@@ -52,7 +56,7 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
     $scope.components = $filter('filter')(lucidComponentFactory, {
         "groupid": $routeParams.componentGroupID
     });
-    $scope.componentPath = "components/1.0/";
+    $scope.componentPath = "components/1.1/";
 
 });
 
