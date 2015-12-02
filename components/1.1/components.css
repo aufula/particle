@@ -806,9 +806,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 15px 16px;
   height: 186px;
 }
-.lucid-color-inputs {
-  display: none!important;
-}
 .lucid-modal-wrapper {
   position: relative;
   z-index: 1;
@@ -1300,7 +1297,7 @@ input[type=range]:focus::-ms-fill-upper {
   top: 0;
   left: 0;
   height: 30px;
-  padding: 13px 6px 0 12px;
+  padding: 13px 4px 0 11px;
   cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
