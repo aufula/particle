@@ -1092,8 +1092,6 @@ input[type=range]:focus::-ms-fill-upper {
   vertical-align: top;
 }
 .lucid-select-wrapper .selected-option-wrapper {
-  height: 28px;
-  overflow: hidden;
   position: relative;
 }
 .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow {
@@ -1147,10 +1145,7 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: .9;
 }
 .lucid-select-wrapper.condensed {
-  background: #FFF;
   border-radius: 3px;
-  -webkit-transition: background 0.2s ease-in-out;
-  transition: background 0.2s ease-in-out;
 }
 .lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow {
   top: 9px;
@@ -1160,7 +1155,8 @@ input[type=range]:focus::-ms-fill-upper {
   fill: #3d4752;
 }
 .lucid-select-wrapper.condensed .selected-option-wrapper .lucid-selected-option {
-  border: 1px solid #77818C;
+  background: #FFF;
+  border: 1px solid #A5A5A5;
   border-radius: 3px;
   height: 22px;
   line-height: 20px;
@@ -1345,10 +1341,12 @@ input[type=range]:focus::-ms-fill-upper {
   padding-left: 0;
 }
 .lucid-collapse-bar .lucid-collapse-bar-content {
-  overflow: hidden;
   -webkit-transition: all .5s;
   transition: all .5s;
   width: 100%;
+}
+.lucid-collapse-bar .lucid-collapse-bar-content.ng-animate {
+  overflow: hidden;
 }
 .lucid-toggle {
   display: inline-block;
@@ -1369,7 +1367,7 @@ input[type=range]:focus::-ms-fill-upper {
   cursor: pointer;
 }
 .lucid-toggle .toggle-button.active {
-  background: #d6e9f1;
+  background: #CAEFFF;
   border: 1px solid #29AAE1;
   color: #29AAE1;
 }

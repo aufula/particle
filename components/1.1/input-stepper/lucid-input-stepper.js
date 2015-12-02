@@ -20,25 +20,25 @@ angular.module('lucidInputStepper', ['appConfig'])
 
                 $scope.removeText = function() {
                     var text = $scope.stepperinput;
-                    var regex = /(\d+)/g;
-                    $scope.number = text.match(regex);
+                    //removing text keeping decimal
+                    $scope.number = text.replace(/[^0-9.]/g, "");
                 };
 
                 $scope.updateInput = function() {
                     $scope.removeText();
-                    $scope.number = parseInt($scope.number);
+                    $scope.number = Number($scope.number);
                     $scope.stepperinput = $scope.number + $scope.unit;
                 };
                 $scope.stepUp = function() {
                     //first step up instantly on click
 
                     $scope.removeText();
-                    $scope.number = parseInt($scope.number) + parseInt($scope.step);
+                    $scope.number = Number($scope.number) + Number($scope.step);
                     $scope.stepperinput = $scope.number + $scope.unit;
                     //then continually step up if still holding.
                     $promise = $interval(function() {
                         $scope.removeText();
-                        $scope.number = parseInt($scope.number) + parseInt($scope.step);
+                        $scope.number = Number($scope.number) + Number($scope.step);
                         $scope.stepperinput = $scope.number + $scope.unit;
 
                     }, 100);
@@ -52,7 +52,7 @@ angular.module('lucidInputStepper', ['appConfig'])
                         //console.log('zero');
                         return;
                     }
-                    $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
+                    $scope.number = Number($scope.number) + Number(-$scope.step);
                     $scope.stepperinput = $scope.number + $scope.unit;
                     //then continually step down if still holding.
                     $promise = $interval(function() {
@@ -62,7 +62,7 @@ angular.module('lucidInputStepper', ['appConfig'])
                             //console.log('zero');
                             return;
                         }
-                        $scope.number = parseInt($scope.number) + parseInt(-$scope.step);
+                        $scope.number = Number($scope.number) + Number(-$scope.step);
                         $scope.stepperinput = $scope.number + $scope.unit;
 
                     }, 100);

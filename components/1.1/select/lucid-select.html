@@ -3,6 +3,9 @@
         <ng-include class="dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
         <span style="width: {{width}}px" class="lucid-selected-option">{{selectedOption}}</span>
     </div>
+    <div class="input-label" ng-if="label">
+        <span>{{label}}</span>
+    </div>
     <div class="lucid-select-dropdown" ng-show="showdropdown">
         <ul>
             <li class="lucid-select-option" ng-class="{active: option == selectedOption}" ng-repeat="option in options" ng-click="$parent.selectedOption = option; $parent.showdropdown = false;">

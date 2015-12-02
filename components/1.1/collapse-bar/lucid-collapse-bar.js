@@ -42,6 +42,9 @@ angular.module('lucidCollapseBar', ['appConfig'])
                     if (closing && state.doneFn === doneFn) {
                         element[0].style.height = '';
                     }
+                    if (!closing && state.doneFn === doneFn) {
+                        element[0].style.height = '';
+                    }
                     state.animating = false;
                     state.animator = undefined;
                     state.doneFn();
