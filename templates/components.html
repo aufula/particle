@@ -1,6 +1,11 @@
 <h1>{{components[0].groupname}}</h1>
 <div class="hr"></div>
-<div ng-repeat="particle in components[0].components">
+<div class="icon-search">
+    <input ng-model="searchResults" placeholder="Search Components">
+    <img src="components/0.0/icon/img/search-dark.svg">
+</div>
+
+<div ng-repeat="particle in components[0].components  | filter:{componentid : searchResults}">
     <h2>Component: {{particle.title}}</h2>
     <p>{{particle.description}}</p>
     <div class="code-preview">

@@ -21,34 +21,49 @@ particleApp.config(function($routeProvider) {
             templateUrl: 'templates/components.html',
             controller: 'componentController'
         })
+        .when('/components/:componentGroupID/:searchResults', {
+            templateUrl: 'templates/components.html',
+            controller: 'componentController'
+        })
         .when('/icons', {
             templateUrl: 'templates/icons.html',
-            controller: 'mainController'
+            controller: 'iconController'
+        })
+        .when('/icons/:searchResults', {
+            templateUrl: 'templates/icons.html',
+            controller: 'iconController'
         })
         .otherwise({
             redirectTo: '/'
         });
 });
 
-particleApp.controller('mainController', function($scope, $location, lucidComponentFactory, lucidIconFactory) {
+particleApp.controller('mainController', function($scope, $location, lucidComponentFactory) {
 
     //this function adds active class to sidebar items//
     $scope.isActive = function(viewRoot, viewEnd) {
         var viewLocation = viewRoot + viewEnd;
-        var active = (viewLocation === $location.url());
+        var active = ($location.url().indexOf(viewLocation) > -1);
         return active;
-
     };
-    $scope.icons = lucidIconFactory;
-
-    angular.forEach($scope.icons, function(icon){
-        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name +'.svg';
-    });
 
     //this pulls in the component groups for the sidebar//
     $scope.componentGroups = lucidComponentFactory;
 
 });
+particleApp.controller('iconController', function($scope, lucidIconFactory, $routeParams) {
+
+    $scope.icons = lucidIconFactory;
+    $scope.searchResults = $routeParams.searchResults;
+
+    angular.forEach($scope.icons, function(icon){
+        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name +'.svg';
+    });
+
+    $scope.searchResults = $routeParams.searchResults;
+
+});
+
 particleApp.controller('componentController', function($scope, lucidComponentFactory, $routeParams, $filter) {
     //gets component id from URL
     $scope.componentGroupID = $routeParams.componentGroupID;
@@ -57,6 +72,8 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
         "groupid": $routeParams.componentGroupID
     });
     $scope.componentPath = "components/1.1/";
+
+    $scope.searchResults = $routeParams.searchResults;
 
 });
 
