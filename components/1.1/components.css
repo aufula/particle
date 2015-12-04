@@ -884,6 +884,9 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-modal-wrapper .lucid-modal > footer .lucid-button {
   margin-left: 10px;
 }
+.lucid-modal-wrapper .has-footer {
+  padding-bottom: 45px;
+}
 .lucid-modal-wrapper .lucid-modal-bg {
   position: fixed;
   top: 0;

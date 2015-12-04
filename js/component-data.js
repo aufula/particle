@@ -207,19 +207,19 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "title",
                     "type": "text",
-                    "details": "Title of modal. Shows in the header bar."
+                    "details": "Title of modal."
                 }, {
                     "name": "width",
                     "type": "number",
-                    "details": "width of modal."
+                    "details": "Width of modal."
                 }, {
                     "name": "height",
                     "type": "number",
-                    "details": "height of modal"
+                    "details": "Height of modal"
                 }, {
                     "name": "confirm",
                     "type": "text",
-                    "details": "Text to be displayed inside of confirm button"
+                    "details": "Text to be displayed inside of confirm button, if empty footer won't show"
                 }, {
                     "name": "cancel",
                     "type": "text",
@@ -227,7 +227,7 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "confirm-function",
                     "type": "function",
-                    "details": "Function called when user clicks confirm (see page directive for example)."
+                    "details": "Function called when user clicks confirm."
                 }],
 
             }, {
