@@ -72,7 +72,7 @@ particleApp.controller('iconController', function($scope, lucidIconFactory, $rou
 
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue) {
+        if (newValue != null) {
             var newPath = '/icons/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath')
@@ -99,7 +99,7 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
     $scope.searchResults = $routeParams.searchResults;
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue) {
+        if (newValue != null) {
             var newPath = '/components/' +$scope.componentGroupID+ '/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath', newPath)
