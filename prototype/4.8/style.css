@@ -430,6 +430,16 @@ a {
   padding: 10px;
   font-size: 14px;
 }
+.lucid-shape-group .zero-state.ng-leave {
+  opacity: 1;
+}
+.lucid-shape-group .zero-state.ng-leave-active {
+  opacity: 0;
+}
+.lucid-shape-group .zero-state.ng-aniamte {
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
 .lucid-shape-group .shape-group-top {
   background-color: #CDCFD1;
   padding: 6px 10px;

@@ -213,7 +213,7 @@
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
               <div class="lucid-outer-block-table" lucid-context-menu 
                data-target="block-context-{{ block.$index }}" >
-                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
+                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}px"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
                       <input type="text" ng-model="block.text.text" ng-show="edittext">
                   </div>
               </div>
@@ -321,7 +321,7 @@
                       <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">
                           <ul ng-sortable="pinnedGroupsSort"
                               class="lucid-group-drop-area">
-                              <li ng-repeat="shapegroup in pinnedShapegroups"
+                              <li ng-repeat="shapegroup in pinnedShapegroups track by id"
 
                                   class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
                                   <!-- START LEFT SHAPE GROUP -->
@@ -406,7 +406,7 @@
                                   <div class="divider-line"></div>
                               </div>
                           </div>
-                          <ul ng-sortable="{group: {name: 'custom', pull:'clone' }, handle: '.shape-group-top', animation: 150}"
+                          <ul ng-sortable="customGroupsSort"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
                               <li ng-repeat="shapegroup in shapegroups | filter:searchShapes"
@@ -533,7 +533,7 @@
                                   <div class="divider-line"></div>
                               </div>
                           </div>
-                          <ul ng-sortable="{sort: false, group: {name: 'lucid', pull: 'clone'}, handle: '.shape-group-top', animation: 150}"
+                          <ul ng-sortable="lucidGroupsSort"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
                               <li ng-repeat="shapegroup in shapegroups | filter:searchShapes | limitTo:5"

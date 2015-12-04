@@ -5,12 +5,12 @@ angular.module('particleApp', ['lucidComponents'])
     ////////////////
     ////START MAIN CTRL
     ////////////////
-    .controller('mainCtrl', function($scope, $timeout,$rootScope) {
-  $rootScope.selectedBlock ={
-      text: {
-        size: 12
-      }
-    };
+    .controller('mainCtrl', function($scope, $timeout, $rootScope) {
+        $rootScope.selectedBlock = {
+            text: {
+                size: 12
+            }
+        };
         $scope.canvasmode = 0;
         $scope.canvasMode = function() {
             if ($scope.canvasmode === 0) {
@@ -448,26 +448,45 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pinnedShapegroups = lucidShapesData.pinned();
         $scope.shapegroups = lucidShapesData.all();
 
-        $scope.updatePinned = function(){
+        $scope.updatePinned = function() {
             $scope.pinnedShapegroups = lucidShapesData.pinned();
-        }; 
+        };
 
         //start drag and reoder shape groups
         $scope.pinnedGroupsSort = {
-                group: {
-                    name: 'pinned',
-                    put: ['custom', 'lucid']
-                },
-                handle: '.shape-group-top',
-                animation: 150,
-                onAdd: function(evt) {
-                    var itemEl = evt.item; // dragged HTMLElement
-                    evt.from; // previous list
-                    //evt.item.pinned = true;
-                    console.log(evt.model.pinned, 'pinned in group sort')
-                }
+            group: {
+                name: 'pinned',
+                put: ['custom', 'lucid']
+            },
+            handle: '.shape-group-top',
+            animation: 150,
+            onAdd: function(evt) {
+                var itemEl = evt.item; // dragged HTMLElement
+                evt.from; // previous list
+                //evt.item.pinned = true;
+                console.log(evt.model.pinned, 'pinned in group sort')
             }
-            //end drag and reorder shape groups
+        };
+
+        $scope.customGroupsSort = {
+            group: {
+                name: 'custom',
+                pull: 'clone'
+            },
+            handle: '.shape-group-top',
+            animation: 150
+        };
+
+        $scope.lucidGroupsSort = {
+            sort: false,
+            group: {
+                name: 'lucid',
+                pull: 'clone'
+            },
+            handle: '.shape-group-top',
+            animation: 150
+        };
+        //end drag and reorder shape groups
 
 
         $rootScope.manageshapes = false;
