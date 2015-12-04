@@ -439,6 +439,13 @@ input {
   width: inherit;
   height: inherit;
 }
+.lucid-buttcon.condensed .lucid-buttcon-image {
+  width: 24px;
+  padding: 3px 4px;
+  background: #fff;
+  border: 1px solid #A5A5A5;
+  border-radius: 3px;
+}
 .lucid-buttcon-wrapper {
   position: relative;
   display: inline-block;
