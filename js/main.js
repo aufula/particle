@@ -1,6 +1,18 @@
 /*global angular : true fixes codekit error*/
 var particleApp = angular.module('particleApp', ['ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets']);
-
+particleApp.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+    var original = $location.path;
+    $location.path = function (path, reload) {
+        if (reload === false) {
+            var lastRoute = $route.current;
+            var un = $rootScope.$on('$locationChangeSuccess', function () {
+                $route.current = lastRoute;
+                un();
+            });
+        }
+        return original.apply($location, [path]);
+    };
+}]);
 particleApp.config(function($routeProvider) {
     $routeProvider
         .when('/', {
@@ -19,7 +31,8 @@ particleApp.config(function($routeProvider) {
         })
         .when('/components/:componentGroupID', {
             templateUrl: 'templates/components.html',
-            controller: 'componentController'
+            controller: 'componentController',
+            reloadOnSearch: false
         })
         .when('/components/:componentGroupID/:searchResults', {
             templateUrl: 'templates/components.html',
@@ -27,11 +40,13 @@ particleApp.config(function($routeProvider) {
         })
         .when('/icons', {
             templateUrl: 'templates/icons.html',
-            controller: 'iconController'
+            controller: 'iconController',
+            reloadOnSearch: false
         })
         .when('/icons/:searchResults', {
             templateUrl: 'templates/icons.html',
-            controller: 'iconController'
+            controller: 'iconController',
+            reloadOnSearch: false
         })
         .otherwise({
             redirectTo: '/'
@@ -51,20 +66,28 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
     $scope.componentGroups = lucidComponentFactory;
 
 });
-particleApp.controller('iconController', function($scope, lucidIconFactory, $routeParams) {
+particleApp.controller('iconController', function($scope, lucidIconFactory, $routeParams, $location) {
 
     $scope.icons = lucidIconFactory;
-    $scope.searchResults = $routeParams.searchResults;
 
-    angular.forEach($scope.icons, function(icon){
-        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name +'.svg';
+
+    $scope.$watch('searchResults', function(newValue) {
+        if (newValue) {
+            var newPath = '/icons/' + newValue;
+            $location.path(newPath, false);
+            //console.log('changepath')
+        }
+    });
+
+    angular.forEach($scope.icons, function(icon) {
+        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name + '.svg';
     });
 
     $scope.searchResults = $routeParams.searchResults;
 
 });
 
-particleApp.controller('componentController', function($scope, lucidComponentFactory, $routeParams, $filter) {
+particleApp.controller('componentController', function($scope, lucidComponentFactory, $routeParams, $filter, $location) {
     //gets component id from URL
     $scope.componentGroupID = $routeParams.componentGroupID;
 
@@ -75,6 +98,14 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
 
     $scope.searchResults = $routeParams.searchResults;
 
+    $scope.$watch('searchResults', function(newValue) {
+        if (newValue) {
+            var newPath = '/components/' +$scope.componentGroupID+ '/' + newValue;
+            $location.path(newPath, false);
+            //console.log('changepath', newPath)
+        }
+
+    });
 });
 
 particleApp.controller('angularController', function($scope, $sce, lucidSnippets) {
@@ -87,59 +118,61 @@ particleApp.controller('angularController', function($scope, $sce, lucidSnippets
 
 //////// directives ////////
 
-particleApp.directive('clipboard', ['$document', function ($document) {
-        return {
-            restrict: 'A',
-            scope: {
-                onCopied: '&',
-                onError: '&',
-                text: '='
-            },
-            link: function (scope, element) {
-                function createNode(text) {
-                    var node = $document[0].createElement('textarea');
-                    node.style.position = 'absolute';
-                    node.style.left = '-10000px';
-                    node.textContent = text;
-                    return node;
-                }
-
-                function copyNode(node) {
-                    // Set inline style to override css styles
-                    $document[0].body.style.webkitUserSelect = 'initial';
-
-                    var selection = $document[0].getSelection();
-                    selection.removeAllRanges();
-                    node.select();
-
-                    if(!$document[0].execCommand('copy')) {
-                      throw('failure copy');
-                    }
-                    selection.removeAllRanges();
-
-                    // Reset inline style
-                    $document[0].body.style.webkitUserSelect = '';
-                }
-
-                function copyText(text) {
-                    var node = createNode(text);
-                    $document[0].body.appendChild(node);
-                    copyNode(node);
-                    $document[0].body.removeChild(node);
-                }
-
-                element.on('click', function (event) {
-                    try {
-                        copyText(scope.text);
-                        if (angular.isFunction(scope.onCopied)) {
-                            scope.$evalAsync(scope.onCopied());
-                        }
-                    } catch (err) {
-                        if (angular.isFunction(scope.onError)) {
-                            scope.$evalAsync(scope.onError({err: err}));
-                        }
-                    }
-                });
+particleApp.directive('clipboard', ['$document', function($document) {
+    return {
+        restrict: 'A',
+        scope: {
+            onCopied: '&',
+            onError: '&',
+            text: '='
+        },
+        link: function(scope, element) {
+            function createNode(text) {
+                var node = $document[0].createElement('textarea');
+                node.style.position = 'absolute';
+                node.style.left = '-10000px';
+                node.textContent = text;
+                return node;
             }
-        };
-    }]);
+
+            function copyNode(node) {
+                // Set inline style to override css styles
+                $document[0].body.style.webkitUserSelect = 'initial';
+
+                var selection = $document[0].getSelection();
+                selection.removeAllRanges();
+                node.select();
+
+                if (!$document[0].execCommand('copy')) {
+                    throw ('failure copy');
+                }
+                selection.removeAllRanges();
+
+                // Reset inline style
+                $document[0].body.style.webkitUserSelect = '';
+            }
+
+            function copyText(text) {
+                var node = createNode(text);
+                $document[0].body.appendChild(node);
+                copyNode(node);
+                $document[0].body.removeChild(node);
+            }
+
+            element.on('click', function(event) {
+                try {
+                    copyText(scope.text);
+                    if (angular.isFunction(scope.onCopied)) {
+                        scope.$evalAsync(scope.onCopied());
+                    }
+                } catch (err) {
+                    if (angular.isFunction(scope.onError)) {
+                        scope.$evalAsync(scope.onError({
+                            err: err
+                        }));
+                    }
+                }
+            });
+        }
+    };
+}]);
