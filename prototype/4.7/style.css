@@ -1,40 +1,3 @@
-ul.details-properties {
-  display: block;
-}
-ul.details-properties li {
-  vertical-align: top;
-  display: inline-block;
-  padding: 5px;
-}
-ul.details-properties li.divider {
-  display: block;
-  padding: 0;
-  height: 1px;
-  background: #CCC;
-  margin: 5px 0;
-}
-ul.page-settings {
-  display: block;
-  padding-top: 5px;
-}
-ul.page-settings li {
-  vertical-align: top;
-  display: inline-block;
-  padding: 5px;
-}
-ul.page-settings li.divider {
-  display: block;
-  padding: 0;
-  height: 1px;
-  background: #CCC;
-  margin: 5px 0;
-}
-#right-dock .lucid-collapse-bar {
-  margin-bottom: 10px;
-}
-#right-dock .lucid-collapse-bar .collapse-bar-top {
-  background-color: #CFD4D8;
-}
 .add-ons {
   padding: 10px;
 }
@@ -1269,17 +1232,18 @@ a {
   right: 0;
 }
 #main-header .help {
-  background: #b7b7b7;
-  width: 20px;
-  height: 20px;
-  padding-top: 2px;
-  text-align: center;
-  color: #3d4752;
-  border-radius: 999px;
-  font-weight: bold;
   vertical-align: middle;
-  cursor: pointer;
-  display: inline-block;
+}
+#main-header .help .lucid-popover-menu {
+  background: white;
+}
+#main-header .help .lucid-popover-menu:after {
+  border-bottom: 10px solid white;
+}
+#main-header .help .lucid-popover-menu .lucid-context-menu {
+  position: static;
+  box-shadow: none;
+  background: none;
 }
 #main-header .left {
   width: 33%;
@@ -1430,7 +1394,7 @@ a {
 }
 #main-header .bell {
   vertical-align: middle;
-  margin-left: 20px;
+  margin-left: 8px;
   display: inline-block;
   position: relative;
 }
@@ -2275,6 +2239,28 @@ a {
   top: 6px;
   cursor: pointer;
 }
+#right-dock .right-panel .lucid-collapse-bar {
+  margin-bottom: 10px;
+}
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
+  background-color: #CFD4D8;
+}
+#right-dock .right-panel ul.page-settings {
+  display: block;
+  padding-top: 5px;
+}
+#right-dock .right-panel ul.page-settings li {
+  vertical-align: top;
+  display: inline-block;
+  padding: 5px;
+}
+#right-dock .right-panel ul.page-settings li.divider {
+  display: block;
+  padding: 0;
+  height: 1px;
+  background: #CCC;
+  margin: 5px 0;
+}
 #right-dock .right-panel footer {
   position: absolute;
   bottom: 0;
@@ -2296,21 +2282,6 @@ a {
 #right-dock.open .right-panel .container.ng-animate {
   -webkit-transition: 0s ease-in-out all;
   transition: 0s ease-in-out all;
-}
-ul.details-properties {
-  display: block;
-}
-ul.details-properties li {
-  vertical-align: top;
-  display: inline-block;
-  padding: 5px;
-}
-ul.details-properties li.divider {
-  display: block;
-  padding: 0;
-  height: 1px;
-  background: #CCC;
-  margin: 5px 0;
 }
 #main-footer {
   position: absolute;
