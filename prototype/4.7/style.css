@@ -1689,6 +1689,9 @@ a {
   height: 30px;
   margin: 0 5px 0 10px;
 }
+.shadow-options {
+  font-size: 0;
+}
 .shadow-options li {
   display: inline-block;
   vertical-align: top;

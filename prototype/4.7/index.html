@@ -13,8 +13,9 @@
         <a href="http://s.codepen.io/team/lucidsoftware/debug/944b732e7d71a1fb50537f7278783fee?"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-folder-orange.svg" class="icon" />Go to Documents</a>
       </li>
       <li>New document</li>
-      <li>Save as...</li>
-      <li>Copy document</li>
+      <li>Duplicate</li>
+      <li>Download</li>
+      <li>Import</li>
       <li>Share</li>
       <li>Print</li>
       <li>Quit</li>
@@ -53,7 +54,19 @@
             </div>
       <div id="documents" ng-click="showMegamenu=!showMegamenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
       <div class="right">
-        <div class="help">?</div>
+        <lucid-buttcon-popover class="help" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200">
+        <div style="padding:10px 10px 0">
+          <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
+        </div>
+        <div class="lucid-context-menu">
+            <ul>
+                <li class="lucid-select-option">Help Center</li>
+                <li class="lucid-select-option">Rename</li>
+                <li class="lucid-select-option">Duplicate</li>
+                <li class="lucid-select-option">Delete</li>
+            </ul>
+        </div>
+        </lucid-buttcon-popover>
         <div class="bell" ng-init="showAlert=true" ng-click="showNotifications = !showNotifications; showAlert=false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg"/>
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
           <div class="lucid-popover-menu lucid-animate" style="width: 311px; left: -140.5px;" ng-show="showNotifications">
@@ -66,6 +79,7 @@
           <div class="lucid-context-menu" ng-show="showDropdown">
             <ul>
               <li>Account Settings</li>
+              <li>Preferences</li>
               <li>Log out</li>
             </ul>
           </div>
@@ -603,7 +617,7 @@
           </li>
           <li><span class="line"></span>
           <li>
-            <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="100" style="margin: 0 10px 0 5px;"></lucid-select>
+            <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="130" style="margin: 0 10px 0 5px;"></lucid-select>
           </li>
           <li>
             <lucid-input-stepper step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
@@ -636,7 +650,7 @@
           <span class="line"></span>
           <!-- BEGIN SHADOW OPTIONS -->
           <li>
-            <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shadow-bluesteel.svg" width="226">
+            <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shadow-bluesteel.svg" width="231">
                 <div style="padding:15px 15px 10px 15px;">
                   <ul class="shadow-options">
                     <li class="no-padding">
@@ -682,6 +696,15 @@
           </li> 
           <!-- END POSITION OPTIONS -->
           <span class="line"></span>
+            <!-- BEGIN LINE OPTIONS -->
+          <li class="middle">
+            <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lineoptions-bluesteel.svg" width="181">
+                <div style="padding:15px 15px 10px 15px;">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/line-options.png">
+                </div>
+            </lucid-buttcon-popover>
+          </li>
+          <!-- END LINE OPTIONS -->
           <!-- BEGIN LINE PATH -->
           <li class="left" ng-controller="linePathCtrl">
             <lucid-buttcon-popover 
@@ -696,15 +719,6 @@
             </lucid-buttcon-popover>
           </li>
           <!-- END LINE PATH -->
-          <!-- BEGIN LINE OPTIONS -->
-          <li class="middle">
-            <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lineoptions-bluesteel.svg" width="181">
-                <div style="padding:15px 15px 10px 15px;">
-                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/line-options.png">
-                </div>
-            </lucid-buttcon-popover>
-          </li>
-          <!-- END LINE OPTIONS -->
           <!-- BEGIN LINE WIDTH -->
           <li class="right">
             <lucid-input-stepper step="1" width="40" number="3" unit="px" style="margin-left: 5px;"></lucid-input-stepper>
@@ -790,7 +804,7 @@
                     <lucid-buttcon icon="http://particle.golucid.co/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
                   </li>
                   <li class="no-padding">
-                    <lucid-select class="condensed" width="165" label="page size" options="['Letter (8.5 x 11)', 'Tabloid (11 x 17)', 'tabloid', 'two']"><lucid-select>
+                    <lucid-select class="condensed" width="165" label="page size" options="['Letter (8.5 x 11)', 'Tabloid (11 x 17)']"><lucid-select>
                   </li>
                   <li class="no-padding">
                     <lucid-toggle activetext="AUTO" label="page tiling" width="52" toggle="true"></lucid-toggle>

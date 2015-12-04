@@ -573,16 +573,7 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "shapes-manager/lucid-shapes-data.js"
 //@codekit-append "pages/lucid-pages-data.js"
 
-
-
-
 angular.module('appConfig', [])
-
-// .config(['$animateProvider', function($animateProvider){
-//   // restrict animation to elements with the lucid-animate css class with a regexp.
-//   // this should improve animation performance
-//   $animateProvider.classNameFilter(/lucid-animate/);
-// }])
 
 .config(function($sceDelegateProvider) {
     $sceDelegateProvider.resourceUrlWhitelist([
