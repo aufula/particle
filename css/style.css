@@ -390,6 +390,10 @@ p.small-body {
 .code-preview .drawer .scroll-area .hljs {
   min-height: 160px;
 }
+.code-preview .component-description {
+  text-align: left;
+  padding: 0 20px;
+}
 .code-preview .component-preview {
   padding: 60px 0;
   text-align: center;
