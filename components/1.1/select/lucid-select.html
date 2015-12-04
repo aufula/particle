@@ -7,10 +7,12 @@
         <span>{{label}}</span>
     </div>
     <div class="lucid-select-dropdown" ng-show="showdropdown">
-        <ul>
-            <li class="lucid-select-option" ng-class="{active: option == selectedOption}" ng-repeat="option in options" ng-click="$parent.selectedOption = option; $parent.showdropdown = false;">
-                {{option}}
-            </li>
-        </ul>
+        <div>
+            <ul>
+                <li class="lucid-select-option" ng-class="{active: option == selectedOption}" ng-repeat="option in options" ng-click="$parent.selectedOption = option; $parent.showdropdown = false;">
+                    {{option}}
+                </li>
+            </ul>
+        </div>
     </div>
 </div>

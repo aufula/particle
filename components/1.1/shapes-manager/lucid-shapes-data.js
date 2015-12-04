@@ -31,7 +31,7 @@ angular.module("lucidShapesData", ['appConfig'])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "INSERT TEXT",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,
@@ -61,7 +61,7 @@ angular.module("lucidShapesData", ['appConfig'])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "Text",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,
@@ -92,7 +92,7 @@ angular.module("lucidShapesData", ['appConfig'])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "Note",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,
@@ -122,7 +122,7 @@ angular.module("lucidShapesData", ['appConfig'])
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
                     "text": "",
-                    "size": "12px",
+                    "size": 12,
                 },
 
                 "padding": 5,

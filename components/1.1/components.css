@@ -637,10 +637,13 @@ input {
   padding-right: 10px;
   vertical-align: top;
 }
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li input {
+  text-transform: uppercase;
+}
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap {
   display: inline-block;
   height: 22px;
-  width: 95px;
+  width: 92px;
   padding-right: 10px;
 }
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap input[type="range"] {
@@ -1129,9 +1132,26 @@ input[type=range]:focus::-ms-fill-upper {
   top: 32px;
   left: 0;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
-  padding: 6px 0;
   background: #fff;
   width: 100%;
+  opacity: 1;
+}
+.lucid-select-wrapper .lucid-select-dropdown > div {
+  padding: 6px 0;
+  margin-top: 0;
+  -webkit-transition: 0.25s ease-in-out margin;
+  transition: 0.25s ease-in-out margin;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-hide {
+  opacity: 0;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-hide > div {
+  margin-top: -20px;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-animate {
+  overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
@@ -1144,9 +1164,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: #F5F5F5;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active {
-  background: #77818C;
-  color: #fff;
-  font-weight: 200;
+  background: #e5e5e5;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active:hover {
   opacity: .9;
@@ -1173,13 +1191,26 @@ input[type=range]:focus::-ms-fill-upper {
   top: 22px;
   left: 0;
   box-shadow: none;
-  padding: 6px 0;
   background: #fff;
   min-width: 0;
   width: 100%;
 }
-.lucid-select-wrapper.condensed .lucid-select-dropdown .lucid-select-option {
-  padding: 5px 10px;
+.lucid-select-wrapper.condensed .lucid-select-dropdown > div {
+  padding: 6px 0;
+  margin-top: 0;
+  -webkit-transition: 0.25s ease-in-out margin;
+  transition: 0.25s ease-in-out margin;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide {
+  opacity: 0;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide > div {
+  margin-top: -20px;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-animate {
+  overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
 }
 [lucid-context-menu] {
   cursor: pointer;

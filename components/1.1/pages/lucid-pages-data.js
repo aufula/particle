@@ -513,7 +513,7 @@ angular.module('lucidPagesData', [])
                 "borderstyle": "solid",
                 "text": {
                     "text": "NEW HIRE (MONTHS)",
-                    "size": "13px",
+                    "size": 13,
                     "verticalalignment": "middle",
                     "horizontalalignment": "left",
                     "font": "Oswald, sans-serif",
@@ -572,7 +572,7 @@ angular.module('lucidPagesData', [])
                     "text": "COMPANY NAME",
                     "size": 24,
                     "weight": "light",
-                    "letterspacing": "0px",
+                    "letterspacing": 0,
                     "font": "Oswald, sans-serif"
                 },
 
@@ -601,7 +601,7 @@ angular.module('lucidPagesData', [])
                     "text": "DEPARTMENT NAME",
                     "size": 12,
                     "weight": "light",
-                    "letterspacing": "-1px",
+                    "letterspacing": -1,
                     "font": "sans-serif"
                 },
 
