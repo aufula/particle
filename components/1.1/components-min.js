@@ -1896,7 +1896,7 @@ angular.module('lucidCollapseBar', ['appConfig'])
             scope: {
                 title: '@',
                 collapsible: '@',
-                collapse: '@'
+                closed: '@'
             },
             replace: true,
             transclude: true,
