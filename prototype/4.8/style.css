@@ -282,6 +282,10 @@
   top: -10px;
   left: 40px;
 }
+#share .share-modal .lucid-tab-content,
+#share .share-modal section {
+  padding: 0;
+}
 .lucid-shapes-header > span {
   cursor: pointer;
 }
@@ -1625,9 +1629,11 @@ a {
   position: relative;
   top: -60px;
   opacity: 0;
+  left: 0;
 }
 .toolbar-hidden #option-bar .hover-handle {
   bottom: -40px;
+  width: calc(100vw - 60px);
 }
 .toolbar-hidden .ruler {
   opacity: 0;
@@ -1737,6 +1743,7 @@ a {
   margin-top: -198px;
 }
 .page-drawer.ng-animate {
+  overflow: hidden;
   -webkit-transition: 0.5s ease-in-out !important;
   transition: 0.5s ease-in-out !important;
 }
@@ -1745,7 +1752,6 @@ a {
   transition: 0.5s ease-in-out !important;
 }
 #page-list {
-  overflow: hidden;
   position: relative;
   top: 54px;
 }

@@ -213,7 +213,7 @@
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
               <div class="lucid-outer-block-table" lucid-context-menu 
                data-target="block-context-{{ block.$index }}" >
-                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}px"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
+                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
                       <input type="text" ng-model="block.text.text" ng-show="edittext">
                   </div>
               </div>
@@ -321,7 +321,7 @@
                       <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">
                           <ul ng-sortable="pinnedGroupsSort"
                               class="lucid-group-drop-area">
-                              <li ng-repeat="shapegroup in pinnedShapegroups track by shapegroup.id"
+                              <li ng-repeat="shapegroup in pinnedShapegroups"
 
                                   class="lucid-shape-group-wrapper left-panel repeat-animation lucid-animate">
                                   <!-- START LEFT SHAPE GROUP -->
@@ -819,7 +819,7 @@
                   </li>
                 </ul>
               </lucid-collapse-bar>
-              <lucid-collapse-bar title="Guides">
+              <lucid-collapse-bar title="Guides" collapse="true">
                 <ul class="page-settings">
                   <li>
                     <lucid-toggle label="GUIDES" toggle="true"></lucid-toggle>
@@ -832,7 +832,7 @@
                   </li>
                 </ul>
               </lucid-collapse-bar>
-              <lucid-collapse-bar title="Grid">
+              <lucid-collapse-bar title="Grid" collapse="true">
                 <ul class="page-settings">
                   <li>
                     <lucid-toggle label="GRID" toggle="true"></lucid-toggle>
@@ -845,7 +845,7 @@
                   </li>
                 </ul>
               </lucid-collapse-bar>
-              <lucid-collapse-bar title="Margin">
+              <lucid-collapse-bar title="Margin" collapse="true">
                 <ul class="page-settings">
                   <li>
                     <lucid-toggle label="MARGIN" toggle="true"></lucid-toggle>
@@ -855,7 +855,7 @@
                   </li>
                 </ul>
               </lucid-collapse-bar>
-              <lucid-collapse-bar title="Rulers">
+              <lucid-collapse-bar title="Rulers" collapse="true">
                 <ul class="page-settings">
                   <li>
                     <lucid-toggle label="Rulers" toggle="true"></lucid-toggle>
@@ -875,20 +875,20 @@
               <div class="group">
                 <div class="add-button" ng-click="showPopup(); $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-more-shapes-plus-grey.svg" />Add</div>
                 <div class="options" ng-click="showShareModal = true">Options</div>
-                <lucid-modal showmodal="showShareModal" width="590" height="460" title="Share">
+                <lucid-modal showmodal="showShareModal" width="810" height="645" title="Share" class="share-modal">
                   <!-- Insert modal content here -->
                   <lucid-finger-tabs>
                       <lucid-finger-tab name="Collaborate" icon=" http://particle.golucid.co/components/0.0/icon/img/share-dark.svg" selected>
-                          Collaborate
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-collaborate.png">
                       </lucid-finger-tab>
                       <lucid-finger-tab name="Publish" icon=" http://particle.golucid.co/components/0.0/icon/img/link-dark.svg">
-                          Publish content here
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-publish.png">
                       </lucid-finger-tab>
                       <lucid-finger-tab name="Facebook" icon="http://particle.golucid.co/components/0.0/icon/img/share-dark.svg">
-                          Tab 4
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-social.png">
                       </lucid-finger-tab>
                       <lucid-finger-tab name="Embed" icon=" http://particle.golucid.co/components/0.0/icon/img/html-dark.svg">
-                          Tab 5
+                          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/share-placeholder-embed.png">
                       </lucid-finger-tab>
                   </lucid-finger-tabs>
               </lucid-modal>
@@ -937,8 +937,8 @@
         <div class="hover-handle" ng-mouseenter="enterRightPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>
       </div>
       <!-- END RIGHT DOCK -->
-<div class="toggle-canvas-mode" ng-show="hideToolbar">
-  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" ng-click="canvasMode()">
+<div class="toggle-canvas-mode" ng-show="hideToolbar" ng-click="canvasMode()">
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg">
 </div>
       <!-- START CANVAS FOOTER -->
       <footer class="settings-drawer" id="main-footer">

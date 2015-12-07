@@ -29,7 +29,6 @@ sans-serif;
 /////////////////////////////////////////////////
 //END VARIABLES
 ////////////////////////////////////////////////
-
 /////////////////////////////////////////////////
 //START ADDONS
 ////////////////////////////////////////////////
@@ -150,10 +149,10 @@ sans-serif;
         }
     }
 }
+
 /////////////////////////////////////////////////
 //END ADDONS
 ////////////////////////////////////////////////
-
 /////////////////////////////////////////////////
 //START SHARE
 ////////////////////////////////////////////////
@@ -336,6 +335,11 @@ sans-serif;
             left: 40px;
         }
     }
+    //share modal
+    .share-modal .lucid-tab-content,
+    .share-modal section {
+        padding: 0;
+    }
 }
 
 /////////////////////////////////////////////////
@@ -504,14 +508,14 @@ a {
             padding: 10px;
             font-size: 14px;
         }
-        &.ng-leave{
-            opacity:1;
+        &.ng-leave {
+            opacity: 1;
         }
-        &.ng-leave-active{
-            opacity:0;
+        &.ng-leave-active {
+            opacity: 0;
         }
-        &.ng-aniamte{
-            transition:.25s ease-in-out all;
+        &.ng-aniamte {
+            transition: .25s ease-in-out all;
         }
     }
     .shape-group-top {
@@ -978,36 +982,6 @@ a {
             }
         }
     }
-    // .dndPlaceholder {
-    //     // background: #ccc;
-    //     margin: 0;
-    //     height: 0;
-    //     display: block;
-    //     position: relative;
-    //     &:after {
-    //         content: "";
-    //         display: block;
-    //         width: 100%;
-    //         position: absolute;
-    //         height: 2px;
-    //         margin-top: 5px;
-    //         background: @blue;
-    //     }
-    //     &.ng-enter {
-    //         transform: scale(.01);
-    //         opacity: 0;
-    //     }
-    //     &.ng-enter-active {
-    //         transform: scale(1);
-    //         opacity: 1;
-    //     }
-    //     &.ng-animate {
-    //         transition: .25s;
-    //     }
-    // }
-    // .dndDraggingSource {
-    //     display: none !important;
-    // }
     .lucid-shape-group-wrapper {
         &.ng-animate {
             transition: .5s;
@@ -1029,9 +1003,6 @@ a {
     }
     .lucid-shape-group {
         margin-bottom: 20px;
-        // &:first-child {
-        //     margin-top: 0;
-        // }
         .shapes-wrapper {
             max-height: 162px;
             overflow: hidden;
@@ -1187,8 +1158,6 @@ a {
 //////////////////////
 //// IMPORT TO CANVAS
 //////////////////////
-
-///import shape to canvas
 .import-to-canvas-buttcon {
     cursor: pointer;
     position: absolute;
@@ -1202,6 +1171,7 @@ a {
         transition: .25s ease-in-out all;
     }
 }
+
 .import-to-canvas {
     position: absolute;
     top: 60px;
@@ -1328,10 +1298,12 @@ a {
     }
 }
 
-/////////////////////////////////////////////////
+//////////////////////////////
 //END SHAPES MANAGER
-////////////////////////////////////////////////
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Layout Header <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+//////////////////////////////
+//START MAIN HEADER
+//////////////////////////////
 #main-header {
     z-index: 1;
     height: 54px;
@@ -1566,6 +1538,9 @@ a {
     }
 }
 
+//////////////////////////////
+//END MAIN HEADER
+//////////////////////////////
 #main-container {
     z-index: 0; //added so popovers stay on top
     height: ~"calc(100% - 54px)";
@@ -1652,7 +1627,9 @@ a {
     }
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Account Drop Down <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+//ACCOUNT DROPDOWN
+//////////////////////////////
 .parent {
     position: relative;
     .submenu {
@@ -1682,7 +1659,9 @@ a {
     }
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Left Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+//LEFT BAR
+//////////////////////////////
 #left-bar {
     background: #E1E2E3;
     width: 250px;
@@ -1769,8 +1748,10 @@ a {
         position: relative;
         top: -60px;
         opacity: 0;
+        left: 0;
         .hover-handle {
             bottom: -@handle-width; // top of page
+            width: ~"calc(100vw - 60px)";
         }
     }
     .ruler {
@@ -1807,7 +1788,9 @@ a {
 //////////////////////////////
 //END CANVAS MODES
 //////////////////////////////
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Option Bar <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+//START OPTION BAR
+//////////////////////////////
 #option-bar {
     width: 100%;
     //z-index: 5;
@@ -1852,6 +1835,9 @@ a {
     }
 }
 
+//////////////////////////////
+//END OPTION BAR
+//////////////////////////////
 ///////
 //start option bar dropdowns
 ///////
@@ -1887,7 +1873,9 @@ a {
     }
 }
 
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Page List <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+//////////////////////////////
+// PAGE LIST
+/////////////////////////////
 .page-drawer {
     .lucid-pages-wrapper {
         margin-top: 0px;
@@ -1898,6 +1886,7 @@ a {
         }
     }
     &.ng-animate {
+        overflow: hidden;
         .lucid-pages-wrapper {
             transition: .5s ease-in-out !important;
         }
@@ -1906,7 +1895,6 @@ a {
 }
 
 #page-list {
-    overflow: hidden;
     position: relative;
     top: 54px;
 }

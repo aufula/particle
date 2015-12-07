@@ -438,7 +438,6 @@ angular.module('particleApp', ['lucidComponents'])
     ////START SHAPES MANAGER CTRL
     ////////////////
     .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
-
         $scope.$on('draggable:start', function(event, data) {
             $rootScope.draggingshape = true;
         });
@@ -491,10 +490,11 @@ angular.module('particleApp', ['lucidComponents'])
 
         $rootScope.manageshapes = false;
         $scope.clickShapes = function() {
-            if (!$scope.searchshapes) {
+            if (!$scope.searchshapes && !$scope.importToCanvas) {
                 $rootScope.manageshapes = !$rootScope.manageshapes;
             } else {
                 $scope.searchshapes = false;
+                $scope.importToCanvas = false;
             }
         };
 
