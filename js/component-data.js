@@ -99,8 +99,8 @@ angular.module('lucidComponentFactory', [])
                     "details": "Optional: add label to bottom of toggle"
                 }, {
                     "name": "toggle",
-                    "type": "var",
-                    "details": "Optional: used to connect to existing variable."
+                    "type": "true/false",
+                    "details": "Optional: used to connect to existing variable, or set default on/off state."
                 }]
             }, {
                 "title": "Buttcon",
@@ -117,7 +117,11 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "name": "class",
                     "type": "text",
-                    "details": "Optional: add 'active' class to color icon lucid blue"
+                    "details": "Optional: add 'active' class to color icon lucid blue. Note: complex icons will need custom css"
+                }, {
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'condensed' for condensed aesthetic. Note: should be 14px icon if condensed."
                 }]
             }, {
                 "title": "Buttons",
@@ -248,13 +252,13 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Name the top bar"
                 }, {
-                    "name": "collapsible",
-                    "type": "true/false",
-                    "details": "Optional: Set to false if you do not want element to collapse"
-                }, {
                     "name": "collapse",
                     "type": "true/false",
                     "details": "Optional: Set to true want the element collapsed by default"
+                }, {
+                    "name": "collapsible",
+                    "type": "true/false",
+                    "details": "Optional: Set to false if you do not want element to collapse"
                 }]
             }]
         }, {

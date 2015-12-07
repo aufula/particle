@@ -1586,7 +1586,7 @@ angular.module('lucidInputStepper', ['appConfig'])
                     attrs.unit = "";
                 }
                 if(!attrs.number){
-                    attrs.number = 0;
+                    attrs.number = "0";
                 }
             }
         };
@@ -1801,7 +1801,14 @@ angular.module("lucidModal", ['appConfig'])
             replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'modal/lucid-modal.html',
-
+            compile: function(el, attrs) {
+                if (!attrs.width) {
+                    attrs.width = 590;
+                }
+                if (!attrs.height) {
+                    attrs.height = 460;
+                }
+            },
             link: function(scope, el) {
                 $document.on('click', function(e) {
                     if (el[0].contains(e.target)) {
@@ -1814,7 +1821,7 @@ angular.module("lucidModal", ['appConfig'])
                 });
             }
         };
-    }); 
+    });
 
 angular.module("lucidFingerTabs", ['appConfig'])
 .directive('lucidFingerTabs', function(config) {

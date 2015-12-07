@@ -81,7 +81,7 @@ angular.module('lucidInputStepper', ['appConfig'])
                     attrs.unit = "";
                 }
                 if(!attrs.number){
-                    attrs.number = 0;
+                    attrs.number = "0";
                 }
             }
         };
