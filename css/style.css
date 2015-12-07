@@ -328,10 +328,11 @@ p.small-body {
   bottom: -14px;
 }
 .code-preview .drawer-wrapper {
-  height: 200px;
   overflow: hidden;
   position: relative;
   background: #f0f0f0;
+  -webkit-transition: height 0.3s;
+  transition: height 0.3s;
 }
 .code-preview .drawer-wrapper.ng-hide {
   height: 0;
@@ -372,10 +373,7 @@ p.small-body {
   opacity: 0;
 }
 .code-preview .drawer .scroll-area {
-  overflow: scroll;
-  height: 160px;
   opacity: 1;
-  position: absolute;
   top: 40px;
   right: 0;
   left: 0;
@@ -386,9 +384,6 @@ p.small-body {
 .code-preview .drawer .scroll-area.ng-animate {
   -webkit-transition: opacity .5s;
   transition: opacity .5s;
-}
-.code-preview .drawer .scroll-area .hljs {
-  min-height: 160px;
 }
 .code-preview .component-description {
   text-align: left;

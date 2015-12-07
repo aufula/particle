@@ -18,10 +18,10 @@
                 <span>Basic</span>
             </div>
         </header>
-        <div class="drawer-wrapper lucid-animate" ng-hide="!showBasic && !showAdvanced">
+        <div class="drawer-wrapper lucid-animate" collapse="!showBasic && !showAdvanced">
             <div class="drawer">
-                <header>
-                    <span ng-init="drawer = 'html'" ng-click="drawer = 'html'" ng-class="{'active': drawer == 'html'}">HTML</span>
+                <header ng-click="updateHeight()">
+                    <span ng-init="drawer = 'html'" ng-click="drawer = 'html'" ng-class="{'active': drawer == 'html' || drawer == 'inputs' && showAdvanced}">HTML</span>
                     <span ng-click="drawer = 'less'" ng-class="{'active': drawer == 'less'}">LESS</span>
                     <span ng-show="showBasic && particle.inputs" ng-click="drawer = 'inputs'" class="lucid-animate component-inputs" ng-class="{'active': drawer == 'inputs'}">INPUTS</span>
                 </header>
@@ -52,10 +52,10 @@
                     </div>
                 </div>
                 <div class="scroll-area" ng-show="showAdvanced">
-                    <div class="html-content" ng-show="!less">
+                    <div class="html-content" ng-show="drawer !== 'less'">
                         <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.html'"></div>
                     </div>
-                    <div class="less-content" ng-show="less">
+                    <div class="less-content" ng-show="drawer == 'less'">
                         <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
                     </div>
                 </div>

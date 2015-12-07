@@ -1,11 +1,11 @@
 /*global angular : true fixes codekit error*/
 var particleApp = angular.module('particleApp', ['ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets']);
-particleApp.run(['$route', '$rootScope', '$location', function ($route, $rootScope, $location) {
+particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScope, $location) {
     var original = $location.path;
-    $location.path = function (path, reload) {
+    $location.path = function(path, reload) {
         if (reload === false) {
             var lastRoute = $route.current;
-            var un = $rootScope.$on('$locationChangeSuccess', function () {
+            var un = $rootScope.$on('$locationChangeSuccess', function() {
                 $route.current = lastRoute;
                 un();
             });
@@ -100,7 +100,7 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
 
     $scope.$watch('searchResults', function(newValue) {
         if (newValue != null) {
-            var newPath = '/components/' +$scope.componentGroupID+ '/' + newValue;
+            var newPath = '/components/' + $scope.componentGroupID + '/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath', newPath)
         }
@@ -117,7 +117,51 @@ particleApp.controller('angularController', function($scope, $sce, lucidSnippets
 });
 
 //////// directives ////////
+particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout, $animateCss) {
+    return {
+        restrict: 'A',
 
+        link: function($scope, ngElement, attributes) {
+            var element = ngElement[0];
+
+            $scope.$watch(attributes.collapse, function(collapse) {
+
+                $timeout(function() {
+                    var newHeight = collapse ? 0 : getElementAutoHeight();
+                    console.log("new Height", newHeight);
+
+                    element.style.height = newHeight + 'px';
+                    ngElement.toggleClass('collapsed', collapse);
+                }, 10);
+            });
+
+            function getElementAutoHeight() {
+                var currentHeight = getElementCurrentHeight();
+
+                element.style.height = 'auto';
+                var autoHeight = getElementCurrentHeight();
+
+                element.style.height = currentHeight;
+                getElementCurrentHeight(); // Force the browser to recalc height after moving it back to normal
+
+                return autoHeight;
+            }
+
+            function getElementCurrentHeight() {
+                return element.offsetHeight
+            }
+            $scope.updateHeight = function() {
+                $timeout(function() {
+                    var newHeight = getElementAutoHeight();
+                    console.log("update Height", newHeight);
+
+                    element.style.height = newHeight + 'px';
+
+                }, 1);
+            }
+        }
+    };
+}]);
 particleApp.directive('clipboard', ['$document', function($document) {
     return {
         restrict: 'A',
