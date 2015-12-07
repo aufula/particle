@@ -251,6 +251,10 @@ angular.module('lucidComponentFactory', [])
                     "name": "collapsible",
                     "type": "true/false",
                     "details": "Optional: Set to false if you do not want element to collapse"
+                }, {
+                    "name": "collapse",
+                    "type": "true/false",
+                    "details": "Optional: Set to true want the element collapsed by default"
                 }]
             }]
         }, {

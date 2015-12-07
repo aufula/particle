@@ -1582,6 +1582,12 @@ angular.module('lucidInputStepper', ['appConfig'])
                 if (!attrs.step) {
                     attrs.step = 1;
                 }
+                if (!attrs.unit) {
+                    attrs.unit = "";
+                }
+                if(!attrs.number){
+                    attrs.number = 0;
+                }
             }
         };
     });
@@ -1883,6 +1889,7 @@ angular.module('lucidCollapseBar', ['appConfig'])
             scope: {
                 title: '@',
                 collapsible: '@',
+                collapse: '@'
             },
             replace: true,
             transclude: true,

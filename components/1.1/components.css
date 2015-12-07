@@ -1346,23 +1346,21 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
   vertical-align: top;
 }
-.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg g {
-  -webkit-transform: rotateZ(0);
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
+  -webkit-transform: rotate(0);
       -ms-transform: rotate(0);
-          transform: rotateZ(0);
+          transform: rotate(0);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
-}
-.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg g path {
   fill: #77818C;
 }
-.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg g {
-  -webkit-transform: rotateZ(-90deg);
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
+  -webkit-transform: rotate(-90deg);
       -ms-transform: rotate(-90deg);
-          transform: rotateZ(-90deg);
+          transform: rotate(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
   vertical-align: top;

@@ -1,11 +1,11 @@
 <div class="lucid-collapse-bar">
     <div class="collapse-bar-top" ng-class="{'no-collapse': collapsible == 'false'}">
-        <div class="lucid-hide-content-icon" ng-click="hidecontent = !hidecontent" ng-class="{ 'lucid-hide-content': hidecontent}">
+        <div class="lucid-hide-content-icon" ng-click="collapse = !collapse" ng-class="{ 'lucid-hide-content': collapse}">
             <ng-include src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
         </div>
         <span class="collapse-bar-name">{{title}}</span>
     </div>
-    <div class="lucid-collapse-bar-content lucid-animate" ng-hide="hidecontent">
+    <div class="lucid-collapse-bar-content lucid-animate" ng-hide="collapse">
         <ng-transclude>
         </ng-transclude>
     </div>
