@@ -1390,7 +1390,7 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-toggle .toggle-button {
   font-size: 12px;
   height: 22px;
-  line-height: 22px;
+  line-height: 20px;
   font-weight: 400;
   border-radius: 4px;
   width: 36px;
