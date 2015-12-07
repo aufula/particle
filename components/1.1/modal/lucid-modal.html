@@ -6,8 +6,8 @@
         <div style="height:{{height - 42}}px" ng-class="{'has-footer':confirm}">
             <ng-transclude></ng-transclude>
         </div>
-        <footer ng-if="confirm">
-            <button class="lucid-button lucid-cancel" ng-if="cancel" ng-click="showmodal=false">{{cancel}}</button>
+        <footer ng-show="confirm">
+            <button class="lucid-button lucid-cancel" ng-show="cancel" ng-click="showmodal=false">{{cancel}}</button>
             <button class="lucid-button lucid-blue" ng-click="showmodal=false; confirmFunction()">{{confirm}}</button>
         </footer>
     </div>
