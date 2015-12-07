@@ -252,9 +252,9 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Name the top bar"
                 }, {
-                    "name": "collapse",
+                    "name": "closed",
                     "type": "true/false",
-                    "details": "Optional: Set to true want the element collapsed by default"
+                    "details": "Optional: Set to true want the element closed by default"
                 }, {
                     "name": "collapsible",
                     "type": "true/false",
