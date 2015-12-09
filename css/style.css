@@ -536,10 +536,6 @@ p.small-body {
 .hljs {
   padding: 1em;
 }
-.hljs.HTML {
-  white-space: initial;
-  word-wrap: break-word;
-}
 #sidebar #logo {
   position: relative;
   -webkit-transform-origin: top left;
