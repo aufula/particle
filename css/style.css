@@ -531,6 +531,9 @@ p.small-body {
 .hljs {
   padding: 1em;
 }
+.html-content .hljs {
+  white-space: initial;
+}
 #sidebar #logo {
   position: relative;
   -webkit-transform-origin: top left;
