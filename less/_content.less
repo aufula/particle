@@ -10,6 +10,11 @@
 .code-preview {
     border: 1px solid @blue-steel-2;
     margin-bottom: 60px;
+    background: #FFF;
+    &.production-preview{
+        position: relative;
+        z-index: 1;
+    }
     > header {
         background: @blue-steel;
         height: 60px;
@@ -123,8 +128,15 @@
         // min-height: 160px;
         padding: 60px 0;
         text-align: center;
+        position:relative;
         .component-preview-wrapper {
             display: inline-block;
+        }
+        &.production-preview{
+            padding: 60px 20px;
+            text-align: inherit;
+            // overflow: auto;
+            // min-height: 200px;
         }
     }
     .spacer {

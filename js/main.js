@@ -1,5 +1,5 @@
 /*global angular : true fixes codekit error*/
-var particleApp = angular.module('particleApp', ['ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets']);
+var particleApp = angular.module('particleApp', ['ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets', 'lucidProductionFactory']);
 particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScope, $location) {
     var original = $location.path;
     $location.path = function(path, reload) {
@@ -48,9 +48,20 @@ particleApp.config(function($routeProvider) {
             controller: 'iconController',
             reloadOnSearch: false
         })
-        .otherwise({
-            redirectTo: '/'
-        });
+        .when('/production', {
+            templateUrl: 'templates/production-components.html',
+            controller: 'productionController',
+            reloadOnSearch: false
+        })
+        .when('/production/:searchResults', {
+            templateUrl: 'templates/production-components.html',
+            controller: 'productionController',
+            reloadOnSearch: false
+        })
+
+    .otherwise({
+        redirectTo: '/'
+    });
 });
 
 particleApp.controller('mainController', function($scope, $location, lucidComponentFactory) {
@@ -114,6 +125,27 @@ particleApp.controller('angularController', function($scope, $sce, lucidSnippets
     };
     $scope.snippets = lucidSnippets;
 
+});
+
+particleApp.controller('productionController', function($scope, lucidProductionFactory, $routeParams, $filter, $location) {
+    //gets component id from URL
+    //$scope.componentGroupID = $routeParams.componentGroupID;
+
+    // $scope.components = $filter('filter')(lucidProductionFactory, {
+    //     "groupid": $routeParams.componentGroupID
+    // });
+    $scope.productionComponents = lucidProductionFactory;
+
+    $scope.searchResults = $routeParams.searchResults;
+
+    $scope.$watch('searchResults', function(newValue) {
+        if (newValue != null) {
+            var newPath = '/production/' + newValue;
+            $location.path(newPath, false);
+            //console.log('changepath', newPath)
+        }
+
+    });
 });
 
 //////// directives ////////

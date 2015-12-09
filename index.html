@@ -20,6 +20,7 @@
     
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/component-data.js" type="text/javascript"></script>
+    <script src="js/production-data.js" type="text/javascript"></script>
     <script src="js/icon-data.js"></script>
     <script src="js/snippets-data.js"></script>
 
@@ -73,6 +74,14 @@
             </li>
             <li ng-repeat="componentGroup in componentGroups">
                 <a href="#/components/{{componentGroup.groupid}}" ng-class="{ active: isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
+            </li>
+        </ul>
+        <ul class="reversed-text">
+            <li class="list-header">
+                <i class="l-icon l-icon-finger"></i> Production
+            </li>
+            <li>
+                <a href="#/production/" ng-class="{ active: isActive('/production', '') }">Production Code</a>
             </li>
         </ul>
     </section>
