@@ -246,6 +246,8 @@ p.small-body {
   margin-top: -2px;
 }
 #sidebar > ul > li > a {
+  -webkit-font-smoothing: auto;
+  font-size: 16px;
   color: #fff;
   line-height: 40px;
   text-indent: 20px;
@@ -396,6 +398,9 @@ p.small-body {
 .code-preview .component-preview .component-preview-wrapper {
   display: inline-block;
 }
+.code-preview .component-preview.production-preview {
+  padding: 60px 20px;
+}
 .code-preview .spacer {
   height: 20px;
 }
@@ -531,8 +536,9 @@ p.small-body {
 .hljs {
   padding: 1em;
 }
-.html-content .hljs {
+.hljs.HTML {
   white-space: initial;
+  word-wrap: break-word;
 }
 #sidebar #logo {
   position: relative;
