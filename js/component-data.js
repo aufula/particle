@@ -115,9 +115,9 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Optional: add label to bottom of toggle"
                 }, {
-                    "name": "class",
-                    "type": "text",
-                    "details": "Optional: add 'active' class to color icon lucid blue. Note: complex icons will need custom css"
+                    "name": "active",
+                    "type": "true/false",
+                    "details": "Optional: if true, 'active' class is added to color icon lucid blue. Note: complex icons will need custom css"
                 }, {
                     "name": "class",
                     "type": "text",
