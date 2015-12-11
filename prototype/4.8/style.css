@@ -558,8 +558,7 @@ a {
 .lucid-shapes-panel .lucid-shapes-header .manage-shapes-button {
   cursor: pointer;
 }
-.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-gear,
-.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search {
+.lucid-shapes-panel .lucid-shapes-header .lucid-shapes-gear {
   vertical-align: top;
   cursor: pointer;
   -webkit-transition: -webkit-transform 0.5s ease-out;
@@ -568,7 +567,10 @@ a {
   transition: transform 0.5s ease-out, -webkit-transform 0.5s ease-out;
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search {
-  float: right;
+  cursor: pointer;
+  position: absolute;
+  right: 10px;
+  top: 13px;
   opacity: 1;
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-shapes-search.ng-hide {
@@ -1104,15 +1106,19 @@ a {
   transition: margin 0.25s ease-in-out;
 }
 .import-to-canvas > ul li {
-  padding: 10px;
+  margin: 10px 15px;
+  padding: 5px 10px;
   display: block;
+  background: #fff;
   position: relative;
   cursor: pointer;
   line-height: 22px;
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
+  border-radius: 4px;
 }
 .import-to-canvas > ul li input[type="file"] {
+  cursor: pointer;
   position: absolute;
   left: 0;
   top: 0;
@@ -1127,13 +1133,13 @@ a {
   background: #f1f1f1;
 }
 .import-to-canvas > ul li.hint {
-  font-style: italic;
+  font-size: 14px;
+  line-height: 18px;
+  background: transparent;
+  padding: 0 0 5px 0;
 }
 .import-to-canvas > ul li.hint:hover {
   background: transparent;
-}
-.import-to-canvas > ul li.hint.import {
-  font-style: normal;
 }
 .import-to-canvas.ng-hide {
   opacity: 0;

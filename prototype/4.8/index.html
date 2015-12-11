@@ -264,16 +264,16 @@
                       </span>
 
                       <!-- start import to canvas -->
-                      <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/import-shape-dark.svg" width="165" class="import-to-canvas-buttcon" ng-click="importToCanvas = !importToCanvas; searchshapes = false">
+                      <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/import-shape-dark.svg" class="import-to-canvas-buttcon" active="importToCanvas" ng-click="importToCanvas = !importToCanvas; searchshapes = false">
                       </lucid-buttcon>
                       <!-- end import to canvas -->
-                      <img src="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" ng-hide="$root.manageshapes" class="lucid-icon-22 lucid-shapes-search lucid-animate" ng-click="searchshapes = !searchshapes; importToCanvas = false">
+                    <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; importToCanvas = false" active="searchshapes">
+                      </lucid-buttcon>
                   </header>
                 <!-- START IMPORT TO CANVAS-->
                 <div class="import-to-canvas" ng-show="importToCanvas">
                    <ul>
-                     <li class="lucid-select-option hint">Want to import images, shapes, or stencils from outside Lucidchart? You've come to the right place.</li>
-                     <li class="lucid-select-option hint import">Import From:</li>
+                     <li class="lucid-select-option hint">Use our storage integrations to import images, SVGs, and Visio files.</li>
                       <li class="lucid-select-option">
                           <input type="file" class="hidden-file-upload">
                           <img class="lucid-icon-22" src="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg">

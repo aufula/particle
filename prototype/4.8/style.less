@@ -335,11 +335,11 @@ sans-serif;
             left: 40px;
         }
     }
-    //share modal
-    .share-modal .lucid-tab-content,
-    .share-modal section {
-        padding: 0;
-    }
+
+  //share modal
+  .share-modal .lucid-tab-content, .share-modal section{
+    padding:0;
+  }
 }
 
 /////////////////////////////////////////////////
@@ -640,16 +640,17 @@ a {
         .manage-shapes-button {
             cursor: pointer;
         }
-        .lucid-shapes-gear,
-        .lucid-shapes-search {
+        .lucid-shapes-gear{
             vertical-align: top;
             cursor: pointer;
             transition: transform .5s ease-out;
         }
         .lucid-shapes-search {
-            float: right;
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 13px;
             opacity: 1;
-            //width:18px;
             &.ng-hide {
                 opacity: 0;
             }
@@ -1181,13 +1182,17 @@ a {
         margin-top: 0;
         transition: margin .25s ease-in-out;
         li {
-            padding: 10px;
+            margin: 10px 15px;
+            padding: 5px 10px;
             display: block;
+            background: #fff;
             position: relative;
             cursor: pointer;
             line-height: 22px;
             transition: .25s ease-in-out all;
+            border-radius: 4px;
             input[type="file"] {
+                cursor:pointer;
                 position: absolute;
                 left: 0;
                 top: 0;
@@ -1202,12 +1207,12 @@ a {
                 background: #f1f1f1;
             }
             &.hint {
-                font-style: italic;
+                font-size:14px;
+                line-height: 18px;
+                background:transparent;
+                padding:0 0 5px 0;
                 &:hover {
                     background: transparent;
-                }
-                &.import {
-                    font-style: normal;
                 }
             }
         }
@@ -1301,6 +1306,7 @@ a {
 //////////////////////////////
 //END SHAPES MANAGER
 //////////////////////////////
+
 //////////////////////////////
 //START MAIN HEADER
 //////////////////////////////
@@ -1537,10 +1543,10 @@ a {
         }
     }
 }
-
 //////////////////////////////
 //END MAIN HEADER
 //////////////////////////////
+
 #main-container {
     z-index: 0; //added so popovers stay on top
     height: ~"calc(100% - 54px)";
@@ -1748,7 +1754,7 @@ a {
         position: relative;
         top: -60px;
         opacity: 0;
-        left: 0;
+        left:0;
         .hover-handle {
             bottom: -@handle-width; // top of page
             width: ~"calc(100vw - 60px)";
@@ -1788,6 +1794,7 @@ a {
 //////////////////////////////
 //END CANVAS MODES
 //////////////////////////////
+
 //////////////////////////////
 //START OPTION BAR
 //////////////////////////////
@@ -1834,10 +1841,10 @@ a {
         }
     }
 }
-
 //////////////////////////////
 //END OPTION BAR
 //////////////////////////////
+
 ///////
 //start option bar dropdowns
 ///////
