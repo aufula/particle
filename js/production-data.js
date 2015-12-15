@@ -5,13 +5,27 @@ angular.module('lucidProductionFactory', [])
             'groupname': 'Components',
             'components': [{
                 "title": "Progress Bars",
-                "url": "production/progress-bars.html"
+                "url": "production/progress-bars.html",
+                "notification": {
+                    "type": "error",
+                    "message": "Component needs to be udpated, see Jira ticket.",
+                    "ticket": "http://particle.golucid.co/#/components/particles/modal"
+                }
             }, {
                 "title": "Buttons",
-                "url": "production/buttons.html"
+                "url": "production/buttons.html",
+                "notification": {
+                    "type": "complete",
+                    "message": "UX Approved. Use in production."
+                }
             }, {
                 "title": "Dialog",
-                "url": "production/dialog.html"
+                "url": "production/dialog.html",
+                "notification": {
+                    "type": "error",
+                    "message": "Component needs to be updated, see Jira ticket",
+                    "ticket": "http://particle.golucid.co/#/components/particles/modal"
+                }
             }, {
                 "title": "well",
                 "url": "production/well.html"

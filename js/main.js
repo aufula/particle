@@ -128,12 +128,7 @@ particleApp.controller('angularController', function($scope, $sce, lucidSnippets
 });
 
 particleApp.controller('productionController', function($scope, lucidProductionFactory, $routeParams, $filter, $location) {
-    //gets component id from URL
-    //$scope.componentGroupID = $routeParams.componentGroupID;
 
-    // $scope.components = $filter('filter')(lucidProductionFactory, {
-    //     "groupid": $routeParams.componentGroupID
-    // });
     $scope.productionComponents = lucidProductionFactory;
 
     $scope.searchResults = $routeParams.searchResults;
@@ -146,8 +141,13 @@ particleApp.controller('productionController', function($scope, lucidProductionF
         }
 
     });
-});
+    //button function for alerts direct to URL
 
+    $scope.openURL = function(url) {
+        var win = window.open(url, '_blank');
+        win.focus();
+    };
+});
 //////// directives ////////
 particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout, $animateCss) {
     return {
@@ -160,7 +160,7 @@ particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout,
 
                 $timeout(function() {
                     var newHeight = collapse ? 0 : getElementAutoHeight();
-                    console.log("new Height", newHeight);
+                    //console.log("new Height", newHeight);
 
                     element.style.height = newHeight + 'px';
                     ngElement.toggleClass('collapsed', collapse);
@@ -185,12 +185,12 @@ particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout,
             $scope.updateHeight = function() {
                 $timeout(function() {
                     var newHeight = getElementAutoHeight();
-                    console.log("update Height", newHeight);
+                    //console.log("update Height", newHeight);
 
                     element.style.height = newHeight + 'px';
 
                 }, 1);
-            }
+            };
         }
     };
 }]);

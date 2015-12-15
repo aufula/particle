@@ -1045,6 +1045,10 @@ input[type=range]:focus::-ms-fill-upper {
   line-height: 22px;
   color: #5a5a5a;
   text-align: left;
+  font-size: 16px;
+}
+.lucid-notification [ng-transclude] {
+  font-size: 16px;
 }
 .lucid-notification .notification-icon {
   width: 22px;
