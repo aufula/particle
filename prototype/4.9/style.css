@@ -1629,23 +1629,29 @@ a {
 }
 .advanced-shapes-wrapper .advanced-shapes {
   color: #fff;
+  font-weight: 200;
   padding: 8px 20px;
   height: 53px;
   background: #77818C;
 }
 .advanced-shapes-wrapper .advanced-shapes > li {
   display: inline-block;
-  padding: 0 5px;
+  padding-right: 17px;
   vertical-align: top;
 }
 .advanced-shapes-wrapper .advanced-shapes > li.advanced-settings-title {
   padding: 0;
   font-style: italic;
   font-size: 14px;
+  font-weight: 100;
   line-height: 37px;
   vertical-align: top;
   padding-right: 20px;
+  margin-right: 21px;
   border-right: 1px solid #CBCBCB;
+}
+.advanced-shapes-wrapper .advanced-shapes > li .lucid-toggle {
+  margin-right: 4px;
 }
 .advanced-shapes-wrapper.ng-hide .advanced-shapes {
   margin-top: -60px;

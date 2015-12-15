@@ -2231,6 +2231,9 @@ angular.module('lucidToggle', ['appConfig'])
                 $scope.componentsURL = config.componentsURL;
             },
             compile: function(element, attrs) {
+                if (!attrs.width) {
+                    attrs.width = 40;
+                }
 
                 if (!attrs.activetext) {
                     attrs.activetext = 'ON';
