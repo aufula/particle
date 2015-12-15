@@ -101,6 +101,10 @@ angular.module('lucidComponentFactory', [])
                     "name": "toggle",
                     "type": "true/false",
                     "details": "Optional: used to connect to existing variable, or set default on/off state."
+                }, {
+                    "name": "class",
+                    "type": "'reverse-text'",
+                    "details": "Optional: add class of 'reverse-text' to make label text white and darken off state"
                 }]
             }, {
                 "title": "Buttcon",
