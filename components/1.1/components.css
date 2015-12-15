@@ -5,7 +5,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700,400italic,300);
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
 html,
 body,
 div,
@@ -151,6 +151,9 @@ input {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
 }
+.reversed-text {
+  font-weight: 200;
+}
 .lucid-input-wrapper {
   display: inline-block;
   vertical-align: top;
@@ -167,7 +170,6 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
-  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
 }
 .lucid-input-wrapper.condensed .lucid-input {
@@ -208,7 +210,6 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
-  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
   padding-right: 10px;
   text-align: left;
@@ -239,11 +240,8 @@ input {
 }
 .lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down {
   bottom: 1px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-input-stepper-wrapper.condensed .lucid-input-stepper {
   background: #FFF;
@@ -295,7 +293,6 @@ input {
   position: absolute;
   top: 10px;
   right: 0;
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
   font-size: 0;
 }
@@ -303,12 +300,8 @@ input {
   fill: #fff;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateZ(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotateZ(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateZ(180deg);
+  transform-origin: center;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer {
   padding: 10px;
@@ -316,7 +309,6 @@ input {
   box-sizing: border-box;
   opacity: 1;
   margin-top: 0;
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
@@ -330,27 +322,18 @@ input {
   padding: 0;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
   border-radius: 0;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
-  -webkit-transform: rotateZ(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotateZ(180deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateZ(180deg);
+  transform-origin: center;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotateZ(0deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
+  transform: rotateZ(0deg);
+  transform-origin: center;
 }
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
   display: none;
@@ -381,7 +364,6 @@ input {
   margin-top: -7px;
 }
 .lucid-popover-menu.ng-animate {
-  -webkit-transition: .1s all linear;
   transition: .1s all linear;
 }
 .lucid-popover-menu ul {
@@ -420,7 +402,6 @@ input {
 .lucid-buttcon .lucid-buttcon-image svg path,
 .lucid-buttcon .lucid-buttcon-image svg polygon,
 .lucid-buttcon .lucid-buttcon-image svg rect {
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .lucid-buttcon .input-label {
@@ -543,7 +524,6 @@ input {
   padding: 3px;
   box-sizing: border-box;
   display: inline-block;
-  -webkit-transition: 0.1s ease-in-out background;
   transition: 0.1s ease-in-out background;
   vertical-align: top;
 }
@@ -556,14 +536,9 @@ input {
   z-index: 3;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check img {
-  -webkit-transform: scale(0.01);
-      -ms-transform: scale(0.01);
-          transform: scale(0.01);
+  transform: scale(0.01);
   opacity: 0;
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: 0.1s ease-in-out all;
+  transform-origin: center;
   transition: 0.1s ease-in-out all;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square:hover {
@@ -573,9 +548,7 @@ input {
   background: rgba(0, 0, 0, 0.1);
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-selected .lucid-swatch-check img {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   opacity: 1;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-swatch-plus {
@@ -626,7 +599,6 @@ input {
   top: -2px;
   z-index: 2;
   opacity: 1;
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments {
@@ -675,7 +647,6 @@ input {
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
@@ -689,7 +660,6 @@ input {
   fill: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
@@ -702,7 +672,6 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
@@ -715,7 +684,6 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
@@ -824,7 +792,6 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 0;
 }
 .lucid-modal-wrapper.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal {
@@ -841,13 +808,10 @@ input[type=range]:focus::-ms-fill-upper {
   z-index: 2;
 }
 .lucid-modal-wrapper .lucid-modal.ng-hide {
-  -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
-          transform: translateY(10px);
+  transform: translateY(10px);
   opacity: 0;
 }
 .lucid-modal-wrapper .lucid-modal.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal > header {
@@ -982,7 +946,6 @@ input[type=range]:focus::-ms-fill-upper {
   box-sizing: border-box;
   height: 28px;
   whitespace: nowrap;
-  -webkit-transition: 0.15s ease-in-out background-color;
   transition: 0.15s ease-in-out background-color;
 }
 .lucid-button.lucid-blue {
@@ -1143,7 +1106,6 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper .lucid-select-dropdown > div {
   padding: 6px 0;
   margin-top: 0;
-  -webkit-transition: 0.25s ease-in-out margin;
   transition: 0.25s ease-in-out margin;
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-hide {
@@ -1154,14 +1116,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-animate {
   overflow: hidden;
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
   padding: 5px 15px;
   text-align: left;
-  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
@@ -1202,7 +1162,6 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper.condensed .lucid-select-dropdown > div {
   padding: 6px 0;
   margin-top: 0;
-  -webkit-transition: 0.25s ease-in-out margin;
   transition: 0.25s ease-in-out margin;
 }
 .lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide {
@@ -1213,7 +1172,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper.condensed .lucid-select-dropdown.ng-animate {
   overflow: hidden;
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 [lucid-context-menu] {
@@ -1330,7 +1288,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 7px 10px;
   position: relative;
   color: #555;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 30px;
@@ -1344,27 +1301,19 @@ input[type=range]:focus::-ms-fill-upper {
   height: 30px;
   padding: 13px 4px 0 11px;
   cursor: pointer;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
   vertical-align: top;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
-  -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: all 0.25s ease-in-out;
+  transform: rotate(0);
+  transform-origin: center;
   transition: all 0.25s ease-in-out;
   fill: #77818C;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
-  -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
   vertical-align: top;
@@ -1381,7 +1330,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding-left: 0;
 }
 .lucid-collapse-bar .lucid-collapse-bar-content {
-  -webkit-transition: all .5s;
   transition: all .5s;
   width: 100%;
 }
@@ -1401,10 +1349,13 @@ input[type=range]:focus::-ms-fill-upper {
   background: #DBDBDB;
   border: 1px solid #979797;
   color: #5A5A5A;
-  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   text-align: center;
   cursor: pointer;
+}
+.lucid-toggle.reversed-text .toggle-button {
+  border: 1px solid #59697C;
+  background: #A9B3BE;
 }
 .lucid-toggle .toggle-button.active {
   background: #CAEFFF;
