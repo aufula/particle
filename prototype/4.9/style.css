@@ -833,6 +833,9 @@ a {
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library {
   float: left;
 }
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper {
+  margin-left: 10px;
+}
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container {
   display: inline-block;
   width: 200px;
@@ -1053,7 +1056,7 @@ a {
   padding: 5px 10px;
 }
 .search-shapes .search-shapes-input > input {
-  width: 80%;
+  width: 175px;
   height: 29px;
   line-height: 29px;
   border: none;
@@ -2122,7 +2125,7 @@ a {
 }
 .lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-left {
   top: -10px;
-  left: -8px;
+  left: -10px;
 }
 .lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-center {
   top: -10px;

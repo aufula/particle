@@ -7166,6 +7166,7 @@ angular.module('lucidPagesData', [])
                 "comment": {
                     "text": "yep this is a comment"
                 },
+                "table": true,
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",

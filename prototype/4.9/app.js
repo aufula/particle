@@ -681,7 +681,19 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.openWindow = function(url) {
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };
+        //start search shape function
+        $scope.searchShapeGroups = function(searchInput){
+
+            $scope.searchShapeGroupsResults = $filter('filter')($scope.lucidShapeGroups, searchInput);
+            $scope.filterShapes = searchInput;
+        };
     })
+
+
+    ////////////////
+    ////END SHAPES MANAGER CTRL
+    ////////////////
+
     ////////////////
     ////START CANVAS CTRL
     ////////////////

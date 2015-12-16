@@ -899,6 +899,9 @@ a {
         text-align: left;
         .lucid-new-library {
             float: left;
+            &.lucid-select-wrapper{
+                margin-left:10px;
+            }
         }
         .lucid-search-container {
             display: inline-block;
@@ -1124,7 +1127,7 @@ a {
         background: @blue-steel-2;
         padding: 5px 10px;
         >input {
-            width: 80%;
+            width: 175px;
             height: 29px;
             line-height: 29px;
             border: none;
@@ -2258,7 +2261,7 @@ a {
             background-color: rgba(255, 255, 255, .93);
             &.lucid-top-left {
                 top: @handle-position-outward;
-                left: @handle-position-center;
+                left: @handle-position-outward;
             }
             &.lucid-top-center {
                 top: @handle-position-outward;
