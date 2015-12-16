@@ -532,6 +532,9 @@ a {
         border-radius: 4px;
         cursor: move;
         //z-index: 0;
+        &.shapegroup-pinned {
+            cursor: default;
+        }
     }
     &:hover {
         //make hover on parent card, not just top section
@@ -768,24 +771,20 @@ a {
         position: relative;
         //z-index:1;
         &.ng-enter {
-            margin-top: -84px;
+            transform: translateY(-84px);
             opacity: 0;
         }
         &.ng-enter-active {
-            margin-top: 0;
+            transform: translateY(0);
             opacity: 1;
         }
         &.ng-leave {
-            margin-top: 0;
+            transform: translateY(0);
             opacity: 1;
         }
         &.ng-leave-active {
-            margin-top: -84px;
+            transform: translateY(-84px);
             opacity: 0;
-        }
-        &.repeat-animation.ng-enter-stagger {
-            transition-delay: 1.5s;
-            transition-duration: 0s;
         }
         &.ng-animate {
             transition: .25s;
@@ -793,6 +792,11 @@ a {
             &.no-transition {
                 transition: 0s;
             }
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: .25s;
+            transition-duration: 0s;
+            z-index: 0;
         }
     }
     .lucid-shape-group {
@@ -987,6 +991,9 @@ a {
         &.ng-animate {
             transition: .25s ease-in-out opacity;
             transition-delay: .75s;
+        }
+        &.loading-shapes {
+            opacity: 0;
         }
         //width:calc(100vw - @manage-shapes-panel-width);
         //width: 800px;
@@ -1210,15 +1217,15 @@ a {
 .import-to-manager {
     background-color: #3E4752;
     color: #fff;
-    padding-right:30px;
+    padding-right: 30px;
     &:after {
         content: '';
         border-left: 4px solid transparent;
         border-right: 4px solid transparent;
         border-top: 6px solid #fff;
-        position:absolute;
-        top:12px;
-        right:10px;
+        position: absolute;
+        top: 12px;
+        right: 10px;
     }
 }
 

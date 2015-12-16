@@ -262,7 +262,7 @@
           <div class="lucid-shapes-panel" ng-class="{ 'lucid-managing-shapes': $root.manageshapes }">
               <div class="lucid-pinned-shapes-panel">
                   <header class="lucid-shapes-header">
-                      <span ng-click="clickShapes();">
+                      <span ng-click="toggleShapesManager();">
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
                       <span class="lucid-more-shapes">Shapes</span>
                       </span>
@@ -441,11 +441,11 @@
                               <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
                               <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
                           </div>
-                          <img ng-click="$root.manageshapes=false" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="lucid-close-icon">
+                          <img ng-click="toggleShapesManager();" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="lucid-close-icon">
                       </div>
                   </div>
 
-                  <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes" ng-animate-children>
+                  <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes" ng-class="{'loading-shapes': !loadingshapes}" ng-animate-children>
                       <div class="lucid-scroll-inner-wrap">
                           <div class="lucid-shapes-manager-divider">
                               <div class="divider-inner">
@@ -458,8 +458,9 @@
                           <ul ng-sortable="customGroupsSort"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
-                              <li ng-repeat="shapegroup in customShapeGroups | filter:searchShapes"
+                              <li ng-repeat="shapegroup in customShapeGroups | filter:searchShapes track by shapegroup.id"
                                   class="lucid-shape-group-wrapper lucid-animate"
+                                  ng-show="$root.manageshapes"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
@@ -467,7 +468,7 @@
                                     
                                     <div class="shape-group-top" ng-class="{'shapegroup-pinned': shapegroup.pinned}">
                                       <span class="edit-in-place shape-group-name" ng-bind="shapegroup.groupname" ng-show="!shapegroup.edit"></span>
-                                      <input id="name-input-{{$parent.$index}}" class="edit-in-place" placeholder="Group Name" ng-model="shapegroup.groupname" ng-show="shapegroup.edit" ng-enter="shapegroup.edit=false" dnd-nodrag select-on-load></input>
+                                      <input id="name-input-{{$index}}" class="edit-in-place" placeholder="Group Name" ng-model="shapegroup.groupname" ng-show="shapegroup.edit" ng-enter="shapegroup.edit=false" dnd-nodrag select-on-load></input>
 
                                       <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
 
@@ -477,9 +478,9 @@
                                               </div>
                                               <div class="lucid-select-dropdown" ng-show="showdropdown" ng-click="showdropdown=false">
                                                   <ul>
-                                                      <li class="lucid-select-option" ng-click="shareModal = true">Share</li>
+                                                      <li class="lucid-select-option" ng-click="$root.shareModal = true">Share</li>
                                                       <li class="lucid-select-option" ng-click="$parent.editName(shapegroup, $index)">Rename</li>
-                                                      <li class="lucid-select-option">Duplicate</li>
+                                                      <li class="lucid-select-option" ng-click="$parent.duplicateShapeGroup(shapegroup)">Duplicate</li>
                                                       <li class="lucid-select-option" ng-click="$parent.customShapeGroups.splice($index, 1); unPinGroup(shapegroup);">Delete</li>
 
                                                   </ul>
@@ -554,8 +555,9 @@
                           <ul ng-sortable="lucidGroupsSort"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
-                              <li ng-repeat="shapegroup in lucidShapeGroups | filter:searchShapes"
-                                  class="lucid-shape-group-wrapper lucid-animate"
+                              <li ng-repeat="shapegroup in lucidShapeGroups | filter:searchShapes | limitTo: lucidShapesLimit"
+                                  class="lucid-shape-group-wrapper"
+                                  ng-class="{'no-transition': !loadingshapes}"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
@@ -754,11 +756,11 @@
 
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
-        <!-- RIGHT DOCK ICONS --->
+        <!-- RIGHT DOCK ICONS -->
         <div class="icon-wrapper" ng-click="addOnsModal=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
         </div>
-        <!-- ADD ONS MODAL --->
+        <!-- ADD ONS MODAL -->
         <lucid-modal showmodal="addOnsModal" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
           <ul class="add-ons">
@@ -1017,6 +1019,9 @@
           Import SVG, Visio, and other files from your computer.
       </lucid-finger-tab>
     </lucid-finger-tabs>
+  </lucid-modal>
+  <lucid-modal showmodal="$root.shareModal" width="590" height="460" title="Share" confirm="Import" cancel="Nevermind">
+    Share with your team modal.
   </lucid-modal>
   <!-- END WRAPPER -->
 </body>
