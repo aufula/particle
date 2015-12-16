@@ -377,7 +377,7 @@ a {
   transition: all 0.25s ease-in-out;
 }
 .lucid-shape-group .slide-toggle > ul.zero-state-height {
-  min-height: 100px;
+  min-height: 130px;
 }
 .lucid-shape-group .lucid-hide-shapes-icon {
   z-index: 1;
@@ -398,12 +398,13 @@ a {
 .lucid-shape-group .zero-state {
   transition: all 0.25s ease-in-out;
   position: absolute;
-  top: 32px;
+  top: 37px;
   padding-top: 10px;
-  left: 0;
-  right: 0;
+  left: 5px;
+  right: 5px;
   bottom: 0;
-  border: 2px solid transparent;
+  border: 2px dashed #C2BFBF;
+  background-color: #D9DADB;
   text-align: center;
 }
 .lucid-shape-group .zero-state .lucid-save-shapes-hint {
@@ -631,6 +632,10 @@ a {
   transition: .25s;
   z-index: 0;
 }
+.lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate.no-transition,
+.lucid-manage-shapes .lucid-shape-group-wrapper.ng-animate.no-transition {
+  transition: 0s;
+}
 .lucid-managing-shapes .lucid-shape-group,
 .lucid-manage-shapes .lucid-shape-group {
   border-radius: 4px;
@@ -672,6 +677,11 @@ a {
 .lucid-manage-shapes .pin-library .lucid-icon-22 {
   transition: 0.25s ease-out transform;
 }
+.lucid-managing-shapes .pin-library .lucid-icon-22 svg g path,
+.lucid-manage-shapes .pin-library .lucid-icon-22 svg g path {
+  fill: #FFF;
+  transition: 0.25s ease-out all;
+}
 .lucid-managing-shapes .pin-library.pinned,
 .lucid-manage-shapes .pin-library.pinned {
   background: rgba(0, 0, 0, 0.5);
@@ -681,6 +691,10 @@ a {
 .lucid-manage-shapes .pin-library.pinned .lucid-icon-22 {
   transform: rotateZ(-45deg);
   transform-origin: center;
+}
+.lucid-managing-shapes .pin-library.pinned .lucid-icon-22 svg g path,
+.lucid-manage-shapes .pin-library.pinned .lucid-icon-22 svg g path {
+  fill: #29AAE1;
 }
 .lucid-managing-shapes .shape-group-top,
 .lucid-manage-shapes .shape-group-top {
@@ -696,17 +710,18 @@ a {
   font-style: italic;
   padding: 0;
   margin-left: 35px;
-  line-height: 16px;
+  line-height: 14px;
   background: transparent;
   color: #fff;
   border: none;
   outline: none;
   width: 180px;
-  font-size: 16px;
+  font-size: 14px;
 }
 .lucid-managing-shapes .zero-state,
 .lucid-manage-shapes .zero-state {
-  top: 40px;
+  top: 45px;
+  bottom: 5px;
 }
 .lucid-managing-shapes .lucid-hide-shapes .shape-group-top,
 .lucid-manage-shapes .lucid-hide-shapes .shape-group-top {
@@ -739,6 +754,9 @@ a {
   cursor: pointer;
   position: relative;
   top: -5px;
+}
+.ng-sort-ghost .shape-group-top .shape-group-name {
+  padding-left: 35px;
 }
 .lucid-shape-manager {
   position: absolute;

@@ -437,34 +437,111 @@ angular.module('particleApp', ['lucidComponents'])
     ////////////////
     ////START SHAPES MANAGER CTRL
     ////////////////
-    .controller('shapesManagerCtrl', function($scope, $rootScope, $window, $timeout, lucidShapesData) {
+    .controller('shapesManagerCtrl', function($scope, $rootScope, $filter, $window, $timeout, lucidShapesData) {
         $scope.$on('draggable:start', function(event, data) {
             $rootScope.draggingshape = true;
         });
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
         });
-        $scope.pinnedShapegroups = lucidShapesData.pinned();
-        $scope.shapegroups = lucidShapesData.all();
-
-        $scope.updatePinned = function() {
-            $scope.pinnedShapegroups = lucidShapesData.pinned();
+        $scope.pinnedShapeGroups = lucidShapesData.pinnedShapeGroups();
+        $scope.lucidShapeGroups = lucidShapesData.lucidShapeGroups();
+        $scope.customShapeGroups = lucidShapesData.customShapeGroups();
+        $scope.pinned = function(id) {
+            if (lucidShapesData.pinned(id)) {
+                //console.log(lucidShapesData.pinned(id))
+                return true;
+            } else {
+                return false
+            }
         };
+        $scope.showPinMessage = function(shapegroup) {
+            //add message
+            var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
+            //console.log('overflow: ', overflow)
+            if (overflow) {
+                $scope.overflowMessage = true;
+                $scope.overflowMessageTitle = shapegroup.groupname;
+                $timeout(function() {
+                    $scope.overflowMessage = false;
+                }, 2000);
+            }
+        };
+        $scope.pinGroup = function(shapegroup) {
+
+            $scope.pinnedShapeGroups.push(shapegroup);
+            $scope.showPinMessage(shapegroup);
+            shapegroup.pinned = true;
+            console.log('pin');
+        };
+        angular.forEach($scope.customShapeGroups, function(shapegroup) {
+            if (shapegroup.pinned) {
+                $scope.pinGroup(shapegroup);
+            }
+        });
+        angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
+            if (shapegroup.pinned) {
+                $scope.pinGroup(shapegroup);
+            }
+        });
+        $scope.unPinGroup = function(shapegroup) {
+
+            //filter the array
+            var findShapegroup = $scope.getObject(shapegroup.id, $scope.pinnedShapeGroups);
+            //get the index
+            var index = $scope.pinnedShapeGroups.indexOf(findShapegroup);
+            //console.log('index', index);
+            $scope.pinnedShapeGroups.splice(index, 1);
+            shapegroup.pinned = false;
+            //console.log('unpin');
+
+            var unpingroup = $scope.getObject(shapegroup.id, $scope.lucidShapeGroups);
+            if (!unpingroup) {
+                var unpingroup = $scope.getObject(shapegroup.id, $scope.customShapeGroups);
+            }
+            unpingroup.pinned = false;
+        };
+
+
+        $scope.getObject = function(objectID, array) {
+            return $filter('filter')(array, {
+                id: objectID
+            }, true)[0];
+        };
+        $scope.togglePin = function(shapegroup) {
+            if (shapegroup.pinned) {
+                $scope.unPinGroup(shapegroup);
+            } else {
+                $scope.pinGroup(shapegroup);
+            }
+        };
+
 
         //start drag and reoder shape groups
         $scope.pinnedGroupsSort = {
             group: {
                 name: 'pinned',
-                put: ['custom', 'lucid']
+                put: ['custom', 'lucid'],
+                pull: false
             },
+            model: 'shapegroup',
             handle: '.shape-group-top',
             animation: 150,
             onAdd: function(evt) {
-                var itemEl = evt.item; // dragged HTMLElement
-                evt.from; // previous list
-                //evt.item.pinned = true;
-                console.log(evt.model.pinned, 'pinned in group sort')
-            }
+                var shapegroup = $scope.getObject(evt.model.id, $scope.lucidShapeGroups);
+                if (!shapegroup) {
+                    shapegroup = $scope.getObject(evt.model.id, $scope.customShapeGroups);
+                }
+                shapegroup.pinned = true;
+                //console.log('add', evt.model);
+                $rootScope.draggingShapeGroup = false;
+            },
+            onStart: function(evt) {
+                $rootScope.draggingShapeGroup = true;
+            },
+            onEnd: function(evt) {
+                $rootScope.draggingShapeGroup = false;
+            },
         };
 
         $scope.customGroupsSort = {
@@ -472,8 +549,17 @@ angular.module('particleApp', ['lucidComponents'])
                 name: 'custom',
                 pull: 'clone'
             },
+            ghostClass: 'ng-sort-ghost',
+            model: 'shapegroup',
+            filter: '.shapegroup-pinned',
             handle: '.shape-group-top',
-            animation: 150
+            animation: 150,
+            onStart: function(evt) {
+                $rootScope.draggingShapeGroup = true;
+            },
+            onEnd: function(evt) {
+                $rootScope.draggingShapeGroup = false;
+            },
         };
 
         $scope.lucidGroupsSort = {
@@ -482,8 +568,17 @@ angular.module('particleApp', ['lucidComponents'])
                 name: 'lucid',
                 pull: 'clone'
             },
+            ghostClass: 'ng-sort-ghost',
+            model: 'shapegroup',
+            filter: '.shapegroup-pinned',
             handle: '.shape-group-top',
-            animation: 150
+            animation: 150,
+            onStart: function(evt) {
+                $rootScope.draggingShapeGroup = true;
+            },
+            onEnd: function(evt) {
+                $rootScope.draggingShapeGroup = false;
+            },
         };
         //end drag and reorder shape groups
 
@@ -538,7 +633,7 @@ angular.module('particleApp', ['lucidComponents'])
             return index < 10;
         };
 
-        $scope.dropCallback = function(event, index, item, external, type, allowedType) {
+        $scope.dropCallback = function(event, index, item, external, type, allowedType, shapegroup) {
             //$scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
                 if (allowedType === 'itemType' && !item.label) {
@@ -566,13 +661,13 @@ angular.module('particleApp', ['lucidComponents'])
 
         $scope.newCustomGroup = function() {
             var newGroup = {
+                "id": new Date().getTime(),
                 "groupname": "New Group",
                 "custom": 'custom',
                 "edit": true,
                 "shapes": [],
             };
-            lucidShapesData.addGroup(newGroup);
-            //$scope.customshapes.splice(0, 0, newGroup);
+            $scope.customShapeGroups.splice(0, 0, newGroup);
         };
         $scope.editName = function(shapegroup, index) {
             shapegroup.edit = true;
@@ -583,44 +678,6 @@ angular.module('particleApp', ['lucidComponents'])
             shapegroup.edit = true;
         };
 
-        $scope.pinnedCount = 5; //current loaded number of pinned libraries.
-
-        $scope.pinGroup = function(shapegroup) {
-            var group = lucidShapesData.get(shapegroup.id);
-            group.pinned = true;
-
-            $scope.pinnedCount += 1; //always pin to bottom
-            shapegroup.pinnedOrder = $scope.pinnedCount;
-            //show message if not in display
-            $scope.showPinMessage(shapegroup);
-            console.log('pin');
-            $scope.updatePinned();
-        };
-        $scope.unPinGroup = function(shapegroup) {
-            lucidShapesData.get(shapegroup.id).pinned = false;
-            console.log('unpin');
-            $scope.updatePinned();
-        };
-        $scope.togglePin = function(shapegroup) {
-            var group = lucidShapesData.get(shapegroup.id);
-            if (shapegroup.pinned) {
-                $scope.unPinGroup(shapegroup);
-            } else {
-                $scope.pinGroup(shapegroup);
-            }
-        };
-        $scope.showPinMessage = function(shapegroup) {
-            //add message
-            var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
-            //console.log('overflow: ', overflow)
-            if (overflow) {
-                $scope.overflowMessage = true;
-                $scope.overflowMessageTitle = shapegroup.groupname;
-                $timeout(function() {
-                    $scope.overflowMessage = false;
-                }, 2000);
-            }
-        };
         $scope.openWindow = function(url) {
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };

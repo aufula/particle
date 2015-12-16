@@ -1,0 +1,10 @@
+<div class="lucid-input-stepper-wrapper">
+    <div class="lucid-input-stepper" style="width: {{width}}px">
+        <input type="text" ng-model="stepperinput" ng-enter="updateInput()">
+        <div class="lucid-up" ng-mousedown="stepUp()" ng-mouseup="mouseUp()" ng-mouseleave="mouseUp()"></div>
+        <div class="lucid-down" ng-mousedown="stepDown()" ng-mouseup="mouseUp()" ng-mouseleave="mouseUp()"></div>
+    </div>
+    <div class="input-label" ng-if="label">
+        <span>{{label}}</span>
+    </div>
+</div>

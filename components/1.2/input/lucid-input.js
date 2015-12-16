@@ -1,0 +1,14 @@
+angular.module('lucidInput', ['appConfig'])
+    .directive('lucidInput', function(config) {
+        return {
+            restrict: 'AE',
+            scope: {
+                unit: '@',
+                value: '=',
+                width:'@',
+                label: '@'
+            },
+            replace: true,
+            templateUrl: config.componentsURL + 'input/lucid-input.html',
+        };
+    });

@@ -1,0 +1,26 @@
+.lucid-toggle {
+    display: inline-block;
+    .toggle-button {
+        font-size: 12px;
+        height: 22px;
+        line-height: 20px;
+        font-weight: 400;
+        border-radius: 4px;
+        width: 36px;
+        background: @tertiary-grey;
+        border: 1px solid #979797;
+        color: #5A5A5A;
+        transition: .1s ease-in-out all;
+        text-align: center;
+        cursor: pointer;
+    }
+    &.reversed-text .toggle-button {
+        border: 1px solid #59697C;
+        background: #A9B3BE;
+    }
+    .toggle-button.active{
+        background: @light-blue-2;
+        border: 1px solid @blue;
+        color: @blue;
+    }
+}

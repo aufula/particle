@@ -466,7 +466,7 @@ a {
             min-height: 44px;
             transition: all .25s ease-in-out;
             &.zero-state-height {
-                min-height: 100px;
+                min-height: 130px;
             }
         }
     }
@@ -493,12 +493,13 @@ a {
     .zero-state {
         transition: all .25s ease-in-out;
         position: absolute;
-        top: 32px;
+        top: 37px;
         padding-top: 10px;
-        left: 0;
-        right: 0;
+        left: 5px;
+        right: 5px;
         bottom: 0;
-        border: 2px solid transparent;
+        border: 2px dashed #C2BFBF;
+        background-color: #D9DADB;
         text-align: center;
         .lucid-save-shapes-hint {
             font-style: italic;
@@ -759,6 +760,9 @@ a {
         &.ng-animate {
             transition: .25s;
             z-index: 0;
+            &.no-transition {
+                transition: 0s;
+            }
         }
     }
     .lucid-shape-group {
@@ -793,6 +797,10 @@ a {
         cursor: pointer;
         .lucid-icon-22 {
             transition: .25s ease-out transform;
+            svg g path {
+                fill: #FFF;
+                transition: .25s ease-out all;
+            }
         }
         &.pinned {
             background: rgba(0, 0, 0, .5);
@@ -800,6 +808,9 @@ a {
             .lucid-icon-22 {
                 transform: rotateZ(-45deg);
                 transform-origin: center;
+                svg g path {
+                    fill: @blue;
+                }
             }
         }
     }
@@ -815,14 +826,14 @@ a {
             padding: 0;
             margin-left: 35px;
             //height: 16px;
-            line-height: 16px;
+            line-height: 14px;
             background: transparent;
             color: #fff;
             border: none;
             outline: none;
             //border-bottom: 1px solid #fff;
             width: 180px;
-            font-size: 16px;
+            font-size: 14px;
             // &::placeholder {
             //     font-style: italic;
             //     color: rgba(255, 255, 255, .5);
@@ -831,7 +842,8 @@ a {
         }
     }
     .zero-state {
-        top: 40px;
+        top: 45px;
+        bottom: 5px;
     }
     .lucid-hide-shapes .shape-group-top {
         border-radius: 4px;
@@ -860,6 +872,13 @@ a {
             position: relative;
             top: -5px;
         }
+    }
+}
+
+.ng-sort-ghost {
+    //added to sortable ghost div
+    .shape-group-top .shape-group-name {
+        padding-left: 35px;
     }
 }
 
@@ -1853,17 +1872,17 @@ a {
     width: 100%;
     border-bottom: 1px solid #999;
     .advanced-shapes {
-        color:#fff;
+        color: #fff;
         font-weight: 200;
         padding: 8px 20px;
         height: 53px;
         background: @blue-steel-2;
-        >li{
+        >li {
             display: inline-block;
-            padding-right:17px;
+            padding-right: 17px;
             vertical-align: top;
-            &.advanced-settings-title{
-                padding:0;
+            &.advanced-settings-title {
+                padding: 0;
                 font-style: italic;
                 font-size: 14px;
                 font-weight: 100;
@@ -1871,11 +1890,11 @@ a {
                 vertical-align: top;
                 padding-right: 20px;
                 margin-right: 21px;
-                border-right:1px solid #CBCBCB;
+                border-right: 1px solid #CBCBCB;
             }
-          .lucid-toggle{
-            margin-right:4px;
-          }
+            .lucid-toggle {
+                margin-right: 4px;
+            }
         }
     }
     &.ng-hide {
