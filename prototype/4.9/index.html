@@ -415,27 +415,27 @@
 
                               <!-- start -->
                               <div class="lucid-select-wrapper lucid-new-library">
-                                        <lucid-button 
-                              icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-new-library lucid-blue" ng-click="showdropdown = !showdropdown">Import</lucid-button>
+                                        <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
                                 <div class="lucid-select-dropdown" ng-show="showdropdown">
                                     <div>
                                         <ul>
-                                            <li class="lucid-select-option" ng-click="showdropdown = false; showImportModal = 'true'">
+                                            <li class="lucid-select-option" ng-click="showdropdown = false; $root.showImportModal = 'true'">
                                                 SVG
                                             </li>
-                                            <li class="lucid-select-option" ng-click="showdropdown = false; showImportModal = 'true'">
+                                            <li class="lucid-select-option" ng-click="showdropdown = false; $root.showImportModal = 'true'">
                                                 Visio
                                             </li>
-                                            <li class="lucid-select-option" ng-click="showdropdown = false; showImportModal = 'true'">
+                                            <li class="lucid-select-option" ng-click="showdropdown = false; $root.showImportModal = 'true'">
                                                 Stencil
                                             </li>
-                                            <li class="lucid-select-option" ng-click="showdropdown = false; showImportModal = 'true'">
+                                            <li class="lucid-select-option" ng-click="showdropdown = false; $root.showImportModal = 'true'">
                                                 Image
                                             </li>
                                         </ul>
                                     </div>
                                 </div>
                               </div>
+                              <!-- import modal is close to end of document -->
                               <!-- End -->
                           <div class="lucid-search-container">
                               <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
@@ -464,9 +464,7 @@
                                   ng-class-even="'even'">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
-                                    <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                        <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg'" class="lucid-icon-22"></ng-include>
-                                    </div>
+                                    
                                     <div class="shape-group-top" ng-class="{'shapegroup-pinned': shapegroup.pinned}">
                                       <span class="edit-in-place shape-group-name" ng-bind="shapegroup.groupname" ng-show="!shapegroup.edit"></span>
                                       <input id="name-input-{{$parent.$index}}" class="edit-in-place" placeholder="Group Name" ng-model="shapegroup.groupname" ng-show="shapegroup.edit" ng-enter="shapegroup.edit=false" dnd-nodrag select-on-load></input>
@@ -489,7 +487,9 @@
                                           </div>
                                       </div>
                                     </div>
-                                    
+                                    <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
+                                        <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg'" class="lucid-icon-22"></ng-include>
+                                    </div>
                                     <div class="slide-toggle" ng-hide="hideshapes">
                                         <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
                                             <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
@@ -554,19 +554,19 @@
                           <ul ng-sortable="lucidGroupsSort"
                               class="lucid-shapegroup-columns"
                               scroll-position="scroll">
-                              <li ng-repeat="shapegroup in lucidShapeGroups | filter:searchShapes | limitTo:5"
+                              <li ng-repeat="shapegroup in lucidShapeGroups | filter:searchShapes"
                                   class="lucid-shape-group-wrapper lucid-animate"
                                   ng-class-odd="'odd'"
                                   ng-class-even="'even'">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
-                                    <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                        <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg'" class="lucid-icon-22"></ng-include>
-                                    </div>
+                                    
                                     <div class="shape-group-top" ng-class="{'shapegroup-pinned': shapegroup.pinned}">
                                       <span class="edit-in-place shape-group-name">{{shapegroup.groupname}}</span>
                                     </div>
-                                    
+                                    <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
+                                        <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg'" class="lucid-icon-22"></ng-include>
+                                    </div>
                                     <div class="slide-toggle" ng-hide="hideshapes">
                                         <ul class="shapes-wrapper"
 
@@ -618,6 +618,7 @@
           </div>
       </div>
         <!-- END SHAPES MANAGER -->
+        
     <div class="hover-handle" ng-mouseenter="enterLeftPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>
       </div>
 <!-- END LEFT BAR -->
@@ -998,6 +999,25 @@
     </div>
   </div>
   </div>
+  <lucid-modal showmodal="$root.showImportModal" width="590" height="460" title="Import Files" confirm="Import" cancel="Nevermind">
+    <lucid-finger-tabs>
+      <lucid-finger-tab name="On your computer" icon="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg" selected>
+          Import SVG, Visio, and other files from your computer.
+      </lucid-finger-tab>
+      <lucid-finger-tab name="Dropbox" icon="http://particle.golucid.co/components/0.0/icon/img/icon-dropbox-bluesteel-22px.svg">
+          Import SVG, Visio, and other files from your computer.
+      </lucid-finger-tab>
+      <lucid-finger-tab name="Google Drive" icon="http://particle.golucid.co/components/0.0/icon/img/icon-googledrive-bluesteel-22px.svg">
+          Import SVG, Visio, and other files from your computer.
+      </lucid-finger-tab>
+      <lucid-finger-tab name="Facebook" icon="http://particle.golucid.co/components/0.0/icon/img/icon-facebook-bluesteel-22px.svg">
+          Import SVG, Visio, and other files from your computer.
+      </lucid-finger-tab>
+      <lucid-finger-tab name="Flickr" icon="http://particle.golucid.co/components/0.0/icon/img/icon-flickr-bluesteel-22px.svg">
+          Import SVG, Visio, and other files from your computer.
+      </lucid-finger-tab>
+    </lucid-finger-tabs>
+  </lucid-modal>
   <!-- END WRAPPER -->
 </body>
 

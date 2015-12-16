@@ -746,7 +746,6 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
   padding: 8px 6px 0;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px 0 0 0;
@@ -933,7 +932,6 @@ a {
 }
 .lucid-shape-manager .lucid-scroll-inner-wrap {
   padding: 20px;
-  height: 10000px;
 }
 .lucid-shape-manager .scrollable .scrollable-slider {
   background: #333;
@@ -1137,6 +1135,20 @@ a {
   display: inline-block;
   margin: 7px 7.9px;
   border-radius: 3px;
+}
+.import-to-manager {
+  background-color: #3E4752;
+  color: #fff;
+  padding-right: 30px;
+}
+.import-to-manager:after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #fff;
+  position: absolute;
+  top: 12px;
+  right: 10px;
 }
 .import-to-canvas-buttcon {
   cursor: pointer;
