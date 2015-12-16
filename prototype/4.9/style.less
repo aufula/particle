@@ -591,10 +591,6 @@ a {
         &.ng-leave-active {
             transition: none;
         }
-        // &.repeat-animation.ng-enter-stagger {
-        //     transition-delay: 0.05s;
-        //     transition-duration: 0s;
-        // }
         svg {
             vertical-align: -webkit-baseline-middle;
             width: 28px;
@@ -709,7 +705,39 @@ a {
         transition: bottom .3s ease-in-out;
     }
 }
-
+//start search shapes results
+.lucid-shape-group-wrapper.search-results  {
+        margin-bottom: 10px;
+        position: relative;
+        //z-index:1;
+        &.ng-enter {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave-active {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: .01s;
+            transition-duration: 0s;
+        }
+        &.ng-animate {
+            transition: .25s;
+            z-index: 0;
+            &.no-transition {
+                transition: 0s;
+            }
+        }
+    }
 //when managing shapes this class is added for transitions on shape panel
 @manage-shapes-panel-width: 250px;
 .lucid-managing-shapes,

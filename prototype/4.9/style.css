@@ -633,6 +633,41 @@ a {
   -webkit-transition: bottom 0.3s ease-in-out;
   transition: bottom 0.3s ease-in-out;
 }
+.lucid-shape-group-wrapper.search-results {
+  margin-bottom: 10px;
+  position: relative;
+}
+.lucid-shape-group-wrapper.search-results.ng-enter {
+  margin-top: -84px;
+  opacity: 0;
+}
+.lucid-shape-group-wrapper.search-results.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-shape-group-wrapper.search-results.ng-leave {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-shape-group-wrapper.search-results.ng-leave-active {
+  margin-top: -84px;
+  opacity: 0;
+}
+.lucid-shape-group-wrapper.search-results.repeat-animation.ng-enter-stagger {
+  -webkit-transition-delay: .01s;
+          transition-delay: .01s;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+}
+.lucid-shape-group-wrapper.search-results.ng-animate {
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 0;
+}
+.lucid-shape-group-wrapper.search-results.ng-animate.no-transition {
+  -webkit-transition: 0s;
+  transition: 0s;
+}
 .lucid-managing-shapes,
 .lucid-manage-shapes {
   background: #B2B2B2;
