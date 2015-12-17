@@ -245,11 +245,14 @@ p.small-body {
 }
 #sidebar > ul > li.list-header .lucid-icon-22 {
   position: absolute;
-  top: 8px;
+  top: 7px;
   left: 20px;
 }
 #sidebar > ul > li.list-header .lucid-icon-22 svg path {
   fill: #95A8BA;
+}
+#sidebar > ul > li.list-header .lucid-icon-22.production {
+  top: 9px;
 }
 #sidebar > ul > li > a {
   -webkit-font-smoothing: auto;
