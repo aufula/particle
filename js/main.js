@@ -1,5 +1,6 @@
 /*global angular : true fixes codekit error*/
-var particleApp = angular.module('particleApp', ['ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets', 'lucidProductionFactory']);
+var particleApp = angular.module('particleApp', ['appConfig', 'ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets', 'lucidProductionFactory']);
+
 particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScope, $location) {
     var original = $location.path;
     $location.path = function(path, reload) {
@@ -77,9 +78,9 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
     $scope.componentGroups = lucidComponentFactory;
 
 });
-particleApp.controller('iconController', function($scope, lucidIconFactory, $routeParams, $location) {
+particleApp.controller('iconController', function(config, $scope, lucidIconFactory, $routeParams, $location) {
 
-    $scope.icons = lucidIconFactory;
+    $scope.icongroups = lucidIconFactory;
 
 
     $scope.$watch('searchResults', function(newValue) {
@@ -90,8 +91,10 @@ particleApp.controller('iconController', function($scope, lucidIconFactory, $rou
         }
     });
 
-    angular.forEach($scope.icons, function(icon) {
-        icon.url = ' http://particle.golucid.co/components/0.0/icon/img/' + icon.name + '.svg';
+    angular.forEach($scope.icongroups, function(icongroup) {
+        angular.forEach(icongroup.icons, function(icon){
+            icon.url = config.componentsURL + 'icon/icons/' + icon.name + '.svg';
+        });
     });
 
     $scope.searchResults = $routeParams.searchResults;
@@ -105,7 +108,7 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
     $scope.components = $filter('filter')(lucidComponentFactory, {
         "groupid": $routeParams.componentGroupID
     });
-    $scope.componentPath = "components/1.1/";
+    $scope.componentPath = "components/1.2/";
 
     $scope.searchResults = $routeParams.searchResults;
 
@@ -149,7 +152,7 @@ particleApp.controller('productionController', function($scope, lucidProductionF
     };
 });
 //////// directives ////////
-particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout, $animateCss) {
+particleApp.directive('collapse', ['$timeout', function($timeout) {
     return {
         restrict: 'A',
 
@@ -180,7 +183,7 @@ particleApp.directive('collapse', ['$timeout', '$animateCss', function($timeout,
             }
 
             function getElementCurrentHeight() {
-                return element.offsetHeight
+                return element.offsetHeight;
             }
             $scope.updateHeight = function() {
                 $timeout(function() {

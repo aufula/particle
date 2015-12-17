@@ -16,9 +16,6 @@
 		width: 215px;
 	}
 
-
-
-
 	// Main-level
 	> ul { 
 		text-align: left;
@@ -31,11 +28,18 @@
 				font-size: 14px;
 				letter-spacing: 1px;
 				text-transform: uppercase;
-				text-indent: 20px;
+				padding-left: 50px;
 				line-height: 40px;
-				i {
-					vertical-align: middle;
-					margin-top: -2px;
+				vertical-align: top;
+				position: relative;
+				.lucid-icon-22 {
+					position: absolute;
+					top:8px;
+					left:20px;
+
+					svg path{
+						fill: @blue-steel-3;
+					}
 				}
 			}
 			> a {

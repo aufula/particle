@@ -1,23 +1,25 @@
 <h1>Icon Sheet</h1>
 <div class="hr"></div>
-<p>Right click to download / copy the the svg. <br>All SVGs should have the artboard size in the name, color should be applied through css.</p>
+<p>Right click to download / copy the the svg.
+    <br>All SVGs should have the artboard size in the name, color should be applied through css.</p>
 <div class="icon-search">
     <input ng-model="searchResults" placeholder="Search icons">
     <img src="components/0.0/icon/img/search-dark.svg">
 </div>
-<div>
-    <h2>Icons</h2>
+
+<div ng-repeat="icongroup in icongroups | filter: searchResults">
+    <h2>{{icongroup.icongroup}}</h2>
     <div class="icon-list-container clearfix">
-        <div ng-repeat="icon in icons | filter:{name : searchResults}">
+        <div ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
             <div class="particle-icon-wrapper" lucid-context-menu data-target="icon-context-{{$index}}">
                 <div class="icon-container">
-                    <img ng-src="components/0.0/icon/img/{{icon.name}}.svg">
+                    <ng-include src="icon.url" class="lucid-icon"></ng-include>
                 </div>
                 <h5>{{icon.name}}</h5>
             </div>
             <div id="icon-context-{{$index}}" class="lucid-context-menu ng-hide">
                 <ul>
-                    <a href="components/0.0/icon/img/{{icon.name}}.svg" download="{{icon.name}}.svg">
+                    <a href="{{icon.url}}" download="{{icon.name}}.svg">
                         <li class="lucid-select-option">Download</li>
                     </a>
                     <li class="lucid-select-option" clipboard text="icon.url">Copy URL</li>

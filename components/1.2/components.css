@@ -170,6 +170,7 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
 }
 .lucid-input-wrapper.condensed .lucid-input {
@@ -210,6 +211,7 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
   padding-right: 10px;
   text-align: left;
@@ -240,8 +242,11 @@ input {
 }
 .lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down {
   bottom: 1px;
-  transform: rotateX(180deg);
-  transform-origin: center;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .lucid-input-stepper-wrapper.condensed .lucid-input-stepper {
   background: #FFF;
@@ -293,6 +298,7 @@ input {
   position: absolute;
   top: 10px;
   right: 0;
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
   font-size: 0;
 }
@@ -300,8 +306,12 @@ input {
   fill: #fff;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  transform: rotateZ(180deg);
-  transform-origin: center;
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer {
   padding: 10px;
@@ -309,6 +319,7 @@ input {
   box-sizing: border-box;
   opacity: 1;
   margin-top: 0;
+  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
@@ -322,18 +333,27 @@ input {
   padding: 0;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
   border-radius: 0;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
-  transform: rotateZ(180deg);
-  transform-origin: center;
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  transform: rotateZ(0deg);
-  transform-origin: center;
+  -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotateZ(0deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
 }
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
   display: none;
@@ -364,6 +384,7 @@ input {
   margin-top: -7px;
 }
 .lucid-popover-menu.ng-animate {
+  -webkit-transition: .1s all linear;
   transition: .1s all linear;
 }
 .lucid-popover-menu ul {
@@ -402,6 +423,7 @@ input {
 .lucid-buttcon .lucid-buttcon-image svg path,
 .lucid-buttcon .lucid-buttcon-image svg polygon,
 .lucid-buttcon .lucid-buttcon-image svg rect {
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .lucid-buttcon .input-label {
@@ -524,6 +546,7 @@ input {
   padding: 3px;
   box-sizing: border-box;
   display: inline-block;
+  -webkit-transition: 0.1s ease-in-out background;
   transition: 0.1s ease-in-out background;
   vertical-align: top;
 }
@@ -536,9 +559,14 @@ input {
   z-index: 3;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check img {
-  transform: scale(0.01);
+  -webkit-transform: scale(0.01);
+      -ms-transform: scale(0.01);
+          transform: scale(0.01);
   opacity: 0;
-  transform-origin: center;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square:hover {
@@ -548,7 +576,9 @@ input {
   background: rgba(0, 0, 0, 0.1);
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-selected .lucid-swatch-check img {
-  transform: scale(1);
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
   opacity: 1;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-swatch-plus {
@@ -599,6 +629,7 @@ input {
   top: -2px;
   z-index: 2;
   opacity: 1;
+  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments {
@@ -647,6 +678,7 @@ input {
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
@@ -660,6 +692,7 @@ input {
   fill: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
@@ -672,6 +705,7 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
@@ -684,6 +718,7 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
@@ -792,6 +827,7 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 0;
 }
 .lucid-modal-wrapper.ng-animate {
+  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal {
@@ -808,10 +844,13 @@ input[type=range]:focus::-ms-fill-upper {
   z-index: 2;
 }
 .lucid-modal-wrapper .lucid-modal.ng-hide {
-  transform: translateY(10px);
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
   opacity: 0;
 }
 .lucid-modal-wrapper .lucid-modal.ng-animate {
+  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal > header {
@@ -946,6 +985,7 @@ input[type=range]:focus::-ms-fill-upper {
   box-sizing: border-box;
   height: 28px;
   whitespace: nowrap;
+  -webkit-transition: 0.15s ease-in-out background-color;
   transition: 0.15s ease-in-out background-color;
 }
 .lucid-button.lucid-blue {
@@ -1002,6 +1042,31 @@ input[type=range]:focus::-ms-fill-upper {
   width: 22px;
   height: 22px;
 }
+.lucid-icon svg path,
+.lucid-icon svg polygon,
+.lucid-icon svg rect,
+.lucid-icon svg circle {
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.lucid-icon.fill-blue-steel svg path,
+.lucid-icon.fill-blue-steel svg polygon,
+.lucid-icon.fill-blue-steel svg rect,
+.lucid-icon.fill-blue-steel svg circle {
+  fill: #3d4752;
+}
+.lucid-icon.fill-active svg path,
+.lucid-icon.fill-active svg polygon,
+.lucid-icon.fill-active svg rect,
+.lucid-icon.fill-active svg circle {
+  fill: #29AAE1;
+}
+.lucid-icon.fill-white svg path,
+.lucid-icon.fill-white svg polygon,
+.lucid-icon.fill-white svg rect,
+.lucid-icon.fill-white svg circle {
+  fill: #fff;
+}
 .lucid-notification {
   padding: 20px 15px 20px 48px;
   position: relative;
@@ -1024,7 +1089,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #d6e9f1;
 }
 .lucid-notification.lucid-notification-information .notification-icon {
-  background: url(icon/img/info-circle-blue.svg) center center no-repeat;
+  background: url(http://particle.golucid.co/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-information button {
   background-color: #29AAE1;
@@ -1033,7 +1098,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #e9f2d9;
 }
 .lucid-notification.lucid-notification-complete .notification-icon {
-  background: url(icon/img/check-circle-green.svg) center center no-repeat;
+  background: url(http://particle.golucid.co/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-complete button {
   background-color: #8BC326;
@@ -1042,7 +1107,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #fff3e1;
 }
 .lucid-notification.lucid-notification-alert .notification-icon {
-  background: url(icon/img/alert-triangle-yellow.svg) center center no-repeat;
+  background: url(http://particle.golucid.co/components/1.1/icon/img/alert-triangle-yellow.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-alert button {
   background-color: #ffaf46;
@@ -1051,7 +1116,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #fbdcda;
 }
 .lucid-notification.lucid-notification-error .notification-icon {
-  background: url(icon/img/error-triangle-red.svg) center center no-repeat;
+  background: url(http://particle.golucid.co/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-error button {
   background-color: #ed6058;
@@ -1106,6 +1171,7 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper .lucid-select-dropdown > div {
   padding: 6px 0;
   margin-top: 0;
+  -webkit-transition: 0.25s ease-in-out margin;
   transition: 0.25s ease-in-out margin;
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-hide {
@@ -1116,12 +1182,14 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-animate {
   overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
   padding: 5px 15px;
   text-align: left;
+  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
@@ -1162,6 +1230,7 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper.condensed .lucid-select-dropdown > div {
   padding: 6px 0;
   margin-top: 0;
+  -webkit-transition: 0.25s ease-in-out margin;
   transition: 0.25s ease-in-out margin;
 }
 .lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide {
@@ -1172,6 +1241,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper.condensed .lucid-select-dropdown.ng-animate {
   overflow: hidden;
+  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
 [lucid-context-menu] {
@@ -1288,6 +1358,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 7px 10px;
   position: relative;
   color: #555;
+  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 30px;
@@ -1301,19 +1372,27 @@ input[type=range]:focus::-ms-fill-upper {
   height: 30px;
   padding: 13px 4px 0 11px;
   cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
   vertical-align: top;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
-  transform: rotate(0);
-  transform-origin: center;
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
   fill: #77818C;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
-  transform: rotate(-90deg);
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
   vertical-align: top;
@@ -1330,6 +1409,7 @@ input[type=range]:focus::-ms-fill-upper {
   padding-left: 0;
 }
 .lucid-collapse-bar .lucid-collapse-bar-content {
+  -webkit-transition: all .5s;
   transition: all .5s;
   width: 100%;
 }
@@ -1349,6 +1429,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: #DBDBDB;
   border: 1px solid #979797;
   color: #5A5A5A;
+  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   text-align: center;
   cursor: pointer;

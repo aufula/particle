@@ -2,178 +2,33 @@ angular.module("lucidIcons", [])
     .factory('lucidIconFactory', function() {
 
         var icons = [{
-                "name": "check-circle-green",
-                "url": "http://particle.golucid.co/components/0.0/icon/img/check-circle-green.svg"
+            "icongroup": "22px Icons",
+            "icons": [{
+                "name":"icon-alert-circle-22px"
             }, {
-                "name": "html-white"
+                "name":"icon-alert-triangle-22px"
             }, {
-                "name": "html-dark"
+                "name":"icon-compass-22px"
             }, {
-                "name": "bell-dark"
+                "name":"icon-finger-22px"
+            }]
+        }, {
+            "icongroup": "18px Icons",
+            "icons": [{
+                "name": "icon-chevron-18px"
             }, {
-                "name": "clock-mid"
+                "name": "icon-gear-18px"
             }, {
-                "name": "comment-yellow-small"
+                "name": "icon-navigator-18px"
             }, {
-                "name": "ellipsis-mid"
+                "name": "icon-pencil-18px"
             }, {
-                "name": "ellipsis-white"
+                "name": "icon-plus-18px"
             }, {
-                "name": "gear-dark"
+                "name": "icon-search-18px"
             }, {
-                "name": "link-dark"
-            }, {
-                "name": "share-dark"
-            }, {
-                "name": "share-white"
-            }, {
-                "name": "trash-dark"
-            }, {
-                "name": "add-comment-dark"
-            }, {
-                "name": "alarm-grey"
-            },{
-                "name": "align-top-left"
-            }, {
-                "name": "align-top-center"
-            }, {
-                "name": "align-top-right"
-            }, {
-                "name": "align-center-left"
-            }, {
-                "name": "align-center-center"
-            }, {
-                "name": "align-center-right"
-            }, {
-                "name": "align-bottom-left"
-            }, {
-                "name": "align-bottom-center"
-            }, {
-                "name": "align-bottom-right"
-            }, {
-                "name": "angular-dark"
-            }, {
-                "name": "angular-white"
-            }, {
-                "name": "arrow-box-down"
-            }, {
-                "name": "arrow-double-sided-dark"
-            }, {
-                "name": "arrow-empty-left-dark"
-            }, {
-                "name": "arrow-empty-right-dark"
-            }, {
-                "name": "arrow-filled-right-dark"
-            }, {
-                "name": "arrow-filled-left-dark"
-            }, {
-                "name": "arrow-line-left-dark"
-            }, {
-                "name": "arrow-line-right-dark"
-            }, {
-                "name": "arrow-swap-dark"
-            }, {
-                "name": "bold-dark"
-            }, {
-                "name": "border-options-dark"
-            }, {
-                "name": "brush-dark"
-            }, {
-                "name": "clock-dark"
-            }, {
-                "name": "clock-outline-dark"
-            }, {
-                "name": "comment-white"
-            }, {
-                "name": "comment-dark"
-            }, {
-                "name": "comment-outline-dark"
-            }, {
-                "name": "copy-mid"
-            }, {
-                "name": "default-shape-dark"
-            }, {
-                "name": "default-shape-white"
-            }, {
-                "name": "drop-dark"
-            }, {
-                "name": "drop-page-dark"
-            }, {
-                "name": "drop-swatch-dark"
-            }, {
-                "name": "finger-dark"
-            }, {
-                "name": "fullscreen-dark"
-            }, {
-                "name": "fullscreen-white"
-            }, {
-                "name": "import-shape-dark"
-            }, {
-                "name": "italic-dark"
-            }, {
-                "name": "layers-dark"
-            }, {
-                "name": "layers-white"
-            }, {
-                "name": "left-panel-dark"
-            }, {
-                "name": "line-angled-dark"
-            }, {
-                "name": "line-curved-dark"
-            }, {
-                "name": "line-custom-dark"
-            }, {
-                "name": "line-dashed-dark"
-            }, {
-                "name": "line-dotted-dark"
-            }, {
-                "name": "line-solid-dark"
-            }, {
-                "name": "line-straight-dark"
-            }, {
-                "name": "location-dark"
-            }, {
-                "name": "lock-closed-dark"
-            }, {
-                "name": "lock-open-dark"
-            }, {
-                "name": "lucid-logo-white"
-            }, {
-                "name": "magnet-blue"
-            }, {
-                "name": "magnet-dark"
-            }, {
-                "name": "pencil-dark"
-            }, {
-                "name": "plus-circle-dark"
-            }, {
-                "name": "plus-circle-white"
-            }, {
-                "name": "position-dark"
-            }, {
-                "name": "present-dark"
-            }, {
-                "name": "present-white"
-            }, {
-                "name": "right-panel-dark"
-            }, {
-                "name": "search-dark"
-            }, {
-                "name": "search-white"
-            }, {
-                "name": "shadow-dark"
-            }, {
-                "name": "t-square-dark"
-            }, {
-                "name": "underline-dark"
-            }, {
-                "name": "wrench-white"
-            }, {
-                "name": "x-dark-small"
-            }, {
-                "name": "x-dark"
-            }, {
-                "name": "x-white"
-            }];
+                "name": "icon-x-18px"
+            }]
+        }];
         return icons;
     });

@@ -238,12 +238,18 @@ p.small-body {
   font-size: 14px;
   letter-spacing: 1px;
   text-transform: uppercase;
-  text-indent: 20px;
+  padding-left: 50px;
   line-height: 40px;
+  vertical-align: top;
+  position: relative;
 }
-#sidebar > ul > li.list-header i {
-  vertical-align: middle;
-  margin-top: -2px;
+#sidebar > ul > li.list-header .lucid-icon-22 {
+  position: absolute;
+  top: 8px;
+  left: 20px;
+}
+#sidebar > ul > li.list-header .lucid-icon-22 svg path {
+  fill: #95A8BA;
 }
 #sidebar > ul > li > a {
   -webkit-font-smoothing: auto;
@@ -279,6 +285,15 @@ p.small-body {
   background: #f0f0f0;
   padding: 20px;
   border-radius: 8px;
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
+}
+.icon-list-container.fill-white {
+  background: #3d4752;
+}
+.icon-list-container.fill-white .particle-icon-wrapper h5 {
+  font-weight: 300;
+  color: #fff;
 }
 .particle-icon-wrapper {
   text-align: center;
