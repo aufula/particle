@@ -198,7 +198,7 @@
   float: left;
   width: 30px !important;
   height: 30px;
-  background: #77818C;
+  background: #3d4752;
   border-radius: 4px 0 0 4px;
   overflow: hidden;
 }
@@ -228,7 +228,7 @@
   opacity: 0;
 }
 #share ul.collaborators > li:hover .avatar {
-  opacity: 0;
+  opacity: .5;
 }
 #share ul.collaborators > li:hover .permissions .lucid-button-icon,
 #share ul.collaborators > li:hover .delete {

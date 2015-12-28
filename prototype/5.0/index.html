@@ -896,11 +896,11 @@
             <section>
               <div class="group">
                 <div class="add-button" click-outside="showing=false">
-                  <span ng-click="showing=!showing">
+                  <span ng-click="showing=!showing; focusCollaborator()">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-more-shapes-plus-grey.svg" />Add</span>
 
                         <div class="lucid-popover-menu add-popup" ng-show="showing">
-                            <lucid-input value="dummyData.name" class="condensed" placeholder="Add Person, email, or group"ng-enter="addPerson(dummyData);"></lucid-input>
+                            <lucid-input id="add-collaborator-input" value="dummyData.name" class="condensed" placeholder="Add Person, email, or group"ng-enter="addPerson(dummyData);"></lucid-input>
 
                             <lucid-select width="140" class="condensed" ng-model="dummyData.role" options="['Editor', 'Commenter', 'Viewer']"></lucid-select>
                             <div id="push" ng-class="{'inactive': !dummyData.name}" ng-click="addPerson(dummyData); $event.stopPropagation()">Add</div>

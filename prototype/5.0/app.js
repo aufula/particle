@@ -85,13 +85,54 @@ angular.module('particleApp', ['lucidComponents'])
     ////////////////
     ////START SHARE CTRL
     ////////////////
-    .controller('ShareCtrl', function($scope) {
+    .controller('ShareCtrl', function($scope, $timeout) {
         $scope.dummyData = { // empty form data
             name: "",
             role: "Editor"
         };
+        $scope.focusCollaborator = function() {
+            var elementID = 'add-collaborator-input';
+            $timeout(function() {
+                document.getElementById(elementID).getElementsByTagName('input')[0].focus();
+            }, 10);
+        }
         $scope.addPerson = function(data) {
             if (data.name) {
+                if (data.name == 'design') {
+                    var array = [{
+                        'name': 'Matt',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2014-12-02/3129295960_063bde45974958efcc01_192.jpg'
+                    }, {
+                        'name': 'Matthew',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2015-01-07/3355887951_3bc33899538ea9866829_192.jpg'
+                    }, {
+                        'name': 'Taylor',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2015-11-12/14463452164_03d711e152d13a4957e8_192.jpg'
+                    }, {
+                        'name': 'Cory',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2015-06-10/6217971094_fded55591147999b3f1f_192.jpg'
+                    }, {
+                        'name': 'Rob',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2014-11-24/3076026439_03deaeac3a91313f3903_192.jpg'
+                    }]
+                    angular.forEach(array, function(collaborator) {
+                        $scope.collaborators.push(collaborator);
+                    });
+
+                    console.log($scope.collaborators);
+                    $scope.dummyData = {
+                        name: "",
+                        role: "Editor"
+                    }; // reset the form data
+                    $scope.showing = false;
+                    return
+                }
+                
                 $scope.collaborators.push(data); // add the data
                 $scope.dummyData = {
                     name: "",
