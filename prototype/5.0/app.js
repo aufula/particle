@@ -100,25 +100,25 @@ angular.module('particleApp', ['lucidComponents'])
             if (data.name) {
                 if (data.name == 'design') {
                     var array = [{
-                        'name': 'Matt',
+                        'name': 'Matt Snyder',
                         'role': 'Editor',
                         'image': 'https://avatars.slack-edge.com/2014-12-02/3129295960_063bde45974958efcc01_192.jpg'
                     }, {
-                        'name': 'Matthew',
+                        'name': 'Matthew O\'Rourke',
                         'role': 'Editor',
                         'image': 'https://avatars.slack-edge.com/2015-01-07/3355887951_3bc33899538ea9866829_192.jpg'
                     }, {
-                        'name': 'Taylor',
+                        'name': 'Taylor Palmer',
                         'role': 'Editor',
                         'image': 'https://avatars.slack-edge.com/2015-11-12/14463452164_03d711e152d13a4957e8_192.jpg'
                     }, {
-                        'name': 'Cory',
-                        'role': 'Editor',
-                        'image': 'https://avatars.slack-edge.com/2015-06-10/6217971094_fded55591147999b3f1f_192.jpg'
-                    }, {
-                        'name': 'Rob',
+                        'name': 'Rob Witt',
                         'role': 'Editor',
                         'image': 'https://avatars.slack-edge.com/2014-11-24/3076026439_03deaeac3a91313f3903_192.jpg'
+                    }, {
+                        'name': 'Cory McArthur',
+                        'role': 'Editor',
+                        'image': 'https://avatars.slack-edge.com/2015-06-10/6217971094_fded55591147999b3f1f_192.jpg'
                     }]
                     angular.forEach(array, function(collaborator) {
                         $scope.collaborators.push(collaborator);
@@ -132,7 +132,7 @@ angular.module('particleApp', ['lucidComponents'])
                     $scope.showing = false;
                     return
                 }
-                
+
                 $scope.collaborators.push(data); // add the data
                 $scope.dummyData = {
                     name: "",
@@ -877,11 +877,16 @@ angular.module('particleApp', ['lucidComponents'])
 
     };
     $scope.onDragSuccess = function(data, event) {
+        //console.log(event);
         if (event.x > 250) {
             var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
             var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
             //console.log('drag success', data, event);
             if (data) {
+                if(angular.element(event.event.srcElement).hasClass('lucid-block-comment')){
+                    console.log('comment');
+                    return
+                }
                 data.metrics.x = event.x - canvasX - event.element.centerX;
                 data.metrics.y = event.y - canvasY - event.element.centerY;
                 data.shapepanel = false;

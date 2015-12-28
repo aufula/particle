@@ -220,13 +220,13 @@ sans-serif;
             font-size: 14px;
             border-radius: 4px;
             margin-bottom: 10px;
-            transition: all .35s;
+            transition: all .25s;
             position: relative;
             cursor: pointer;
             &.ng-enter {
                 opacity: 0;
                 height: 0;
-                overflow:hidden;
+                overflow: hidden;
             }
             &.ng-enter-active {
                 opacity: 1;
@@ -239,8 +239,12 @@ sans-serif;
             &.ng-leave-active {
                 opacity: 0;
                 height: 0;
-                overflow:hidden;
-                margin-bottom:0;
+                overflow: hidden;
+                margin-bottom: 0;
+            }
+            &.ng-enter-stagger {
+                transition-delay: .1s;
+                transition-duration: 0s;
             }
             .image-container {
                 float: left;
@@ -274,7 +278,6 @@ sans-serif;
                 right: 3px;
                 opacity: 0;
             }
-
             &:hover {
                 .avatar {
                     opacity: .5;
@@ -293,15 +296,15 @@ sans-serif;
     .permissions {
         position: absolute;
         top: -2px;
-        .lucid-popover-menu{
-            top:39px;
-            background-color:#fff;
-            &:after{
-                border-bottom-color:#fff;
+        .lucid-popover-menu {
+            top: 39px;
+            background-color: #fff;
+            &:after {
+                border-bottom-color: #fff;
             }
         }
-        ul{
-            padding:10px;
+        ul {
+            padding: 10px;
         }
         li {
             margin-bottom: 5px;
@@ -2570,6 +2573,7 @@ a {
         }
     }
 }
+
 //////////
 //ADDITIONAL CLASSES - ADD TO PARTICLE?
 //////////

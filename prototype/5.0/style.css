@@ -170,8 +170,8 @@
   font-size: 14px;
   border-radius: 4px;
   margin-bottom: 10px;
-  -webkit-transition: all .35s;
-  transition: all .35s;
+  -webkit-transition: all .25s;
+  transition: all .25s;
   position: relative;
   cursor: pointer;
 }
@@ -193,6 +193,12 @@
   height: 0;
   overflow: hidden;
   margin-bottom: 0;
+}
+#share ul.collaborators > li.ng-enter-stagger {
+  -webkit-transition-delay: .1s;
+          transition-delay: .1s;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
 }
 #share ul.collaborators > li .image-container {
   float: left;
