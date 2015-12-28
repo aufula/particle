@@ -677,6 +677,8 @@ a {
         margin-bottom: 10px;
         &.left-panel {
             z-index: 1;
+            float: left; //this is added so that when groups are removed and we add -180px top margin. this prevents jumping when groups are small.
+            width: 100%;
         }
     }
 }
@@ -761,19 +763,19 @@ a {
         position: relative;
         //z-index:1;
         &.ng-enter {
-            transform: translateY(-84px);
+            margin-top: -170px;
             opacity: 0;
         }
         &.ng-enter-active {
-            transform: translateY(0);
+            margin-top: 0;
             opacity: 1;
         }
         &.ng-leave {
-            transform: translateY(0);
+            margin-top: 0;
             opacity: 1;
         }
         &.ng-leave-active {
-            transform: translateY(-84px);
+            margin-top: -170px;
             opacity: 0;
         }
         &.ng-animate {
@@ -1692,6 +1694,7 @@ a {
     box-shadow: 28px 3px 10px rgba(0, 0, 0, .4);
     img {
         height: 26px;
+        max-width:none;
     }
 }
 

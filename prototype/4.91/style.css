@@ -609,6 +609,8 @@ a {
 }
 .lucid-shapes-panel .lucid-shape-group-wrapper.left-panel {
   z-index: 1;
+  float: left;
+  width: 100%;
 }
 .overflow-message {
   position: absolute;
@@ -676,30 +678,22 @@ a {
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter,
 .lucid-manage-shapes .lucid-shape-group-wrapper.ng-enter {
-  -webkit-transform: translateY(-84px);
-      -ms-transform: translateY(-84px);
-          transform: translateY(-84px);
+  margin-top: -170px;
   opacity: 0;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-enter-active,
 .lucid-manage-shapes .lucid-shape-group-wrapper.ng-enter-active {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  margin-top: 0;
   opacity: 1;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave,
 .lucid-manage-shapes .lucid-shape-group-wrapper.ng-leave {
-  -webkit-transform: translateY(0);
-      -ms-transform: translateY(0);
-          transform: translateY(0);
+  margin-top: 0;
   opacity: 1;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-leave-active,
 .lucid-manage-shapes .lucid-shape-group-wrapper.ng-leave-active {
-  -webkit-transform: translateY(-84px);
-      -ms-transform: translateY(-84px);
-          transform: translateY(-84px);
+  margin-top: -170px;
   opacity: 0;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.ng-animate,
@@ -1619,6 +1613,7 @@ a {
 }
 #ruler-hor img {
   height: 26px;
+  max-width: none;
 }
 .parent {
   position: relative;

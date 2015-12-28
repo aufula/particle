@@ -485,6 +485,15 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
         });
+        $scope.focusSearch = function(searchshapes) {
+            console.log(searchshapes);
+            if (searchshapes) {
+                var elementID = 'search-shapes-input';
+                $timeout(function() {
+                    document.getElementById(elementID).focus();
+                }, 10);
+            }
+        };
         $scope.pinnedShapeGroups = lucidShapesData.pinnedShapeGroups();
         $scope.lucidShapeGroups = lucidShapesData.lucidShapeGroups();
         $scope.customShapeGroups = lucidShapesData.customShapeGroups();
@@ -883,7 +892,7 @@ angular.module('particleApp', ['lucidComponents'])
             var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
             //console.log('drag success', data, event);
             if (data) {
-                if(angular.element(event.event.srcElement).hasClass('lucid-block-comment')){
+                if (angular.element(event.event.srcElement).hasClass('lucid-block-comment')) {
                     console.log('comment');
                     return
                 }
