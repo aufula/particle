@@ -6,7 +6,8 @@ angular.module('lucidInput', ['appConfig'])
                 unit: '@',
                 value: '=',
                 width:'@',
-                label: '@'
+                label: '@',
+                placeholder:'@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'input/lucid-input.html',

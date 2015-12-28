@@ -157,6 +157,7 @@ input {
 .lucid-input-wrapper {
   display: inline-block;
   vertical-align: top;
+  width: 100%;
 }
 .lucid-input-wrapper .lucid-input {
   background: transparent;

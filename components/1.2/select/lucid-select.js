@@ -3,6 +3,7 @@ angular.module("lucidSelect", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
+                selectedOption: '=ngModel',
                 options: '=',
                 width: '@',
                 label: '@'
@@ -12,7 +13,10 @@ angular.module("lucidSelect", ['appConfig'])
             templateUrl: config.componentsURL + 'select/lucid-select.html',
 
             controller: function($scope) {
-                $scope.selectedOption = $scope.options[0];
+                if (!$scope.selectedOption) {
+                    //if ng-model isn't set, set selectedOption to first value in array
+                    $scope.selectedOption = $scope.options[0];
+                }
             },
 
             link: function(scope, el) {
