@@ -1,0 +1,434 @@
+//for particle logo in sidebar
+
+@logo-animation: 10s infinite ease-in-out;
+@chart: #FFF;
+@software: #FFF;
+@press: #FFF;
+.welcome-subtext {
+    margin: 10px auto;
+    display: block;
+    max-width: 100px;
+    color: #999;
+}
+
+.lucid-welcome-logo {
+    margin: -100px auto 0;
+    max-width: 300px;
+    display: block;
+    &.sidebar {
+        margin: 30px 0 0 15px;
+        #wn-goo,
+        #ne-goo,
+        #ws-goo,
+        #nw-circle,
+        #ne-circle,
+        #w-circle,
+        #sw-circle,
+        #se-circle {
+            fill: #fff !important;
+        }
+    }
+    svg {
+        width: 100%;
+        height: auto;
+        #logo {
+            //filter:url("#fancy-goo");
+        }
+    }
+    #chart {
+        opacity: 1;
+        animation: lChart @logo-animation;
+    }
+    #press {
+        opacity: 0;
+        animation: lPress @logo-animation;
+    }
+    #software {
+        opacity: 0;
+        animation: lSoftware @logo-animation;
+    }
+    #wn-goo {
+        opacity: 1;
+        animation: wnGool @logo-animation;
+    }
+    #ne-goo {
+        opacity: 0;
+        animation: neGool @logo-animation;
+    }
+    #ws-goo {
+        opacity: 1;
+        animation: wsGool @logo-animation;
+    }
+    #nw-circle {
+        opacity: 0;
+        animation: nwCirclel @logo-animation;
+    }
+    #ne-circle {
+        opacity: 1;
+        animation: neCircle @logo-animation;
+    }
+    #w-circle {
+        opacity: 1;
+        animation: wCircle @logo-animation;
+    }
+    #sw-circle {
+        opacity: 0;
+        animation: swCirclel @logo-animation;
+    }
+    #se-circle {
+        opacity: 1;
+        animation: seCirclel @logo-animation;
+    }
+}
+
+@keyframes lChart {
+    0% {
+        opacity: 1;
+    }
+    17% {
+        opacity: 1;
+    }
+    33% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    67% {
+        opacity: 0;
+    }
+    83% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes lPress {
+    0% {
+        opacity: 0;
+    }
+    17% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 1;
+    }
+    67% {
+        opacity: 0;
+    }
+    83% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes lSoftware {
+    0% {
+        opacity: 0;
+    }
+    17% {
+        opacity: 0;
+    }
+    33% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 0;
+    }
+    67% {
+        opacity: 1;
+    }
+    83% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+// top left circle - lPress and lSoftware
+@keyframes nwCirclel {
+    0% {
+        opacity: 0;
+        fill: @chart;
+    }
+    17% {
+        opacity: 0;
+        transform: translate(20px, 15px) scale(.5);
+        fill: @chart;
+    }
+    33% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        fill: @press;
+    }
+    67% {
+        opacity: 1;
+        fill: @software;
+    }
+    83% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        transform: translate(20px, 15px) scale(.5);
+        fill: @chart;
+    }
+}
+
+// bottom left circle - lPress and lSoftware
+@keyframes swCirclel {
+    0% {
+        opacity: 0;
+        fill: @chart;
+    }
+    17% {
+        opacity: 0;
+        fill: @chart;
+        transform: translate(40px, -10px) scale(.5);
+    }
+    33% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(0, 0);
+    }
+    50% {
+        opacity: 1;
+        fill: @press;
+    }
+    67% {
+        opacity: 1;
+        fill: @software;
+    }
+    83% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(0, 0);
+    }
+    100% {
+        opacity: 0;
+        fill: @chart;
+        transform: translate(40px, -10px) scale(.5);
+    }
+}
+
+//top right circle - lChart and lPress
+@keyframes neCircle {
+    0% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0);
+    }
+    17% {
+        opacity: 1;
+        fill: @chart;
+    }
+    33% {
+        opacity: 1;
+        fill: @press;
+    }
+    50% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(0, 0);
+    }
+    67% {
+        opacity: 0;
+        fill: @software;
+        transform: translate(5px, 65px) scale(.5);
+    }
+    83% {
+        opacity: 0;
+        fill: @software;
+        transform: translate(5px, 65px) scale(.5);
+    }
+    100% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0);
+    }
+}
+
+//bottom right circle - lSoftware and lChart
+@keyframes seCirclel {
+    0% {
+        opacity: 1;
+        fill: @chart;
+    }
+    17% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0);
+    }
+    33% {
+        opacity: 0;
+        fill: @press;
+        transform: translate(40px, 25px) scale(.5);
+    }
+    50% {
+        opacity: 0;
+        fill: @press;
+        transform: translate(40px, 25px) scale(.5);
+    }
+    67% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(0, 0);
+    }
+    83% {
+        opacity: 1;
+        fill: @software;
+    }
+    100% {
+        opacity: 1;
+        fill: @chart;
+    }
+}
+
+//left middle circle - lSoftware lChart & lPress
+@keyframes wCircle {
+    0% {
+        fill: @chart;
+    }
+    17% {
+        fill: @chart;
+    }
+    20% {
+        fill: @press;
+    }
+    50% {
+        fill: @press;
+    }
+    67% {
+        fill: @software;
+    }
+    83% {
+        fill: @software;
+    }
+    100% {
+        fill: @chart;
+    }
+}
+
+//left to top goo - lChart and lPress
+@keyframes wnGool {
+    0% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0) scale(1);
+        transform-origin: bottom right;
+    }
+    17% {
+        opacity: 1;
+        fill: @chart;
+    }
+    33% {
+        opacity: 1;
+        fill: @press;
+    }
+    50% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(0, 0) scale(1) rotate(0);
+    }
+    67% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(-20px, -5px) scale(.01) rotate(20deg);
+    }
+    83% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(-20px, -10px) scale(.01);
+    }
+    100% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0) scale(1);
+        transform-origin: bottom right;
+    }
+}
+
+//left to bottom goo - lChart and lSoftware
+@keyframes wsGool {
+    0% {
+        opacity: 1;
+        fill: @chart;
+        transform-origin: bottom left;
+    }
+    17% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(0, 0) scale(1);
+    }
+    33% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(10px, -5px) scale(.01);
+    }
+    50% {
+        opacity: 1;
+        fill: @press;
+        transform: translate(10px, -5px) scale(.01);
+    }
+    67% {
+        opacity: 1;
+        fill: @software;
+        transform: translate(0, 0) scale(1);
+    }
+    83% {
+        opacity: 1;
+        fill: @software;
+    }
+    100% {
+        opacity: 1;
+        fill: @chart;
+        transform-origin: bottom left;
+    }
+}
+
+//top to right goo - lPress
+@keyframes neGool {
+    0% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(50px, 85px) scale(.01);
+    }
+    17% {
+        fill: @chart;
+        transform: translate(20px, 55px) scale(.01);
+    }
+    33% {
+        fill: @press;
+        transform: translate(0, 0) scale(1);
+    }
+    50% {
+        fill: @press;
+        transform: translate(0, 0) scale(1);
+    }
+    67% {
+        fill: @software;
+        transform: translate(50px, 85px) scale(.01);
+    }
+    83% {
+        fill: @software;
+    }
+    100% {
+        opacity: 1;
+        fill: @chart;
+        transform: translate(50px, 85px) scale(.01);
+    }
+}

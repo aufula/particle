@@ -30,9 +30,9 @@
     <!-- STATIC SIDEBAR -->
     <section id="sidebar">
         <header>
-            <div id="logo">
-                <a href="#/"><img src="img/particle-logo-text.svg" /></a>
-                <div class="particle-group" ng-click="explode=!explode" ng-class="{'explode-particle': explode}">
+            <div id="logo" ng-click="explode=!explode">
+                <img src="img/particle-logo-text.svg" />
+                <div class="particle-group" ng-class="{'explode-particle': explode}">
                     <svg version="1.1" id="Layer_1" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="20px" height="20px" viewBox="94 2 20 20" enable-background="new 94 2 210 20" xml:space="preserve">
                         <path id="Fill-1" sketch:type="MSShapeGroup" class="particle branch-1" fill="#A9DDF3" d="M102.7,14.4c-1.1,0-2.2-0.5-3-1.3c-0.8-0.8-1.2-1.9-1.2-2.9l0,0
     c0-0.6-0.2-1.1-0.7-1.6c-0.9-0.9-2.3-0.9-3.2,0c-0.9,0.9-0.9,2.3,0,3.2c0.4,0.4,1,0.7,1.6,0.7l0,0c1.1,0,2.1,0.3,2.9,1.2
@@ -60,20 +60,21 @@
         </header>
         <ul class="reversed-text">
             <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Setup
+                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Getting Started
             </li>
-            <li><a href="#/get-started" ng-class="{ active: isActive('/','get-started') }">Getting Started</a></li>
-            <li><a href="#/angular" ng-class="{ active: isActive('/','angular') }">Angular for Designers</a></li>
+            <li><a href="#/" ng-class="{ 'active': isActive('/','overview') }">Overview</a></li>
+            <li><a href="#/codepen" ng-class="{ 'active': isActive('/','codepen') }">Codepen</a></li>
+            <li><a href="#/angular" ng-class="{ 'active': isActive('/','angular') }">Angular for Designers</a></li>
         </ul>
         <ul class="reversed-text">
             <li class="list-header">
                 <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-finger-22px.svg'"></ng-include> Prototyping
             </li>
             <li>
-                <a href="#/icons" ng-class="{ active: isActive('/icons', '') }">Icons</a>
+                <a href="#/icons" ng-class="{ 'active': isActive('/icons', '') }">Icons</a>
             </li>
             <li ng-repeat="componentGroup in componentGroups">
-                <a href="#/components/{{componentGroup.groupid}}" ng-class="{ active: isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
+                <a href="#/components/{{componentGroup.groupid}}" ng-class="{ 'active': isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
             </li>
         </ul>
         <ul class="reversed-text">
@@ -81,14 +82,14 @@
                 <ng-include class="lucid-icon-22 production" src="'components/1.2/icon/icons/icon-html-22px.svg'"></ng-include> Production
             </li>
             <li>
-                <a href="#/production/" ng-class="{ active: isActive('/production', '') }">Production Code</a>
+                <a href="#/production/" ng-class="{ 'active': isActive('/production', '') }">Production Code</a>
             </li>
         </ul>
     </section>
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <section id="content">
         <div class="wrapper">
-            <div ng-view></div>
+            <div ng-view class="view"></div>
         </div>
     </section>
 </body>

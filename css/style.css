@@ -217,6 +217,8 @@ p.small-body {
   top: 0;
   height: 100%;
   text-align: center;
+  -webkit-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
 }
 #sidebar #logo {
   background: #29AAE1;
@@ -279,6 +281,8 @@ p.small-body {
 #content {
   margin-left: 250px;
   padding: 50px;
+  -webkit-transition: 0.5s ease-in-out margin;
+  transition: 0.5s ease-in-out margin;
 }
 .wrapper {
   max-width: 900px;

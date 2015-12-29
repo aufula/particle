@@ -16,11 +16,11 @@ particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScop
 }]);
 particleApp.config(function($routeProvider) {
     $routeProvider
-        .when('/', {
-            templateUrl: 'templates/welcome.html',
+        .when('/overview', {
+            templateUrl: 'templates/overview.html',
         })
-        .when('/get-started', {
-            templateUrl: 'templates/getstarted.html',
+        .when('/codepen', {
+            templateUrl: 'templates/codepen.html',
         })
         .when('/angular', {
             templateUrl: 'templates/angular.html',
@@ -61,7 +61,7 @@ particleApp.config(function($routeProvider) {
         })
 
     .otherwise({
-        redirectTo: '/'
+        redirectTo: '/overview'
     });
 });
 

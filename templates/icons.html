@@ -6,14 +6,17 @@
     <input ng-model="searchResults" placeholder="Search icons">
     <img src="components/0.0/icon/img/search-dark.svg">
 </div>
-
+<!-- <button ng-click="class = ''">None</button>
+<button ng-click="class = 'fill-blue-steel'">Dark</button>
+<button ng-click="class = 'fill-white'">Light</button>
+<button ng-click="class = 'fill-active'">Active</button> -->
 <div ng-repeat="icongroup in icongroups | filter: searchResults">
     <h2>{{icongroup.icongroup}}</h2>
-    <div class="icon-list-container clearfix">
+    <div class="icon-list-container clearfix {{class}}">
         <div ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
             <div class="particle-icon-wrapper" lucid-context-menu data-target="icon-context-{{$index}}">
                 <div class="icon-container">
-                    <ng-include src="icon.url" class="lucid-icon"></ng-include>
+                    <ng-include src="icon.url" class="lucid-icon {{class}}"></ng-include>
                 </div>
                 <h5>{{icon.name}}</h5>
             </div>
