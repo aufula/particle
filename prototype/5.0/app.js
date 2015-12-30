@@ -799,7 +799,7 @@ angular.module('particleApp', ['lucidComponents'])
         "width": 400
     }];
     $scope.blocks = $rootScope.currentPage.blocks;
-
+    $rootScope.selectedType = 'nothing';
     $scope.deselectBlock = function() {
         var deselect = JSON.parse(JSON.stringify($rootScope.selectedBlock));
         deselect.table = false;
