@@ -568,6 +568,8 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "toggle/lucid-toggle.js"
 
+//@codekit-append "edit-in-place/lucid-edit-in-place.js"
+
 //include Data JS
 //@codekit-append "themes/lucid-themes-data.js"
 //@codekit-append "shapes-manager/lucid-shapes-data.js"
@@ -591,7 +593,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
@@ -2247,6 +2249,33 @@ angular.module('lucidToggle', ['appConfig'])
                 if (!attrs.inactivetext) {
                     attrs.inactivetext = 'OFF';
                 }
+            }
+        };
+    });
+
+angular.module('editInPlace', ['appConfig'])
+    .directive('editInPlace', function(config) {
+        return {
+            restrict: 'AE',
+            scope: {
+                editableText: '=ngModel',
+                placeholder: '@',
+                edit: '='
+            },
+            replace: true,
+            templateUrl: config.componentsURL + 'edit-in-place/lucid-edit-in-place.html',
+            controller: function($scope, $element, $timeout) {
+                $scope.$watch('edit', function() {
+                    $scope.selectInput();
+                });
+                $scope.selectInput = function() {
+                    var input = $element[0].getElementsByTagName('input')[0];
+                    $timeout(function() {
+                        input.select();
+                    }, 10);
+                    console.log('Focus This', input, 'model', $scope.editableText);
+
+                };
             }
         };
     });

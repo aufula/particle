@@ -264,6 +264,23 @@ angular.module('lucidComponentFactory', [])
                     "type": "true/false",
                     "details": "Optional: Set to false if you do not want element to collapse"
                 }]
+            }, {
+                "title": "Edit in Place",
+                "componentid": "edit-in-place",
+                "description": "double click to edit in place",
+                "inputs": [{
+                    "name": "ng-model",
+                    "type": "var",
+                    "details": "The text that you want to be editable"
+                }, {
+                    "name": "placeholder",
+                    "type": "text",
+                    "details": "Optional: Add placeholder text if input is deleted"
+                }, {
+                    "name": "edit",
+                    "type": "true/false",
+                    "details": "Optional: Edit mode can be toggled using outside variable. e.g. rename shape library from dropdown rather than double click."
+                }]
             }]
         }, {
             //Toolbar Components
