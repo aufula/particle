@@ -204,20 +204,23 @@
   float: left;
   width: 32px !important;
   height: 32px;
-  background: #3d4752;
+  background: #77818C;
   border-radius: 4px 0 0 4px;
   overflow: hidden;
 }
 #share ul.collaborators > li .image-container img {
   border-radius: 4px 0 0 4px;
 }
-#share ul.collaborators > li .permissions .lucid-button-icon,
+#share ul.collaborators > li .permissions .lucid-buttcon {
+  background-color: rgba(61, 71, 82, 0.6);
+}
+#share ul.collaborators > li .permissions .lucid-buttcon,
 #share ul.collaborators > li .avatar,
 #share ul.collaborators > li .delete {
   -webkit-transition: opacity .2s;
   transition: opacity .2s;
 }
-#share ul.collaborators > li .permissions .lucid-button-icon {
+#share ul.collaborators > li .permissions .lucid-buttcon {
   opacity: 0;
 }
 #share ul.collaborators > li .delete {
@@ -233,10 +236,7 @@
   right: 3px;
   opacity: 0;
 }
-#share ul.collaborators > li:hover .avatar {
-  opacity: .5;
-}
-#share ul.collaborators > li:hover .permissions .lucid-button-icon,
+#share ul.collaborators > li:hover .permissions .lucid-buttcon,
 #share ul.collaborators > li:hover .delete {
   opacity: 1;
 }
@@ -2101,6 +2101,48 @@ a {
 .lucid-page .rename-page-modal-content input {
   margin-top: 10px;
   width: 100%;
+}
+.lucid-canvas > svg {
+  display: none;
+}
+.lucid-canvas .simple-line-wrapper {
+  position: absolute;
+  top: 180px;
+  left: 448px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+.lucid-canvas .simple-line-wrapper .simple-line {
+  background: #333;
+  width: 2px;
+  height: 60px;
+  box-sizing: content-box;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+.lucid-canvas .simple-line-wrapper .simple-line:after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 8px solid #333;
+  position: absolute;
+  bottom: -8px;
+  left: 0px;
+}
+.lucid-canvas .simple-line-wrapper .simple-line:before {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 9px solid transparent;
+  position: absolute;
+  bottom: -9px;
+  left: -1px;
+}
+.lucid-canvas .simple-line-wrapper .simple-line.selected {
+  border-color: #75B4FE;
+}
+.lucid-canvas .simple-line-wrapper .simple-line.selected:before {
+  border-top: 9px solid #75B4FE;
 }
 .lucid-canvas > ul {
   position: absolute;

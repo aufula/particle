@@ -143,7 +143,7 @@
         class="lucid-canvas" 
         ng-drop="true" 
         ng-drop-success="dropToCanvas($data,$event)" 
-        ng-click="deselectBlock();"
+        ng-click="deselectBlock(); $root.selectedType = 'nothing'"
         style="background-color:{{$root.currentPage.canvasBG}};"
 
         ng-controller="canvasCtrl">
@@ -152,7 +152,7 @@
             <marker id="triangle" viewBox="0 0 10 10" refX="0" refY="5" markerUnits="strokeWidth" markerWidth="4" fill="{{$root.currentPage.linecolor}}" markerHeight="3" orient="auto">
                 <path d="M 0 0 L 10 5 L 0 10 z" />
             </marker>
-            <polyline ng-repeat="line in $root.currentPage.lines" xmlns="http://www.w3.org/2000/svg" ng-attr-points="{{line.points}}" ng-attr-marker-end="{{line.endarrow && 'url(#triangle)' || '' }}" fill="transparent" stroke="{{$root.currentPage.linecolor}}" stroke-width="{{line.width}}" />
+            <polyline ng-click="clickLine(); $root.selectedType = 'line'" ng-repeat="line in $root.currentPage.lines" xmlns="http://www.w3.org/2000/svg" ng-attr-points="{{line.points}}" ng-attr-marker-end="{{line.endarrow && 'url(#triangle)' || '' }}" fill="transparent" stroke="{{$root.currentPage.linecolor}}" stroke-width="{{line.width}}" />
         </svg>
 
         <ul dnd-list="$root.currentPage.blocks"
@@ -163,7 +163,13 @@
 
             dnd-drop="dropToCanvas(item, event)"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"> 
-            
+            <!-- start simple arrow -->
+            <li>
+              <div class="simple-line-wrapper" ng-click="$root.selectedType = 'line'; $event.stopPropagation(); deselectBlock();" >
+                <div class="simple-line" ng-class="{'selected': $root.selectedType == 'line'}"></div>
+              </div>
+            </li>
+            <!-- end simple arrow -->
             <!-- START CANVAS BLOCK/SHAPE -->
             <li 
             dnd-draggable="block"
@@ -181,7 +187,7 @@
             ng-drag-data="block" 
             ng-drag-success="onDragSuccess($data,$event)" 
             ng-center-anchor="true" 
-            ng-click="$root.selectedBlock = block; $event.stopPropagation();" 
+            ng-click="$root.selectedBlock = block; $event.stopPropagation(); $root.selectedType = 'block'"
             class="lucid-chart-block lucid-animate" 
             ng-class="{'manage-shapes': $root.manageshapes}"
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
@@ -215,6 +221,7 @@
               </div>
             </li>
             <!-- END CANVAS BLOCK/SHAPE -->
+            
         </ul>
         <!-- START CANVAS SLIDES / PRESENT FRAMES -->
         <div class="lucid-slide" 
@@ -638,21 +645,27 @@
       <div id="option-bar" class="group">
         <ul>
 
-          <li class="left">
+          <li class="left" ng-class="{'inactive': $root.selectedType == 'nothing'}">
             <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
           </li>
           <li><span class="line"></span>
-          <li>
+          <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="130" style="margin: 0 10px 0 5px;"></lucid-select>
           </li>
-          <li>
+          <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-input-stepper step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
           </li>
-          <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg" class="lucid-buttcon-icon" /></li>
-          <li class="small middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg" class="lucid-buttcon-icon" /></li>
-          <li class="middle lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+          <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg'"></ng-include>
+          </li>
+          <li class="small middle lucid-buttcon" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg'" ></ng-include>
+          </li>
+          <li class="middle lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg'"></ng-include>
+          </li>
           <!-- BEGIN TEXT ALIGNMENT -->
-          <li class="middle" ng-controller="textAlignmentCtrl">
+          <li class="middle" ng-controller="textAlignmentCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-buttcon-popover 
               icon="http://particle.golucid.co/components/1.0/icon/img/morph-text-alignment.svg" 
               width="96"
@@ -666,7 +679,7 @@
           </li>
           <!-- END TEXT ALIGNMENT -->
           <!-- BEGIN TEXT OPTIONS -->
-          <li class="middle toggle">
+          <li class="middle toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-textoptions-bluesteel-22px.svg" width="322">
               <div style="padding:10px"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-textoptions-top-v4.png" /></div>
               <div class="secondary-gray"><img class="gray-bottom" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-textoptions-bottom-v4.png" /></div>
@@ -675,7 +688,7 @@
           <!-- END TEXT OPTIONS -->
           <span class="line"></span>
           <!-- BEGIN SHADOW OPTIONS -->
-          <li>
+          <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shadow-bluesteel.svg" width="244">
                 <div style="padding:15px 15px 10px 15px;">
                   <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-border-options-4.9.png">
@@ -707,7 +720,7 @@
           </li>
           <!-- END SHADOW OPTIONS -->
           <!-- BEGIN POSITION OPTIONS -->
-          <li>
+          <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-position-bluesteel.svg" width="280">
               <div style="padding:10px"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-position-top-v4.png" /></div>
               <div class="secondary-gray"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-position-bottom-v4.png" /></div>
@@ -716,7 +729,7 @@
           <!-- END POSITION OPTIONS -->
           <span class="line"></span>
             <!-- BEGIN LINE OPTIONS -->
-          <li class="middle">
+          <li class="middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
             <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lineoptions-bluesteel.svg" width="252">
                 <div style="padding:15px 15px 10px 15px;">
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-line-options-4.9.png">
@@ -725,7 +738,7 @@
           </li>
           <!-- END LINE OPTIONS -->
           <!-- BEGIN LINE PATH -->
-          <li class="left" ng-controller="linePathCtrl">
+          <li class="left" ng-controller="linePathCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
             <lucid-buttcon-popover 
               icon="http://particle.golucid.co/components/1.0/icon/img/morph-path-style.svg" 
               width="32"
@@ -741,9 +754,12 @@
           <!-- END LINE WIDTH -->
           <span class="line"></span>
           <!-- BEGIN MISC. OPTIONS -->
-          <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-action-bluesteel-22px.svg" class="lucid-buttcon-icon" /></li>
-          <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lock-bluesteel.svg" class="lucid-buttcon-icon" /></li>
-          <li class="small left lucid-buttcon toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-magnet-bluesteel.svg" class="lucid-buttcon-icon" /></li>
+          <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-action-bluesteel-22px.svg" class="lucid-buttcon-icon" />
+          </li>
+          <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lock-bluesteel.svg" class="lucid-buttcon-icon" />
+          </li>
           <!-- END MISC. OPTIONS -->
         </ul> 
  

@@ -127,7 +127,7 @@ angular.module('particleApp', ['lucidComponents'])
                 collaborator.image = 'https://avatars.slack-edge.com/2014-11-24/3076026439_03deaeac3a91313f3903_192.jpg';
                 collaborator.svg = null;
             }
-            if (data.name === 'marketing' || data.name === 'team' || data.name === 'group'){
+            if (data.name === 'Marketing' || data.name === 'Team' || data.name === 'group'){
                 collaborator.svg = 'http://particle.golucid.co/components/1.2/icon/icons/icon-team-22px.svg';
             }
             $scope.collaborators.push(collaborator);
@@ -777,7 +777,11 @@ angular.module('particleApp', ['lucidComponents'])
 ////START CANVAS CTRL
 ////////////////
 .controller('canvasCtrl', function($scope, $rootScope) {
-
+    $scope.clickLine = function(){
+        //alert('clicked');
+        $rootScope.selectedType = 'line';
+        console.log('clicked');
+    };
     $scope.lucidSlides = [{
         "x": 368,
         "y": 100,

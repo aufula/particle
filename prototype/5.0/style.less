@@ -250,19 +250,22 @@ sans-serif;
                 float: left;
                 width: 32px !important;
                 height: 32px;
-                background: @blue-steel;
+                background: @blue-steel-2;
                 border-radius: 4px 0 0 4px;
                 overflow: hidden;
                 img {
                     border-radius: 4px 0 0 4px;
                 }
             }
-            .permissions .lucid-button-icon,
+            .permissions .lucid-buttcon{
+                background-color: fade(@blue-steel, 60%);
+            }
+            .permissions .lucid-buttcon,
             .avatar,
             .delete {
                 transition: opacity .2s;
             }
-            .permissions .lucid-button-icon {
+            .permissions .lucid-buttcon{
                 opacity: 0;
             }
             .delete {
@@ -279,10 +282,10 @@ sans-serif;
                 opacity: 0;
             }
             &:hover {
-                .avatar {
-                    opacity: .5;
-                }
-                .permissions .lucid-button-icon,
+                // .avatar {
+                //     opacity: .5;
+                // }
+                .permissions .lucid-buttcon,
                 .delete {
                     opacity: 1;
                 }
@@ -2252,6 +2255,50 @@ a {
 // START CANVAS
 /////////////////////////////
 .lucid-canvas {
+    >svg{
+       // position: absolute;
+       display: none;
+    }
+    .simple-line-wrapper{
+        position: absolute;
+        top:180px;
+        left:448px;
+        cursor: pointer;
+        padding: 0 2px;
+        .simple-line{
+            background:#333;
+            width:2px;
+            height:60px;
+            box-sizing: content-box;
+            border-right: 1px solid #fff;
+            border-left: 1px solid #fff;
+            &:after{
+                content:'';
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 8px solid #333; 
+                position: absolute;
+                bottom:-8px;
+                left:0px;
+            }
+            &:before{
+                content:'';
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 9px solid transparent; 
+                position: absolute;
+                bottom:-9px;
+                left:-1px;
+            }
+            &.selected{
+            border-color: #75B4FE;
+            &:before{
+                border-top: 9px solid #75B4FE; 
+            }
+            }
+        }
+
+    }
     >ul {
         position: absolute;
         width: 100%;
