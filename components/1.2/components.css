@@ -1170,7 +1170,7 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 1;
 }
 .lucid-select-wrapper .lucid-select-dropdown > div {
-  padding: 6px 0;
+  padding: 3px 2px;
   margin-top: 0;
   -webkit-transition: 0.1s ease-in-out margin;
   transition: 0.1s ease-in-out margin;
@@ -1222,28 +1222,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper.condensed .lucid-select-dropdown {
   top: 22px;
-  left: 0;
   box-shadow: none;
   background: #fff;
-  min-width: 0;
-  width: 100%;
-}
-.lucid-select-wrapper.condensed .lucid-select-dropdown > div {
-  padding: 6px 0;
-  margin-top: 0;
-  -webkit-transition: 0.1s ease-in-out margin;
-  transition: 0.1s ease-in-out margin;
-}
-.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide {
-  opacity: 0;
-}
-.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-hide > div {
-  margin-top: -10px;
-}
-.lucid-select-wrapper.condensed .lucid-select-dropdown.ng-animate {
-  overflow: hidden;
-  -webkit-transition: 0.1s ease-in-out all;
-  transition: 0.1s ease-in-out all;
 }
 [lucid-context-menu] {
   cursor: pointer;
