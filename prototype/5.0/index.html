@@ -271,29 +271,57 @@
                   </header>
                   <div class="search-shapes lucid-animate" ng-show="searchshapes">
                       <div class="search-shapes-input lucid-animate" ng-show="searchshapes">
-                          <input id="search-shapes-input" ng-model="searchgroups" placeholder="Search shapes and images..." ng-enter="searchShapeGroups(searchgroups)">
-                          <span class="more-shapes" ng-click="searchShapeGroups(searchgroups)">Search</span>
+
+                          <div class="lucid-select-wrapper search-dropdown" click-outside="searchDropdown = false">
+                                <div class="search-dropdown-button" ng-init="searchType = 'Lucidchart'" ng-click="searchDropdown = true">
+                                  <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                  <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                  <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                  <ng-include class="search-dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
+                                </div>
+                                <div class="lucid-select-dropdown" ng-show="searchDropdown">
+                                    <div>
+                                        <ul>
+                                            <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Lucidchart'">
+                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                                <span>Lucidchart</span>
+                                            </li>
+                                            <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Google Images'">
+                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                                <span>Google Images</span>
+                                            </li>
+                                            <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Iconfinder'">
+                                                <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                                <span>Iconfinder</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                              </div>
+
+                          <input id="search-shapes-input" ng-model="searchgroups" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups)">
                       </div>
                       <!-- Start Search Shapes -->
                       <div class="lucid-shapes-scroll">
                       <div class="lucid-scroll-inner-wrap">
+                        <div class="no-search-results" ng-show="searchShapeGroupsResults.length == 0">
+                        <p>No {{searchType}} results.</p>
+                        <p> Did you know you can search <span ng-show="searchType !== 'Google Images'" class="hyperlink" ng-click="searchType = 'Google Images'; searchShapeGroupsResults = null">Google</span><span class="hyperlink" ng-click="searchType = 'Lucidchart'; searchShapeGroupsResults = null" ng-show="searchType == 'Google Images'">Lucidchart</span> or <span class="hyperlink" ng-click="searchType = 'Iconfinder'; searchShapeGroupsResults = null" ng-show="searchType == 'Google Images' || searchType == 'Lucidchart'">Iconfinder</span><span class="hyperlink" ng-click="searchType = 'Lucidchart'; searchShapeGroupsResults = null" ng-show="searchType == 'Iconfinder'">Lucidchart</span> instead?</p>
+                      </div>
+                        
                         <ul class="lucid-group-drop-area">
-                              <li ng-repeat="shapegroup in searchShapeGroupsResults"
+                              <li ng-repeat="shapegroup in searchShapeGroupsResults track by shapegroup.id"
 
-                                  class="lucid-shape-group-wrapper left-panel repeat-animation search-results"
+                                  class="lucid-shape-group-wrapper repeat-animation search-results"
                                   ng-class="{'no-transition': $root.draggingShapeGroup}">
                                   <!-- START LEFT SHAPE GROUP -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
-                                    <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
-                                      <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                                        <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
-                                            <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
-                                        </g>
-                                      </svg>
-                                    </div>
                                     <div class="shape-group-top">
                                       <span class="shape-group-name"> {{shapegroup.groupname}}</span>
                                       <img class="lucid-close-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeX-white.svg" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)">
+                                    </div>
+                                    <div class="pin-library search-shapes-pin" ng-click="togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
+                                        <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-pin-font-awesome.svg'" class="lucid-icon-22"></ng-include>
                                     </div>
                                     <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                       <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -335,9 +363,11 @@
                                   <!-- END LEFT SHAPE GROUP -->
                               </li>
                           </ul>
+                          
                         </div>
                       </div>
                       <!-- End Search Shapes -->
+
                   </div>
                   <div id="left-panel-shapes" class="lucid-shapes-scroll lucid-animate" ng-hide="searchshapes || importToCanvas">
                       <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">

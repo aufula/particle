@@ -525,6 +525,42 @@ a {
   height: 28px;
   fill: #333;
 }
+.lucid-shape-group .pin-library {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 5px 0;
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 3px 0 0 0;
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+}
+.lucid-shape-group .pin-library .lucid-icon-22 {
+  -webkit-transition: 0.25s ease-out transform;
+  transition: 0.25s ease-out transform;
+}
+.lucid-shape-group .pin-library .lucid-icon-22 svg g path {
+  fill: #FFF;
+  -webkit-transition: 0.25s ease-out all;
+  transition: 0.25s ease-out all;
+}
+.lucid-shape-group .pin-library.pinned {
+  background: rgba(0, 0, 0, 0.5);
+  -webkit-transition: 0.25s ease-in-out background;
+  transition: 0.25s ease-in-out background;
+}
+.lucid-shape-group .pin-library.pinned .lucid-icon-22 {
+  -webkit-transform: rotateZ(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotateZ(-45deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.lucid-shape-group .pin-library.pinned .lucid-icon-22 svg g path {
+  fill: #29AAE1;
+}
 .lucid-shapes-panel {
   width: 250px;
   position: relative;
@@ -657,41 +693,6 @@ a {
   -webkit-transition: bottom 0.3s ease-in-out;
   transition: bottom 0.3s ease-in-out;
 }
-.lucid-shape-group-wrapper.search-results {
-  margin-bottom: 10px;
-  position: relative;
-}
-.lucid-shape-group-wrapper.search-results.ng-enter {
-  margin-top: -84px;
-  opacity: 0;
-}
-.lucid-shape-group-wrapper.search-results.ng-enter-active {
-  margin-top: 0;
-  opacity: 1;
-}
-.lucid-shape-group-wrapper.search-results.ng-leave {
-  margin-top: 0;
-  opacity: 1;
-}
-.lucid-shape-group-wrapper.search-results.ng-leave-active {
-  margin-top: -84px;
-  opacity: 0;
-}
-.lucid-shape-group-wrapper.search-results.repeat-animation.ng-enter-stagger {
-  -webkit-transition-delay: .01s;
-          transition-delay: .01s;
-  -webkit-transition-duration: 0s;
-          transition-duration: 0s;
-}
-.lucid-shape-group-wrapper.search-results.ng-animate {
-  -webkit-transition: .25s;
-  transition: .25s;
-  z-index: 0;
-}
-.lucid-shape-group-wrapper.search-results.ng-animate.no-transition {
-  -webkit-transition: 0s;
-  transition: 0s;
-}
 .lucid-managing-shapes,
 .lucid-manage-shapes {
   background: #B2B2B2;
@@ -760,48 +761,6 @@ a {
 .lucid-manage-shapes .lucid-shapes-scroll {
   background: #B2B2B2;
   padding-bottom: 0;
-}
-.lucid-managing-shapes .pin-library,
-.lucid-manage-shapes .pin-library {
-  position: absolute;
-  top: 0;
-  left: 0;
-  padding: 5px 5px 0;
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 3px 0 0 0;
-  width: 32px;
-  height: 32px;
-  cursor: pointer;
-}
-.lucid-managing-shapes .pin-library .lucid-icon-22,
-.lucid-manage-shapes .pin-library .lucid-icon-22 {
-  -webkit-transition: 0.25s ease-out transform;
-  transition: 0.25s ease-out transform;
-}
-.lucid-managing-shapes .pin-library .lucid-icon-22 svg g path,
-.lucid-manage-shapes .pin-library .lucid-icon-22 svg g path {
-  fill: #FFF;
-  -webkit-transition: 0.25s ease-out all;
-  transition: 0.25s ease-out all;
-}
-.lucid-managing-shapes .pin-library.pinned,
-.lucid-manage-shapes .pin-library.pinned {
-  background: rgba(0, 0, 0, 0.5);
-  -webkit-transition: 0.25s ease-in-out background;
-  transition: 0.25s ease-in-out background;
-}
-.lucid-managing-shapes .pin-library.pinned .lucid-icon-22,
-.lucid-manage-shapes .pin-library.pinned .lucid-icon-22 {
-  -webkit-transform: rotateZ(-45deg);
-      -ms-transform: rotate(-45deg);
-          transform: rotateZ(-45deg);
-  -webkit-transform-origin: center;
-      -ms-transform-origin: center;
-          transform-origin: center;
-}
-.lucid-managing-shapes .pin-library.pinned .lucid-icon-22 svg g path,
-.lucid-manage-shapes .pin-library.pinned .lucid-icon-22 svg g path {
-  fill: #29AAE1;
 }
 .lucid-managing-shapes .shape-group-top,
 .lucid-manage-shapes .shape-group-top {
@@ -1108,23 +1067,23 @@ a {
 }
 .search-shapes .search-shapes-input {
   background: #77818C;
-  padding: 5px 10px;
+  padding: 8px;
+  font-size: 0;
 }
 .search-shapes .search-shapes-input > input {
-  width: 175px;
-  height: 29px;
-  line-height: 29px;
+  width: 190px;
+  height: 26px;
   border: none;
-  border-radius: 4px;
+  border-left: 2px solid #77818C;
+  border-radius: 0 3px 3px 0;
   padding: 0 10px;
   box-sizing: border-box;
   color: #777;
   background: #fff;
-  font-weight: 100;
 }
 .search-shapes .search-shapes-input > input::-webkit-input-placeholder {
   font-style: italic;
-  color: #ccc;
+  color: #828282;
 }
 .search-shapes .search-shapes-input > span {
   margin-left: 10px;
@@ -1147,16 +1106,111 @@ a {
   -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
-.search-shapes .lucid-shape-group .shape-group-top {
-  border-radius: 4px;
+.search-shapes .search-dropdown {
+  background: #fff;
+  width: 42px;
+  height: 26px;
+  padding: 2px;
+  border-radius: 3px 0 0 3px;
+  cursor: pointer;
 }
-.search-shapes .placeholder-elements > li {
-  width: 30px;
-  height: 30px;
-  background: #999;
-  display: inline-block;
-  margin: 7px 7.9px;
-  border-radius: 3px;
+.search-shapes .search-dropdown .search-dropdown-arrow {
+  position: absolute;
+  top: 10px;
+  right: 5px;
+  line-height: 0;
+}
+.search-shapes .search-dropdown .search-dropdown-arrow path {
+  fill: #77818C;
+}
+.search-shapes .search-dropdown .lucid-select-dropdown {
+  z-index: 10;
+  width: 145px;
+}
+.search-shapes .search-dropdown .lucid-select-dropdown .lucid-select-option {
+  vertical-align: top;
+  padding: 2px 7px;
+}
+.search-shapes .search-dropdown .lucid-select-dropdown .lucid-select-option > span {
+  line-height: 22px;
+  padding-left: 2px;
+  vertical-align: top;
+}
+.search-shapes .search-dropdown .lucid-select-dropdown .lucid-icon {
+  height: 22px;
+  vertical-align: top;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results {
+  margin-bottom: 10px;
+  position: relative;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-enter {
+  margin-top: -84px;
+  opacity: 0;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-leave {
+  margin-top: 0;
+  opacity: 1;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-leave-active {
+  margin-top: -84px;
+  opacity: 0;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.repeat-animation.ng-enter-stagger {
+  -webkit-transition-delay: .01s;
+          transition-delay: .01s;
+  -webkit-transition-duration: 0s;
+          transition-duration: 0s;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-animate {
+  -webkit-transition: .25s;
+  transition: .25s;
+  z-index: 0;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results.ng-animate.no-transition {
+  -webkit-transition: 0s;
+  transition: 0s;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results .search-shapes-pin {
+  border-radius: 3px 0 0 3px;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results .search-shapes-pin.pinned {
+  background: #77818C;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results .search-shapes-pin.pinned svg g path {
+  fill: #fff;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results .shape-group-top {
+  cursor: default;
+}
+.search-shapes .lucid-shape-group-wrapper.search-results .lucid-shape-group .shape-group-name {
+  padding-left: 35px;
+}
+.search-shapes .no-search-results {
+  font-size: 14px;
+  padding: 20px;
+  line-height: 20px;
+}
+.search-shapes .no-search-results p {
+  color: #828282;
+  margin-bottom: 15px;
+}
+.search-shapes .no-search-results .hyperlink {
+  text-decoration: underline;
+  cursor: pointer;
+  color: #29AAE1;
+}
+.search-shapes .no-search-results.ng-hide {
+  margin-top: -20px;
+  opacity: 0;
+}
+.search-shapes .no-search-results.ng-animate {
+  -webkit-transition: 0.25s ease-in-out;
+  transition: 0.25s ease-in-out;
 }
 .import-to-manager {
   background-color: #3E4752;

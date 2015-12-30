@@ -257,7 +257,7 @@ sans-serif;
                     border-radius: 4px 0 0 4px;
                 }
             }
-            .permissions .lucid-buttcon{
+            .permissions .lucid-buttcon {
                 background-color: fade(@blue-steel, 60%);
             }
             .permissions .lucid-buttcon,
@@ -265,7 +265,7 @@ sans-serif;
             .delete {
                 transition: opacity .2s;
             }
-            .permissions .lucid-buttcon{
+            .permissions .lucid-buttcon {
                 opacity: 0;
             }
             .delete {
@@ -299,7 +299,7 @@ sans-serif;
     .permissions {
         position: absolute;
         top: 0px;
-        left:0;
+        left: 0;
         .lucid-popover-menu {
             top: 39px;
             background-color: #fff;
@@ -599,6 +599,35 @@ a {
         // background: rgba(0, 0, 0, .2);
         // border-radius: 2px;
     }
+    .pin-library {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 5px 5px 0;
+        background: rgba(0, 0, 0, .2);
+        border-radius: 3px 0 0 0;
+        width: 32px;
+        height: 32px;
+        cursor: pointer;
+        .lucid-icon-22 {
+            transition: .25s ease-out transform;
+            svg g path {
+                fill: #FFF;
+                transition: .25s ease-out all;
+            }
+        }
+        &.pinned {
+            background: rgba(0, 0, 0, .5);
+            transition: .25s ease-in-out background;
+            .lucid-icon-22 {
+                transform: rotateZ(-45deg);
+                transform-origin: center;
+                svg g path {
+                    fill: @blue;
+                }
+            }
+        }
+    }
 }
 
 /////////////////////////////////////////////////
@@ -731,40 +760,6 @@ a {
     }
 }
 
-//start search shapes results
-.lucid-shape-group-wrapper.search-results {
-    margin-bottom: 10px;
-    position: relative;
-    //z-index:1;
-    &.ng-enter {
-        margin-top: -84px;
-        opacity: 0;
-    }
-    &.ng-enter-active {
-        margin-top: 0;
-        opacity: 1;
-    }
-    &.ng-leave {
-        margin-top: 0;
-        opacity: 1;
-    }
-    &.ng-leave-active {
-        margin-top: -84px;
-        opacity: 0;
-    }
-    &.repeat-animation.ng-enter-stagger {
-        transition-delay: .01s;
-        transition-duration: 0s;
-    }
-    &.ng-animate {
-        transition: .25s;
-        z-index: 0;
-        &.no-transition {
-            transition: 0s;
-        }
-    }
-}
-
 //when managing shapes this class is added for transitions on shape panel
 @manage-shapes-panel-width: 250px;
 .lucid-managing-shapes,
@@ -839,35 +834,6 @@ a {
     .lucid-shapes-scroll {
         background: #B2B2B2;
         padding-bottom: 0;
-    }
-    .pin-library {
-        position: absolute;
-        top: 0;
-        left: 0;
-        padding: 5px 5px 0;
-        background: rgba(0, 0, 0, .2);
-        border-radius: 3px 0 0 0;
-        width: 32px;
-        height: 32px;
-        cursor: pointer;
-        .lucid-icon-22 {
-            transition: .25s ease-out transform;
-            svg g path {
-                fill: #FFF;
-                transition: .25s ease-out all;
-            }
-        }
-        &.pinned {
-            background: rgba(0, 0, 0, .5);
-            transition: .25s ease-in-out background;
-            .lucid-icon-22 {
-                transform: rotateZ(-45deg);
-                transform-origin: center;
-                svg g path {
-                    fill: @blue;
-                }
-            }
-        }
     }
     .shape-group-top {
         cursor: move;
@@ -1180,7 +1146,9 @@ a {
     }
 }
 
-/// search shapes stuff.
+///////////////
+//START SEARCH SHAPES
+///////////////
 .search-shapes {
     position: absolute;
     top: 60px;
@@ -1191,21 +1159,24 @@ a {
     }
     .search-shapes-input {
         background: @blue-steel-2;
-        padding: 5px 10px;
+        padding: 8px;
+        font-size: 0;
         >input {
-            width: 175px;
-            height: 29px;
-            line-height: 29px;
+            width: 190px;
+            //margin-left:-3px;
+            height: 26px;
+            //line-height: 29px;
             border: none;
-            border-radius: 4px;
+            border-left: 2px solid @blue-steel-2;
+            border-radius: 0 3px 3px 0;
             padding: 0 10px;
             box-sizing: border-box;
             color: #777;
             background: #fff;
-            font-weight: 100;
+            //font-weight: 100;
             &::-webkit-input-placeholder {
                 font-style: italic;
-                color: #ccc;
+                color: #828282;
                 //font-family:"Source Sans Pro";
             }
         }
@@ -1229,21 +1200,116 @@ a {
         overflow: hidden;
         transition: .35s ease-in-out all;
     }
-    .lucid-shape-group .shape-group-top {
-        border-radius: 4px;
+    .search-dropdown {
+        background: #fff;
+        width: 42px;
+        height: 26px;
+        padding: 2px;
+        border-radius: 3px 0 0 3px;
+        cursor: pointer;
+        .search-dropdown-arrow {
+            position: absolute;
+            top: 10px;
+            right: 5px;
+            line-height:0;
+            path {
+                fill: @blue-steel-2;
+            }
+        }
+        .lucid-select-dropdown {
+            z-index: 10;
+            width: 145px;
+            .lucid-select-option {
+                vertical-align: top;
+                padding: 2px 7px;
+                //line-height: 22px;
+                //height:22px;
+                >span {
+                    line-height: 22px;
+                    padding-left: 2px;
+                    vertical-align: top;
+                }
+            }
+            .lucid-icon {
+                height: 22px;
+                vertical-align: top;
+            }
+        }
     }
-    .placeholder-elements {
-        >li {
-            width: 30px;
-            height: 30px;
-            background: #999;
-            display: inline-block;
-            margin: 7px 7.9px;
-            border-radius: 3px;
+    //Search Shapes Results
+    .lucid-shape-group-wrapper.search-results {
+        margin-bottom: 10px;
+        position: relative;
+        //z-index:1;
+        &.ng-enter {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave-active {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: .01s;
+            transition-duration: 0s;
+        }
+        &.ng-animate {
+            transition: .25s;
+            z-index: 0;
+            &.no-transition {
+                transition: 0s;
+            }
+        }
+        .search-shapes-pin {
+            border-radius: 3px 0 0 3px;
+            &.pinned {
+                background: @blue-steel-2;
+                svg g path {
+                    fill: #fff;
+                }
+            }
+        }
+        .shape-group-top {
+            cursor: default;
+        }
+        .lucid-shape-group .shape-group-name {
+            padding-left: 35px;
+        }
+    }
+    .no-search-results {
+        font-size: 14px;
+        padding: 20px;
+        line-height: 20px;
+        p {
+            color: #828282;
+            margin-bottom: 15px;
+        }
+        .hyperlink {
+            text-decoration: underline;
+            cursor: pointer;
+            color: @blue;
+        }
+        &.ng-hide {
+            margin-top: -20px;
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out;
         }
     }
 }
 
+///////////////
+//END SEARCH SHAPES 
+///////////////
 .import-to-manager {
     background-color: #3E4752;
     color: #fff;
@@ -2116,7 +2182,7 @@ a {
             -webkit-transition: background-size 0.2s;
             transition: background-size 0.2s;
         }
-        .page-thumb-name .edit-in-place{
+        .page-thumb-name .edit-in-place {
             text-align: center;
         }
         &:after {
@@ -2255,49 +2321,48 @@ a {
 // START CANVAS
 /////////////////////////////
 .lucid-canvas {
-    >svg{
-       // position: absolute;
-       display: none;
+    >svg {
+        // position: absolute;
+        display: none;
     }
-    .simple-line-wrapper{
+    .simple-line-wrapper {
         position: absolute;
-        top:180px;
-        left:448px;
+        top: 180px;
+        left: 448px;
         cursor: pointer;
         padding: 0 2px;
-        .simple-line{
-            background:#333;
-            width:2px;
-            height:60px;
+        .simple-line {
+            background: #333;
+            width: 2px;
+            height: 60px;
             box-sizing: content-box;
             border-right: 1px solid #fff;
             border-left: 1px solid #fff;
-            &:after{
-                content:'';
+            &:after {
+                content: '';
                 border-left: 4px solid transparent;
                 border-right: 4px solid transparent;
-                border-top: 8px solid #333; 
+                border-top: 8px solid #333;
                 position: absolute;
-                bottom:-8px;
-                left:0px;
+                bottom: -8px;
+                left: 0px;
             }
-            &:before{
-                content:'';
+            &:before {
+                content: '';
                 border-left: 5px solid transparent;
                 border-right: 5px solid transparent;
-                border-top: 9px solid transparent; 
+                border-top: 9px solid transparent;
                 position: absolute;
-                bottom:-9px;
-                left:-1px;
+                bottom: -9px;
+                left: -1px;
             }
-            &.selected{
-            border-color: #75B4FE;
-            &:before{
-                border-top: 9px solid #75B4FE; 
-            }
+            &.selected {
+                border-color: #75B4FE;
+                &:before {
+                    border-top: 9px solid #75B4FE;
+                }
             }
         }
-
     }
     >ul {
         position: absolute;
