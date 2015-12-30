@@ -18,7 +18,7 @@ angular.module('editInPlace', ['appConfig'])
                     $timeout(function() {
                         input.select();
                     }, 10);
-                    console.log('Focus This', input, 'model', $scope.editableText);
+                    //console.log('Focus This', input, 'model', $scope.editableText);
 
                 };
             }
