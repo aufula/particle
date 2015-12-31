@@ -7222,7 +7222,7 @@ angular.module('lucidPagesData', [])
                 "customcolor": false,
                 "swatch": {
                     "fill": "#ffffff",
-                    "text": "#333333",
+                    "text": "#AEAEAE",
                     "border": "#666666"
                 },
                 "swatchnumber": 1,
@@ -7231,8 +7231,8 @@ angular.module('lucidPagesData', [])
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
-                    "text": "",
-                    "size": 12,
+                    "text": "Process",
+                    "size": 16,
                 },
 
                 "padding": 7,
