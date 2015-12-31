@@ -493,6 +493,7 @@ angular.module('particleApp', ['lucidComponents'])
         });
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
+            $rootScope.mouseInLeftPanel = false;
         });
         $scope.focusSearch = function(searchshapes) {
             console.log(searchshapes);
