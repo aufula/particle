@@ -1803,6 +1803,10 @@ a {
 #option-bar > ul > li.inactive {
   opacity: .35;
 }
+#option-bar > ul > li.inactive .lucid-popover-menu,
+#option-bar > ul > li.inactive .lucid-select-dropdown {
+  display: none;
+}
 #option-bar > ul .line {
   display: inline-block;
   width: 1px;
@@ -2232,7 +2236,6 @@ a {
   transition: all ease-in-out 0.1s;
 }
 .lucid-chart-block img.lucid-block-comment.ng-hide {
-  right: -35px;
   opacity: 0;
 }
 .lucid-chart-block .lucid-selected-block {

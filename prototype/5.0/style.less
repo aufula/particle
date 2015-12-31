@@ -1955,6 +1955,9 @@ a {
             }
             &.inactive{
                 opacity:.35;
+                .lucid-popover-menu, .lucid-select-dropdown{
+                    display: none;
+                }
             }
         }
         .line {
@@ -2401,7 +2404,6 @@ a {
         z-index: 1;
         transition: all ease-in-out .1s;
         &.ng-hide {
-            right: -35px;
             opacity: 0;
         }
     }

@@ -917,10 +917,5 @@ angular.module('particleApp', ['lucidComponents'])
                 data.shapepanel = false;
             }
         }
-        // if (event.x < 220) {
-        //     console.log('dropped in shapes'); //not sure how else to fix this.
-        // }
-        //console.log(data.metrics.x, data.metrics.y);
-        //console.log('drag success');
     };
 });
