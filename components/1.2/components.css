@@ -373,12 +373,12 @@ input {
 .lucid-popover-menu:after {
   content: '';
   border-bottom: 10px #f1f1f1 solid;
-  border-left: 8.5px transparent solid;
-  border-right: 8.5px transparent solid;
+  border-left: 8px transparent solid;
+  border-right: 8px transparent solid;
   position: absolute;
   top: -10px;
   left: 50%;
-  margin-left: -8.5px;
+  margin-left: -7px;
 }
 .lucid-popover-menu.ng-hide {
   opacity: 0;
@@ -974,7 +974,7 @@ input[type=range]:focus::-ms-fill-upper {
   border-bottom: 1px solid #d2d2d2;
 }
 .lucid-button {
-  padding: 0 15px;
+  padding: 4px 15px 6px;
   border: none;
   border-radius: 4px;
   font-size: 14px;
@@ -984,7 +984,6 @@ input[type=range]:focus::-ms-fill-upper {
   outline: none;
   display: inline-block;
   box-sizing: border-box;
-  height: 28px;
   whitespace: nowrap;
   -webkit-transition: 0.15s ease-in-out background-color;
   transition: 0.15s ease-in-out background-color;
@@ -1023,7 +1022,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
-  margin-top: 0px;
+  margin-top: 1px;
+  margin-bottom: -1px;
   margin-right: 3px;
 }
 .lucid-icon-18,
