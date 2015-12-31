@@ -708,14 +708,14 @@
           <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <lucid-input-stepper step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
           </li>
-          <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg'"></ng-include>
+          <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <lucid-buttcon ng-click="bold=!bold" active="bold" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-bold-bluesteel.svg"></lucid-buttcon>
           </li>
-          <li class="small middle lucid-buttcon" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg'" ></ng-include>
+          <li class="small middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <lucid-buttcon ng-click="italic=!italic" active="italic" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-italic-bluesteel.svg"></lucid-buttcon>
           </li>
-          <li class="middle lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-            <ng-include src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg'"></ng-include>
+          <li class="middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <lucid-buttcon ng-click="underline=!underline" active="underline" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-text-underline-bluesteel.svg"></lucid-buttcon>
           </li>
           <!-- BEGIN TEXT ALIGNMENT -->
           <li class="middle" ng-controller="textAlignmentCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
