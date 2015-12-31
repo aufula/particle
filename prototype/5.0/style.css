@@ -529,18 +529,15 @@ a {
   position: absolute;
   top: 0;
   left: 0;
-  padding: 5px 5px 0;
   background: rgba(0, 0, 0, 0.2);
   border-radius: 3px 0 0 0;
-  width: 32px;
-  height: 32px;
   cursor: pointer;
 }
-.lucid-shape-group .pin-library .lucid-icon-22 {
+.lucid-shape-group .pin-library .lucid-icon {
   -webkit-transition: 0.25s ease-out transform;
   transition: 0.25s ease-out transform;
 }
-.lucid-shape-group .pin-library .lucid-icon-22 svg g path {
+.lucid-shape-group .pin-library .lucid-icon svg g path {
   fill: #FFF;
   -webkit-transition: 0.25s ease-out all;
   transition: 0.25s ease-out all;
@@ -550,7 +547,7 @@ a {
   -webkit-transition: 0.25s ease-in-out background;
   transition: 0.25s ease-in-out background;
 }
-.lucid-shape-group .pin-library.pinned .lucid-icon-22 {
+.lucid-shape-group .pin-library.pinned .lucid-icon {
   -webkit-transform: rotateZ(-45deg);
       -ms-transform: rotate(-45deg);
           transform: rotateZ(-45deg);
@@ -558,7 +555,7 @@ a {
       -ms-transform-origin: center;
           transform-origin: center;
 }
-.lucid-shape-group .pin-library.pinned .lucid-icon-22 svg g path {
+.lucid-shape-group .pin-library.pinned .lucid-icon svg g path {
   fill: #29AAE1;
 }
 .lucid-shapes-panel {
@@ -619,13 +616,14 @@ a {
 }
 .lucid-shapes-panel .lucid-shapes-header .import-image-icon .lucid-popover-menu {
   background: #FFF;
+  top: 48px;
 }
 .lucid-shapes-panel .lucid-shapes-header .import-image-icon .lucid-popover-menu:after {
   border-bottom-color: #FFF;
 }
 .lucid-shapes-panel .lucid-shapes-header .import-image-icon .lucid-select-wrapper {
   width: 100%;
-  padding: 5px 0;
+  padding: 3px 2px;
 }
 .lucid-shapes-panel .lucid-shapes-header .import-image-icon .lucid-select-dropdown {
   width: 100%;
@@ -806,13 +804,6 @@ a {
   margin-right: 10px;
   vertical-align: top;
 }
-.lucid-managing-shapes .lucid-shape-group-top-right-icons .lucid-icon-22,
-.lucid-manage-shapes .lucid-shape-group-top-right-icons .lucid-icon-22 {
-  width: 18px;
-  cursor: pointer;
-  position: relative;
-  top: -3px;
-}
 .ng-sort-ghost {
   opacity: .5;
 }
@@ -844,6 +835,11 @@ a {
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper {
   margin-left: 10px;
+  font-size: 14px;
+}
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper .lucid-select-dropdown {
+  top: 28px;
+  width: 106px;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container {
   display: inline-block;
@@ -861,7 +857,7 @@ a {
   padding: 0 10px;
   box-sizing: border-box;
   color: #FFF;
-  background: rgba(255, 255, 255, 0.3);
+  background: #98A5B3;
   font-weight: 100;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input::-webkit-input-placeholder {
@@ -987,51 +983,28 @@ a {
 .lucid-shape-manager .lucid-shape-group .shape-group-top .selected-option-wrapper {
   overflow: visible;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown {
-  position: relative;
-  cursor: pointer;
-}
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown {
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon {
   position: absolute;
   right: 0;
-  width: 145px;
-  min-width: 145px;
-  left: inherit;
-  color: #5a5a5a;
+  top: 0;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown .lucid-select-option,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown .lucid-select-option {
-  line-height: 30px;
-  font-size: 14px;
-  padding: 0 13px;
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-popover-menu {
+  background: #FFF;
+  color: #3d4752;
+  top: 38px;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown > ul > li > img,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown > ul > li > img {
-  cursor: pointer;
-  top: 3px;
-  left: -3px;
-  width: 22px;
-  height: 22px;
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-popover-menu:after {
+  border-bottom-color: #FFF;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload {
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-select-wrapper {
   width: 100%;
-  height: 30px;
-  position: absolute;
-  margin: 0;
-  opacity: 0;
-  overflow: hidden;
-  cursor: pointer;
+  padding: 3px 2px;
 }
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload::-webkit-file-upload-button,
-.lucid-shape-manager .lucid-shape-group .shape-group-top .import-dropdown .lucid-select-dropdown > ul > li .hidden-file-upload::-webkit-file-upload-button {
-  cursor: pointer;
-}
-.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown .lucid-select-dropdown {
-  width: 110px;
-  min-width: 110px;
+.lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-select-dropdown {
+  width: 100%;
+  position: static;
+  box-shadow: none;
+  border-radius: 3px;
 }
 .lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button {
   background-color: #BFBFBF;
@@ -1074,7 +1047,8 @@ a {
   width: 190px;
   height: 26px;
   border: none;
-  border-left: 2px solid #77818C;
+  outline: none;
+  border-left: 1px solid #77818C;
   border-radius: 0 3px 3px 0;
   padding: 0 10px;
   box-sizing: border-box;
@@ -1191,6 +1165,7 @@ a {
   padding-left: 35px;
 }
 .search-shapes .no-search-results {
+  position: absolute;
   font-size: 14px;
   padding: 20px;
   line-height: 20px;
@@ -1825,6 +1800,9 @@ a {
   margin-right: -4px;
   border-radius: 4px 0 0 4px;
 }
+#option-bar > ul > li.inactive {
+  opacity: .35;
+}
 #option-bar > ul .line {
   display: inline-block;
   width: 1px;
@@ -2156,17 +2134,17 @@ a {
   margin-top: 10px;
   width: 100%;
 }
-.lucid-canvas > svg {
+#lucid-canvas > svg polyline {
   display: none;
 }
-.lucid-canvas .simple-line-wrapper {
+#lucid-canvas .simple-line-wrapper {
   position: absolute;
   top: 180px;
   left: 448px;
   cursor: pointer;
   padding: 0 2px;
 }
-.lucid-canvas .simple-line-wrapper .simple-line {
+#lucid-canvas .simple-line-wrapper .simple-line {
   background: #333;
   width: 2px;
   height: 60px;
@@ -2174,7 +2152,7 @@ a {
   border-right: 1px solid #fff;
   border-left: 1px solid #fff;
 }
-.lucid-canvas .simple-line-wrapper .simple-line:after {
+#lucid-canvas .simple-line-wrapper .simple-line:after {
   content: '';
   border-left: 4px solid transparent;
   border-right: 4px solid transparent;
@@ -2183,7 +2161,7 @@ a {
   bottom: -8px;
   left: 0px;
 }
-.lucid-canvas .simple-line-wrapper .simple-line:before {
+#lucid-canvas .simple-line-wrapper .simple-line:before {
   content: '';
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
@@ -2192,13 +2170,33 @@ a {
   bottom: -9px;
   left: -1px;
 }
-.lucid-canvas .simple-line-wrapper .simple-line.selected {
+#lucid-canvas .simple-line-wrapper .simple-line.selected {
   border-color: #75B4FE;
 }
-.lucid-canvas .simple-line-wrapper .simple-line.selected:before {
+#lucid-canvas .simple-line-wrapper .simple-line.selected:before {
   border-top: 9px solid #75B4FE;
 }
-.lucid-canvas > ul {
+#lucid-canvas .simple-table-wrapper {
+  border: none;
+  position: absolute;
+  top: 480px;
+  left: 448px;
+  cursor: pointer;
+}
+#lucid-canvas .simple-table-wrapper table {
+  width: 300px;
+  height: 100px;
+}
+#lucid-canvas .simple-table-wrapper td {
+  border: 1px solid #999;
+}
+#lucid-canvas .simple-table-wrapper .lucid-selected-block {
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+}
+#lucid-canvas > ul {
   position: absolute;
   width: 100%;
   height: 690px;

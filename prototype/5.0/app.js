@@ -127,7 +127,7 @@ angular.module('particleApp', ['lucidComponents'])
                 collaborator.image = 'https://avatars.slack-edge.com/2014-11-24/3076026439_03deaeac3a91313f3903_192.jpg';
                 collaborator.svg = null;
             }
-            if (data.name === 'Marketing' || data.name === 'Team' || data.name === 'group'){
+            if (data.name === 'Marketing' || data.name === 'Team' || data.name === 'group') {
                 collaborator.svg = 'http://particle.golucid.co/components/1.2/icon/icons/icon-team-22px.svg';
             }
             $scope.collaborators.push(collaborator);
@@ -479,6 +479,18 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.$on('draggable:start', function(event, data) {
             $rootScope.draggingshape = true;
         });
+        $scope.$on('draggable:move', function(event, data) {
+            //console.log(event);
+            var mouseX = window.event.clientX
+            if (mouseX < 250) {
+                $rootScope.mouseInLeftPanel = true;
+            } else {
+                $rootScope.mouseInLeftPanel = false;
+            }
+            $rootScope.selectedBlock = data.data;
+            $rootScope.$apply();
+            //console.log(mouseX)
+        });
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
         });
@@ -777,7 +789,7 @@ angular.module('particleApp', ['lucidComponents'])
 ////START CANVAS CTRL
 ////////////////
 .controller('canvasCtrl', function($scope, $rootScope) {
-    $scope.clickLine = function(){
+    $scope.clickLine = function() {
         //alert('clicked');
         $rootScope.selectedType = 'line';
         console.log('clicked');
