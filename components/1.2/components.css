@@ -1444,3 +1444,6 @@ input[type=range]:focus::-ms-fill-upper {
   color: #fff;
   font-weight: 300;
 }
+.edit-in-place-wrapper.reversed-text input.edit-in-place {
+  font-weight: 300;
+}
