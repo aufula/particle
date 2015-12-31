@@ -408,7 +408,7 @@
                                   class="lucid-shape-group-wrapper left-panel repeat-animation"
                                   ng-class="{'no-transition': $root.draggingShapeGroup}">
                                   <!-- START LEFT SHAPE GROUP -->
-                                  <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom && $root.mouseInLeftPanel,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
+                                  <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom && $root.mouseInLeftPanel || $root.draggingshape && !shapegroup.custom && $root.manageshapes,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
                                       <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                                         <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
