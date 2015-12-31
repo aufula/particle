@@ -1429,6 +1429,7 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 1em;
   padding: 0;
   vertical-align: top;
+  cursor: pointer;
 }
 .edit-in-place-wrapper .edit-in-place-input {
   font-style: italic;
@@ -1437,6 +1438,7 @@ input[type=range]:focus::-ms-fill-upper {
   background: transparent;
   padding: 0;
   margin-top: -2px;
+  cursor: auto;
 }
 .edit-in-place-wrapper.reversed-text .edit-in-place {
   color: #fff;
