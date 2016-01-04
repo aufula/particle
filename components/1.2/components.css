@@ -384,8 +384,8 @@ input {
 .lucid-buttcon .lucid-buttcon-image svg path,
 .lucid-buttcon .lucid-buttcon-image svg polygon,
 .lucid-buttcon .lucid-buttcon-image svg rect {
-  -webkit-transition: all 0.25s ease-in-out;
-  transition: all 0.25s ease-in-out;
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
 }
 .lucid-buttcon .input-label {
   text-align: center;
@@ -699,8 +699,8 @@ input {
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
-  -webkit-transition: 0.25s ease-in-out all;
-  transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
   fill: #29AAE1;
@@ -713,8 +713,8 @@ input {
   fill: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
-  -webkit-transition: 0.25s ease-in-out all;
-  transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
   fill: inherit;
@@ -726,8 +726,8 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
-  -webkit-transition: 0.25s ease-in-out all;
-  transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
   fill: inherit;
@@ -739,8 +739,8 @@ input {
   stop-color: #D2EBF9;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
-  -webkit-transition: 0.25s ease-in-out all;
-  transition: 0.25s ease-in-out all;
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
   fill: #29AAE1;
@@ -1067,8 +1067,8 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-icon svg polygon,
 .lucid-icon svg rect,
 .lucid-icon svg circle {
-  -webkit-transition: 0.25s ease-in-out;
-  transition: 0.25s ease-in-out;
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
 }
 .lucid-icon.fill-blue-steel svg path,
 .lucid-icon.fill-blue-steel svg polygon,
