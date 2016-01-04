@@ -454,7 +454,6 @@ input {
 .lucid-popover-menu.ng-animate {
   -webkit-transition: .1s all linear;
   transition: .1s all linear;
-  z-index: 0;
 }
 .lucid-popover-menu ul {
   padding: 0;
