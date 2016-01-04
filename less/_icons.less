@@ -7,8 +7,8 @@
     &.fill-white {
         background: @blue-steel;
         .particle-icon-wrapper h5 {
-        	font-weight: 300;
-        	color:#fff;
+            font-weight: 300;
+            color: #fff;
         }
     }
 }
@@ -20,12 +20,7 @@
     min-height: 60;
     vertical-align: top;
     margin: 10px;
-    .icon-container {
-        width: 22px;
-        height: 22px;
-        display: inline-block;
-        cursor: pointer;
-    }
+    opacity: 1;
     h5 {
         font-size: 12px;
         margin: 5px 0;
@@ -37,45 +32,29 @@
         line-height: 1.2;
         color: @blue-steel-2;
     }
-    a {
-        font-size: 14px;
-        color: @blue
-    }
-    transform:scale(1);
-    opacity:1;
     &.ng-leave-active,
     &.ng-enter {
-        transform: scale(.01);
+        //transform: scale(.01);
         margin-left: -50px;
         margin-right: -50px;
         opacity: 0;
     }
     &.ng-enter-active {
-        transform: scale(1);
+        //transform: scale(1);
         margin: 10px;
         opacity: 1;
     }
     &.ng-animate {
         transition: .35s ease-in-out all;
     }
-}
-
-.particon {
-    width: 22px;
-    height: 22px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    display: inline-block;
-    &.particon-angular {
-        background-image: url('../img/angular.svg');
-        background-size: 18px 20px;
+    .lucid-buttcon {
+        position: static;
     }
-    &.particon-code {
-        background-image: url('../img/code.svg');
-        background-size: 20px 16px;
+    .lucid-popover-menu {
+        top: 40px;
+        z-index: 105;
     }
 }
-
 .icon-search {
     position: relative;
     width: 200px;

@@ -309,16 +309,7 @@ p.small-body {
   min-height: 60;
   vertical-align: top;
   margin: 10px;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
   opacity: 1;
-}
-.particle-icon-wrapper .icon-container {
-  width: 22px;
-  height: 22px;
-  display: inline-block;
-  cursor: pointer;
 }
 .particle-icon-wrapper h5 {
   font-size: 12px;
@@ -331,23 +322,13 @@ p.small-body {
   line-height: 1.2;
   color: #77818C;
 }
-.particle-icon-wrapper a {
-  font-size: 14px;
-  color: #29AAE1;
-}
 .particle-icon-wrapper.ng-leave-active,
 .particle-icon-wrapper.ng-enter {
-  -webkit-transform: scale(0.01);
-      -ms-transform: scale(0.01);
-          transform: scale(0.01);
   margin-left: -50px;
   margin-right: -50px;
   opacity: 0;
 }
 .particle-icon-wrapper.ng-enter-active {
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
   margin: 10px;
   opacity: 1;
 }
@@ -355,20 +336,12 @@ p.small-body {
   -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
-.particon {
-  width: 22px;
-  height: 22px;
-  background-position: center center;
-  background-repeat: no-repeat;
-  display: inline-block;
+.particle-icon-wrapper .lucid-buttcon {
+  position: static;
 }
-.particon.particon-angular {
-  background-image: url('../img/angular.svg');
-  background-size: 18px 20px;
-}
-.particon.particon-code {
-  background-image: url('../img/code.svg');
-  background-size: 20px 16px;
+.particle-icon-wrapper .lucid-popover-menu {
+  top: 40px;
+  z-index: 105;
 }
 .icon-search {
   position: relative;
@@ -390,6 +363,21 @@ p.small-body {
   text-indent: 8px;
   width: 100%;
   padding-right: 24px;
+}
+.particon {
+  width: 22px;
+  height: 22px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: inline-block;
+}
+.particon.particon-angular {
+  background-image: url('../img/angular.svg');
+  background-size: 18px 20px;
+}
+.particon.particon-code {
+  background-image: url('../img/code.svg');
+  background-size: 20px 16px;
 }
 .code-preview {
   border: 1px solid #77818C;

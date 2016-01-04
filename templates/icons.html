@@ -13,21 +13,18 @@
 <div ng-repeat="icongroup in icongroups | filter: searchResults">
     <h2>{{icongroup.icongroup}}</h2>
     <div class="icon-list-container clearfix {{class}}">
-        <div ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
-            <div class="particle-icon-wrapper" lucid-context-menu data-target="icon-context-{{$index}}">
-                <div class="icon-container">
-                    <ng-include src="icon.url" class="lucid-icon {{class}}"></ng-include>
-                </div>
-                <h5>{{icon.name}}</h5>
-            </div>
-            <div id="icon-context-{{$index}}" class="lucid-context-menu ng-hide">
-                <ul>
-                    <a href="{{icon.url}}" download="{{icon.name}}.svg">
-                        <li class="lucid-select-option">Download</li>
-                    </a>
-                    <li class="lucid-select-option" clipboard text="icon.url">Copy URL</li>
-                </ul>
-            </div>
+        <div class="particle-icon-wrapper" ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
+                <lucid-buttcon-popover class="lucid-icon {{class}} popover-list" showpopover="dropdown.show" icon="{{icon.url}}" width="105">
+                    <div class="lucid-select-wrapper">
+                        <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
+                            <a href="{{icon.url}}" download="{{icon.name}}.svg">
+                                <li class="lucid-select-option">Download</li>
+                            </a>
+                            <li class="lucid-select-option" clipboard text="icon.url">Copy URL</li>
+                        </ul>
+                    </div>
+                </lucid-buttcon-popover>
+            <h5>{{icon.name}}</h5>
         </div>
     </div>
 </div>
