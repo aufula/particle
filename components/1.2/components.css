@@ -435,13 +435,26 @@ input {
   left: 50%;
   margin-left: -7px;
 }
-.lucid-popover-menu.ng-hide {
-  opacity: 0;
+.lucid-popover-menu.ng-enter {
   margin-top: -7px;
+  opacity: 0;
+}
+.lucid-popover-menu.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-popover-menu.ng-leave {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-popover-menu.ng-leave-active {
+  margin-top: -7px;
+  opacity: 0;
 }
 .lucid-popover-menu.ng-animate {
   -webkit-transition: .1s all linear;
   transition: .1s all linear;
+  z-index: 0;
 }
 .lucid-popover-menu ul {
   padding: 0;

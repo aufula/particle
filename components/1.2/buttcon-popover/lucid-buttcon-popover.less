@@ -2,6 +2,7 @@
     position: relative;
     display: inline-block;
 }
+
 .lucid-popover-menu {
     background-color: @light-grey;
     border-radius: 4px;
@@ -22,12 +23,25 @@
         left: 50%;
         margin-left: -7px;
     }
-    &.ng-hide {
-        opacity: 0;
+    &.ng-enter {
         margin-top: -7px;
+        opacity: 0;
+    }
+    &.ng-enter-active {
+        margin-top: 0;
+        opacity: 1;
+    }
+    &.ng-leave {
+        margin-top: 0;
+        opacity: 1;
+    }
+    &.ng-leave-active {
+        margin-top: -7px;
+        opacity: 0;
     }
     &.ng-animate {
         transition: .1s all linear;
+        z-index: 0;
     }
     ul {
         padding: 0;
@@ -54,7 +68,7 @@
         padding: 3px 2px;
         .lucid-select-dropdown {
             width: 100%;
-            top:0;
+            top: 0;
             position: static;
             box-shadow: none;
             border-radius: 3px;
