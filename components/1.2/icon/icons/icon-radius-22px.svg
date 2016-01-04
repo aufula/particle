@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-radius-22px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-radius-22px" sketch:type="MSArtboardGroup" fill="#3D4752">
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="14" y="1" width="1" height="3"></rect>
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="1" y="14" width="3" height="1"></rect>
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="15" y="5" width="6" height="3"></rect>
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="5" y="15" width="3" height="6"></rect>
+            <path d="M14,8 L14,5 C9,5 5,9 5,14 L8,14 C8,10.7 10.7,8 14,8 L14,8 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <path d="M14,14 L9,14 L9,15 L14,15 L15,15 L15,14 L15,9 L14,9 L14,14 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-avatar-alert-22px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-avatar-alert-22px" sketch:type="MSArtboardGroup" fill="#3D4752">
+            <path d="M16.6,14.5 L12,13 L12,11.3 C13.2,10.4 14,8.8 14,7 C14,4.2 13.3,2 10,2 C6.7,2 6,4.2 6,7 C6,8.8 6.8,10.4 8,11.3 L8,13 L3.4,14.5 C2.6,14.8 2,15.5 2,16.4 L2,20 L18,20 L18,16.4 C18,15.6 17.4,14.8 16.6,14.5 L16.6,14.5 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="18" y="2" width="2" height="7"></rect>
+            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="18" y="10" width="2" height="2"></rect>
+        </g>
+    </g>
+</svg>
