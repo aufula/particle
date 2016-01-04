@@ -15,7 +15,6 @@
 //@codekit-append "input/lucid-input.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
-//@codekit-append "popover-menu/lucid-popover-menu.js"
 //@codekit-append "more-drawer/lucid-more-drawer.js"
 //@codekit-append "modal/lucid-modal.js"
 //@codekit-append "finger-tabs/lucid-finger-tabs.js"
@@ -53,7 +52,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////

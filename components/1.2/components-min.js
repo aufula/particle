@@ -555,7 +555,6 @@ return function(a){if(a.from&&a.to){var b=d(a.from),n=d(a.to);if(b||n)return{sta
 //@codekit-append "input/lucid-input.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
-//@codekit-append "popover-menu/lucid-popover-menu.js"
 //@codekit-append "more-drawer/lucid-more-drawer.js"
 //@codekit-append "modal/lucid-modal.js"
 //@codekit-append "finger-tabs/lucid-finger-tabs.js"
@@ -593,7 +592,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidPopoverMenu', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
+angular.module("lucidComponents", ['ngAnimate', 'ngDraggable', 'ngSortable', 'dndLists', 'lucidThemesData', 'lucidPagesData', 'lucidShapesData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
 
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
@@ -1736,31 +1735,6 @@ angular.module("lucidColorPicker", ['appConfig'])
             }
         };
     });
-
-angular.module("lucidPopoverMenu", ['appConfig'])
-    .directive('lucidPopoverMenu', function($document, config) {
-        return {
-            restrict: 'E',
-            scope: {
-                width: '=',
-            },
-            replace: true,
-            transclude: true,
-            templateUrl: config.componentsURL + 'popover-menu/lucid-popover-menu.html',
-
-            link: function(scope, el) {
-                $document.on('click', function(e) {
-                    if (el[0].contains(e.target)) {
-                        return;
-                    } else {
-                        scope.showpopover = false;
-                        //console.log("hide popup", e.target.className);
-                        scope.$apply();
-                    }
-                });
-            }
-        };
-    }); 
 
 angular.module("lucidMoreDrawer", ['appConfig'])
     .directive('lucidMoreDrawer', function(config) {

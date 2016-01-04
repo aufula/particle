@@ -157,6 +157,14 @@ angular.module('lucidComponentFactory', [])
                     "name": "width",
                     "type": "number",
                     "details": "Set the width of the popover menu. The height is determined by the content"
+                }, {
+                    "name": "class",
+                    "type": "text",
+                    "details": "Optional: add 'popover-list' for a popover dropdown list - see example."
+                }, {
+                    "name": "showpopover",
+                    "type": "var",
+                    "details": "Optional: Assign variable to show/hide popover from another source."
                 }],
                 "livelink": "http://www.lucidchart.com"
             }, {

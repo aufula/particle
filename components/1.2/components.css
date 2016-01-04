@@ -359,46 +359,6 @@ input {
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
   display: none;
 }
-.lucid-popover-menu {
-  background-color: #f1f1f1;
-  border-radius: 4px;
-  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
-  position: absolute;
-  z-index: 10;
-  top: 55px;
-  margin-top: 0;
-  opacity: 1;
-  text-align: left;
-}
-.lucid-popover-menu:after {
-  content: '';
-  border-bottom: 10px #f1f1f1 solid;
-  border-left: 8px transparent solid;
-  border-right: 8px transparent solid;
-  position: absolute;
-  top: -10px;
-  left: 50%;
-  margin-left: -7px;
-}
-.lucid-popover-menu.ng-hide {
-  opacity: 0;
-  margin-top: -7px;
-}
-.lucid-popover-menu.ng-animate {
-  -webkit-transition: .1s all linear;
-  transition: .1s all linear;
-}
-.lucid-popover-menu ul {
-  padding: 0;
-  margin: 0;
-}
-.lucid-popover-menu .lucid-wrapper-overflow-hidden {
-  overflow: hidden;
-  border-radius: 3px;
-}
-.lucid-popover-menu .lucid-buttcon.active {
-  background-color: #fff;
-}
 .lucid-buttcon {
   width: 32px;
   height: 32px;
@@ -453,6 +413,66 @@ input {
 .lucid-buttcon-wrapper {
   position: relative;
   display: inline-block;
+}
+.lucid-popover-menu {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  z-index: 10;
+  top: 55px;
+  margin-top: 0;
+  opacity: 1;
+  text-align: left;
+}
+.lucid-popover-menu:after {
+  content: '';
+  border-bottom: 10px #f1f1f1 solid;
+  border-left: 8px transparent solid;
+  border-right: 8px transparent solid;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -7px;
+}
+.lucid-popover-menu.ng-hide {
+  opacity: 0;
+  margin-top: -7px;
+}
+.lucid-popover-menu.ng-animate {
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+}
+.lucid-popover-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.lucid-popover-menu .lucid-wrapper-overflow-hidden {
+  overflow: hidden;
+  border-radius: 3px;
+}
+.lucid-popover-menu .lucid-buttcon.active {
+  background-color: #fff;
+}
+.popover-list .lucid-popover-menu {
+  background: #FFF;
+}
+.popover-list .lucid-popover-menu:after {
+  border-bottom-color: #FFF;
+}
+.popover-list .lucid-select-wrapper {
+  width: 100%;
+  padding: 3px 2px;
+}
+.popover-list .lucid-select-wrapper .lucid-select-dropdown {
+  top: 0;
+  position: static;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  box-shadow: none;
+  width: 100%;
+  opacity: 1;
 }
 .lucid-color-picker .lucid-popover-menu {
   font-size: 0;
