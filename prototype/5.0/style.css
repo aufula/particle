@@ -291,6 +291,7 @@ li.lucid-select-option {
 .lucid-shapes-scroll {
   background: #D6D6D6;
   overflow-y: scroll;
+  max-width: 1080px;
 }
 .lucid-manage-shapes .lucid-shapes-scroll {
   background: #B2B2B2;
@@ -2013,6 +2014,8 @@ a {
 }
 .lucid-pages .lucid-pages-wrapper .page-thumb-name .edit-in-place {
   text-align: center;
+  color: #5a5a5a;
+  font-weight: 400;
 }
 .lucid-pages .lucid-pages-wrapper:after {
   content: "";
@@ -2038,8 +2041,9 @@ a {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
   background-size: 22px;
 }
-.lucid-page.current-page h4 {
+.lucid-page.current-page .page-thumb-name .edit-in-place {
   color: #fff;
+  font-weight: 300;
 }
 .lucid-page .center-image {
   display: table;

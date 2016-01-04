@@ -164,14 +164,14 @@
             dnd-drop="dropToCanvas(item, event)"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"> 
             <!-- start simple arrow -->
-            <li>
-              <div class="simple-line-wrapper" ng-click="$root.selectedType = 'line'; $event.stopPropagation(); deselectBlock();" >
+            <li ng-if="$root.currentPage.id == 14543" >
+              <div class="simple-line-wrapper" ng-click="$root.selectedType = 'line'; $event.stopPropagation(); deselectBlock();">
                 <div class="simple-line" ng-class="{'selected': $root.selectedType == 'line'}"></div>
               </div>
             </li>
             <!-- end simple arrow -->
             <!-- start simple table -->
-            <li>
+            <li ng-if="$root.currentPage.id == 14543" >
               <div class="simple-table-wrapper lucid-chart-block" ng-click="$root.selectedType = 'block'; $root.selectedType = 'table'; $event.stopPropagation(); deselectBlock();" ng-class="{'selected': $root.selectedType == 'table'}" >
                 <table>
                   <tr>
