@@ -539,7 +539,7 @@ input {
   bottom: 2px;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle .swatch.lucid-transparent-swatch {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #FFF !important;
+  background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) #FFF !important;
   background-size: 6px !important;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle.lucid-disabled {
@@ -631,7 +631,7 @@ input {
   position: relative;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.lucid-transparent {
-  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #FFF;
+  background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) repeat #FFF;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.blank {
   cursor: auto;
@@ -708,27 +708,11 @@ input {
   width: 100%;
   top: 28px;
 }
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
-  -webkit-transition: 0.15s ease-in-out all;
-  transition: 0.15s ease-in-out all;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
-  fill: #29AAE1;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-3 {
-  fill: #29AAE1;
-  opacity: .5;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-5 {
-  fill: #D2EBF9;
-}
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
   -webkit-transition: 0.15s ease-in-out all;
   transition: 0.15s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg path {
   fill: inherit;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop {
@@ -741,7 +725,7 @@ input {
   -webkit-transition: 0.15s ease-in-out all;
   transition: 0.15s ease-in-out all;
 }
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg path {
   fill: inherit;
 }
 .lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop {

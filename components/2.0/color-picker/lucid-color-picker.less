@@ -57,7 +57,7 @@
                     right: 2px;
                     bottom: 2px;
                     &.lucid-transparent-swatch {
-                        background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #FFF !important;
+                        background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) #FFF !important;
                         background-size: 6px !important;
                     }
                 }
@@ -150,7 +150,7 @@
             cursor: pointer;
             position: relative;
             &.lucid-transparent {
-                background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #FFF;
+                background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) repeat #FFF;
             }
             &.blank {
                 cursor: auto;
@@ -234,31 +234,12 @@
         }
     }
     .lucid-buttcon {
-        &.colorpicker-fill-image {
-            #Fill-1,
-            #Fill-5,
-            #Fill-3 {
-                transition: .15s ease-in-out all; 
-            }
-            &.active {
-                #Fill-1 {
-                    fill: @blue;
-                }
-                #Fill-3 {
-                    fill: @blue;
-                    opacity: .5;
-                }
-                #Fill-5 {
-                    fill: #D2EBF9;
-                }
-            }
-        }
         &.colorpicker-fill-radial {
             defs stop {
                 transition: .15s ease-in-out all;
             }
             &.active {
-                svg rect{
+                svg path{
                     fill:inherit;
                 }
                 defs stop {
@@ -274,7 +255,7 @@
                 transition: .15s ease-in-out all;
             }
             &.active {
-                svg rect{
+                svg path{
                     fill:inherit;
                 }
                 defs stop {
