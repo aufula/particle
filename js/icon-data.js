@@ -254,6 +254,8 @@ angular.module("lucidIcons", [])
                     "icons": [{
                         "name": "icon-chevron-18px"
                     }, {
+                        "name": "icon-check-18px"
+                    }, {
                         "name": "icon-gear-18px"
                     }, {
                         "name": "icon-navigator-18px"

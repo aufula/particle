@@ -108,7 +108,7 @@ particleApp.controller('componentController', function($scope, lucidComponentFac
     $scope.components = $filter('filter')(lucidComponentFactory, {
         "groupid": $routeParams.componentGroupID
     });
-    $scope.componentPath = "components/1.2/";
+    $scope.componentPath = "components/2.0/";
 
     $scope.searchResults = $routeParams.searchResults;
 
