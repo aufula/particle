@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-chevron-18px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="18px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-chevron-18px" sketch:type="MSArtboardGroup" fill="#5A5A5A">
+            <path d="M5.9994,16 C5.7734,16 5.5464,15.924 5.3594,15.768 C4.9354,15.415 4.8784,14.784 5.2314,14.36 L9.2704,9 L5.2314,3.64 C4.8784,3.216 4.9354,2.585 5.3594,2.232 C5.7844,1.878 6.4144,1.936 6.7684,2.36 L11.9994,9 L6.7684,15.64 C6.5704,15.877 6.2864,16 5.9994,16" id="chebron" sketch:type="MSShapeGroup"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,131 @@
+/*Lucid Particle Components
+
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+// end reset
+//start general css.
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+@font-stack: 'Source Sans Pro', sans-serif;
+//
+// Blue Steel
+@blue-steel: #3d4752;
+@blue-steel-2: #77818C;
+@blue-steel-3: #95A8BA;
+@blue-steel-dark: #212C35;
+
+// Grey
+@dark-grey: #A5A5A5;
+@light-grey: #f1f1f1;
+@secondary-grey: #e5e5e5;
+@tertiary-grey: #DBDBDB;
+
+// Green
+@green: #8BC326;
+@light-green: #e9f2d9;
+
+// Red
+@red: #ed6058;
+@red-hover: #f18079;
+@light-red: #fbdcda;
+
+// Yellow
+@yellow: #ffaf46;
+@light-yellow: #fff3e1;
+
+// Blue
+@blue: #29AAE1;
+@blue-hover: #3cb9e5; 
+@light-blue: #d6e9f1;
+@light-blue-2: #CAEFFF;
+
+/////////////////// GENERAL CSS ///////////////
+body {
+	font-family: @font-stack;
+	color: #5a5a5a;
+}
+img {
+    max-width: 100%;
+}
+input{
+	font-family:@font-stack;
+	font-size:14px;
+}
+
+.reversed-text{
+    font-weight: 200;
+}
+/////////////////// PARTICLES /////////////////
+@import "input/lucid-input.less";
+@import "input-stepper/lucid-input-stepper.less";
+@import "more-drawer/lucid-more-drawer.less";
+@import "buttcon/lucid-buttcon.less";
+@import "buttcon-popover/lucid-buttcon-popover.less";
+@import "color-picker/lucid-color-picker.less";
+@import "modal/lucid-modal.less";
+@import "finger-tabs/lucid-finger-tabs.less";
+@import "button/lucid-button.less";
+@import "icon/lucid-icon.less";
+@import "notification/lucid-notification.less";
+@import "select/lucid-select.less";
+@import "context-menu/lucid-context-menu.less";
+@import "collapse-bar/lucid-collapse-bar.less";
+@import "toggle/lucid-toggle.less";
+@import "edit-in-place/lucid-edit-in-place.less";
+

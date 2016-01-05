@@ -1,0 +1,1481 @@
+/*Lucid Particle Components
+
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  color: #5a5a5a;
+}
+img {
+  max-width: 100%;
+}
+input {
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 14px;
+}
+.reversed-text {
+  font-weight: 200;
+}
+.lucid-input-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  width: 100%;
+}
+.lucid-input-wrapper .lucid-input {
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #77818C;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 28px;
+  color: #3d4752;
+  width: 100%;
+  outline: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+.lucid-input-wrapper.condensed .lucid-input {
+  background: #fff;
+  height: 22px;
+  line-height: 22px;
+  border: 1px solid #C7C7C7;
+  padding: 0 3px;
+}
+.input-label {
+  font-size: 10px;
+  line-height: 10px;
+  margin-top: 4px;
+  text-transform: uppercase;
+  text-align: left;
+}
+.lucid-input-stepper-wrapper {
+  display: inline-block;
+  vertical-align: top;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper {
+  position: relative;
+  font-size: 14px;
+  box-sizing: border-box;
+  display: inline-block;
+  font-family: 'Source Sans Pro', sans-serif;
+  vertical-align: top;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper > input {
+  background: transparent;
+  padding: 0;
+  border: none;
+  border-bottom: 1px solid #77818C;
+  box-sizing: border-box;
+  font-size: 14px;
+  height: 28px;
+  color: #3d4752;
+  width: 100%;
+  outline: none;
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+  padding-right: 10px;
+  text-align: left;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-input-unit {
+  position: absolute;
+  top: 6px;
+  right: 13px;
+  font-size: 14px;
+  color: #3d4752;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-up,
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down {
+  position: absolute;
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/component-spinner-handle.svg) center center no-repeat;
+  width: 10px;
+  height: 14px;
+  right: 0px;
+  cursor: pointer;
+  opacity: .5;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-up:hover,
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down:hover {
+  opacity: 1;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-up {
+  top: 1px;
+}
+.lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down {
+  bottom: 1px;
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper {
+  background: #FFF;
+  border: 1px solid #A5A5A5;
+  border-radius: 3px;
+  height: 22px;
+  padding: 0 2px 0 6px;
+}
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper > input {
+  height: 20px;
+  border-bottom: none;
+}
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper .lucid-up,
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper .lucid-down {
+  height: 11px;
+  opacity: 1;
+  right: 2px;
+}
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper .lucid-up {
+  top: 0px;
+}
+.lucid-input-stepper-wrapper.condensed .lucid-input-stepper .lucid-down {
+  bottom: 0;
+}
+.lucid-drawer-wrapper .lucid-wrapper-overflow-hidden {
+  overflow: hidden;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button {
+  position: relative;
+  background-color: #66737f;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  cursor: pointer;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-center-text {
+  display: inline-block;
+  position: relative;
+  padding-right: 13px;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-button-text {
+  font-size: 14px;
+  color: #fff;
+  text-align: center;
+  height: 25px;
+  line-height: 25px;
+  font-weight: 100;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon {
+  position: absolute;
+  top: 10px;
+  right: 0;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+  font-size: 0;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon g {
+  fill: #fff;
+}
+.lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.lucid-drawer-wrapper .lucid-popover-menu-drawer {
+  padding: 10px;
+  background: #e5e5e5;
+  box-sizing: border-box;
+  opacity: 1;
+  margin-top: 0;
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+}
+.lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
+  margin-top: 0px !important;
+}
+.lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-hide {
+  opacity: 0;
+}
+.lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-hide.top-handle-height {
+  height: 0 !important;
+  padding: 0;
+}
+.lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
+  border-radius: 0;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
+  -webkit-transform: rotateZ(0deg);
+      -ms-transform: rotate(0deg);
+          transform: rotateZ(0deg);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+}
+.hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
+  display: none;
+}
+.lucid-buttcon {
+  width: 32px;
+  height: 32px;
+  background: transparent;
+  border-radius: 3px;
+  position: relative;
+  font-size: 0;
+  display: inline-block;
+  padding: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  text-align: center;
+}
+.lucid-buttcon img,
+.lucid-buttcon svg {
+  max-width: 100%;
+}
+.lucid-buttcon .lucid-buttcon-image {
+  width: 22px;
+  height: 22px;
+  display: inline-block;
+}
+.lucid-buttcon .lucid-buttcon-image svg path,
+.lucid-buttcon .lucid-buttcon-image svg polygon,
+.lucid-buttcon .lucid-buttcon-image svg rect {
+  -webkit-transition: all 0.15s ease-in-out;
+  transition: all 0.15s ease-in-out;
+}
+.lucid-buttcon .input-label {
+  text-align: center;
+}
+.lucid-buttcon.active .lucid-buttcon-image svg path,
+.lucid-buttcon.active .lucid-buttcon-image svg polygon,
+.lucid-buttcon.active .lucid-buttcon-image svg rect {
+  fill: #29AAE1;
+}
+.lucid-buttcon.active .input-label {
+  color: #29AAE1;
+}
+.lucid-buttcon.has-label {
+  padding: 0;
+  width: inherit;
+  height: inherit;
+}
+.lucid-buttcon.condensed .lucid-buttcon-image {
+  width: 24px;
+  padding: 3px 4px;
+  background: #fff;
+  border: 1px solid #A5A5A5;
+  border-radius: 2px;
+}
+.lucid-buttcon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.lucid-popover-menu {
+  background-color: #f1f1f1;
+  border-radius: 4px;
+  box-shadow: 1px 3px 10px rgba(0, 0, 0, 0.25);
+  position: absolute;
+  z-index: 10;
+  top: 55px;
+  margin-top: 0;
+  opacity: 1;
+  text-align: left;
+}
+.lucid-popover-menu:after {
+  content: '';
+  border-bottom: 10px #f1f1f1 solid;
+  border-left: 8px transparent solid;
+  border-right: 8px transparent solid;
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  margin-left: -7px;
+}
+.lucid-popover-menu.ng-enter {
+  margin-top: -7px;
+  opacity: 0;
+}
+.lucid-popover-menu.ng-enter-active {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-popover-menu.ng-leave {
+  margin-top: 0;
+  opacity: 1;
+}
+.lucid-popover-menu.ng-leave-active {
+  margin-top: -7px;
+  opacity: 0;
+}
+.lucid-popover-menu.ng-animate {
+  -webkit-transition: .1s all linear;
+  transition: .1s all linear;
+}
+.lucid-popover-menu ul {
+  padding: 0;
+  margin: 0;
+}
+.lucid-popover-menu .lucid-wrapper-overflow-hidden {
+  overflow: hidden;
+  border-radius: 3px;
+}
+.lucid-popover-menu .lucid-buttcon.active {
+  background-color: #fff;
+}
+.popover-list .lucid-popover-menu {
+  background: #FFF;
+}
+.popover-list .lucid-popover-menu:after {
+  border-bottom-color: #FFF;
+}
+.popover-list .lucid-select-wrapper {
+  width: 100%;
+  padding: 3px 2px;
+}
+.popover-list .lucid-select-wrapper .lucid-select-dropdown {
+  top: 0;
+  position: static;
+  border-radius: 3px;
+  display: inline-block;
+  position: relative;
+  box-shadow: none;
+  width: 100%;
+  opacity: 1;
+}
+.lucid-color-picker .lucid-popover-menu {
+  font-size: 0;
+  box-sizing: border-box;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top {
+  padding: 15px 15px 12px;
+  border-radius: 5px 5px 0 0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch {
+  float: right;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch.active {
+  background: #FFF;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle {
+  position: relative;
+  height: 28px;
+  font-size: 12px;
+  line-height: 20px;
+  padding: 0 10px;
+  display: inline-block;
+  background-color: #fff;
+  cursor: pointer;
+  border-left: 1px solid #DCDCDC;
+  box-sizing: border-box;
+  width: 63.333px;
+  text-align: center;
+  border: 1px solid #C7C7C7;
+  margin-left: -1px;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle:first-child {
+  border-radius: 3px 0 0 3px;
+  margin-left: 0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle:last-child {
+  border-radius: 0 3px 3px 0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle.active {
+  box-shadow: 0 0 4px #29AAE1;
+  z-index: 1;
+  border: 1px solid #29AAE1;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle:hover {
+  background-color: #fff;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle .swatch {
+  height: 6px;
+  position: absolute;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle .swatch.lucid-transparent-swatch {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) #FFF !important;
+  background-size: 6px !important;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle.lucid-disabled {
+  background: transparent;
+  color: #C7C7C7;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-top .make-default-swatch {
+  float: right;
+  display: none;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap {
+  background-color: #E5E5E5;
+}
+.lucid-color-picker .lucid-popover-menu .swatch-colors {
+  text-align: left;
+  padding: 15px;
+  position: relative;
+  z-index: 1;
+}
+.lucid-color-picker .lucid-popover-menu ul.lucid-recent-colors {
+  background-color: #fff;
+  display: none;
+}
+.lucid-color-picker .lucid-popover-menu ul.lucid-colorpicker-colors {
+  margin-bottom: 0;
+}
+.lucid-color-picker .lucid-popover-menu .on-canvas-title {
+  font-size: 14px;
+  padding-bottom: 5px;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square {
+  width: 36px;
+  height: 36px;
+  position: relative;
+  background: rgba(0, 0, 0, 0);
+  border-radius: 4px;
+  padding: 3px;
+  box-sizing: border-box;
+  display: inline-block;
+  -webkit-transition: 0.1s ease-in-out background;
+  transition: 0.1s ease-in-out background;
+  vertical-align: top;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check {
+  position: absolute;
+  right: -4px;
+  top: -4px;
+  width: 14px;
+  height: 14px;
+  z-index: 3;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square .lucid-swatch-check img {
+  -webkit-transform: scale(0.01);
+      -ms-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-selected {
+  background: rgba(0, 0, 0, 0.1);
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-selected .lucid-swatch-check img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-swatch-plus {
+  padding: 2px;
+  cursor: pointer;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-swatch-square.lucid-swatch-plus img {
+  border: 3px solid rgba(0, 0, 0, 0.1);
+  padding: 2px;
+  border-radius: 3px;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square {
+  height: 21px;
+  width: 28px;
+  display: inline-block;
+  cursor: pointer;
+  position: relative;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square.lucid-transparent {
+  background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-transparent-grid.svg) repeat #FFF;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square.blank {
+  cursor: auto;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square:hover .lucid-selected-color {
+  opacity: .8;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square .lucid-selected-color {
+  border: 2px solid #fff;
+  width: 28px;
+  height: 21px;
+  left: 0px;
+  top: 0px;
+  box-sizing: border-box;
+  position: absolute;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.25);
+  opacity: 0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square .lucid-selected-color .lucid-inset-shadow {
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  height: 100%;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-square .lucid-selected-color.lucid-selected {
+  width: 31px;
+  height: 25px;
+  left: -2px;
+  top: -2px;
+  z-index: 2;
+  opacity: 1;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments {
+  padding: 0 15px 15px;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li {
+  display: inline-block;
+  padding-right: 10px;
+  vertical-align: top;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li input {
+  text-transform: uppercase;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap {
+  display: inline-block;
+  height: 22px;
+  width: 92px;
+  padding-right: 10px;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap input[type="range"] {
+  margin: 8px 0;
+}
+.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li:last-child {
+  padding-right: 0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-popover-menu-drawer {
+  background-color: #f1f1f1;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-popover-menu-drawer ul {
+  width: 200px;
+  margin: 0 auto;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-popover-menu-drawer ul li {
+  display: inline-block;
+  width: 50px;
+  text-align: center;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-select-wrapper {
+  margin-top: 10px;
+  width: 100%;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-select-dropdown {
+  width: 100%;
+  top: 28px;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-1,
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-5,
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image #Fill-3 {
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-1 {
+  fill: #29AAE1;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-3 {
+  fill: #29AAE1;
+  opacity: .5;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-image.active #Fill-5 {
+  fill: #D2EBF9;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg rect {
+  fill: inherit;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop {
+  stop-color: #29AAE1;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop:first-child {
+  stop-color: #D2EBF9;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg rect {
+  fill: inherit;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop {
+  stop-color: #29AAE1;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop:first-child {
+  stop-color: #D2EBF9;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
+  -webkit-transition: 0.15s ease-in-out all;
+  transition: 0.15s ease-in-out all;
+}
+.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
+  fill: #29AAE1;
+}
+.lucid-color-picker .lucid-buttcon.active {
+  background: transparent;
+}
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 4px 0;
+  width: 100%;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #222, 0px 0px 0px #2f2f2f;
+  background: #B2B6B9;
+  border-radius: 5px;
+  border: 0px solid black;
+}
+input[type=range]::-webkit-slider-thumb {
+  box-shadow: 0px 0px 1px #111, 0px 0px 0px #1e1e1e;
+  border: 1px solid transparent;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: #32AAE1;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -4px;
+}
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #bfc3c5;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 0px 0px 0px #222, 0px 0px 0px #2f2f2f;
+  background: #B2B6B9;
+  border-radius: 5px;
+  border: 0px solid black;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 0px 0px 1px #111, 0px 0px 0px #1e1e1e;
+  border: 1px solid transparent;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: #32AAE1;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 12px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #a5a9ad;
+  border: 0px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #222, 0px 0px 0px #2f2f2f;
+}
+input[type=range]::-ms-fill-upper {
+  background: #B2B6B9;
+  border: 0px solid black;
+  border-radius: 10px;
+  box-shadow: 0px 0px 0px #222, 0px 0px 0px #2f2f2f;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 0px 0px 1px #111, 0px 0px 0px #1e1e1e;
+  border: 1px solid transparent;
+  height: 12px;
+  width: 12px;
+  border-radius: 6px;
+  background: #32AAE1;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #B2B6B9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #bfc3c5;
+}
+.lucid-colorpicker-placeholder {
+  padding: 15px 16px;
+  height: 186px;
+}
+.lucid-modal-wrapper {
+  position: relative;
+  z-index: 1;
+}
+.lucid-modal-wrapper.ng-hide {
+  opacity: 0;
+}
+.lucid-modal-wrapper.ng-animate {
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+}
+.lucid-modal-wrapper .lucid-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
+  z-index: 2;
+}
+.lucid-modal-wrapper .lucid-modal.ng-hide {
+  -webkit-transform: translateY(10px);
+      -ms-transform: translateY(10px);
+          transform: translateY(10px);
+  opacity: 0;
+}
+.lucid-modal-wrapper .lucid-modal.ng-animate {
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+}
+.lucid-modal-wrapper .lucid-modal > header {
+  background: #3d4752;
+  height: 42px;
+  width: 100%;
+  text-align: left;
+  display: inline-block;
+  padding: 10px 15px;
+}
+.lucid-modal-wrapper .lucid-modal > header .lucid-modal-title {
+  color: #fff;
+  line-height: 22px;
+  font-size: 14px;
+  font-weight: 200;
+}
+.lucid-modal-wrapper .lucid-modal > header .lucid-close-modal {
+  width: 22px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+}
+.lucid-modal-wrapper .lucid-modal > footer {
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 45px;
+  background: #EEEEEE;
+  padding: 8px 10px;
+  box-sizing: border-box;
+  white-space: nowrap;
+  font-size: 0;
+}
+.lucid-modal-wrapper .lucid-modal > footer .lucid-button {
+  margin-left: 10px;
+}
+.lucid-modal-wrapper .has-footer {
+  padding-bottom: 45px;
+}
+.lucid-modal-wrapper .lucid-modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(90, 90, 90, 0.5);
+  z-index: 1;
+  opacity: 1;
+}
+.lucid-finger-tabs-wrapper {
+  position: relative;
+  height: 100%;
+}
+.lucid-finger-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 240px;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  border-right: 1px solid #d2d2d2;
+}
+.lucid-finger-tabs .lucid-finger-tab {
+  text-align: left;
+  cursor: pointer;
+  position: relative;
+  color: #3d4752;
+  background-color: #fff;
+  border-bottom: 1px solid #d2d2d2;
+  height: 44px;
+  font-size: 16px;
+  padding: 0 15px;
+  line-height: 42px;
+  white-space: nowrap;
+  font-weight: 300;
+}
+.lucid-finger-tabs .lucid-finger-tab svg path,
+.lucid-finger-tabs .lucid-finger-tab svg polygon {
+  fill: #3d4752;
+}
+.lucid-finger-tabs .lucid-finger-tab.selected {
+  color: #fff;
+  background-color: #77818C;
+}
+.lucid-finger-tabs .lucid-finger-tab.selected svg path,
+.lucid-finger-tabs .lucid-finger-tab.selected svg polygon {
+  fill: #FFF;
+}
+.lucid-finger-tabs .lucid-finger-tab.selected:after {
+  position: absolute;
+  content: " ";
+  right: -1px;
+  top: 11px;
+  border-right: 10px solid #fff;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+.lucid-finger-tabs .lucid-finger-tab .lucid-icon-22 {
+  margin: 10px 6px 0 0;
+  vertical-align: top;
+}
+.lucid-tab-content {
+  position: absolute;
+  left: 240px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  padding: 40px;
+  overflow: auto;
+}
+.finger-tabs-blue .finger-tab {
+  cursor: pointer;
+  position: relative;
+  color: #2c84b5;
+  background-color: #fff;
+  border-bottom: 1px solid #d2d2d2;
+}
+.lucid-button {
+  padding: 4px 15px 6px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  font-weight: 200;
+  font-family: 'Source Sans Pro', sans-serif;
+  cursor: pointer;
+  outline: none;
+  display: inline-block;
+  box-sizing: border-box;
+  whitespace: nowrap;
+  -webkit-transition: 0.15s ease-in-out background-color;
+  transition: 0.15s ease-in-out background-color;
+}
+.lucid-button.lucid-blue {
+  background-color: #29AAE1;
+  color: #fff;
+}
+.lucid-button.lucid-blue:hover {
+  background-color: #3cb9e5;
+}
+.lucid-button.lucid-green {
+  background-color: #8BC326;
+  color: #fff;
+}
+.lucid-button.lucid-yellow {
+  background-color: #ffaf46;
+  color: #fff;
+}
+.lucid-button.lucid-red {
+  background-color: #ed6058;
+  color: #fff;
+}
+.lucid-button.lucid-red:hover {
+  background-color: #f18079;
+}
+.lucid-button.lucid-cancel {
+  background-color: #A5A5A5;
+  color: #fff;
+}
+.lucid-button.lucid-cancel:hover {
+  background-color: #B5B5B5;
+}
+.lucid-button.lucid-button-icon {
+  padding-left: 7px;
+}
+.lucid-button.lucid-button-icon .lucid-icon-18 {
+  vertical-align: top;
+  margin-top: 1px;
+  margin-bottom: -1px;
+  margin-right: 3px;
+}
+.lucid-icon-18,
+.lucid-icon-22 {
+  vertical-align: top;
+  display: inline-block;
+}
+.lucid-icon-18 svg,
+.lucid-icon-22 svg {
+  vertical-align: top;
+}
+.lucid-icon-18 {
+  width: 18px;
+  height: 18px;
+}
+.lucid-icon-22 {
+  width: 22px;
+  height: 22px;
+}
+.lucid-icon svg path,
+.lucid-icon svg polygon,
+.lucid-icon svg rect,
+.lucid-icon svg circle {
+  -webkit-transition: 0.15s ease-in-out;
+  transition: 0.15s ease-in-out;
+}
+.lucid-icon.fill-blue-steel svg path,
+.lucid-icon.fill-blue-steel svg polygon,
+.lucid-icon.fill-blue-steel svg rect,
+.lucid-icon.fill-blue-steel svg circle {
+  fill: #3d4752;
+}
+.lucid-icon.fill-active svg path,
+.lucid-icon.fill-active svg polygon,
+.lucid-icon.fill-active svg rect,
+.lucid-icon.fill-active svg circle {
+  fill: #29AAE1;
+}
+.lucid-icon.fill-white svg path,
+.lucid-icon.fill-white svg polygon,
+.lucid-icon.fill-white svg rect,
+.lucid-icon.fill-white svg circle {
+  fill: #fff;
+}
+.lucid-notification {
+  padding: 20px 15px 20px 48px;
+  position: relative;
+  line-height: 22px;
+  color: #5a5a5a;
+  text-align: left;
+  font-size: 16px;
+}
+.lucid-notification [ng-transclude] {
+  font-size: 16px;
+}
+.lucid-notification .notification-icon {
+  width: 22px;
+  height: 22px;
+  position: absolute;
+  left: 15px;
+  top: 20px;
+}
+.lucid-notification.lucid-notification-information {
+  background-color: #d6e9f1;
+}
+.lucid-notification.lucid-notification-information .notification-icon {
+  background: url(http://particle.golucid.co/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
+}
+.lucid-notification.lucid-notification-information button {
+  background-color: #29AAE1;
+}
+.lucid-notification.lucid-notification-complete {
+  background-color: #e9f2d9;
+}
+.lucid-notification.lucid-notification-complete .notification-icon {
+  background: url(http://particle.golucid.co/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
+}
+.lucid-notification.lucid-notification-complete button {
+  background-color: #8BC326;
+}
+.lucid-notification.lucid-notification-alert {
+  background-color: #fff3e1;
+}
+.lucid-notification.lucid-notification-alert .notification-icon {
+  background: url(http://particle.golucid.co/components/1.1/icon/img/alert-triangle-yellow.svg) center center no-repeat;
+}
+.lucid-notification.lucid-notification-alert button {
+  background-color: #ffaf46;
+}
+.lucid-notification.lucid-notification-error {
+  background-color: #fbdcda;
+}
+.lucid-notification.lucid-notification-error .notification-icon {
+  background: url(http://particle.golucid.co/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
+}
+.lucid-notification.lucid-notification-error button {
+  background-color: #ed6058;
+}
+.lucid-notification button {
+  position: absolute;
+  right: 15px;
+  top: 20px;
+  color: #fff;
+}
+.lucid-select-wrapper {
+  position: relative;
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+}
+.lucid-select-wrapper .selected-option-wrapper {
+  position: relative;
+}
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow {
+  position: absolute;
+  width: 8px;
+  height: 6px;
+  top: 13px;
+  right: 0px;
+  cursor: pointer;
+}
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg {
+  vertical-align: top;
+}
+.lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg path {
+  fill: #77818C;
+}
+.lucid-select-wrapper .selected-option-wrapper .lucid-selected-option {
+  text-align: left;
+  display: block;
+  cursor: pointer;
+  border-bottom: 1px solid #77818C;
+  padding: 8px 18px 5px 0;
+}
+.lucid-select-wrapper .lucid-select-dropdown {
+  display: inline-block;
+  position: absolute;
+  z-index: 1;
+  top: 32px;
+  left: 0;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  background: #fff;
+  width: 100%;
+  opacity: 1;
+}
+.lucid-select-wrapper .lucid-select-dropdown > div {
+  padding: 3px 2px;
+  margin-top: 0;
+  -webkit-transition: 0.1s ease-in-out margin;
+  transition: 0.1s ease-in-out margin;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-hide {
+  opacity: 0;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-hide > div {
+  margin-top: -10px;
+}
+.lucid-select-wrapper .lucid-select-dropdown.ng-animate {
+  overflow: hidden;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+  cursor: pointer;
+  padding: 5px 15px;
+  text-align: left;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+  background: #F5F5F5;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active {
+  background: #e5e5e5;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active:hover {
+  opacity: .9;
+}
+.lucid-select-wrapper.condensed {
+  border-radius: 3px;
+}
+.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow {
+  top: 9px;
+  right: 7px;
+}
+.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow svg path {
+  fill: #3d4752;
+}
+.lucid-select-wrapper.condensed .selected-option-wrapper .lucid-selected-option {
+  background: #FFF;
+  border: 1px solid #A5A5A5;
+  border-radius: 3px;
+  height: 22px;
+  line-height: 20px;
+  padding: 0 20px 0 5px;
+}
+.lucid-select-wrapper.condensed .lucid-select-dropdown {
+  top: 22px;
+  box-shadow: none;
+  background: #fff;
+}
+[lucid-context-menu] {
+  cursor: pointer;
+}
+.lucid-context-menu {
+  position: fixed;
+  background: #fff;
+  padding: 5px 0;
+  min-width: 200px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  z-index: 10;
+  text-align: left;
+  color: #3d4752;
+  /* Hide Dropdowns by Default */
+  /* Display Dropdowns on Hover */
+  /* Fisrt Tier Dropdown */
+  /* Second, Third and more Tiers */
+  /* Change this in order to change the Dropdown symbol */
+}
+.lucid-context-menu ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+.lucid-context-menu ul li {
+  display: inline-block;
+  line-height: 20px;
+  font-size: 14px;
+  padding: 2px 12px;
+  width: 100%;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.lucid-context-menu ul li:hover {
+  background: #f1f1f1;
+}
+.lucid-context-menu ul li.context-divider {
+  background: #e5e5e5;
+  height: 1px;
+  margin: 5px 0;
+  padding: 0;
+}
+.lucid-context-menu ul li a {
+  display: block;
+  padding: 0 10px;
+  color: #3d4752;
+  text-decoration: none;
+}
+.lucid-context-menu ul li a.saving {
+  color: #ccc;
+}
+.lucid-context-menu ul li span.hotkey {
+  position: absolute;
+  right: 7px;
+  top: 0;
+  bottom: 0;
+  color: #999;
+}
+.lucid-context-menu ul li li {
+  background: #fff;
+}
+.lucid-context-menu ul li li.dropdown-divider {
+  border-bottom: 1px solid #f1f1f1;
+}
+.lucid-context-menu ul li li a {
+  color: #3d4752;
+}
+.lucid-context-menu ul li li a:hover {
+  background-color: #f1f1f1;
+}
+.lucid-context-menu ul ul {
+  display: none;
+  position: absolute;
+  padding: 5px 0;
+  background: #FFF;
+  top: - 5px;
+  left: 200px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.3);
+}
+.lucid-context-menu ul li:hover > ul {
+  display: inherit;
+  top: -5px;
+}
+.lucid-context-menu ul li {
+  width: 200px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+.lucid-context-menu ul ul ul {
+  position: absolute;
+  top: 0px;
+  left: 200px;
+  z-index: -1;
+}
+.lucid-context-menu ul li.lucid-context-more:after {
+  font-family: FontAwesome;
+  content: "\f0da";
+  position: absolute;
+  right: 6px;
+}
+.lucid-collapse-bar {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: left;
+  opacity: 1;
+  vertical-align: top;
+}
+.lucid-collapse-bar .collapse-bar-top {
+  background-color: #DCDBDC;
+  padding: 8px 10px;
+  position: relative;
+  color: #555;
+  -webkit-transition: 0.3s ease-in-out;
+  transition: 0.3s ease-in-out;
+  box-sizing: border-box;
+  height: 32px;
+  text-align: left;
+  border-radius: 4px;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 30px;
+  padding: 12px 4px 0 11px;
+  cursor: pointer;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
+  vertical-align: top;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
+  -webkit-transform: rotate(0);
+      -ms-transform: rotate(0);
+          transform: rotate(0);
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+  fill: #77818C;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
+  -webkit-transform: rotate(-90deg);
+      -ms-transform: rotate(-90deg);
+          transform: rotate(-90deg);
+}
+.lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
+  vertical-align: top;
+  line-height: 15px;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 15px;
+  display: inline-block;
+}
+.lucid-collapse-bar .collapse-bar-top.no-collapse .lucid-hide-content-icon {
+  display: none;
+}
+.lucid-collapse-bar .collapse-bar-top.no-collapse .collapse-bar-name {
+  padding-left: 0;
+}
+.lucid-collapse-bar .lucid-collapse-bar-content {
+  -webkit-transition: all .5s;
+  transition: all .5s;
+  width: 100%;
+}
+.lucid-collapse-bar .lucid-collapse-bar-content.ng-animate {
+  overflow: hidden;
+}
+.lucid-toggle {
+  display: inline-block;
+}
+.lucid-toggle .toggle-button {
+  font-size: 12px;
+  height: 22px;
+  line-height: 20px;
+  font-weight: 400;
+  border-radius: 4px;
+  width: 36px;
+  background: #DBDBDB;
+  border: 1px solid #979797;
+  color: #5A5A5A;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+  text-align: center;
+  cursor: pointer;
+}
+.lucid-toggle.reversed-text .toggle-button {
+  border: 1px solid #59697C;
+  background: #A9B3BE;
+}
+.lucid-toggle .toggle-button.active {
+  background: #CAEFFF;
+  border: 1px solid #29AAE1;
+  color: #29AAE1;
+}
+.edit-in-place-wrapper .edit-in-place {
+  line-height: 1em;
+  font-size: 1em;
+  padding: 0;
+  vertical-align: top;
+  cursor: pointer;
+}
+.edit-in-place-wrapper .edit-in-place-input {
+  font-style: italic;
+  outline: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: -2px;
+  cursor: auto;
+}
+.edit-in-place-wrapper.reversed-text .edit-in-place {
+  color: #fff;
+  font-weight: 300;
+}
+.edit-in-place-wrapper.reversed-text input.edit-in-place {
+  font-weight: 300;
+}

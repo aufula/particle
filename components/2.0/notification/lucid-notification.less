@@ -1,0 +1,60 @@
+.lucid-notification {
+    padding: 20px 15px 20px 48px;
+    position: relative;
+    line-height: 22px;
+    color:#5a5a5a;
+    text-align: left;
+    font-size:16px;
+    [ng-transclude]{
+        font-size:16px;
+    }
+    .notification-icon {
+        width: 22px;
+        height: 22px;
+        position: absolute;
+        left: 15px;
+        top: 20px;
+    }
+    &.lucid-notification-information {
+        background-color: @light-blue;
+        .notification-icon {
+            background: url(http://particle.golucid.co/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
+        }
+        button{
+            background-color:@blue;
+        }
+    }
+    &.lucid-notification-complete {
+        background-color: @light-green;
+        .notification-icon {
+            background: url(http://particle.golucid.co/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
+        }
+        button{
+            background-color:@green;
+        }
+    }
+    &.lucid-notification-alert {
+        background-color: @light-yellow;
+        .notification-icon {
+            background: url(http://particle.golucid.co/components/1.1/icon/img/alert-triangle-yellow.svg) center center no-repeat;
+        }
+        button{
+            background-color:@yellow;
+        }
+    }
+    &.lucid-notification-error {
+        background-color: @light-red;
+        .notification-icon {
+            background: url(http://particle.golucid.co/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
+        }
+        button{
+            background-color:@red;
+        }
+    }
+    button{
+        position:absolute;
+        right:15px;
+        top:20px;
+        color:#fff;
+    }
+}

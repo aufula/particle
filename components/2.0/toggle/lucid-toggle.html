@@ -1,0 +1,10 @@
+<div class="lucid-toggle">  
+    <div class="toggle-button" ng-click="toggle=!toggle" ng-class="{'active': toggle}" style="width: {{width}}px;">
+        <span ng-show="toggle">{{activetext}}</span>
+        <span ng-hide="toggle">{{inactivetext}}</span>
+    </div>
+    <div class="input-label" ng-if="label">
+        <span>{{label}}</span>
+    </div>
+
+</div>
