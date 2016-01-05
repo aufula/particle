@@ -1,6 +1,6 @@
 /*global angular : true fixes codekit error*/
 
-//include components js
+//include Components js
 //@codekit-append "input/lucid-input.js"
 //@codekit-append "input-stepper/lucid-input-stepper.js"
 //@codekit-append "color-picker/lucid-color-picker.js"
@@ -15,12 +15,10 @@
 //@codekit-append "button/lucid-button.js"
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "toggle/lucid-toggle.js"
-
 //@codekit-append "edit-in-place/lucid-edit-in-place.js"
 
 //include Data JS
 //@codekit-append "data/lucid-data.js"
-//@codekit-append "shapes-manager/lucid-shapes-data.js"
 
 angular.module('appConfig', [])
 
@@ -35,8 +33,8 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    'componentsURL': "/components/2.0/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/1.2/" //github
+    //'componentsURL': "/components/2.0/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/2.0/" //github
 
 });
 
