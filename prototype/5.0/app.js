@@ -774,10 +774,13 @@ angular.module('particleApp', ['lucidComponents'])
             window.open(url, "_blank", "toolbar=yes, scrollbars=yes, resizable=yes, top=500, left=500, width=400, height=400");
         };
         //start search shape function
+        $scope.searchgroups = {};
+        $scope.searchgroups.searched = false;
         $scope.searchShapeGroups = function(searchInput) {
 
             $scope.searchShapeGroupsResults = $filter('filter')($scope.lucidShapeGroups, searchInput);
             $scope.filterShapes = searchInput;
+            $scope.searchgroups.searched = true;
         };
     })
 

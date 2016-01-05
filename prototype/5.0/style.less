@@ -1079,7 +1079,7 @@ a {
                 top: 0;
                 .lucid-popover-menu {
                     background: #FFF;
-                    color:@blue-steel;
+                    color: @blue-steel;
                     top: 38px;
                     &:after {
                         border-bottom-color: #FFF;
@@ -1136,13 +1136,14 @@ a {
         background: @blue-steel-2;
         padding: 8px;
         font-size: 0;
+        position: relative;
         >input {
             width: 190px;
             //margin-left:-3px;
             height: 26px;
             //line-height: 29px;
             border: none;
-            outline:none;
+            outline: none;
             border-left: 1px solid @blue-steel-2;
             border-radius: 0 3px 3px 0;
             padding: 0 10px;
@@ -1155,6 +1156,12 @@ a {
                 color: #828282;
                 //font-family:"Source Sans Pro";
             }
+        }
+        .search-x {
+            position: absolute;
+            right: 13px;
+            top: 11px;
+            cursor: pointer;
         }
         >span {
             margin-left: 10px;
@@ -1265,6 +1272,8 @@ a {
         font-size: 14px;
         padding: 20px;
         line-height: 20px;
+        text-align: center;
+        width: ~"calc(100% - 20px)";
         p {
             color: #828282;
             margin-bottom: 15px;
@@ -1954,9 +1963,10 @@ a {
                 margin-right: -4px;
                 border-radius: 4px 0 0 4px;
             }
-            &.inactive{
-                opacity:.35;
-                .lucid-popover-menu, .lucid-select-dropdown{
+            &.inactive {
+                opacity: .35;
+                .lucid-popover-menu,
+                .lucid-select-dropdown {
                     display: none;
                 }
             }
@@ -2167,7 +2177,7 @@ a {
         }
         .page-thumb-name .edit-in-place {
             text-align: center;
-            color:#5a5a5a;
+            color: #5a5a5a;
             font-weight: 400;
         }
         &:after {
@@ -2196,7 +2206,7 @@ a {
             background-size: 22px;
         }
         .page-thumb-name .edit-in-place {
-            color:#fff;
+            color: #fff;
             font-weight: 300;
         }
     }

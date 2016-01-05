@@ -1043,6 +1043,7 @@ a {
   background: #77818C;
   padding: 8px;
   font-size: 0;
+  position: relative;
 }
 .search-shapes .search-shapes-input > input {
   width: 190px;
@@ -1059,6 +1060,12 @@ a {
 .search-shapes .search-shapes-input > input::-webkit-input-placeholder {
   font-style: italic;
   color: #828282;
+}
+.search-shapes .search-shapes-input .search-x {
+  position: absolute;
+  right: 13px;
+  top: 11px;
+  cursor: pointer;
 }
 .search-shapes .search-shapes-input > span {
   margin-left: 10px;
@@ -1170,6 +1177,8 @@ a {
   font-size: 14px;
   padding: 20px;
   line-height: 20px;
+  text-align: center;
+  width: calc(100% - 20px);
 }
 .search-shapes .no-search-results p {
   color: #828282;
