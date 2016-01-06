@@ -249,6 +249,12 @@ angular.module("lucidIcons", [])
                     'name': 'icon-text-top-right-22px'
                 }, {
                     'name': 'icon-text-underline-22px'
+                }, {
+                    'name': 'icon-table-grid-22px'
+                }, {
+                    'name': 'icon-table-grid-column-22px'
+                }, {
+                    'name': 'icon-table-grid-row-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
