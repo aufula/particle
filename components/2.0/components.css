@@ -486,6 +486,9 @@ input {
   width: 100%;
   opacity: 1;
 }
+.popover-list .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+  padding: 5px 15px 5px 15px;
+}
 .lucid-color-picker .lucid-popover-menu {
   font-size: 0;
   box-sizing: border-box;
@@ -1204,19 +1207,19 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 5px 15px 5px 25px;
   text-align: left;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
+  position: relative;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
   background: #F5F5F5;
 }
-.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active {
-  background: #e5e5e5;
-}
-.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option.active:hover {
-  opacity: .9;
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option .selected-checkmark {
+  position: absolute;
+  top: 3px;
+  left: 3px;
 }
 .lucid-select-wrapper.condensed {
   border-radius: 3px;

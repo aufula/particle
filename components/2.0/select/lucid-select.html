@@ -10,7 +10,7 @@
         <div>
             <ul>
                 <li class="lucid-select-option" ng-class="{active: option == selectedOption}" ng-repeat="option in options" ng-click="$parent.selectedOption = option; $parent.showdropdown = false;">
-                    {{option}}
+                    <ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg'" ng-if="option == selectedOption"></ng-include>{{option}}
                 </li>
             </ul>
         </div>

@@ -54,19 +54,17 @@
         }
         .lucid-select-option {
             cursor: pointer;
-            padding: 5px 15px;
+            padding: 5px 15px 5px 25px;
             text-align: left;
             transition: .1s ease-in-out all;
+            position: relative;
             &:hover {
                 background: #F5F5F5;
             }
-            &.active {
-                background: @secondary-grey;
-                //color: #fff;
-                //font-weight: 200;
-                &:hover {
-                    opacity: .9;
-                }
+            .selected-checkmark{
+                position: absolute;
+                top:3px;
+                left:3px;
             }
         }
     }
