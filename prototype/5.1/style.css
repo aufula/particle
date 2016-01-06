@@ -1382,10 +1382,12 @@ a {
   right: 0;
 }
 #main-header .help {
+  color: #5a5a5a;
   vertical-align: middle;
 }
 #main-header .help .lucid-popover-menu {
   background: white;
+  top: 40px;
 }
 #main-header .help .lucid-popover-menu:after {
   border-bottom: 10px solid white;
