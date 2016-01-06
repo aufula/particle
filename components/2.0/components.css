@@ -1041,8 +1041,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
-  margin-top: 1px;
-  margin-bottom: -1px;
   margin-right: 3px;
 }
 .lucid-icon-18,
