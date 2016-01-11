@@ -1,0 +1,33 @@
+<div class="wrapper">
+    <h1>Colors & LESS</h1>
+    <div class="hr"></div>
+    <p>Click to download / copy the the svg.
+        <br>All SVGs should have the artboard size in the name, color should be applied through css.</p>
+    <div class="icon-search">
+        <input ng-model="searchResults" placeholder="Search icons">
+        <img src="components/0.0/icon/img/search-dark.svg">
+    </div>
+    <div ng-repeat="colorgroup in colors | filter: searchResults" class="color-view">
+        <h2>{{colorgroup.colorgroup}}</h2>
+        <div class="clearfix {{class}}">
+            <div class="particle-icon-wrapper" ng-repeat="color in colorgroup.colors | filter:searchResults">
+                <div class="lucid-buttcon-wrapper popover-list">
+                    <div click-outside="dropdown.show=false">
+                        <div class="lucid-color-block" style="background-color: {{color.hex}}" ng-click="dropdown.show = !dropdown.show">
+                        </div>
+                        <div class="lucid-popover-menu lucid-animate" ng-if="dropdown.show">
+                            <div class="lucid-select-wrapper">
+                                <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
+                                    <li class="lucid-select-option" clipboard text="color.hex">Copy Hex</li>
+                                    <li class="lucid-select-option" clipboard text="color.class">Copy Class</li>
+                                    <li class="lucid-select-option" >{{color.location}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <h5>{{color.name}}</h5>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,5 +1,5 @@
 /*global angular : true fixes codekit error*/
-var particleApp = angular.module('particleApp', ['appConfig', 'ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets', 'lucidProductionFactory']);
+var particleApp = angular.module('particleApp', ['appConfig', 'ngRoute', 'lucidComponentFactory', 'ngAnimate', 'lucidComponents', 'hljs', 'lucidIcons', 'lucidSnippets', 'lucidProductionFactory', 'lucidColors']);
 
 particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScope, $location) {
     var original = $location.path;
@@ -17,7 +17,7 @@ particleApp.run(['$route', '$rootScope', '$location', function($route, $rootScop
 particleApp.config(function($routeProvider) {
     $routeProvider
         .when('/overview', {
-            templateUrl: 'templates/overview.html',
+            templateUrl: 'templates/landing-page.html',
         })
         .when('/codepen', {
             templateUrl: 'templates/codepen.html',
@@ -59,6 +59,16 @@ particleApp.config(function($routeProvider) {
             controller: 'productionController',
             reloadOnSearch: false
         })
+        .when('/colors', {
+            templateUrl: 'templates/colors.html',
+            controller: 'colorController',
+            reloadOnSearch: false
+        })
+        .when('/colors/:searchResults', {
+            templateUrl: 'templates/colors.html',
+            controller: 'colorController',
+            reloadOnSearch: false
+        })
 
     .otherwise({
         redirectTo: '/overview'
@@ -92,7 +102,7 @@ particleApp.controller('iconController', function(config, $scope, lucidIconFacto
     });
 
     angular.forEach($scope.icongroups, function(icongroup) {
-        angular.forEach(icongroup.icons, function(icon){
+        angular.forEach(icongroup.icons, function(icon) {
             icon.url = config.componentsURL + 'icon/icons/' + icon.name + '.svg';
         });
     });
@@ -150,6 +160,23 @@ particleApp.controller('productionController', function($scope, lucidProductionF
         var win = window.open(url, '_blank');
         win.focus();
     };
+
+});
+particleApp.controller('colorController', function($scope, lucidColorFactory, $routeParams, $filter, $location) {
+
+    $scope.colors = lucidColorFactory;
+    $scope.searchResults = $routeParams.searchResults;
+
+    $scope.$watch('searchResults', function(newValue) {
+        if (newValue != null) {
+            var newPath = '/colors/' + newValue;
+            $location.path(newPath, false);
+            //console.log('changepath', newPath)
+        }
+
+    });
+
+
 });
 //////// directives ////////
 particleApp.directive('collapse', ['$timeout', function($timeout) {

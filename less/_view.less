@@ -1,16 +1,26 @@
-// .view {
-//     transition: .5s ease-in-out;
-//     &.ng-enter {
-//         opacity:.5;
-//     }
-//     &.ng-enter-active {
-//         opacity:1;
-//     }
-//     &.ng-leave {
-//         opacity:1;
-//         transition: 0s;
-//     }
-//     &.ng-leave-active {
-//         opacity:0;
-//     }
-// }
+.view {
+    transition: 0s ease-in-out;
+    padding-top: @nav-bar-height;
+    &.ng-animate {
+        position: absolute;
+        width: 100%;
+    }
+    &.ng-enter {
+        opacity: .5;
+    }
+    &.ng-enter-active {
+        opacity: 1;
+    }
+    &.ng-leave {
+        opacity: 1;
+        //transition: 0s;
+    }
+    &.ng-leave-active {
+        opacity: 0;
+    }
+}
+
+.wrapper {
+    max-width: 1000px;
+    padding: 50px;
+}

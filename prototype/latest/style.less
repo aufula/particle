@@ -5,30 +5,112 @@
 sans-serif;
 //
 // Blue Steel
-@blue-steel: #3d4752;
+@blue-steel: #3D4752;
 @blue-steel-2: #77818C;
 @blue-steel-3: #95A8BA;
 @blue-steel-dark: #212C35;
+@blue-steel-light: #AFB7BF;
 // Grey
-@light-grey: #f1f1f1;
-@secondary-grey: #e5e5e5;
+@light-grey: #F1F1F1;
+@secondary-grey: #E5E5E5;
 // Green
 @green: #8BC326;
-@light-green: #e9f2d9;
+@light-green: #E9F2D9;
 // Red
-@red: #ed6058;
-@red-hover: #f18079;
-@light-red: #fbdcda;
+@red: #ED6058;
+@red-hover: #F18079;
+@light-red: #FBDCDA;
 // Yellow
-@yellow: #ffaf46;
-@light-yellow: #fff3e1;
+@yellow: #FFAF46;
+@light-yellow: #FFF3E1;
 // Blue
 @blue: #29AAE1;
-@blue-hover: #3cb9e5;
-@light-blue: #d6e9f1;
+@blue-hover: #3CB9E5;
+@light-blue: #D6E9F1;
+
+
 /////////////////////////////////////////////////
-//END VARIABLES
+//END COLOR VARIABLES
 ////////////////////////////////////////////////
+
+//
+@grey-1: #EBECED;
+@grey-2: #DEE1E3;
+@grey-3: #D5D8DD;
+
+//Top
+@pagedrawer-bg: #C4C4C4;
+@optionbar-bg: @grey-1;// #EDEDED;
+    @popover-bg: @grey-1;//#F3F3F3;
+    @popover-secondary-bg: #DEE1E3;
+
+//left panel
+@left-panel-bg: @grey-2;//#E1E2E3;
+@shapegroup-top: #C9CDD1;//#CDCFD1; 
+@zerostate-bg: #D5D9DD;
+@zerostate-border: #C2BFBF;
+    //shapes manager active
+    @left-panel-bg-manage: #B2B2B2;
+    @shapegroup-top-manage: @blue-steel-2;
+    @pinned-icon-bg: @blue-steel;
+    @shapemanager-import:  @blue-steel; // #3E4752
+    @shapemanager-topbar-bg: @blue-steel-2;
+    @shapemanager-topbar-search: #98A5B3; //keep but don't include in colors
+
+//right-panel
+@right-panel-tabs-bg: @grey-2;
+@right-panel-bg: @grey-1;//#EBECED;
+@right-panel-top: @blue-steel-2;
+    @right-panel-collapse-bar: @grey-3;
+
+
+
+//components
+
+@collapse-bar-icon: @blue-steel-2;
+
+@button-toggle-active: #CAEFFF;
+@button-toggle-inactive: #D5D9DD;
+
+@popover-hover-list: #F5F5F5;
+
+/////TEMP CSS FOR COMPONENT UPDATE
+
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top{
+    background: @right-panel-collapse-bar !important;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path{
+    fill: @collapse-bar-icon !important;
+}
+.lucid-toggle .toggle-button{
+    background: @button-toggle-inactive;
+    .active{
+        background: @button-toggle-active;
+    }
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+    background: @popover-hover-list;
+}
+.lucid-popover-menu{
+    background: @popover-bg;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap{
+    background:@popover-secondary-bg;
+}
+
+.ruler{
+    display: none;
+}
+.lucid-popover-menu{
+    background: @grey-1;
+    &:after{
+        border-bottom-color:@grey-1;
+    }
+}
+///
+
+
+
 /////////////////////////////////////////////////
 //START ADDONS
 ////////////////////////////////////////////////
@@ -335,13 +417,13 @@ li.lucid-select-option {
 }
 
 .lucid-shapes-scroll {
-    background: #D6D6D6;
+    background: @left-panel-bg;
     overflow-y: scroll;
     max-width: 1080px;
 }
 
 .lucid-manage-shapes .lucid-shapes-scroll {
-    background: #B2B2B2;
+    background: @left-panel-bg-manage;
 }
 
 .lucid-shape-manager .lucid-shapes-scroll {
@@ -457,6 +539,7 @@ a {
             transform: rotateZ(0);
             transform-origin: center;
             transition: all .25s ease-in-out;
+            fill: @blue-steel-2;
         }
     }
     &.lucid-hide-shapes {
@@ -474,8 +557,8 @@ a {
         left: 5px;
         right: 5px;
         bottom: 0;
-        border: 2px dashed #C2BFBF;
-        background-color: #D9DADB;
+        border: 2px dashed @zerostate-border;
+        background-color: @zerostate-bg;
         text-align: center;
         .lucid-save-shapes-hint {
             font-style: italic;
@@ -496,7 +579,7 @@ a {
         }
     }
     .shape-group-top {
-        background-color: #CDCFD1; //#E0E0E0;
+        background-color: @shapegroup-top;
         padding: 8px 10px;
         position: relative;
         color: #555;
@@ -597,7 +680,7 @@ a {
             }
         }
         &.pinned {
-            background: rgba(0, 0, 0, .5);
+            background: @pinned-icon-bg;
             transition: .25s ease-in-out background;
             .lucid-icon {
                 transform: rotateZ(-45deg);
@@ -630,7 +713,7 @@ a {
     opacity: 1;
     .lucid-shapes-header {
         padding: 18px 15px;
-        background: #EDEDED;
+        background:@optionbar-bg;// #EDEDED;
         //line-height: 59px;
         height: 60px;
         box-sizing: border-box;
@@ -687,7 +770,7 @@ a {
         }
     }
     .lucid-shapes-scroll {
-        background: #E1E2E3;
+        background: @left-panel-bg;
         height: calc(~"100vh - 114px");
         overflow-y: scroll;
         transition: padding .25s ease-in-out;
@@ -823,7 +906,7 @@ a {
         cursor: move;
         // padding: 12px 10px;
         // height: 40px;
-        background: @blue-steel-2;
+        background: @shapegroup-top-manage;
         color: #FFF;
         border-radius: 4px 4px 0 0;
         input {
@@ -894,7 +977,7 @@ a {
     z-index: -1;
     margin-left: 0;
     .lucid-shape-manager-top-bar {
-        background: @blue-steel-2;
+        background: @shapemanager-topbar-bg;
         height: 59px;
         padding: 15px 20px;
         box-sizing: border-box;
@@ -925,7 +1008,7 @@ a {
                 padding: 0 10px;
                 box-sizing: border-box;
                 color: #FFF;
-                background: #98A5B3;
+                background: @shapemanager-topbar-search;
                 font-weight: 100;
                 &::-webkit-input-placeholder {
                     color: #fff;
@@ -1287,7 +1370,7 @@ a {
 //END SEARCH SHAPES 
 ///////////////
 .import-to-manager {
-    background-color: #3E4752;
+    background-color: @shapemanager-import;
     color: #fff;
     padding-right: 30px;
     &:after {
@@ -1741,6 +1824,7 @@ a {
             transition: background .1s;
             &:first-child {
                 line-height: 53px;
+                background-color:@blue-steel-2;
             }
             &:hover {
                 background: rgba(255, 255, 255, .15);
@@ -1819,7 +1903,7 @@ a {
 //LEFT BAR
 //////////////////////////////
 #left-bar {
-    background: #E1E2E3;
+    background: @left-panel-bg;
     width: 250px;
     position: absolute;
     left: 0;
@@ -1828,9 +1912,6 @@ a {
     z-index: 7;
     transition: opacity .3s, left .3s ease-in-out;
     border-right: 1px solid @border-color;
-    .lucid-collapse-bar .collapse-bar-top {
-        background: #CDCFD1;
-    }
 }
 
 //////////////////////////////
@@ -1952,7 +2033,7 @@ a {
     //z-index: 5;
     position: relative;
     padding: 2px 0;
-    background: #EDEDED;
+    background: @optionbar-bg;
     height: 60px;
     top: 0;
     border-bottom: 1px solid @border-color;
@@ -1961,7 +2042,7 @@ a {
         z-index: 99;
     }
     .secondary-gray {
-        background-color: #e5e5e5;
+        background-color: @popover-secondary-bg;
         padding: 10px;
     }
     > ul {
@@ -2097,7 +2178,7 @@ a {
     }
     &.ng-hide {
         .lucid-pages-wrapper {
-            margin-top: -198px;
+            margin-top: -200px;
         }
     }
     &.ng-animate {
@@ -2120,8 +2201,8 @@ a {
 @page-card-width: 170px;
 .lucid-pages {
     .lucid-pages-wrapper {
-        padding: 20px;
-        background: #C4C4C4;
+        padding: 10px;
+        background: @pagedrawer-bg;
         display: block;
         >ul>li,
         .add-new-page {
@@ -2130,7 +2211,7 @@ a {
             cursor: pointer;
             text-align: center;
             width: @page-card-width;
-            min-height: 152px;
+            height: 180px;
             vertical-align: top;
             border-radius: 4px;
             transition: background .2s;
@@ -2210,13 +2291,10 @@ a {
                 //white-space: nowrap;
                 display: table-cell;
                 vertical-align: middle;
-                &:hover {
-                    color: #5a5a5a;
-                }
             }
             .edit-in-place {
                 text-align: center;
-                color: #5a5a5a;
+                color: inherit;
                 font-weight: 400;
                 display: inline-block;
                 width: 150px;
@@ -2243,10 +2321,13 @@ a {
     border-radius: 4px;
     transition: background .2s;
     &.current-page {
-        background: #AFB7BF;
+        background: @blue-steel-light;
         .master-icon {
             background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
             background-size: 22px;
+        }
+        .page-thumb-name h4{
+            color:#fff;
         }
     }
     .center-image {
@@ -2576,7 +2657,7 @@ a {
     right: 0;
     width: 70px;
     height: 100%;
-    background: #DEE1E3;
+    background: @right-panel-tabs-bg;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
     text-align: center;
     z-index: 7;
@@ -2609,7 +2690,7 @@ a {
             color: @blue-steel;
         }
         &.active {
-            background: #EBECED;
+            background: @right-panel-bg;
             //border-radius: 4px 0 0 4px;
             box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
         }
@@ -2675,7 +2756,7 @@ a {
         right: -250px;
         width: 250px;
         height: 100%;
-        background: #EBECED;
+        background: @right-panel-bg;
         .container {
             height: ~"calc(100% - 58px)";
             opacity: 1;
@@ -2684,7 +2765,7 @@ a {
             }
         }
         .container > header {
-            background: #596470;
+            background: @right-panel-top;
             padding: 10px 15px;
             color: #fff;
             text-align: left;
@@ -2700,9 +2781,6 @@ a {
         }
         .lucid-collapse-bar {
             margin-bottom: 10px;
-            .collapse-bar-top {
-                background-color: #CFD4D8;
-            }
         }
         ul.page-settings {
             display: block;

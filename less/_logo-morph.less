@@ -1,68 +1,13 @@
-// .welcome-page {
-//     width: 100%;
-//     background: @blue-steel;
-//     #sidebar {
-//         left: -250px;
-//     }
-//     #content {
-//         display: table;
-//         width: 100%;
-//         height: 100%;
-//         margin-left: 0;
-//         .wrapper {
-//             display: table-cell;
-//             vertical-align: middle;
-//         }
-//     }
-// }
-
 @logo-animation: 7s infinite ease-in-out;
 @chart: #F78D1E;
 @software: #1BA9E3;
 @press: #97C748;
-.welcome-subtext {
-    margin: 10px auto;
-    display: block;
-    max-width: 100px;
-    color: #fff;
-    font-weight: 200;
-}
 
-.lucid-welcome-logo {
-    margin: -100px auto 0;
-    max-width: 300px;
-    display: block;
-    &.sidebar {
-        margin: 30px 0 0 15px;
-        #wn-goo,
-        #ne-goo,
-        #ws-goo,
-        #nw-circle,
-        #ne-circle,
-        #w-circle,
-        #sw-circle,
-        #se-circle {
-            fill: #fff !important;
-        }
-    }
+.lucid-particle-morph-logo {
+    animation: Logo @logo-animation;
     svg {
-        width: 100%;
-        height: auto;
-        #logo {
-            //filter:url("#fancy-goo");
-        }
-    }
-    #chart {
-        opacity: 1;
-        animation: Chart @logo-animation;
-    }
-    #press {
-        opacity: 0;
-        animation: Press @logo-animation;
-    }
-    #software {
-        opacity: 0;
-        animation: Software @logo-animation;
+        width: 24px;
+        height: 24px;
     }
     #wn-goo {
         opacity: 1;
@@ -98,75 +43,27 @@
     }
 }
 
-@keyframes Chart {
+@keyframes Logo { //shift Lucidchart logo left
     0% {
-        opacity: 1;
+        transform: translateX(-3px);
     }
     17% {
-        opacity: 1;
+        transform: translateX(-3px);
     }
     33% {
-        opacity: 0;
+       transform: translateX(0);
     }
     50% {
-        opacity: 0;
+        transform: translateX(0);
     }
     67% {
-        opacity: 0;
+        transform: translateX(0);
     }
     83% {
-        opacity: 0;
+        transform: translateX(0);
     }
     100% {
-        opacity: 1;
-    }
-}
-
-@keyframes Press {
-    0% {
-        opacity: 0;
-    }
-    17% {
-        opacity: 0;
-    }
-    33% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 1;
-    }
-    67% {
-        opacity: 0;
-    }
-    83% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes Software {
-    0% {
-        opacity: 0;
-    }
-    17% {
-        opacity: 0;
-    }
-    33% {
-        opacity: 0;
-    }
-    50% {
-        opacity: 0;
-    }
-    67% {
-        opacity: 1;
-    }
-    83% {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
+        transform: translateX(-3px);
     }
 }
 

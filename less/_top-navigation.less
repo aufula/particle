@@ -1,0 +1,46 @@
+@nav-bar-height: 64px;
+@logo-height: 22px;
+#top-navigation {
+    background: @blue;
+    width: 100%;
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: @nav-bar-height;
+    text-align: center;
+    transition: .5s ease-in-out all;
+    z-index: 10;
+    #logo svg {
+        position: absolute;
+        left: (@nav-bar-height - @logo-height) / 2;
+        height: @logo-height;
+        top: (@nav-bar-height - @logo-height) / 2;
+    }
+    > ul {
+        text-align: right;
+        font-size: 0;
+        > li {
+            display: inline-block;
+            > a {
+                -webkit-font-smoothing: auto; //fix to resolve loading lucid css
+                font-size: 18px;
+                color: #fff;
+                line-height: @nav-bar-height;
+                padding: 0 30px;
+                display: block;
+                // height:80px;
+                transition: background .2s;
+                border: 0 solid transparent;
+                &:hover {
+                    background: rgba(0, 0, 0, .1);
+                }
+                &.active {
+                    background: rgba(0, 0, 0, .2);
+                    &:hover {
+                        background: rgba(0, 0, 0, .25);
+                    }
+                }
+            }
+        }
+    }
+}

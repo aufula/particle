@@ -1,75 +1,77 @@
-<h1>{{components[0].groupname}}</h1>
-<div class="hr"></div>
-<div class="icon-search">
-    <input ng-model="searchResults" placeholder="Search Components">
-    <img src="components/0.0/icon/img/search-dark.svg">
-</div>
-<div ng-repeat="particle in components[0].components  | filter:{title : searchResults}">
-    <div class="code-preview">
-        <header ng-class="{'basic-active': showBasic, 'code-active': showAdvanced}">
-            <h2 class="reversed-header">{{particle.title}}</h2>
-            <div class="control" ng-click="showAdvanced = !showAdvanced; showBasic = false;" ng-class="{'active': showAdvanced}">
-                <i class="particon particon-code"></i>
-                <span>Code</span>
+<div class="wrapper">
+    <h1>{{components[0].groupname}}</h1>
+    <div class="hr"></div>
+    <div class="icon-search">
+        <input ng-model="searchResults" placeholder="Search Components">
+        <img src="components/0.0/icon/img/search-dark.svg">
+    </div>
+    <div ng-repeat="particle in components[0].components  | filter:{title : searchResults}">
+        <div class="code-preview">
+            <header ng-class="{'basic-active': showBasic, 'code-active': showAdvanced}">
+                <h2 class="reversed-header">{{particle.title}}</h2>
+                <div class="control" ng-click="showAdvanced = !showAdvanced; showBasic = false;" ng-class="{'active': showAdvanced}">
+                    <i class="particon particon-code"></i>
+                    <span>Code</span>
+                </div>
+                <div class="control" ng-click="showBasic = !showBasic; showAdvanced = false;" ng-class="{'active': showBasic}">
+                    <i class="particon particon-angular"></i>
+                    <span>Basic</span>
+                </div>
+            </header>
+            <div class="drawer-wrapper">
+                <div class="drawer slide-toggle" ng-show="showBasic">
+                    <header class="drawer-header">
+                        <span ng-init="drawer = 'html'" ng-click="drawer = 'html'" ng-class="{'active': drawer == 'html'}">HTML</span>
+                        <span ng-click="drawer = 'less'" ng-class="{'active': drawer == 'less'}">LESS</span>
+                        <span ng-show="particle.inputs" ng-click="drawer = 'inputs'" class="component-inputs" ng-class="{'active': drawer == 'inputs'}">INPUTS</span>
+                    </header>
+                    <div class="html-content" ng-show="drawer == 'html'">
+                        <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'"></div>
+                    </div>
+                    <div class="less-content" ng-show="drawer == 'less'">
+                        <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
+                    </div>
+                    <div class="inputs-content" ng-show="drawer == 'inputs'">
+                        <table class="lucid-table" style="margin:0;">
+                            <thead>
+                                <tr>
+                                    <th>Attr</th>
+                                    <th>Type</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="input in particle.inputs">
+                                    <td><span class="lucid-code-name">{{input.name}}</span></td>
+                                    <td>{{input.type}}</td>
+                                    <td>{{input.details}}</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="drawer slide-toggle" ng-show="showAdvanced">
+                    <header class="drawer-header">
+                        <span ng-init="advancedDrawer = 'js'" ng-click="advancedDrawer = 'js'" ng-class="{'active': advancedDrawer == 'js'}">JS</span>
+                        <span ng-click="advancedDrawer = 'html'" ng-class="{'active': advancedDrawer == 'html'}">HTML</span>
+                        <span ng-click="advancedDrawer = 'less'" ng-class="{'active': advancedDrawer == 'less'}">LESS</span>
+                    </header>
+                    <div class="html-content" ng-show="advancedDrawer == 'html'">
+                        <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.html'"></div>
+                    </div>
+                    <div class="less-content" ng-show="advancedDrawer == 'less'">
+                        <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
+                    </div>
+                    <div class="js-content" ng-show="advancedDrawer == 'js'">
+                        <div hljs language="js" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.js'"></div>
+                    </div>
+                </div>
             </div>
-            <div class="control" ng-click="showBasic = !showBasic; showAdvanced = false;" ng-class="{'active': showBasic}">
-                <i class="particon particon-angular"></i>
-                <span>Basic</span>
+            <!-- <p class="component-description">{{particle.description}}</p> Needs A Home-->
+            <div class="component-preview" ng-include src="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'">
             </div>
-        </header>
-        <div class="drawer-wrapper">
-            <div class="drawer slide-toggle" ng-show="showBasic">
-                <header class="drawer-header">
-                    <span ng-init="drawer = 'html'" ng-click="drawer = 'html'" ng-class="{'active': drawer == 'html'}">HTML</span>
-                    <span ng-click="drawer = 'less'" ng-class="{'active': drawer == 'less'}">LESS</span>
-                    <span ng-show="particle.inputs" ng-click="drawer = 'inputs'" class="component-inputs" ng-class="{'active': drawer == 'inputs'}">INPUTS</span>
-                </header>
-                <div class="html-content" ng-show="drawer == 'html'">
-                    <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'"></div>
-                </div>
-                <div class="less-content" ng-show="drawer == 'less'">
-                    <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
-                </div>
-                <div class="inputs-content" ng-show="drawer == 'inputs'">
-                    <table class="lucid-table" style="margin:0;">
-                        <thead>
-                            <tr>
-                                <th>Attr</th>
-                                <th>Type</th>
-                                <th>Details</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr ng-repeat="input in particle.inputs">
-                                <td><span class="lucid-code-name">{{input.name}}</span></td>
-                                <td>{{input.type}}</td>
-                                <td>{{input.details}}</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="drawer slide-toggle" ng-show="showAdvanced">
-                <header class="drawer-header">
-                    <span ng-init="advancedDrawer = 'js'" ng-click="advancedDrawer = 'js'" ng-class="{'active': advancedDrawer == 'js'}">JS</span>
-                    <span ng-click="advancedDrawer = 'html'" ng-class="{'active': advancedDrawer == 'html'}">HTML</span>
-                    <span ng-click="advancedDrawer = 'less'" ng-class="{'active': advancedDrawer == 'less'}">LESS</span>
-                </header>
-                <div class="html-content" ng-show="advancedDrawer == 'html'">
-                    <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.html'"></div>
-                </div>
-                <div class="less-content" ng-show="advancedDrawer == 'less'">
-                    <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
-                </div>
-                <div class="js-content" ng-show="advancedDrawer == 'js'">
-                    <div hljs language="js" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.js'"></div>
-                </div>
-            </div>
+            <lucid-notification type="information">Component for prototyping only. Not ready for production.
+            </lucid-notification>
         </div>
-        <!-- <p class="component-description">{{particle.description}}</p> Needs A Home-->
-        <div class="component-preview" ng-include src="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'">
-        </div>
-        <lucid-notification type="information">Component for prototyping only. Not ready for production.
-        </lucid-notification>
     </div>
 </div>

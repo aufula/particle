@@ -1,29 +1,31 @@
-<link href="https://www.lucidchart.com/css/apps/chart/editor/style.css" type="text/css" rel="stylesheet" />
-<link href="https://www.lucidchart.com/css/apps/doclist/chart/style.css" type="text/css" rel="stylesheet" />
-<link href="https://www.lucidchart.com/css/apps/manager/chart/style.css" type="text/css" rel="stylesheet" />
-<h1>Production Components</h1>
-<div class="hr"></div>
-<p>This page contains the production HTML and CSS classes to reuse what has already been coded. If the component isn't already here, reach out to the UX team. Once a new component is created, we will add it to this page so that it can be reused.</p>
-<div class="icon-search">
-    <input ng-model="searchResults" placeholder="Search Components">
-    <img src="components/0.0/icon/img/search-dark.svg">
-</div>
-<div ng-repeat="componentgroup in productionComponents | filter: searchResults">
-    <div class="code-preview production-preview" ng-repeat="component in componentgroup.components  | filter: {title : searchResults}">
-        <header>
-            <h2 class="reversed-header">{{component.title}}</h2>
-        </header>
-        <div class="drawer-wrapper">
-            <div class="drawer">
-                <div class="scroll-area">
-                    <div class="html-content">
-                        <div hljs language="HTML" include="component.url"></div>
+<div class="wrapper">
+    <link href="https://www.lucidchart.com/css/apps/chart/editor/style.css" type="text/css" rel="stylesheet" />
+    <link href="https://www.lucidchart.com/css/apps/doclist/chart/style.css" type="text/css" rel="stylesheet" />
+    <link href="https://www.lucidchart.com/css/apps/manager/chart/style.css" type="text/css" rel="stylesheet" />
+    <h1>Production Components</h1>
+    <div class="hr"></div>
+    <p>This page contains the production HTML and CSS classes to reuse what has already been coded. If the component isn't already here, reach out to the UX team. Once a new component is created, we will add it to this page so that it can be reused.</p>
+    <div class="icon-search">
+        <input ng-model="searchResults" placeholder="Search Components">
+        <img src="components/0.0/icon/img/search-dark.svg">
+    </div>
+    <div ng-repeat="componentgroup in productionComponents | filter: searchResults">
+        <div class="code-preview production-preview" ng-repeat="component in componentgroup.components  | filter: {title : searchResults}">
+            <header>
+                <h2 class="reversed-header">{{component.title}}</h2>
+            </header>
+            <div class="drawer-wrapper">
+                <div class="drawer">
+                    <div class="scroll-area">
+                        <div class="html-content">
+                            <div hljs language="HTML" include="component.url"></div>
+                        </div>
                     </div>
                 </div>
             </div>
+            <div class="component-preview production-preview" ng-include src="component.url">
+            </div>
+            <!-- <lucid-notification type="complete">UX Approved. Use in production.</lucid-notification> -->
         </div>
-        <div class="component-preview production-preview" ng-include src="component.url">
-        </div>
-        <!-- <lucid-notification type="complete">UX Approved. Use in production.</lucid-notification> -->
     </div>
 </div>

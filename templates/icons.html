@@ -1,19 +1,20 @@
-<h1>Icon Sheet</h1>
-<div class="hr"></div>
-<p>Right click to download / copy the the svg.
-    <br>All SVGs should have the artboard size in the name, color should be applied through css.</p>
-<div class="icon-search">
-    <input ng-model="searchResults" placeholder="Search icons">
-    <img src="components/0.0/icon/img/search-dark.svg">
-</div>
-<!-- <button ng-click="class = ''">None</button>
+<div class="wrapper">
+    <h1>Icon Sheet</h1>
+    <div class="hr"></div>
+    <p>Right click to download / copy the the svg.
+        <br>All SVGs should have the artboard size in the name, color should be applied through css.</p>
+    <div class="icon-search">
+        <input ng-model="searchResults" placeholder="Search icons">
+        <img src="components/0.0/icon/img/search-dark.svg">
+    </div>
+    <!-- <button ng-click="class = ''">None</button>
 <button ng-click="class = 'fill-blue-steel'">Dark</button>
 <button ng-click="class = 'fill-white'">Light</button>
 <button ng-click="class = 'fill-active'">Active</button> -->
-<div ng-repeat="icongroup in icongroups | filter: searchResults">
-    <h2>{{icongroup.icongroup}}</h2>
-    <div class="icon-list-container clearfix {{class}}">
-        <div class="particle-icon-wrapper" ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
+    <div ng-repeat="icongroup in icongroups | filter: searchResults">
+        <h2>{{icongroup.icongroup}}</h2>
+        <div class="icon-list-container clearfix {{class}}">
+            <div class="particle-icon-wrapper" ng-repeat="icon in icongroup.icons | filter:{name : searchResults}">
                 <lucid-buttcon-popover class="lucid-icon {{class}} popover-list" showpopover="dropdown.show" icon="{{icon.url}}" width="105">
                     <div class="lucid-select-wrapper">
                         <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
@@ -24,7 +25,8 @@
                         </ul>
                     </div>
                 </lucid-buttcon-popover>
-            <h5>{{icon.name}}</h5>
+                <h5>{{icon.name}}</h5>
+            </div>
         </div>
     </div>
 </div>
