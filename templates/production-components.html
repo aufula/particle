@@ -7,7 +7,7 @@
     <p>This page contains the production HTML and CSS classes to reuse what has already been coded. If the component isn't already here, reach out to the UX team. Once a new component is created, we will add it to this page so that it can be reused.</p>
     <div class="icon-search">
         <input ng-model="searchResults" placeholder="Search Components">
-        <img src="components/0.0/icon/img/search-dark.svg">
+        <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
     </div>
     <div ng-repeat="componentgroup in productionComponents | filter: searchResults">
         <div class="code-preview production-preview" ng-repeat="component in componentgroup.components  | filter: {title : searchResults}">

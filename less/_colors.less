@@ -1,18 +1,56 @@
 .lucid-color-block {
-    width: 50px;
-    height: 50px;
-    cursor: pointer;
+    width: 120px;
+    height: 120px;
+    margin-bottom: 10px;
+    position: relative;
+    display: table;
 }
 
 .color-view {
+    margin-bottom: 40px;
     .particle-icon-wrapper {
-        .lucid-popover-menu {
-            width: 100px;
-            left: -25px;
-            top: 53px;
+        width: 120px;
+        margin: 10px 20px 10px 0;
+        height: 162px;
+        h6 {
+            display: block;
+            width: 100%;
+            text-align: left;
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            >span {
+                font-size: 12px;
+                font-weight: 400;
+            }
         }
     }
-    .particle-icon-wrapper {
-        width: 30px; //temp
+    .copied-text {
+        text-align: center;
+        color: #fff;
+        font-weight: 300;
+        display:table-cell;
+        vertical-align: middle;
+        width:100%;
+        line-height: 20px;
+        font-size:14px;
+        padding-top:5px;
+        &.light {
+            color: #333;
+            font-weight: 400;
+        }
+        transition: .25s ease-in-out all;
+        &.ng-enter {
+            opacity: 0;
+            padding-top: 20px;
+        }
+        &.ng-enter-active {
+            opacity: 1;
+            padding-top: 5px;
+        }
+        &.ng-leave-active{
+            opacity: 0;
+            padding-top:20px;
+        }
     }
 }

@@ -5,107 +5,95 @@ angular.module('lucidColors', [])
             'colorgroup': 'Brand Colors',
             'colors': [{
                 'name': 'Blue Steel',
-                'hex': '#3D4752'
+                'hex': '#3D4752',
+                'less': '@blue-steel'
             }, {
                 'name': 'Blue Steel Secondary',
                 'hex': '#77818C',
-                'location': 'megamenu top, buttons, secondary toolbar, footer, pinned shapegroups in search'
+                'less': '@blue-steel-2',
             }, {
                 'name': 'Lucid Blue',
                 'hex': '#29AAE1',
-                'location': 'primary actions, text on buttons, border color, alert badges, '
+                'less': '@lucid-blue',
             }, {
                 'name': 'Lucidchart Orange ',
-                'hex': '#FC8D2A'
+                'hex': '#FC8D2A',
+                'less': '@lucidchart-orange'
             }, {
                 'name': 'Press Green',
                 'hex': '#8CBF3F',
-                'location': 'Press Logo'
-            },]
+                'location': 'Press Logo',
+                'less': '@lucidpress-green'
+            }, ]
         }, {
-            'colorgroup': 'secondary',
+            'colorgroup': 'Secondary Colors',
             'colors': [{
-                'name': 'Blue Steel Secondary - Dark',
+                'name': 'Blue Steel Dark',
                 'hex': '#606D79',
-                'location': 'unpinned shapegroups in search shapes, chat (maybe)'
+                'less': '@blue-steel-dark',
             }, {
                 'name': 'Blue Steel Light',
                 'hex': '#AFB7BF',
-                'location': 'page drawer'
+                'less': '@blue-steel-light',
+                'light': 'light'
             }, {
                 'name': 'Lucid Blue Light',
-                'hex': '#CAEFFF',
-                'location': 'on/off switch background, '
+                'hex': '#D2EDF9',
+                'less': '@lucid-blue-light',
+                'light': 'light'
             }]
 
         }, {
             'colorgroup': 'Information',
             'colors': [{
                 'name': 'Alert Red',
-                'hex': '#ED6058'
+                'hex': '#ED6058',
+                'less': '@info-red',
             }, {
                 'name': 'Alert Red Light',
                 'hex': '#FBDCDA',
-                'location': 'background color on red, '
+                'less': '@info-red-light',
+                'light': 'light'
             }, {
                 'name': 'Information Blue',
                 'hex': '#29AAE1',
-                'location': 'background color on red, '
+                'less': '@info-blue',
             }, {
                 'name': 'Information Blue Light',
-                'hex': '#D6E9F1',
-                'location': 'background color on red, '
+                'hex': '#D2EDF9',
+                'less': '@info-blue-light',
+                'light': 'light',
             }, {
                 'name': 'Success Green',
                 'hex': '#8CBF3F',
-                'location': 'background color on red, '
+                'less': '@info-green',
             }, {
                 'name': 'Success Green Light',
                 'hex': '#E9F2D9',
-                'location': 'background color on red, '
+                'less': '@info-green-light',
             }]
         }, {
             'colorgroup': 'UI Colors',
             'colors': [{
-                'name': 'Gray - Light',
-                'hex': '#F1F1F1',
-                'location': 'Component well, popover background, footer of modal'
+                'name': 'Gray - 1',
+                'hex': '#F0F0F0',
+                'less': '@grey-1'
             }, {
-                'name': 'Gray - Secondary',
-                'hex': '#EBECED',
-                'location': 'optionbar, right dock background'
+                'name': 'Gray - 2',
+                'hex': '#E6E6E6',
+                'less': '@grey-2'
             }, {
-                'name': 'Gray - Tertiary',
-                'hex': '#DEE1E3',
-                'location': 'right dock tabs, popover background 2'
+                'name': 'Gray - 3',
+                'hex': '#D6D6D8',
+                'less': '@grey-3'
             }, {
-                'name': 'Gray - Dark',
-                'hex': '#CDCFD1',
-                'location': 'collapse bars, shape group tops, scroll shape panel'
+                'name': 'Gray - 4',
+                'hex': '#CDCED1',
+                'less': '@grey-4'
             }, {
-                'name': 'Grey 4',
-                'hex': '#E1E2E3',
-                'location': 'shapes panel left bg'
-            }, {
-                'name': 'Grey 5',
-                'hex': '#EDEDED',
-                'location': 'optionbar'
-            }, {
-                'name': 'Grey 6',
-                'hex': '#D9DADB',
-                'location': 'drop shape area'
-            }, {
-                'name': 'Grey 7',
-                'hex': '#F3F3F3',
-                'location': 'context menu hover'
-            }, {
-                'name': 'Grey 8',
-                'hex': '#AFB1B3',
-                'location': 'left panel scroll bar, unpinned shapegroups when search'
-            }, {
-                'name': 'Grey 9',
-                'hex': '#F0F0F1',
-                'location': 'left panel advanced shapes stuff (Quizbowl) is actually 50% white.'
+                'name': 'Gray - 5',
+                'hex': '#A5A5A5',
+                'less': '@grey-5'
             }]
         }];
         return colors;

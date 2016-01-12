@@ -915,17 +915,60 @@ p.small-body {
   padding: 50px;
 }
 .lucid-color-block {
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
+  width: 120px;
+  height: 120px;
+  margin-bottom: 10px;
+  position: relative;
+  display: table;
 }
-.color-view .particle-icon-wrapper .lucid-popover-menu {
-  width: 100px;
-  left: -25px;
-  top: 53px;
+.color-view {
+  margin-bottom: 40px;
 }
 .color-view .particle-icon-wrapper {
-  width: 30px;
+  width: 120px;
+  margin: 10px 20px 10px 0;
+  height: 162px;
+}
+.color-view .particle-icon-wrapper h6 {
+  display: block;
+  width: 100%;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  cursor: pointer;
+}
+.color-view .particle-icon-wrapper h6 > span {
+  font-size: 12px;
+  font-weight: 400;
+}
+.color-view .copied-text {
+  text-align: center;
+  color: #fff;
+  font-weight: 300;
+  display: table-cell;
+  vertical-align: middle;
+  width: 100%;
+  line-height: 20px;
+  font-size: 14px;
+  padding-top: 5px;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
+.color-view .copied-text.light {
+  color: #333;
+  font-weight: 400;
+}
+.color-view .copied-text.ng-enter {
+  opacity: 0;
+  padding-top: 20px;
+}
+.color-view .copied-text.ng-enter-active {
+  opacity: 1;
+  padding-top: 5px;
+}
+.color-view .copied-text.ng-leave-active {
+  opacity: 0;
+  padding-top: 20px;
 }
 .lucid-particle-morph-logo {
   -webkit-animation: Logo 7s infinite ease-in-out;

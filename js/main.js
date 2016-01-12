@@ -178,6 +178,17 @@ particleApp.controller('colorController', function($scope, lucidColorFactory, $r
 
 
 });
+particleApp.controller('colorCtrl', function($scope, $timeout) {
+
+    $scope.copyItem = function(item){
+        $scope.copied = item;
+        $timeout(function(){
+            $scope.copied = null;
+        }, 750);
+    };
+
+
+});
 //////// directives ////////
 particleApp.directive('collapse', ['$timeout', function($timeout) {
     return {
@@ -265,7 +276,7 @@ particleApp.directive('clipboard', ['$document', function($document) {
                 $document[0].body.removeChild(node);
             }
 
-            element.on('click', function(event) {
+            element.on('click', function() {
                 try {
                     copyText(scope.text);
                     if (angular.isFunction(scope.onCopied)) {
