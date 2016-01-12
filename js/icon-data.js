@@ -198,7 +198,7 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-x-circle-22px'
                 }, {
-                    'name': 'icon-your-a-wizard-harry-22px'
+                    'name': 'icon-youre-a-wizard-harry-22px'
                 }, {
                     'name': 'icon-zoom-in-22px'
                 }, {
