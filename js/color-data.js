@@ -99,10 +99,14 @@ angular.module('lucidColors', [])
                 'less': '@lucid-blue-light',
                 'light': 'light'
             }, {
-                'name': 'Gray - Border',
+                'name': 'Grey - Border',
                 'hex': '#D2D2D2',
                 'less': '@grey-border',
                 'light': 'light'
+            }, {
+                'name': 'Grey - Border Dark',
+                'hex': '#A5A5A5',
+                'less': '@grey-border-dark',
             }]
 
         }, {
