@@ -487,6 +487,9 @@ a {
   padding-left: 15px;
   display: inline-block;
 }
+.lucid-shape-group .shape-group-name .edit-in-place {
+  color: #FFF;
+}
 .lucid-shape-group .lucid-close-icon {
   width: 18px;
   height: 18px;
@@ -816,19 +819,6 @@ a {
       -ms-transform: rotate(90deg);
           transform: rotateZ(90deg);
 }
-.lucid-managing-shapes .lucid-shape-group-top-right-icons,
-.lucid-manage-shapes .lucid-shape-group-top-right-icons {
-  float: right;
-}
-.lucid-managing-shapes .lucid-shape-group-top-right-icons .pipe-right,
-.lucid-manage-shapes .lucid-shape-group-top-right-icons .pipe-right {
-  font-size: 14px;
-  font-weight: 300;
-  border-right: 1px solid #95A8BA;
-  padding-right: 10px;
-  margin-right: 10px;
-  vertical-align: top;
-}
 .ng-sort-ghost {
   opacity: .5;
 }
@@ -1096,12 +1086,6 @@ a {
 }
 .search-shapes .search-shapes-input .search-x svg path {
   fill: #77818C;
-}
-.search-shapes .search-shapes-input > span {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #95A8BA;
-  cursor: pointer;
 }
 .search-shapes .search-shapes-input.ng-hide {
   margin-top: -39px;
@@ -2117,7 +2101,7 @@ a {
   transition: background .2s;
 }
 .lucid-page.current-page {
-  background: #9EACBA;
+  background: #AFB7BF;
 }
 .lucid-page.current-page .master-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;

@@ -4,29 +4,40 @@
 @font-stack: 'Source Sans Pro',
 sans-serif;
 //
-// Blue Steel
+//Brand Colors
 @blue-steel: #3D4752;
 @blue-steel-2: #77818C;
-@blue-steel-3: #95A8BA;
-@blue-steel-dark: #212C35;
-@blue-steel-light: #9EACBA;//#AFB7BF;
-// Grey
-@light-grey: #F1F1F1;
-@secondary-grey: #E5E5E5;
-// Green
-@green: #8BC326;
-@light-green: #E9F2D9;
-// Red
-@red: #ED6058;
-@red-hover: #F18079;
-@light-red: #FBDCDA;
-// Yellow
-@yellow: #FFAF46;
-@light-yellow: #FFF3E1;
-// Blue
-@blue: #29AAE1;
-@blue-hover: #3CB9E5;
-@light-blue: #D6E9F1;
+@lucid-blue: #29AAE1;
+@lucid-orange: #FC8D2A;
+@lucidpress-green: #8CBF3F;
+
+// UI Colors - Greys
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
+@grey-4: #CDCED1; //SHAPEGROUP LEFT
+@grey-5: #A5A5A5;
+
+// Information Colors
+@info-red: #ED6058;
+@info-red-light: #FBDCDA;
+@info-blue: @lucid-blue;
+@info-blue-light: #D2EDF9;
+@info-green: #8CBF3F;
+@info-green-light: #E9F2D9;
+
+//Secondary Colors
+@blue-steel-dark: #606D79;
+@blue-steel-light: #AFB7BF;
+@lucid-blue-light: #D2EDF9;
+@grey-border: #D2D2D2;
+@grey-border-dark: #A5A5A5;
+
+//Text Colors
+@standard-text: #5A5A5A;
+@standard-text-light: #828282;
+@standard-text-ghost: #C7C7C7;
+@lucid-blue-dark: #2C84B5;
 
 
 /////////////////////////////////////////////////
@@ -660,6 +671,9 @@ a {
         padding-left: 15px;
         display: inline-block;
         //transition: .2s ease-in-out;
+        .edit-in-place{
+            color:#FFF;
+        }
     }
     .lucid-close-icon {
         //z-index: 1;
@@ -737,7 +751,7 @@ a {
                 transform: rotateZ(-45deg);
                 transform-origin: center;
                 svg g path {
-                    fill: @blue;
+                    fill: @lucid-blue;
                 }
             }
         }
@@ -866,7 +880,7 @@ a {
     width: 100%;
     height: 40px;
     line-height: 40px;
-    background: @blue;
+    background: @lucid-blue;
     padding: 0 20px;
     z-index: 1;
     color: #fff;
@@ -994,17 +1008,6 @@ a {
     }
     .lucid-shapes-gear {
         transform: rotateZ(90deg);
-    }
-    .lucid-shape-group-top-right-icons {
-        float: right;
-        .pipe-right {
-            font-size: 14px;
-            font-weight: 300;
-            border-right: 1px solid @blue-steel-3;
-            padding-right: 10px;
-            margin-right: 10px;
-            vertical-align: top;
-        }
     }
 }
 
@@ -1287,12 +1290,6 @@ a {
                 fill: @blue-steel-2;
             }
         }
-        >span {
-            margin-left: 10px;
-            font-size: 14px;
-            color: @blue-steel-3;
-            cursor: pointer;
-        }
         &.ng-hide {
             margin-top: -39px;
         }
@@ -1405,7 +1402,7 @@ a {
         .hyperlink {
             text-decoration: underline;
             cursor: pointer;
-            color: @blue;
+            color: @lucid-blue;
         }
         &.ng-hide {
             margin-top: -20px;

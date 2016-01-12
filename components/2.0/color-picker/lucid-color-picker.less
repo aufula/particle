@@ -28,7 +28,7 @@
                 display: inline-block;
                 background-color: #fff;
                 cursor: pointer;
-                border-left: 1px solid @popover-menu-background-3;
+                border-left: 1px solid @grey-border;
                 box-sizing: border-box;
                 width: 63.333px;
                 text-align: center;
@@ -42,9 +42,9 @@
                     border-radius: 0 3px 3px 0;
                 }
                 &.active {
-                    box-shadow: 0 0 4px #29AAE1;
+                    box-shadow: 0 0 4px @lucid-blue;
                     z-index: 1;
-                    border: 1px solid @blue;
+                    border: 1px solid @lucid-blue;
                 }
                 &:hover {
                     background-color: #fff;
@@ -63,23 +63,16 @@
                 }
                 &.lucid-disabled {
                     background: transparent;
-                    color: #C7C7C7;
+                    color: @standard-text-ghost;
                 }
             }
-            .make-default-swatch {
-                float: right;
-                display: none;
-            }
+        }
+        .swatch-colors {
+            padding: 15px;
         }
         //end lucid-swatch-top
         .lucid-colorpicker-wrap {
-            background-color: #E5E5E5;
-        }
-        .swatch-colors {
-            text-align: left;
-            padding: 15px;
-            position: relative;
-            z-index: 1;
+            background-color: @grey-2;
         }
         ul {
             &.lucid-grayscale-colors {
@@ -91,56 +84,6 @@
             }
             &.lucid-colorpicker-colors {
                 margin-bottom: 0;
-            }
-        }
-        .on-canvas-title {
-            font-size: 14px;
-            padding-bottom: 5px;
-        }
-        .lucid-swatch-square {
-            width: 36px;
-            height: 36px;
-            position: relative;
-            background: rgba(0, 0, 0, 0);
-            border-radius: 4px;
-            padding: 3px;
-            box-sizing: border-box;
-            display: inline-block;
-            transition: .1s ease-in-out background;
-            vertical-align: top;
-            .lucid-swatch-check {
-                position: absolute;
-                right: -4px;
-                top: -4px;
-                width: 14px;
-                height: 14px;
-                z-index: 3;
-                img {
-                    transform: scale(.01);
-                    opacity: 0;
-                    transform-origin: center;
-                    transition: .1s ease-in-out all;
-                }
-            }
-            &:hover {
-                background: rgba(0, 0, 0, .05);
-            }
-            &.lucid-selected {
-                background: rgba(0, 0, 0, .1);
-            }
-            &.lucid-selected .lucid-swatch-check img {
-                transform: scale(1);
-                opacity: 1;
-            }
-            &.lucid-swatch-plus {
-                padding: 2px;
-                //background: rgba(0, 0, 0, .1);
-                cursor: pointer;
-                img {
-                    border: 3px solid rgba(0, 0, 0, .1);
-                    padding: 2px;
-                    border-radius: 3px;
-                }
             }
         }
         .lucid-square {
@@ -191,7 +134,7 @@
                 display: inline-block;
                 padding-right: 10px;
                 vertical-align: top;
-                input{
+                input {
                     text-transform: uppercase;
                 }
                 .range-wrap {
@@ -203,11 +146,10 @@
                         margin: 8px 0;
                     }
                 }
-                &:last-child{
-                    padding-right:0;
+                &:last-child {
+                    padding-right: 0;
                 }
             }
-
         }
         //
         .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden {
@@ -239,11 +181,11 @@
                 transition: .15s ease-in-out all;
             }
             &.active {
-                svg path{
-                    fill:inherit;
+                svg path {
+                    fill: inherit;
                 }
                 defs stop {
-                    stop-color: @blue;
+                    stop-color: @lucid-blue;
                 }
                 defs stop:first-child {
                     stop-color: #D2EBF9;
@@ -255,14 +197,14 @@
                 transition: .15s ease-in-out all;
             }
             &.active {
-                svg path{
-                    fill:inherit;
+                svg path {
+                    fill: inherit;
                 }
                 defs stop {
-                    stop-color: @blue;
+                    stop-color: @lucid-blue;
                 }
                 defs stop:first-child {
-                    stop-color: #D2EBF9;
+                    stop-color: @lucid-blue-light;
                 }
             }
         }
@@ -272,11 +214,11 @@
             }
             &.active {
                 rect {
-                    fill: @blue;
+                    fill: @lucid-blue;
                 }
             }
         }
-        &.active{
+        &.active {
             background: transparent;
         }
     }

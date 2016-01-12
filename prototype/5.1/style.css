@@ -449,6 +449,9 @@ a {
   padding-left: 15px;
   display: inline-block;
 }
+.lucid-shape-group .shape-group-name .edit-in-place {
+  color: #FFF;
+}
 .lucid-shape-group .lucid-close-icon {
   width: 18px;
   height: 18px;

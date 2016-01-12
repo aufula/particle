@@ -1,6 +1,7 @@
-[lucid-context-menu]{
-    cursor:pointer;
+[lucid-context-menu] {
+    cursor: pointer;
 }
+
 .lucid-context-menu {
     @dropdown-menu-width: 200px;
     position: fixed;
@@ -24,22 +25,20 @@
             padding: 3px 12px;
             width: 100%;
             box-sizing: border-box;
-            cursor:pointer;
+            cursor: pointer;
             &:hover {
-                background: @light-grey;
+                background: @grey-1;
             }
-            &.context-divider{
-                background:@secondary-grey;
-                height:1px;
+            &.context-divider {
+                background: @grey-border;
+                height: 1px;
                 margin: 5px 0;
-                padding:0;
+                padding: 0;
             }
             a {
                 display: block;
                 padding: 0 10px;
                 color: @blue-steel;
-                //font-size:20px;
-                //line-height: 60px;
                 text-decoration: none;
                 &.saving {
                     color: #ccc;
@@ -56,12 +55,12 @@
                 //line-height: 30px;
                 background: #fff;
                 &.dropdown-divider {
-                    border-bottom: 1px solid #f1f1f1;
+                    border-bottom: 1px solid @grey-border;
                 }
                 a {
                     color: @blue-steel;
                     &:hover {
-                        background-color: #f1f1f1;
+                        background-color: @grey-1;
                     }
                 }
             }
