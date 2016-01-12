@@ -30,19 +30,23 @@ angular.module('lucidColors', [])
             'colors': [{
                 'name': 'Gray - 1',
                 'hex': '#F0F0F0',
-                'less': '@grey-1'
+                'less': '@grey-1',
+                'light': 'light'
             }, {
                 'name': 'Gray - 2',
                 'hex': '#E6E6E6',
-                'less': '@grey-2'
+                'less': '@grey-2',
+                'light': 'light'
             }, {
                 'name': 'Gray - 3',
                 'hex': '#D6D6D8',
-                'less': '@grey-3'
+                'less': '@grey-3',
+                'light': 'light'
             }, {
                 'name': 'Gray - 4',
                 'hex': '#CDCED1',
-                'less': '@grey-4'
+                'less': '@grey-4',
+                'light': 'light'
             }, {
                 'name': 'Gray - 5',
                 'hex': '#A5A5A5',
@@ -76,6 +80,7 @@ angular.module('lucidColors', [])
                 'name': 'Success Green Light',
                 'hex': '#E9F2D9',
                 'less': '@info-green-light',
+                'light': 'light'
             }]
         }, {
             'colorgroup': 'Secondary Colors',
@@ -96,7 +101,8 @@ angular.module('lucidColors', [])
             }, {
                 'name': 'Gray - Border',
                 'hex': '#D2D2D2',
-                'less': '@grey-border'
+                'less': '@grey-border',
+                'light': 'light'
             }]
 
         }, {
@@ -109,12 +115,10 @@ angular.module('lucidColors', [])
                 'name': 'Ghost Text',
                 'hex': '#828282',
                 'less': '@standard-text-light',
-                'light': 'light'
             }, {
                 'name': 'Lucid Blue Dark',
                 'hex': '#2C84B5',
                 'less': '@lucid-blue-dark',
-                'light': 'light'
             }]
 
         }];
