@@ -61,33 +61,30 @@
             </ul>
         </div>
         </lucid-buttcon-popover>
-        <div class="bell" ng-init="showAlert=true" ng-click="showNotifications = !showNotifications; showAlert=false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg"/>
+        <div class="bell" ng-init="showAlert=true">
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
-          <div class="lucid-popover-menu lucid-animate" style="width: 311px; left: -140.5px;" ng-show="showNotifications">
-            <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
-            <div class="notifications"><img ng-click="addOnsModal=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
-          </div>
+          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg" width="311">
+              <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
+            <div class="notifications"><img ng-click="addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
+          </lucid-buttcon-popover>
         </div>
-        <span class="line"></span>
-          <div class="lucid-select-wrapper account" ng-click="showDropdown = !showDropdown" click-outside = "showDropdown = false">
-              <div class="selected-option-wrapper " >
-                  <ng-include class="dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
-                  <span class="lucid-selected-option reversed-text">dsmith@gmail.com</span>
+        
+
+          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-person-white.svg" width="135">
+              <div class="lucid-select-wrapper">
+                  <ul class="lucid-select-dropdown" ng-click="account.show = false;">
+                      <li class="lucid-select-option">
+                          Account Settings
+                      </li>
+                      <li class="lucid-select-option">
+                          User Preferences
+                      </li>
+                      <li class="lucid-select-option">
+                          Log Out
+                      </li>
+                  </ul>
               </div>
-              <div class="input-label" ng-if="label">
-                  <span>{{label}}</span>
-              </div>
-              <div class="lucid-select-dropdown" ng-show="showDropdown">
-                  <div>
-                      <ul>
-                          <li class="lucid-select-option">Account Settings</li>
-                          <li class="lucid-select-option">Preferences</li>
-                          <li class="lucid-select-option">Log out</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </a>
+          </lucid-buttcon-popover>
       </div>
     </div>
       <div id="page-list">
@@ -151,7 +148,9 @@
                   </li>
               </ul>
               <div class="add-new-page lucid-animate" draggable="false">
-                  <div class="plus-container" ng-click="addPage()"></div>
+                  <div class="plus-container" ng-click="addPage()">
+                    <ng-include class="plus-icon" src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg'"></ng-include>
+                  </div>
               </div>
           </div>
       </div>
@@ -860,11 +859,11 @@
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- RIGHT DOCK ICONS -->
-        <div class="icon-wrapper" ng-click="addOnsModal=true">
+        <div class="icon-wrapper" ng-click="addOnsModal.show=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
         </div>
         <!-- ADD ONS MODAL -->
-        <lucid-modal showmodal="addOnsModal" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
+        <lucid-modal showmodal="addOnsModal.show" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
           <ul class="add-ons">
             <li class="green">

@@ -601,7 +601,7 @@ a {
   background: #F0F0F0;
   height: 60px;
   box-sizing: border-box;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #A5A5A5;
   text-align: left;
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-more-shapes {
@@ -1409,7 +1409,7 @@ a {
 }
 #main-header .help .lucid-popover-menu {
   background: white;
-  top: 40px;
+  top: 48px;
 }
 #main-header .help .lucid-popover-menu:after {
   border-bottom: 10px solid white;
@@ -1437,7 +1437,7 @@ a {
   width: 33%;
   text-align: right;
   margin-top: 10px;
-  padding-right: 10px;
+  padding-right: 5px;
 }
 #main-header #documents {
   display: inline-block;
@@ -1488,25 +1488,23 @@ a {
   background: rgba(255, 255, 255, 0.25);
   vertical-align: middle;
 }
-#main-header .account {
+#main-header .account-settings {
   font-size: 14px;
   vertical-align: middle;
   position: relative;
+  background: #77818C;
+  border-radius: 3px;
+  margin-left: 20px;
 }
-#main-header .account.lucid-select-wrapper svg path {
-  fill: #fff !important;
+#main-header .account-settings .lucid-popover-menu {
+  left: -95px !important;
+  top: 48px;
 }
-#main-header .account.lucid-select-wrapper .lucid-select-dropdown {
-  width: 140px;
-  right: 0;
-  left: inherit;
+#main-header .account-settings .lucid-popover-menu:after {
+  left: 110px !important;
 }
-#main-header .account.lucid-select-wrapper .lucid-selected-option {
-  border: none;
-}
-#main-header .account.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+#main-header .account-settings .lucid-select-wrapper .lucid-select-option {
   color: #5A5A5A;
-  padding: 5px 15px 5px 15px;
 }
 #main-header .page-name {
   height: 20px;
@@ -1556,7 +1554,7 @@ a {
 }
 #main-header .bell {
   vertical-align: middle;
-  margin-left: 8px;
+  margin-left: 15px;
   display: inline-block;
   position: relative;
 }
@@ -1569,8 +1567,9 @@ a {
   text-align: center;
   text-indent: 1px;
   position: absolute;
-  bottom: -5px;
-  right: -7px;
+  bottom: 0px;
+  right: -2px;
+  z-index: 1;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -1588,6 +1587,7 @@ a {
   font-weight: 600;
   letter-spacing: .5px;
   border-radius: 4px 4px 0 0;
+  color: #FFF;
 }
 #main-header .bell header img {
   float: right;
@@ -1600,8 +1600,10 @@ a {
 }
 #main-header .bell .lucid-popover-menu {
   background: white;
+  left: -215px !important;
 }
 #main-header .bell .lucid-popover-menu:after {
+  left: 230px;
   border-bottom-color: #77818C;
 }
 #main-container {
@@ -1811,7 +1813,7 @@ a {
   background: #F0F0F0;
   height: 60px;
   top: 0;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #A5A5A5;
   -webkit-transition: opacity .3s, top .3s;
   transition: opacity .3s, top .3s;
 }
@@ -1952,7 +1954,7 @@ a {
 }
 .lucid-pages .lucid-pages-wrapper {
   padding: 10px;
-  background: #CDCED1;
+  background: #D6D6D8;
   display: block;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li,
@@ -2044,17 +2046,19 @@ a {
 }
 .lucid-pages .lucid-pages-wrapper .plus-container {
   width: 150px;
-  height: 100px;
-  margin: 20px 10px;
+  height: 120px;
+  margin: 10px;
+  position: relative;
   background: none;
-  border: 2px dashed #999;
-  box-shadow: none;
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  -webkit-transition: background-size 0.2s;
-  transition: background-size 0.2s;
+  border: 2px dashed #A5A5A5;
+}
+.lucid-pages .lucid-pages-wrapper .plus-container .plus-icon {
+  top: 36px;
+  left: 53px;
+  position: absolute;
+}
+.lucid-pages .lucid-pages-wrapper .plus-container .plus-icon svg path {
+  fill: #A5A5A5;
 }
 .lucid-pages .lucid-pages-wrapper .page-thumb-name {
   display: table;
@@ -2427,7 +2431,7 @@ a {
   -webkit-transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   padding-top: 5px;
-  border-left: 1px solid #d2d2d2;
+  border-left: 1px solid #A5A5A5;
 }
 #right-dock.manage-shapes {
   -webkit-transition-delay: .2s;
@@ -2529,6 +2533,7 @@ a {
   width: 250px;
   height: 100%;
   background: #F0F0F0;
+  border-left: 1px solid #D2D2D2;
 }
 #right-dock .right-panel .container {
   height: calc(100% - 58px);
