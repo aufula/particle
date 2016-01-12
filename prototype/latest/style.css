@@ -1,32 +1,39 @@
+#main-container {
+  background: #AAADAE !important;
+}
 #right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
-  background: #D5D8DD !important;
+  background: #D6D6D8 !important;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
   fill: #77818C !important;
 }
 .lucid-toggle .toggle-button {
-  background: #D5D9DD;
+  background: #D6D6D8;
+  border: 1px solid #A5A5A5;
 }
-.lucid-toggle .toggle-button .active {
-  background: #CAEFFF;
+.lucid-toggle .toggle-button.active {
+  background: #D2EDF9;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
   background: #F5F5F5;
 }
 .lucid-popover-menu {
-  background: #EBECED;
+  background: #F0F0F0;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap {
-  background: #DEE1E3;
+  background: #E6E6E6;
 }
 .ruler {
   display: none;
 }
 .lucid-popover-menu {
-  background: #EBECED;
+  background: #F0F0F0;
 }
 .lucid-popover-menu:after {
-  border-bottom-color: #EBECED;
+  border-bottom-color: #F0F0F0;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+  background: #F0F0F0;
 }
 .add-ons {
   padding: 10px;
@@ -259,7 +266,7 @@
 }
 #share ul.collaborators > li .delete {
   position: absolute;
-  top: 3px;
+  top: 5px;
   width: 22px !important;
   opacity: 0;
 }
@@ -303,12 +310,12 @@ li.lucid-select-option {
   z-index: -1;
 }
 .lucid-shapes-scroll {
-  background: #DEE1E3;
+  background: #E6E6E6;
   overflow-y: scroll;
   max-width: 1080px;
 }
 .lucid-manage-shapes .lucid-shapes-scroll {
-  background: #B2B2B2;
+  background: #A5A5A5;
 }
 .lucid-shape-manager .lucid-shapes-scroll {
   background: transparent;
@@ -431,8 +438,8 @@ a {
   left: 5px;
   right: 5px;
   bottom: 0;
-  border: 2px dashed #C2BFBF;
-  background-color: #D5D9DD;
+  border: 2px dashed #A5A5A5;
+  background-color: #DDD;
   text-align: center;
 }
 .lucid-shape-group .zero-state .lucid-save-shapes-hint {
@@ -454,7 +461,7 @@ a {
   transition: 0.25s ease-in-out all;
 }
 .lucid-shape-group .shape-group-top {
-  background-color: #C9CDD1;
+  background-color: #CDCED1;
   padding: 8px 10px;
   position: relative;
   color: #555;
@@ -588,7 +595,7 @@ a {
 }
 .lucid-shapes-panel .lucid-shapes-header {
   padding: 18px 15px;
-  background: #EBECED;
+  background: #F0F0F0;
   height: 60px;
   box-sizing: border-box;
   border-bottom: 1px solid #b7b7b7;
@@ -650,7 +657,7 @@ a {
   padding: 5px 15px 5px 15px;
 }
 .lucid-shapes-panel .lucid-shapes-scroll {
-  background: #DEE1E3;
+  background: #E6E6E6;
   height: calc(100vh - 114px);
   overflow-y: scroll;
   -webkit-transition: padding 0.25s ease-in-out;
@@ -763,7 +770,7 @@ a {
 .lucid-manage-shapes .lucid-shape-group {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background: #D8D8D8;
+  background: #D6D6D8;
 }
 .lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g,
 .lucid-manage-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g {
@@ -775,7 +782,7 @@ a {
 }
 .lucid-managing-shapes .lucid-shapes-scroll,
 .lucid-manage-shapes .lucid-shapes-scroll {
-  background: #B2B2B2;
+  background: #A5A5A5;
   padding-bottom: 0;
 }
 .lucid-managing-shapes .shape-group-top,
@@ -990,7 +997,7 @@ a {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  padding: 15px;
+  padding: 5px;
 }
 .lucid-shape-manager .lucid-shape-group .shapes-wrapper.lucid-drawer-open {
   max-height: 600px;
@@ -1722,7 +1729,7 @@ a {
   background: rgba(230, 230, 230, 0.5);
 }
 #left-bar {
-  background: #DEE1E3;
+  background: #E6E6E6;
   width: 250px;
   position: absolute;
   left: 0;
@@ -1817,7 +1824,7 @@ a {
   width: 100%;
   position: relative;
   padding: 2px 0;
-  background: #EBECED;
+  background: #F0F0F0;
   height: 60px;
   top: 0;
   border-bottom: 1px solid #b7b7b7;
@@ -1828,7 +1835,7 @@ a {
   z-index: 99;
 }
 #option-bar .secondary-gray {
-  background-color: #DEE1E3;
+  background-color: #E6E6E6;
   padding: 10px;
 }
 #option-bar > ul {
@@ -1961,7 +1968,7 @@ a {
 }
 .lucid-pages .lucid-pages-wrapper {
   padding: 10px;
-  background: #C4C4C4;
+  background: #CDCED1;
   display: block;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li,
@@ -2110,7 +2117,7 @@ a {
   transition: background .2s;
 }
 .lucid-page.current-page {
-  background: #AFB7BF;
+  background: #9EACBA;
 }
 .lucid-page.current-page .master-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
@@ -2429,7 +2436,7 @@ a {
   right: 0;
   width: 70px;
   height: 100%;
-  background: #DEE1E3;
+  background: #E6E6E6;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 7;
@@ -2471,7 +2478,7 @@ a {
   color: #3d4752;
 }
 #right-dock .icon-wrapper.active {
-  background: #EBECED;
+  background: #F0F0F0;
   box-shadow: 0 0px 7px rgba(0, 0, 0, 0.15);
 }
 #right-dock .icon-wrapper.ng-animate .tooltip {
@@ -2537,7 +2544,7 @@ a {
   right: -250px;
   width: 250px;
   height: 100%;
-  background: #EBECED;
+  background: #F0F0F0;
 }
 #right-dock .right-panel .container {
   height: calc(100% - 58px);

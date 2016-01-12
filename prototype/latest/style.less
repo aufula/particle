@@ -9,7 +9,7 @@ sans-serif;
 @blue-steel-2: #77818C;
 @blue-steel-3: #95A8BA;
 @blue-steel-dark: #212C35;
-@blue-steel-light: #AFB7BF;
+@blue-steel-light: #9EACBA;//#AFB7BF;
 // Grey
 @light-grey: #F1F1F1;
 @secondary-grey: #E5E5E5;
@@ -33,25 +33,62 @@ sans-serif;
 //END COLOR VARIABLES
 ////////////////////////////////////////////////
 
-//
-@grey-1: #EBECED;
-@grey-2: #DEE1E3;
-@grey-3: #D5D8DD;
+// COOL GREYS
+// @grey-1: #EBECED;
+// @grey-2: #DEE1E3;
+// @grey-3: #D5D9DD;
+// @grey-4: #C9CDD1;
+// @grey-5: #B0B4B8;
+// @behind-canvas: #94989c;
+
+//WARM GREYS
+// @grey-1: #F0F0F0;
+// @grey-2: #E6E6E6;
+// @grey-3: #D8D7D7;
+// @grey-4: #D0CDCD;
+// @grey-5: #A5A5A5;
+// @behind-canvas: #AAADAE;
+
+//ALL NEUTRAL
+// @grey-1: #F0F0F0;
+// @grey-2: #E6E6E6;
+// @grey-3: #D6D6D6; //COLLAPSE BAR RIGHT DROP SHAPES SECTION
+// @grey-4: #CDCDCD; //SHAPEGROUP LEFT
+// @grey-5: #A5A5A5;
+// @behind-canvas: #94989C;
+
+//WARM GREYS - TEAM ADMIN
+// @grey-1: #F0F0F0;
+// @grey-2: #E1E1E1;
+// @grey-3: #E6E6E6;
+// @grey-4: #D2D2D2;
+// @grey-5: #A5A5A5;
+// @behind-canvas: #AAADAE;
+
+//MIX WARM AND COOL
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
+@grey-4: #CDCED1; //SHAPEGROUP LEFT
+@grey-5: #A5A5A5;
+@behind-canvas: #AAADAE;
+
 
 //Top
-@pagedrawer-bg: #C4C4C4;
+@pagedrawer-bg: @grey-4;
 @optionbar-bg: @grey-1;// #EDEDED;
     @popover-bg: @grey-1;//#F3F3F3;
-    @popover-secondary-bg: #DEE1E3;
+    @popover-secondary-bg: @grey-2;
 
 //left panel
 @left-panel-bg: @grey-2;//#E1E2E3;
-@shapegroup-top: #C9CDD1;//#CDCFD1; 
-@zerostate-bg: #D5D9DD;
-@zerostate-border: #C2BFBF;
+@shapegroup-top: @grey-4;//#CDCFD1; 
+@zerostate-bg: #DDD;
+@zerostate-border: @grey-5;
     //shapes manager active
-    @left-panel-bg-manage: #B2B2B2;
+    @left-panel-bg-manage: @grey-5;
     @shapegroup-top-manage: @blue-steel-2;
+    @shapegroup-bg-manage: @grey-3;
     @pinned-icon-bg: @blue-steel;
     @shapemanager-import:  @blue-steel; // #3E4752
     @shapemanager-topbar-bg: @blue-steel-2;
@@ -69,12 +106,20 @@ sans-serif;
 
 @collapse-bar-icon: @blue-steel-2;
 
-@button-toggle-active: #CAEFFF;
-@button-toggle-inactive: #D5D9DD;
+@button-toggle-active: #D2EDF9;//#CAEFFF;
+@button-toggle-inactive: @grey-3;
+@button-toggle-inactive-border: @grey-5;
 
 @popover-hover-list: #F5F5F5;
 
 /////TEMP CSS FOR COMPONENT UPDATE
+#main-container{
+    background: @behind-canvas !important;
+}
+// #main-container .page-container{
+//     top:50px !important;
+//     left:160px !important;
+// }
 
 #right-dock .right-panel .lucid-collapse-bar .collapse-bar-top{
     background: @right-panel-collapse-bar !important;
@@ -84,7 +129,8 @@ sans-serif;
 }
 .lucid-toggle .toggle-button{
     background: @button-toggle-inactive;
-    .active{
+    border: 1px solid @button-toggle-inactive-border; 
+    &.active{
         background: @button-toggle-active;
     }
 }
@@ -107,6 +153,11 @@ sans-serif;
         border-bottom-color:@grey-1;
     }
 }
+
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+    background: @grey-1;
+}
+
 ///
 
 
@@ -356,7 +407,7 @@ sans-serif;
             }
             .delete {
                 position: absolute;
-                top: 3px;
+                top: 5px;
                 width: 22px !important;
                 opacity: 0;
             }
@@ -886,7 +937,7 @@ a {
     .lucid-shape-group {
         border-radius: 4px;
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-        background: #D8D8D8;
+        background: @shapegroup-bg-manage;
         .lucid-hide-shapes-icon {
             // padding: 10px 2px;
             // height: 40px;
@@ -899,7 +950,7 @@ a {
         }
     }
     .lucid-shapes-scroll {
-        background: #B2B2B2;
+        background: @left-panel-bg-manage;
         padding-bottom: 0;
     }
     .shape-group-top {
@@ -1126,7 +1177,7 @@ a {
             max-height: 162px;
             overflow: hidden;
             transition: all .3s ease-in-out;
-            padding: 15px;
+            padding: 5px; //reduced
             &.lucid-drawer-open {
                 max-height: 600px;
             }
