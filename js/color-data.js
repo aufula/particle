@@ -26,25 +26,30 @@ angular.module('lucidColors', [])
                 'less': '@lucidpress-green'
             }, ]
         }, {
-            'colorgroup': 'Secondary Colors',
+            'colorgroup': 'UI Colors',
             'colors': [{
-                'name': 'Blue Steel Dark',
-                'hex': '#606D79',
-                'less': '@blue-steel-dark',
+                'name': 'Gray - 1',
+                'hex': '#F0F0F0',
+                'less': '@grey-1'
             }, {
-                'name': 'Blue Steel Light',
-                'hex': '#AFB7BF',
-                'less': '@blue-steel-light',
-                'light': 'light'
+                'name': 'Gray - 2',
+                'hex': '#E6E6E6',
+                'less': '@grey-2'
             }, {
-                'name': 'Lucid Blue Light',
-                'hex': '#D2EDF9',
-                'less': '@lucid-blue-light',
-                'light': 'light'
+                'name': 'Gray - 3',
+                'hex': '#D6D6D8',
+                'less': '@grey-3'
+            }, {
+                'name': 'Gray - 4',
+                'hex': '#CDCED1',
+                'less': '@grey-4'
+            }, {
+                'name': 'Gray - 5',
+                'hex': '#A5A5A5',
+                'less': '@grey-5'
             }]
-
         }, {
-            'colorgroup': 'Information',
+            'colorgroup': 'Information Colors',
             'colors': [{
                 'name': 'Alert Red',
                 'hex': '#ED6058',
@@ -73,28 +78,45 @@ angular.module('lucidColors', [])
                 'less': '@info-green-light',
             }]
         }, {
-            'colorgroup': 'UI Colors',
+            'colorgroup': 'Secondary Colors',
             'colors': [{
-                'name': 'Gray - 1',
-                'hex': '#F0F0F0',
-                'less': '@grey-1'
+                'name': 'Blue Steel Dark',
+                'hex': '#606D79',
+                'less': '@blue-steel-dark',
             }, {
-                'name': 'Gray - 2',
-                'hex': '#E6E6E6',
-                'less': '@grey-2'
+                'name': 'Blue Steel Light',
+                'hex': '#AFB7BF',
+                'less': '@blue-steel-light',
+                'light': 'light'
             }, {
-                'name': 'Gray - 3',
-                'hex': '#D6D6D8',
-                'less': '@grey-3'
+                'name': 'Lucid Blue Light',
+                'hex': '#D2EDF9',
+                'less': '@lucid-blue-light',
+                'light': 'light'
             }, {
-                'name': 'Gray - 4',
-                'hex': '#CDCED1',
-                'less': '@grey-4'
-            }, {
-                'name': 'Gray - 5',
-                'hex': '#A5A5A5',
-                'less': '@grey-5'
+                'name': 'Gray - Border',
+                'hex': '#D2D2D2',
+                'less': '@grey-border'
             }]
+
+        }, {
+            'colorgroup': 'Text Colors',
+            'colors': [{
+                'name': 'Standard Text',
+                'hex': '#5A5A5A',
+                'less': '@standard-text',
+            }, {
+                'name': 'Ghost Text',
+                'hex': '#828282',
+                'less': '@standard-text-light',
+                'light': 'light'
+            }, {
+                'name': 'Lucid Blue Dark',
+                'hex': '#2C84B5',
+                'less': '@lucid-blue-dark',
+                'light': 'light'
+            }]
+
         }];
         return colors;
     });
