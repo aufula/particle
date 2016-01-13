@@ -255,6 +255,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-table-grid-column-22px'
                 }, {
                     'name': 'icon-table-grid-row-22px'
+                }, {
+                    'name': 'icon-page-outline-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
@@ -273,6 +275,10 @@ angular.module("lucidIcons", [])
                         "name": "icon-search-18px"
                     }, {
                         "name": "icon-x-18px"
+                    }, {
+                        "name": "icon-page-landsacpe-18px"
+                    }, {
+                        "name": "icon-page-portrait-18px"
                     }]
                 }];
                 return icons;
