@@ -1,3 +1,40 @@
+#main-container {
+  background: #AAADAE !important;
+}
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
+  background: #D6D6D8 !important;
+}
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
+  fill: #77818C !important;
+}
+.lucid-toggle .toggle-button {
+  background: #D6D6D8;
+  border: 1px solid #A5A5A5;
+}
+.lucid-toggle .toggle-button.active {
+  background: #D2EDF9;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+  background: #F5F5F5;
+}
+.lucid-popover-menu {
+  background: #F0F0F0;
+}
+.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap {
+  background: #E6E6E6;
+}
+.ruler {
+  display: none;
+}
+.lucid-popover-menu {
+  background: #F0F0F0;
+}
+.lucid-popover-menu:after {
+  border-bottom-color: #F0F0F0;
+}
+.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+  background: #F0F0F0;
+}
 .add-ons {
   padding: 10px;
 }
@@ -229,7 +266,7 @@
 }
 #share ul.collaborators > li .delete {
   position: absolute;
-  top: 3px;
+  top: 5px;
   width: 22px !important;
   opacity: 0;
 }
@@ -273,12 +310,12 @@ li.lucid-select-option {
   z-index: -1;
 }
 .lucid-shapes-scroll {
-  background: #D6D6D6;
+  background: #E6E6E6;
   overflow-y: scroll;
   max-width: 1080px;
 }
 .lucid-manage-shapes .lucid-shapes-scroll {
-  background: #B2B2B2;
+  background: #A5A5A5;
 }
 .lucid-shape-manager .lucid-shapes-scroll {
   background: transparent;
@@ -385,6 +422,7 @@ a {
           transform-origin: center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
+  fill: #77818C;
 }
 .lucid-shape-group.lucid-hide-shapes .lucid-hide-shapes-icon svg g {
   -webkit-transform: rotateZ(-90deg);
@@ -400,8 +438,8 @@ a {
   left: 5px;
   right: 5px;
   bottom: 0;
-  border: 2px dashed #C2BFBF;
-  background-color: #D9DADB;
+  border: 2px dashed #A5A5A5;
+  background-color: #DDD;
   text-align: center;
 }
 .lucid-shape-group .zero-state .lucid-save-shapes-hint {
@@ -423,7 +461,7 @@ a {
   transition: 0.25s ease-in-out all;
 }
 .lucid-shape-group .shape-group-top {
-  background-color: #CDCFD1;
+  background-color: #CDCED1;
   padding: 8px 10px;
   position: relative;
   color: #555;
@@ -448,6 +486,9 @@ a {
   font-weight: 500;
   padding-left: 15px;
   display: inline-block;
+}
+.lucid-shape-group .shape-group-name .edit-in-place {
+  color: #FFF;
 }
 .lucid-shape-group .lucid-close-icon {
   width: 18px;
@@ -527,7 +568,7 @@ a {
   transition: 0.25s ease-out all;
 }
 .lucid-shape-group .pin-library.pinned {
-  background: rgba(0, 0, 0, 0.5);
+  background: #3d4752;
   -webkit-transition: 0.25s ease-in-out background;
   transition: 0.25s ease-in-out background;
 }
@@ -557,10 +598,10 @@ a {
 }
 .lucid-shapes-panel .lucid-shapes-header {
   padding: 18px 15px;
-  background: #EDEDED;
+  background: #F0F0F0;
   height: 60px;
   box-sizing: border-box;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #A5A5A5;
   text-align: left;
 }
 .lucid-shapes-panel .lucid-shapes-header .lucid-more-shapes {
@@ -619,7 +660,7 @@ a {
   padding: 5px 15px 5px 15px;
 }
 .lucid-shapes-panel .lucid-shapes-scroll {
-  background: #E1E2E3;
+  background: #E6E6E6;
   height: calc(100vh - 114px);
   overflow-y: scroll;
   -webkit-transition: padding 0.25s ease-in-out;
@@ -642,9 +683,6 @@ a {
   padding: 10px;
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
-}
-.lucid-shapes-panel .lucid-group-drop-area {
-  min-height: calc(100vh - 160px);
 }
 .lucid-shapes-panel .lucid-shape-group-wrapper {
   margin-bottom: 10px;
@@ -732,7 +770,7 @@ a {
 .lucid-manage-shapes .lucid-shape-group {
   border-radius: 4px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  background: #D8D8D8;
+  background: #D6D6D8;
 }
 .lucid-managing-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g,
 .lucid-manage-shapes .lucid-shape-group .lucid-hide-shapes-icon svg g {
@@ -744,7 +782,7 @@ a {
 }
 .lucid-managing-shapes .lucid-shapes-scroll,
 .lucid-manage-shapes .lucid-shapes-scroll {
-  background: #B2B2B2;
+  background: #A5A5A5;
   padding-bottom: 0;
 }
 .lucid-managing-shapes .shape-group-top,
@@ -777,19 +815,6 @@ a {
   -webkit-transform: rotateZ(90deg);
       -ms-transform: rotate(90deg);
           transform: rotateZ(90deg);
-}
-.lucid-managing-shapes .lucid-shape-group-top-right-icons,
-.lucid-manage-shapes .lucid-shape-group-top-right-icons {
-  float: right;
-}
-.lucid-managing-shapes .lucid-shape-group-top-right-icons .pipe-right,
-.lucid-manage-shapes .lucid-shape-group-top-right-icons .pipe-right {
-  font-size: 14px;
-  font-weight: 300;
-  border-right: 1px solid #95A8BA;
-  padding-right: 10px;
-  margin-right: 10px;
-  vertical-align: top;
 }
 .ng-sort-ghost {
   opacity: .5;
@@ -959,7 +984,7 @@ a {
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
-  padding: 15px;
+  padding: 5px;
 }
 .lucid-shape-manager .lucid-shape-group .shapes-wrapper.lucid-drawer-open {
   max-height: 600px;
@@ -1058,12 +1083,6 @@ a {
 }
 .search-shapes .search-shapes-input .search-x svg path {
   fill: #77818C;
-}
-.search-shapes .search-shapes-input > span {
-  margin-left: 10px;
-  font-size: 14px;
-  color: #95A8BA;
-  cursor: pointer;
 }
 .search-shapes .search-shapes-input.ng-hide {
   margin-top: -39px;
@@ -1190,7 +1209,7 @@ a {
   transition: 0.25s ease-in-out;
 }
 .import-to-manager {
-  background-color: #3E4752;
+  background-color: #3d4752;
   color: #fff;
   padding-right: 30px;
 }
@@ -1381,13 +1400,26 @@ a {
   top: 6px;
   right: 0;
 }
+#main-header .save-text {
+  color: #77818C;
+  text-transform: uppercase;
+  line-height: 20px;
+  opacity: 1;
+  margin-left: 10px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-right: 8px;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+}
 #main-header .help {
   color: #5a5a5a;
   vertical-align: middle;
 }
 #main-header .help .lucid-popover-menu {
   background: white;
-  top: 40px;
+  top: 48px;
 }
 #main-header .help .lucid-popover-menu:after {
   border-bottom: 10px solid white;
@@ -1415,7 +1447,7 @@ a {
   width: 33%;
   text-align: right;
   margin-top: 10px;
-  padding-right: 10px;
+  padding-right: 5px;
 }
 #main-header #documents {
   display: inline-block;
@@ -1466,25 +1498,23 @@ a {
   background: rgba(255, 255, 255, 0.25);
   vertical-align: middle;
 }
-#main-header .account {
+#main-header .account-settings {
   font-size: 14px;
   vertical-align: middle;
   position: relative;
+  background: #77818C;
+  border-radius: 3px;
+  margin-left: 16px;
 }
-#main-header .account.lucid-select-wrapper svg path {
-  fill: #fff !important;
+#main-header .account-settings .lucid-popover-menu {
+  left: -95px !important;
+  top: 48px;
 }
-#main-header .account.lucid-select-wrapper .lucid-select-dropdown {
-  width: 140px;
-  right: 0;
-  left: inherit;
+#main-header .account-settings .lucid-popover-menu:after {
+  left: 110px !important;
 }
-#main-header .account.lucid-select-wrapper .lucid-selected-option {
-  border: none;
-}
-#main-header .account.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+#main-header .account-settings .lucid-select-wrapper .lucid-select-option {
   color: #5A5A5A;
-  padding: 5px 15px 5px 15px;
 }
 #main-header .page-name {
   height: 20px;
@@ -1519,7 +1549,7 @@ a {
   opacity: 1;
   margin-left: 10px;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 14px;
 }
 #main-header .master-page-text.ng-hide {
   opacity: 0;
@@ -1534,9 +1564,12 @@ a {
 }
 #main-header .bell {
   vertical-align: middle;
-  margin-left: 8px;
+  margin-left: 10px;
   display: inline-block;
   position: relative;
+}
+#main-header .bell svg path {
+  fill: #fff;
 }
 #main-header .bell .bubble {
   background: #29AAE1;
@@ -1547,8 +1580,9 @@ a {
   text-align: center;
   text-indent: 1px;
   position: absolute;
-  bottom: -5px;
-  right: -7px;
+  bottom: 0px;
+  right: -2px;
+  z-index: 1;
   -webkit-transition: all .2s;
   transition: all .2s;
 }
@@ -1566,6 +1600,7 @@ a {
   font-weight: 600;
   letter-spacing: .5px;
   border-radius: 4px 4px 0 0;
+  color: #FFF;
 }
 #main-header .bell header img {
   float: right;
@@ -1578,8 +1613,10 @@ a {
 }
 #main-header .bell .lucid-popover-menu {
   background: white;
+  left: -215px !important;
 }
 #main-header .bell .lucid-popover-menu:after {
+  left: 230px;
   border-bottom-color: #77818C;
 }
 #main-container {
@@ -1624,6 +1661,7 @@ a {
 }
 #sidebar ul li:first-child {
   line-height: 53px;
+  background-color: #77818C;
 }
 #sidebar ul li:hover {
   background: rgba(255, 255, 255, 0.15);
@@ -1690,7 +1728,7 @@ a {
   background: rgba(230, 230, 230, 0.5);
 }
 #left-bar {
-  background: #E1E2E3;
+  background: #E6E6E6;
   width: 250px;
   position: absolute;
   left: 0;
@@ -1700,9 +1738,6 @@ a {
   -webkit-transition: opacity 0.3s, left 0.3s ease-in-out;
   transition: opacity 0.3s, left 0.3s ease-in-out;
   border-right: 1px solid #b7b7b7;
-}
-#left-bar .lucid-collapse-bar .collapse-bar-top {
-  background: #CDCFD1;
 }
 #left-bar .hover-handle {
   position: absolute;
@@ -1788,10 +1823,10 @@ a {
   width: 100%;
   position: relative;
   padding: 2px 0;
-  background: #EDEDED;
+  background: #F0F0F0;
   height: 60px;
   top: 0;
-  border-bottom: 1px solid #b7b7b7;
+  border-bottom: 1px solid #A5A5A5;
   -webkit-transition: opacity .3s, top .3s;
   transition: opacity .3s, top .3s;
 }
@@ -1799,7 +1834,7 @@ a {
   z-index: 99;
 }
 #option-bar .secondary-gray {
-  background-color: #e5e5e5;
+  background-color: #E6E6E6;
   padding: 10px;
 }
 #option-bar > ul {
@@ -1915,7 +1950,7 @@ a {
   margin-top: 0px;
 }
 .page-drawer.ng-hide .lucid-pages-wrapper {
-  margin-top: -198px;
+  margin-top: -200px;
 }
 .page-drawer.ng-animate {
   overflow: hidden;
@@ -1931,8 +1966,8 @@ a {
   top: 54px;
 }
 .lucid-pages .lucid-pages-wrapper {
-  padding: 20px;
-  background: #C4C4C4;
+  padding: 10px;
+  background: #D6D6D8;
   display: block;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li,
@@ -1941,7 +1976,7 @@ a {
   cursor: pointer;
   text-align: center;
   width: 170px;
-  min-height: 152px;
+  height: 180px;
   vertical-align: top;
   border-radius: 4px;
   -webkit-transition: background .2s;
@@ -2024,17 +2059,19 @@ a {
 }
 .lucid-pages .lucid-pages-wrapper .plus-container {
   width: 150px;
-  height: 100px;
-  margin: 20px 10px;
+  height: 120px;
+  margin: 10px;
+  position: relative;
   background: none;
-  border: 2px dashed #999;
-  box-shadow: none;
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg');
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-size: 30%;
-  -webkit-transition: background-size 0.2s;
-  transition: background-size 0.2s;
+  border: 2px dashed #A5A5A5;
+}
+.lucid-pages .lucid-pages-wrapper .plus-container .plus-icon {
+  top: 36px;
+  left: 53px;
+  position: absolute;
+}
+.lucid-pages .lucid-pages-wrapper .plus-container .plus-icon svg path {
+  fill: #A5A5A5;
 }
 .lucid-pages .lucid-pages-wrapper .page-thumb-name {
   display: table;
@@ -2055,12 +2092,9 @@ a {
   display: table-cell;
   vertical-align: middle;
 }
-.lucid-pages .lucid-pages-wrapper .page-thumb-name h4:hover {
-  color: #5a5a5a;
-}
 .lucid-pages .lucid-pages-wrapper .page-thumb-name .edit-in-place {
   text-align: center;
-  color: #5a5a5a;
+  color: inherit;
   font-weight: 400;
   display: inline-block;
   width: 150px;
@@ -2089,6 +2123,9 @@ a {
 .lucid-page.current-page .master-icon {
   background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
   background-size: 22px;
+}
+.lucid-page.current-page .page-thumb-name h4 {
+  color: #fff;
 }
 .lucid-page .center-image {
   display: table;
@@ -2400,14 +2437,14 @@ a {
   right: 0;
   width: 70px;
   height: 100%;
-  background: #DEE1E3;
+  background: #E6E6E6;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 7;
   -webkit-transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   padding-top: 5px;
-  border-left: 1px solid #d2d2d2;
+  border-left: 1px solid #A5A5A5;
 }
 #right-dock.manage-shapes {
   -webkit-transition-delay: .2s;
@@ -2442,7 +2479,7 @@ a {
   color: #3d4752;
 }
 #right-dock .icon-wrapper.active {
-  background: #EBECED;
+  background: #F0F0F0;
   box-shadow: 0 0px 7px rgba(0, 0, 0, 0.15);
 }
 #right-dock .icon-wrapper.ng-animate .tooltip {
@@ -2508,7 +2545,8 @@ a {
   right: -250px;
   width: 250px;
   height: 100%;
-  background: #EBECED;
+  background: #F0F0F0;
+  border-left: 1px solid #D2D2D2;
 }
 #right-dock .right-panel .container {
   height: calc(100% - 58px);
@@ -2519,7 +2557,7 @@ a {
   transition: 0.25s ease-in-out all;
 }
 #right-dock .right-panel .container > header {
-  background: #596470;
+  background: #77818C;
   padding: 10px 15px;
   color: #fff;
   text-align: left;
@@ -2535,9 +2573,6 @@ a {
 }
 #right-dock .right-panel .lucid-collapse-bar {
   margin-bottom: 10px;
-}
-#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
-  background-color: #CFD4D8;
 }
 #right-dock .right-panel ul.page-settings {
   display: block;
