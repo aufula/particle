@@ -33,7 +33,7 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    //'componentsURL': "/components/2.0/" //local dev
+    // 'componentsURL': "/components/2.0/" //local dev
     'componentsURL': "http://particle.golucid.co/components/2.0/" //github
 
 });
@@ -148,8 +148,6 @@ angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidData', 'lucid
         return $sce.trustAsHtml(htmlCode);
     };
 }])
-
-
 
 ///////////////////      Animations      //////////////////////
 
