@@ -684,9 +684,6 @@ a {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
-.lucid-shapes-panel .lucid-group-drop-area {
-  min-height: calc(100vh - 160px);
-}
 .lucid-shapes-panel .lucid-shape-group-wrapper {
   margin-bottom: 10px;
 }
@@ -1403,6 +1400,25 @@ a {
   top: 6px;
   right: 0;
 }
+#main-header .save-text {
+  color: #77818C;
+  text-transform: uppercase;
+  line-height: 20px;
+  opacity: 1;
+  margin-left: 10px;
+  letter-spacing: 1px;
+  font-size: 14px;
+  margin-right: 15px;
+  position: relative;
+  width: 50px;
+  display: inline-block;
+  text-align: center;
+}
+#main-header .save-text .ellipsis {
+  position: absolute;
+  right: -14px;
+  top: -1px;
+}
 #main-header .help {
   color: #5a5a5a;
   vertical-align: middle;
@@ -1494,7 +1510,7 @@ a {
   position: relative;
   background: #77818C;
   border-radius: 3px;
-  margin-left: 20px;
+  margin-left: 16px;
 }
 #main-header .account-settings .lucid-popover-menu {
   left: -95px !important;
@@ -1539,7 +1555,7 @@ a {
   opacity: 1;
   margin-left: 10px;
   letter-spacing: 1px;
-  font-size: 12px;
+  font-size: 14px;
 }
 #main-header .master-page-text.ng-hide {
   opacity: 0;
@@ -1554,9 +1570,12 @@ a {
 }
 #main-header .bell {
   vertical-align: middle;
-  margin-left: 15px;
+  margin-left: 10px;
   display: inline-block;
   position: relative;
+}
+#main-header .bell svg path {
+  fill: #fff;
 }
 #main-header .bell .bubble {
   background: #29AAE1;

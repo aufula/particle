@@ -6,6 +6,14 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////START MAIN CTRL
     ////////////////
     .controller('mainCtrl', function($scope, $timeout, $rootScope) {
+        $scope.savetext = 'saved';
+        $rootScope.saveDocument = function(){
+            $scope.savetext = 'saving...';
+            $timeout(function(){
+                $scope.savetext = 'saved';
+            }, 1000);
+
+        };
         $rootScope.selectedBlock = {
             text: {
                 size: 12
@@ -85,7 +93,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////////////////
     ////START SHARE CTRL
     ////////////////
-    .controller('ShareCtrl', function($scope, $timeout) {
+    .controller('ShareCtrl', function($scope, $rootScope, $timeout) {
         $scope.dummyData = { // empty form data
             name: "",
             role: "Editor"
@@ -97,6 +105,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }, 10);
         };
         $scope.addPerson = function(data) {
+            $rootScope.saveDocument();
             var collaborator = {
                 'name': data.name,
                 'role': data.role,
@@ -233,6 +242,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             $timeout(function() {
                 $rootScope.currentPage = newPage;
             }, 10); //delay so it selects after transition
+            $rootScope.saveDocument();
         };
         $scope.duplicatePage = function(page, index) {
             var newPage = JSON.parse(JSON.stringify(page));
@@ -247,6 +257,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }, 10);
             // $scope.selectedPage = uniqueID;
             //console.log(newpage, index);
+            $rootScope.saveDocument();
         };
         $rootScope.masterPageCount = function() {
             var masterPageCount = [];
@@ -269,6 +280,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                     $scope.changePage($rootScope.pages[index - 1]);
                 }
             }, 10);
+            $rootScope.saveDocument();
         };
         $scope.applyMaster = function(page) {
             page.masterapplied = true;
@@ -276,6 +288,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             $timeout(function() {
                 page.masterapplied = false;
             }, 2000);
+            $rootScope.saveDocument();
         };
         $scope.applyMasterAll = function() {
             console.log('master applied to all');
@@ -286,6 +299,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             });
 
         };
+        $rootScope.saveDocument();
     })
     ////////////////
     ////START LINE PATH CTRL
@@ -502,6 +516,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         $scope.$on('draggable:end', function(event, data) {
             $rootScope.draggingshape = false;
             $rootScope.mouseInLeftPanel = false;
+            $rootScope.saveDocument();
         });
         $scope.focusSearch = function(searchshapes) {
             console.log(searchshapes);
@@ -525,9 +540,11 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         };
         $scope.showPinMessage = function(shapegroup) {
             //add message
-            var overflow = document.getElementById('left-panel-shapes').offsetHeight < document.getElementById('left-panel-shapes-scroll').offsetHeight;
-            //console.log('overflow: ', overflow)
-            if (overflow) {
+            var overflow = document.getElementById('left-panel-shapes').offsetHeight - document.getElementById('left-panel-shapes-scroll').offsetHeight;
+
+                console.log('overflow: ', overflow);
+
+            if (overflow < 125) {
                 $scope.overflowMessage = true;
                 $scope.overflowMessageTitle = shapegroup.groupname;
                 $timeout(function() {
@@ -536,7 +553,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         };
         $scope.pinGroup = function(shapegroup) {
-
+             $rootScope.saveDocument();
             $scope.pinnedShapeGroups.push(shapegroup);
             $scope.showPinMessage(shapegroup);
             shapegroup.pinned = true;
@@ -553,7 +570,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         });
         $scope.unPinGroup = function(shapegroup) {
-
+             $rootScope.saveDocument();
             //filter the array
             var findShapegroup = $scope.getObject(shapegroup.id, $scope.pinnedShapeGroups);
             //get the index
@@ -603,12 +620,14 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 shapegroup.pinned = true;
                 //console.log('add', evt.model);
                 $rootScope.draggingShapeGroup = false;
+                 $rootScope.saveDocument();
             },
             onStart: function(evt) {
                 $rootScope.draggingShapeGroup = true;
             },
             onEnd: function(evt) {
                 $rootScope.draggingShapeGroup = false;
+                 $rootScope.saveDocument();
             },
         };
 
@@ -757,6 +776,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 "shapes": [],
             };
             $scope.customShapeGroups.splice(0, 0, newGroup);
+             $rootScope.saveDocument();
         };
         $scope.editName = function(shapegroup, index) {
             $timeout(function() {
@@ -764,6 +784,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 shapegroup.edit = true;
                 //console.log('edit?', shapegroup.edit);
             }, 100)
+             $rootScope.saveDocument();
 
 
         };
@@ -775,6 +796,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             console.log(newGroup)
             $scope.customShapeGroups.splice(0, 0, newGroup);
             $scope.editName(newGroup, 0);
+             $rootScope.saveDocument();
         };
 
         $scope.openWindow = function(url) {
@@ -865,7 +887,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     /////// END DRAGGIN SHAPES STUFF
 
     $scope.dropToCanvas = function(item, event) {
-
+         $rootScope.saveDocument();
         var index = $rootScope.currentPage.blocks.indexOf(item);
 
         if (index === -1 && item) {

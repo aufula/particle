@@ -49,6 +49,7 @@
       </div>
       <div id="documents" ng-click="showMegamenu=!showMegamenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
       <div class="right">
+        <span class="save-text">{{savetext}}</span>
         <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
         <div style="padding:10px 10px 0">
           <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
@@ -63,7 +64,7 @@
         </lucid-buttcon-popover>
         <div class="bell" ng-init="showAlert=true">
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
-          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg" width="311">
+          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-bell-22px.svg" width="311">
               <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
             <div class="notifications"><img ng-click="addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
           </lucid-buttcon-popover>
@@ -405,11 +406,10 @@
                                               dnd-type="'custom'"
                                               dnd-effect-allowed="{{copy(shapegroup.custom)}}"
                                               dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
-                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event);"
                                               dnd-copied="logEvent('Item copied', event)"
                                               dnd-canceled="logEvent('Drag operation canceled', event)"
-                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
-
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false;"
                                               
                                               ng-drag-data="shape"
 
@@ -457,7 +457,7 @@
                                       <ul class="shapes-wrapper"
                                           ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
                                           ng-drop="true"
-                                          ng-drop-success="dropFromCanvas($data, $event, shapegroup)"
+                                          ng-drop-success="dropFromCanvas($data, $event, shapegroup);"
 
                                           dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
