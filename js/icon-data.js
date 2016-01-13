@@ -276,7 +276,7 @@ angular.module("lucidIcons", [])
                     }, {
                         "name": "icon-x-18px"
                     }, {
-                        "name": "icon-page-landsacpe-18px"
+                        "name": "icon-page-landscape-18px"
                     }, {
                         "name": "icon-page-portrait-18px"
                     }]
