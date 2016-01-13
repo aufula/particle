@@ -114,11 +114,15 @@ angular.module('lucidColors', [])
             'colors': [{
                 'name': 'Standard Text',
                 'hex': '#5A5A5A',
-                'less': '@standard-text',
+                'less': '@text-standard',
             }, {
                 'name': 'Ghost Text',
                 'hex': '#828282',
-                'less': '@standard-text-light',
+                'less': '@text-light',
+            }, {
+                'name': 'Inactive Text',
+                'hex': '#A5A5A5',
+                'less': '@text-inactive',
             }, {
                 'name': 'Lucid Blue Dark',
                 'hex': '#2C84B5',
