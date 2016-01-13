@@ -154,7 +154,7 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-present-22px'
                 }, {
-                    'name': 'icon-question-circle-22px'
+                    'name': 'icon-help-22px'
                 }, {
                     'name': 'icon-radius-22px'
                 }, {
