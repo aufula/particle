@@ -646,6 +646,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             },
             onEnd: function(evt) {
                 $rootScope.draggingShapeGroup = false;
+                $rootScope.saveDocument();
             },
         };
 

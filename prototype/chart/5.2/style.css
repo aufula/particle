@@ -2445,6 +2445,7 @@ a {
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   padding-top: 5px;
   border-left: 1px solid #A5A5A5;
+  border-right: 1px solid #D2D2D2;
 }
 #right-dock.manage-shapes {
   -webkit-transition-delay: .2s;
@@ -2467,6 +2468,7 @@ a {
       -ms-transform: scale(1);
           transform: scale(1);
   margin: 0;
+  margin-right: -1px;
 }
 #right-dock .icon-wrapper .orange {
   color: #EB7D30;
@@ -2542,11 +2544,10 @@ a {
 #right-dock .right-panel {
   position: absolute;
   top: 0;
-  right: -250px;
+  right: -251px;
   width: 250px;
   height: 100%;
   background: #F0F0F0;
-  border-left: 1px solid #D2D2D2;
 }
 #right-dock .right-panel .container {
   height: calc(100% - 58px);

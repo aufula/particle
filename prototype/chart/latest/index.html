@@ -1,20 +1,20 @@
 <html ng-app="particleApp">
 <head>
     <!-- Angular -->
-    <script src= "../../lib/angular/angular.min.js" type="text/javascript"></script>
-    <script src= "../../lib/angular/angular-animate.min.js" type="text/javascript"></script>
-    <script src="../../lib/angular/angular-route.min.js" type="text/javascript"></script>
+    <script src= "../../../lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src= "../../../lib/angular/angular-animate.min.js" type="text/javascript"></script>
+    <script src="../../../lib/angular/angular-route.min.js" type="text/javascript"></script>
 
     <!-- Lucid Components -->
-    <script src="../../components/2.0/components-min.js" type="text/javascript"></script>
-    <link href="../../components/2.0/components.css" type="text/css" rel="stylesheet" />
+    <script src="../../../components/2.0/components-min.js" type="text/javascript"></script>
+    <link href="../../../components/2.0/components.css" type="text/css" rel="stylesheet" />
     
     <!-- Other Libs -->
-    <script src= "../../lib/Sortable.min.js" type="text/javascript"></script>
-    <script src= "../../lib/ng-sortable.js" type="text/javascript"></script>
-    <script src="../../lib/svg-morpheus.js" type="text/javascript"></script>
-    <script src="../../lib/ngDraggable.js" type="text/javascript"></script>
-    <script src="../../lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
+    <script src= "../../../lib/Sortable.min.js" type="text/javascript"></script>
+    <script src= "../../../lib/ng-sortable.js" type="text/javascript"></script>
+    <script src="../../../lib/svg-morpheus.js" type="text/javascript"></script>
+    <script src="../../../lib/ngDraggable.js" type="text/javascript"></script>
+    <script src="../../../lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
 
     <!-- Prototype Specific -->
     <link rel="stylesheet" type="text/css" href="style.css">
@@ -23,7 +23,7 @@
 <body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
   <div id="sidebar" class="reversed-text">
     <ul>
-      <li style="background-color: #77818C;"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
+      <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
       <li class="no-propagate">
         <a href="http://s.codepen.io/team/lucidsoftware/debug/944b732e7d71a1fb50537f7278783fee?"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-folder-orange.svg" class="icon" />Go to Documents</a>
       </li>
@@ -49,6 +49,7 @@
       </div>
       <div id="documents" ng-click="showMegamenu=!showMegamenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
       <div class="right">
+        <span class="save-text">{{savetext}}</span>
         <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
         <div style="padding:10px 10px 0">
           <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
@@ -61,33 +62,30 @@
             </ul>
         </div>
         </lucid-buttcon-popover>
-        <div class="bell" ng-init="showAlert=true" ng-click="showNotifications = !showNotifications; showAlert=false"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-bell-white.svg"/>
+        <div class="bell" ng-init="showAlert=true">
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
-          <div class="lucid-popover-menu lucid-animate" style="width: 311px; left: -140.5px;" ng-show="showNotifications">
-            <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
-            <div class="notifications"><img ng-click="addOnsModal=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
-          </div>
+          <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-bell-22px.svg" width="311">
+              <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
+            <div class="notifications"><img ng-click="addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
+          </lucid-buttcon-popover>
         </div>
-        <span class="line"></span>
-          <div class="lucid-select-wrapper account" ng-click="showDropdown = !showDropdown" click-outside = "showDropdown = false">
-              <div class="selected-option-wrapper " >
-                  <ng-include class="dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
-                  <span class="lucid-selected-option reversed-text">dsmith@gmail.com</span>
+        
+
+          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-person-white.svg" width="135">
+              <div class="lucid-select-wrapper">
+                  <ul class="lucid-select-dropdown" ng-click="account.show = false;">
+                      <li class="lucid-select-option">
+                          Account Settings
+                      </li>
+                      <li class="lucid-select-option">
+                          User Preferences
+                      </li>
+                      <li class="lucid-select-option">
+                          Log Out
+                      </li>
+                  </ul>
               </div>
-              <div class="input-label" ng-if="label">
-                  <span>{{label}}</span>
-              </div>
-              <div class="lucid-select-dropdown" ng-show="showDropdown">
-                  <div>
-                      <ul>
-                          <li class="lucid-select-option">Account Settings</li>
-                          <li class="lucid-select-option">Preferences</li>
-                          <li class="lucid-select-option">Log out</li>
-                      </ul>
-                  </div>
-              </div>
-          </div>
-        </a>
+          </lucid-buttcon-popover>
       </div>
     </div>
       <div id="page-list">
@@ -151,7 +149,9 @@
                   </li>
               </ul>
               <div class="add-new-page lucid-animate" draggable="false">
-                  <div class="plus-container" ng-click="addPage()"></div>
+                  <div class="plus-container" ng-click="addPage()">
+                    <ng-include class="plus-icon" src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg'"></ng-include>
+                  </div>
               </div>
           </div>
       </div>
@@ -406,11 +406,10 @@
                                               dnd-type="'custom'"
                                               dnd-effect-allowed="{{copy(shapegroup.custom)}}"
                                               dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
-                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                              dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event);"
                                               dnd-copied="logEvent('Item copied', event)"
                                               dnd-canceled="logEvent('Drag operation canceled', event)"
-                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
-
+                                              dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false;"
                                               
                                               ng-drag-data="shape"
 
@@ -458,7 +457,7 @@
                                       <ul class="shapes-wrapper"
                                           ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
                                           ng-drop="true"
-                                          ng-drop-success="dropFromCanvas($data, $event, shapegroup)"
+                                          ng-drop-success="dropFromCanvas($data, $event, shapegroup);"
 
                                           dnd-list="shapegroup.shapes"
                                           dnd-allowed-types="[shapegroup.custom]"
@@ -860,11 +859,11 @@
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- RIGHT DOCK ICONS -->
-        <div class="icon-wrapper" ng-click="addOnsModal=true">
+        <div class="icon-wrapper" ng-click="addOnsModal.show=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
         </div>
         <!-- ADD ONS MODAL -->
-        <lucid-modal showmodal="addOnsModal" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
+        <lucid-modal showmodal="addOnsModal.show" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
           <ul class="add-ons">
             <li class="green">
@@ -926,7 +925,7 @@
                     <lucid-buttcon icon="http://particle.golucid.co/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
                   </li>
                   <li class="no-padding">
-                    <lucid-select class="condensed" width="165" label="page size" options="['Letter (8.5 x 11)', 'Tabloid (11 x 17)']"><lucid-select>
+                    <lucid-select class="condensed" width="160" label="page size" options="['Letter (8.5 x 11)', 'Tabloid (11 x 17)']"><lucid-select>
                   </li>
                   <li class="no-padding">
                     <lucid-toggle activetext="AUTO" label="page tiling" width="52" toggle="true"></lucid-toggle>
@@ -1075,11 +1074,11 @@
             <span>Table Settings</span>
           </li>
           <li>
-            <lucid-buttcon class="reversed-text" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-grid-22px.svg" label="grid"></lucid-buttcon>
+            <lucid-buttcon class="reversed-text lucid-icon fill-white" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" label="grid"></lucid-buttcon>
           </li>
           <li>
-            <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-merge-vertical-22px.svg" class="has-label reversed-text"></lucid-buttcon>
-            <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-merge-horizontal-22px.svg" class="has-label reversed-text"></lucid-buttcon>
+            <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-column-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
+            <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-row-22px.svg" class="has-label reversed-text lucid-icon fill-white"></lucid-buttcon>
             <div class="input-label" style="margin-top:2px">
                 <span>merge</span>
             </div>
