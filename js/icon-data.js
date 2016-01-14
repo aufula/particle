@@ -30,9 +30,9 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-atlassian-22px'
                 }, {
-                    'name': 'icon-avatar-22px'
+                    'name': 'icon-person-22px'
                 }, {
-                    'name': 'icon-avatar-alert-22px'
+                    'name': 'icon-person-alert-22px'
                 }, {
                     'name': 'icon-bell-22px'
                 }, {
