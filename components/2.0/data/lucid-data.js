@@ -1,5 +1,6 @@
 /*global angular : true fixes codekit error*/
 angular.module('lucidData', [])
+    //chart data
     .factory('pagesData', [function() {
         //this factory will contain page data, block elements, positoins etc.
         var lucidPages = [{
@@ -74,6 +75,196 @@ angular.module('lucidData', [])
             'linecolor': '#333'
         }];
         return lucidPages;
+    }])
+    //Press Data
+    .factory('pressData', [function() {
+        //this factory will contain page data, block elements, positoins etc.
+        var pressPages = [{
+            'name': 'Page 1',
+            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/thumb-placeholder-flowchart.png',
+            'id': 14543,
+            'canvasBG': '#FFF',
+            'blocks': [{
+                'type':'video',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "comment": {
+                    "text": "yep this is a comment"
+                },
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "Video",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 10,
+                    "y": 10,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'shape',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "shape",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 150,
+                    "y": 10,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'scrollarea',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "scrollarea",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 290,
+                    "y": 10,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'button',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "button",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 10,
+                    "y": 100,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'table',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "table",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 150,
+                    "y": 100,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'image',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "image",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 290,
+                    "y": 100,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }, {
+                'type':'text',
+                "swatch": {
+                    "fill": "#ffffff",
+                    "text": "#AEAEAE",
+                    "border": "#666666"
+                },
+                "borderwidth": 3,
+                "borderstyle": "solid",
+                "text": {
+                    "verticalalignment": "middle",
+                    "horizontalalignment": "center",
+                    "text": "text",
+                    "size": 16,
+                },
+
+                "padding": 7,
+                "metrics": {
+                    "z": 2,
+                    "x": 440,
+                    "y": 100,
+                    "width": 120,
+                    "height": 100
+                }
+
+            }]
+        }];
+        return pressPages;
     }])
     /////////////
     //THEMES DATA
