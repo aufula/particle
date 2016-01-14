@@ -1506,6 +1506,9 @@ a {
   border-radius: 3px;
   margin-left: 16px;
 }
+#main-header .account-settings svg path {
+  fill: #fff;
+}
 #main-header .account-settings .lucid-popover-menu {
   left: -95px !important;
   top: 48px;
