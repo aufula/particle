@@ -16,6 +16,7 @@
 //@codekit-append "context-menu/lucid-context-menu.js"
 //@codekit-append "toggle/lucid-toggle.js"
 //@codekit-append "edit-in-place/lucid-edit-in-place.js"
+//@codekit-append "top-tabs/lucid-top-tabs.js"
 
 //include Data JS
 //@codekit-append "data/lucid-data.js"
@@ -33,12 +34,12 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    // 'componentsURL': "/components/2.0/" //local dev
+    //'componentsURL': "/components/2.0/" //local dev
     'componentsURL': "http://particle.golucid.co/components/2.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs'])
 
 
 

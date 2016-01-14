@@ -1377,3 +1377,34 @@ input[type=range]:focus::-ms-fill-upper {
 .edit-in-place-wrapper.reversed-text input.edit-in-place {
   font-weight: 300;
 }
+.lucid-top-tabs-wrapper {
+  position: relative;
+  height: 100%;
+}
+.lucid-top-tabs .lucid-top-tab {
+  text-align: center;
+  cursor: pointer;
+  display: inline-block;
+  color: #FFF;
+  background-color: #77818C;
+  height: 44px;
+  font-size: 16px;
+  padding: 0 15px;
+  line-height: 42px;
+  white-space: nowrap;
+  border-left: 1px solid #E6E6E6;
+  box-sizing: border-box;
+}
+.lucid-top-tabs .lucid-top-tab:first-child {
+  border-left: none;
+}
+.lucid-top-tabs .lucid-top-tab.col-33 {
+  width: 33.333333%;
+}
+.lucid-top-tabs .lucid-top-tab.col-50 {
+  width: 50%;
+}
+.lucid-top-tabs .lucid-top-tab.selected {
+  color: #77818C;
+  background-color: #E6E6E6;
+}
