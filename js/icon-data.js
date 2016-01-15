@@ -259,6 +259,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-page-outline-22px'
                 }, {
                     'name': 'icon-wand-22px'
+                }, {
+                    'name': 'icon-person-large-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
