@@ -1,8 +1,10 @@
 .lucid-top-tabs-wrapper {
     position: relative;
     height: 100%;
-    .lucid-top-tab-content{
-        padding:15px 10px;
+    .lucid-top-tab-content {
+        padding: 15px 10px;
+        height: 100%;
+        overflow: auto;
     }
 }
 
@@ -19,13 +21,13 @@
         border-left: 1px solid @grey-2;
         box-sizing: border-box;
         text-transform: uppercase;
-        &:first-child{
-            border-left:none;
+        &:first-child {
+            border-left: none;
         }
-        &.col-33{
+        &.col-33 {
             width: 33.333333%;
         }
-        &.col-50{
+        &.col-50 {
             width: 50%;
         }
         &.selected {
@@ -33,5 +35,4 @@
             background-color: @grey-2;
         }
     }
-
 }
