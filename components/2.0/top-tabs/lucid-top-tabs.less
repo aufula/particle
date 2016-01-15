@@ -1,6 +1,9 @@
 .lucid-top-tabs-wrapper {
     position: relative;
     height: 100%;
+    .lucid-top-tab-content{
+        padding:15px 10px;
+    }
 }
 
 .lucid-top-tabs {
@@ -10,13 +13,12 @@
         display: inline-block;
         color: #FFF;
         background-color: @blue-steel-2;
-        height: 44px;
-        font-size: 16px;
-        padding: 0 15px;
-        line-height: 42px;
+        font-size: 14px;
+        padding: 10px 0;
         white-space: nowrap;
         border-left: 1px solid @grey-2;
         box-sizing: border-box;
+        text-transform: uppercase;
         &:first-child{
             border-left:none;
         }
@@ -31,4 +33,5 @@
             background-color: @grey-2;
         }
     }
+
 }

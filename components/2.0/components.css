@@ -1381,19 +1381,21 @@ input[type=range]:focus::-ms-fill-upper {
   position: relative;
   height: 100%;
 }
+.lucid-top-tabs-wrapper .lucid-top-tab-content {
+  padding: 15px 10px;
+}
 .lucid-top-tabs .lucid-top-tab {
   text-align: center;
   cursor: pointer;
   display: inline-block;
   color: #FFF;
   background-color: #77818C;
-  height: 44px;
-  font-size: 16px;
-  padding: 0 15px;
-  line-height: 42px;
+  font-size: 14px;
+  padding: 10px 0;
   white-space: nowrap;
   border-left: 1px solid #E6E6E6;
   box-sizing: border-box;
+  text-transform: uppercase;
 }
 .lucid-top-tabs .lucid-top-tab:first-child {
   border-left: none;
