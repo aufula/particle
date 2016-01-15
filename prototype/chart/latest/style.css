@@ -2455,9 +2455,6 @@ a {
   z-index: 1;
 }
 #right-dock .icon-wrapper {
-  text-transform: uppercase;
-  color: #77818C;
-  font-size: 10px;
   cursor: pointer;
   -webkit-transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
   transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
@@ -2471,6 +2468,10 @@ a {
           transform: scale(1);
   margin: 0;
   margin-right: -1px;
+}
+#right-dock .icon-wrapper.input-label {
+  text-align: center;
+  color: #77818C;
 }
 #right-dock .icon-wrapper .orange {
   color: #EB7D30;

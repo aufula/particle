@@ -859,7 +859,7 @@
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- RIGHT DOCK ICONS -->
-        <div class="icon-wrapper" ng-click="addOnsModal.show=true">
+        <div class="icon-wrapper input-label" ng-click="addOnsModal.show=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
         </div>
         <!-- ADD ONS MODAL -->
@@ -893,23 +893,23 @@
           </ul>
         </lucid-modal>
         <!-- END ADD ONS MODAL -->
-        <div class="icon-wrapper" ng-class="{active: openTab == 'pageSettings'}" ng-click="$root.setTab('pageSettings');">
+        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'pageSettings'}" ng-click="$root.setTab('pageSettings');">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span>Page</span>
         </div>
-        <div class="icon-wrapper" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share');">
+        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share');">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
         </div>
-        <div class="icon-wrapper" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
+        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-layers-mode.svg" class="full" /></div><span>Layers</span>
         </div>
-        <div class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
+        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comments-mode.svg" class="full" /></div><span>Comments</span>
         </div>
-        <div ng-show="addOnPresent" class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
+        <div ng-show="addOnPresent" class="icon-wrapper input-label lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-presentation-bluesteel.svg" class="full" /></div><span>Present</span>
           <div class="tooltip lucid-animate" ng-show="showTooltipPresent">Presentation Mode</div>
         </div>
-        <div class="icon-wrapper lucid-animate" ng-show="addOnHistory" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+        <div class="icon-wrapper input-label lucid-animate" ng-show="addOnHistory" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
           <div class="tooltip lucid-animate" ng-show="showTooltipHistory">Revision history</div>
         </div>

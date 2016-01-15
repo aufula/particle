@@ -2743,9 +2743,10 @@ a {
         z-index: 1;
     }
     .icon-wrapper {
-        text-transform: uppercase;
-        color: #77818C;
-        font-size: 10px;
+        &.input-label{
+            text-align: center;
+            color: @blue-steel-2;
+        }
         cursor: pointer;
         transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
         padding: 14px 0;
