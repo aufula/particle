@@ -2471,17 +2471,12 @@ a {
 }
 #right-dock .icon-wrapper.input-label {
   text-align: center;
-  color: #77818C;
 }
 #right-dock .icon-wrapper .orange {
   color: #EB7D30;
 }
 #right-dock .icon-wrapper:first-of-type {
   padding-top: 15px;
-}
-#right-dock .icon-wrapper:hover,
-#right-dock .icon-wrapper.active {
-  color: #3d4752;
 }
 #right-dock .icon-wrapper.active {
   background: #F0F0F0;

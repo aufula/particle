@@ -188,6 +188,7 @@ input {
   text-transform: uppercase;
   text-align: left;
   letter-spacing: .5;
+  color: #5a5a5a;
 }
 .lucid-input-stepper-wrapper {
   display: inline-block;
