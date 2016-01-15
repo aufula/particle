@@ -5,13 +5,14 @@
     <desc>Created with Sketch.</desc>
     <defs>
         <linearGradient x1="50%" y1="0%" x2="50%" y2="100%" id="linearGradient-1">
-            <stop stop-color="#BAC3C6" offset="0%"></stop>
-            <stop stop-color="#3D4752" offset="100%"></stop>
+            <stop stop-color="#FFFFFF" offset="0%"></stop>
+            <stop stop-color="#FFFFFF" stop-opacity="0" offset="100%"></stop>
         </linearGradient>
     </defs>
     <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-fill-gradient-linear-22px" sketch:type="MSArtboardGroup" fill="url(#linearGradient-1)">
-            <path d="M18,20 L4,20 C2.9,20 2,19.1 2,18 L2,4 C2,2.9 2.9,2 4,2 L18,2 C19.1,2 20,2.9 20,4 L20,18 C20,19.1 19.1,20 18,20 L18,20 Z" id="Shape" sketch:type="MSShapeGroup"></path>
+        <g id="icon-fill-gradient-linear-22px" sketch:type="MSArtboardGroup">
+            <path d="M18,20 L4,20 C2.895,20 2,19.105 2,18 L2,4 C2,2.895 2.895,2 4,2 L18,2 C19.105,2 20,2.895 20,4 L20,18 C20,19.105 19.105,20 18,20" id="primary" fill="#3D4752" sketch:type="MSShapeGroup"></path>
+            <path d="M18,20 L4,20 C2.895,20 2,19.105 2,18 L2,4 C2,2.895 2.895,2 4,2 L18,2 C19.105,2 20,2.895 20,4 L20,18 C20,19.105 19.105,20 18,20" id="overlay" fill="url(#linearGradient-1)" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>

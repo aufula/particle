@@ -6,8 +6,8 @@
     <defs></defs>
     <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
         <g id="icon-layers-22px" sketch:type="MSArtboardGroup" fill="#3D4752">
-            <path d="M11,2 L1,8 L11,14 L21,8 L11,2 Z" id="Shape" sketch:type="MSShapeGroup"></path>
-            <path d="M11,8 L1,14 L11,20 L21,14 L11,8 Z" id="Shape" opacity="0.35" sketch:type="MSShapeGroup"></path>
+            <path d="M10.9999,2 L0.9999,8 L10.9999,14 L20.9999,8 L10.9999,2 L10.9999,2 Z" id="primary" sketch:type="MSShapeGroup"></path>
+            <path d="M11,8 L1,14 L11,20 L21,14 L11,8 L11,8 Z" id="primary" fill-opacity="0.5" sketch:type="MSShapeGroup"></path>
         </g>
     </g>
 </svg>
