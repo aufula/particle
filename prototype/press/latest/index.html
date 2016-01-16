@@ -20,34 +20,120 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
 </head>
-<body ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}" ng-click="showMegamenu = false">
-  <div id="sidebar" class="reversed-text">
-    <ul>
-      <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
-      <li class="to-docs">
-        <a href="#">
-          <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-folder-22px.svg'" class="lucid-buttcon icon"></ng-include>
-          Go to Documents</a>
-      </li>
-      <li>New document</li>
-      <li>Duplicate</li>
-      <li>Download</li>
-      <li ng-click="$root.showImportModal = true">Import</li>
-      <li ng-click="$root.showShareModal = true">Share</li>
-      <li>Print</li>
-    </ul>
-  </div>
-  <div id="wrapper" ng-class="{'with-mega-menu' : showMegamenu}">
+<body ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
+  <div id="wrapper">
     <div class="main-header-pages-wrapper">
       <div id="main-header">
-      <div class="left" ng-init="docName = 'My New Magazine'"><edit-in-place ng-model="docName" class="document-name reversed-text"></edit-in-place></div>
+      <div class="left">
+<!-- start file menu -->
+        <nav class="file-menu">
+          <ul>
+            <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='file'">
+              <span>FILE</span>
+              <ul ng-show="nav.show == 'file' && nav.display">
+                <li>New</li>
+                <li>Rename</li>
+                <li>Save</li>
+                <li>Make Copy...</li>
+                <li>Close</li>
+                <li class="divider"></li>
+                <li>Page Setup...</li>
+                <li>Preview</li>
+                <li>Analytics</li>
+                <li>Revision History</li>
+                <li>InDesign Import</li>
+                <li class="divider"></li>
+                <li>Download As...</li>
+                <li>Share...</li>
+                <li>Export to Google Drive...</li>
+                <li>Print</li>
+              </ul>
+            </li>
+            <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='edit'">
+              <span> Edit</span>
+              <ul ng-show="nav.show == 'edit' && nav.display">
+                <li>Undo</li>
+                <li>Redo</li>
+                <li class="divider"></li>
+                <li>Cut</li>
+                <li>Copy</li>
+                <li>Paste</li>
+                <li>Paste Plain Text</li>
+                <li>Copy Formatting</li>
+                <li>Paste Formatting</li>
+                <li class="divider"></li>
+                <li>Select All</li>
+                <li>Deselect</li>
+                <li class="divider"></li>
+                <li>Spell Check</li>
+                <li>Change Language</li>
+                <li>Find and Replace...</li>
+              </ul>
+            </li>
+            <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='view'">
+              <span> View</span>
+              <ul ng-show="nav.show == 'view' && nav.display">
+                <li>Preview</li>
+                <li>Zoom In</li>
+                <li>Zoom Out</li>
+                <li>Zoom to Width</li>
+                <li>Zoom to Page</li>
+                <li>Reset Zoom</li>
+                <li class="divider"></li>
+                <li>Grid</li>
+                <li>Snap to Grid</li>
+                <li>Guides</li>
+                <li class="divider"></li>
+                <li>Show Guides</li>
+                <li>Snap to Guides</li>
+                <li>Clear Guides</li>
+                <li class="divider"></li>
+                <li>Margins</li>
+                <li ng-class="{'checked': layers.view}" ng-click="layers.view = !layers.view">Layers</li>
+                <li class="divider"></li>
+                <li>Show Comments</li>
+                <li class="divider"></li>
+                <li>Page Thumbnails</li>
+                <li>Context Pane</li>
+                <li>Rulers</li>
+              </ul>
+            </li>
+            <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='insert'">
+              <span> Insert</span>
+              <ul ng-show="nav.show == 'insert' && nav.display">
+                <li>Text Box</li>
+                <li>Image</li>
+                <li>Video</li>
+                <li>Scrolling Area</li>
+                <li>Overlay</li>
+                <li>Comment</li>
+                <li>Import Text from Drive</li>
+                <li class="divider"></li>
+                <li>Creator Name</li>
+                <li>Document Name</li>
+                <li>Date & Time</li>
+                <li>Last Modified</li>
+                <li>Page Number</li>
+                <li>Page Count</li>
+                <li class="divider"></li>
+                <li>Fill with Placeholder Text</li>
+                <li>Special Character</li>
+                <li>List</li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+<!-- end file menu -->
+      </div>
       <div class="center">
       </div>
-      <div id="documents" ng-click="showMegamenu=!showMegamenu; $event.stopPropagation();">
+      <div id="documents">
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-logo-megamenu.png" />
       </div>
       <div class="right">
-        <span class="save-text">{{savetext}}</span>
+        <lucid-button class="lucid-blue" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-preview-eye.svg">Preview</lucid-button>
+        <lucid-button class="lucid-blue" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-download.svg">Download</lucid-button>
+        <lucid-button class="lucid-blue" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share.svg">Share</lucid-button>
         <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
         <div style="padding:10px 10px 0">
           <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
@@ -69,7 +155,7 @@
         </div>
         
 
-          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-person-white.svg" width="135">
+          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-person-large-22px.svg" width="135">
               <div class="lucid-select-wrapper">
                   <ul class="lucid-select-dropdown" ng-click="account.show = false;">
                       <li class="lucid-select-option">
@@ -115,46 +201,7 @@
 
             dnd-drop="dropToCanvas(item, event)"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"> 
-            <!-- start simple arrow -->
-            <li ng-if="$root.currentPage.id == 14543" >
-              <div class="simple-line-wrapper" ng-click="$root.selectedType = 'line'; $event.stopPropagation(); deselectBlock();">
-                <div class="simple-line" ng-class="{'selected': $root.selectedType == 'line'}"></div>
-              </div>
-            </li>
-            <!-- end simple arrow -->
-            <!-- start simple table -->
-            <li ng-if="$root.currentPage.id == 14543" >
-              <div class="simple-table-wrapper lucid-chart-block" ng-click="$root.selectedType = 'block'; $root.selectedType = 'table'; $event.stopPropagation(); deselectBlock();" ng-class="{'selected': $root.selectedType == 'table'}" >
-                <table>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                  </tr>
-                </table>
-                <div class="lucid-selected-block" ng-show="$root.selectedType == 'table'">
-                  <div class="lucid-corner-drag lucid-top-left"></div>
-                  <div class="lucid-corner-drag lucid-top-center"></div>
-                  <div class="lucid-corner-drag lucid-top-right"></div>
-                  <div class="lucid-corner-drag lucid-center-right"></div>
-                  <div class="lucid-corner-drag lucid-bottom-right"></div>
-                  <div class="lucid-corner-drag lucid-bottom-center"></div>
-                  <div class="lucid-corner-drag lucid-bottom-left"></div>
-                  <div class="lucid-corner-drag lucid-center-left"></div>
-                </div>
-              </div>
-            </li>
-            <!-- end simple table -->
+
             <!-- START CANVAS BLOCK/SHAPE -->
             <li 
             dnd-draggable="block"
@@ -175,13 +222,33 @@
             ng-click="$root.selectedBlock = block; $event.stopPropagation(); $root.selectedType = 'block'"
             class="lucid-chart-block lucid-animate" 
             ng-class="{'manage-shapes': $root.manageshapes, 'shrink-block' : $root.selectedBlock == block && $root.mouseInLeftPanel}"
-            style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid;">
-              <div class="lucid-outer-block-table" lucid-context-menu 
-               data-target="block-context-{{ block.$index }}" >
+            style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
+              <div class="lucid-outer-block-table" ng-if="block.type !== 'table'">
                   <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
                       <input type="text" ng-model="block.text.text" ng-show="edittext">
                   </div>
               </div>
+              <div class="simple-table-wrapper lucid-chart-block" 
+                   ng-if="block.type == 'table'">
+                <table>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                  </tr>
+                </table>
+              </div>
+
               <div class="lucid-selected-block" ng-show="$root.selectedBlock == block && !$root.mouseInLeftPanel">
                   <div class="lucid-corner-drag lucid-top-left" ng-hide="$root.draggingshape"></div>
                   <div class="lucid-corner-drag lucid-top-center" ng-hide="$root.draggingshape"></div>
@@ -193,17 +260,6 @@
                   <div class="lucid-corner-drag lucid-center-left" ng-hide="$root.draggingshape"></div>
               </div>
               <img class="lucid-block-comment lucid-animate" ng-hide="!block.comment || $root.selectedBlock == block && $root.draggingshape" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comment-yellow.svg" ng-click="$root.setTab('comments');">
-              <div id="block-context-{{ block.$index }}" class="lucid-context-menu ng-hide">
-                  <ul>
-                      <li ng-click="addsavedstyle(block); selected.customcolor = true; showcontextMenu=false"> <span> Save Block Style</span> </li>
-                      <li ng-show="selected.customcolor" ng-click="selected.customcolor = false; showcontextMenu=false; removeCustomColor(selected)"> <span>Remove Custom Style</span> </li>
-                      <li class="lucid-context-more"> <span>Save Shape</span>
-                          <ul>
-                              <li ng-repeat="shapegroup in shapegroups" ng-if="shapegroup.custom" ng-click="saveShape(selected, shapegroup); $parent.$parent.showcontextMenu=false"> <span>{{shapegroup.groupname}}</span> </li>
-                          </ul>
-                      </li>
-                  </ul>
-              </div>
             </li>
             <!-- END CANVAS BLOCK/SHAPE -->
             
@@ -319,28 +375,19 @@
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- start document right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'document'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'document'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Document" selected>
 
                   <lucid-collapse-bar title="Size & Orientation">
-                    <lucid-select class="condensed" label="Page Size" options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="140" style="margin: 0 10px 0 5px;"></lucid-select>
-                    <lucid-select class="condensed" width="80" label="Units" options="['inches', 'cm', 'mm', 'pts']"><lucid-select>
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-document-size-orientation.png">
                   </lucid-collapse-bar>
 
                   <lucid-collapse-bar title="Header & Footer">
-                    <lucid-toggle label="Header" toggle="true"></lucid-toggle>
-                    <lucid-input-stepper label="From Top" class="condensed" width="60" unit="in"></lucid-input-stepper>
-                    <lucid-toggle label="Footer" toggle="false"></lucid-toggle>
-                    <lucid-input-stepper label="From Bottom" class="condensed" width="60" unit="in"></lucid-input-stepper>
-                    
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-document-header-footer.png">
                   </lucid-collapse-bar>
                   <lucid-collapse-bar title="Margin & Bleed">
-                    <lucid-toggle label="Header" toggle="true"></lucid-toggle>
-                    <lucid-input-stepper label="From Top" class="condensed" width="60" unit="in"></lucid-input-stepper>
-                    <lucid-toggle label="Footer" toggle="false"></lucid-toggle>
-                    <lucid-input-stepper label="From Bottom" class="condensed" width="60" unit="in"></lucid-input-stepper>
-                    
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-document-margin-bleed.png">
                   </lucid-collapse-bar>
 
                 </lucid-top-tab>
@@ -351,10 +398,15 @@
         </div>
         <!-- end document right panel -->
         <!-- start page right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'page'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'page'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Page" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Page">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-page-page.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Margin"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-page-margin.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Theme">
                     Tab 2
@@ -363,95 +415,264 @@
         </div>
         <!-- end page right panel -->
         <!-- start text right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'text'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'text'">
             <lucid-top-tabs>
-                <lucid-top-tab name="Button" selected>
-                    Tab 1
+                <lucid-top-tab name="Text" selected>
+                  <lucid-collapse-bar title="Font">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-font.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Spacing"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-spacing.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Columns">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-columns.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Tabs & Indents"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-tabs-indents.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Horizontal Rules">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-horizontal-rules.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Warp"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-warp.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Link"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-link.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
-                <lucid-top-tab name="Text">
-                    Tab 2
+                <lucid-top-tab name="Style">
+                  <lucid-collapse-bar title="Fill">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-fill.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Border"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-border.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Tab 3
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end text right panel -->
         <!-- start video right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'video'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'video'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Video" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="YouTube URL">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-youtube.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Tab 2
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end video right panel -->
         <!-- start button right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'button'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'button'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Button" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Link"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-link.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Color"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-color.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Text">
-                    Tab 2
+                  <lucid-collapse-bar title="Font">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-font.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Spacing"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-spacing.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Columns">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-columns.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Tabs & Indents"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-tabs-indents.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Horizontal Rules">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-horizontal-rules.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Warp"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-warp.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Tab 3
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end button right panel -->
         <!-- start shape right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'shape'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'shape'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Shape" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Fill">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-fill.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Sides"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-shape-sides.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Border"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-border.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Link"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-link.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Layout
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end shape right panel -->
         <!-- start table right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'table'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'table'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Table" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Table Properties">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-table-properties.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Fill"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-table-fill.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Border"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-border.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Layout
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end table right panel -->
         <!-- start scrollarea right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'scrollarea'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'scrollarea'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Scroll Area" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Fill">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-fill.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Border"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-border.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Margin"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-scrollarea-margin.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Layout
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end scrollarea right panel -->
         <!-- start image right panel -->
-        <div class="right-panel-wrapper" ng-if="$root.selectedBlock.type == 'image'">
+        <div class="right-panel-wrapper" ng-show="$root.selectedBlock.type == 'image'">
             <lucid-top-tabs>
                 <lucid-top-tab name="Image" selected>
-                    Tab 1
+                  <lucid-collapse-bar title="Image">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-image.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Border"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-border.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Shadow">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-style-shadow.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Slideshow"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-slideshow.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Link"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-link.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
                 <lucid-top-tab name="Layout">
-                    Layout
+                  <lucid-collapse-bar title="Position & Size">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-position.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Arrange"> 
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-arrange.png">
+                  </lucid-collapse-bar>
+                  <lucid-collapse-bar title="Text Wrapping">
+                    <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-layout-text-wrapping.png">
+                  </lucid-collapse-bar>
                 </lucid-top-tab>
             </lucid-top-tabs>
         </div>
         <!-- end image right panel -->
+        <!-- start layers -->
+        <lucid-more-drawer ng-show="layers.view" class="layers-drawer" more="LAYERS" less="LAYERS" height="284" tophandle="true">
+        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-v4.png">
+        </lucid-more-drawer>
+        <!-- end layers -->
       </div>
       <!-- END RIGHT DOCK -->
     </div>

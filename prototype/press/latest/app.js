@@ -229,7 +229,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         };
         $scope.onDragSuccess = function(data, event) {
             //console.log(event);
-            if (event.x > 250) {
+            if (event.x > 54) {
                 var canvasX = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().left;
                 var canvasY = angular.element(document.querySelector('#lucid-canvas'))[0].getBoundingClientRect().top;
                 //console.log('drag success', data, event);
