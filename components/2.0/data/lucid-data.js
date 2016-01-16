@@ -86,10 +86,11 @@ angular.module('lucidData', [])
             'canvasBG': '#FFF',
             'blocks': [{
                 'type':'video',
+                'backgroundImage': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/youtube-video-placeholder.png',
                 "swatch": {
                     "fill": "#ffffff",
                     "text": "#AEAEAE",
-                    "border": "#666666"
+                    "border": "transparent"
                 },
                 "borderwidth": 3,
                 "borderstyle": "solid",
@@ -99,7 +100,7 @@ angular.module('lucidData', [])
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
-                    "text": "Video",
+                    "text": "",
                     "size": 16,
                 },
 
@@ -108,8 +109,8 @@ angular.module('lucidData', [])
                     "z": 2,
                     "x": 10,
                     "y": 10,
-                    "width": 120,
-                    "height": 100
+                    "width": 439,
+                    "height": 319
                 }
 
             }, {
@@ -142,7 +143,7 @@ angular.module('lucidData', [])
                 "swatch": {
                     "fill": "#ffffff",
                     "text": "#AEAEAE",
-                    "border": "#666666"
+                    "border": "#29A9E1"
                 },
                 "borderwidth": 3,
                 "borderstyle": "solid",
@@ -158,16 +159,16 @@ angular.module('lucidData', [])
                     "z": 2,
                     "x": 290,
                     "y": 10,
-                    "width": 120,
-                    "height": 100
+                    "width": 200,
+                    "height": 400
                 }
 
             }, {
                 'type':'button',
                 "swatch": {
-                    "fill": "#ffffff",
-                    "text": "#AEAEAE",
-                    "border": "#666666"
+                    "fill": "#7A8896",
+                    "text": "#fff",
+                    "border": "#7A8896"
                 },
                 "borderwidth": 3,
                 "borderstyle": "solid",
@@ -177,14 +178,15 @@ angular.module('lucidData', [])
                     "text": "button",
                     "size": 16,
                 },
+                "radius": 3,
 
-                "padding": 7,
+                "padding": 4,
                 "metrics": {
                     "z": 2,
                     "x": 10,
                     "y": 100,
-                    "width": 120,
-                    "height": 100
+                    "width": 90,
+                    "height": 30
                 }
 
             }, {
@@ -214,52 +216,53 @@ angular.module('lucidData', [])
 
             }, {
                 'type':'image',
+                'backgroundImage': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-image-placeholder.png',
                 "swatch": {
                     "fill": "#ffffff",
                     "text": "#AEAEAE",
-                    "border": "#666666"
+                    "border": "transparent"
                 },
                 "borderwidth": 3,
                 "borderstyle": "solid",
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
-                    "text": "image",
+                    "text": "",
                     "size": 16,
                 },
 
                 "padding": 7,
                 "metrics": {
                     "z": 2,
-                    "x": 290,
+                    "x": 86,
                     "y": 100,
-                    "width": 120,
-                    "height": 100
+                    "width": 300,
+                    "height": 201
                 }
 
             }, {
                 'type':'text',
                 "swatch": {
                     "fill": "#ffffff",
-                    "text": "#AEAEAE",
-                    "border": "#666666"
+                    "text": "#5A5A5A",
+                    "border": "#FFF"
                 },
                 "borderwidth": 3,
                 "borderstyle": "solid",
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
-                    "text": "text",
-                    "size": 16,
+                    "text": "Lucidpress Prototype Page 1",
+                    "size": 26,
                 },
 
-                "padding": 7,
+                "padding": 4,
                 "metrics": {
                     "z": 2,
-                    "x": 440,
-                    "y": 100,
-                    "width": 120,
-                    "height": 100
+                    "x": 250,
+                    "y": 0,
+                    "width": 420,
+                    "height": 50
                 }
 
             }]
