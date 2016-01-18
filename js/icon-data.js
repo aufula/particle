@@ -261,6 +261,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-wand-22px'
                 }, {
                     'name': 'icon-person-large-22px'
+                }, {
+                    'name': 'icon-page-fit-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
