@@ -24,8 +24,9 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////START LEFT PANEL CTRL
     ////////////////
     .controller('leftPanelCtrl', function($scope, $rootScope, $timeout) {
+        $scope.openTab = 'none';
         $rootScope.setTab = function(name) {
-            $scope.openTab = 'none';
+            
             if (name === $scope.openTab) { // is the tab already open?
                 if (name === "pages") {
                     $scope.openTab = 'none';

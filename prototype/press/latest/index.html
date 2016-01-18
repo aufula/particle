@@ -374,7 +374,7 @@
       </div>
       <!-- END PAGES PANEL CONTENT -->
       <!-- START TEXT PANEL CONTENT -->
-        <div class="left-panel-slide" ng-show="openTab == 'text' || openTab == 'templates'">
+        <div class="left-panel-slide" ng-show="openTab !== 'none' && openTab !== 'pages'">
           <div ng-show="openTab == 'text'" class="panel-content">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-flyout.png">
           </div>
