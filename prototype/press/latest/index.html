@@ -174,13 +174,13 @@
     </div>
     </div>
     <div id="main-container">
-      <div class="document-container" ng-click="$root.selectedBlock.type = 'document'"></div>
+      <div class="document-container" ng-click="$root.selectedBlock.type = 'document'; deselectBlock();"></div>
       <div class="page-container" ng-click="$root.selectedBlock.type = 'page'">
       <!-- START CANVAS -->
       <div id="lucid-canvas" 
         ng-drop="true" 
         ng-drop-success="dropToCanvas($data,$event)" 
-        ng-click="deselectBlock(); $root.selectedType = 'nothing'"
+        ng-click="deselectBlock();"
         style="background-color:{{$root.currentPage.canvasBG}};"
 
         ng-controller="canvasCtrl">
@@ -224,8 +224,9 @@
             ng-class="{'manage-shapes': $root.manageshapes, 'shrink-block' : $root.selectedBlock == block && $root.mouseInLeftPanel}"
             style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
               <div class="lucid-outer-block-table" ng-if="block.type !== 'table'">
-                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}"><span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
-                      <input type="text" ng-model="block.text.text" ng-show="edittext">
+                  <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}">
+                    <span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
+                    <input type="text" ng-model="block.text.text" ng-show="edittext">
                   </div>
               </div>
               <div class="simple-table-wrapper lucid-chart-block" 
@@ -269,37 +270,40 @@
       <!-- END CANVAS -->
       </div>
       <!-- START LEFT BAR -->
-      <div id="left-bar" class="lucid-shapes-panel-wrapper">
+      <div id="left-bar" class="lucid-shapes-panel-wrapper" ng-controller="leftPanelCtrl">
         <!-- START ICONS WRAPPER -->
         <div class="icons-wrapper">
-          <div class="icon-wrapper" ng-class="{active: pages.show}" ng-click="pages.show = !pages.show">
-            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span>Page</span>
+          <div class="icon-wrapper" ng-class="{active: openTab == 'pages'}" ng-click="$root.setTab('pages'); pages.show = !pages.show">
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Page</span>
           </div>
-          <div class="icon-wrapper" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share');">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-text-22px.svg" class="full" /></div><span>Text</span>
+          <div class="icon-wrapper" ng-class="{active: openTab == 'templates'}" ng-click="$root.setTab('templates');">
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Templates</span>
+          </div>
+          <div class="icon-wrapper" ng-class="{active: openTab == 'text'}" ng-click="$root.setTab('text')">
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-text-22px.svg" class="full" /></div><span class="input-label">Text</span>
           </div>
           <div class="icon-wrapper" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-shadow-22px.svg" class="full" /></div><span>Shapes</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-shadow-22px.svg" class="full" /></div><span class="input-label">Shapes</span>
           </div>
           <div class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" class="full" /></div><span>Images</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" class="full" /></div><span class="input-label">Images</span>
           </div>
           <div ng-show="addOnPresent" class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" class="full" /></div><span>Table</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" class="full" /></div><span class="input-label">Table</span>
           </div>
           <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-present-22px.svg" class="full" /></div><span>Video</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-present-22px.svg" class="full" /></div><span class="input-label">Video</span>
           </div>
           <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-finger-22px.svg" class="full" /></div><span>Buttons</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-finger-22px.svg" class="full" /></div><span class="input-label">Buttons</span>
           </div>
           <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-add-row-22px.svg" class="full" /></div><span>Scrolling Area</span>
+            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-add-row-22px.svg" class="full" /></div><span class="input-label">Scrolling Area</span>
           </div>
         </div>
         <!-- END ICONS WRAPPER -->
-        <!-- START LEFT PANEL CONTENT -->
-        <div id="pages-panel" ng-show="pages.show">
+        <!-- START PAGES PANEL CONTENT -->
+        <div id="pages-panel" class="left-panel-slide" ng-show="openTab == 'pages'">
           <div class="lucid-pages" ng-controller="PagesCtrl">
             <div class="lucid-pages-wrapper">
               <div class="add-new-page lucid-animate" draggable="false">
@@ -315,7 +319,7 @@
                               data-target="page-context-{{ page.id }}">
                               <div class="center-image" 
                               ng-click="changePage(page)"
-                              ng-dblclick="$root.currentPage = page; $parent.pages.show = false">
+                              ng-dblclick="$root.currentPage = page;">
                                   <div class="center-image-container">
                                       <div class="image-container">
                                           <div class="page-thumb-wrapper">
@@ -368,7 +372,86 @@
             </div>
         </div>
       </div>
-      <!-- END LEFT PANEL CONTENT -->
+      <!-- END PAGES PANEL CONTENT -->
+      <!-- START TEXT PANEL CONTENT -->
+        <div class="left-panel-slide" ng-show="openTab == 'text' || openTab == 'templates'">
+          <div ng-show="openTab == 'text'" class="panel-content">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-flyout.png">
+          </div>
+          <div ng-show="openTab == 'templates'" ng-controller="templateCtrl" class="panel-content">
+            <header>{{$root.currentTemplates.groupname}}
+              <ng-include ng-click="$root.templateManager = !$root.templateManager" class="panel-gear" ng-class="{'active': $root.templateManager}" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-gear-22px.svg'"></ng-include>
+            </header>
+            <div class="lucid-search-container">
+                <input type="input" placeholder="Search {{$root.currentTemplates.groupname}}s" ng-model="searchGroup">
+                <ng-include class="lucid-search-icon" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg'"></ng-include>
+            </div>
+            <ul class="template-list">
+              <li ng-repeat="template in $root.currentTemplates.templates | filter:searchGroup">
+                <img ng-src="{{template.url}}">
+              </li>
+            </ul>
+            <!-- START TEMPLATE MANAGER -->
+            <div id="template-manager" ng-show="$root.templateManager">
+              <div class="lucid-shape-manager-top-bar">
+                <div class="top-bar-inner" ng-show="$root.templateManager">
+                  <lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-new-library lucid-blue" ng-click="newCustomGroup()">Custom Template</lucid-button>
+                      <!-- start -->
+                      <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
+                        <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
+                        <div class="lucid-select-dropdown no-checkmarks" ng-show="showdropdown">
+                            <div>
+                                <ul ng-click="showdropdown = false; $root.showImportModal = 'true'">
+                                <li class="lucid-select-option">
+                                    inDesign
+                                </li>   
+                                <li class="lucid-select-option">
+                                    PageMaster
+                                </li>  
+                                <li class="lucid-select-option">
+                                    PDF
+                                </li>     
+                              </ul>
+                            </div>
+                        </div>
+                      </div>
+                      <!-- import modal is close to end of document -->
+                      <!-- End -->
+                    <div class="lucid-search-container">
+                        <input type="text" placeholder="Search Shapes" ng-model="searchTemplates">
+                        <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
+                    </div>
+                    <ng-include class="close-template-manager" ng-click="$root.templateManager = false" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-x-22px.svg'"></ng-include>
+                </div>
+              </div>
+              <ul>
+
+                <li class="templates-category" ng-repeat="category in pressTemplates | filter: searchTemplates">
+                  <div class="lucid-shapes-manager-divider">
+                              <div class="divider-inner">
+                                  <div class="divider-title">
+                                     {{category.category}}
+                                  </div>
+                                  <div class="divider-line"></div>
+                              </div>
+                          </div>
+                  <ul>
+                    <li class="templates-group" ng-repeat="group in category.groups | filter: searchTemplates" ng-click="changeTemplates(group);">
+                      <h3>{{group.groupname}}</h3>
+                      <div class="image-wrap">
+                        <img ng-src="{{group.templates[0].url}}">
+                      </div>
+                      <span>{{group.size}}</span>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <!-- END TEMPLATE MANAGER -->
+          </div>
+      </div>
+      <!-- END TEXT PANEL CONTENT -->
+
       </div>
 <!-- END LEFT BAR -->
 

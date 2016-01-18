@@ -281,7 +281,7 @@ a {
 }
 #main-header .bell .lucid-popover-menu {
   background: white;
-  left: -215px !important;
+  left: -225px !important;
 }
 #main-header .bell .lucid-popover-menu:after {
   left: 230px;
@@ -405,9 +405,6 @@ nav.file-menu li > a:only-child:after {
   text-align: center;
 }
 #left-bar .icons-wrapper .icon-wrapper {
-  text-transform: uppercase;
-  color: #77818C;
-  font-size: 10px;
   cursor: pointer;
   -webkit-transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
   transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
@@ -419,17 +416,13 @@ nav.file-menu li > a:only-child:after {
   -webkit-transform: scale(1);
       -ms-transform: scale(1);
           transform: scale(1);
-  margin: 0;
+  margin-right: -1px;
 }
 #left-bar .icons-wrapper .icon-wrapper .orange {
   color: #EB7D30;
 }
 #left-bar .icons-wrapper .icon-wrapper:first-of-type {
   padding-top: 15px;
-}
-#left-bar .icons-wrapper .icon-wrapper:hover,
-#left-bar .icons-wrapper .icon-wrapper.active {
-  color: #3d4752;
 }
 #left-bar .icons-wrapper .icon-wrapper.active {
   background: #F0F0F0;
@@ -454,24 +447,277 @@ nav.file-menu li > a:only-child:after {
   position: relative;
   margin: auto;
 }
-#pages-panel {
+.left-panel-slide {
   position: absolute;
   left: 55px;
   top: 0;
   height: 100%;
-  width: 125px;
+  width: 230px;
+  background: #F0F0F0;
+  border-right: 1px solid #A5A5A5;
 }
-#pages-panel.ng-animate {
+.left-panel-slide.ng-animate {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
   z-index: -10;
+}
+.left-panel-slide.ng-hide {
+  left: -230px;
+}
+.lucid-search-container {
+  display: inline-block;
+  position: relative;
+  width: 100%;
+}
+.lucid-search-container input {
+  width: 100%;
+  height: 29px;
+  line-height: 29px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #5A5A5A;
+  background: #FFF;
+}
+.lucid-search-container input::-webkit-input-placeholder {
+  color: #C7C7C7;
+}
+.lucid-search-container input:focus {
+  outline: none;
+}
+.lucid-search-container .lucid-search-icon {
+  width: 18px;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+.panel-content {
+  overflow: hidden;
+  padding: 20px;
+}
+.panel-content > header {
+  position: relative;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+.panel-content > header .panel-gear {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-transform: rotateZ(0);
+      -ms-transform: rotate(0);
+          transform: rotateZ(0);
+  -webkit-transition: all 0.35s ease-in-out;
+  transition: all 0.35s ease-in-out;
+}
+.panel-content > header .panel-gear.active {
+  -webkit-transform: rotateZ(90deg);
+      -ms-transform: rotate(90deg);
+          transform: rotateZ(90deg);
+}
+.panel-content ul.template-list {
+  margin-left: -10px;
+}
+.panel-content ul.template-list li {
+  max-width: 75px;
+  display: inline-block;
+  margin: 20px 0 0 20px;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
+  vertical-align: top;
+}
+.panel-content ul.template-list li.ng-leave-active,
+.panel-content ul.template-list li.ng-enter {
+  opacity: 0;
+}
+.panel-content ul.template-list li.ng-enter-active {
+  opacity: 1;
+}
+.panel-content ul.template-list li.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+}
+#template-manager {
+  position: absolute;
+  top: 0;
+  left: 230px;
+  width: calc(100vw - 280px);
+  background: rgba(61, 71, 82, 0.95);
+  height: 100%;
+  color: #fff;
+}
+#template-manager .lucid-shape-manager-top-bar {
+  background: #77818C;
+  height: 59px;
+  padding: 15px 20px;
+  box-sizing: border-box;
+  text-align: left;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-new-library {
+  float: left;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper {
+  margin-left: 10px;
+  font-size: 14px;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper .lucid-select-dropdown {
+  top: 28px;
+  width: 106px;
+}
+#template-manager .lucid-shape-manager-top-bar .import-to-manager {
+  background-color: #3d4752;
+  color: #fff;
+  padding-right: 30px;
+}
+#template-manager .lucid-shape-manager-top-bar .import-to-manager:after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 6px solid #fff;
+  position: absolute;
+  top: 12px;
+  right: 10px;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-select-option {
+  padding: 3px 10px;
+  color: #5A5A5A;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-search-container {
+  display: none;
+  width: 200px;
+  position: relative;
+  margin-left: 10px;
+  float: left;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-search-container input {
+  width: 100%;
+  height: 29px;
+  line-height: 29px;
+  border: none;
+  border-radius: 4px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  color: #FFF;
+  background: #98A5B3;
+  font-weight: 100;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-search-container input::-webkit-input-placeholder {
+  color: #fff;
+}
+#template-manager .lucid-shape-manager-top-bar .lucid-search-container .lucid-search-icon {
+  width: 18px;
+  position: absolute;
+  top: 5px;
+  right: 7px;
+}
+#template-manager .lucid-shape-manager-top-bar .close-template-manager {
+  position: absolute;
+  top: 17px;
+  right: 20px;
+  cursor: pointer;
+}
+#template-manager .lucid-shape-manager-top-bar .close-template-manager svg path {
+  fill: #3d4752;
+}
+#template-manager .lucid-shapes-manager-divider {
+  position: relative;
+  width: 100%;
+  padding-bottom: 20px;
+  float: left;
+}
+#template-manager .lucid-shapes-manager-divider .divider-inner {
+  position: relative;
+  height: 14px;
+  display: table;
+  width: 100%;
+}
+#template-manager .lucid-shapes-manager-divider .divider-title {
+  display: table-cell;
+  color: #FFF;
+  text-align: left;
+  line-height: 18px;
+  white-space: nowrap;
+  padding-right: 20px;
+  font-size: 18px;
+}
+#template-manager .lucid-shapes-manager-divider .divider-line {
+  display: table-cell;
+  width: 100%;
+  position: relative;
+}
+#template-manager .lucid-shapes-manager-divider .divider-line:after {
+  position: absolute;
+  left: 0;
+  top: 7px;
+  content: '';
+  height: 1px;
+  width: 100%;
+  background: #77818C;
+}
+#template-manager h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#template-manager h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#template-manager > ul {
+  padding: 30px;
+}
+#template-manager .templates-category {
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+#template-manager .templates-group {
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  display: inline-block;
+  margin: 0 20px;
+  vertical-align: top;
+}
+#template-manager .templates-group div > img {
+  margin: 10px 0;
+  max-height: 130px;
+  display: inline-block;
+}
+#template-manager .templates-group > span {
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 200;
+}
+#template-manager .templates-group.ng-leave-active,
+#template-manager .templates-group.ng-enter {
+  margin-left: -75px;
+  opacity: 0;
+}
+#template-manager .templates-group.ng-enter-active {
+  margin: 0 20px;
+  opacity: 1;
+}
+#template-manager .templates-group.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+}
+#template-manager.ng-hide {
+  margin-left: -100vw;
+  opacity: 0;
+}
+#template-manager.ng-animate {
+  z-index: -1;
+  -webkit-transition: 0.5s ease-out all;
+  transition: 0.5s ease-out all;
+}
+#pages-panel {
+  width: 125px;
 }
 #pages-panel.ng-hide {
   left: -120px;
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper {
   padding: 10px;
-  background: #D6D6D8;
   display: block;
   height: 100%;
 }
@@ -854,7 +1100,7 @@ nav.file-menu li > a:only-child:after {
   background: #E6E6E6;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
-  z-index: 7;
+  z-index: 2;
   -webkit-transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   border-left: 1px solid #A5A5A5;

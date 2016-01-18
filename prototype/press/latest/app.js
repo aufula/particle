@@ -15,14 +15,44 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         };
     })
     ////////////////
-    ////START SHARE CTRL
+    ////START RIGHT DOCK CTRL
     ////////////////
+    .controller('RightDockCtrl', function($scope) {
+        $scope.activepanel = 'document';
+    })
+    ////////////////
+    ////START LEFT PANEL CTRL
+    ////////////////
+    .controller('leftPanelCtrl', function($scope, $rootScope, $timeout) {
+        $rootScope.setTab = function(name) {
+            $scope.openTab = 'none';
+            if (name === $scope.openTab) { // is the tab already open?
+                if (name === "pages") {
+                    $scope.openTab = 'none';
+                } else {
+                    $scope.openTab = "pages";
+                }
+            } else {
+                $scope.openTab = name; // set the tab
+            }
 
-////////////////
-////START RIGHT DOCK CTRL
-////////////////
-.controller('RightDockCtrl', function($scope) {
-    $scope.activepanel = 'document';
+        };
+        $scope.changeTemplates = function(group) {
+            $rootScope.currentTemplates = {"groupname": group.groupname};
+            $timeout(function() {
+                $rootScope.currentTemplates = group;
+            }, 500);
+
+        };
+    })
+    ////////////////
+    ////START TEMPLATE CTRL
+    ////////////////
+    .controller('templateCtrl', function($scope, $rootScope, pressTemplates) {
+
+        $scope.pressTemplates = pressTemplates;
+        $rootScope.currentTemplates = pressTemplates[0].groups[0];
+
     })
     ////////////////
     ////START PAGES CTRL
@@ -136,8 +166,10 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         };
         //$scope.blocks = $rootScope.currentPage.blocks;
         $rootScope.selectedType = 'nothing';
-        $rootScope.selectedBlock = {'type': 'document'};
-        $scope.deselectBlock = function() {
+        $rootScope.selectedBlock = {
+            'type': 'document'
+        };
+        $rootScope.deselectBlock = function() {
             if ($rootScope.selectedBlock) {
                 var deselect = JSON.parse(JSON.stringify($rootScope.selectedBlock));
                 deselect.table = false;

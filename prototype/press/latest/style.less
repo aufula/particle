@@ -39,7 +39,7 @@ sans-serif;
 ////////////////////////////////////////////////
 @behind-canvas: #AAADAE;
 //Top
-@pagedrawer-bg: @grey-3;
+@left-panel-drawer-bg: @grey-1;
 @optionbar-bg: @grey-1; // #EDEDED;
 @popover-bg: @grey-1; //#F3F3F3;
 @popover-secondary-bg: @grey-2;
@@ -48,14 +48,6 @@ sans-serif;
 @shapegroup-top: @grey-4; //#CDCFD1; 
 @zerostate-bg: #DDD;
 @zerostate-border: @grey-5;
-//shapes manager active
-@left-panel-bg-manage: @grey-5;
-@shapegroup-top-manage: @blue-steel-2;
-@shapegroup-bg-manage: @grey-3;
-@pinned-icon-bg: @blue-steel;
-@shapemanager-import: @blue-steel; // #3E4752
-@shapemanager-topbar-bg: @blue-steel-2;
-@shapemanager-topbar-search: #98A5B3; //keep but don't include in colors
 //right-panel
 @right-panel-tabs-bg: @grey-2;
 @right-panel-bg: @grey-1; //#EBECED;
@@ -367,7 +359,7 @@ a {
         }
         .lucid-popover-menu {
             background: white;
-            left: -215px!important;
+            left: -225px!important;
             &:after {
                 left: 230px;
                 border-bottom-color: @blue-steel-secondary;
@@ -403,7 +395,7 @@ nav.file-menu {
                 background: @grey-border;
                 width: ~'calc(100% + 6px)';
             }
-            &.checked{
+            &.checked {
                 background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
             }
         }
@@ -517,25 +509,18 @@ nav.file-menu {
         border-right: 1px solid @border-color;
         text-align: center;
         .icon-wrapper {
-            text-transform: uppercase;
-            color: #77818C;
-            font-size: 10px;
             cursor: pointer;
             transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
             padding: 14px 0;
             position: relative;
             margin-left: -1px;
             transform: scale(1);
-            margin: 0;
+            margin-right: -1px;
             .orange {
                 color: #EB7D30;
             }
             &:first-of-type {
                 padding-top: 15px;
-            }
-            &:hover,
-            &.active {
-                color: @blue-steel;
             }
             &.active {
                 background: @right-panel-bg;
@@ -566,26 +551,290 @@ nav.file-menu {
 }
 
 //////////////////////////////
-// START PAGES 
+// GENERIC LEFT PANEL STYLES
 /////////////////////////////
-#pages-panel {
+.left-panel-slide {
     position: absolute;
     left: 55px;
     top: 0;
     height: 100%;
-    width: 125px;
-    @page-card-width: 50px;
+    width: 230px;
+    background: @left-panel-drawer-bg;
+    border-right: 1px solid @grey-border-dark;
     &.ng-animate {
         transition: .25s ease-in-out all;
         z-index: -10;
     }
+    &.ng-hide {
+        left: -230px;
+    }
+}
+
+.lucid-search-container {
+    display: inline-block;
+    position: relative;
+    width: 100%;
+    input {
+        width: 100%;
+        height: 29px;
+        line-height: 29px;
+        border: none;
+        border-radius: 4px;
+        padding: 0 10px;
+        box-sizing: border-box;
+        color: @standard-text;
+        background: #FFF;
+        &::-webkit-input-placeholder {
+            color: @standard-text-ghost;
+        }
+        &:focus {
+            outline: none;
+        }
+    }
+    .lucid-search-icon {
+        width: 18px;
+        position: absolute;
+        top: 5px;
+        right: 7px;
+    }
+}
+
+.panel-content {
+    overflow: hidden;
+    padding: 20px;
+    >header {
+        position: relative;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        .panel-gear {
+            cursor: pointer;
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: rotateZ(0);
+            transition: all .35s ease-in-out;
+            &.active {
+                transform: rotateZ(90deg);
+            }
+        }
+    }
+    ul.template-list {
+        margin-left: -10px;
+        li {
+            max-width: 75px;
+            display: inline-block;
+            margin: 20px 0 0 20px;
+            box-shadow: 0 3px 5px rgba(0, 0, 0, .2);
+            vertical-align: top;
+            &.ng-leave-active,
+            &.ng-enter {
+                //transform: scale(.01);
+                //margin-left: -75px;
+                opacity: 0;
+            }
+            &.ng-enter-active {
+                //transform: scale(1);
+                //margin: 20px 0 0 20px;
+                opacity: 1;
+            }
+            &.ng-animate {
+                transition: .35s ease-in-out all;
+            }
+        }
+    }
+}
+
+//////////////////////////////
+// START TEMPLATE MANAGER 
+/////////////////////////////
+#template-manager {
+    position: absolute;
+    top: 0;
+    left: 230px;
+    width: ~'calc(100vw - 280px)';
+    background: rgba(61, 71, 82, 0.95);
+    height: 100%;
+    color: #fff;
+    .lucid-shape-manager-top-bar {
+        background: @blue-steel-2;
+        height: 59px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        text-align: left;
+        .lucid-new-library {
+            float: left;
+            &.lucid-select-wrapper {
+                margin-left: 10px;
+                .lucid-select-dropdown {
+                    top: 28px;
+                    width: 106px;
+                }
+                font-size:14px;
+            }
+        }
+        .import-to-manager {
+            background-color: @blue-steel;
+            color: #fff;
+            padding-right: 30px;
+            &:after {
+                content: '';
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 6px solid #fff;
+                position: absolute;
+                top: 12px;
+                right: 10px;
+            }
+        }
+        .lucid-select-option {
+            padding: 3px 10px;
+            color: @standard-text;
+        }
+        .lucid-search-container {
+
+            display: none;//inline-block;
+            width: 200px;
+            position: relative;
+            margin-left: 10px;
+            float: left;
+            input {
+                width: 100%;
+                height: 29px;
+                line-height: 29px;
+                border: none;
+                border-radius: 4px;
+                padding: 0 10px;
+                box-sizing: border-box;
+                color: #FFF;
+                background: #98A5B3;
+                font-weight: 100;
+                &::-webkit-input-placeholder {
+                    color: #fff;
+                    //font-family:"Source Sans Pro";
+                }
+            }
+            .lucid-search-icon {
+                width: 18px;
+                position: absolute;
+                top: 5px;
+                right: 7px;
+            }
+        }
+        .close-template-manager {
+            position: absolute;
+            top: 17px;
+            right: 20px;
+            cursor: pointer;
+            svg path {
+                fill: @blue-steel;
+            }
+        }
+    }
+    .lucid-shapes-manager-divider {
+        position: relative;
+        width: 100%;
+        padding-bottom: 20px;
+        float: left;
+        .divider-inner {
+            position: relative;
+            height: 14px;
+            display: table;
+            width: 100%;
+        }
+        .divider-title {
+            display: table-cell;
+            color: #FFF;
+            //text-transform: uppercase;
+            text-align: left;
+            line-height: 18px;
+            white-space: nowrap;
+            padding-right: 20px;
+            font-size: 18px;
+        }
+        .divider-line {
+            display: table-cell;
+            width: 100%;
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 7px;
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: @blue-steel-2;
+            }
+        }
+    }
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    >ul {
+        padding: 30px;
+    }
+    .templates-category {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .templates-group {
+        cursor: pointer;
+        text-align: center;
+        width: 100px;
+        display: inline-block;
+        margin: 0 20px;
+        vertical-align: top;
+        div>img {
+            margin: 10px 0;
+            max-height: 130px;
+            display: inline-block;
+        }
+        >span {
+            font-size: 12px;
+            font-style: italic;
+            font-weight: 200;
+        }
+        &.ng-leave-active,
+        &.ng-enter {
+            //transform: scale(.01);
+            margin-left: -75px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            //transform: scale(1);
+            margin: 0 20px;
+            opacity: 1;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
+        }
+    }
+    &.ng-hide {
+        margin-left: -100vw;
+        opacity: 0;
+    }
+    &.ng-animate {
+        z-index: -1;
+        transition: .5s ease-out all;
+    }
+}
+
+//////////////////////////////
+// START PAGES 
+/////////////////////////////
+#pages-panel {
+    width: 125px;
+    @page-card-width: 50px;
     &.ng-hide {
         left: -120px;
     }
     .lucid-pages {
         .lucid-pages-wrapper {
             padding: 10px;
-            background: @pagedrawer-bg;
             display: block;
             height: 100%;
             >ul>li,
@@ -852,6 +1101,7 @@ nav.file-menu {
     //display: table;
     box-sizing: border-box;
     cursor: pointer;
+    .edit-in-place {}
     &.manage-shapes {
         z-index: 0 !important;
     }
@@ -958,7 +1208,7 @@ nav.file-menu {
     background: @right-panel-tabs-bg;
     box-shadow: 0px 2px 5px rgba(0, 0, 0, .2);
     text-align: center;
-    z-index: 7;
+    z-index: 2;
     transition: right .3s ease-out, opacity .3s, z-index .2s linear;
     border-left: 1px solid @grey-border-dark;
     .right-panel-wrapper {
@@ -977,8 +1227,8 @@ nav.file-menu {
         width: 100%;
         background: @grey-2;
         transition: all .25s ease-in-out;
-        .lucid-popover-menu-drawer{
-            padding:0;
+        .lucid-popover-menu-drawer {
+            padding: 0;
         }
         .lucid-show-more-drawer-button {
             padding: 4px;
@@ -989,9 +1239,8 @@ nav.file-menu {
                 letter-spacing: .5;
             }
         }
-
-        &.ng-hide{
-            bottom:-36px;
+        &.ng-hide {
+            bottom: -36px;
         }
     }
 }
