@@ -504,7 +504,7 @@ nav.file-menu li > a:only-child:after {
 .panel-content > header .panel-gear {
   cursor: pointer;
   position: absolute;
-  top: 0;
+  top: -3px;
   right: 0;
   -webkit-transform: rotateZ(0);
       -ms-transform: rotate(0);
