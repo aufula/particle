@@ -1227,15 +1227,15 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-context-menu ul ul {
   display: none;
   position: absolute;
-  padding: 5px 0;
+  padding: 3px;
   background: #FFF;
-  top: - 5px;
-  left: 203px;
+  top: - 3px;
+  left: 200px;
   box-shadow: 0 2px 11px rgba(0, 0, 0, 0.5);
 }
 .lucid-context-menu ul li:hover > ul {
   display: inherit;
-  top: -5px;
+  top: -3px;
 }
 .lucid-context-menu ul li {
   width: 200px;
@@ -1250,10 +1250,13 @@ input[type=range]:focus::-ms-fill-upper {
   z-index: -1;
 }
 .lucid-context-menu ul li.lucid-context-more:after {
-  font-family: FontAwesome;
-  content: "\f0da";
+  content: '';
   position: absolute;
+  top: 9px;
   right: 6px;
+  border-left: 5px solid #828282;
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
 }
 .lucid-collapse-bar {
   position: relative;

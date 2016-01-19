@@ -70,16 +70,16 @@
     ul ul {
         display: none;
         position: absolute;
-        padding: 5px 0;
+        padding: 3px;
         background: #FFF;
-        top: - 5px;
-        left: @dropdown-menu-width + 3px;
+        top: - 3px;
+        left: @dropdown-menu-width ;//+ 3px;
         box-shadow: 0 2px 11px rgba(0, 0, 0, .5);
     }
     /* Display Dropdowns on Hover */
     ul li:hover > ul {
         display: inherit;
-        top: -5px;
+        top: -3px;
     }
     /* Fisrt Tier Dropdown */
     ul li {
@@ -97,9 +97,12 @@
     }
     /* Change this in order to change the Dropdown symbol */
     ul li.lucid-context-more:after {
-        font-family: FontAwesome;
-        content: "\f0da";
+        content: '';
         position: absolute;
+        top: 9px;
         right: 6px;
+        border-left: 5px solid @text-light;
+        border-top: 4px solid transparent;
+        border-bottom: 4px solid transparent;
     }
 }
