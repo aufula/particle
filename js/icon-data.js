@@ -289,6 +289,8 @@ angular.module("lucidIcons", [])
                         "name": "icon-lock-unlocked-18px"
                     }, {
                         "name": "icon-lock-locked-18px"
+                    }, {
+                        "name": "icon-triangle-right-18px"
                     }]
                 }];
                 return icons;
