@@ -1252,11 +1252,11 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-context-menu ul li.lucid-context-more:after {
   content: '';
   position: absolute;
-  top: 9px;
-  right: 6px;
-  border-left: 5px solid #828282;
-  border-top: 4px solid transparent;
-  border-bottom: 4px solid transparent;
+  width: 18px;
+  height: 18px;
+  top: 3px;
+  right: 0px;
+  background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-triangle-right-18px.svg) no-repeat center center;
 }
 .lucid-collapse-bar {
   position: relative;
