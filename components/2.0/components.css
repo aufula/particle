@@ -187,8 +187,11 @@ input {
   margin-top: 4px;
   text-transform: uppercase;
   text-align: left;
-  letter-spacing: .5;
+  letter-spacing: .5px;
   color: #5a5a5a;
+}
+.reversed-text .input-label {
+  color: #FFF;
 }
 .lucid-input-stepper-wrapper {
   display: inline-block;
