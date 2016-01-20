@@ -655,41 +655,31 @@ input {
   width: 100%;
   top: 28px;
 }
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial defs stop {
-  -webkit-transition: 0.15s ease-in-out all;
-  transition: 0.15s ease-in-out all;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active svg path {
-  fill: inherit;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop {
-  stop-color: #29AAE1;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-radial.active defs stop:first-child {
-  stop-color: #D2EBF9;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear defs stop {
-  -webkit-transition: 0.15s ease-in-out all;
-  transition: 0.15s ease-in-out all;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active svg path {
-  fill: inherit;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop {
-  stop-color: #29AAE1;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-linear.active defs stop:first-child {
-  stop-color: #D2EDF9;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid rect {
-  -webkit-transition: 0.15s ease-in-out all;
-  transition: 0.15s ease-in-out all;
-}
-.lucid-color-picker .lucid-buttcon.colorpicker-fill-solid.active rect {
-  fill: #29AAE1;
-}
 .lucid-color-picker .lucid-buttcon.active {
   background: transparent;
+}
+.lucid-color-picker .active-fill .input-label {
+  color: #29AAE1;
+}
+.lucid-color-picker .active-fill svg #primary {
+  fill: #29AAE1;
+}
+.lucid-color-picker .fill-content-wrapper {
+  -webkit-transition: 0.35s ease-in-out height;
+  transition: 0.35s ease-in-out height;
+  overflow: hidden;
+}
+.lucid-color-picker .fill-content-wrapper.Solid {
+  height: 194px;
+}
+.lucid-color-picker .fill-content-wrapper.Linear {
+  height: 143px;
+}
+.lucid-color-picker .fill-content-wrapper.Radial {
+  height: 156px;
+}
+.lucid-color-picker .fill-content-wrapper.Image {
+  height: 147px;
 }
 input[type=range] {
   -webkit-appearance: none;
@@ -781,7 +771,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-colorpicker-placeholder {
   padding: 15px 16px;
-  height: 186px;
 }
 .lucid-modal-wrapper {
   position: relative;

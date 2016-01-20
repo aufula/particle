@@ -82,7 +82,7 @@
             &.lucid-most-used-colors {
                 border: 1px solid @grey-border;
                 margin-bottom: 10px;
-                height:22px;
+                height: 22px;
             }
             &.lucid-colorpicker-colors {
                 margin-bottom: 0;
@@ -179,50 +179,32 @@
         }
     }
     .lucid-buttcon {
-        &.colorpicker-fill-radial {
-            defs stop {
-                transition: .15s ease-in-out all;
-            }
-            &.active {
-                svg path {
-                    fill: inherit;
-                }
-                defs stop {
-                    stop-color: @lucid-blue;
-                }
-                defs stop:first-child {
-                    stop-color: #D2EBF9;
-                }
-            }
-        }
-        &.colorpicker-fill-linear {
-            defs stop {
-                transition: .15s ease-in-out all;
-            }
-            &.active {
-                svg path {
-                    fill: inherit;
-                }
-                defs stop {
-                    stop-color: @lucid-blue;
-                }
-                defs stop:first-child {
-                    stop-color: @lucid-blue-light;
-                }
-            }
-        }
-        &.colorpicker-fill-solid {
-            rect {
-                transition: .15s ease-in-out all;
-            }
-            &.active {
-                rect {
-                    fill: @lucid-blue;
-                }
-            }
-        }
         &.active {
             background: transparent;
+        }
+    }
+    .active-fill {
+        .input-label {
+            color: @lucid-blue;
+        }
+        svg #primary {
+            fill: @lucid-blue;
+        }
+    }
+    .fill-content-wrapper {
+        transition: .35s ease-in-out height;
+        overflow: hidden;
+        &.Solid {
+            height: 194px;
+        }
+        &.Linear {
+            height: 143px;
+        }
+        &.Radial {
+            height: 156px;
+        }
+        &.Image {
+            height: 147px;
         }
     }
 }
@@ -231,5 +213,4 @@
 //temp stuff
 .lucid-colorpicker-placeholder {
     padding: 15px 16px;
-    height: 186px;
 }
