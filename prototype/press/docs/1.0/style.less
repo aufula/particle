@@ -1,0 +1,107 @@
+/////////////////////////////////////////////////
+//START VARIABLES
+////////////////////////////////////////////////
+@font-stack: 'Source Sans Pro',
+sans-serif;
+//
+//Brand Colors
+@blue-steel: #3D4752;
+@blue-steel-2: #77818C;
+@lucid-blue: #29AAE1;
+@lucid-orange: #FC8D2A;
+@lucidpress-green: #8CBF3F;
+// UI Colors - Greys
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
+@grey-4: #CDCED1; //SHAPEGROUP LEFT
+@grey-5: #A5A5A5;
+// Information Colors
+@info-red: #ED6058;
+@info-red-light: #FBDCDA;
+@info-blue: @lucid-blue;
+@info-blue-light: #D2EDF9;
+@info-green: #8CBF3F;
+@info-green-light: #E9F2D9;
+//Secondary Colors
+@blue-steel-dark: #606D79;
+@blue-steel-light: #AFB7BF;
+@lucid-blue-light: #D2EDF9;
+@grey-border: #D2D2D2;
+@grey-border-dark: #A5A5A5;
+//Text Colors
+@standard-text: #5A5A5A;
+@standard-text-light: #828282;
+@standard-text-ghost: #C7C7C7;
+@lucid-blue-dark: #2C84B5;
+/////////////////////////////////////////////////
+//END COLOR VARIABLES
+////////////////////////////////////////////////
+
+//////////////////////////////
+// START TEMPLATE MANAGER 
+/////////////////////////////
+#template-manager {
+    margin: 10px 0;
+    background: @blue-steel; //-2;
+    height: 100%;
+    color: #fff;
+    a {
+        color: inherit;
+    }
+    &.ng-hide {
+        margin: 0;
+        opacity: 0;
+    }
+    &.ng-animate {
+        opacity: 1 !important;
+        overflow: hidden;
+        transition: .5s ease-out all;
+    }
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    >ul {
+        padding: 30px;
+    }
+    .templates-group {
+        cursor: pointer;
+        text-align: center;
+        width: 100px;
+        display: inline-block;
+        margin: 0 20px;
+        vertical-align: top;
+        div>img {
+            margin: 10px 0;
+            max-height: 130px;
+            display: inline-block;
+        }
+        >span {
+            font-size: 12px;
+            font-style: italic;
+        }
+        &.ng-leave-active,
+        &.ng-enter {
+            //transform: scale(.01);
+            margin-left: -75px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            //transform: scale(1);
+            margin: 0 20px;
+            opacity: 1;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
+        }
+    }
+}
+
+//////////////////////////////
+// END TEMPLATE MANAGER 
+/////////////////////////////

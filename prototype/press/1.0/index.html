@@ -19,14 +19,11 @@
     <!-- Prototype Specific -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
-    <script>
-      document.write('<base href="' + document.location + '" />');
-    </script>
 </head>
-<body ng-controller="mainCtrl" class="{{loadingClass}} {{loadedClass}} left-panel-open" ng-init="loading();">
+<body ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
   <div id="wrapper">
     <div class="main-header-pages-wrapper">
-      <div id="main-header" ng-click="loadingClass = 'loading'">
+      <div id="main-header">
       <div class="left">
 <!-- start file menu -->
         <nav class="file-menu">

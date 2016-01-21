@@ -1,31 +1,11 @@
 /*global angular : true fixes codekit error*/
 /*global console : true fixes codekit error*/
 
-angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dndLists', 'ngRoute'])
-    .config(function($locationProvider) {
-        $locationProvider.html5Mode(true);
-    })
+angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dndLists'])
     ////////////////
     ////START MAIN CTRL
     ////////////////
     .controller('mainCtrl', function($scope, $timeout, $rootScope) {
-        $scope.loading = function() {
-            console.log('loading');
-            $rootScope.loadingClass = "loading";
-            $timeout(function() {
-                //add loaded class to slide in panels
-                $rootScope.loadedClass = 'loaded';
-                //wait for loaded transition to end, remove Classes
-                console.log('loaded');
-                $timeout(function() {
-                    $rootScope.loadingClass = '';
-                    //$rootScope.loadedClass = '';
-                    console.log('finished load');
-                }, 1000);
-            }, 3000);
-        };
-
-
         $rootScope.saveDocument = function() {
             $scope.savetext = 'saving...';
             $timeout(function() {
@@ -46,7 +26,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     .controller('leftPanelCtrl', function($scope, $rootScope, $timeout) {
         $scope.openTab = 'none';
         $rootScope.setTab = function(name) {
-
+            
             if (name === $scope.openTab) { // is the tab already open?
                 if (name === "pages") {
                     $scope.openTab = 'none';
@@ -59,9 +39,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
 
         };
         $scope.changeTemplates = function(group) {
-            $rootScope.currentTemplates = {
-                "groupname": group.groupname
-            };
+            $rootScope.currentTemplates = {"groupname": group.groupname};
             $timeout(function() {
                 $rootScope.currentTemplates = group;
             }, 500);
@@ -71,38 +49,10 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////////////////
     ////START TEMPLATE CTRL
     ////////////////
-    .controller('templateCtrl', function($scope, $rootScope, $location, pressTemplates) {
-        $scope.$watch(function() {
-                return $location.hash();
-            },
-            function(id) {
-                $scope.id = id;
-            }
-        );
-
-        $scope.$watch('id', function(id) {
-            if (id) {
-                // handle scenario when there's id available
-                angular.forEach(pressTemplates, function(category) {
-                    angular.forEach(category.groups, function(group) {
-                        if (group.groupname === id) {
-                            console.log(group.groupname);
-                            $rootScope.currentTemplates = group;
-                        }
-                    });
-
-                });
-                $rootScope.setTab('templates');
-                return;
-            } else {
-                $rootScope.currentTemplates = pressTemplates[0].groups[0];
-            }
-            // handle scenario when there is no id
-        });
+    .controller('templateCtrl', function($scope, $rootScope, pressTemplates) {
 
         $scope.pressTemplates = pressTemplates;
-
-        //console.log($scope.searchResults);
+        $rootScope.currentTemplates = pressTemplates[0].groups[0];
 
     })
     ////////////////

@@ -60,6 +60,10 @@ sans-serif;
 @button-toggle-inactive-border: @grey-5;
 @popover-hover-list: #F5F5F5;
 /////TEMP CSS FOR COMPONENT UPDATE
+#main-container {
+    background: @behind-canvas !important;
+}
+
 // #main-container .page-container{
 //     top:50px !important;
 //     left:160px !important;
@@ -83,7 +87,7 @@ html {
 
 body {
     font-family: "Source Sans Pro", sans-serif;
-    background: @behind-canvas;
+    background: #3d4752;
     user-select: none;
 }
 
@@ -497,7 +501,7 @@ nav.file-menu {
     top: 0;
     height: 100%;
     z-index: 7;
-    transition: opacity .3s, left .5s ease-in-out;
+    transition: opacity .3s, left .3s ease-in-out;
     .icons-wrapper {
         background: @left-panel-bg;
         height: 100%;
@@ -558,7 +562,7 @@ nav.file-menu {
     background: @left-panel-drawer-bg;
     border-right: 1px solid @grey-border-dark;
     &.ng-animate {
-        transition: .5s ease-in-out all;
+        transition: .25s ease-in-out all;
         z-index: -10;
     }
     &.ng-hide {
@@ -687,7 +691,8 @@ nav.file-menu {
             color: @standard-text;
         }
         .lucid-search-container {
-            display: none; //inline-block;
+
+            display: none;//inline-block;
             width: 200px;
             position: relative;
             margin-left: 10px;
@@ -1239,70 +1244,3 @@ nav.file-menu {
         }
     }
 }
-
-//////////////
-//START LOADING STATE
-/////////////
-.loading {
-    @loading-transition: all 1s ease-in-out;
-    #right-dock {
-        top: -54px;
-        right: -277px;
-        transition: @loading-transition;
-    }
-    #main-header {
-        top: -54px;
-        transition: @loading-transition;
-        .left {
-            margin-left: 0;
-            padding-left: 0;
-            transition: @loading-transition;
-        }
-        #documents {
-            left: -54px;
-            transition: @loading-transition;
-        }
-    }
-    #left-bar {
-        top: -54px;
-        left: -55px;
-        transition: @loading-transition;
-    }
-    &.left-panel-open {
-        #left-bar {
-            left: -290px;
-        }
-        #main-header {
-            .left {
-                margin-left: -235px;
-            }
-            #documents {
-                left: -290px;
-            }
-        }
-    }
-    &.loaded {
-        #right-dock {
-            top: 0;
-            right: 0;
-        }
-        #main-header {
-            top: 0;
-            .left {
-                padding-left: 54px;
-                margin-left: 0;
-            }
-            #documents {
-                left: 0;
-            }
-        }
-        #left-bar {
-            top: 0;
-            left: 0;
-        }
-    }
-}
-
-//////////////
-//END LOADING STATE
-/////////////

@@ -1,0 +1,60 @@
+#template-manager {
+  margin: 10px 0;
+  background: #3D4752;
+  height: 100%;
+  color: #fff;
+}
+#template-manager a {
+  color: inherit;
+}
+#template-manager.ng-hide {
+  margin: 0;
+  opacity: 0;
+}
+#template-manager.ng-animate {
+  opacity: 1 !important;
+  overflow: hidden;
+  -webkit-transition: 0.5s ease-out all;
+  transition: 0.5s ease-out all;
+}
+#template-manager h2 {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+#template-manager h3 {
+  font-size: 14px;
+  text-transform: uppercase;
+}
+#template-manager > ul {
+  padding: 30px;
+}
+#template-manager .templates-group {
+  cursor: pointer;
+  text-align: center;
+  width: 100px;
+  display: inline-block;
+  margin: 0 20px;
+  vertical-align: top;
+}
+#template-manager .templates-group div > img {
+  margin: 10px 0;
+  max-height: 130px;
+  display: inline-block;
+}
+#template-manager .templates-group > span {
+  font-size: 12px;
+  font-style: italic;
+}
+#template-manager .templates-group.ng-leave-active,
+#template-manager .templates-group.ng-enter {
+  margin-left: -75px;
+  opacity: 0;
+}
+#template-manager .templates-group.ng-enter-active {
+  margin: 0 20px;
+  opacity: 1;
+}
+#template-manager .templates-group.ng-animate {
+  -webkit-transition: 0.35s ease-in-out all;
+  transition: 0.35s ease-in-out all;
+}

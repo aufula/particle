@@ -1,3 +1,6 @@
+#main-container {
+  background: #AAADAE !important;
+}
 *,
 *:before,
 *:after {
@@ -10,7 +13,7 @@ html {
 }
 body {
   font-family: "Source Sans Pro", sans-serif;
-  background: #AAADAE;
+  background: #3d4752;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -391,8 +394,8 @@ nav.file-menu li > a:only-child:after {
   top: 0;
   height: 100%;
   z-index: 7;
-  -webkit-transition: opacity 0.3s, left 0.5s ease-in-out;
-  transition: opacity 0.3s, left 0.5s ease-in-out;
+  -webkit-transition: opacity 0.3s, left 0.3s ease-in-out;
+  transition: opacity 0.3s, left 0.3s ease-in-out;
 }
 #left-bar .icons-wrapper {
   background: #E6E6E6;
@@ -454,8 +457,8 @@ nav.file-menu li > a:only-child:after {
   border-right: 1px solid #A5A5A5;
 }
 .left-panel-slide.ng-animate {
-  -webkit-transition: 0.5s ease-in-out all;
-  transition: 0.5s ease-in-out all;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
   z-index: -10;
 }
 .left-panel-slide.ng-hide {
@@ -1134,59 +1137,4 @@ nav.file-menu li > a:only-child:after {
 }
 #right-dock .layers-drawer.ng-hide {
   bottom: -36px;
-}
-.loading #right-dock {
-  top: -54px;
-  right: -277px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.loading #main-header {
-  top: -54px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.loading #main-header .left {
-  margin-left: 0;
-  padding-left: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.loading #main-header #documents {
-  left: -54px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.loading #left-bar {
-  top: -54px;
-  left: -55px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-}
-.loading.left-panel-open #left-bar {
-  left: -290px;
-}
-.loading.left-panel-open #main-header .left {
-  margin-left: -235px;
-}
-.loading.left-panel-open #main-header #documents {
-  left: -290px;
-}
-.loading.loaded #right-dock {
-  top: 0;
-  right: 0;
-}
-.loading.loaded #main-header {
-  top: 0;
-}
-.loading.loaded #main-header .left {
-  padding-left: 54px;
-  margin-left: 0;
-}
-.loading.loaded #main-header #documents {
-  left: 0;
-}
-.loading.loaded #left-bar {
-  top: 0;
-  left: 0;
 }
