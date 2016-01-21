@@ -263,6 +263,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-person-large-22px'
                 }, {
                     'name': 'icon-page-fit-22px'
+                }, {
+                    'name': 'icon-advanced-colorpicker-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
