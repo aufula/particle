@@ -184,6 +184,8 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-text-top-spacing-22px'
                 }, {
+                    'name': 'icon-text-padding-22px'
+                }, {
                     'name': 'icon-trash-22px'
                 }, {
                     'name': 'icon-view-grid-large-22px'
