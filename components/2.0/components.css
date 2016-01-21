@@ -634,9 +634,11 @@ input {
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li:last-child {
   padding-right: 0;
 }
+.lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden {
+  border-top: 1px solid #D2D2D2;
+}
 .lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-popover-menu-drawer {
   background-color: #f1f1f1;
-  border-top: 1px solid #D2D2D2;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden .lucid-popover-menu-drawer ul {
   width: 200px;
@@ -673,13 +675,16 @@ input {
   height: 194px;
 }
 .lucid-color-picker .fill-content-wrapper.Linear {
-  height: 127px;
+  height: 142px;
 }
 .lucid-color-picker .fill-content-wrapper.Radial {
-  height: 139px;
+  height: 142px;
 }
 .lucid-color-picker .fill-content-wrapper.Image {
-  height: 147px;
+  height: 142px;
+}
+.lucid-color-picker .fill-content-wrapper.Image .lucid-colorpicker-placeholder {
+  padding-bottom: 10px;
 }
 input[type=range] {
   -webkit-appearance: none;

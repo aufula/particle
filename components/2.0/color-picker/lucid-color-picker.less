@@ -155,9 +155,10 @@
         }
         //
         .lucid-drawer-wrapper .lucid-wrapper-overflow-hidden {
+            border-top: 1px solid @grey-border;
             .lucid-popover-menu-drawer {
                 background-color: #f1f1f1;
-                border-top: 1px solid @grey-border;
+                
                 ul {
                     width: 200px;
                     margin: 0 auto;
@@ -198,13 +199,16 @@
             height: 194px;
         }
         &.Linear {
-            height: 127px;
+            height: 142px; //127px;
         }
         &.Radial {
-            height: 139px;
+            height: 142px; //139px;
         }
         &.Image {
-            height: 147px;
+            height: 142px;
+            .lucid-colorpicker-placeholder {
+                padding-bottom: 10px;
+            }
         }
     }
 }
