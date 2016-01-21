@@ -230,8 +230,6 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-text-italic-22px'
                 }, {
-                    'name': 'icon-text-line-spacing-22px'
-                }, {
                     'name': 'icon-text-options-22px'
                 }, {
                     'name': 'icon-text-smallcaps-22px'
