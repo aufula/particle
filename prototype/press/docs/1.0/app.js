@@ -10,7 +10,8 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pressTemplates = docTemplates;
         $scope.newDocument = true;
         $scope.createDocument = function(category){
-            var baseURL = 'http://corys-macbook-pro-2.local:5757/prototype/press/latest/#'
+            //var baseURL = 'http://corys-macbook-pro-2.local:5757/prototype/press/latest/#';
+            var baseURL = 'http://particle.golucid.co/prototype/press/latest/#';
             window.location.href = baseURL + category.category;
             console.log(category);
         };
