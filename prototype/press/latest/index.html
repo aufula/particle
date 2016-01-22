@@ -131,7 +131,9 @@
       <div class="center">
       </div>
       <div id="documents">
-        <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-logo-megamenu.png" />
+        <a href="/prototype/press/docs/1.0/index.html">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-logo-megamenu.png" />
+        </a>
       </div>
       <div class="right">
         <lucid-button class="lucid-blue" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-preview-eye.svg">Preview</lucid-button>
@@ -185,6 +187,7 @@
         ng-drop-success="dropToCanvas($data,$event)" 
         ng-click="deselectBlock();"
         style="background-color:{{$root.currentPage.canvasBG}};"
+        ng-repeat="page in $root.pages"
 
         ng-controller="canvasCtrl">
         <div class="lucid-canvas-layer" ng-click="editThisBlock(defaultBlock);"></div>

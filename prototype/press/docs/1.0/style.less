@@ -37,13 +37,12 @@ sans-serif;
 /////////////////////////////////////////////////
 //END COLOR VARIABLES
 ////////////////////////////////////////////////
-
 //////////////////////////////
-// START TEMPLATE MANAGER 
+// START TEMPLATE STARTER 
 /////////////////////////////
-#template-manager {
+#template-starter {
     margin: 10px 0;
-    background: @blue-steel; //-2;
+    background: @blue-steel-dark; //-2;
     height: 100%;
     color: #fff;
     a {
@@ -85,6 +84,15 @@ sans-serif;
             font-size: 12px;
             font-style: italic;
         }
+        &.more-button {
+            img {
+            margin-top: 50px;
+        }
+        .lucid-button{
+            background: @blue-steel;
+            color:#FFF;
+        }
+        }
         &.ng-leave-active,
         &.ng-enter {
             //transform: scale(.01);
@@ -99,6 +107,106 @@ sans-serif;
         &.ng-animate {
             transition: .35s ease-in-out all;
         }
+    }
+}
+
+//////////////////////////////
+// END TEMPLATE STARTER 
+/////////////////////////////
+//////////////////////////////
+// START TEMPLATE MANAGER 
+/////////////////////////////
+#template-manager {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    background: fade(@blue-steel-dark, 98%);
+    min-height: ~'calc(100vh - 132px)';
+    color: #fff;
+    .close-template-manager {
+        position: absolute;
+        top: 17px;
+        right: 20px;
+        cursor: pointer;
+        z-index: 2;
+        svg path {
+            fill: #FFF;
+        }
+    }
+    .lucid-shapes-manager-divider {
+        position: relative;
+        width: 100%;
+        padding-bottom: 20px;
+        float: left;
+        .divider-inner {
+            position: relative;
+            height: 14px;
+            display: table;
+            width: 100%;
+        }
+        .divider-title {
+            display: table-cell;
+            color: #FFF;
+            //text-transform: uppercase;
+            text-align: left;
+            line-height: 18px;
+            white-space: nowrap;
+            padding-right: 20px;
+            font-size: 18px;
+        }
+        .divider-line {
+            display: table-cell;
+            width: 100%;
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 7px;
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: @blue-steel-2;
+            }
+        }
+    }
+    h2 {
+        font-size: 18px;
+        margin-bottom: 20px;
+    }
+    h3 {
+        font-size: 14px;
+        text-transform: uppercase;
+    }
+    >ul {
+        padding: 30px 60px 30px 30px;
+    }
+    .templates-category {
+        padding-bottom: 20px;
+        margin-bottom: 20px;
+    }
+    .templates-group {
+        cursor: pointer;
+        text-align: center;
+        width: 100px;
+        display: inline-block;
+        margin: 0 20px;
+        vertical-align: top;
+        div>img {
+            margin: 10px 0;
+            max-height: 130px;
+            display: inline-block;
+        }
+        >span {
+            font-size: 12px;
+            font-style: italic;
+        }
+    }
+    &.ng-hide {
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .5s ease-out all;
     }
 }
 

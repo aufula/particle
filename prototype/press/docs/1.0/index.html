@@ -118,15 +118,46 @@
                                                 </div>
                                             </div>
                                         </div>
-<!-- START TEMPLATE MANAGER -->
-                                        <div id="template-manager" class="slide-toggle" ng-show="newDocument">
+<!-- START TEMPLATE STARTER -->
+                                        <div id="template-starter" class="slide-toggle" ng-show="newDocument">
                                           <ul>
-                                            <li class="templates-group" ng-repeat="category in pressTemplates" ng-click="createDocument(category);">
-                                              <h3>{{category.category}}</h3>
+                                            <li class="templates-group" ng-repeat="group in pressStarters" ng-click="createDocument(group);">
+                                              <h3>{{group.groupname}}</h3>
                                               <div class="image-wrap">
-                                                <img ng-src="{{category.url}}">
+                                                <img ng-src="{{group.url}}">
                                               </div>
-                                              <span>{{category.size}}</span>
+                                              <span>{{group.size}}</span>
+                                            </li>
+                                            <li class="templates-group more-button">
+                                                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-more-templates.png">
+                                                <lucid-button ng-click="$root.templateManager = true">More</lucid-button>
+                                            </li>
+                                          </ul>
+                                        </div>
+<!-- END TEMPLATE STARTER -->
+<!-- START TEMPLATE MANAGER -->
+                                        <div id="template-manager" ng-show="$root.templateManager">
+                                            <ng-include class="close-template-manager" ng-click="$root.templateManager = false" src="'http://particle.golucid.co/components/2.0/icon/icons/icon-x-22px.svg'"></ng-include>
+                                          <ul>
+
+                                            <li class="templates-category" ng-repeat="category in pressTemplates">
+                                              <div class="lucid-shapes-manager-divider">
+                                                          <div class="divider-inner">
+                                                              <div class="divider-title">
+                                                                 {{category.category}}
+                                                              </div>
+                                                              <div class="divider-line"></div>
+                                                          </div>
+                                                      </div>
+                                              <ul>
+                                                <li class="templates-group" ng-repeat="group in category.groups" ng-click="createDocument(group);">
+                                                  <h3>{{group.groupname}}</h3>
+                                                  <div class="image-wrap">
+                                                    <img ng-src="{{group.templates[0].url}}">
+                                                  </div>
+                                                  <span>{{group.size}}</span>
+                                                </li>
+                                              </ul>
                                             </li>
                                           </ul>
                                         </div>
