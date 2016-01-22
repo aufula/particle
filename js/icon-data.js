@@ -265,6 +265,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-page-fit-22px'
                 }, {
                     'name': 'icon-advanced-colorpicker-22px'
+                }, {
+                    'name': 'icon-download-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
