@@ -456,7 +456,7 @@ nav.file-menu li > a:only-child:after {
 .left-panel-slide.ng-animate {
   -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
-  z-index: -10;
+  z-index: -1;
 }
 .left-panel-slide.ng-hide {
   left: -230px;
@@ -709,6 +709,7 @@ nav.file-menu li > a:only-child:after {
 }
 #pages-panel {
   width: 125px;
+  z-index: -10;
 }
 #pages-panel.ng-hide {
   left: -120px;
@@ -1135,31 +1136,65 @@ nav.file-menu li > a:only-child:after {
 #right-dock .layers-drawer.ng-hide {
   bottom: -36px;
 }
+#page-loading {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin-left: -100px;
+  margin-top: -90px;
+  height: 175px;
+  width: 200px;
+  text-align: center;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+#page-loading img {
+  height: 175px;
+  width: 200px;
+}
+#page-loading.ng-hide {
+  opacity: 0;
+}
 .loading #right-dock {
   top: -54px;
   right: -277px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .loading #main-header {
   top: -54px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .loading #main-header .left {
   margin-left: 0;
   padding-left: 0;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .loading #main-header #documents {
   left: -54px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
 }
 .loading #left-bar {
   top: -54px;
   left: -55px;
+  -webkit-transition: all 1s ease-in-out;
+  transition: all 1s ease-in-out;
+  -webkit-transition-delay: 0s;
+          transition-delay: 0s;
+}
+.loading #lucid-canvas {
+  opacity: 0;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
@@ -1189,4 +1224,7 @@ nav.file-menu li > a:only-child:after {
 .loading.loaded #left-bar {
   top: 0;
   left: 0;
+}
+.loading.loaded #lucid-canvas {
+  opacity: 1;
 }

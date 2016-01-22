@@ -51,6 +51,7 @@
 #template-starter .templates-group.more-button .lucid-button {
   background: #3D4752;
   color: #FFF;
+  font-weight: 400;
 }
 #template-starter .templates-group.ng-leave-active,
 #template-starter .templates-group.ng-enter {

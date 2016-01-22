@@ -8,21 +8,28 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////////////////
     ////START MAIN CTRL
     ////////////////
-    .controller('mainCtrl', function($scope, $timeout, $rootScope) {
+    .controller('mainCtrl', function($scope, $timeout, $rootScope, pressData) {
+        $rootScope.selectedBlock = {
+            'type': 'document'
+        };
         $scope.loading = function() {
             console.log('loading');
             $rootScope.loadingClass = "loading";
+            //$rootScope.pages = pressData;
+            $rootScope.pages = [{}];
             $timeout(function() {
                 //add loaded class to slide in panels
                 $rootScope.loadedClass = 'loaded';
                 //wait for loaded transition to end, remove Classes
                 console.log('loaded');
+
                 $timeout(function() {
                     $rootScope.loadingClass = '';
                     //$rootScope.loadedClass = '';
                     console.log('finished load');
-                }, 1000);
-            }, 3000);
+
+                }, 2000);
+            }, 6000);
         };
 
 
@@ -48,13 +55,13 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         $rootScope.setTab = function(name) {
 
             if (name === $scope.openTab) { // is the tab already open?
-                if (name === "pages") {
-                    $scope.openTab = 'none';
-                } else {
-                    $scope.openTab = "pages";
-                }
+
+                $scope.openTab = "none";
+                $scope.leftPanelOpen = false;
+
             } else {
                 $scope.openTab = name; // set the tab
+                $scope.leftPanelOpen = true;
             }
 
         };
@@ -108,9 +115,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////////////////
     ////START PAGES CTRL
     ////////////////
-    .controller('PagesCtrl', function($scope, $timeout, $rootScope, pressData) {
-        $rootScope.pages = pressData;
-        $rootScope.currentPage = pressData[0];
+    .controller('PagesCtrl', function($scope, $timeout, $rootScope) {
         $scope.editName = function(page) {
             $timeout(function() {
                 //console.log('edit?', shapegroup.edit);
@@ -210,16 +215,6 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////START CANVAS CTRL
     ////////////////
     .controller('canvasCtrl', function($scope, $rootScope) {
-        $scope.clickLine = function() {
-            //alert('clicked');
-            $rootScope.selectedType = 'line';
-            console.log('clicked');
-        };
-        //$scope.blocks = $rootScope.currentPage.blocks;
-        $rootScope.selectedType = 'nothing';
-        $rootScope.selectedBlock = {
-            'type': 'document'
-        };
         $rootScope.deselectBlock = function() {
             if ($rootScope.selectedBlock) {
                 var deselect = JSON.parse(JSON.stringify($rootScope.selectedBlock));

@@ -181,6 +181,9 @@
     <div id="main-container">
       <div class="document-container" ng-click="$root.selectedBlock.type = 'document'; deselectBlock();"></div>
       <div class="page-container" ng-click="$root.selectedBlock.type = 'page'">
+        <div id="page-loading" ng-show="$root.loadingClass == 'loading' && $root.loadedClass !== 'loaded'">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/spinner-press-1.gif">
+        </div>
       <!-- START CANVAS -->
       <div id="lucid-canvas" 
         ng-drop="true" 
@@ -199,11 +202,11 @@
             <polyline ng-click="clickLine(); $root.selectedType = 'line'" ng-repeat="line in $root.currentPage.lines" xmlns="http://www.w3.org/2000/svg" ng-attr-points="{{line.points}}" ng-attr-marker-end="{{line.endarrow && 'url(#triangle)' || '' }}" fill="transparent" stroke="{{$root.currentPage.linecolor}}" stroke-width="{{line.width}}" />
         </svg>
 
-        <ul dnd-list="$root.currentPage.blocks"
+        <ul dnd-list="page.blocks"
             dnd-allowed-types="['custom']"
             dnd-horizontal-list="true"
             dnd-external-sources="true"
-            ng-if="$root.currentPage.blocks.length"            
+            ng-if="page.blocks.length"            
 
             dnd-drop="dropToCanvas(item, event)"
             dnd-inserted="logEvent('Element was inserted at position ' + index, event)"> 
@@ -219,7 +222,7 @@
             dnd-canceled="logEvent('Drag operation canceled', event)"
             dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape=false;"
 
-            ng-repeat="block in $root.currentPage.blocks track by $index"
+            ng-repeat="block in page.blocks track by $index"
             ng-if="block.metrics"
             ng-drag="true" 
             ng-drag-data="block" 
@@ -279,11 +282,8 @@
       <div id="left-bar" class="lucid-shapes-panel-wrapper" ng-controller="leftPanelCtrl">
         <!-- START ICONS WRAPPER -->
         <div class="icons-wrapper">
-          <div class="icon-wrapper" ng-class="{active: openTab == 'pages'}" ng-click="$root.setTab('pages'); pages.show = !pages.show">
-            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Page</span>
-          </div>
           <div class="icon-wrapper" ng-class="{active: openTab == 'templates'}" ng-click="$root.setTab('templates');">
-            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Templates</span>
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Pages</span>
           </div>
           <div class="icon-wrapper" ng-class="{active: openTab == 'text'}" ng-click="$root.setTab('text')">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-text-22px.svg" class="full" /></div><span class="input-label">Text</span>
@@ -309,7 +309,7 @@
         </div>
         <!-- END ICONS WRAPPER -->
         <!-- START PAGES PANEL CONTENT -->
-        <div id="pages-panel" class="left-panel-slide" ng-show="openTab == 'pages'">
+        <div id="pages-panel" class="left-panel-slide">
           <div class="lucid-pages" ng-controller="PagesCtrl">
             <div class="lucid-pages-wrapper">
               <div class="add-new-page lucid-animate" draggable="false">
@@ -380,7 +380,7 @@
       </div>
       <!-- END PAGES PANEL CONTENT -->
       <!-- START TEXT PANEL CONTENT -->
-        <div class="left-panel-slide" ng-show="openTab !== 'none' && openTab !== 'pages'">
+        <div class="left-panel-slide" ng-show="leftPanelOpen">
           <div ng-show="openTab == 'text'" class="panel-content">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-text-flyout.png">
           </div>

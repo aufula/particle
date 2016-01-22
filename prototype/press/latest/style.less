@@ -559,7 +559,7 @@ nav.file-menu {
     border-right: 1px solid @grey-border-dark;
     &.ng-animate {
         transition: .5s ease-in-out all;
-        z-index: -10;
+        z-index: -1;
     }
     &.ng-hide {
         left: -230px;
@@ -824,6 +824,7 @@ nav.file-menu {
 #pages-panel {
     width: 125px;
     @page-card-width: 50px;
+    z-index: -10;
     &.ng-hide {
         left: -120px;
     }
@@ -1243,29 +1244,58 @@ nav.file-menu {
 //////////////
 //START LOADING STATE
 /////////////
+#page-loading {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left: -100px;
+    margin-top: -90px;
+    height: 175px;
+    width: 200px;
+    text-align: center;
+    img {
+        height: 175px;
+        width: 200px;
+    }
+    transition: .5s ease-in-out;
+    &.ng-hide {
+        opacity: 0;
+    }
+}
+
 .loading {
     @loading-transition: all 1s ease-in-out;
+    @loading-delay: 0s;
     #right-dock {
         top: -54px;
         right: -277px;
         transition: @loading-transition;
+        transition-delay: @loading-delay;
     }
     #main-header {
         top: -54px;
         transition: @loading-transition;
+        transition-delay: @loading-delay;
         .left {
             margin-left: 0;
             padding-left: 0;
             transition: @loading-transition;
+            transition-delay: @loading-delay;
         }
         #documents {
             left: -54px;
             transition: @loading-transition;
+            transition-delay: @loading-delay;
         }
     }
     #left-bar {
         top: -54px;
         left: -55px;
+        transition: @loading-transition;
+        transition-delay: @loading-delay;
+    }
+    #lucid-canvas {
+        opacity: 0;
         transition: @loading-transition;
     }
     &.left-panel-open {
@@ -1299,6 +1329,9 @@ nav.file-menu {
         #left-bar {
             top: 0;
             left: 0;
+        }
+        #lucid-canvas {
+            opacity: 1;
         }
     }
 }
