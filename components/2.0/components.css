@@ -174,12 +174,17 @@ input {
   -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
 }
+.lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
+  font-style: italic;
+  color: #C7C7C7;
+}
 .lucid-input-wrapper.condensed .lucid-input {
   background: #fff;
   height: 22px;
   line-height: 22px;
   border: 1px solid #A5A5A5;
   padding: 0 3px;
+  border-radius: 3px;
 }
 .input-label {
   font-size: 10px;
@@ -1412,4 +1417,80 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-top-tabs .lucid-top-tab.selected {
   color: #77818C;
   background-color: #E6E6E6;
+}
+.lucid-tip-wrapper {
+  top: 115px;
+  left: 254px;
+  width: 240px;
+  position: absolute;
+  background: #FC8D2A;
+  font-size: 14px;
+  color: #fff;
+  padding: 10px 36px 10px 15px;
+  box-shadow: 0 0 4px #FC8D2A;
+  border-radius: 4px;
+  line-height: 18px;
+}
+.lucid-tip-wrapper:after {
+  content: '';
+  position: absolute;
+  border: 9px solid transparent;
+}
+.lucid-tip-wrapper.ng-hide {
+  opacity: 0;
+}
+.lucid-tip-wrapper.caret-left.ng-hide {
+  margin-left: 10px;
+}
+.lucid-tip-wrapper.caret-left:after {
+  border-right: 10px solid #FC8D2A;
+  border-left: none;
+  left: -10px;
+  top: 10px;
+}
+.lucid-tip-wrapper.caret-right.ng-hide {
+  margin-left: -10px;
+}
+.lucid-tip-wrapper.caret-right:after {
+  border-left: 10px solid #FC8D2A;
+  border-right: none;
+  right: -10px;
+  top: 10px;
+}
+.lucid-tip-wrapper.caret-top.ng-hide {
+  margin-top: 10px;
+}
+.lucid-tip-wrapper.caret-top:after {
+  border-bottom: 10px solid #FC8D2A;
+  border-top: none;
+  left: 50%;
+  margin-left: -9px;
+  top: -10px;
+}
+.lucid-tip-wrapper.caret-bottom.ng-hide {
+  margin-top: -10px;
+}
+.lucid-tip-wrapper.caret-bottom:after {
+  border-top: 10px solid #FC8D2A;
+  border-bottom: none;
+  left: 50%;
+  margin-left: -9px;
+  bottom: -10px;
+}
+.lucid-tip-wrapper.ng-animate {
+  -webkit-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
+}
+.lucid-tip-wrapper.ng-hide.ng-hide-add-active {
+  margin: 0;
+}
+.lucid-tip-wrapper .lucid-close-icon {
+  cursor: pointer;
+  z-index: 1;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+}
+.lucid-tip-wrapper .lucid-close-icon svg path {
+  fill: #fff;
 }

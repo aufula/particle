@@ -15,6 +15,10 @@
         outline: none;
         font-family: @font-stack;
         transition: background .15s ease-in-out;
+        &::-webkit-input-placeholder {
+            font-style: italic;
+            color: @text-ghost;
+        }
     }
     //stepper appears different when inside a popover menu
     &.condensed {
@@ -24,6 +28,7 @@
             line-height: 22px;
             border: 1px solid @grey-border-dark;
             padding: 0 3px;
+            border-radius: 3px;
         }
     }
 }
@@ -37,6 +42,7 @@
     letter-spacing: .5px;
     color: #5a5a5a;
 }
-.reversed-text .input-label{
+
+.reversed-text .input-label {
     color: #FFF;
 }
