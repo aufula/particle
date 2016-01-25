@@ -21,9 +21,13 @@ angular.module("lucidSnippets", [])
             'description': 'Great! We have transitions for our sliding panels, but our show/hide toggle needs to show which toggle is currently active. We can do this using ng-class. First put the class you want to add, then put the condition that must be true for the class to be added. See code for example.'
         }, {
             'title': 'Select Dropdown: ng-click',
-            'codepen': 'http://codepen.io/corysmc/embed/avyYpE/?height=350&theme-id=19963&default-tab=result',
-            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{selectedFont}} to the font that is clicked. Note: We also use ng-init to assign an inital state to the variable {{selectedFont}}.',
+            'codepen': 'http://codepen.io/corysmc/embed/BjrNmx/?height=350&theme-id=19963&default-tab=result',
+            'description': 'The easiest way to add an interaction is by assigning a variable when someone clicks on an element. This can be done using "ng-click." In the demo below we set the variable {{selectedFont}} to the font that is clicked. Notice that no font will is selected until someone clicks. See the next step ng-init to set the default font',
             'starterfile': 'http://codepen.io/corysmc/pen/YyYKqy'
+        }, {
+            'title': 'Select Dropdown: ng-init',
+            'codepen': 'http://codepen.io/corysmc/embed/avyYpE/?height=350&theme-id=19963&default-tab=result',
+            'description': 'Set ng-init to assign an initial state to the variable {{selectedFont}}.'
         }, {
             'title': 'Select Dropdown: ng-show',
             'codepen': 'http://codepen.io/corysmc/embed/JYyLyv/?height=350&theme-id=19963&default-tab=result',
