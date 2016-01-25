@@ -62,6 +62,8 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             } else {
                 $scope.openTab = name; // set the tab
                 $scope.leftPanelOpen = true;
+                $rootScope.panelOpenLoading = true;
+                console.log('panel open');
             }
 
         };

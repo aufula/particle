@@ -23,7 +23,7 @@
       document.write('<base href="' + document.location + '" />');
     </script>
 </head>
-<body ng-controller="mainCtrl" class="{{loadingClass}} {{loadedClass}} left-panel-open" ng-init="loading();">
+<body ng-controller="mainCtrl" class="{{loadingClass}} {{loadedClass}}" ng-class="{'left-panel-open': $root.panelOpenLoading}" ng-init="loading();">
   <div id="wrapper">
     <div class="main-header-pages-wrapper">
       <div id="main-header" ng-click="loadingClass = 'loading'">

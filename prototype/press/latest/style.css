@@ -1156,38 +1156,14 @@ nav.file-menu li > a:only-child:after {
   opacity: 0;
 }
 .loading #right-dock {
-  top: -54px;
   right: -277px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   -webkit-transition-delay: 0s;
           transition-delay: 0s;
 }
-.loading #main-header {
-  top: -54px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-.loading #main-header .left {
-  margin-left: 0;
-  padding-left: 0;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
-.loading #main-header #documents {
-  left: -54px;
-  -webkit-transition: all 1s ease-in-out;
-  transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
-}
 .loading #left-bar {
-  top: -54px;
-  left: -55px;
+  left: -180px;
   -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
   -webkit-transition-delay: 0s;
@@ -1199,16 +1175,9 @@ nav.file-menu li > a:only-child:after {
   transition: all 1s ease-in-out;
 }
 .loading.left-panel-open #left-bar {
-  left: -290px;
-}
-.loading.left-panel-open #main-header .left {
-  margin-left: -235px;
-}
-.loading.left-panel-open #main-header #documents {
-  left: -290px;
+  left: -285px;
 }
 .loading.loaded #right-dock {
-  top: 0;
   right: 0;
 }
 .loading.loaded #main-header {

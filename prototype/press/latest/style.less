@@ -1267,30 +1267,12 @@ nav.file-menu {
     @loading-transition: all 1s ease-in-out;
     @loading-delay: 0s;
     #right-dock {
-        top: -54px;
         right: -277px;
         transition: @loading-transition;
         transition-delay: @loading-delay;
     }
-    #main-header {
-        top: -54px;
-        transition: @loading-transition;
-        transition-delay: @loading-delay;
-        .left {
-            margin-left: 0;
-            padding-left: 0;
-            transition: @loading-transition;
-            transition-delay: @loading-delay;
-        }
-        #documents {
-            left: -54px;
-            transition: @loading-transition;
-            transition-delay: @loading-delay;
-        }
-    }
     #left-bar {
-        top: -54px;
-        left: -55px;
+        left: -180px;
         transition: @loading-transition;
         transition-delay: @loading-delay;
     }
@@ -1300,20 +1282,11 @@ nav.file-menu {
     }
     &.left-panel-open {
         #left-bar {
-            left: -290px;
-        }
-        #main-header {
-            .left {
-                margin-left: -235px;
-            }
-            #documents {
-                left: -290px;
-            }
+            left: -285px;
         }
     }
     &.loaded {
         #right-dock {
-            top: 0;
             right: 0;
         }
         #main-header {
