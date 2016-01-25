@@ -309,15 +309,15 @@
                     </lucid-buttcon>
                     <lucid-buttcon-popover ng-hide="$root.manageshapes" showpopover="importdropdown.show" class="import-image-icon" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
                     <div class="lucid-select-wrapper">
-                      <ul class="lucid-select-dropdown" ng-click="importdropdown.show = false; $root.showImportModal = 'true'">
+                      <ul class="lucid-select-dropdown" ng-click="importdropdown.show = false;">
                         <li class="lucid-select-option">
-                            Image
+                            Image<input type="file" class="hidden-file-upload">
                         </li>   
                         <li class="lucid-select-option">
-                            SVG
+                            SVG<input type="file" class="hidden-file-upload">
                         </li>  
                         <li class="lucid-select-option">
-                            Visio Stencil
+                            Visio Stencil<input type="file" class="hidden-file-upload">
                         </li>     
                       </ul>
                     </div>
@@ -506,15 +506,15 @@
                                 <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
                                 <div class="lucid-select-dropdown no-checkmarks" ng-show="showdropdown">
                                     <div>
-                                        <ul ng-click="showdropdown = false; $root.showImportModal = 'true'">
+                                        <ul ng-click="showdropdown = false;">
                                         <li class="lucid-select-option">
-                                            Image
+                                            Image<input type="file" class="hidden-file-upload">
                                         </li>   
                                         <li class="lucid-select-option">
-                                            SVG
+                                            SVG<input type="file" class="hidden-file-upload">
                                         </li>  
                                         <li class="lucid-select-option">
-                                            Visio Stencil
+                                            Visio Stencil<input type="file" class="hidden-file-upload">
                                         </li>     
                                       </ul>
                                     </div>

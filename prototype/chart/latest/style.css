@@ -1365,17 +1365,17 @@ a {
   display: inline-block;
   cursor: pointer;
 }
-.import-options .show-import-options > ul > li .hidden-file-upload {
+.hidden-file-upload {
   position: absolute;
   top: 0;
   left: 0;
-  width: 42px;
-  height: 50px;
+  width: 100%;
+  height: 24px;
   opacity: 0;
   overflow: hidden;
   cursor: pointer;
 }
-.import-options .show-import-options > ul > li .hidden-file-upload::-webkit-file-upload-button {
+.hidden-file-upload::-webkit-file-upload-button {
   cursor: pointer;
 }
 #main-header {
