@@ -296,8 +296,8 @@
 #share .permissions .lucid-select-option {
   padding: 5px 15px 5px 25px;
 }
-#share .share-modal .lucid-tab-content,
-#share .share-modal section {
+.share-modal .lucid-tab-content,
+.share-modal article {
   padding: 0;
 }
 .lucid-shapes-header > span {
@@ -456,7 +456,7 @@ a {
 .lucid-shape-group .zero-state.ng-leave-active {
   opacity: 0;
 }
-.lucid-shape-group .zero-state.ng-aniamte {
+.lucid-shape-group .zero-state.ng-animate {
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
@@ -1060,7 +1060,7 @@ a {
   position: relative;
 }
 .search-shapes .search-shapes-input > input {
-  width: 190px;
+  width: 200px;
   height: 26px;
   border: none;
   outline: none;
@@ -1078,7 +1078,7 @@ a {
 .search-shapes .search-shapes-input .search-x {
   position: absolute;
   right: 13px;
-  top: 11px;
+  top: 12px;
   cursor: pointer;
 }
 .search-shapes .search-shapes-input .search-x svg path {
@@ -1101,20 +1101,11 @@ a {
 }
 .search-shapes .search-dropdown {
   background: #fff;
-  width: 42px;
+  width: 32px;
   height: 26px;
-  padding: 2px;
+  padding: 2px 5px;
   border-radius: 3px 0 0 3px;
   cursor: pointer;
-}
-.search-shapes .search-dropdown .search-dropdown-arrow {
-  position: absolute;
-  top: 10px;
-  right: 5px;
-  line-height: 0;
-}
-.search-shapes .search-dropdown .search-dropdown-arrow path {
-  fill: #77818C;
 }
 .search-shapes .search-dropdown .lucid-select-dropdown {
   z-index: 10;
@@ -1186,7 +1177,7 @@ a {
 .search-shapes .no-search-results {
   position: absolute;
   font-size: 14px;
-  padding: 20px;
+  padding: 20px 0;
   line-height: 20px;
   text-align: center;
   width: calc(100% - 20px);
@@ -1194,6 +1185,21 @@ a {
 .search-shapes .no-search-results p {
   color: #828282;
   margin-bottom: 15px;
+}
+.search-shapes .no-search-results .search-button {
+  height: 32px;
+  background: #fff;
+  text-align: left;
+  vertical-align: top;
+  margin: 10px 0;
+  border-radius: 3px;
+  padding: 4px;
+  cursor: pointer;
+}
+.search-shapes .no-search-results .search-button > span {
+  line-height: 22px;
+  vertical-align: top;
+  padding-left: 5px;
 }
 .search-shapes .no-search-results .hyperlink {
   text-decoration: underline;
@@ -1875,6 +1881,38 @@ a {
   background: #ccc;
   height: 30px;
   margin: 0 5px 0 10px;
+}
+.hotspot-options {
+  text-align: center;
+}
+.hotspot-options > li {
+  display: inline-block;
+  padding: 8px 5px;
+}
+.hotspot-options > li .lucid-buttcon.active {
+  background: transparent;
+}
+.hotlink-tab-content {
+  padding: 15px 15px 10px;
+  background: #E6E6E6;
+  border-top: 1px solid #D2D2D2;
+}
+.hotlink-tab-content .lucid-select-dropdown {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5) !important;
+}
+.hotlink-tab-content .input-label {
+  text-align: center;
+}
+.hotspot-layers {
+  text-align: right;
+}
+.hotspot-layers > div {
+  margin-bottom: 5px;
+}
+.hotspot-layers > div > span {
+  margin-right: 5px;
+  font-size: 14px;
+  line-height: 18px;
 }
 .advanced-shapes-wrapper {
   position: absolute;

@@ -10,14 +10,12 @@ sans-serif;
 @lucid-blue: #29AAE1;
 @lucid-orange: #FC8D2A;
 @lucidpress-green: #8CBF3F;
-
 // UI Colors - Greys
 @grey-1: #F0F0F0;
 @grey-2: #E6E6E6;
 @grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
 @grey-4: #CDCED1; //SHAPEGROUP LEFT
 @grey-5: #A5A5A5;
-
 // Information Colors
 @info-red: #ED6058;
 @info-red-light: #FBDCDA;
@@ -25,25 +23,20 @@ sans-serif;
 @info-blue-light: #D2EDF9;
 @info-green: #8CBF3F;
 @info-green-light: #E9F2D9;
-
 //Secondary Colors
 @blue-steel-dark: #606D79;
 @blue-steel-light: #AFB7BF;
 @lucid-blue-light: #D2EDF9;
 @grey-border: #D2D2D2;
 @grey-border-dark: #A5A5A5;
-
 //Text Colors
 @standard-text: #5A5A5A;
 @standard-text-light: #828282;
 @standard-text-ghost: #C7C7C7;
 @lucid-blue-dark: #2C84B5;
-
-
 /////////////////////////////////////////////////
 //END COLOR VARIABLES
 ////////////////////////////////////////////////
-
 // COOL GREYS
 // @grey-1: #EBECED;
 // @grey-2: #DEE1E3;
@@ -51,7 +44,6 @@ sans-serif;
 // @grey-4: #C9CDD1;
 // @grey-5: #B0B4B8;
 // @behind-canvas: #94989c;
-
 //WARM GREYS
 // @grey-1: #F0F0F0;
 // @grey-2: #E6E6E6;
@@ -59,7 +51,6 @@ sans-serif;
 // @grey-4: #D0CDCD;
 // @grey-5: #A5A5A5;
 // @behind-canvas: #AAADAE;
-
 //ALL NEUTRAL
 // @grey-1: #F0F0F0;
 // @grey-2: #E6E6E6;
@@ -67,7 +58,6 @@ sans-serif;
 // @grey-4: #CDCDCD; //SHAPEGROUP LEFT
 // @grey-5: #A5A5A5;
 // @behind-canvas: #94989C;
-
 //WARM GREYS - TEAM ADMIN
 // @grey-1: #F0F0F0;
 // @grey-2: #E1E1E1;
@@ -75,7 +65,6 @@ sans-serif;
 // @grey-4: #D2D2D2;
 // @grey-5: #A5A5A5;
 // @behind-canvas: #AAADAE;
-
 //MIX WARM AND COOL
 @grey-1: #F0F0F0;
 @grey-2: #E6E6E6;
@@ -83,85 +72,80 @@ sans-serif;
 @grey-4: #CDCED1; //SHAPEGROUP LEFT
 @grey-5: #A5A5A5;
 @behind-canvas: #AAADAE;
-
-
 //Top
 @pagedrawer-bg: @grey-3;
-@optionbar-bg: @grey-1;// #EDEDED;
-    @popover-bg: @grey-1;//#F3F3F3;
-    @popover-secondary-bg: @grey-2;
-
+@optionbar-bg: @grey-1; // #EDEDED;
+@popover-bg: @grey-1; //#F3F3F3;
+@popover-secondary-bg: @grey-2;
 //left panel
-@left-panel-bg: @grey-2;//#E1E2E3;
-@shapegroup-top: @grey-4;//#CDCFD1; 
+@left-panel-bg: @grey-2; //#E1E2E3;
+@shapegroup-top: @grey-4; //#CDCFD1; 
 @zerostate-bg: #DDD;
 @zerostate-border: @grey-5;
-    //shapes manager active
-    @left-panel-bg-manage: @grey-5;
-    @shapegroup-top-manage: @blue-steel-2;
-    @shapegroup-bg-manage: @grey-3;
-    @pinned-icon-bg: @blue-steel;
-    @shapemanager-import:  @blue-steel; // #3E4752
-    @shapemanager-topbar-bg: @blue-steel-2;
-    @shapemanager-topbar-search: #98A5B3; //keep but don't include in colors
-
+//shapes manager active
+@left-panel-bg-manage: @grey-5;
+@shapegroup-top-manage: @blue-steel-2;
+@shapegroup-bg-manage: @grey-3;
+@pinned-icon-bg: @blue-steel;
+@shapemanager-import: @blue-steel; // #3E4752
+@shapemanager-topbar-bg: @blue-steel-2;
+@shapemanager-topbar-search: #98A5B3; //keep but don't include in colors
 //right-panel
 @right-panel-tabs-bg: @grey-2;
-@right-panel-bg: @grey-1;//#EBECED;
+@right-panel-bg: @grey-1; //#EBECED;
 @right-panel-top: @blue-steel-2;
-    @right-panel-collapse-bar: @grey-3;
-
-
-
+@right-panel-collapse-bar: @grey-3;
 //components
-
 @collapse-bar-icon: @blue-steel-2;
-
-@button-toggle-active: #D2EDF9;//#CAEFFF;
+@button-toggle-active: #D2EDF9; //#CAEFFF;
 @button-toggle-inactive: @grey-3;
 @button-toggle-inactive-border: @grey-5;
-
 @popover-hover-list: #F5F5F5;
-
 /////TEMP CSS FOR COMPONENT UPDATE
-#main-container{
+#main-container {
     background: @behind-canvas !important;
 }
+
 // #main-container .page-container{
 //     top:50px !important;
 //     left:160px !important;
 // }
-
-#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top{
+#right-dock .right-panel .lucid-collapse-bar .collapse-bar-top {
     background: @right-panel-collapse-bar !important;
 }
-.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path{
+
+.lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
     fill: @collapse-bar-icon !important;
 }
-.lucid-toggle .toggle-button{
+
+.lucid-toggle .toggle-button {
     background: @button-toggle-inactive;
-    border: 1px solid @button-toggle-inactive-border; 
-    &.active{
+    border: 1px solid @button-toggle-inactive-border;
+    &.active {
         background: @button-toggle-active;
     }
 }
+
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
     background: @popover-hover-list;
 }
-.lucid-popover-menu{
+
+.lucid-popover-menu {
     background: @popover-bg;
 }
-.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap{
-    background:@popover-secondary-bg;
+
+.lucid-color-picker .lucid-popover-menu .lucid-colorpicker-wrap {
+    background: @popover-secondary-bg;
 }
 
-.ruler{
+.ruler {
     display: none;
 }
-.lucid-popover-menu{
+
+.lucid-popover-menu {
     background: @grey-1;
-    &:after{
-        border-bottom-color:@grey-1;
+    &:after {
+        border-bottom-color: @grey-1;
     }
 }
 
@@ -170,9 +154,6 @@ sans-serif;
 }
 
 ///
-
-
-
 /////////////////////////////////////////////////
 //START ADDONS
 ////////////////////////////////////////////////
@@ -455,11 +436,12 @@ sans-serif;
             padding: 5px 15px 5px 25px;
         }
     }
-    //share modal
-    .share-modal .lucid-tab-content,
-    .share-modal section {
-        padding: 0;
-    }
+}
+
+//share modal
+.share-modal .lucid-tab-content,
+.share-modal article {
+    padding: 0;
 }
 
 /////////////////////////////////////////////////
@@ -636,7 +618,7 @@ a {
         &.ng-leave-active {
             opacity: 0;
         }
-        &.ng-aniamte {
+        &.ng-animate {
             transition: .25s ease-in-out all;
         }
     }
@@ -671,8 +653,8 @@ a {
         padding-left: 15px;
         display: inline-block;
         //transition: .2s ease-in-out;
-        .edit-in-place{
-            color:#FFF;
+        .edit-in-place {
+            color: #FFF;
         }
     }
     .lucid-close-icon {
@@ -778,7 +760,7 @@ a {
     opacity: 1;
     .lucid-shapes-header {
         padding: 18px 15px;
-        background:@optionbar-bg;// #EDEDED;
+        background: @optionbar-bg; // #EDEDED;
         //line-height: 59px;
         height: 60px;
         box-sizing: border-box;
@@ -1262,7 +1244,7 @@ a {
         font-size: 0;
         position: relative;
         >input {
-            width: 190px;
+            width: 200px;
             //margin-left:-3px;
             height: 26px;
             //line-height: 29px;
@@ -1284,7 +1266,7 @@ a {
         .search-x {
             position: absolute;
             right: 13px;
-            top: 11px;
+            top: 12px;
             cursor: pointer;
             svg path {
                 fill: @blue-steel-2;
@@ -1306,20 +1288,11 @@ a {
     }
     .search-dropdown {
         background: #fff;
-        width: 42px;
+        width: 32px;
         height: 26px;
-        padding: 2px;
+        padding: 2px 5px;
         border-radius: 3px 0 0 3px;
         cursor: pointer;
-        .search-dropdown-arrow {
-            position: absolute;
-            top: 10px;
-            right: 5px;
-            line-height: 0;
-            path {
-                fill: @blue-steel-2;
-            }
-        }
         .lucid-select-dropdown {
             z-index: 10;
             width: 145px;
@@ -1391,13 +1364,28 @@ a {
     .no-search-results {
         position: absolute;
         font-size: 14px;
-        padding: 20px;
+        padding: 20px 0;
         line-height: 20px;
         text-align: center;
         width: ~"calc(100% - 20px)";
         p {
             color: #828282;
             margin-bottom: 15px;
+        }
+        .search-button {
+            height: 32px;
+            background: #fff;
+            text-align: left;
+            vertical-align: top;
+            margin: 10px 0;
+            border-radius: 3px;
+            padding: 4px;
+            cursor: pointer;
+            >span {
+                line-height: 22px;
+                vertical-align: top;
+                padding-left: 5px;
+            }
         }
         .hyperlink {
             text-decoration: underline;
@@ -1617,7 +1605,7 @@ a {
             right: 0;
         }
     }
-    .save-text{
+    .save-text {
         color: @blue-steel-secondary;
         //font-weight: 300;
         text-transform: uppercase;
@@ -1626,17 +1614,18 @@ a {
         margin-left: 10px;
         letter-spacing: 1px;
         font-size: 14px;
-        margin-right:8px;
-        width:50px;
-        display:inline-block;
+        margin-right: 8px;
+        width: 50px;
+        display: inline-block;
         text-align: center;
     }
     .help {
-        color:#5a5a5a;
+        color: #5a5a5a;
         vertical-align: middle;
         .lucid-popover-menu {
             background: white;
-            top:48px;;
+            top: 48px;
+            ;
             &:after {
                 border-bottom: 10px solid white;
             }
@@ -1726,21 +1715,20 @@ a {
         position: relative;
         //background: @blue-steel-2;
         border-radius: 3px;
-        margin-left:16px;
-        svg path{
-            fill:#fff;
+        margin-left: 16px;
+        svg path {
+            fill: #fff;
         }
-        .lucid-popover-menu{
-            left:-95px !important;
-            top:48px;
-            &:after{
-                left:110px !important;
+        .lucid-popover-menu {
+            left: -95px !important;
+            top: 48px;
+            &:after {
+                left: 110px !important;
             }
         }
         .lucid-select-wrapper {
-            
             .lucid-select-option {
-                color:@standard-text;
+                color: @standard-text;
             }
         }
     }
@@ -1796,8 +1784,8 @@ a {
         margin-left: 10px;
         display: inline-block;
         position: relative;
-        svg path{
-            fill:#fff;
+        svg path {
+            fill: #fff;
         }
         .bubble {
             background: @lucid-blue;
@@ -1825,7 +1813,7 @@ a {
             font-weight: 600;
             letter-spacing: .5px;
             border-radius: 4px 4px 0 0;
-            color:#FFF;
+            color: #FFF;
             img {
                 float: right;
                 margin-top: 12px;
@@ -1840,7 +1828,7 @@ a {
             background: white;
             left: -215px!important;
             &:after {
-                left:230px;
+                left: 230px;
                 border-bottom-color: @blue-steel-secondary;
             }
         }
@@ -1895,7 +1883,7 @@ a {
             transition: background .1s;
             &:first-child {
                 line-height: 53px;
-                background-color:@blue-steel-2;
+                background-color: @blue-steel-2;
             }
             &:hover {
                 background: rgba(255, 255, 255, .15);
@@ -2150,6 +2138,41 @@ a {
     }
 }
 
+.hotspot-options {
+    text-align: center;
+    > li {
+        display: inline-block;
+        padding: 8px 5px;
+        .lucid-buttcon.active {
+            background: transparent;
+        }
+    }
+}
+
+.hotlink-tab-content {
+    padding: 15px 15px 10px;
+    background: @grey-2;
+    border-top: 1px solid @grey-border;
+    .lucid-select-dropdown {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .5) !important;
+    }
+    .input-label {
+        text-align: center;
+    }
+}
+
+.hotspot-layers {
+    text-align: right;
+    >div {
+        margin-bottom: 5px;
+        >span {
+            margin-right: 5px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}
+
 //////////////////////////////
 //END OPTION BAR
 //////////////////////////////
@@ -2337,11 +2360,11 @@ a {
             position: relative;
             background: none;
             border: 2px dashed @grey-5;
-            .plus-icon{
-                top:36px;
-                left:53px;
+            .plus-icon {
+                top: 36px;
+                left: 53px;
                 position: absolute;
-                svg path{
+                svg path {
                     fill: @grey-5;
                 }
             }
@@ -2399,8 +2422,8 @@ a {
             background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
             background-size: 22px;
         }
-        .page-thumb-name h4{
-            color:#fff;
+        .page-thumb-name h4 {
+            color: #fff;
         }
     }
     .center-image {
@@ -2743,11 +2766,14 @@ a {
         z-index: 1;
     }
     .icon-wrapper {
-        &.input-label{
+        &.input-label {
             text-align: center;
         }
         cursor: pointer;
-        transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
+        transition: color ease-in-out .1s,
+        background .1s,
+        transform .5s,
+        margin .5s;
         padding: 14px 0;
         position: relative;
         margin-left: -1px;
@@ -2764,7 +2790,6 @@ a {
             background: @right-panel-bg;
             //border-radius: 4px 0 0 4px;
             box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
-            
         }
         &.ng-animate {
             .tooltip {

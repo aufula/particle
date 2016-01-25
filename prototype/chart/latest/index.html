@@ -305,7 +305,7 @@
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
                       <span class="lucid-more-shapes">Shapes</span>
                       </span>
-                    <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes);" active="searchshapes">
+                    <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
                     </lucid-buttcon>
                     <lucid-buttcon-popover ng-hide="$root.manageshapes" showpopover="importdropdown.show" class="import-image-icon" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
                     <div class="lucid-select-wrapper">
@@ -331,7 +331,6 @@
                                   <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
                                   <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
                                   <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
-                                  <ng-include class="search-dropdown-arrow" src="'http://particle.golucid.co/components/1.1/icon/img/drop-down-arrow.svg'"></ng-include>
                                 </div>
                                 <div class="lucid-select-dropdown" ng-show="searchDropdown">
                                     <div>
@@ -355,7 +354,7 @@
 
                           <input id="search-shapes-input" ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
 
-                          <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false; "></ng-include>
+                          <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
                       </div>
                       <!-- Start Search Shapes -->
                       <div class="lucid-shapes-scroll">
@@ -501,7 +500,6 @@
                               icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg"  
                               class="lucid-new-library lucid-blue" 
                               ng-click="newCustomGroup()">Custom Group</lucid-button>
-
 
                               <!-- start -->
                               <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
@@ -791,7 +789,7 @@
                       <lucid-input-stepper label="offset" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
                     </li>
                     <li>
-                      <lucid-input-stepper label="x distance" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
+                      <lucid-input-stepper label="y distance" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
                     </li>
                   </ul>
                 </div>
@@ -843,8 +841,49 @@
           <!-- END LINE WIDTH -->
           <span class="line"></span>
           <!-- BEGIN MISC. OPTIONS -->
-          <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-action-bluesteel-22px.svg" class="lucid-buttcon-icon" />
+          <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <lucid-buttcon-popover icon="/components/2.0/icon/icons/icon-lightening-22px.svg" width="217">
+              <ul ng-init="link.type = 'None'" class="hotspot-options">
+                    <li>
+                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-x-22px.svg" alignment="center" label="None" active="link.type == 'None'" ng-click="link.type='None'"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-page-outline-22px.svg" alignment="center" label="Page" active= "link.type == 'Page'"ng-click="link.type='Page'"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-layers-22px.svg" alignment="center" label="Layers" active="link.type == 'Layers'" ng-click="link.type='Layers'"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-link-22px.svg" alignment="center" label="Link" active="link.type == 'Link'" ng-click="link.type='Link'"></lucid-buttcon>
+                    </li>
+                    <li>
+                        <lucid-buttcon icon="http://particle.golucid.co/components/2.0/icon/icons/icon-envelope-22px.svg" alignment="center" label="Email" active="link.type == 'email'" ng-click="link.type='email'"></lucid-buttcon>
+                    </li>
+                </ul>
+                <div class="hotlink-tab-content" ng-if="link.type !='None'">
+                    
+                    <div ng-if="link.type == 'Page'">
+                      <lucid-select width="188" class="condensed" label="Link to Page" options="['Page 1', 'Page 2', 'Page 3', 'Page Four']"></lucid-select>
+                    </div>
+                    <div ng-if="link.type == 'Layers'" class="hotspot-layers">
+                      <div>
+                        <span>Show:</span><lucid-select width="133" class="condensed" options="['Layer 1', 'Layer 2', 'Layer 3', 'Layer 4']"></lucid-select>
+                      </div>
+                      <div>
+                        <span>Hide:</span><lucid-select width="133" class="condensed" options="['Layer 1', 'Layer 2', 'Layer 3', 'Layer 4']"></lucid-select>
+                      </div>
+                      <div>
+                        <span>Toggle:</span><lucid-select width="133" class="condensed" options="['Layer 1', 'Layer 2', 'Layer 3', 'Layer 4']"></lucid-select>
+                      </div>
+                    </div>
+                    <div ng-if="link.type == 'Link'">
+                      <lucid-input placeholder="http://" width="188" label="Website URL" class="condensed"></lucid-input>
+                    </div>
+                    <div ng-if="link.type == 'email'">
+                      <lucid-input placeholder="david@lucidchart.com" width="190" label="Email" class="condensed"></lucid-input>
+                    </div>
+                </div>
+            </lucid-buttcon-popover>
           </li>
           <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lock-bluesteel.svg" class="lucid-buttcon-icon" />
@@ -1132,6 +1171,10 @@
   <lucid-modal showmodal="$root.shareModal" width="590" height="460" title="Share" confirm="Import" cancel="Nevermind">
     Share with your team modal.
   </lucid-modal>
+  <!-- START TIPS -->
+  <div class="lucid-tip-wrapper caret-left" ng-show="$root.showSearchTip && !searchTipDismissed"><span ng-click="searchTipDismissed = true"><ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" class="lucid-close-icon"></ng-include></span><span>Here you can search Google, Iconfinder, and Lucidchart to find what you need.</span></div>
+
+  <!-- END TIPS -->
   <!-- END WRAPPER -->
 </body>
 
