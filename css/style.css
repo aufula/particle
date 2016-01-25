@@ -1965,8 +1965,8 @@ p.small-body {
   background: rgba(0, 0, 0, 0.1);
 }
 #top-navigation > ul > li > a.active {
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(61, 71, 82, 0.3);
 }
 #top-navigation > ul > li > a.active:hover {
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(61, 71, 82, 0.35);
 }
