@@ -267,6 +267,12 @@ angular.module("lucidIcons", [])
                     'name': 'icon-advanced-colorpicker-22px'
                 }, {
                     'name': 'icon-download-22px'
+                }, {
+                    'name': 'icon-twitter-22px'
+                }, {
+                    'name': 'icon-linkedin-22px'
+                }, {
+                    'name': 'icon-facebook-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
