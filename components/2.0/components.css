@@ -1419,8 +1419,6 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #E6E6E6;
 }
 .lucid-tip-wrapper {
-  top: 115px;
-  left: 254px;
   width: 240px;
   position: absolute;
   background: #FC8D2A;
@@ -1430,6 +1428,8 @@ input[type=range]:focus::-ms-fill-upper {
   box-shadow: 0 0 4px #FC8D2A;
   border-radius: 4px;
   line-height: 18px;
+  text-align: left;
+  z-index: 1;
 }
 .lucid-tip-wrapper:after {
   content: '';

@@ -4,17 +4,13 @@ angular.module("lucidTip", ['appConfig'])
             restrict: 'E',
             scope: {
                 caret: '@',
-                width: '@',
                 dismiss: '=',
-                showTip: '=',
+                showtip: '='
             },
             replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'tip/lucid-tip.html',
             compile: function(el, attrs) {
-                if (!attrs.width) {
-                    attrs.width = 268;
-                }
                 if (!attrs.caret) {
                     attrs.caret = 'left';
                 }

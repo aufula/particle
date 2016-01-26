@@ -289,6 +289,27 @@ angular.module('lucidComponentFactory', [])
                     "type": "true/false",
                     "details": "Optional: Edit mode can be toggled using outside variable. e.g. rename shape library from dropdown rather than double click."
                 }]
+            }, {
+                "title": "Onboarding Tip",
+                "componentid": "tip",
+                "description": "tips show up to show how to use the product, tips are quick introductions, to point out features",
+                "inputs": [{
+                    "name": "showtip",
+                    "type": "var",
+                    "details": "when true, tip will show. If they have dismissed it, it will no longer show up."
+                }, {
+                    "name": "dismiss",
+                    "type": "var",
+                    "details": "Set to true to dismiss tip. Once a user has dismissed the tip, it won't return"
+                }, {
+                    "name": "caret",
+                    "type": "number",
+                    "details": "*Options: top, left, bottom, right. Adds appropriate caret and transition"
+                }, {
+                    "name": "style",
+                    "type": "text",
+                    "details": "Set position with inline style or css."
+                }]
             }]
         }, {
             //Toolbar Components
