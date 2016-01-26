@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.5 (25232) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-microsoft-22px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="icon-microsoft-22px" sketch:type="MSArtboardGroup">
+            <g id="Group" sketch:type="MSLayerGroup" transform="translate(2.000000, 2.000000)">
+                <path d="M7.97461538,0 C7.97413643,2.66666667 7.97461538,5.33333333 7.97413643,8 L0,8 L0,0 L7.97461538,0 Z" id="Fill-1" fill="#F25022" sketch:type="MSShapeGroup"></path>
+                <path d="M10.0001197,0 L17.9744956,0 C17.9744956,2.66666667 17.9749746,5.33333333 17.9740167,8 C15.3163703,7.99951952 12.658245,8 10.0005987,8 C9.99964079,5.33333333 10.0001197,2.66666667 10.0001197,0" id="Fill-3" fill="#80BA01" sketch:type="MSShapeGroup"></path>
+                <path d="M0,9.9748 C2.65813417,9.9757609 5.31626835,9.97431955 7.97440252,9.9757609 C7.97488146,12.6422674 7.97440252,15.3082935 7.97440252,17.9748 L0,17.9748 L0,9.9748" id="Fill-16" fill="#02A4EF" sketch:type="MSShapeGroup"></path>
+                <path d="M10.0002225,9.97501488 C12.6579487,9.97405393 15.3161538,9.9745344 17.974359,9.9745344 L17.974359,17.9744143 L9.99974359,17.9744143 C10.0002225,15.3077877 9.99926463,12.641161 10.0002225,9.97501488" id="Fill-17" fill="#FFB902" sketch:type="MSShapeGroup"></path>
+            </g>
+        </g>
+    </g>
+</svg>
