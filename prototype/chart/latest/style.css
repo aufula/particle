@@ -1214,6 +1214,13 @@ a {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
 }
+.search-tip.ng-animate.ng-hide-remove {
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
+}
+.search-tip.lucid-tip-wrapper.caret-top:after {
+  left: 8%;
+}
 .import-to-manager {
   background-color: #3d4752;
   color: #fff;
