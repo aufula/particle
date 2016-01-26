@@ -1483,6 +1483,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-tip-wrapper.ng-hide.ng-hide-add-active {
   margin: 0;
+  -webkit-transition: 0.2s ease-out all;
+  transition: 0.2s ease-out all;
 }
 .lucid-tip-wrapper .lucid-close-icon {
   cursor: pointer;
