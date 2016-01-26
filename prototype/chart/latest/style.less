@@ -1401,16 +1401,38 @@ a {
         }
     }
 }
+
 //search shapes tip
-.search-tip{
-    &.ng-animate.ng-hide-remove{
-        transition-delay:1s;
+.search-tip {
+    &.ng-animate.ng-hide-remove {
+        transition-delay: 1s;
     }
-    &.lucid-tip-wrapper.caret-top:after{
-            left: 8%;
+    &.lucid-tip-wrapper.caret-top:after {
+        left: 8%;
     }
 }
+.ng-hide-remove .addon-tip{
+    opacity: 0;
+    margin-right:10px;
 
+}
+.addon-tip {
+    position: absolute;
+    right: 75px;
+    top: 10px;
+    width: 175px;
+    text-transform: none;
+    opacity: 1;
+    transition: .5s ease-in-out all;
+    &.ng-animate.ng-hide-remove {
+        transition-delay: 5s;
+    }
+}
+.ng-hide-add .addon-tip{
+    opacity: 0;
+    transition: .1s ease-in-out all;
+
+}
 ///////////////
 //END SEARCH SHAPES 
 ///////////////
@@ -2801,54 +2823,9 @@ a {
             //border-radius: 4px 0 0 4px;
             box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
         }
-        &.ng-animate {
-            .tooltip {
-                // use this to delay the tooltip coming in
-                transition: opacity .5s .5s;
-            }
-        }
         &.ng-hide {
             transform: scale(0);
             margin: -32px 0;
-            .tooltip {
-                opacity: 0;
-            }
-        }
-        .tooltip {
-            background: @orange;
-            color: white;
-            border-radius: 4px;
-            box-shadow: 0 2px 15px fade(@orange, 70%);
-            position: absolute;
-            right: 75px;
-            top: 10px;
-            width: 150px;
-            text-align: left;
-            font-size: 14px;
-            text-transform: none;
-            padding: 10px;
-            transition: opacity .2s;
-            opacity: 1;
-            transform: scale(1);
-            &:after {
-                // the arrow
-                content: '';
-                width: 0;
-                height: 0;
-                border-left: 8px solid @orange;
-                border-top: 8px solid transparent;
-                border-bottom: 8px solid transparent;
-                position: absolute;
-                top: 9px;
-                right: -8px;
-            }
-            &.ng-animate {
-                transition: opacity .2s;
-            }
-            &.ng-hide {
-                // for hiding the tooltip on click
-                opacity: 0;
-            }
         }
     }
     .icon {

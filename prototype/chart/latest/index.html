@@ -946,11 +946,11 @@
         </div>
         <div ng-show="addOnPresent" class="icon-wrapper input-label lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-presentation-bluesteel.svg" class="full" /></div><span>Present</span>
-          <div class="tooltip lucid-animate" ng-show="showTooltipPresent">Presentation Mode</div>
+          <lucid-tip showtip="showTooltipPresent" caret="right" class="addon-tip">Presentation Mode</lucid-tip>
         </div>
         <div class="icon-wrapper input-label lucid-animate" ng-show="addOnHistory" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
-          <div class="tooltip lucid-animate" ng-show="showTooltipHistory">Revision history</div>
+          <lucid-tip showtip="showTooltipHistory" caret="right" class="addon-tip">Revision History</lucid-tip>
         </div>
         <!-- END RIGHT DOCK ICONS -->
         <!-- RIGHT DOCK PANEL CONTENT -->

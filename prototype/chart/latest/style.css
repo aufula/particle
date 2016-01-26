@@ -1221,6 +1221,29 @@ a {
 .search-tip.lucid-tip-wrapper.caret-top:after {
   left: 8%;
 }
+.ng-hide-remove .addon-tip {
+  opacity: 0;
+  margin-right: 10px;
+}
+.addon-tip {
+  position: absolute;
+  right: 75px;
+  top: 10px;
+  width: 175px;
+  text-transform: none;
+  opacity: 1;
+  -webkit-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
+}
+.addon-tip.ng-animate.ng-hide-remove {
+  -webkit-transition-delay: 5s;
+          transition-delay: 5s;
+}
+.ng-hide-add .addon-tip {
+  opacity: 0;
+  -webkit-transition: 0.1s ease-in-out all;
+  transition: 0.1s ease-in-out all;
+}
 .import-to-manager {
   background-color: #3d4752;
   color: #fff;
@@ -2527,56 +2550,11 @@ a {
   background: #F0F0F0;
   box-shadow: 0 0px 7px rgba(0, 0, 0, 0.15);
 }
-#right-dock .icon-wrapper.ng-animate .tooltip {
-  -webkit-transition: opacity .5s .5s;
-  transition: opacity .5s .5s;
-}
 #right-dock .icon-wrapper.ng-hide {
   -webkit-transform: scale(0);
       -ms-transform: scale(0);
           transform: scale(0);
   margin: -32px 0;
-}
-#right-dock .icon-wrapper.ng-hide .tooltip {
-  opacity: 0;
-}
-#right-dock .icon-wrapper .tooltip {
-  background: #F78D1E;
-  color: white;
-  border-radius: 4px;
-  box-shadow: 0 2px 15px rgba(247, 141, 30, 0.7);
-  position: absolute;
-  right: 75px;
-  top: 10px;
-  width: 150px;
-  text-align: left;
-  font-size: 14px;
-  text-transform: none;
-  padding: 10px;
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-  opacity: 1;
-  -webkit-transform: scale(1);
-      -ms-transform: scale(1);
-          transform: scale(1);
-}
-#right-dock .icon-wrapper .tooltip:after {
-  content: '';
-  width: 0;
-  height: 0;
-  border-left: 8px solid #F78D1E;
-  border-top: 8px solid transparent;
-  border-bottom: 8px solid transparent;
-  position: absolute;
-  top: 9px;
-  right: -8px;
-}
-#right-dock .icon-wrapper .tooltip.ng-animate {
-  -webkit-transition: opacity .2s;
-  transition: opacity .2s;
-}
-#right-dock .icon-wrapper .tooltip.ng-hide {
-  opacity: 0;
 }
 #right-dock .icon {
   width: 22px;
