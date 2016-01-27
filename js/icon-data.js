@@ -303,6 +303,8 @@ angular.module("lucidIcons", [])
                         "name": "icon-lock-locked-18px"
                     }, {
                         "name": "icon-triangle-right-18px"
+                    }, {
+                        "name": "icon-triangle-down-18px"
                     }]
                 }];
                 return icons;
