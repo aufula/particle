@@ -317,9 +317,8 @@ input {
   fill: #fff;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateZ(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotateZ(180deg);
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
@@ -351,17 +350,15 @@ input {
   border-radius: 0;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
-  -webkit-transform: rotateZ(180deg);
-      -ms-transform: rotate(180deg);
-          transform: rotateZ(180deg);
+  -webkit-transform: rotateX(180deg);
+          transform: rotateX(180deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateZ(0deg);
-      -ms-transform: rotate(0deg);
-          transform: rotateZ(0deg);
+  -webkit-transform: rotateX(0deg);
+          transform: rotateX(0deg);
   -webkit-transform-origin: center;
       -ms-transform-origin: center;
           transform-origin: center;
