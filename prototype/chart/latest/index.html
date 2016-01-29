@@ -495,6 +495,10 @@
               <div class="lucid-shape-manager lucid-manage-shapes lucid-animate" ng-show="$root.manageshapes">
                   <div class="lucid-shape-manager-top-bar">
                       <div class="top-bar-inner" ng-show="$root.manageshapes">
+                        <lucid-button 
+                              icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg"  
+                              class="lucid-new-library lucid-blue" 
+                              ng-click="newCustomGroup()">Custom Group</lucid-button>
                           <!-- start -->
                           <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
                             <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
@@ -607,12 +611,6 @@
                                     </div>
                                 </div>
                                   <!-- END SHAPE GROUP INSIDE MANAGER -->
-                              </li>
-                              <li class="shapegroup-plus-container" ng-click="newCustomGroup()">
-                                <div >
-                                  <ng-include class="plus-icon" src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg'">
-                                </ng-include>
-                                </div>
                               </li>
                           </ul>
                           <div class="lucid-shapes-manager-divider">

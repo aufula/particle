@@ -726,94 +726,60 @@ a {
   border-right: none;
   width: 250px;
 }
+.lucid-managing-shapes .lucid-shape-group-wrapper.left-panel,
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel,
 .lucid-managing-shapes .lucid-shape-group-wrapper.manager,
 .lucid-manage-shapes .lucid-shape-group-wrapper.manager {
   margin-bottom: 10px;
   position: relative;
 }
+.lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-enter,
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-enter,
 .lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-enter,
 .lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-enter {
-  -webkit-animation: ShapeGroupAnimation 0.4s ease-out;
-          animation: ShapeGroupAnimation 0.4s ease-out;
-}
-.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-enter-active,
-.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-enter-active {
-  -webkit-animation: ShapeGroupAnimation 0.4s ease-out;
-          animation: ShapeGroupAnimation 0.4s ease-out;
-}
-.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-leave-active,
-.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-leave-active,
-.lucid-managing-shapes .lucid-shape-group-wrapper.manager .ng-leave,
-.lucid-manage-shapes .lucid-shape-group-wrapper.manager .ng-leave {
-  -webkit-animation: ShapeGroupAnimation 0.4s ease-in-out;
-          animation: ShapeGroupAnimation 0.4s ease-in-out;
-  -webkit-animation-direction: reverse;
-          animation-direction: reverse;
-}
-@-webkit-keyframes ShapeGroupAnimation {
-  0% {
-    margin-left: -300px;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    margin-right: 0;
-    opacity: 1;
-  }
-}
-@keyframes ShapeGroupAnimation {
-  0% {
-    margin-left: -300px;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    margin-right: 0;
-    opacity: 1;
-  }
-}
-.lucid-managing-shapes .lucid-shape-group-wrapper.left-panel,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel {
-  margin-bottom: 10px;
-  position: relative;
-}
-.lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-enter,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-enter {
   margin-top: -170px;
   opacity: 0;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-enter-active,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-enter-active {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-enter-active,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-enter-active,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-enter-active {
   margin-top: 0;
   opacity: 1;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-leave,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-leave {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-leave,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-leave,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-leave {
   margin-top: 0;
   opacity: 1;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-leave-active,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-leave-active {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-leave-active,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-leave-active,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-leave-active {
   margin-top: -170px;
   opacity: 0;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-animate,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-animate {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-animate,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-animate,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-animate {
   -webkit-transition: .25s;
   transition: .25s;
   z-index: 0;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-animate.no-transition,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-animate.no-transition {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-animate.no-transition,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.ng-animate.no-transition,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.ng-animate.no-transition {
   -webkit-transition: 0s;
   transition: 0s;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.repeat-animation.ng-enter-stagger,
-.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.repeat-animation.ng-enter-stagger {
+.lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.repeat-animation.ng-enter-stagger,
+.lucid-managing-shapes .lucid-shape-group-wrapper.manager.repeat-animation.ng-enter-stagger,
+.lucid-manage-shapes .lucid-shape-group-wrapper.manager.repeat-animation.ng-enter-stagger {
   -webkit-transition-delay: .25s;
           transition-delay: .25s;
   -webkit-transition-duration: 0s;
@@ -1134,6 +1100,10 @@ a {
 }
 .lucid-shape-manager .lucid-shape-group .shape-group-top .shape-group-name {
   padding-left: 25px;
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 .lucid-shape-manager .lucid-shape-group .shape-group-top .selected-option-wrapper {
   overflow: visible;

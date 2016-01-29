@@ -905,36 +905,36 @@ a {
     // .lucid-scroll-inner-wrap {
     //     padding: 20px 10px;
     // }
-    .lucid-shape-group-wrapper.manager {
-        margin-bottom: 10px;
-        position: relative;
-        //z-index:1;
-        &.ng-enter {
-            animation: ShapeGroupAnimation .4s ease-out;
-        }
-        &.ng-enter-active {
-            animation: ShapeGroupAnimation .4s ease-out;
-        }
-        &.ng-leave-active,
-        .ng-leave {
-            animation: ShapeGroupAnimation .4s ease-in-out;
-            animation-direction: reverse;
-        }
-        @keyframes ShapeGroupAnimation {
-            0% {
-                margin-left: -300px;
-                opacity: 0;
-            }
-            40% {
-                opacity: 0;
-            }
-            100% {
-                margin-right: 0;
-                opacity: 1;
-            }
-        }
-    }
-    .lucid-shape-group-wrapper.left-panel {
+    // .lucid-shape-group-wrapper.manager {
+    //     margin-bottom: 10px;
+    //     position: relative;
+    //     //z-index:1;
+    //     &.ng-enter {
+    //         animation: ShapeGroupAnimation .4s ease-out;
+    //     }
+    //     &.ng-enter-active {
+    //         animation: ShapeGroupAnimation .4s ease-out;
+    //     }
+    //     &.ng-leave-active,
+    //     .ng-leave {
+    //         animation: ShapeGroupAnimation .4s ease-in-out;
+    //         animation-direction: reverse;
+    //     }
+    //     @keyframes ShapeGroupAnimation {
+    //         0% {
+    //             margin-left: -300px;
+    //             opacity: 0;
+    //         }
+    //         40% {
+    //             opacity: 0;
+    //         }
+    //         100% {
+    //             margin-right: 0;
+    //             opacity: 1;
+    //         }
+    //     }
+    // }
+    .lucid-shape-group-wrapper.left-panel, .lucid-shape-group-wrapper.manager {
         margin-bottom: 10px;
         position: relative;
         //z-index:1;
@@ -1172,9 +1172,9 @@ a {
     .lucid-shapegroup-columns {
         column-count: 3;
         column-gap: 0px;
-        width:100%;
-        .lucid-shape-group-wrapper{
-            width:100%;
+        width: 100%;
+        .lucid-shape-group-wrapper {
+            width: 100%;
         }
     }
     .lucid-shape-group-wrapper {
@@ -1291,6 +1291,10 @@ a {
             //   height: 40px;
             .shape-group-name {
                 padding-left: 25px;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
             .selected-option-wrapper {
                 overflow: visible;
@@ -1326,7 +1330,7 @@ a {
     .lucid-drawer-wrapper .lucid-show-more-drawer-button {
         background-color: @blue-steel-light;
         position: absolute;
-        bottom:0;
+        bottom: 0;
         right: 0;
         left: 0;
         .lucid-drawer-button-text {
