@@ -491,7 +491,6 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             "horizontalalignment": "right",
             "name": "bottom-right",
             "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-right-bluesteel.svg",
-
         }];
     })
     ////////////////
@@ -527,6 +526,131 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 }, 10);
             }
         };
+        $scope.lucidGroups = [{
+            'groupname': 'Flowchart Shapes',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Geometric Shapes',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-shapes.png'
+        }, {
+            'groupname': 'Android Mockups',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-android.png'
+        }, {
+            'groupname': 'Entity Relationship',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Site Maps',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'UI Mockups',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+        }, {
+            'groupname': 'UML',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'iOS 7 Mockups',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'BPMN 2.0',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Data Flow',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'UI Mocks',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+        }, {
+            'groupname': 'Org Charts',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'iOS 7 Mockups',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Tables',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Value Stream',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'AWS Architecture',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Azure',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Cisco Network Icons',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Network Infrastructure',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Server Rack Diagrams',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Tech Clipart',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Circuit Diagrams',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }, {
+            'groupname': 'Enterprise Integration',
+            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+        }];
+        $scope.setGroup = function(groupname) {
+            if (groupname === $scope.showGroup) { // is the tab already open?
+                $scope.showGroup = ""; // then empty the var
+            } else {
+                $scope.showGroup = groupname; // set the tab
+            }
+        };
+        $scope.toggleGroupPin = function(lucidGroup) {
+            console.log(lucidGroup.groupname);
+            //if pinned, unpin all
+            if ($scope.lucidGroupPinned(lucidGroup)) {
+                angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
+                    if (lucidGroup.groupname == shapegroup.lucidgroup && shapegroup.pinned) {
+                        $scope.unPinGroup(shapegroup);
+
+                    }
+                });
+            }
+            //else pin all
+            else {
+                angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
+                    if (lucidGroup.groupname == shapegroup.lucidgroup && !shapegroup.pinned) {
+                        $scope.pinGroup(shapegroup);
+
+                    }
+                });
+                //show pinned message 
+                $timeout(function() {
+                    $scope.showPinMessage(lucidGroup);
+                }, 1000);
+            }
+
+        };
+        $scope.lucidGroupPinned = function(lucidGroup) {
+            var pinnedCount = 0;
+            var groupCount = 0;
+            angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
+
+                if (lucidGroup.groupname == shapegroup.lucidgroup) {
+                    //count number in this group
+                    groupCount += 1;
+                    if (shapegroup.pinned) {
+                        //counted pinned
+                        pinnedCount += 1;
+                    }
+                }
+            });
+            //console.log('pinnedCount', pinnedCount, 'length', groupCount)
+            if (pinnedCount == groupCount && groupCount != 0) {
+                return true
+            } else {
+                return false;
+            }
+        };
+
         $scope.pinnedShapeGroups = lucidShapesData.pinnedShapeGroups();
         $scope.lucidShapeGroups = lucidShapesData.lucidShapeGroups();
         $scope.customShapeGroups = lucidShapesData.customShapeGroups();
@@ -775,7 +899,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 "edit": true,
                 "shapes": [],
             };
-            $scope.customShapeGroups.splice(0, 0, newGroup);
+            $scope.customShapeGroups.push(newGroup);
             $rootScope.saveDocument();
         };
         $scope.editName = function(shapegroup, index) {
@@ -947,4 +1071,121 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 }
             }
         };
-    });
+    })
+//this is used with shape libraries
+.animation('.shape-manager-drawer', ['$animateCss', function($animateCss) {
+    var lastId = 0;
+    var _cache = {};
+
+    function getId(el) {
+        var id = el[0].getAttribute("data-slide-toggle");
+        if (!id) {
+            id = ++lastId;
+            el[0].setAttribute("data-slide-toggle", id);
+        }
+        return id;
+    }
+
+    function getState(id) {
+        var state = _cache[id];
+        if (!state) {
+            state = {};
+            _cache[id] = state;
+        }
+        return state;
+    }
+
+    function generateRunner(closing, state, animator, element, doneFn) {
+        return function() {
+            state.animating = true;
+            state.animator = animator;
+            state.doneFn = doneFn;
+            animator.start().finally(function() {
+                if (closing && state.doneFn === doneFn) {
+                    element[0].style.height = '';
+                }
+                // if (!closing && state.doneFn === doneFn) {
+                //     element[0].style.height = '';
+                // }
+                state.animating = false;
+                state.animator = undefined;
+                state.doneFn();
+            });
+        };
+    }
+
+    return {
+        addClass: function(element, className, doneFn) {
+            if (className === 'ng-hide') {
+                var state = getState(getId(element));
+                var height = (state.animating && state.height) ?
+                    state.height : element[0].offsetHeight;
+
+                var animator = $animateCss(element, {
+                    from: {
+                        height: height + 'px',
+                    },
+                    to: {
+                        height: '0px',
+                    }
+                });
+                if (animator) {
+                    if (state.animating) {
+                        state.doneFn =
+                            generateRunner(true,
+                                state,
+                                animator,
+                                element,
+                                doneFn);
+                        return state.animator.end();
+                    } else {
+                        state.height = height;
+                        return generateRunner(true,
+                            state,
+                            animator,
+                            element,
+                            doneFn)();
+                    }
+                }
+            }
+            doneFn();
+        },
+        removeClass: function(element, className, doneFn) {
+            if (className === 'ng-hide') {
+                var state = getState(getId(element));
+                var height = (state.animating && state.height) ?
+                    state.height : element[0].offsetHeight;
+
+                var animator = $animateCss(element, {
+                    from: {
+                        height: '0px',
+                        opacity: 0
+                    },
+                    to: {
+                        height: height + 'px',
+                        opacity: 1
+                    }
+                });
+
+                if (animator) {
+                    if (state.animating) {
+                        state.doneFn = generateRunner(false,
+                            state,
+                            animator,
+                            element,
+                            doneFn);
+                        return state.animator.end();
+                    } else {
+                        state.height = height;
+                        return generateRunner(false,
+                            state,
+                            animator,
+                            element,
+                            doneFn)();
+                    }
+                }
+            }
+            doneFn();
+        }
+    };
+}]);
