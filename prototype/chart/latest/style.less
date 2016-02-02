@@ -934,10 +934,13 @@ a {
     //         }
     //     }
     // }
-    .lucid-shape-group-wrapper.left-panel, .lucid-shape-group-wrapper.manager {
+    .lucid-shape-group-wrapper.left-panel,
+    .lucid-shape-group-wrapper.manager {
         margin-bottom: 10px;
         position: relative;
         //z-index:1;
+        opacity:1;
+        transition: .5s ease-in-out;
         &.ng-enter {
             margin-top: -170px;
             opacity: 0;
@@ -1169,14 +1172,6 @@ a {
             }
         }
     }
-    .lucid-shapegroup-columns {
-        column-count: 3;
-        column-gap: 0px;
-        width: 100%;
-        .lucid-shape-group-wrapper {
-            width: 100%;
-        }
-    }
     .lucid-shape-group-wrapper {
         &.ng-animate {
             transition: .5s;
@@ -1194,6 +1189,10 @@ a {
         }
         &:nth-of-type(4n+5) {
             clear: left;
+        }
+        &.custom-group {
+            width: 33%;
+            clear: none;
         }
         .shape-manager-drawer {
             background: #333;
@@ -1220,13 +1219,9 @@ a {
                 //column-width: 33.333%;
                 column-count: 3;
                 column-gap: 0px;
-                //     display: -ms-flexbox;
-                // -ms-flex-direction: column;
-                // -ms-flex-wrap: wrap;
-                // display: flex;
-                // flex-direction: column;
-                // flex-wrap: wrap;
-                // height: 500px;
+                @media (max-width: 1000px) {
+                    column-count: 2;
+                }
             }
             &:after {
                 content: "";
@@ -1269,10 +1264,21 @@ a {
             margin-left: ~'calc(-300% - 90px)';
         }
     }
+    .no-transition {
+        .lucid-shape-group-wrapper .manager-drawer-wrapper.manager-drawer-wrapper {
+            transition: none;
+            .shape-manager-drawer{
+                transition:none;
+            }
+        }
+        .shape-manager-drawer .lucid-shape-group-wrapper{
+            opacity: 0;
+        }
+    }
     .lucid-shape-group {
         margin-bottom: 20px;
         .shapes-wrapper {
-            max-height: 162px;
+            //max-height: 162px;
             overflow: hidden;
             transition: all .3s ease-in-out;
             padding: 5px; //reduced

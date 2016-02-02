@@ -608,15 +608,29 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             'groupname': 'Venn Diagrams',
             'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
         }];
-        $scope.setGroup = function(groupname) {
-            if (groupname === $scope.showGroup) { // is the tab already open?
-                $scope.showGroup = ""; // then empty the var
-            } else {
-                $scope.showGroup = groupname; // set the tab
+        $scope.setGroup = function(newIndex, oldIndex) {
+            console.log('old index', oldIndex, 'new index', newIndex);
+            $scope.DrawerOpenSameRow = false;
+            if (newIndex === $scope.showGroupIndex) { // is the tab already open?
+                $scope.showGroupIndex = null; // then empty the var
+
+            } else if ($scope.showGroupIndex == null) { // no tab is open
+                $scope.showGroupIndex = newIndex;
+
+            } else { //switching tabs
+                //check if the two options are within the same row (only coded row 1 and 2)
+                if ((newIndex < 4 && oldIndex < 4) || (newIndex > 3 && oldIndex > 3 && newIndex < 8 && oldIndex < 8)) {
+                    console.log('same row');
+                    $scope.DrawerOpenSameRow = true;
+                    $timeout(function(){
+                        $scope.DrawerOpenSameRow = false;
+                    }, 100);
+                }
+                $scope.showGroupIndex = newIndex; // set the tab
             }
         };
         $scope.toggleGroupPin = function(lucidGroup) {
-            console.log(lucidGroup.groupname);
+            //console.log(lucidGroup.groupname);
             //if pinned, unpin all
             if ($scope.lucidGroupPinned(lucidGroup)) {
                 angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
@@ -678,7 +692,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             //add message
             var overflow = document.getElementById('left-panel-shapes').offsetHeight - document.getElementById('left-panel-shapes-scroll').offsetHeight;
 
-            console.log('overflow: ', overflow);
+            //console.log('overflow: ', overflow);
 
             if (overflow < 125) {
                 $scope.overflowMessage = true;
@@ -693,7 +707,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             $scope.pinnedShapeGroups.push(shapegroup);
             $scope.showPinMessage(shapegroup);
             shapegroup.pinned = true;
-            console.log('pin');
+            //console.log('pin');
         };
         angular.forEach($scope.customShapeGroups, function(shapegroup) {
             if (shapegroup.pinned) {
@@ -864,7 +878,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                     }
                     shapegroup.shapes.push(newblock);
                 }
-                console.log('dropped in saved shapes', data, event, shapegroup);
+                //console.log('dropped in saved shapes', data, event, shapegroup);
             }
 
         };
@@ -929,7 +943,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             var newGroup = JSON.parse(JSON.stringify(shapegroup));
             newGroup.id = new Date().getTime();
             newGroup.groupname = shapegroup.groupname + ' Copy';
-            console.log(newGroup)
+            //console.log(newGroup)
             $scope.customShapeGroups.splice(0, 0, newGroup);
             $scope.editName(newGroup, 0);
             $rootScope.saveDocument();
@@ -958,7 +972,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         $scope.clickLine = function() {
             //alert('clicked');
             $rootScope.selectedType = 'line';
-            console.log('clicked');
+            //console.log('clicked');
         };
         $scope.lucidSlides = [{
             "x": 368,
@@ -1058,7 +1072,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 item.metrics.x = event.pageX - canvasX - (item.metrics.width / 2);
                 item.metrics.y = event.pageY - canvasY - (item.metrics.height / 2);
 
-                console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
+                //console.log('shape', item, event.pageX, event.pageY, 'total: ', event);
 
                 $rootScope.currentPage.blocks.push(item);
                 $rootScope.selectedBlock = item;
@@ -1074,7 +1088,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 //console.log('drag success', data, event);
                 if (data) {
                     if (angular.element(event.event.srcElement).hasClass('lucid-block-comment')) {
-                        console.log('comment');
+                        //console.log('comment');
                         return
                     }
                     data.metrics.x = event.x - canvasX - event.element.centerX;
@@ -1116,9 +1130,9 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                     if (closing && state.doneFn === doneFn) {
                         element[0].style.height = '';
                     }
-                    // if (!closing && state.doneFn === doneFn) {
-                    //     element[0].style.height = '';
-                    // }
+                    if (!closing && state.doneFn === doneFn) {
+                        element[0].style.height = '';
+                    }
                     state.animating = false;
                     state.animator = undefined;
                     state.doneFn();

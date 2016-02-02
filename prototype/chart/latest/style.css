@@ -732,6 +732,9 @@ a {
 .lucid-manage-shapes .lucid-shape-group-wrapper.manager {
   margin-bottom: 10px;
   position: relative;
+  opacity: 1;
+  -webkit-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel.ng-enter,
 .lucid-manage-shapes .lucid-shape-group-wrapper.left-panel.ng-enter,
@@ -977,18 +980,6 @@ a {
   width: 100%;
   background: #77818C;
 }
-.lucid-shape-manager .lucid-shapegroup-columns {
-  -webkit-column-count: 3;
-     -moz-column-count: 3;
-          column-count: 3;
-  -webkit-column-gap: 0px;
-     -moz-column-gap: 0px;
-          column-gap: 0px;
-  width: 100%;
-}
-.lucid-shape-manager .lucid-shapegroup-columns .lucid-shape-group-wrapper {
-  width: 100%;
-}
 .lucid-shape-manager .lucid-shape-group-wrapper {
   margin-bottom: 0px;
   width: 25%;
@@ -1008,6 +999,10 @@ a {
 }
 .lucid-shape-manager .lucid-shape-group-wrapper:nth-of-type(4n+5) {
   clear: left;
+}
+.lucid-shape-manager .lucid-shape-group-wrapper.custom-group {
+  width: 33%;
+  clear: none;
 }
 .lucid-shape-manager .lucid-shape-group-wrapper .shape-manager-drawer {
   background: #333;
@@ -1040,6 +1035,13 @@ a {
   -webkit-column-gap: 0px;
      -moz-column-gap: 0px;
           column-gap: 0px;
+}
+@media (max-width: 1000px) {
+  .lucid-shape-manager .lucid-shape-group-wrapper .shape-manager-drawer > ul {
+    -webkit-column-count: 2;
+       -moz-column-count: 2;
+            column-count: 2;
+  }
 }
 .lucid-shape-manager .lucid-shape-group-wrapper .shape-manager-drawer:after {
   content: "";
@@ -1079,11 +1081,21 @@ a {
 .lucid-shape-manager .lucid-shape-group-wrapper:nth-of-type(4n + 4) .shape-manager-drawer {
   margin-left: calc(-300% - 90px);
 }
+.lucid-shape-manager .no-transition .lucid-shape-group-wrapper .manager-drawer-wrapper.manager-drawer-wrapper {
+  -webkit-transition: none;
+  transition: none;
+}
+.lucid-shape-manager .no-transition .lucid-shape-group-wrapper .manager-drawer-wrapper.manager-drawer-wrapper .shape-manager-drawer {
+  -webkit-transition: none;
+  transition: none;
+}
+.lucid-shape-manager .no-transition .shape-manager-drawer .lucid-shape-group-wrapper {
+  opacity: 0;
+}
 .lucid-shape-manager .lucid-shape-group {
   margin-bottom: 20px;
 }
 .lucid-shape-manager .lucid-shape-group .shapes-wrapper {
-  max-height: 162px;
   overflow: hidden;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;

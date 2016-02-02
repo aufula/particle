@@ -531,7 +531,7 @@
 
                   <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes" ng-class="{'loading-shapes': !loadingshapes}" ng-animate-children>
                       <div class="lucid-scroll-inner-wrap">
-                          <div class="lucid-shapes-manager-divider">
+                          <div class="lucid-shapes-manager-divider" ng-show="customGroups.length>0">
                               <div class="divider-inner">
                                   <div class="divider-title">
                                       CUSTOM SHAPE GROUPS
@@ -540,13 +540,10 @@
                               </div>
                           </div>
                           <ul ng-sortable="customGroupsSort"
-                              class="lucid-shapegroup-columns"
                               scroll-position="scroll">
-                              <li ng-repeat="shapegroup in customShapeGroups | filter:searchShapes track by shapegroup.id"
-                                  class="lucid-shape-group-wrapper manager lucid-animate"
-                                  ng-show="$root.manageshapes"
-                                  ng-class-odd="'odd'"
-                                  ng-class-even="'even'">
+                              <li ng-repeat="shapegroup in customGroups = (customShapeGroups | filter:searchShapes) track by shapegroup.id"
+                                  class="lucid-shape-group-wrapper manager custom-group"
+                                  ng-show="$root.manageshapes">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
                                     <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
@@ -613,7 +610,7 @@
                                   <!-- END SHAPE GROUP INSIDE MANAGER -->
                               </li>
                           </ul>
-                          <div class="lucid-shapes-manager-divider">
+                          <div class="lucid-shapes-manager-divider" ng-show="lucidgroups.length>0">
                               <div class="divider-inner">
                                   <div class="divider-title">
                                       LUCIDCHART SHAPE GROUPS
@@ -621,10 +618,10 @@
                                   <div class="divider-line"></div>
                               </div>
                           </div>
-                          <ul>
-                              <li ng-repeat="lucidGroup in lucidGroups | filter:searchShapes | limitTo: lucidShapesLimit"
+                          <ul ng-class="{'no-transition': DrawerOpenSameRow}">
+                              <li ng-repeat="lucidGroup in lucidgroups = (lucidGroups | filter:searchShapes)"
                                   class="lucid-shape-group-wrapper manager"
-                                  ng-class="{'no-transition': !loadingshapes, 'active-group': lucidGroup.groupname == $parent.showGroup}">
+                                  ng-class="{'no-transition': !loadingshapes, 'active-group': $index == $parent.showGroupIndex}">
                                   <!-- START SHAPE GROUP INSIDE MANAGER -->
                                   <div class="lucid-shape-group">
                                     <div class="shape-group-top" ng-class="{'shapegroup-pinned': lucidGroupPinned(lucidGroup)}">
@@ -633,13 +630,13 @@
                                     <div class="pin-library" ng-click="$parent.toggleGroupPin(lucidGroup); $event.stopPropagation();" ng-class="{'pinned': lucidGroupPinned(lucidGroup)}">
                                         <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                     </div>
-                                    <div class="group-icon-wrapper lucid-drawer-wrapper" ng-click="setGroup(lucidGroup.groupname);">
+                                    <div class="group-icon-wrapper lucid-drawer-wrapper" ng-click="setGroup($index, $parent.showGroupIndex);">
                                       <img ng-src="{{lucidGroup.image}}">
                                       <div class="lucid-show-more-drawer-button">
                                           <div class="lucid-drawer-center-text">
-                                              <div class="lucid-drawer-button-text" ng-hide="lucidGroup.groupname == $parent.showGroup">View</div>
-                                              <div class="lucid-drawer-button-text" ng-show="lucidGroup.groupname == $parent.showGroup">Close</div>
-                                              <div class="lucid-drawer-more-icon" ng-class="{'lucid-drawer-open': lucidGroup.groupname == $parent.showGroup}">
+                                              <div class="lucid-drawer-button-text" ng-hide="$index == $parent.showGroupIndex">View</div>
+                                              <div class="lucid-drawer-button-text" ng-show="$index == $parent.showGroupIndex">Close</div>
+                                              <div class="lucid-drawer-more-icon" ng-class="{'lucid-drawer-open': $index == $parent.showGroupIndex}">
                                                   <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
                                                       <g id="Page-1" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
                                                           <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_" />
@@ -651,7 +648,7 @@
                                     </div>
                                   </div>
                                   <div class="manager-drawer-wrapper">
-                                    <div class="shape-manager-drawer" ng-show="$parent.showGroup == lucidGroup.groupname">
+                                    <div class="shape-manager-drawer ng-hide" ng-show="$parent.showGroupIndex == $index">
                                       <ul ng-sortable="lucidGroupsSort">
                                           <li ng-repeat="shapegroup in lucidShapeGroups"
                                               class="lucid-shape-group-wrapper manager"
