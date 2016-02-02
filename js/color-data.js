@@ -86,7 +86,7 @@ angular.module('lucidColors', [])
             'colorgroup': 'Secondary Colors',
             'colors': [{
                 'name': 'Blue Steel Dark',
-                'hex': '#606D79',
+                'hex': '#212C35',
                 'less': '@blue-steel-dark',
             }, {
                 'name': 'Blue Steel Light',
