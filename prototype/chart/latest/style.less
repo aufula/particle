@@ -33,39 +33,11 @@ sans-serif;
 @standard-text: #5A5A5A;
 @standard-text-light: #828282;
 @standard-text-ghost: #C7C7C7;
-@lucid-blue-dark: #2C84B5;
+@lucid-blue-dark: #202C35;
 /////////////////////////////////////////////////
 //END COLOR VARIABLES
 ////////////////////////////////////////////////
-// COOL GREYS
-// @grey-1: #EBECED;
-// @grey-2: #DEE1E3;
-// @grey-3: #D5D9DD;
-// @grey-4: #C9CDD1;
-// @grey-5: #B0B4B8;
-// @behind-canvas: #94989c;
-//WARM GREYS
-// @grey-1: #F0F0F0;
-// @grey-2: #E6E6E6;
-// @grey-3: #D8D7D7;
-// @grey-4: #D0CDCD;
-// @grey-5: #A5A5A5;
-// @behind-canvas: #AAADAE;
-//ALL NEUTRAL
-// @grey-1: #F0F0F0;
-// @grey-2: #E6E6E6;
-// @grey-3: #D6D6D6; //COLLAPSE BAR RIGHT DROP SHAPES SECTION
-// @grey-4: #CDCDCD; //SHAPEGROUP LEFT
-// @grey-5: #A5A5A5;
-// @behind-canvas: #94989C;
-//WARM GREYS - TEAM ADMIN
-// @grey-1: #F0F0F0;
-// @grey-2: #E1E1E1;
-// @grey-3: #E6E6E6;
-// @grey-4: #D2D2D2;
-// @grey-5: #A5A5A5;
-// @behind-canvas: #AAADAE;
-//MIX WARM AND COOL
+
 @grey-1: #F0F0F0;
 @grey-2: #E6E6E6;
 @grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
@@ -1911,6 +1883,39 @@ a {
             text-overflow: ellipsis;
             height: 20px;
             vertical-align: middle;
+        }
+    }
+    .page-toggler{
+        display: inline-block;
+        vertical-align: top;
+        color:@blue-steel-2;
+        width:70px;
+        >div{
+            display: inline-block;
+            cursor: pointer;
+            transition: none;
+            &.inactive{
+                opacity: .4;
+            }
+        }
+        span{
+            line-height: 22px;
+            vertical-align: top;
+            font-size: 14px;
+        }
+        svg path{
+            fill: @blue-steel-2;
+        }
+        .previous-page svg{
+            transform-origin: center;
+            transform: rotateZ(180deg);
+        }
+        &.ng-hide{
+            margin-right:-70px;
+            opacity: 0;
+        }
+        &.ng-animate{
+            transition: .35s ease-in-out;
         }
     }
     .page-count {

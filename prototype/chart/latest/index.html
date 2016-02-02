@@ -41,7 +41,16 @@
       <div id="main-header">
       <div class="left" ng-init="docName = 'Company Org Chart'"><edit-in-place ng-model="docName" class="document-name reversed-text"></edit-in-place></div>
       <div class="center">
-          <div class="page-count">{{$root.pages.length}}</div>
+        <div class="page-toggler" ng-controller="PagesCtrl" ng-show="$root.pages.length>1">
+          <div ng-click="previousPage()" class="previous-page" ng-class="{'inactive': $root.currentPageNumber == 1}">
+            <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-arrow-22px.svg'"></ng-include>
+          </div>
+          <span>{{$root.currentPageNumber}}/{{$root.pages.length}}</span>
+          <div ng-click="nextPage()" ng-class="{'inactive': $root.currentPageNumber == $root.pages.length}">
+            <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-arrow-22px.svg'"></ng-include>
+          </div>
+        </div>
+          <div class="page-count">{{z$root.pages.length}}</div>
           <a href="#" class="page-name reversed-text" ng-click="pages.show = !pages.show">
               <span class="dd-arrow">{{$root.currentPage.name}}</span>
           </a>

@@ -1697,6 +1697,45 @@ a {
   height: 20px;
   vertical-align: middle;
 }
+#main-header .page-toggler {
+  display: inline-block;
+  vertical-align: top;
+  color: #77818C;
+  width: 70px;
+}
+#main-header .page-toggler > div {
+  display: inline-block;
+  cursor: pointer;
+  -webkit-transition: none;
+  transition: none;
+}
+#main-header .page-toggler > div.inactive {
+  opacity: .4;
+}
+#main-header .page-toggler span {
+  line-height: 22px;
+  vertical-align: top;
+  font-size: 14px;
+}
+#main-header .page-toggler svg path {
+  fill: #77818C;
+}
+#main-header .page-toggler .previous-page svg {
+  -webkit-transform-origin: center;
+      -ms-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform: rotateZ(180deg);
+      -ms-transform: rotate(180deg);
+          transform: rotateZ(180deg);
+}
+#main-header .page-toggler.ng-hide {
+  margin-right: -70px;
+  opacity: 0;
+}
+#main-header .page-toggler.ng-animate {
+  -webkit-transition: 0.35s ease-in-out;
+  transition: 0.35s ease-in-out;
+}
 #main-header .page-count {
   display: inline-block;
   background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page-dark.svg');

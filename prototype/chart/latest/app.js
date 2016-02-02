@@ -207,6 +207,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     .controller('PagesCtrl', function($scope, $timeout, $rootScope, pagesData) {
         $rootScope.pages = pagesData;
         $rootScope.currentPage = pagesData[0];
+        $rootScope.currentPageNumber = 1;
         $scope.editName = function(page) {
             $timeout(function() {
                 //console.log('edit?', shapegroup.edit);
@@ -217,7 +218,6 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
 
         };
         $scope.changePage = function(page) {
-
             var resetPage = {
                 name: page.name,
                 blocks: []
@@ -228,6 +228,8 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             $rootScope.currentPage = resetPage;
             $timeout(function() {
                 $rootScope.currentPage = page;
+                $rootScope.currentPageNumber = $rootScope.pages.indexOf(page) + 1;
+                $rootScope.saveDocument();
             }, 10);
         };
         $scope.addPage = function() {
@@ -240,9 +242,8 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             };
             $rootScope.pages.splice(length, 0, newPage);
             $timeout(function() {
-                $rootScope.currentPage = newPage;
+                $scope.changePage(newPage);
             }, 10); //delay so it selects after transition
-            $rootScope.saveDocument();
         };
         $scope.duplicatePage = function(page, index) {
             var newPage = JSON.parse(JSON.stringify(page));
@@ -253,11 +254,10 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             newPage.name = page.name + ' Copy';
             $rootScope.pages.splice(newindex, 0, newPage);
             $timeout(function() {
-                $rootScope.currentPage = newPage;
+                $scope.changePage(newPage);
             }, 10);
             // $scope.selectedPage = uniqueID;
             //console.log(newpage, index);
-            $rootScope.saveDocument();
         };
         $rootScope.masterPageCount = function() {
             var masterPageCount = [];
@@ -281,6 +281,15 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 }
             }, 10);
             $rootScope.saveDocument();
+        };
+        
+        $scope.nextPage = function(){
+            var index = $rootScope.pages.indexOf($rootScope.currentPage);
+            $scope.changePage($rootScope.pages[index + 1]);
+        };
+        $scope.previousPage = function(){
+            var index = $rootScope.pages.indexOf($rootScope.currentPage);
+            $scope.changePage($rootScope.pages[index - 1]);
         };
         $scope.applyMaster = function(page) {
             page.masterapplied = true;
