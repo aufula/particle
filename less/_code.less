@@ -79,7 +79,7 @@
         position: relative;
         border-bottom: 1px solid #CCC;
         //transition: height 0.3s;
-        &.slide-toggle{
+        &.slide-toggle {
             transition: .3s ease-in-out all;
         }
         .drawer-header {
@@ -128,6 +128,14 @@
             }
         }
         .scroll-area {
+            * {
+                -webkit-touch-callout: initial; // iOS Safari
+                -webkit-user-select: initial; // Chrome/Safari/Opera
+                -khtml-user-select: initial; // Konqueror
+                -moz-user-select: initial; // Firefox
+                -ms-user-select: initial; // IE/Edge
+                user-select: initial; // non-prefixed version, currently not supported by any browser
+            }
             //overflow: scroll;
             //height: 160px;
             opacity: 1;
