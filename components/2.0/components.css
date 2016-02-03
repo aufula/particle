@@ -939,6 +939,7 @@ input[type=range]:focus::-ms-fill-upper {
   whitespace: nowrap;
   -webkit-transition: 0.15s ease-in-out background-color;
   transition: 0.15s ease-in-out background-color;
+  -webkit-font-smoothing: auto;
 }
 .lucid-button.lucid-blue {
   background-color: #29AAE1;

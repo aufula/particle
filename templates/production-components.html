@@ -25,7 +25,7 @@
             </div>
             <div class="component-preview production-preview" ng-include src="component.url">
             </div>
-            <!-- <lucid-notification type="complete">UX Approved. Use in production.</lucid-notification> -->
+            <lucid-notification ng-if="component.error" type="error">{{component.error.text}}<a ng-if="component.error.url" href="{{component.error.url}}"><button class="lucid-button lucid-red">See Jira Ticket</button></a></lucid-notification>
         </div>
     </div>
 </div>

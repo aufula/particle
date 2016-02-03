@@ -9,10 +9,13 @@ angular.module('lucidProductionFactory', [])
             }, {
                 "title": "Buttons",
                 "url": "production/buttons.html",
-
             }, {
                 "title": "Dialog",
                 "url": "production/dialog.html",
+                "error": {
+                    "url": "https://jira.lucidchart.com/browse/CHART-9928",
+                    "text":"There are known issues with this component, see Jira."
+                }
             }, {
                 "title": "well",
                 "url": "production/well.html"
