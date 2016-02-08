@@ -425,6 +425,15 @@ nav.file-menu li > a:only-child:after {
   background: #F0F0F0;
   box-shadow: 0 0px 7px rgba(0, 0, 0, 0.15);
 }
+#left-bar .icons-wrapper .icon-wrapper.more-caret .icon:after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  right: -6px;
+  border-left: 4px solid #3d4752;
+  border-top: 3.5px solid transparent;
+  border-bottom: 3.5px solid transparent;
+}
 #left-bar .icons-wrapper .icon-wrapper.ng-animate .tooltip {
   -webkit-transition: opacity .5s .5s;
   transition: opacity .5s .5s;

@@ -523,6 +523,17 @@ nav.file-menu {
                 //border-radius: 4px 0 0 4px;
                 box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
             }
+            &.more-caret {
+                .icon:after {
+                    content: '';
+                    position: absolute;
+                    top: 8px;
+                    right: -6px;
+                    border-left: 4px solid @blue-steel;
+                    border-top: 3.5px solid transparent;
+                    border-bottom: 3.5px solid transparent;
+                }
+            }
             &.ng-animate {
                 .tooltip {
                     // use this to delay the tooltip coming in

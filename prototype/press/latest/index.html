@@ -231,7 +231,7 @@
             ng-click="$root.selectedBlock = block; $event.stopPropagation(); $root.selectedType = 'block'"
             class="lucid-chart-block lucid-animate" 
             ng-class="{'manage-shapes': $root.manageshapes, 'shrink-block' : $root.selectedBlock == block && $root.mouseInLeftPanel}"
-            style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
+            ng-style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
               <div class="lucid-outer-block-table" ng-if="block.type !== 'table'">
                   <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}">
                     <span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
@@ -282,29 +282,29 @@
       <div id="left-bar" class="lucid-shapes-panel-wrapper" ng-controller="leftPanelCtrl">
         <!-- START ICONS WRAPPER -->
         <div class="icons-wrapper">
-          <div class="icon-wrapper" ng-class="{active: openTab == 'templates'}" ng-click="$root.setTab('templates');">
-            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Pages</span>
+          <div class="icon-wrapper more-caret" ng-class="{active: openTab == 'templates'}" ng-click="$root.setTab('templates');">
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span class="input-label">Page</span>
           </div>
-          <div class="icon-wrapper" ng-class="{active: openTab == 'text'}" ng-click="$root.setTab('text')">
+          <div class="icon-wrapper more-caret" ng-class="{active: openTab == 'text'}" ng-click="$root.setTab('text')">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-text-22px.svg" class="full" /></div><span class="input-label">Text</span>
           </div>
-          <div class="icon-wrapper" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-shadow-22px.svg" class="full" /></div><span class="input-label">Shapes</span>
+          <div class="icon-wrapper more-caret" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-icon-shapes.svg" class="full" /></div><span class="input-label">Shapes</span>
           </div>
           <div class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" class="full" /></div><span class="input-label">Images</span>
           </div>
-          <div ng-show="addOnPresent" class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
+          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" class="full" /></div><span class="input-label">Table</span>
           </div>
           <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-present-22px.svg" class="full" /></div><span class="input-label">Video</span>
           </div>
-          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-finger-22px.svg" class="full" /></div><span class="input-label">Buttons</span>
+          <div class="icon-wrapper lucid-animate more-caret" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-icon-button.svg" class="full" /></div><span class="input-label">Buttons</span>
           </div>
           <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-            <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-add-row-22px.svg" class="full" /></div><span class="input-label">Scrolling Area</span>
+            <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-icon-scroll-area.svg" class="full" /></div><span class="input-label">Scroll Area</span>
           </div>
         </div>
         <!-- END ICONS WRAPPER -->
