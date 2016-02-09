@@ -1417,7 +1417,6 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #E6E6E6;
 }
 .lucid-tip-wrapper {
-  width: 240px;
   position: absolute;
   background: #FC8D2A;
   font-size: 14px;

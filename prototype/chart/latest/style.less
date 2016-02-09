@@ -33,11 +33,10 @@ sans-serif;
 @standard-text: #5A5A5A;
 @standard-text-light: #828282;
 @standard-text-ghost: #C7C7C7;
-@lucid-blue-dark: #202C35;
+@lucid-blue-dark: #2C84B5;
 /////////////////////////////////////////////////
 //END COLOR VARIABLES
 ////////////////////////////////////////////////
-
 @grey-1: #F0F0F0;
 @grey-2: #E6E6E6;
 @grey-3: #D6D6D8; //COLLAPSE BAR RIGHT
@@ -911,7 +910,7 @@ a {
         margin-bottom: 10px;
         position: relative;
         //z-index:1;
-        opacity:1;
+        opacity: 1;
         transition: .5s ease-in-out;
         &.ng-enter {
             margin-top: -170px;
@@ -1239,11 +1238,11 @@ a {
     .no-transition {
         .lucid-shape-group-wrapper .manager-drawer-wrapper.manager-drawer-wrapper {
             transition: none;
-            .shape-manager-drawer{
-                transition:none;
+            .shape-manager-drawer {
+                transition: none;
             }
         }
-        .shape-manager-drawer .lucid-shape-group-wrapper{
+        .shape-manager-drawer .lucid-shape-group-wrapper {
             opacity: 0;
         }
     }
@@ -1257,12 +1256,6 @@ a {
             &.lucid-drawer-open {
                 max-height: 600px;
             }
-        }
-        .group-icon-wrapper {
-            height: 85px;
-            text-align: center;
-            padding-top: 10px;
-            cursor: pointer;
         }
         .shape-group-top {
             //padding: 12px 10px;
@@ -1305,17 +1298,26 @@ a {
             }
         }
     }
-    .lucid-drawer-wrapper .lucid-show-more-drawer-button {
-        background-color: @blue-steel-light;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        left: 0;
-        .lucid-drawer-button-text {
-            color: #fff;
-        }
-        svg g {
-            fill: #fff;
+    .group-icon-wrapper {
+        height: 85px;
+        text-align: center;
+        padding-top: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        .lucid-show-more-drawer-button {
+            background-color: @blue-steel-light;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            .lucid-drawer-button-text {
+                color: #fff;
+                font-weight: 300;
+            }
+            svg g {
+                fill: #fff;
+            }
         }
     }
     //    display:none;
@@ -1509,6 +1511,7 @@ a {
 
 //search shapes tip
 .search-tip {
+    width:240px;
     &.ng-animate.ng-hide-remove {
         transition-delay: 1s;
     }
@@ -1885,36 +1888,36 @@ a {
             vertical-align: middle;
         }
     }
-    .page-toggler{
+    .page-toggler {
         display: inline-block;
         vertical-align: top;
-        color:@blue-steel-2;
-        width:70px;
-        >div{
+        color: @blue-steel-2;
+        width: 70px;
+        >div {
             display: inline-block;
             cursor: pointer;
             transition: none;
-            &.inactive{
+            &.inactive {
                 opacity: .4;
             }
         }
-        span{
+        span {
             line-height: 22px;
             vertical-align: top;
             font-size: 14px;
         }
-        svg path{
+        svg path {
             fill: @blue-steel-2;
         }
-        .previous-page svg{
+        .previous-page svg {
             transform-origin: center;
             transform: rotateZ(180deg);
         }
-        &.ng-hide{
-            margin-right:-70px;
+        &.ng-hide {
+            margin-right: -70px;
             opacity: 0;
         }
-        &.ng-animate{
+        &.ng-animate {
             transition: .35s ease-in-out;
         }
     }

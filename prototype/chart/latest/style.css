@@ -1104,12 +1104,6 @@ a {
 .lucid-shape-manager .lucid-shape-group .shapes-wrapper.lucid-drawer-open {
   max-height: 600px;
 }
-.lucid-shape-manager .lucid-shape-group .group-icon-wrapper {
-  height: 85px;
-  text-align: center;
-  padding-top: 10px;
-  cursor: pointer;
-}
 .lucid-shape-manager .lucid-shape-group .shape-group-top .shape-group-name {
   padding-left: 25px;
   max-width: 100%;
@@ -1146,17 +1140,26 @@ a {
 .lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-select-dropdown .lucid-select-option {
   padding: 5px 15px 5px 15px;
 }
-.lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button {
+.lucid-shape-manager .group-icon-wrapper {
+  height: 85px;
+  text-align: center;
+  padding-top: 10px;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+.lucid-shape-manager .group-icon-wrapper .lucid-show-more-drawer-button {
   background-color: #AFB7BF;
   position: absolute;
   bottom: 0;
   right: 0;
   left: 0;
 }
-.lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-button-text {
+.lucid-shape-manager .group-icon-wrapper .lucid-show-more-drawer-button .lucid-drawer-button-text {
   color: #fff;
+  font-weight: 300;
 }
-.lucid-shape-manager .lucid-drawer-wrapper .lucid-show-more-drawer-button svg g {
+.lucid-shape-manager .group-icon-wrapper .lucid-show-more-drawer-button svg g {
   fill: #fff;
 }
 .lucid-shape-manager.ng-hide {
@@ -1342,6 +1345,9 @@ a {
 .search-shapes .no-search-results.ng-animate {
   -webkit-transition: 0.25s ease-in-out;
   transition: 0.25s ease-in-out;
+}
+.search-tip {
+  width: 240px;
 }
 .search-tip.ng-animate.ng-hide-remove {
   -webkit-transition-delay: 1s;
