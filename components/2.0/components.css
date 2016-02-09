@@ -1446,7 +1446,7 @@ input[type=range]:focus::-ms-fill-upper {
   top: 10px;
 }
 .lucid-tip-wrapper.caret-right.ng-hide {
-  margin-left: -10px;
+  margin-right: 10px;
 }
 .lucid-tip-wrapper.caret-right:after {
   border-left: 10px solid #FC8D2A;

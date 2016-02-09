@@ -337,6 +337,12 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
+  -webkit-transition: 0.5s opacity ease-in-out;
+  transition: 0.5s opacity ease-in-out;
+  opacity: 1;
+}
+body.hide-body {
+  opacity: 0;
 }
 #wrapper {
   position: relative;
@@ -2826,7 +2832,7 @@ a {
 }
 .onboarding-tip.cancel-beta:after {
   left: inherit;
-  right: 22px;
+  right: 117px;
   margin-right: -9px;
 }
 .onboarding-tip.mega-menu {
@@ -2846,8 +2852,8 @@ a {
   margin-left: -90px;
 }
 .onboarding-tip.share-tip {
-  -webkit-transition-delay: .5s;
-          transition-delay: .5s;
+  -webkit-transition-delay: 1s;
+          transition-delay: 1s;
   top: 255px;
   right: 75px;
   width: 240px;

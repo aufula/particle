@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
 </head>
-<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
+<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}" class="hide-body" hide-until-loaded>
   <div id="sidebar" class="reversed-text">
     <ul>
       <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
@@ -59,15 +59,16 @@
       <div id="documents" ng-click="showMegamenu=!showMegamenu; megamenutipviewed = true; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
       <div class="right">
         <span class="save-text">{{savetext}}</span>
-        <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
-        <div style="padding:10px 10px 0">
+        <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show" ng-click="betatipviewed=true">
+        <!-- <div style="padding:10px 10px 0">
           <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
-        </div>
+        </div> -->
         <div class="lucid-select-wrapper">
             <ul class="lucid-select-dropdown" ng-click="help.show = false">
-                <li class="lucid-select-option">Help Center</li>
+                
                 <li class="lucid-select-option">Keyboard shortcuts</li>
                 <li class="lucid-select-option">Report a problem</li>
+                <li class="lucid-select-option" style="color:#FC8D2A"><a href="http://s.codepen.io/team/lucidsoftware/debug/GowwZV"> Exit Beta</a></li>
             </ul>
         </div>
         </lucid-buttcon-popover>
@@ -80,7 +81,7 @@
         </div>
         
 
-          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-person-large-22px.svg" width="135" ng-click="betatipviewed=true">
+          <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-person-large-22px.svg" width="135">
               <div class="lucid-select-wrapper">
                   <ul class="lucid-select-dropdown" ng-click="account.show = false;">
                       <li class="lucid-select-option">
@@ -1180,7 +1181,7 @@
 <lucid-tip showtip="$root.showSearchTip" dismiss="$root.searchTipDismissed" caret="top" width="240" delay="true" style="top: 160px; left: 4px;" class="search-tip">
 Change the search to Google, Iconfinder, or Lucidchart to find the content you need.
 </lucid-tip>
-<lucid-tip showtip="onBoardingTip == 1" dismiss="betatipviewed" caret="top" class="onboarding-tip cancel-beta">Exit the Beta here.</lucid-tip>
+<lucid-tip showtip="onBoardingTip == 1" dismiss="betatipviewed" caret="top" class="onboarding-tip cancel-beta">Report a problem or exit the beta at any time.</lucid-tip>
 <lucid-tip showtip="onBoardingTip == 2" dismiss="pagestipviewed" caret="top" class="onboarding-tip pages-tip">Create and manage pages</lucid-tip>
 <lucid-tip showtip="onBoardingTip == 3" dismiss="megamenutipviewed" caret="left" class="onboarding-tip mega-menu">Print, export, and more</lucid-tip>
 <lucid-tip showtip="onBoardingTip == 4" dismiss="sharetipviewed" caret="right" class="onboarding-tip share-tip">Share with others even if they're still using the old Lucidchart.</lucid-tip>

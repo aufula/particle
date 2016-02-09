@@ -466,6 +466,11 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     background: #3d4752;
     user-select: none;
+    transition: .5s opacity ease-in-out;
+    opacity: 1;
+    &.hide-body{
+        opacity:0;
+    }
 }
 
 #wrapper {
@@ -3073,7 +3078,7 @@ a {
         right: 5px;
         &:after{
             left:inherit;
-            right:22px;
+            right:117px;
             margin-right:-9px;
         }
     }
@@ -3092,7 +3097,7 @@ a {
         }
     }
     &.share-tip {
-        transition-delay: .5s;
+        transition-delay: 1s;
         top: 255px;
         right: 75px;
         width:240px;

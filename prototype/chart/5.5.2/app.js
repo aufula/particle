@@ -1130,6 +1130,19 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         };
     })
+    .directive('hideUntilLoaded', ['$timeout', function($timeout) {
+        return {
+            priority: -10000, // a low number so this directive loads after all other directives have loaded. 
+            restrict: "A", // attribute only
+            link: function($scope, $element, $attributes) {
+                console.log("Loaded");
+                $timeout(function(){
+                    $element.removeClass('hide-body');
+                }, 500)
+                
+            }
+        };
+    }])
     //this is used with shape libraries
     .animation('.shape-manager-drawer', ['$animateCss', function($animateCss) {
         var lastId = 0;
@@ -1246,4 +1259,5 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 doneFn();
             }
         };
+
     }]);
