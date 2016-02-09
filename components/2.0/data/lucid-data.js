@@ -278,7 +278,11 @@ angular.module('lucidData', [])
             "category": "Marketing Material",
             "groups": [{
                 "groupname": "Flyer",
-                "size": "8.5 x 11 in",
+                "size": {
+                    "width": 8.5,
+                    "height": 11,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-flyer-template-1.png"
                 }, {
@@ -296,7 +300,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Brochure",
-                "size": "11 x 8.5 in",
+                "size": {
+                    "width": 11,
+                    "height": 8.5,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-brochure-template-1.png"
                 }, {
@@ -326,7 +334,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Poster",
-                "size": "18 x 24 in",
+                "size": {
+                    "width": 18,
+                    "height": 24,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-poster-template-1.png"
                 }, {
@@ -348,7 +360,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Stationary",
-                "size": "8.5 x 11 in",
+                "size": {
+                    "width": 8.5,
+                    "height": 11,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-stationary-template-1.png"
                 }, {
@@ -358,7 +374,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Business Card",
-                "size": "3.5 x 2 in",
+                "size": {
+                    "width": 3.5,
+                    "height": 2,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-business-card-template-1.png"
                 }, {
@@ -376,7 +396,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Leaflets",
-                "size": "3.667 x 8.5 in",
+                "size": {
+                    "width": 3.667,
+                    "height": 8.5,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-leaflet-template-1.png"
                 }, {
@@ -389,7 +413,11 @@ angular.module('lucidData', [])
             "category": "Events",
             "groups": [{
                 "groupname": "Postcard",
-                "size": "6 x 4 in",
+                "size": {
+                    "width": 6,
+                    "height": 4,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-postcard-template-1.png"
                 }, {
@@ -397,7 +425,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Wedding",
-                "size": "5 x 7 in",
+                "size": {
+                    "width": 5,
+                    "height": 7,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-flyer-template-1.png"
                 }, {
@@ -415,7 +447,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Invitation",
-                "size": "7 x 5 in",
+                "size": {
+                    "width": 7,
+                    "height": 5,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-invitation-template-1.png"
                 }, {
@@ -431,7 +467,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Card",
-                "size": "7 x 5 in",
+                "size": {
+                    "width": 7,
+                    "height": 5,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-flyer-template-1.png"
                 }, {
@@ -452,7 +492,11 @@ angular.module('lucidData', [])
             "category": "Long Form Content",
             "groups": [{
                 "groupname": "Magazine",
-                "size": "8.5 x 11 in",
+                "size": {
+                    "width": 8.5,
+                    "height": 11,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-magazine-template-1.png"
                 }, {
@@ -464,7 +508,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Newsletter",
-                "size": "8.5 x 11 in",
+                "size": {
+                    "width": 8.5,
+                    "height": 11,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-newsletter-template-1.png"
                 }, {
@@ -478,7 +526,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Report",
-                "size": "8.5 x 11 in",
+                "size": {
+                    "width": 8.5,
+                    "height": 11,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-annual-report-template-1.png"
                 }, {
@@ -492,7 +544,11 @@ angular.module('lucidData', [])
                 }]
             }, {
                 "groupname": "Photobook",
-                "size": "11 x 8.5 in",
+                "size": {
+                    "width": 11,
+                    "height": 8.5,
+                },
+                "unit": "in",
                 "templates": [{
                     "url": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-photobook-template-1.png"
                 }, {

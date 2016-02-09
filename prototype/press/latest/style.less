@@ -468,13 +468,13 @@ nav.file-menu {
     .page-container {
         position: absolute;
         top: 48px;
-        left: 104px;
+        left: 200px;
         //border: 2px solid #ccc;
         //overflow: hidden;
-        box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
-        background: #fff;
-        height: 694px;
-        min-width: 904px;
+        // box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+        // background: #fff;
+        // height: 694px;
+        // min-width: 904px;
     }
     .document-container {
         position: absolute;
@@ -509,8 +509,8 @@ nav.file-menu {
             transition: color ease-in-out .1s, background .1s, transform .5s, margin .5s;
             padding: 14px 0;
             position: relative;
-            margin-left: -1px;
             transform: scale(1);
+            margin-left: -1px;
             margin-right: -1px;
             .orange {
                 color: #EB7D30;
@@ -518,10 +518,12 @@ nav.file-menu {
             &:first-of-type {
                 padding-top: 15px;
             }
+
             &.active {
                 background: @right-panel-bg;
                 //border-radius: 4px 0 0 4px;
                 box-shadow: 0 0px 7px rgba(0, 0, 0, .15);
+
             }
             &.more-caret {
                 .icon:after {
@@ -1026,6 +1028,13 @@ nav.file-menu {
 // START CANVAS
 /////////////////////////////
 #lucid-canvas {
+    // position: absolute;
+    // top: 48px;
+    //left: 104px;
+    box-shadow: 0 2px 20px rgba(0, 0, 0, .25);
+    background: #fff;
+    height: 694px;
+    min-width: 904px;
     >svg polyline {
         // position: absolute;
         display: none;

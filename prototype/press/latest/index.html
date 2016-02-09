@@ -189,7 +189,7 @@
         ng-drop="true" 
         ng-drop-success="dropToCanvas($data,$event)" 
         ng-click="deselectBlock();"
-        style="background-color:{{$root.currentPage.canvasBG}};"
+        style="width: {{page.width}}px; height: {{page.height}}px"
         ng-repeat="page in $root.pages"
 
         ng-controller="canvasCtrl">
@@ -294,16 +294,16 @@
           <div class="icon-wrapper" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" class="full" /></div><span class="input-label">Images</span>
           </div>
-          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
+          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'table'}" ng-click="$root.setTab('table'); showTooltipPresent=false">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-table-grid-22px.svg" class="full" /></div><span class="input-label">Table</span>
           </div>
-          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'video'}" ng-click="$root.setTab('video');">
             <div class="icon share"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-present-22px.svg" class="full" /></div><span class="input-label">Video</span>
           </div>
-          <div class="icon-wrapper lucid-animate more-caret" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+          <div class="icon-wrapper lucid-animate more-caret" ng-class="{active: openTab == 'buttons'}" ng-click="$root.setTab('buttons');">
             <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-icon-button.svg" class="full" /></div><span class="input-label">Buttons</span>
           </div>
-          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+          <div class="icon-wrapper lucid-animate" ng-class="{active: openTab == 'scroll-area'}" ng-click="$root.setTab('scroll-area');">
             <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-icon-scroll-area.svg" class="full" /></div><span class="input-label">Scroll Area</span>
           </div>
         </div>
@@ -447,7 +447,7 @@
                       <div class="image-wrap">
                         <img ng-src="{{group.templates[0].url}}">
                       </div>
-                      <span>{{group.size}}</span>
+                      <span>{{group.size.width}} x {{group.size.height}} {{group.unit}}</span>
                     </li>
                   </ul>
                 </li>
@@ -469,6 +469,7 @@
                 <lucid-top-tab name="Document" selected>
 
                   <lucid-collapse-bar title="Size & Orientation">
+                  <lucid-select options="['Letter (8.5x11)', 'Card (7x5)']" width="130" class="condensed"></lucid-select>
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-document-size-orientation.png">
                   </lucid-collapse-bar>
 
