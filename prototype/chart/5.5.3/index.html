@@ -65,11 +65,10 @@
         </div> -->
         <div class="lucid-select-wrapper">
             <ul class="lucid-select-dropdown" ng-click="help.show = false">
-                
+                <li class="lucid-select-option" ng-click="$root.showbetatips = true">Show Tips</li>
                 <li class="lucid-select-option">Keyboard shortcuts</li>
                 <li class="lucid-select-option">Report a problem</li>
-                <li class="lucid-select-option" ng-click="$root.showbetatips = true">Show Tips</li>
-                <li class="lucid-select-option" style="color:#FC8D2A"><a href="http://s.codepen.io/team/lucidsoftware/debug/QyzpjO"> Exit Beta</a></li>
+                <li class="lucid-select-option" style="color:#FC8D2A"><a href="http://s.codepen.io/team/lucidsoftware/debug/606932fd1fe96c96d2dbe89c872be603"> Exit Beta</a></li>
             </ul>
         </div>
         </lucid-buttcon-popover>
@@ -1185,7 +1184,7 @@
             <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/beta-tips-modal-placeholder.png">
         </div>
     </div>
-    <div class="lucid-modal-bg lucid-animate">
+    <div class="lucid-modal-bg lucid-animate" ng-hide="!$root.showbetatips">
     </div>
 </div>
 
