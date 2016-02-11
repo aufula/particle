@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
 </head>
-<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}">
+<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}" class="hide-body" hide-until-loaded>
   <div id="sidebar" class="reversed-text">
     <ul>
       <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
@@ -51,7 +51,7 @@
           </div>
         </div>
           <div class="page-count">{{z$root.pages.length}}</div>
-          <a href="#" class="page-name reversed-text" ng-click="pages.show = !pages.show">
+          <a href="#" class="page-name reversed-text" ng-click="pages.show = !pages.show;">
               <span class="dd-arrow">{{$root.currentPage.name}}</span>
           </a>
           <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
@@ -60,14 +60,15 @@
       <div class="right">
         <span class="save-text">{{savetext}}</span>
         <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
-        <div style="padding:10px 10px 0">
+        <!-- <div style="padding:10px 10px 0">
           <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
-        </div>
+        </div> -->
         <div class="lucid-select-wrapper">
             <ul class="lucid-select-dropdown" ng-click="help.show = false">
-                <li class="lucid-select-option">Help Center</li>
+                <li class="lucid-select-option" ng-click="$root.showbetatips = true">Show Tips</li>
                 <li class="lucid-select-option">Keyboard shortcuts</li>
                 <li class="lucid-select-option">Report a problem</li>
+                <li class="lucid-select-option" style="color:#FC8D2A"><a href="http://s.codepen.io/team/lucidsoftware/debug/606932fd1fe96c96d2dbe89c872be603"> Exit Beta</a></li>
             </ul>
         </div>
         </lucid-buttcon-popover>
@@ -75,7 +76,7 @@
           <div class="bubble lucid-animate" ng-show="showAlert">1</div>
           <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-bell-22px.svg" width="311">
               <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
-            <div class="notifications"><img ng-click="addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
+            <div class="notifications"><img ng-click="$root.addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
           </lucid-buttcon-popover>
         </div>
         
@@ -842,7 +843,7 @@
                     </div>
             </lucid-buttcon-popover>
           </li>
-          <li id="full-screen-toggle"><img src="http://particle.golucid.co/components/2.0/icon/icons/icon-screen-mode-22px.svg" ng-click="canvasMode()"/></li>
+          <li id="full-screen-toggle"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg" ng-click="canvasMode()"/></li>
           <!-- END LINE WIDTH -->
           <span class="line"></span>
           <!-- BEGIN MISC. OPTIONS -->
@@ -903,44 +904,13 @@
 <!-- RIGHT DOCK -->
       <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
         <!-- RIGHT DOCK ICONS -->
-        <div class="icon-wrapper input-label" ng-click="addOnsModal.show=true">
+        <div class="icon-wrapper input-label" ng-click="$root.addOnsModal.show=true">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full"/></div><span class="orange">Add Ons</span>
         </div>
-        <!-- ADD ONS MODAL -->
-        <lucid-modal showmodal="addOnsModal.show" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
-          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
-          <ul class="add-ons">
-            <li class="green">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-present.png"/>
-              <footer class="reversed-text"><h4>Presentation Mode</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnPresent=!$parent.$parent.addOnPresent;">Add to Lucidchart</lucid-button></footer>
-            </li>
-            <li class="steel">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-history.png"/>
-              <footer class="reversed-text"><h4>History Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnHistory=!$parent.$parent.addOnHistory;">Add to Lucidchart</lucid-button></footer>
-            </li>
-            <li class="teal">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-mockups.png"/>
-              <footer class="reversed-text"><h4>Mockups</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
-            </li>
-            <li class="blue">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-themes.png"/>
-              <footer class="reversed-text"><h4>Diagram Themes</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
-            </li>
-            <li class="red">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-hangouts.png"/>
-              <footer class="reversed-text"><h4>Google Chat</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
-            </li>
-            <li class="steel">
-              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-navigator.png"/>
-              <footer class="reversed-text"><h4>Navigator Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
-            </li>
-          </ul>
-        </lucid-modal>
-        <!-- END ADD ONS MODAL -->
         <div class="icon-wrapper input-label" ng-class="{active: openTab == 'pageSettings'}" ng-click="$root.setTab('pageSettings');">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span>Page</span>
         </div>
-        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share');">
+        <div class="icon-wrapper input-label" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share'); ">
           <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
         </div>
         <div class="icon-wrapper input-label" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
@@ -1100,7 +1070,7 @@
       </div>
       <!-- END RIGHT DOCK -->
 <div class="toggle-canvas-mode" ng-show="hideToolbar" ng-click="canvasMode()">
-  <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-screen-mode-22px.svg">
+  <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-fullscreen-bluesteel.svg">
 </div>
       <!-- START CANVAS FOOTER -->
       <footer class="settings-drawer" id="main-footer">
@@ -1160,6 +1130,37 @@
       </lucid-finger-tab>
     </lucid-finger-tabs>
   </lucid-modal>
+  <!-- ADD ONS MODAL -->
+        <lucid-modal showmodal="$root.addOnsModal.show" width="746" height="600" title="Lucidchart Add Ons" confirm="Done">
+          <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-header-tabs.png">
+          <ul class="add-ons">
+            <li class="green">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-present.png"/>
+              <footer class="reversed-text"><h4>Presentation Mode</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnPresent=!$parent.$parent.addOnPresent;">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="steel">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-history.png"/>
+              <footer class="reversed-text"><h4>History Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue" ng-click="$parent.$parent.addOnHistory=!$parent.$parent.addOnHistory;">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="teal">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-mockups.png"/>
+              <footer class="reversed-text"><h4>Mockups</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="blue">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-themes.png"/>
+              <footer class="reversed-text"><h4>Diagram Themes</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="red">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-hangouts.png"/>
+              <footer class="reversed-text"><h4>Google Chat</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+            <li class="steel">
+              <img class="thumbnail" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-navigator.png"/>
+              <footer class="reversed-text"><h4>Navigator Tool</h4><img class="stars" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-stars.png"><span class="users">2,167 users</span><lucid-button icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg" class="lucid-button lucid-blue">Add to Lucidchart</lucid-button></footer>
+            </li>
+          </ul>
+        </lucid-modal>
+        <!-- END ADD ONS MODAL -->
   <lucid-modal showmodal="$root.showImportModal" width="590" height="460" title="Import Files" confirm="Import" cancel="Nevermind">
     <lucid-finger-tabs>
       <lucid-finger-tab name="On your computer" icon="http://particle.golucid.co/components/0.0/icon/img/icon-computer-bluesteel-22px.svg" selected>
@@ -1177,11 +1178,33 @@
     Share with your team modal.
   </lucid-modal>
   <!-- START TIPS -->
+  <div class="lucid-modal-wrapper lucid-beta-tips ng-hide" ng-hide="!$root.showbetatips">
+    <div ng-hide="!$root.showbetatips" style="height:265px; width:435px" class="lucid-modal lucid-animate">
+        <div ng-click="$root.showbetatips = false">
+            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/beta-tips-modal-placeholder.png">
+        </div>
+    </div>
+    <div class="lucid-modal-bg lucid-animate" ng-hide="!$root.showbetatips">
+    </div>
+</div>
+
 <lucid-tip showtip="$root.showSearchTip" dismiss="$root.searchTipDismissed" caret="top" width="240" delay="true" style="top: 160px; left: 4px;" class="search-tip">
 Change the search to Google, Iconfinder, or Lucidchart to find the content you need.
 </lucid-tip>
+
+<!-- BETA TIPS -->
+<lucid-tip showtip="$root.showbetatips" caret="top" class="onboarding-tip cancel-beta">Report a problem or exit the beta at any time.</lucid-tip>
+<lucid-tip showtip="$root.showbetatips" caret="top" class="onboarding-tip pages-tip">Create and manage pages</lucid-tip>
+<lucid-tip showtip="$root.showbetatips" caret="left" class="onboarding-tip mega-menu">Print, export, and more</lucid-tip>
+<lucid-tip showtip="$root.showbetatips" caret="right" class="onboarding-tip share-tip">Share with others even if they're still using the old Lucidchart.</lucid-tip>
+
   <!-- END TIPS -->
+  TIP 1: {{betatipviewed}}
+  TIP 2: {{megamenutipviewed}}
+  TIP 3: {{sharetipviewed}}
+  TIP 4: {{pagestipviewed}}
   <!-- END WRAPPER -->
+
 </body>
 
 </html>

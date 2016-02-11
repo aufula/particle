@@ -89,6 +89,10 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         $scope.cancelHover = function() {
             $timeout.cancel(timer);
         };
+        ///////
+        //onboarding tips part of mainCTRL
+        ///////
+        //$rootScope.showbetatips = true; removed for latest prototype
     })
     ////////////////
     ////START SHARE CTRL
@@ -282,12 +286,12 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }, 10);
             $rootScope.saveDocument();
         };
-        
-        $scope.nextPage = function(){
+
+        $scope.nextPage = function() {
             var index = $rootScope.pages.indexOf($rootScope.currentPage);
             $scope.changePage($rootScope.pages[index + 1]);
         };
-        $scope.previousPage = function(){
+        $scope.previousPage = function() {
             var index = $rootScope.pages.indexOf($rootScope.currentPage);
             $scope.changePage($rootScope.pages[index - 1]);
         };
@@ -631,7 +635,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 if ((newIndex < 4 && oldIndex < 4) || (newIndex > 3 && oldIndex > 3 && newIndex < 8 && oldIndex < 8)) {
                     console.log('same row');
                     $scope.DrawerOpenSameRow = true;
-                    $timeout(function(){
+                    $timeout(function() {
                         $scope.DrawerOpenSameRow = false;
                     }, 100);
                 }
@@ -1107,6 +1111,19 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         };
     })
+    .directive('hideUntilLoaded', ['$timeout', function($timeout) {
+        return {
+            priority: -10000, // a low number so this directive loads after all other directives have loaded. 
+            restrict: "A", // attribute only
+            link: function($scope, $element, $attributes) {
+                console.log("Loaded");
+                $timeout(function(){
+                    $element.removeClass('hide-body');
+                }, 500)
+                
+            }
+        };
+    }])
     //this is used with shape libraries
     .animation('.shape-manager-drawer', ['$animateCss', function($animateCss) {
         var lastId = 0;
@@ -1223,4 +1240,5 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 doneFn();
             }
         };
+
     }]);

@@ -466,6 +466,11 @@ body {
     font-family: "Source Sans Pro", sans-serif;
     background: #3d4752;
     user-select: none;
+    transition: .5s opacity ease-in-out;
+    opacity: 1;
+    &.hide-body {
+        opacity: 0;
+    }
 }
 
 #wrapper {
@@ -1212,7 +1217,22 @@ a {
             margin-left: -20px;
             transition: .25s ease-in-out all;
         }
+        &:hover {
+            .lucid-show-more-drawer-button {
+                bottom: 0 !important;
+            }
+            .group-icon-wrapper {
+                padding-top: 10px !important;
+            }
+        }
         &.active-group {
+            .lucid-show-more-drawer-button {
+                bottom: 0 !important;
+            }
+            .group-icon-wrapper {
+                padding-top: 10px !important;
+            }
+            //should the drawer be shown when not hovering but active?
             &:before {
                 border-bottom: 20px solid #333;
                 top: 128px;
@@ -1301,16 +1321,18 @@ a {
     .group-icon-wrapper {
         height: 85px;
         text-align: center;
-        padding-top: 10px;
+        padding-top: 20px;
         cursor: pointer;
         overflow: hidden;
         position: relative;
+        transition: padding .2s;
         .lucid-show-more-drawer-button {
             background-color: @blue-steel-light;
             position: absolute;
-            bottom: 0;
+            bottom: -25px;
             right: 0;
             left: 0;
+            transition: all .2s;
             .lucid-drawer-button-text {
                 color: #fff;
                 font-weight: 300;
@@ -1511,7 +1533,7 @@ a {
 
 //search shapes tip
 .search-tip {
-    width:240px;
+    width: 240px;
     &.ng-animate.ng-hide-remove {
         transition-delay: 1s;
     }
@@ -1796,11 +1818,11 @@ a {
         padding-top: 15px;
     }
     .right {
-        float: left;
+        float: right;
         width: 33%;
         text-align: right;
         margin-top: 10px;
-        padding-right: 5px;
+        padding-right: 10px;
     }
     #documents {
         display: inline-block;
@@ -3049,6 +3071,97 @@ a {
                 }
             }
         }
+    }
+}
+
+/////
+//Onboarding-tips
+/////
+.lucid-modal-wrapper .lucid-modal-bg{
+    background: fade(@blue-steel, 40%);
+}
+.lucid-beta-tips {
+    &.lucid-modal-wrapper {
+        .lucid-modal-bg {
+            background: fade(@blue-steel, 40%);//rgba(0, 0, 0, .2);
+            background: rgba(0, 0, 0, .2);
+            transition: .75s ease-in-out;
+            &.ng-hide {
+                opacity: 0;
+            }
+        }
+        &.ng-hide {
+            transition-delay: .75s;
+        }
+        .lucid-modal {
+            background: transparent;
+            box-shadow: none;
+            top: 50%;
+            right: 50%;
+            left: inherit;
+            bottom: inherit;
+            margin: inherit;
+            margin-right: -217px;
+            margin-top: -132.5px;
+            transition: .75s ease-in-out all !important;
+            img {
+                cursor: pointer;
+                transition: .5s ease-in-out all;
+            }
+            &.ng-hide {
+                width: 10px !important;
+                height: 10px !important;
+                top: 16px;
+                right: 125px;
+                margin-right: -20px;
+                margin-top: -10px;
+                opacity: 1;
+                img {
+                    transition-delay: .3s;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.onboarding-tip {
+    // transition: 5s !important;
+    .lucid-close-icon {
+        display: none;
+    }
+    &.lucid-tip-wrapper {
+        padding: 10px 15px;
+    }
+    &.cancel-beta {
+        transition-delay: .5s;
+        top: 57px;
+        right: 5px;
+        &:after {
+            left: inherit;
+            right: 117px;
+            margin-right: -9px;
+        }
+    }
+    &.mega-menu {
+        transition-delay: .5s;
+        top: 8px;
+        left: 70px;
+    }
+    &.pages-tip {
+        transition-delay: .5s;
+        top: 57px;
+        left: 50%;
+        margin-left: -90px;
+        &.ng-hide {
+            margin-left: -90px;
+        }
+    }
+    &.share-tip {
+        transition-delay: .5s;
+        top: 255px;
+        right: 75px;
+        width: 220px;
     }
 }
 
