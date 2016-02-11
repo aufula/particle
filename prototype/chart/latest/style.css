@@ -2814,6 +2814,7 @@ a {
   background: rgba(61, 71, 82, 0.4);
 }
 .lucid-beta-tips.lucid-modal-wrapper .lucid-modal-bg {
+  background: rgba(0, 0, 0, 0.2);
   background: rgba(61, 71, 82, 0.4);
   -webkit-transition: 0.75s ease-in-out;
   transition: 0.75s ease-in-out;
