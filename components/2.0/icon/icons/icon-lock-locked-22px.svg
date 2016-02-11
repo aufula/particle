@@ -1,13 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-lock-locked-22px</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-lock-locked-22px" sketch:type="MSArtboardGroup" fill="#3D4752">
-            <path d="M15,9 L15,5 C15,3.3 13.7,2 12,2 L10,2 C8.3,2 7,3.3 7,5 L7,9 L4,9 L4,20 L18,20 L18,9 L15,9 L15,9 Z M9,5 C9,4.4 9.4,4 10,4 L12,4 C12.6,4 13,4.4 13,5 L13,9 L9,9 L9,5 L9,5 Z M16,18 L6,18 L6,11 L16,11 L16,18 L16,18 Z" id="Shape" sketch:type="MSShapeGroup"></path>
-            <rect id="Rectangle-path" sketch:type="MSShapeGroup" x="10" y="12" width="2" height="5"></rect>
-        </g>
-    </g>
-</svg>
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"><g fill="#3D4752" fill-rule="evenodd"><path d="M15 9V5c0-1.7-1.3-3-3-3h-2C8.3 2 7 3.3 7 5v4H4v11h14V9h-3zM9 5c0-.6.4-1 1-1h2c.6 0 1 .4 1 1v4H9V5zm7 13H6v-7h10v7z"/><path d="M10 12h2v5h-2z"/></g></svg>

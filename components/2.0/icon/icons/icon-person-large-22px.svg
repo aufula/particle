@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-person-large-22px</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-person-large-22px" sketch:type="MSArtboardGroup" fill="#3D4752">
-            <path d="M18.995,15.331 L13,13.444 L13,11.374 C15,10.316 15.555,8.367 15.555,6.111 C15.555,2.736 14.733,0 10.722,0 C6.712,0 5.694,2.736 5.694,6.111 C5.694,8.367 7,10.316 8,11.374 L8,13.444 L2.505,15.331 C1.506,15.664 1,16.598 1,17.65 L1,22 L21,22 L21,17.65 C21,16.598 19.993,15.664 18.995,15.331" id="Fill-1" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M19 15.3l-6-2v-2c2-1 2.6-3 2.6-5.2 0-3.3-1-6-5-6s-5 2.7-5 6c0 2.4 1.4 4.3 2.4 5.4v2l-5.5 2c-1 .3-1.5 1.2-1.5 2.2V22h20v-4.4c0-1-1-2-2-2.3" fill="#3D4752" fill-rule="evenodd"/></svg>

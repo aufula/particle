@@ -1,12 +1,1 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
-    <!-- Generator: Sketch 3.5 (25232) - http://www.bohemiancoding.com/sketch -->
-    <title>icon-facebook-22px</title>
-    <desc>Created with Sketch.</desc>
-    <defs></defs>
-    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
-        <g id="icon-facebook-22px" sketch:type="MSArtboardGroup" fill="#4D4D4D">
-            <path d="M16.125,1.140625 L16.125,4.234375 L14.2851562,4.234375 C13.6132779,4.234375 13.1601574,4.37499859 12.9257812,4.65625 C12.6914051,4.93750141 12.5742188,5.35937219 12.5742188,5.921875 L12.5742188,8.13671875 L16.0078125,8.13671875 L15.5507812,11.6054688 L12.5742188,11.6054688 L12.5742188,20.5 L8.98828125,20.5 L8.98828125,11.6054688 L6,11.6054688 L6,8.13671875 L8.98828125,8.13671875 L8.98828125,5.58203125 C8.98828125,4.12889898 9.39452719,3.00195713 10.2070312,2.20117188 C11.0195353,1.40038662 12.1015557,1 13.453125,1 C14.6015682,1 15.4921843,1.04687453 16.125,1.140625 L16.125,1.140625 Z" id="" sketch:type="MSShapeGroup"></path>
-        </g>
-    </g>
-</svg>
+<svg width="22" height="22" xmlns="http://www.w3.org/2000/svg"><path d="M16 1v3.2h-1.7c-.7 0-1 .2-1.4.5-.3.2-.4.7-.4 1.2v2H16l-.4 3.6h-3v9H9v-9H6V8h3V5.7C9 4 9.4 3 10.2 2.2c.8-.8 2-1.2 3.3-1.2H16z" fill="#4D4D4D" fill-rule="evenodd"/></svg>
