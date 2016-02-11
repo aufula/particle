@@ -256,7 +256,6 @@ input {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
 }
 .lucid-input-stepper-wrapper.condensed .lucid-input-stepper {
@@ -320,7 +319,6 @@ input {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer {
@@ -353,14 +351,12 @@ input {
   -webkit-transform: rotateX(180deg);
           transform: rotateX(180deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
   -webkit-transform: rotateX(0deg);
           transform: rotateX(0deg);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
 }
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
@@ -805,7 +801,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-modal-wrapper .lucid-modal.ng-hide {
   -webkit-transform: translateY(10px);
-      -ms-transform: translateY(10px);
           transform: translateY(10px);
   opacity: 0;
 }
@@ -1293,10 +1288,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
   -webkit-transform: rotate(0);
-      -ms-transform: rotate(0);
           transform: rotate(0);
   -webkit-transform-origin: center;
-      -ms-transform-origin: center;
           transform-origin: center;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
@@ -1304,7 +1297,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
   -webkit-transform: rotate(-90deg);
-      -ms-transform: rotate(-90deg);
           transform: rotate(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
@@ -1422,7 +1414,6 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 14px;
   color: #fff;
   padding: 10px 36px 10px 15px;
-  box-shadow: 0 0 4px #FC8D2A;
   border-radius: 4px;
   line-height: 18px;
   text-align: left;
