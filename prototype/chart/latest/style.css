@@ -332,7 +332,8 @@ html {
 }
 body {
   font-family: "Source Sans Pro", sans-serif;
-  background: #3d4752;
+  background: #3d4752 url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/loading-tip-m-placeholder.png) no-repeat center;
+  background-size: 373px 71px;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -2810,12 +2811,7 @@ a {
   -webkit-transition: 0s ease-in-out all;
   transition: 0s ease-in-out all;
 }
-.lucid-modal-wrapper .lucid-modal-bg {
-  background: rgba(61, 71, 82, 0.4);
-}
 .lucid-beta-tips.lucid-modal-wrapper .lucid-modal-bg {
-  background: rgba(0, 0, 0, 0.2);
-  background: rgba(61, 71, 82, 0.4);
   -webkit-transition: 0.75s ease-in-out;
   transition: 0.75s ease-in-out;
 }
@@ -2844,7 +2840,7 @@ a {
   -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
 }
-.lucid-beta-tips.lucid-modal-wrapper .lucid-modal.ng-hide {
+.lucid-beta-tips.lucid-modal-wrapper .lucid-modal.ng-hide-add {
   width: 10px !important;
   height: 10px !important;
   top: 16px;
@@ -2853,7 +2849,7 @@ a {
   margin-top: -10px;
   opacity: 1;
 }
-.lucid-beta-tips.lucid-modal-wrapper .lucid-modal.ng-hide img {
+.lucid-beta-tips.lucid-modal-wrapper .lucid-modal.ng-hide-add img {
   -webkit-transition-delay: .3s;
           transition-delay: .3s;
   opacity: 0;

@@ -89,10 +89,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
         $scope.cancelHover = function() {
             $timeout.cancel(timer);
         };
-        ///////
-        //onboarding tips part of mainCTRL
-        ///////
-        //$rootScope.showbetatips = true; removed for latest prototype
+
     })
     ////////////////
     ////START SHARE CTRL
@@ -1117,10 +1114,11 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             restrict: "A", // attribute only
             link: function($scope, $element, $attributes) {
                 console.log("Loaded");
-                $timeout(function(){
+                $timeout(function() {
                     $element.removeClass('hide-body');
-                }, 500)
-                
+                    $scope.$root.showbetatips = true;//removed for latest prototype
+                }, 3000)
+
             }
         };
     }])
