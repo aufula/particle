@@ -832,7 +832,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
 
         $rootScope.manageshapes = false;
         $scope.lucidShapesLimit = 14;
-        $scope.toggleShapesManager = function() {
+        $rootScope.toggleShapesManager = function() {
 
             if (!$scope.searchshapes && !$scope.importToCanvas) {
                 if (!$rootScope.manageshapes) {
@@ -1116,7 +1116,7 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 console.log("Loaded");
                 $timeout(function() {
                     $element.removeClass('hide-body');
-                    $scope.$root.showbetatips = true;//removed for latest prototype
+                    $scope.$root.showbetatips = true; //removed for latest prototype
                 }, 3000)
 
             }
@@ -1239,4 +1239,18 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         };
 
+    }])
+    .directive('pressM', [function() {
+        return function(scope, element, attrs) {
+            element.bind('keydown keypress', function(event) {
+                console.log('keypress', event.which);
+                if (event.which === 77) { // 77 = M key
+                    scope.$apply(function() {
+                        scope.$eval(attrs.pressM);
+                    });
+
+                    event.preventDefault();
+                }
+            });
+        };
     }]);

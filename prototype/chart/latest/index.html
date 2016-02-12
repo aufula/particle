@@ -20,7 +20,7 @@
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
 </head>
-<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}" class="hide-body" hide-until-loaded>
+<body ng-init="showMegamenu=false" ng-click="showMegamenu=false" ng-controller="mainCtrl" ng-class="{'left-panel-hidden': hideLeftPanel, 'right-panel-hidden': hideRightPanel, 'header-hidden': hideHeader, 'footer-hidden': hideFooter, 'toolbar-hidden': hideToolbar}" class="hide-body" hide-until-loaded press-m="$root.toggleShapesManager();">
   <div id="sidebar" class="reversed-text">
     <ul>
       <li><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" /></li>
@@ -311,7 +311,7 @@
           <div class="lucid-shapes-panel" ng-class="{ 'lucid-managing-shapes': $root.manageshapes }">
               <div class="lucid-pinned-shapes-panel">
                   <header class="lucid-shapes-header">
-                      <span ng-click="toggleShapesManager();">
+                      <span ng-click="$root.toggleShapesManager();">
                       <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
                       <span class="lucid-more-shapes">Shapes</span>
                       </span>
@@ -534,7 +534,7 @@
                               <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
                               <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
                           </div>
-                          <ng-include ng-click="toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
+                          <ng-include ng-click="$root.toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
                           </ng-include>
                       </div>
                   </div>
