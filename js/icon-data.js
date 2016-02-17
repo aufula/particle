@@ -74,7 +74,7 @@ angular.module("lucidIcons", [])
                 }, {
                     'name': 'icon-envelope-22px'
                 }, {
-                    'name': 'icon-facebook-22px'
+                    'name': 'icon-facebook-block-22px'
                 }, {
                     'name': 'icon-fill-gradient-linear-22px'
                 }, {
