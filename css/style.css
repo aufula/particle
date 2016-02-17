@@ -554,7 +554,6 @@ p.small-body {
 #sidebar #logo {
   position: relative;
   -webkit-transform-origin: top left;
-      -ms-transform-origin: top left;
           transform-origin: top left;
   overflow: hidden;
 }
@@ -568,7 +567,6 @@ p.small-body {
 }
 .particle-group .particle {
   -webkit-transform: translate(0, 0);
-      -ms-transform: translate(0, 0);
           transform: translate(0, 0);
   opacity: 0;
 }
@@ -589,7 +587,6 @@ p.small-body {
 }
 .particle-group.explode-particle .particle.particle-1.duplicate {
   -webkit-transform: translate(88px, -188px);
-      -ms-transform: translate(88px, -188px);
           transform: translate(88px, -188px);
   -webkit-animation: none;
           animation: none;
@@ -605,7 +602,6 @@ p.small-body {
 }
 .particle-group.explode-particle .particle.particle-2.duplicate {
   -webkit-transform: translate(-18px, 47px);
-      -ms-transform: translate(-18px, 47px);
           transform: translate(-18px, 47px);
   -webkit-animation: none;
           animation: none;
@@ -621,7 +617,6 @@ p.small-body {
 }
 .particle-group.explode-particle .particle.particle-3.duplicate {
   -webkit-transform: translate(18px, 50px);
-      -ms-transform: translate(18px, 50px);
           transform: translate(18px, 50px);
   -webkit-animation: none;
           animation: none;
@@ -637,7 +632,6 @@ p.small-body {
 }
 .particle-group.explode-particle .particle.particle-4.duplicate {
   -webkit-transform: translate(225px, 10px);
-      -ms-transform: translate(225px, 10px);
           transform: translate(225px, 10px);
   -webkit-animation: none;
           animation: none;
@@ -653,7 +647,6 @@ p.small-body {
 }
 .particle-group.explode-particle .particle.particle-5.duplicate {
   -webkit-transform: translate(50px, 70px);
-      -ms-transform: translate(50px, 70px);
           transform: translate(50px, 70px);
   -webkit-animation: none;
           animation: none;
@@ -665,7 +658,6 @@ p.small-body {
 .particle-group.explode-particle .particle.branch-1 {
   opacity: 0;
   -webkit-transform: translate(30px, 30px);
-      -ms-transform: translate(30px, 30px);
           transform: translate(30px, 30px);
 }
 @-webkit-keyframes particle-1 {
@@ -977,53 +969,51 @@ p.small-body {
   opacity: 0;
   padding-top: 20px;
 }
-.lucid-particle-morph-logo {
-  -webkit-animation: Logo 7s infinite ease-in-out;
-          animation: Logo 7s infinite ease-in-out;
-}
 .lucid-particle-morph-logo svg {
   width: 24px;
   height: 24px;
+  -webkit-animation: Logo 8s infinite ease-in-out;
+          animation: Logo 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #wn-goo {
   opacity: 1;
-  -webkit-animation: wnGoo 7s infinite ease-in-out;
-          animation: wnGoo 7s infinite ease-in-out;
+  -webkit-animation: wnGoo 8s infinite ease-in-out;
+          animation: wnGoo 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #ne-goo {
   opacity: 0;
-  -webkit-animation: neGoo 7s infinite ease-in-out;
-          animation: neGoo 7s infinite ease-in-out;
+  -webkit-animation: neGoo 8s infinite ease-in-out;
+          animation: neGoo 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #ws-goo {
   opacity: 1;
-  -webkit-animation: wsGoo 7s infinite ease-in-out;
-          animation: wsGoo 7s infinite ease-in-out;
+  -webkit-animation: wsGoo 8s infinite ease-in-out;
+          animation: wsGoo 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #nw-circle {
   opacity: 0;
-  -webkit-animation: nwCircle 7s infinite ease-in-out;
-          animation: nwCircle 7s infinite ease-in-out;
+  -webkit-animation: nwCircle 8s infinite ease-in-out;
+          animation: nwCircle 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #ne-circle {
   opacity: 1;
-  -webkit-animation: neCircle 7s infinite ease-in-out;
-          animation: neCircle 7s infinite ease-in-out;
+  -webkit-animation: neCircle 8s infinite ease-in-out;
+          animation: neCircle 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #w-circle {
   opacity: 1;
-  -webkit-animation: wCircle 7s infinite ease-in-out;
-          animation: wCircle 7s infinite ease-in-out;
+  -webkit-animation: wCircle 8s infinite ease-in-out;
+          animation: wCircle 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #sw-circle {
   opacity: 0;
-  -webkit-animation: swCircle 7s infinite ease-in-out;
-          animation: swCircle 7s infinite ease-in-out;
+  -webkit-animation: swCircle 8s infinite ease-in-out;
+          animation: swCircle 8s infinite ease-in-out;
 }
 .lucid-particle-morph-logo #se-circle {
   opacity: 1;
-  -webkit-animation: seCircle 7s infinite ease-in-out;
-          animation: seCircle 7s infinite ease-in-out;
+  -webkit-animation: seCircle 8s infinite ease-in-out;
+          animation: seCircle 8s infinite ease-in-out;
 }
 @-webkit-keyframes Logo {
   0% {
