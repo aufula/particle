@@ -1357,7 +1357,6 @@ input[type=range]:focus::-ms-fill-upper {
   cursor: pointer;
 }
 .edit-in-place-wrapper .edit-in-place-input {
-  font-style: italic;
   outline: none;
   border: none;
   background: transparent;
