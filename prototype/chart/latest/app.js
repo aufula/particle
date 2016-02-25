@@ -1250,18 +1250,18 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
             }
         };
 
-    }])
-    .directive('pressM', [function() {
-        return function(scope, element, attrs) {
-            element.bind('keydown keypress', function(event) {
-                console.log('keypress', event.which);
-                if (event.which === 77) { // 77 = M key
-                    scope.$apply(function() {
-                        scope.$eval(attrs.pressM);
-                    });
-
-                    event.preventDefault();
-                }
-            });
-        };
     }]);
+    // .directive('pressM', [function() {
+    //     return function(scope, element, attrs) {
+    //         element.bind('keydown keypress', function(event) {
+    //             console.log('keypress', event.which);
+    //             if (event.which === 77) { // 77 = M key
+    //                 scope.$apply(function() {
+    //                     scope.$eval(attrs.pressM);
+    //                 });
+
+    //                 event.preventDefault();
+    //             }
+    //         });
+    //     };
+    // }]);
