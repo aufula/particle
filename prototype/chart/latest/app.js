@@ -978,6 +978,16 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
     ////////////////
     ////START CANVAS CTRL
     ////////////////
+    .controller('loadingTipsCtrl', function($scope) {
+        $scope.loading = 100;
+        $scope.showTip = (Math.ceil(Math.random() * 3));
+        $scope.newTip = function() {
+            $scope.showTip = $scope.showTip + 1;
+            if ($scope.showTip === 6) {
+                $scope.showTip = 1;
+            }
+        };
+    })
     .controller('canvasCtrl', function($scope, $rootScope) {
         $scope.clickLine = function() {
             //alert('clicked');
@@ -1117,7 +1127,8 @@ angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', '
                 $timeout(function() {
                     $element.removeClass('hide-body');
                     $scope.$root.showbetatips = true; //removed for latest prototype
-                }, 3000)
+                    $scope.$root.loaded = true;
+                }, 4500)
 
             }
         };
