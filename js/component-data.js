@@ -202,7 +202,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Finger Tabs",
                 "componentid": "finger-tabs",
-                "description": "this component is used in the optionbar, the page color, etc.",
+                "description": "this component is used in modals and the user settings page",
                 "inputs": [{
                     "name": "name",
                     "type": "text",
@@ -211,6 +211,15 @@ angular.module('lucidComponentFactory', [])
                     "name": "icon",
                     "type": "URL",
                     "details": "Optional: Insert URL of icon. Coloring SVG is added through css"
+                }],
+            }, {
+                "title": "Top Tabs",
+                "componentid": "top-tabs",
+                "description": "this component is used in press, the page color, etc.",
+                "inputs": [{
+                    "name": "name",
+                    "type": "text",
+                    "details": "Create a name for the finger tab."
                 }],
             }, {
                 "title": "Modal",
