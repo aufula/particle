@@ -107,6 +107,10 @@ angular.module('lucidColors', [])
                 'name': 'Grey - Border Dark',
                 'hex': '#A5A5A5',
                 'less': '@grey-border-dark',
+            }, {
+                'name': 'Modal Background Overlay',
+                'hex': 'rgba(69, 75, 82, 0.4)',
+                'less': '@bg-overlay',
             }]
 
         }, {
