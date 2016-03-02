@@ -275,6 +275,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-facebook-22px'
                 }, {
                     'name': 'icon-microsoft-22px'
+                }, {
+                    'name': 'icon-bucket-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
