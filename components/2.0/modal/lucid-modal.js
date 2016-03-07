@@ -15,6 +15,14 @@ angular.module("lucidModal", ['appConfig'])
             replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'modal/lucid-modal.html',
+            controller: ['$scope', function($scope){
+                if($scope.confirm){
+                    $scope.footerHeight = 49;
+                }
+                else{
+                    $scope.footerHeight = 0;
+                }
+            }],
             compile: function(el, attrs) {
                 if (!attrs.width) {
                     attrs.width = 590;
