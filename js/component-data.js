@@ -260,6 +260,10 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "context-menu",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
+                    "name": "lucid-context-menu",
+                    "type": "",
+                    "details": "Include this on any element to add a right click context menu."
+                }, {
                     "name": "data-target",
                     "type": "ID",
                     "details": "Insert ID of context menu, that will show up when right clicked."
@@ -312,7 +316,7 @@ angular.module('lucidComponentFactory', [])
                     "details": "Set to true to dismiss tip. Once a user has dismissed the tip, it won't return"
                 }, {
                     "name": "caret",
-                    "type": "number",
+                    "type": "text",
                     "details": "*Options: top, left, bottom, right. Adds appropriate caret and transition"
                 }, {
                     "name": "style",
