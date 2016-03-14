@@ -1273,6 +1273,7 @@ input[type=range]:focus::-ms-fill-upper {
   height: 32px;
   text-align: left;
   border-radius: 4px;
+  cursor: pointer;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon {
   position: absolute;
@@ -1280,7 +1281,6 @@ input[type=range]:focus::-ms-fill-upper {
   left: 0;
   height: 30px;
   padding: 12px 4px 0 11px;
-  cursor: pointer;
   -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
