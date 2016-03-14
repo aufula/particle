@@ -1260,6 +1260,7 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: left;
   opacity: 1;
   vertical-align: top;
+  margin-bottom: 10px;
 }
 .lucid-collapse-bar .collapse-bar-top {
   background-color: #CDCED1;
@@ -1306,12 +1307,6 @@ input[type=range]:focus::-ms-fill-upper {
   font-weight: 500;
   padding-left: 15px;
   display: inline-block;
-}
-.lucid-collapse-bar .collapse-bar-top.no-collapse .lucid-hide-content-icon {
-  display: none;
-}
-.lucid-collapse-bar .collapse-bar-top.no-collapse .collapse-bar-name {
-  padding-left: 0;
 }
 .lucid-collapse-bar .lucid-collapse-bar-content {
   -webkit-transition: all .5s;

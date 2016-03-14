@@ -280,10 +280,6 @@ angular.module('lucidComponentFactory', [])
                     "name": "closed",
                     "type": "true/false",
                     "details": "Optional: Set to true want the element closed by default"
-                }, {
-                    "name": "collapsible",
-                    "type": "true/false",
-                    "details": "Optional: Set to false if you do not want element to collapse"
                 }]
             }, {
                 "title": "Edit in Place",

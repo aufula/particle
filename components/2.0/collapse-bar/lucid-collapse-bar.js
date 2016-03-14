@@ -4,7 +4,6 @@ angular.module('lucidCollapseBar', ['appConfig'])
                 restrict: 'E',
                 scope: {
                     title: '@',
-                    collapsible: '@',
                     closed: '@'
                 },
                 replace: true,
