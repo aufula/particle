@@ -279,6 +279,10 @@ angular.module("lucidIcons", [])
                     'name': 'icon-disk-22px'
                 }, {
                     'name': 'icon-bucket-22px'
+                }, {
+                    'name': 'icon-eye-22px'
+                }, {
+                    'name': 'icon-eye-slash-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
