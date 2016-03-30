@@ -81,6 +81,11 @@ angular.module('lucidColors', [])
                 'hex': '#E9F2D9',
                 'less': '@info-green-light',
                 'light': 'light'
+            }, {
+                'name': 'Information Yellow',
+                'hex': '#FCC438',
+                'less': '@info-yellow',
+                'light': 'light'
             }]
         }, {
             'colorgroup': 'Secondary Colors',
