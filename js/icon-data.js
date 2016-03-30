@@ -283,6 +283,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-eye-22px'
                 }, {
                     'name': 'icon-eye-slash-22px'
+                }, {
+                    'name': 'icon-star-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
