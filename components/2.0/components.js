@@ -18,6 +18,7 @@
 //@codekit-append "edit-in-place/lucid-edit-in-place.js"
 //@codekit-append "top-tabs/lucid-top-tabs.js"
 //@codekit-append "tip/lucid-tip.js"
+//@codekit-append "paywall/lucid-paywall.js"
 
 //include Data JS
 //@codekit-append "data/lucid-data.js"
@@ -40,7 +41,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidData', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall'])
 
 
 
