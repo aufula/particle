@@ -919,6 +919,7 @@ p.small-body {
   margin-bottom: 10px;
   position: relative;
   display: table;
+  cursor: pointer;
 }
 .color-view {
   margin-bottom: 40px;
