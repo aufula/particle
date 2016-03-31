@@ -1515,7 +1515,7 @@ input[type=range]:focus::-ms-fill-upper {
   cursor: pointer;
 }
 .lucid-paywall-wrapper .paywall-banner {
-  background: url(http://particle.golucid.co/components/paywall/premium-banner.png);
+  background: url(http://particle.golucid.co/components/2.0/paywall/premium-banner.png);
   width: 111px;
   height: 111px;
   position: absolute;
