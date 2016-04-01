@@ -10,7 +10,7 @@
             <h1> {{title}}</h1>
             <h2>{{subtitle}}</h2>
             <ng-transclude></ng-transclude>
-            <button class="lucid-button lucid-blue" ng-if="confirm" ng-click="showpaywall=false; confirmFunction()">{{confirm}}</button>
+            <button class="lucid-button lucid-blue" ng-show="confirm" ng-click="showpaywall=false; confirmFunction()">{{confirm}}</button>
             <div class="cancel-text" ng-click="showpaywall=false">{{cancel}}</div>
         </div>
     </div>
