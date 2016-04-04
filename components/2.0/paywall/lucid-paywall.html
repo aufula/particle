@@ -7,8 +7,10 @@
             <div class="paywall-x" ng-click="showpaywall=false">
                 <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-x-18px.svg'" class="lucid-icon-18"></ng-include>
             </div>
-            <h1> {{title}}</h1>
-            <h2>{{subtitle}}</h2>
+            <div class="paywall-title">
+                <h1> {{title}}</h1>
+                <h2>{{subtitle}}</h2>
+            </div>
             <ng-transclude></ng-transclude>
             <button class="lucid-button lucid-blue" ng-show="confirm" ng-click="showpaywall=false; confirmFunction()">{{confirm}}</button>
             <div class="cancel-text" ng-click="showpaywall=false">{{cancel}}</div>
