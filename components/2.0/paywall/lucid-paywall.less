@@ -26,8 +26,8 @@
     }
     .paywall-x {
         position: absolute;
-        top: 10px;
-        right: 10px;
+        top: 15px;
+        right: 15px;
         cursor: pointer;
     }
     .paywall-banner {
@@ -41,7 +41,7 @@
             color: #FFF;
             width: 156px;
             height: 28px;
-            line-height: 28px;
+            line-height: 26px;
             text-align: center;
             transform: rotateZ(-45deg);
             transform-origin: bottom left;
@@ -50,11 +50,12 @@
             left: 0;
             font-size: 18px;
             font-weight: 700;
+            -webkit-font-smoothing: antialiased;
         }
     }
     .lucid-paywall {
         margin: auto;
-        width: 400px;
+        width: 440px;
         padding: 20px;
         background: white;
         border-radius: 8px;
@@ -62,21 +63,30 @@
         position: relative;
         box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
         text-align: center;
-        >h1 {
-            text-align: center;
-            font-size: 24px;
-            font-weight: 700;
+        .paywall-title {
+            margin-bottom: 20px;
+            >h1 {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 24px;
+                -webkit-font-smoothing: antialiased;
+            }
+            >h2 {
+                font-size: 18px;
+                color: #828282;
+                text-align: center;
+                line-height: 20px;
+                margin-top: 5px;
+                font-weight: normal;
+                letter-spacing: inherit;
+                -webkit-font-smoothing: antialiased;
+            }
         }
-        >h2 {
-            font-size: 18px;
-            color: #828282;
-            text-align: center;
-            margin-top: 5px;
-        }
-        >img {
+        img {
             width: 300px;
             height: 200px;
-            margin: 10px auto;
+            margin: 0 auto 24px;
             display: block;
         }
         >button {
@@ -87,10 +97,10 @@
             margin-top: 10px;
             color: @lucid-blue-dark;
             cursor: pointer;
-            font-size:14px;
+            font-size: 14px;
         }
         p {
-            margin-bottom: 10px;
+            margin: 0 10px 20px;
             line-height: 18px;
             font-size: 16px;
         }

@@ -319,6 +319,35 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Set position with inline style or css."
                 }]
+            }, {
+                "title": "Paywall",
+                "componentid": "paywall",
+                "description": "Paywalls are used throughout the product to encourage payment",
+                "inputs": [{
+                    "name": "showpaywall",
+                    "type": "var",
+                    "details": "when true, paywall will show."
+                }, {
+                    "name": "banner",
+                    "type": "text",
+                    "details": "Text that shows up in the top left orange banner."
+                }, {
+                    "name": "title",
+                    "type": "text",
+                    "details": "Title of paywall."
+                }, {
+                    "name": "subtitle",
+                    "type": "text",
+                    "details": "*Optional: subtitle of paywall."
+                }, {
+                    "name": "confirm",
+                    "type": "text",
+                    "details": "Text of confirm button."
+                }, {
+                    "name": "confirm-function",
+                    "type": "function",
+                    "details": "*Optional: Function called when button is clicked."
+                }]
             }]
         }, {
             //Toolbar Components

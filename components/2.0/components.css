@@ -1510,8 +1510,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-paywall-wrapper .paywall-x {
   position: absolute;
-  top: 10px;
-  right: 10px;
+  top: 15px;
+  right: 15px;
   cursor: pointer;
 }
 .lucid-paywall-wrapper .paywall-banner {
@@ -1526,7 +1526,7 @@ input[type=range]:focus::-ms-fill-upper {
   color: #FFF;
   width: 156px;
   height: 28px;
-  line-height: 28px;
+  line-height: 26px;
   text-align: center;
   -webkit-transform: rotateZ(-45deg);
           transform: rotateZ(-45deg);
@@ -1537,10 +1537,11 @@ input[type=range]:focus::-ms-fill-upper {
   left: 0;
   font-size: 18px;
   font-weight: 700;
+  -webkit-font-smoothing: antialiased;
 }
 .lucid-paywall-wrapper .lucid-paywall {
   margin: auto;
-  width: 400px;
+  width: 440px;
   padding: 20px;
   background: white;
   border-radius: 8px;
@@ -1548,21 +1549,30 @@ input[type=range]:focus::-ms-fill-upper {
   box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
   text-align: center;
 }
-.lucid-paywall-wrapper .lucid-paywall > h1 {
+.lucid-paywall-wrapper .lucid-paywall .paywall-title {
+  margin-bottom: 20px;
+}
+.lucid-paywall-wrapper .lucid-paywall .paywall-title > h1 {
   text-align: center;
   font-size: 24px;
   font-weight: 700;
+  line-height: 24px;
+  -webkit-font-smoothing: antialiased;
 }
-.lucid-paywall-wrapper .lucid-paywall > h2 {
+.lucid-paywall-wrapper .lucid-paywall .paywall-title > h2 {
   font-size: 18px;
   color: #828282;
   text-align: center;
+  line-height: 20px;
   margin-top: 5px;
+  font-weight: normal;
+  letter-spacing: inherit;
+  -webkit-font-smoothing: antialiased;
 }
-.lucid-paywall-wrapper .lucid-paywall > img {
+.lucid-paywall-wrapper .lucid-paywall img {
   width: 300px;
   height: 200px;
-  margin: 10px auto;
+  margin: 0 auto 24px;
   display: block;
 }
 .lucid-paywall-wrapper .lucid-paywall > button {
@@ -1576,7 +1586,7 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 14px;
 }
 .lucid-paywall-wrapper .lucid-paywall p {
-  margin-bottom: 10px;
+  margin: 0 10px 20px;
   line-height: 18px;
   font-size: 16px;
 }

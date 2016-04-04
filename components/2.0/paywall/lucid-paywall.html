@@ -9,7 +9,7 @@
             </div>
             <div class="paywall-title">
                 <h1> {{title}}</h1>
-                <h2>{{subtitle}}</h2>
+                <h2 ng-if="subtitle">{{subtitle}}</h2>
             </div>
             <ng-transclude></ng-transclude>
             <button class="lucid-button lucid-blue" ng-show="confirm" ng-click="showpaywall=false; confirmFunction()">{{confirm}}</button>
