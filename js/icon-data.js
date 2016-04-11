@@ -285,6 +285,14 @@ angular.module("lucidIcons", [])
                     'name': 'icon-eye-slash-22px'
                 }, {
                     'name': 'icon-star-22px'
+                }, {
+                    'name': 'icon-fork-22px'
+                }, {
+                    'name': 'icon-add-person-22px'
+                }, {
+                    'name': 'icon-next-stage-22px'
+                }, {
+                    'name': 'icon-notebook-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
@@ -315,6 +323,14 @@ angular.module("lucidIcons", [])
                         "name": "icon-triangle-right-18px"
                     }, {
                         "name": "icon-triangle-down-18px"
+                    }, {
+                        "name": "icon-person-18px"
+                    }, {
+                        "name": "icon-stage-18px"
+                    }, {
+                        "name": "icon-phone-18px"
+                    }, {
+                        "name": "icon-clock-medium-18px"
                     }]
                 }];
                 return icons;
