@@ -293,6 +293,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-next-stage-22px'
                 }, {
                     'name': 'icon-notebook-22px'
+                }, {
+                    'name': 'icon-thumbnail-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
