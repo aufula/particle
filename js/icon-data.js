@@ -295,6 +295,8 @@ angular.module("lucidIcons", [])
                     'name': 'icon-notebook-22px'
                 }, {
                     'name': 'icon-thumbnail-22px'
+                }, {
+                    'name': 'icon-navigator-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
