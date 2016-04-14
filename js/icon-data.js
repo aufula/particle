@@ -299,6 +299,10 @@ angular.module("lucidIcons", [])
                     'name': 'icon-navigator-22px'
                 },  {
                     'name': 'icon-shape-data-22px'
+                }, {
+                    'name': 'icon-undo-22px'
+                },  {
+                    'name': 'icon-redo-22px'
                 }]}, {
                     "icongroup": "18px Icons",
                     "icons": [{
