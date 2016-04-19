@@ -114,7 +114,7 @@ angular.module("lucidIcons", [])
             }, {
                 'name': 'icon-layers-22px'
             }, {
-                'name': 'icon-lightening-22px'
+                'name': 'icon-lightning-22px'
             }, {
                 'name': 'icon-line-jump-22px'
             }, {
