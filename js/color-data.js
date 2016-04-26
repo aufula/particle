@@ -4,118 +4,113 @@ angular.module('lucidColors', [])
         var colors = [{
             'colorgroup': 'Brand Colors',
             'colors': [{
-                'name': 'Blue Steel',
                 'hex': '#3D4752',
-                'less': '@blue-steel'
+                'less': '@blue-steel',
+                'description': 'Base color for headers and brand elements'
             }, {
-                'name': 'Blue Steel Secondary',
                 'hex': '#77818C',
                 'less': '@blue-steel-2',
+                'description': 'Used for sub headers, icons, and some selected states'
             }, {
-                'name': 'Lucid Blue',
                 'hex': '#29AAE1',
                 'less': '@lucid-blue',
+                'description': 'Brand color, used for most active states and action hints'
             }, {
-                'name': 'Lucidchart Orange ',
                 'hex': '#FC8D2A',
-                'less': '@lucidchart-orange'
+                'less': '@lucidchart-orange',
+                'description': 'Brand color, use sparingly.'
             }, {
-                'name': 'Press Green',
                 'hex': '#8CBF3F',
                 'location': 'Press Logo',
-                'less': '@lucidpress-green'
+                'less': '@lucidpress-green',
+                'description': 'Brand color, used mostly for success states or Press elements.'
             }, ]
         }, {
             'colorgroup': 'UI Colors',
             'colors': [{
-                'name': 'Gray - 1',
                 'hex': '#F0F0F0',
                 'less': '@grey-1',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Always begin with this grey before using darker colors'
             }, {
-                'name': 'Gray - 2',
                 'hex': '#E6E6E6',
                 'less': '@grey-2',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Used when contrast is needed between from a @grey-1 panel'
             }, {
-                'name': 'Gray - 3',
                 'hex': '#D6D6D8',
                 'less': '@grey-3',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Alternate grey for added contrast'
             }, {
-                'name': 'Gray - 4',
                 'hex': '#CDCED1',
                 'less': '@grey-4',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Alternate grey for added contrast'
             }, {
-                'name': 'Gray - 5',
                 'hex': '#A5A5A5',
-                'less': '@grey-5'
+                'less': '@grey-5',
+                'description': 'Darkest grey for backgrounds and maximum contrast'
             }]
         }, {
             'colorgroup': 'Information Colors',
             'colors': [{
-                'name': 'Alert Red',
                 'hex': '#ED6058',
                 'less': '@info-red',
+                'description': 'Use for negative and error states'
             }, {
-                'name': 'Alert Red Light',
                 'hex': '#FBDCDA',
                 'less': '@info-red-light',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Often used as a background with an @info-red icon in foreground'
             }, {
-                'name': 'Information Blue',
                 'hex': '#29AAE1',
                 'less': '@info-blue',
+                'description': 'Same as @lucid-blue, but renamed for easy usage with info colors'
             }, {
-                'name': 'Information Blue Light',
                 'hex': '#D2EDF9',
                 'less': '@info-blue-light',
                 'light': 'light',
+                'description': 'Often used as a background with an @info-blue icon in foreground'
             }, {
-                'name': 'Success Green',
                 'hex': '#8CBF3F',
                 'less': '@info-green',
+                'description': 'Same as @lucidpress-green, but renamed for easy usage'
             }, {
-                'name': 'Success Green Light',
                 'hex': '#E9F2D9',
                 'less': '@info-green-light',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Often used as a background with an @info-green icon in foreground'
             }, {
-                'name': 'Information Yellow',
                 'hex': '#FCC438',
                 'less': '@info-yellow',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Used for cautionary or paused states'
             }]
         }, {
             'colorgroup': 'Secondary Colors',
             'colors': [{
-                'name': 'Blue Steel Dark',
                 'hex': '#212C35',
                 'less': '@blue-steel-dark',
+                'description': 'This was developed to be darker on retina phones, use with caution'
             }, {
-                'name': 'Blue Steel Light',
                 'hex': '#AFB7BF',
                 'less': '@blue-steel-light',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Works nicely with text and icons on top of @blue-steel elements'
             }, {
-                'name': 'Lucid Blue Light',
-                'hex': '#D2EDF9',
-                'less': '@lucid-blue-light',
-                'light': 'light'
-            }, {
-                'name': 'Grey - Border',
                 'hex': '#D2D2D2',
                 'less': '@grey-border',
-                'light': 'light'
+                'light': 'light',
+                'description': 'Use to separate similar, related components in the same area'
             }, {
-                'name': 'Grey - Border Dark',
                 'hex': '#A5A5A5',
                 'less': '@grey-border-dark',
+                'description': 'Use to dileneate separate, unrelated or large portion of the interface'
             }, {
-                'name': 'Modal Background Overlay',
                 'hex': 'rgba(69, 75, 82, 0.4)',
                 'less': '@bg-overlay',
+                'description': 'The color used behind modals. Pay attention to opacity'
             }]
 
         }, {
@@ -124,18 +119,22 @@ angular.module('lucidColors', [])
                 'name': 'Standard Text',
                 'hex': '#5A5A5A',
                 'less': '@text-standard',
+                'description': 'Used for almost all text and body copy'
             }, {
                 'name': 'Ghost Text',
                 'hex': '#828282',
                 'less': '@text-light',
+                'description': 'Used often with inactive or zero  states and secondary text'
             }, {
                 'name': 'Inactive Text',
                 'hex': '#A5A5A5',
                 'less': '@text-inactive',
+                'description': 'Most used as the placeholder text for inputs'
             }, {
                 'name': 'Lucid Blue Dark',
                 'hex': '#2C84B5',
                 'less': '@lucid-blue-dark',
+                'description': 'Mostly used for hyperlinks, @lucid-blue isn\'t dark enough'
             }]
 
         }];
