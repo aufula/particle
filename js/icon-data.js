@@ -317,6 +317,10 @@ angular.module("lucidIcons", [])
                 'name': 'icon-microsoft-word-22px'
             }, {
                 'name': 'icon-back-to-app-22px'
+            }, , {
+                'name': 'icon-share-22px'
+            }, , {
+                'name': 'icon-book-22px'
             }]
         }, {
             "icongroup": "18px Icons",
