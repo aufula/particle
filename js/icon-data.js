@@ -313,6 +313,10 @@ angular.module("lucidIcons", [])
                 'name': 'icon-slack-22px'
             }, {
                 'name': 'icon-hipchat-22px'
+            }, {
+                'name': 'icon-microsof-word-22px'
+            }, {
+                'name': 'icon-back-to-app-22px'
             }]
         }, {
             "icongroup": "18px Icons",
