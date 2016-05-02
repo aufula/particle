@@ -314,7 +314,7 @@ angular.module("lucidIcons", [])
             }, {
                 'name': 'icon-hipchat-22px'
             }, {
-                'name': 'icon-microsof-word-22px'
+                'name': 'icon-microsoft-word-22px'
             }, {
                 'name': 'icon-back-to-app-22px'
             }]
