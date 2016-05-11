@@ -323,6 +323,8 @@ angular.module("lucidIcons", [])
                 'name': 'icon-book-22px'
             },  {
                 'name': 'icon-office-365-22px'
+            }, {
+                'name': 'icon-video-22px'
             }]
         }, {
             "icongroup": "18px Icons",
