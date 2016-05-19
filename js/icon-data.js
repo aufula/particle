@@ -325,6 +325,10 @@ angular.module("lucidIcons", [])
                 'name': 'icon-office-365-22px'
             }, {
                 'name': 'icon-video-22px'
+            }, {
+                'name': 'icon-drop-22px'
+            }, {
+                'name': 'icon-themes-22px'
             }]
         }, {
             "icongroup": "18px Icons",
