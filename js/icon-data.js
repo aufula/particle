@@ -329,6 +329,12 @@ angular.module("lucidIcons", [])
                 'name': 'icon-drop-22px'
             }, {
                 'name': 'icon-themes-22px'
+            }, {
+                'name': 'icon-cloud-outline-22px'
+            }, {
+                'name': 'icon-diagram-shapes-22px'
+            }, {
+                'name': 'icon-visio-22px'
             }]
         }, {
             "icongroup": "18px Icons",
