@@ -286,6 +286,8 @@ angular.module("lucidIcons", [])
             }, {
                 'name': 'icon-star-22px'
             }, {
+                'name': 'icon-star-outline-22px'
+            }, {
                 'name': 'icon-fork-22px'
             }, {
                 'name': 'icon-add-person-22px'
