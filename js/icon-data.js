@@ -353,6 +353,8 @@ angular.module("lucidIcons", [])
             }, {
                 "name": "icon-plus-18px"
             }, {
+                "name": "icon-minus-18px"
+            }, {
                 "name": "icon-search-18px"
             }, {
                 "name": "icon-x-18px"
