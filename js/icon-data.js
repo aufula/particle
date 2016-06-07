@@ -337,6 +337,8 @@ angular.module("lucidIcons", [])
                 'name': 'icon-diagram-shapes-22px'
             }, {
                 'name': 'icon-visio-22px'
+            }, {
+                'name': 'icon-chat-22px'
             }]
         }, {
             "icongroup": "18px Icons",
