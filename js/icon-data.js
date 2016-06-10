@@ -380,6 +380,8 @@ angular.module("lucidIcons", [])
                 "name": "icon-phone-18px"
             }, {
                 "name": "icon-clock-medium-18px"
+            }, {
+                "name":"icon-double-arrow-18px"
             }]
         }];
         return icons;
