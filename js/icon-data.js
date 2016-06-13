@@ -339,6 +339,10 @@ angular.module("lucidIcons", [])
                 'name': 'icon-visio-22px'
             }, {
                 'name': 'icon-chat-22px'
+            }, {
+                'name': 'icon-shape-options-22px'
+            }, {
+                'name': 'icon-wrench-22px'
             }]
         }, {
             "icongroup": "18px Icons",
