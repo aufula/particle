@@ -343,6 +343,12 @@ angular.module("lucidIcons", [])
                 'name': 'icon-shape-options-22px'
             }, {
                 'name': 'icon-wrench-22px'
+            }, {
+                'name': 'icon-in-22px'
+            }, {
+                'name': 'icon-out-22px'
+            }, {
+                'name': 'icon-add-box-22px'
             }]
         }, {
             "icongroup": "18px Icons",
