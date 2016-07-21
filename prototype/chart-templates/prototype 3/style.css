@@ -1,0 +1,26 @@
+.templateDrawer{
+  background: #77818C;
+  height: auto;
+  transition: .5s ease-in-out all;
+  padding: 8px 10px 0px 10px;
+}
+
+.templateDrawerOnly{
+  background: #77818C;
+  height: auto;
+  transition: .5s ease-in-out all;
+  padding: 8px 10px 20px 10px;
+}
+
+
+strong{
+ font-weight: bold;
+}
+
+
+.secondTemplateDrawer{
+  background: #77818C;
+  height: auto;
+  transition: .5s ease-in-out all;
+  padding: 8px 10px 0px 10px;
+}
