@@ -3198,12 +3198,13 @@ a {
 }
 
 .details{
- position: absolute;
- top: 126px; left: 0;
- height: 243px;
- width: 495px;
- z-index: 10000;
- background: #e6e6e6;
+   position: absolute;
+   top: 126px; left: 0;
+   height: 243px;
+   width: 495px;
+   z-index: 10000;
+   background: #e6e6e6;
+   padding: 20px;
 }
 
 

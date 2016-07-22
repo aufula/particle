@@ -1269,16 +1269,14 @@
                       </div> 
                       <div ng-show="showDiagramSection"; ng-init="$root.showDiagramSection = false"; style="margin-top: 10px;">
                        Please select the type of diagram you want to make.
-                          <div ng-repeat="template in templates" style="margin-top: 10px;">
+                          <div ng-repeat="template in templates" style="margin-top: 10px; position: relative; ">
                               <div class="template" ng-click="diagramClicked = !diagramClicked;">
                                   <div class="title" style="text-align: center; padding: 10px 5px;">{{template.name}}</div>
                                   <div class="templatePreview" style="background:url({{template.preview}}); height: 50px; background-size: contain; background-repeat: no-repeat; background-position: center center;"></div>
                                   <div class="recommended" ng-if="template.recommended == 'true'">Recommended</div>
                               </div>
                               <div class="details" ng-show="diagramClicked">
-                                <header>{{template.name}}</header>
-                                <div ng-click="$root.showtemplatemanager = false; loadDiagram(template);">button text</div>
-
+                                <img src="images/details.png" ng-click="$root.showtemplatemanager = false; loadDiagram(template);">
                               </div>
                           </div>
                       </div>

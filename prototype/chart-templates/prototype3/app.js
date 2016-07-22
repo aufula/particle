@@ -61,7 +61,8 @@ angular.module('particleApp', ['lucidComponents'])
             {name:'Organization', diagram: 'Flowchart', category: 'Education', preview:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template_org.png'},
 
             {name:'New', diagram: 'Venn Diagram', category: 'Education', preview:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/plus.svg'},
-            {name:'Basic', diagram: 'Venn Diagram',  category: 'Education', preview:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template_flow.png'},
+            {name:'Basic', diagram: 'Venn Diagram',  category: 'Education', preview:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template_bpmn.png'},
+            {name:'Three Circle Venn', diagram: 'Venn Diagram',  category: 'Education', preview:'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/template_sipoc.png'},
 
           ];
 

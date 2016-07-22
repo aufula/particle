@@ -52,7 +52,7 @@
 
 <!--template drawer-->
 <div ng-class="{templateDrawerOnly : secondTemplateDrawer == false, templateDrawer : secondTemplateDrawer == true}" ng-show="templateDrawer" >
-        <div style="color: white; font-weight: bold; text-align: right; margin: 15px 15px 0px 0px;" ng-click="getSecondDrawer();"><span style="color: white; text-align: left;font-weight: normal; margin-left: 15px; text-transform: uppercase; float: left;" ng-show="secondTemplateDrawer">Recently Used</span>{{help}}</div>
+        <div style="color: white; font-weight: bold; text-align: right; margin: 15px 15px 0px 0px;" ng-click="getSecondDrawer();"><span style="color: white; text-align: left;font-weight: normal; margin-left: 15px; text-transform: uppercase; float: left;">Recently Used</span>{{help}}</div>
         
          <div class="animate-repeat" ng-repeat="template in templates | limitTo: 5" style="display: inline-block;">
           <li class="card LoSensitive file" id="filebrowser_132265643" tabindex="-1" nodeid="132265643" style="">
@@ -82,7 +82,7 @@
 <div class="secondTemplateDrawer" ng-init= "secondTemplateDrawer=false;" ng-show="secondTemplateDrawer">
   <div style="color: white; text-align: left; margin-left: 15px; text-transform: uppercase; font-weight: normal;">Flowcharts</div>
         <div class="animate-repeat" ng-repeat="template in templates" style="display: inline-block;">
-          <li  ng-if="template.diagram == 'Flowchart'" class="card LoSensitive file" id="filebrowser_132265643" tabindex="-1" nodeid="132265643" style="">
+          <li  ng-if="template.diagram == 'Flowchart' && template.category ==  'Business'" class="card LoSensitive file" id="filebrowser_132265643" tabindex="-1" nodeid="132265643" style="">
             <div class="wrapper">
               <div class="preview">
                 <div class="thumb" style="position: relative;">
@@ -129,7 +129,30 @@
           </li>
         </div>
 
-
+      <div style="color: white; text-align: left; margin-left: 15px; text-transform: uppercase; font-weight: normal;">Venn Diagrams</div>
+          <div class="animate-repeat" ng-repeat="template in templates" style="display: inline-block;">
+          <li  ng-if="template.diagram == 'Venn Diagram'" class="card LoSensitive file" id="filebrowser_132265643" tabindex="-1" nodeid="132265643" style="">
+            <div class="wrapper">
+              <div class="preview">
+                <div class="thumb" style="position: relative;">
+                  <img src="{{template.preview}}" style="display: block; position: absolute; top: 0px; left: 0px;">
+                </div>
+              </div>
+              <div class="bottom-bar">
+                <div class="title">
+                  <span class="title-content">{{template.name| limitTo:15}}
+                    <span ng-if="template.name.length > 15">... </span>
+                      <strong> {{template.diagram}}</strong>
+                  </span>
+                </div>
+            
+                <div class="options">
+                  <div class="component-btn open" ng-click="createDocument();">New</div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </div>
 </div>
 
 <ul class="list-container" style="transform: translate3d(0px, 0px, 0px);">
