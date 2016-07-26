@@ -1,0 +1,29 @@
+.edit-in-place-wrapper {
+    .edit-in-place {
+        line-height: 1em;
+        font-size: 1em;
+        color: @standard-text;
+        padding: 0;
+        vertical-align: top;
+        cursor: pointer;
+    }
+    .edit-in-place-input {
+        font-style: italic;
+        outline: none;
+        border: none;
+        background: transparent;
+        padding: 0;
+        margin-top: -2px;
+        cursor: auto;
+        color: @standard-text;
+    }
+    &.reversed-text {
+        .edit-in-place {
+            color: #fff;
+            font-weight: 300;
+        }
+        input.edit-in-place {
+            font-weight: 300;
+        }
+    }
+}

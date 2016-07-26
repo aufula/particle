@@ -1,0 +1,59 @@
+.lucid-collapse-bar {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: left;
+    opacity: 1;
+    vertical-align: top;
+    margin-bottom: 10px;
+    .collapse-bar-top {
+        background-color: @grey-4;
+        padding: 8px 10px;
+        position: relative;
+        color: @standard-text;
+        transition: .3s ease-in-out;
+        box-sizing: border-box;
+        height: 32px;
+        text-align: left;
+        border-radius: 4px;
+        cursor: pointer;
+        .lucid-hide-content-icon {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 30px;
+            padding: 12px 4px 0 11px;
+            transition: all .25s ease-in-out;
+            svg {
+                vertical-align: top;
+                path {
+                    transform: rotate(0);
+                    transform-origin: center;
+                    transition: all .25s ease-in-out;
+                    fill: @blue-steel-2;
+                }
+            }
+            &.lucid-hide-content {
+                svg path {
+                    transform: rotate(-90deg);
+                }
+            }
+        }
+        .collapse-bar-name {
+            vertical-align: top;
+            line-height: 15px;
+            font-size: 14px;
+            font-weight: 500;
+            padding-left: 15px;
+            display: inline-block;
+            //transition: .2s ease-in-out;
+        }
+    }
+    .lucid-collapse-bar-content {
+        transition: all .5s;
+        width: 100%;
+        &.ng-animate {
+            overflow: hidden;
+        }
+    }
+}

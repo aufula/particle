@@ -1,0 +1,62 @@
+.lucid-icon-18,
+.lucid-icon-22 {
+    vertical-align: top;
+    display: inline-block;
+    svg {
+        vertical-align: top;
+    }
+}
+
+.lucid-icon-18 {
+    width: 18px;
+    height: 18px;
+}
+
+.lucid-icon-22 {
+    width: 22px;
+    height: 22px;
+}
+
+////////
+//ICON COLOR CLASSES
+///////
+.lucid-icon {
+    svg {
+        path,
+        polygon,
+        rect,
+        circle {
+            transition: .15s ease-in-out;
+        }
+    }
+    &.fill-blue-steel {
+        svg {
+            path,
+            polygon,
+            rect,
+            circle {
+                fill: @blue-steel;
+            }
+        }
+    }
+    &.fill-active {
+        svg {
+            path,
+            polygon,
+            rect,
+            circle {
+                fill: @lucid-blue;
+            }
+        }
+    }
+    &.fill-white {
+        svg {
+            path,
+            polygon,
+            rect,
+            circle {
+                fill: #fff;
+            }
+        }
+    }
+}

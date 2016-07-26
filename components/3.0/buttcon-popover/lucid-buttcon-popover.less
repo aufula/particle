@@ -1,0 +1,85 @@
+.lucid-buttcon-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.lucid-popover-menu {
+    background-color: @grey-1;
+    border-radius: 4px;
+    box-shadow: 1px 3px 10px rgba(0, 0, 0, .25);
+    position: absolute;
+    z-index: 10;
+    top: 55px;
+    margin-top: 0;
+    opacity: 1;
+    text-align: left;
+    &:after {
+        content: '';
+        border-bottom: 10px @grey-1 solid;
+        border-left: 8px transparent solid;
+        border-right: 8px transparent solid;
+        position: absolute;
+        top: -10px;
+        left: 50%;
+        margin-left: -7px;
+    }
+    &.ng-enter {
+        margin-top: -7px;
+        opacity: 0;
+    }
+    &.ng-enter-active {
+        margin-top: 0;
+        opacity: 1;
+    }
+    &.ng-leave {
+        margin-top: 0;
+        opacity: 1;
+    }
+    &.ng-leave-active {
+        margin-top: -7px;
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .1s all linear;
+    }
+    ul {
+        padding: 0;
+        margin: 0;
+    }
+    .lucid-wrapper-overflow-hidden {
+        overflow: hidden;
+        border-radius: 3px;
+    }
+    .lucid-buttcon.active {
+        background-color: #fff;
+    }
+}
+
+.popover-list {
+    .lucid-popover-menu {
+        background: #FFF;
+        &:after {
+            border-bottom-color: #FFF;
+        }
+    }
+    .lucid-select-wrapper {
+        width: 100%;
+        padding: 3px 2px;
+        .lucid-select-dropdown {
+            width: 100%;
+            top: 0;
+            position: static;
+            box-shadow: none;
+            border-radius: 3px;
+            display: inline-block;
+            position: relative;
+            box-shadow: none;
+            //background: #fff;
+            width: 100%;
+            opacity: 1;
+            .lucid-select-option {
+                padding: 5px 15px 5px 15px;
+            }
+        }
+    }
+}

@@ -1,0 +1,125 @@
+.lucid-paywall-wrapper {
+    position: fixed;
+    z-index: 1;
+    display: table;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    &.ng-hide {
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .35s ease-in-out;
+    }
+    .lucid-paywall-inner-wrapper {
+        display: table-cell;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        vertical-align: middle;
+        position: relative;
+        z-index: 2;
+    }
+    .paywall-x {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        cursor: pointer;
+    }
+    .paywall-banner {
+        background: url(http://particle.golucid.co/components/2.0/paywall/premium-banner.png);
+        width: 111px;
+        height: 111px;
+        position: absolute;
+        top: -8px;
+        left: -7px;
+        .paywall-banner-text {
+            color: #FFF;
+            width: 156px;
+            height: 28px;
+            line-height: 26px;
+            text-align: center;
+            transform: rotateZ(-45deg);
+            transform-origin: bottom left;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            font-size: 18px;
+            font-weight: 700;
+            -webkit-font-smoothing: antialiased;
+        }
+    }
+    .lucid-paywall {
+        margin: auto;
+        width: 440px;
+        padding: 20px;
+        background: white;
+        border-radius: 8px;
+        //border: 1px solid #5a5a5a;
+        position: relative;
+        box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
+        text-align: center;
+        .paywall-title {
+            margin-bottom: 20px;
+            >h1 {
+                text-align: center;
+                font-size: 24px;
+                font-weight: 700;
+                line-height: 24px;
+                -webkit-font-smoothing: antialiased;
+            }
+            >h2 {
+                font-size: 18px;
+                color: #828282;
+                text-align: center;
+                line-height: 20px;
+                margin-top: 5px;
+                font-weight: normal;
+                letter-spacing: inherit;
+                -webkit-font-smoothing: antialiased;
+            }
+        }
+        img {
+            width: 300px;
+            height: 200px;
+            margin: 0 auto 24px;
+            display: block;
+        }
+        >button {
+            display: block;
+            margin: 0 auto;
+        }
+        .cancel-text {
+            margin-top: 10px;
+            color: @lucid-blue-dark;
+            cursor: pointer;
+            font-size: 14px;
+        }
+        p {
+            margin: 0 10px 20px;
+            line-height: 18px;
+            font-size: 16px;
+        }
+        &.ng-hide {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out;
+        }
+    }
+    .lucid-paywall-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: @bg-overlay;
+        z-index: 1;
+        opacity: 1;
+    }
+}

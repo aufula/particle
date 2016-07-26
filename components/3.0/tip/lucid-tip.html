@@ -1,0 +1,6 @@
+<div class="lucid-tip-wrapper ng-hide" ng-class="'caret-' + caret" ng-show="showtip && !dismiss" style="width: {{width}}px;">
+    <span ng-click="dismiss = true">
+		<ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" class="lucid-close-icon"></ng-include>
+	</span>
+    <ng-transclude></ng-transclude>
+</div>

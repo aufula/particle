@@ -1,0 +1,28 @@
+<div class="swatch-colors">
+    <ul class="lucid-most-used-colors">
+        <li class="lucid-square" ng-repeat="block in $root.currentPage.blocks" style="background-color:{{block.swatch.fill}}" ng-click="$parent.color = block.swatch.fill; $parent.selected.customcolor=true">
+            <!-- <div class="lucid-selected-color" ng-class="{'lucid-selected': $parent.color == block.swatch.fill}">
+                <div class="lucid-inset-shadow"></div>
+            </div> -->
+        </li>
+    </ul>
+    <ul class="lucid-grayscale-colors">
+        <li class="lucid-square lucid-transparent" ng-click="color = 'transparent'; selected.customcolor=true">
+            <div class="lucid-selected-color" ng-class="{'lucid-selected': color == 'transparent'}">
+                <div class="lucid-inset-shadow"></div>
+            </div>
+        </li>
+        <li class="lucid-square" ng-repeat="color in lucidcolorpickergrayscale" style="background-color:{{color.hex}}" ng-click="$parent.color = color.hex; $parent.selected.customcolor=true">
+            <div class="lucid-selected-color" ng-class="{'lucid-selected': $parent.color == color.hex}">
+                <div class="lucid-inset-shadow"></div>
+            </div>
+        </li>
+    </ul>
+    <ul class="lucid-colorpicker-colors">
+        <li class="lucid-square" ng-repeat="color in lucidcolorpickercolors" style="background-color:{{color.hex}}" ng-click="$parent.color = color.hex; $parent.selected.customcolor=true">
+            <div class="lucid-selected-color" ng-class="{'lucid-selected': $parent.color == color.hex}">
+                <div class="lucid-inset-shadow"></div>
+            </div>
+        </li>
+    </ul>
+</div>

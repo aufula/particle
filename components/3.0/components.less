@@ -1,0 +1,143 @@
+/*Lucid Particle Components
+
+*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+// end reset
+//start general css.
+
+@import url(https://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900,200italic,300italic,400italic,600italic,700italic,900italic);
+
+@font-stack: 'Source Sans Pro', sans-serif;
+/////
+//COLOR VARIABLES
+/////
+
+//Brand Colors
+@blue-steel: #3D4752;
+@blue-steel-2: #77818C;
+@lucid-blue: #29AAE1;
+@lucid-orange: #FC8D2A;
+@lucidpress-green: #8CBF3F;
+
+// UI Colors - Greys
+@grey-1: #F0F0F0;
+@grey-2: #E6E6E6;
+@grey-3: #D6D6D8;
+@grey-4: #CDCED1;
+@grey-5: #A5A5A5;
+
+// Information Colors
+@info-red: #ED6058;
+@info-red-light: #FBDCDA;
+@info-blue: @lucid-blue;
+@info-blue-light: #D2EDF9;
+@info-green: #8CBF3F;
+@info-green-light: #E9F2D9;
+@info-yellow: #FCC438;
+
+//Secondary Colors
+@blue-steel-dark: #212C35;
+@blue-steel-light: #AFB7BF;
+@lucid-blue-light: #D2EDF9;
+@grey-border: #D2D2D2;
+@grey-border-dark: #A5A5A5;
+@bg-overlay: rgba(69, 75, 82, 0.4);
+
+//Text Colors
+@standard-text: #5A5A5A;
+@text-light: #828282;
+@text-ghost: #C7C7C7;
+@lucid-blue-dark: #2C84B5;
+
+/////////////////// GENERAL CSS ///////////////
+body {
+	font-family: @font-stack;
+	color: #5a5a5a;
+}
+img {
+    max-width: 100%;
+}
+input{
+	font-family:@font-stack;
+	font-size:14px;
+}
+
+.reversed-text{
+    font-weight: 200;
+}
+/////////////////// PARTICLES /////////////////
+@import "input/lucid-input.less";
+@import "input-stepper/lucid-input-stepper.less";
+@import "more-drawer/lucid-more-drawer.less";
+@import "buttcon/lucid-buttcon.less";
+@import "buttcon-popover/lucid-buttcon-popover.less";
+@import "color-picker/lucid-color-picker.less";
+@import "modal/lucid-modal.less";
+@import "finger-tabs/lucid-finger-tabs.less";
+@import "button/lucid-button.less";
+@import "icon/lucid-icon.less";
+@import "notification/lucid-notification.less";
+@import "select/lucid-select.less";
+@import "context-menu/lucid-context-menu.less";
+@import "collapse-bar/lucid-collapse-bar.less";
+@import "toggle/lucid-toggle.less";
+@import "edit-in-place/lucid-edit-in-place.less";
+@import "top-tabs/lucid-top-tabs.less";
+@import "tip/lucid-tip.less";
+@import "paywall/lucid-paywall.less";
+
