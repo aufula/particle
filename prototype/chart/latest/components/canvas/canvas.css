@@ -1,0 +1,221 @@
+#lucid-canvas > svg polyline {
+  display: none;
+}
+#lucid-canvas .simple-line-wrapper {
+  position: absolute;
+  top: 180px;
+  left: 448px;
+  cursor: pointer;
+  padding: 0 2px;
+}
+#lucid-canvas .simple-line-wrapper .simple-line {
+  background: #333;
+  width: 2px;
+  height: 60px;
+  box-sizing: content-box;
+  border-right: 1px solid #fff;
+  border-left: 1px solid #fff;
+}
+#lucid-canvas .simple-line-wrapper .simple-line:after {
+  content: '';
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 8px solid #333;
+  position: absolute;
+  bottom: -8px;
+  left: 0px;
+}
+#lucid-canvas .simple-line-wrapper .simple-line:before {
+  content: '';
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 9px solid transparent;
+  position: absolute;
+  bottom: -9px;
+  left: -1px;
+}
+#lucid-canvas .simple-line-wrapper .simple-line.selected {
+  border-color: #75B4FE;
+}
+#lucid-canvas .simple-line-wrapper .simple-line.selected:before {
+  border-top: 9px solid #75B4FE;
+}
+#lucid-canvas .simple-table-wrapper {
+  border: none;
+  position: absolute;
+  top: 480px;
+  left: 448px;
+  cursor: pointer;
+}
+#lucid-canvas .simple-table-wrapper table {
+  width: 300px;
+  height: 100px;
+}
+#lucid-canvas .simple-table-wrapper td {
+  border: 1px solid #999;
+}
+#lucid-canvas .simple-table-wrapper .lucid-selected-block {
+  top: -1px;
+  right: -1px;
+  bottom: -1px;
+  left: -1px;
+}
+#lucid-canvas > ul {
+  position: absolute;
+  width: 100%;
+  height: 690px;
+  top: 0;
+  left: 0;
+}
+.lucid-chart-block {
+  position: absolute;
+  border: 1px solid;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+.lucid-chart-block.manage-shapes {
+  z-index: 0 !important;
+}
+.lucid-chart-block .lucid-outer-block-table {
+  display: table;
+  width: 100%;
+  height: 100%;
+}
+.lucid-chart-block .lucid-inner-block {
+  display: table-cell;
+}
+.lucid-chart-block img.lucid-block-comment {
+  width: 25px;
+  position: absolute;
+  top: -5px;
+  right: -40px;
+  margin-left: 0;
+  opacity: 1;
+  z-index: 1;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+.lucid-chart-block img.lucid-block-comment.ng-hide {
+  opacity: 0;
+}
+.lucid-chart-block .lucid-selected-block {
+  position: absolute;
+  top: -3px;
+  left: -3px;
+  bottom: -3px;
+  right: -3px;
+  border: #75B4FE 1px solid;
+  z-index: 0;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag {
+  border: #75B4FE 1px solid;
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-color: rgba(255, 255, 255, 0.93);
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-left {
+  top: -10px;
+  left: -10px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-center {
+  top: -10px;
+  left: 50%;
+  margin-left: -8px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-top-right {
+  top: -10px;
+  right: -10px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-center-right {
+  top: 50%;
+  right: -10px;
+  margin-top: -8px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-bottom-right {
+  bottom: -10px;
+  right: -10px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-bottom-center {
+  bottom: -10px;
+  left: 50%;
+  margin-left: -8px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-bottom-left {
+  bottom: -10px;
+  left: -10px;
+}
+.lucid-chart-block .lucid-selected-block .lucid-corner-drag.lucid-center-left {
+  top: 50%;
+  left: -10px;
+  margin-top: -8px;
+}
+.lucid-chart-block.shrink-block {
+  width: 32px !important;
+  height: 32px !important;
+  -webkit-transition: .25s width, .25s height;
+  transition: .25s width, .25s height;
+  margin-top: 30px;
+  margin-left: 40px;
+  -webkit-transition: .25s width, .25s height, .25s margin;
+  transition: .25s width, .25s height, .25s margin;
+}
+.lucid-chart-block.shrink-block .lucid-outer-block-table {
+  opacity: 0;
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+.lucid-chart-block.ng-enter {
+  -webkit-transform: scaleX(0.25) scaleY(0.667);
+          transform: scaleX(0.25) scaleY(0.667);
+}
+.lucid-chart-block.ng-enter-active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.lucid-chart-block.ng-animate {
+  -webkit-transition: .25s;
+  transition: .25s;
+}
+.lucid-slide {
+  position: absolute;
+  color: orange;
+  border: 1px solid;
+  z-index: 2;
+  opacity: 1;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+}
+.lucid-slide.ng-hide {
+  opacity: 0;
+}
+.lucid-slide .lucid-slide-corner {
+  width: 8px;
+  height: 8px;
+  border: 2px solid;
+  position: absolute;
+}
+.lucid-slide .lucid-top-left {
+  border-bottom: none;
+  border-right: none;
+  left: 0;
+  top: 0;
+}
+.lucid-slide .lucid-top-right {
+  top: 0;
+  right: 0;
+  border-bottom: none;
+  border-left: none;
+}
+.lucid-slide .lucid-bottom-right {
+  bottom: 0;
+  right: 0;
+  border-top: none;
+  border-left: none;
+}
+.lucid-slide .lucid-bottom-left {
+  bottom: 0;
+  left: 0;
+  border-top: none;
+  border-right: none;
+}

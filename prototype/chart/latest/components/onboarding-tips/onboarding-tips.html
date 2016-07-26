@@ -1,0 +1,21 @@
+<!-- START TIPS -->
+<div>
+    <div class="lucid-modal-wrapper lucid-beta-tips ng-hide" ng-hide="!$root.showbetatips">
+        <div ng-hide="!$root.showbetatips" style="height:265px; width:435px" class="lucid-modal lucid-animate">
+            <div ng-click="$root.showbetatips = false">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/beta-tips-modal-placeholder.png">
+            </div>
+        </div>
+        <div class="lucid-modal-bg lucid-animate" ng-hide="!$root.showbetatips">
+        </div>
+    </div>
+    <lucid-tip showtip="$root.showSearchTip" dismiss="$root.searchTipDismissed" caret="top" width="240" delay="true" style="top: 160px; left: 4px;" class="search-tip">
+        Change the search to Google, Iconfinder, or Lucidchart to find the content you need.
+    </lucid-tip>
+    <!-- BETA TIPS -->
+    <lucid-tip showtip="$root.showbetatips" caret="top" class="onboarding-tip cancel-beta">Report a problem or exit the beta at any time.</lucid-tip>
+    <lucid-tip showtip="$root.showbetatips" caret="top" class="onboarding-tip pages-tip">Create and manage pages</lucid-tip>
+    <lucid-tip showtip="$root.showbetatips" caret="left" class="onboarding-tip mega-menu">Print, export, and more</lucid-tip>
+    <lucid-tip showtip="$root.showbetatips" caret="right" class="onboarding-tip share-tip">Share with others even if they're still using the old Lucidchart.</lucid-tip>
+</div>
+<!-- END WRAPPER -->

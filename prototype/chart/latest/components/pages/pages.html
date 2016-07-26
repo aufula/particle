@@ -1,0 +1,70 @@
+<div id="page-list">
+        <div class="page-drawer lucid-animate" ng-show="pages.show">
+          <!-- start page drawer -->
+          <!-- start page drawer -->
+          <div class="lucid-pages" ng-controller="PagesCtrl">
+            <div class="lucid-pages-wrapper">
+                <ul ng-sortable="{group: 'pages',handle: '.page-thumb-wrapper', animation: 150}">
+                    <li ng-repeat="page in $root.pages track by page.id" class="lucid-animate">
+                        <div>
+                          <div class="lucid-page"
+                              lucid-context-menu
+                              data-target="page-context-{{ page.id }}"
+                              ng-class="{'current-page': $root.currentPage == page}">
+                              <div class="center-image" 
+                              ng-click="changePage(page)"
+                              ng-dblclick="$root.currentPage = page; $parent.pages.show = false">
+                                  <div class="center-image-container">
+                                      <div class="image-container">
+                                          <div class="page-thumb-wrapper">
+                                              <img class="page-thumb" ng-src="{{page.thumb}}" ng-if="page.thumb">
+                                              <div class="blank-page" ng-if="!page.thumb"></div>
+                                              <div class="master-page lucid-animate" ng-show="page.master">
+                                                  <span>MASTER PAGE</span>
+                                              </div> 
+                                              <div class="master-page lucid-animate" ng-show="page.masterapplied">
+                                                  <span>MASTER APPLIED</span>
+                                              </div>   
+                                          </div>
+                                          <div class="page-x" ng-click="$parent.deletePage(page, $index)"></div>
+                                      </div>
+                                  </div>
+                              </div>
+                              <span class="page-thumb-name">
+                                <h4><edit-in-place edit="page.edit" ng-model="page.name"></edit-in-place></h4>
+                              </span>
+                              <!-- Right Click Context Menu -->
+                              <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
+                                  <ul>
+                                      <li ng-click="editName(page)">Rename</li>
+                                      <li ng-click="$parent.duplicatePage(page, $index)">Duplicate</li>
+                                      <li ng-click="$parent.deletePage(page, $index)">Delete</li>
+                                      <li class="context-divider"></li>
+                                      <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Page</li>
+                                      <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
+                                      <li ng-show="page.master" ng-click="applyMasterAll()">Apply Master to All</li>
+                                      <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Page
+                                          <ul>
+                                              <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                                  {{master.name}}
+                                              </li>
+                                          </ul>
+                                      </li>
+                                      <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Page</li>
+
+                                  </ul>
+                              </div>
+                          </div>
+                      </div>
+                    </li>
+                </ul>
+                <div class="add-new-page lucid-animate" draggable="false">
+                    <div class="plus-container" ng-click="addPage()">
+                      <ng-include class="plus-icon" src="'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-plus-large.svg'"></ng-include>
+                    </div>
+                </div>
+            </div>
+        </div>
+          <!-- end page drawer -->
+        </div>
+      </div>

@@ -1,0 +1,417 @@
+<div id="left-bar" class="lucid-shapes-panel-wrapper">
+  <!-- START SHAPES MANAGER -->
+  <div class="lucid-shapes-panel-wrapper" ng-controller="shapesManagerCtrl">
+    <div class="lucid-shapes-panel" ng-class="{ 'lucid-managing-shapes': $root.manageshapes }">
+        <div class="lucid-pinned-shapes-panel">
+            <header class="lucid-shapes-header">
+                <span ng-click="$root.toggleShapesManager();">
+                <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-bluesteel.svg" class="lucid-icon-22 lucid-shapes-gear">
+                <span class="lucid-more-shapes">Shapes</span>
+                </span>
+              <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
+              </lucid-buttcon>
+              <lucid-buttcon-popover ng-hide="$root.manageshapes" showpopover="importdropdown.show" class="import-image-icon" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
+              <div class="lucid-select-wrapper">
+                <ul class="lucid-select-dropdown" ng-click="importdropdown.show = false;">
+                  <li class="lucid-select-option">
+                      Image<input type="file" class="hidden-file-upload">
+                  </li>   
+                  <li class="lucid-select-option">
+                      SVG<input type="file" class="hidden-file-upload">
+                  </li>  
+                  <li class="lucid-select-option">
+                      Visio Stencil<input type="file" class="hidden-file-upload">
+                  </li>     
+                </ul>
+              </div>
+              </lucid-buttcon-popover>
+            </header>
+            <div class="search-shapes lucid-animate" ng-show="searchshapes">
+                <div class="search-shapes-input lucid-animate" ng-show="searchshapes">
+
+                    <div class="lucid-select-wrapper search-dropdown" click-outside="searchDropdown = false">
+                          <div class="search-dropdown-button" ng-init="searchType = 'Lucidchart'" ng-click="searchDropdown = !searchDropdown; $root.searchTipDismissed = true;">
+                            <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                            <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                            <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                          </div>
+                          <div class="lucid-select-dropdown" ng-show="searchDropdown">
+                              <div>
+                                  <ul>
+                                      <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Lucidchart'">
+                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                          <span>Lucidchart</span>
+                                      </li>
+                                      <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Google Images'">
+                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                          <span>Google Images</span>
+                                      </li>
+                                      <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Iconfinder'">
+                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                          <span>Iconfinder</span>
+                                      </li>
+                                  </ul>
+                              </div>
+                          </div>
+                        </div>
+
+                    <input id="search-shapes-input" ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
+
+                    <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
+                </div>
+                <!-- Start Search Shapes -->
+                <div class="lucid-shapes-scroll">
+                <div class="lucid-scroll-inner-wrap">
+                  <div class="no-search-results" ng-show="searchShapeGroupsResults.length == 0 && searchgroups.searched == true;">
+                    <p>No {{searchType}} results.</p>
+                    <p> Did you know you can search <span ng-show="searchType !== 'Google Images'" class="hyperlink" ng-click="searchType = 'Google Images'; searchShapeGroupsResults = null">Google</span><span class="hyperlink" ng-click="searchType = 'Lucidchart'; searchShapeGroupsResults = null" ng-show="searchType == 'Google Images'">Lucidchart</span> or <span class="hyperlink" ng-click="searchType = 'Iconfinder'; searchShapeGroupsResults = null" ng-show="searchType == 'Google Images' || searchType == 'Lucidchart'">Iconfinder</span><span class="hyperlink" ng-click="searchType = 'Lucidchart'; searchShapeGroupsResults = null" ng-show="searchType == 'Iconfinder'">Lucidchart</span> instead?</p>
+                  </div>
+                  <div class="no-search-results" ng-show="searchgroups.searched == false">
+                    <p>Use the box above <br> to search {{searchType}}.</p>
+                  </div>
+
+                  
+                  <ul class="lucid-group-drop-area">
+                        <li ng-repeat="shapegroup in searchShapeGroupsResults track by shapegroup.id"
+
+                            class="lucid-shape-group-wrapper repeat-animation search-results"
+                            ng-class="{'no-transition': $root.draggingShapeGroup}">
+                            <!-- START LEFT SHAPE GROUP -->
+                            <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
+                              <div class="shape-group-top">
+                                <span class="shape-group-name">{{shapegroup.groupname}}</span>
+                              </div>
+                              <div class="pin-library search-shapes-pin" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
+                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                              </div>
+                              <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
+                                <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
+                                    <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                    <span class="lucid-save-shapes-hint">Drop shapes to save</span>
+                                </div>
+                                <ul class="shapes-wrapper"
+                                    ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
+                                    ng-drop="true"
+                                    ng-drop-success="dropFromCanvas($data, $event, shapegroup)"
+
+                                    dnd-list="shapegroup.shapes"
+                                    dnd-allowed-types="[shapegroup.custom]"
+                                    dnd-horizontal-list="true"
+                                    dnd-external-sources="false"
+                                    dnd-dragover="dragoverCallback(event, index, external, type)"
+                                    dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                    dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+
+                                    <li ng-repeat="shape in shapegroup.shapes| filter: filterShapes"
+                                        dnd-draggable="shape"
+                                        dnd-type="'custom'"
+                                        dnd-effect-allowed="{{copy(shapegroup.custom)}}"
+                                        dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                        dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event);"
+                                        dnd-copied="logEvent('Item copied', event)"
+                                        dnd-canceled="logEvent('Drag operation canceled', event)"
+                                        dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false;"
+                                        
+                                        ng-drag-data="shape"
+
+                                        class="lucid-shape repeat-animation lucid-animate">  
+                                        <div ng-bind-html="shape.svg | sanitize"> </div>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <!-- END LEFT SHAPE GROUP -->
+                        </li>
+                    </ul>
+                    
+                  </div>
+                </div>
+                <!-- End Search Shapes -->
+
+            </div>
+            <div id="left-panel-shapes" class="lucid-shapes-scroll lucid-animate" ng-hide="searchshapes || importToCanvas">
+                <div id="left-panel-shapes-scroll" class="lucid-scroll-inner-wrap">
+                    <ul ng-sortable="pinnedGroupsSort"
+                        class="lucid-group-drop-area">
+                        <li ng-repeat="shapegroup in pinnedShapeGroups track by shapegroup.id"
+
+                            class="lucid-shape-group-wrapper left-panel repeat-animation"
+                            ng-class="{'no-transition': $root.draggingShapeGroup}">
+                            <!-- START LEFT SHAPE GROUP -->
+                            <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom && $root.mouseInLeftPanel || $root.draggingshape && !shapegroup.custom && $root.manageshapes,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
+                              <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
+                                <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                  <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                                      <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+                                  </g>
+                                </svg>
+                              </div>
+                              <div class="shape-group-top">
+                                <span class="shape-group-name"> {{shapegroup.groupname}}</span>
+                                <span class="lucid-close-icon" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)"><ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-x-18px.svg'"></ng-include></span>
+                              </div>
+                              <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
+                                <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
+                                    <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                    <span class="lucid-save-shapes-hint">Drop shapes to save</span>
+                                </div>
+                                <ul class="shapes-wrapper"
+                                    ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
+                                    ng-drop="true"
+                                    ng-drop-success="dropFromCanvas($data, $event, shapegroup);"
+
+                                    dnd-list="shapegroup.shapes"
+                                    dnd-allowed-types="[shapegroup.custom]"
+                                    dnd-horizontal-list="true"
+                                    dnd-external-sources="false"
+                                    dnd-dragover="dragoverCallback(event, index, external, type)"
+                                    dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                    dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+
+                                    <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                        dnd-draggable="shape"
+                                        dnd-type="'custom'"
+                                        dnd-effect-allowed="{{copy(shapegroup.custom)}}"
+                                        dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                        dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                        dnd-copied="logEvent('Item copied', event)"
+                                        dnd-canceled="logEvent('Drag operation canceled', event)"
+                                        dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
+                                        
+                                        ng-drag-data="shape"
+
+                                        class="lucid-shape repeat-animation lucid-animate">  
+                                        <div ng-bind-html="shape.svg | sanitize"> </div>
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <!-- END LEFT SHAPE GROUP -->
+                        </li>
+                        <li class="clearfix"></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="overflow-message lucid-animate" ng-show="overflowMessage">"{{overflowMessageTitle}}" Pinned</div>
+        </div>
+        <div class="lucid-shape-manager lucid-manage-shapes lucid-animate" ng-show="$root.manageshapes">
+            <div class="lucid-shape-manager-top-bar">
+                <div class="top-bar-inner" ng-show="$root.manageshapes">
+                  <lucid-button 
+                        icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg"  
+                        class="lucid-new-library lucid-blue" 
+                        ng-click="newCustomGroup()">Custom Group</lucid-button>
+                    <!-- start -->
+                    <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
+                      <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
+                      <div class="lucid-select-dropdown no-checkmarks" ng-show="showdropdown">
+                          <div>
+                              <ul ng-click="showdropdown = false;">
+                              <li class="lucid-select-option">
+                                  Image<input type="file" class="hidden-file-upload">
+                              </li>   
+                              <li class="lucid-select-option">
+                                  SVG<input type="file" class="hidden-file-upload">
+                              </li>  
+                              <li class="lucid-select-option">
+                                  Visio Stencil<input type="file" class="hidden-file-upload">
+                              </li>     
+                            </ul>
+                          </div>
+                      </div>
+                    </div>
+                    <!-- import modal is close to end of document -->
+                    <!-- End -->
+                    <div class="lucid-search-container">
+                        <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
+                        <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
+                    </div>
+                    <ng-include ng-click="$root.toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
+                    </ng-include>
+                </div>
+            </div>
+
+            <div class="lucid-shapes-scroll lucid-animate" ng-show="$root.manageshapes" ng-class="{'loading-shapes': !loadingshapes}" ng-animate-children>
+                <div class="lucid-scroll-inner-wrap">
+                    <div class="lucid-shapes-manager-divider">
+                        <div class="divider-inner">
+                            <div class="divider-title">
+                                CUSTOM SHAPE GROUPS
+                            </div>
+                            <div class="divider-line"></div>
+                        </div>
+                    </div>
+                    <ul ng-sortable="customGroupsSort"
+                        scroll-position="scroll">
+                        <li ng-repeat="shapegroup in customGroups = (customShapeGroups | filter:searchShapes) track by shapegroup.id"
+                            class="lucid-shape-group-wrapper manager custom-group"
+                            ng-show="$root.manageshapes">
+                            <!-- START SHAPE GROUP INSIDE MANAGER -->
+                            <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
+                              <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
+                                <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                  <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                                      <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+                                  </g>
+                                </svg>
+                              </div>
+                              <div class="shape-group-top" ng-class="{'shapegroup-pinned': shapegroup.pinned}">
+                                <!-- <span class="edit-in-place shape-group-name" ng-bind="shapegroup.groupname" ng-show="!shapegroup.edit"></span>
+                                <input id="name-input-{{$index}}" class="edit-in-place" placeholder="Group Name" ng-model="shapegroup.groupname" ng-show="shapegroup.edit" ng-enter="shapegroup.edit=false" dnd-nodrag select-on-load></input> -->
+
+                                <edit-in-place class="shape-group-name" placeholder="Group Name" ng-model="shapegroup.groupname" edit="shapegroup.edit"></edit-in-place>
+
+                                <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
+                                    <lucid-buttcon-popover showpopover="customgroupdropdown.show" class="gear-dropdown-icon lucid-select-dropdown-wrapper lucid-icon fill-white" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-gear-22px.svg" width="106">
+                                      <div class="lucid-select-wrapper">
+                                        <ul class="lucid-select-dropdown" ng-click="customgroupdropdown.show = false;">
+                                          <li class="lucid-select-option" ng-click="$root.shareModal = true">Share</li>
+                                          <li class="lucid-select-option" ng-click="editName(shapegroup, $index)">Rename</li>
+                                          <li class="lucid-select-option" ng-click="duplicateShapeGroup(shapegroup)">Duplicate</li>
+                                          <li class="lucid-select-option" ng-click="customShapeGroups.splice($index, 1); unPinGroup(shapegroup);">Delete</li>   
+                                        </ul>
+                                      </div>
+                                      </lucid-buttcon-popover>
+                                </div>
+                              </div>
+                              <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
+                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                              </div>
+                              <div class="slide-toggle" ng-hide="hideshapes">
+                                  <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
+                                      <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                      <span class="lucid-save-shapes-hint">Drop shapes to save</span>
+                                  </div>
+                                  <ul class="shapes-wrapper"
+                                    ng-class="{'zero-state-height': shapegroup.custom && shapegroup.shapes.length == 0}"
+
+                                    dnd-list="shapegroup.shapes"
+                                    dnd-allowed-types="[shapegroup.custom]"
+                                    dnd-horizontal-list="true"
+                                    dnd-external-sources="false"
+                                    dnd-dragover="dragoverCallback(event, index, external, type)"
+                                    dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                    dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+
+                                    <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                        dnd-draggable="shape"
+                                        dnd-type="'custom'"
+                                        dnd-effect-allowed="copyMove"
+                                        dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                        dnd-moved="shapegroup.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                        dnd-copied="logEvent('Item copied', event)"
+                                        dnd-canceled="logEvent('Drag operation canceled', event)"
+                                        dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
+                                        class="lucid-shape repeat-animation lucid-animate">  
+                                        <div ng-bind-html="shape.svg | sanitize"> </div>
+                                    </li>
+                                </ul>
+                              </div>
+                          </div>
+                            <!-- END SHAPE GROUP INSIDE MANAGER -->
+                        </li>
+                    </ul>
+                    <div class="lucid-shapes-manager-divider">
+                        <div class="divider-inner">
+                            <div class="divider-title">
+                                LUCIDCHART SHAPE GROUPS
+                            </div>
+                            <div class="divider-line"></div>
+                        </div>
+                    </div>
+                    <ul ng-class="{'no-transition': DrawerOpenSameRow}">
+                        <li ng-repeat="lucidGroup in lucidgroups = (lucidGroups | filter:searchShapes)"
+                            class="lucid-shape-group-wrapper manager"
+                            ng-class="{'no-transition': !loadingshapes, 'active-group': $index == $parent.showGroupIndex}">
+                            <!-- START SHAPE GROUP INSIDE MANAGER -->
+                            <div class="lucid-shape-group">
+                              <div class="shape-group-top" ng-class="{'shapegroup-pinned': lucidGroupPinned(lucidGroup)}">
+                                <span class="shape-group-name">{{lucidGroup.groupname}}</span>
+                              </div>
+                              <div class="pin-library" ng-click="$parent.toggleGroupPin(lucidGroup); $event.stopPropagation();" ng-class="{'pinned': lucidGroupPinned(lucidGroup)}">
+                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                              </div>
+                              <div class="group-icon-wrapper lucid-drawer-wrapper" ng-click="setGroup($index, $parent.showGroupIndex);">
+                                <img ng-src="{{lucidGroup.image}}">
+                                <div class="lucid-show-more-drawer-button">
+                                    <div class="lucid-drawer-center-text">
+                                        <div class="lucid-drawer-button-text" ng-hide="$index == $parent.showGroupIndex">View</div>
+                                        <div class="lucid-drawer-button-text" ng-show="$index == $parent.showGroupIndex">Close</div>
+                                        <div class="lucid-drawer-more-icon" ng-class="{'lucid-drawer-open': $index == $parent.showGroupIndex}">
+                                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="8px" height="6px" viewBox="0 0 8 6" version="1.1">
+                                                <g id="Page-1" stroke="none" stroke-width="1" fill="#fff" fill-rule="evenodd">
+                                                    <path d="M4,6 L8,0 L0,0 L4,6 Z" id="drop-down-arrow_11_" />
+                                                </g>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="manager-drawer-wrapper">
+                              <div class="shape-manager-drawer slide-toggle ng-hide" ng-show="$parent.showGroupIndex == $index">
+                                <ul ng-sortable="lucidGroupsSort">
+                                    <li ng-repeat="shapegroup in lucidShapeGroups"
+                                        class="lucid-shape-group-wrapper manager"
+                                        ng-class="{'no-transition': !loadingshapes}"
+                                        ng-if="lucidGroup.groupname == shapegroup.lucidgroup">
+                                        <!-- START SHAPE GROUP INSIDE MANAGER -->
+                                        <div class="lucid-shape-group" ng-class="{ 'custom-library' : shapegroup.custom, 'disabled' : $root.draggingshape && !shapegroup.custom,'lucid-hide-shapes': hideshapes, 'dragging-shape' : $root.draggingshape && shapegroup.custom }">
+                                          <div class="lucid-hide-shapes-icon" ng-click="hideshapes = !hideshapes">
+                                            <svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                              <g id="z" stroke="none" sketch:type="MSArtboardGroup" fill="#4A4A4A">
+                                                  <path d="M15,8 L11,14 L7,8 L15,8 Z"></path>
+                                              </g>
+                                            </svg>
+                                          </div>
+                                          <div class="shape-group-top" ng-class="{'shapegroup-pinned': shapegroup.pinned}">
+                                            <span class="shape-group-name">{{shapegroup.groupname}}</span>
+                                          </div>
+                                          <div class="pin-library" ng-click="$parent.togglePin(shapegroup); $event.stopPropagation();" ng-class="{'pinned': shapegroup.pinned}">
+                                              <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                          </div>
+                                          <div class="slide-toggle" ng-hide="hideshapes">
+                                              <ul class="shapes-wrapper"
+
+                                                dnd-list="shapegroup.shapes"
+                                                dnd-allowed-types="[shapegroup.custom]"
+                                                dnd-horizontal-list="true"
+                                                dnd-external-sources="false"
+                                                dnd-dragover="dragoverCallback(event, index, external, type)"
+                                                dnd-drop="dropCallback(event, index, item, external, type, 'itemType')"
+                                                dnd-inserted="logEvent('Element was inserted at position ' + index, event)">
+
+                                                <li ng-repeat="shape in shapegroup.shapes track by $index"
+                                                    dnd-draggable="shape"
+                                                    dnd-type="'custom'"
+                                                    dnd-effect-allowed="copyMove"
+                                                    dnd-dragstart="logEvent('Started to drag an item', event); $root.draggingshape = true"
+                                                    dnd-moved="shapegroups.shapes.splice($index, 1); logEvent('Item moved', event)"
+                                                    dnd-copied="logEvent('Item copied', event)"
+                                                    dnd-canceled="logEvent('Drag operation canceled', event)"
+                                                    dnd-dragend="logEvent('Drag operation ended', event); $root.draggingshape = false"
+
+                                                    class="lucid-shape repeat-animation lucid-animate">  
+                                                    <div ng-bind-html="shape.svg | sanitize"> </div>
+                                                </li>
+                                            </ul>
+                                              
+                                          </div>
+                                      </div>
+                                        <!-- END SHAPE GROUP INSIDE MANAGER -->
+                                    </li>
+                                </ul>
+                              </div>
+                            </div>
+                            <!-- END SHAPE GROUP INSIDE MANAGER -->
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="hover-handle" ng-mouseenter="enterLeftPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>
+        </div>

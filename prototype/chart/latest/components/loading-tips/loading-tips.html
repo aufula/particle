@@ -1,0 +1,48 @@
+ <div ng-app="loadingTips" class="tips-body-wrapper" ng-hide="$root.loaded" ng-controller="loadingTipsCtrl" ng-click="newTip()" >
+      <div class="tips-wrapper">
+        <div class="tip-icon">
+          <div class="hotkey-icon-wrapper ng-hide" ng-show="showTip == 1">
+            <div class="keystroke keystroke-border square"><span>M</span></div>
+          </div>
+
+          <div class="hotkey-icon-wrapper ng-hide" ng-show="showTip == 2">
+            <div class="keystroke keystroke-border"><span class="space">space</span></div>
+            <div class="keystroke"><span class="plus-icon">+</span></div>
+            <div class="keystroke"><span>drag</span></div>
+          </div>
+          
+          <div class="hotkey-icon-wrapper ng-hide" ng-show="showTip == 3">
+            <div class="keystroke keystroke-border square"><span  class="command">⌘</span></div>
+            <div class="keystroke"><span class="plus-icon">+</span></div>
+            <div class="keystroke keystroke-border square"><span class="plus">+</span></div>
+          </div>
+          <div class="hotkey-icon-wrapper ng-hide" ng-show="showTip == 4">
+            <div class="keystroke keystroke-border"><span>CTRL</span></div>
+            <div class="keystroke"><span class="plus-icon">+</span></div>
+            <div class="keystroke keystroke-border square"><span class="plus">+</span></div>
+          </div>
+          <div class="hotkey-icon-wrapper ng-hide" ng-show="showTip == 5">
+            <div class="keystroke keystroke-border square"><span>L</span></div>
+          </div>
+        </div>
+        <div class="tip-text">
+
+          <p ng-show="showTip == 1" class="ng-hide"><b>Pro Tip -</b> Press the <span class="keystroke square">M</span> key to quickly access more shape libraries</p>
+
+          <p ng-show="showTip == 2" class="ng-hide"><b>Pro Tip -</b> Hold the <span class="keystroke space">space</span> key to drag/pan the page.</p>
+
+          <p ng-show="showTip == 3" class="ng-hide"><b>Pro Tip -</b> Zoom in to make fine adjustments using <span class="keystroke square command">⌘</span> <span class="keystroke square plus">+</span></p>
+
+          <p ng-show="showTip == 4" class="ng-hide"><b>Pro Tip -</b> Press <span class="keystroke">CTRL</span> <span class="keystroke square plus">+</span> to zoom in</p>
+
+          <p ng-show="showTip == 5" class="ng-hide"><b>Pro Tip -</b> Press the <span class="keystroke square">L</span> key to quickly draw a line</p>
+        </div>
+        <div class="tip-loading-bar-wrapper" ng-show="showTip">
+            <span> LOADING...</span>
+            <div class="loading-bar">
+              <div class="loading-progress" style="width: {{loading}}%">
+              </div>
+            </div>
+          </div>
+      </div>
+      </div>

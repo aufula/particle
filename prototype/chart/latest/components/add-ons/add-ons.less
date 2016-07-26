@@ -1,0 +1,142 @@
+/////////////////////////////////////////////////
+//START ADDONS
+////////////////////////////////////////////////
+@addOnTeal: #64b9cc;
+@addOnBlue: #2e8099;
+@addOnRed: #ed6058;
+@addOnSteel: #505d68;
+@addOnGreen: #8cbf3f;
+.add-ons {
+    padding: 10px;
+    li {
+        width: 222px;
+        height: 178px;
+        position: relative;
+        float: left;
+        margin: 10px;
+        cursor: pointer;
+        overflow: hidden;
+        .thumb {
+            width: 100%;
+        }
+        // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Colors <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+        &.teal {
+            border: 1px solid @addOnTeal;
+            footer {
+                background: @addOnTeal;
+                button {
+                    background: @addOnBlue;
+                    &:hover {
+                        background: #145766;
+                    }
+                }
+            }
+        }
+        &.blue {
+            border: 1px solid @addOnBlue;
+            footer {
+                background: @addOnBlue;
+                button {
+                    background: #145766;
+                    &:hover {
+                        background: #0f414c;
+                    }
+                }
+            }
+        }
+        &.red {
+            border: 1px solid @addOnRed;
+            footer {
+                background: @addOnRed;
+                button {
+                    background: #b2403d;
+                    &:hover {
+                        background: #993636;
+                    }
+                }
+            }
+        }
+        &.steel {
+            border: 1px solid @addOnSteel;
+            footer {
+                background: @addOnSteel;
+                button {
+                    background: @blue-steel;
+                    &:hover {
+                        background: darken(@blue-steel, 10%);
+                    }
+                }
+            }
+        }
+        &.green {
+            border: 1px solid @addOnGreen;
+            footer {
+                background: @addOnGreen;
+                button {
+                    background: #619900;
+                    &:hover {
+                        background: #517f00;
+                    }
+                }
+            }
+        }
+        footer {
+            background: #999;
+            color: #fff;
+            height: 94px;
+            position: absolute;
+            bottom: -40px;
+            width: 100%;
+            transition: bottom .2s ease-in-out;
+            h4 {
+                text-align: left;
+                padding: 8px 10px;
+            }
+            .stars {
+                position: absolute;
+                bottom: 48px;
+                left: 8px;
+            }
+            span {
+                float: right;
+                margin-right: 10px
+            }
+            button {
+                display: block;
+                margin: auto;
+                clear: both;
+                position: relative;
+                top: 10px;
+                letter-spacing: .5px;
+            }
+        }
+        // hover styles
+        &:hover {
+            footer {
+                bottom: 0;
+            }
+        }
+    }
+}
+.addon-tip {
+    position: absolute;
+    right: 75px;
+    top: 10px;
+    width: 175px;
+    text-transform: none;
+    opacity: 1;
+    transition: .5s ease-in-out all;
+    &.ng-animate.ng-hide-remove {
+        transition-delay: 5s;
+    }
+}
+
+.ng-hide-add .addon-tip {
+    opacity: 0;
+    transition: .1s ease-in-out all;
+}
+
+
+/////////////////////////////////////////////////
+//END ADDONS
+////////////////////////////////////////////////

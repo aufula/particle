@@ -1,0 +1,52 @@
+///////
+//START ADVANCED SHAPES
+///////
+.advanced-shapes-wrapper {
+    position: absolute;
+    top: 60px;
+    left: 250px;
+    width: 100%;
+    border-bottom: 1px solid #999;
+    .advanced-shapes {
+        color: #fff;
+        font-weight: 200;
+        padding: 8px 20px;
+        height: 53px;
+        background: @blue-steel-2;
+        >li {
+            display: inline-block;
+            padding-right: 17px;
+            vertical-align: top;
+            &.advanced-settings-title {
+                padding: 0;
+                font-style: italic;
+                font-size: 14px;
+                font-weight: 100;
+                line-height: 53px-16px;
+                vertical-align: top;
+                padding-right: 20px;
+                margin-right: 21px;
+                border-right: 1px solid #CBCBCB;
+            }
+            .lucid-toggle {
+                margin-right: 4px;
+            }
+        }
+    }
+    &.ng-hide {
+        .advanced-shapes {
+            margin-top: -60px;
+        }
+    }
+    &.ng-animate {
+        overflow: hidden;
+        transition: .25s ease-in-out;
+        .advanced-shapes {
+            transition: .25s ease-in-out;
+        }
+    }
+}
+
+///////
+//END ADVANCED SHAPES
+///////

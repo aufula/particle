@@ -1,0 +1,1067 @@
+#left-bar {
+    background: @left-panel-bg;
+    width: 250px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    z-index: 7;
+    transition: opacity .3s, left .3s ease-in-out;
+    border-right: 1px solid @border-color;
+}
+
+.shapegroup-plus-container {
+    height: 140px;
+    width: 160px;
+    border: 2px dashed @blue-steel-2;
+    float: left;
+    margin: 0 0 20px 20px;
+    padding: 46px 57px;
+    cursor: pointer;
+}
+
+/////////////////////////////////////////////////
+//START SHAPE GROUP
+////////////////////////////////////////////////
+.lucid-shape-group {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    transition: .3s ease-in-out background, .2s ease-out margin, .3s ease-in-out opacity;
+    text-align: left;
+    opacity: 1;
+    &.disabled {
+        opacity: .5;
+    }
+    &.custom-library {
+        //z-index: 100;
+        opacity: 1;
+        transition: .25s ease-in-out opacity;
+        .dndDraggingSource {
+            opacity: 0;
+        }
+        //for quick fix first element
+        // ul {
+        //     >li.lucid-shape:first-child {
+        //         display: none;
+        //     }
+        // }
+        &.dragging-shape {
+            ul {
+                position: relative;
+                z-index: 1;
+            }
+        }
+    }
+    .slide-toggle {
+        overflow: hidden;
+        transition: all .5s;
+        width: 100%;
+        >ul {
+            min-height: 44px;
+            transition: all .25s ease-in-out;
+            &.zero-state-height {
+                min-height: 110px;
+            }
+        }
+    }
+    .lucid-hide-shapes-icon {
+        z-index: 1;
+        position: absolute;
+        height: 32px;
+        padding: 5px 3px;
+        cursor: pointer;
+        transition: all .25s ease-in-out;
+        svg g {
+            transform: rotateZ(0);
+            transform-origin: center;
+            transition: all .25s ease-in-out;
+            fill: @blue-steel-2;
+        }
+    }
+    &.lucid-hide-shapes {
+        .lucid-hide-shapes-icon {
+            svg g {
+                transform: rotateZ(-90deg);
+            }
+        }
+    }
+    .zero-state {
+        transition: all .25s ease-in-out;
+        position: absolute;
+        top: 37px;
+        // padding-top: 10px;
+        left: 5px;
+        right: 5px;
+        bottom: 0;
+        border: 2px dashed @zerostate-border;
+        background-color: @zerostate-bg;
+        text-align: center;
+        .lucid-save-shapes-hint {
+            font-style: italic;
+            color: #777;
+            text-align: center;
+            display: block;
+            padding: 10px;
+            font-size: 14px;
+        }
+        &.ng-leave {
+            opacity: 1;
+        }
+        &.ng-leave-active {
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out all;
+        }
+    }
+    .shape-group-top {
+        background-color: @shapegroup-top;
+        padding: 8px 10px;
+        position: relative;
+        color: #555;
+        transition: .3s ease-in-out;
+        box-sizing: border-box;
+        height: 32px;
+        text-align: left;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: move;
+        //z-index: 0;
+        &.shapegroup-pinned {
+            cursor: default;
+            background: @lucid-blue;
+        }
+    }
+    .shape-group-name {
+        //text-transform: uppercase;
+        line-height: 16px;
+        font-size: 14px;
+        font-weight: 500;
+        padding-left: 15px;
+        display: inline-block;
+        //transition: .2s ease-in-out;
+        .edit-in-place {
+            color: #FFF;
+        }
+    }
+    .lucid-close-icon {
+        //z-index: 1;
+        width: 18px;
+        height: 18px;
+        position: absolute;
+        right: 8px;
+        //top: 11px;
+        cursor: pointer;
+        opacity: 1;
+        margin-top: -1px;
+        svg path {
+            fill: #fff;
+        }
+        &.ng-hide {
+            opacity: 0;
+            //top: 9px;
+        }
+        &.ng-animate {
+            transition: .3s all ease-in-out;
+        }
+    }
+    .lucid-shape,
+    .dndPlaceholder {
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        margin: 7px 7.9px;
+        position: relative;
+        //z-index: 1;
+        transform: scale(1);
+        vertical-align: top;
+        text-align: center;
+        &.ng-enter {
+            transform: scale(.01);
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            transform: scale(1);
+            opacity: 1;
+        }
+        &.ng-animate {
+            transition: .25s;
+        }
+        &.ng-leave-active {
+            transition: none;
+        }
+        svg {
+            vertical-align: -webkit-baseline-middle;
+            width: 28px;
+            height: 28px;
+            fill: #333;
+        }
+    }
+    .dndPlaceholder {
+        // background: rgba(0, 0, 0, .2);
+        // border-radius: 2px;
+    }
+    .pin-library {
+        position: absolute;
+        top: 0;
+        left: 0;
+        //padding: 5px 5px 0;
+        //background: rgba(0, 0, 0, .2);
+        border-radius: 3px 0 0 0;
+        cursor: pointer;
+        .lucid-icon {
+            transition: .25s ease-out transform;
+            svg g path {
+                fill: #FFF;
+                transition: .25s ease-out all;
+            }
+        }
+        &.pinned {
+            //background: @pinned-icon-bg;
+            transition: .25s ease-in-out background;
+            .lucid-icon {
+                transform: rotateZ(-45deg);
+                transform-origin: center;
+                // svg g path {
+                //     fill: @lucid-blue;
+                // }
+            }
+        }
+    }
+}
+
+/////////////////////////////////////////////////
+//END SHAPE GROUP
+////////////////////////////////////////////////
+/////////////////////////////////////////////////
+//START SHAPES MANAGER
+////////////////////////////////////////////////
+.lucid-shapes-panel {
+    //shapes panel stuff
+    // background: #red;  not necessary
+    width: 250px;
+    position: relative;
+    top: 0;
+    height: 100%;
+    border-right: 1px solid #999;
+    transition: .35s ease-in-out background, .35s ease-in-out width;
+    transition-delay: .25s;
+    z-index: 6;
+    opacity: 1;
+    .lucid-shapes-header {
+        padding: 18px 15px;
+        background: @optionbar-bg; // #EDEDED;
+        //line-height: 59px;
+        height: 60px;
+        box-sizing: border-box;
+        border-bottom: 1px solid @grey-border-dark;
+        text-align: left;
+        .lucid-more-shapes {
+            line-height: 22px;
+            cursor: pointer;
+        }
+        .manage-shapes-button {
+            cursor: pointer;
+        }
+        .lucid-shapes-gear {
+            vertical-align: top;
+            cursor: pointer;
+            transition: transform .5s ease-out;
+        }
+        .lucid-shapes-search,
+        .import-image-icon {
+            cursor: pointer;
+            position: absolute;
+            right: 10px;
+            top: 13px;
+            opacity: 1;
+            &.ng-hide {
+                opacity: 0;
+            }
+            &.ng-animate {
+                transition: .3s all ease-in-out;
+            }
+        }
+        .import-image-icon {
+            right: 45px;
+            .lucid-popover-menu {
+                background: #FFF;
+                top: 48px;
+                &:after {
+                    border-bottom-color: #FFF;
+                }
+            }
+            .lucid-select-wrapper {
+                width: 100%;
+                padding: 3px 2px;
+            }
+            .lucid-select-dropdown {
+                width: 100%;
+                position: static;
+                box-shadow: none;
+                border-radius: 3px;
+                .lucid-select-option {
+                    padding: 5px 15px 5px 15px;
+                }
+            }
+        }
+    }
+    .lucid-shapes-scroll {
+        background: @left-panel-bg;
+        height: calc(~"100vh - 114px");
+        overflow-y: scroll;
+        transition: padding .25s ease-in-out;
+        transition-delay: .35s;
+        padding-bottom: 50px;
+        &::-webkit-scrollbar {
+            display: none;
+        }
+        &.ng-hide {
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
+        }
+    }
+    .lucid-scroll-inner-wrap {
+        padding: 10px;
+        transition: .25s ease-in-out;
+    }
+    // .lucid-group-drop-area {
+    //     min-height: calc(~"100vh - 160px");
+    // }
+    .lucid-shape-group-wrapper {
+        margin-bottom: 10px;
+        &.left-panel {
+            z-index: 1;
+            float: left; //this is added so that when groups are removed and we add -180px top margin. this prevents jumping when groups are small.
+            width: 100%;
+            .pin-library {
+                display: none;
+            }
+        }
+    }
+    .clearfix {
+        clear: both;
+    }
+}
+
+.overflow-message {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    background: @lucid-blue;
+    padding: 0 20px;
+    z-index: 1;
+    color: #fff;
+    &.ng-hide {
+        bottom: -50px;
+    }
+    &.ng-animate {
+        transition: bottom .3s ease-in-out;
+    }
+}
+
+//when managing shapes this class is added for transitions on shape panel
+@manage-shapes-panel-width: 250px;
+.lucid-managing-shapes,
+.lucid-manage-shapes {
+    background: #B2B2B2;
+    border-right: none;
+    width: @manage-shapes-panel-width;
+    // .lucid-shapegroup-columns {
+    //     box-sizing: border-box;
+    //     //width: 463px;
+    //     -webkit-column-count: 2;
+    //     -moz-column-count: 2;
+    //     column-count: 2;
+    //     -moz-column-gap: 20px;
+    //     -webkit-column-gap: 20px;
+    //     column-gap: 20px;
+    //     -moz-column-width: 50%;
+    //     -webkit-column-width: 50%;
+    //     column-width: 50%;
+    // }
+    // .lucid-scroll-inner-wrap {
+    //     padding: 20px 10px;
+    // }
+    // .lucid-shape-group-wrapper.manager {
+    //     margin-bottom: 10px;
+    //     position: relative;
+    //     //z-index:1;
+    //     &.ng-enter {
+    //         animation: ShapeGroupAnimation .4s ease-out;
+    //     }
+    //     &.ng-enter-active {
+    //         animation: ShapeGroupAnimation .4s ease-out;
+    //     }
+    //     &.ng-leave-active,
+    //     .ng-leave {
+    //         animation: ShapeGroupAnimation .4s ease-in-out;
+    //         animation-direction: reverse;
+    //     }
+    //     @keyframes ShapeGroupAnimation {
+    //         0% {
+    //             margin-left: -300px;
+    //             opacity: 0;
+    //         }
+    //         40% {
+    //             opacity: 0;
+    //         }
+    //         100% {
+    //             margin-right: 0;
+    //             opacity: 1;
+    //         }
+    //     }
+    // }
+    .lucid-shape-group-wrapper.left-panel,
+    .lucid-shape-group-wrapper.manager {
+        margin-bottom: 10px;
+        position: relative;
+        //z-index:1;
+        opacity: 1;
+        transition: .5s ease-in-out;
+        &.ng-enter {
+            margin-top: -170px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave-active {
+            margin-top: -170px;
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s;
+            z-index: 0;
+            &.no-transition {
+                transition: 0s;
+            }
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: .25s;
+            transition-duration: 0s;
+            z-index: 0;
+        }
+    }
+    .lucid-shape-group {
+        border-radius: 4px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        background: @shapegroup-bg-manage;
+        .lucid-hide-shapes-icon {
+            // padding: 10px 2px;
+            // height: 40px;
+            svg g {
+                fill: #fff;
+            }
+        }
+        .shape-group-name {
+            font-weight: 300;
+        }
+    }
+    .lucid-shapes-scroll {
+        background: @left-panel-bg-manage;
+        padding-bottom: 0;
+    }
+    .shape-group-top {
+        cursor: move;
+        // padding: 12px 10px;
+        // height: 40px;
+        background: @shapegroup-top-manage;
+        color: #FFF;
+        border-radius: 4px 4px 0 0;
+        input {
+            //font-style: italic;
+            //padding: 0;
+            //margin-left: 35px;
+            //height: 16px;
+            line-height: 14px;
+            //background: transparent;
+            color: #fff;
+            //border: none;
+            //outline: none;
+            //border-bottom: 1px solid #fff;
+            width: 180px;
+            //font-size: 14px;
+            // &::placeholder {
+            //     font-style: italic;
+            //     color: rgba(255, 255, 255, .5);
+            //     font-weight: 100;
+            // }
+        }
+    }
+    .zero-state {
+        //top: 45px;
+        bottom: 5px;
+    }
+    .lucid-hide-shapes .shape-group-top {
+        border-radius: 4px;
+    }
+    .lucid-shapes-gear {
+        transform: rotateZ(90deg);
+    }
+}
+
+.ng-sort-ghost {
+    opacity: .5;
+    .shape-group-top .shape-group-name {
+        padding-left: 15px;
+    }
+    .pin-library {
+        display: none;
+    }
+}
+
+.lucid-shape-manager {
+    position: absolute;
+    top: 0;
+    width: ~"calc(100vw - @{manage-shapes-panel-width} )";
+    bottom: 0;
+    left: @manage-shapes-panel-width;
+    background: rgba(61, 71, 82, 0.95);
+    z-index: -1;
+    margin-left: 0;
+    .lucid-shape-manager-top-bar {
+        background: @shapemanager-topbar-bg;
+        height: 59px;
+        padding: 15px 20px;
+        box-sizing: border-box;
+        text-align: left;
+        .lucid-new-library {
+            float: left;
+            &.lucid-select-wrapper {
+                margin-left: 10px;
+                .lucid-select-dropdown {
+                    top: 28px;
+                    width: 106px;
+                }
+                font-size:14px;
+            }
+        }
+        .lucid-search-container {
+            display: inline-block;
+            width: 200px;
+            position: relative;
+            margin-left: 10px;
+            float: left;
+            input {
+                width: 100%;
+                height: 29px;
+                line-height: 29px;
+                border: none;
+                border-radius: 4px;
+                padding: 0 10px;
+                box-sizing: border-box;
+                color: #FFF;
+                background: @shapemanager-topbar-search;
+                font-weight: 100;
+                &::-webkit-input-placeholder {
+                    color: #fff;
+                    //font-family:"Source Sans Pro";
+                }
+            }
+            .lucid-search-icon {
+                width: 18px;
+                position: absolute;
+                top: 5px;
+                right: 7px;
+            }
+        }
+        .lucid-close-icon {
+            float: right;
+            margin-top: 2px;
+            cursor: pointer;
+        }
+    }
+    .lucid-hide-shapes-icon {
+        display: none;
+    }
+    .top-bar-inner {
+        opacity: 1;
+        &.ng-hide {
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out all;
+            transition-delay: 2.75s;
+        }
+    }
+    .lucid-shapes-scroll {
+        background: transparent;
+        opacity: 1;
+        transition: .25s ease-in-out all;
+        &.ng-hide {
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out opacity;
+            transition-delay: .75s;
+        }
+        &.loading-shapes {
+            opacity: 0;
+        }
+        //width:calc(100vw - @manage-shapes-panel-width);
+        //width: 800px;
+    }
+    .lucid-scroll-inner-wrap {
+        padding: 20px;
+        // height: 10000px;
+    }
+    .scrollable .scrollable-slider {
+        background: #333;
+    }
+    .lucid-shapes-manager-divider {
+        position: relative;
+        width: 100%;
+        padding-bottom: 20px;
+        float: left;
+        .divider-inner {
+            position: relative;
+            height: 14px;
+            display: table;
+            width: 100%;
+        }
+        .divider-title {
+            display: table-cell;
+            color: @blue-steel-2;
+            text-transform: uppercase;
+            text-align: left;
+            line-height: 14px;
+            white-space: nowrap;
+            padding-right: 20px;
+            font-size: 14px;
+        }
+        .divider-line {
+            display: table-cell;
+            width: 100%;
+            position: relative;
+            &:after {
+                position: absolute;
+                left: 0;
+                top: 7px;
+                content: '';
+                height: 1px;
+                width: 100%;
+                background: @blue-steel-2;
+            }
+        }
+    }
+    .lucid-shape-group-wrapper {
+        &.ng-animate {
+            transition: .5s;
+            z-index: 0;
+        }
+        margin-bottom: 0px;
+        width: 25%;
+        float: left;
+        padding: 0 10px;
+        //start shape manager expand stuff;
+        .manager-drawer-wrapper {
+            margin-top: -10px;
+            margin-bottom: 10px;
+            transition: .5s ease-in-out all;
+        }
+        &:nth-of-type(4n+5) {
+            clear: left;
+        }
+        &.custom-group {
+            width: 50%;
+            clear: none;
+        }
+        .shape-manager-drawer {
+            background: #333;
+            // position: relative;
+            overflow: hidden;
+            opacity: 1 !important;
+            width: ~'calc(400% + 120px)';
+            transition: .5s ease-in-out all;
+            .lucid-shape-group-wrapper {
+                width: 33.3%;
+                width: 100%;
+                clear: none;
+                margin: 0;
+                .pin-library.pinned .lucid-icon {
+                    -webkit-backface-visibility: hidden;
+                }
+                .lucid-shape {
+                    position: static;
+                    transform: none;
+                }
+            }
+            >ul {
+                padding: 25px 20px;
+                //column-width: 33.333%;
+                column-count: 3;
+                column-gap: 0px;
+                @media (max-width: 1000px) {
+                    column-count: 2;
+                }
+            }
+            &:after {
+                content: "";
+                display: block;
+                height: 0;
+                clear: both;
+            }
+        }
+        &:before {
+            content: '';
+            position: absolute;
+            border-bottom: 0px solid #333;
+            border-right: 20px solid transparent;
+            border-left: 20px solid transparent;
+            top: 145px;
+            left: 50%;
+            margin-left: -20px;
+            transition: .25s ease-in-out all;
+        }
+        &:hover {
+            .lucid-show-more-drawer-button {
+                bottom: 0 !important;
+            }
+            .group-icon-wrapper {
+                padding-top: 10px !important;
+            }
+        }
+        &.active-group {
+            .lucid-show-more-drawer-button {
+                bottom: 0 !important;
+            }
+            .group-icon-wrapper {
+                padding-top: 10px !important;
+            }
+            //should the drawer be shown when not hovering but active?
+            &:before {
+                border-bottom: 20px solid #333;
+                top: 128px;
+            }
+            .manager-drawer-wrapper {
+                margin-top: 5px;
+                margin-bottom: 20px;
+            }
+        }
+        &:nth-of-type(4n + 1) .shape-manager-drawer {
+            margin-left: -30px;
+        }
+        &:nth-of-type(4n + 2) .shape-manager-drawer {
+            margin-left: ~'calc(-100% - 50px)';
+        }
+        &:nth-of-type(4n + 3) .shape-manager-drawer {
+            margin-left: ~'calc(-200% - 70px)';
+        }
+        &:nth-of-type(4n + 4) .shape-manager-drawer {
+            margin-left: ~'calc(-300% - 90px)';
+        }
+    }
+    .no-transition {
+        .lucid-shape-group-wrapper .manager-drawer-wrapper.manager-drawer-wrapper {
+            transition: none;
+            .shape-manager-drawer {
+                transition: none;
+            }
+        }
+        .shape-manager-drawer .lucid-shape-group-wrapper {
+            opacity: 0;
+        }
+    }
+    .lucid-shape-group {
+        margin-bottom: 20px;
+        .shapes-wrapper {
+            //max-height: 162px;
+            overflow: hidden;
+            transition: all .3s ease-in-out;
+            padding: 5px; //reduced
+            &.lucid-drawer-open {
+                max-height: 600px;
+            }
+        }
+        .shape-group-top {
+            //padding: 12px 10px;
+            //   height: 40px;
+            .shape-group-name {
+                padding-left: 25px;
+                max-width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .selected-option-wrapper {
+                overflow: visible;
+            }
+            .gear-dropdown-icon {
+                position: absolute;
+                right: 0;
+                top: 0;
+                .lucid-popover-menu {
+                    background: #FFF;
+                    color: @blue-steel;
+                    top: 38px;
+                    &:after {
+                        border-bottom-color: #FFF;
+                    }
+                }
+                .lucid-select-wrapper {
+                    width: 100%;
+                    padding: 3px 2px;
+                }
+                .lucid-select-dropdown {
+                    width: 100%;
+                    position: static;
+                    box-shadow: none;
+                    border-radius: 3px;
+                    .lucid-select-option {
+                        padding: 5px 15px 5px 15px;
+                    }
+                }
+            }
+        }
+    }
+    .group-icon-wrapper {
+        height: 85px;
+        text-align: center;
+        padding-top: 20px;
+        cursor: pointer;
+        overflow: hidden;
+        position: relative;
+        transition: padding .2s;
+        .lucid-show-more-drawer-button {
+            background-color: @blue-steel-light;
+            position: absolute;
+            bottom: -25px;
+            right: 0;
+            left: 0;
+            transition: all .2s;
+            .lucid-drawer-button-text {
+                color: #fff;
+                font-weight: 300;
+            }
+            svg g {
+                fill: #fff;
+            }
+        }
+    }
+    //    display:none;
+    &.ng-hide {
+        margin-left: -100vw;
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .5s ease-out all;
+        &.ng-hide-remove {
+            transition: .5s ease-out all;
+            transition-delay: .25s;
+        }
+    }
+}
+
+///////////////
+//START SEARCH SHAPES
+///////////////
+.search-shapes {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    .search-groups-wrapper {
+        padding: 10px;
+    }
+    .search-shapes-input {
+        background: @blue-steel-2;
+        padding: 8px;
+        font-size: 0;
+        position: relative;
+        >input {
+            width: 200px;
+            //margin-left:-3px;
+            height: 26px;
+            //line-height: 29px;
+            border: none;
+            outline: none;
+            border-left: 1px solid @blue-steel-2;
+            border-radius: 0 3px 3px 0;
+            padding: 0 10px;
+            box-sizing: border-box;
+            color: #777;
+            background: #fff;
+            //font-weight: 100;
+            &::-webkit-input-placeholder {
+                font-style: italic;
+                color: #828282;
+                //font-family:"Source Sans Pro";
+            }
+        }
+        .search-x {
+            position: absolute;
+            right: 13px;
+            top: 12px;
+            cursor: pointer;
+            svg path {
+                fill: @blue-steel-2;
+            }
+        }
+        &.ng-hide {
+            margin-top: -39px;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out all;
+        }
+    }
+    &.ng-hide {
+        opacity: 0;
+    }
+    &.ng-animate {
+        overflow: hidden;
+        transition: .35s ease-in-out all;
+    }
+    .search-dropdown {
+        background: #fff;
+        width: 32px;
+        height: 26px;
+        padding: 2px 5px;
+        border-radius: 3px 0 0 3px;
+        cursor: pointer;
+        .lucid-select-dropdown {
+            z-index: 10;
+            width: 145px;
+            .lucid-select-option {
+                vertical-align: top;
+                padding: 2px 7px;
+                //line-height: 22px;
+                //height:22px;
+                >span {
+                    line-height: 22px;
+                    padding-left: 2px;
+                    vertical-align: top;
+                }
+            }
+            .lucid-icon {
+                height: 22px;
+                vertical-align: top;
+            }
+        }
+    }
+    //Search Shapes Results
+    .lucid-shape-group-wrapper.search-results {
+        margin-bottom: 10px;
+        position: relative;
+        //z-index:1;
+        &.ng-enter {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.ng-enter-active {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave {
+            margin-top: 0;
+            opacity: 1;
+        }
+        &.ng-leave-active {
+            margin-top: -84px;
+            opacity: 0;
+        }
+        &.repeat-animation.ng-enter-stagger {
+            transition-delay: .01s;
+            transition-duration: 0s;
+        }
+        &.ng-animate {
+            transition: .25s;
+            z-index: 0;
+            &.no-transition {
+                transition: 0s;
+            }
+        }
+        .search-shapes-pin {
+            border-radius: 3px 0 0 3px;
+            &.pinned {
+                background: @blue-steel-2;
+                svg g path {
+                    fill: #fff;
+                }
+            }
+        }
+        .shape-group-top {
+            cursor: default;
+        }
+        .lucid-shape-group .shape-group-name {
+            padding-left: 35px;
+        }
+    }
+    .no-search-results {
+        position: absolute;
+        font-size: 14px;
+        padding: 20px 0;
+        line-height: 20px;
+        text-align: center;
+        width: ~"calc(100% - 20px)";
+        p {
+            color: #828282;
+            margin-bottom: 15px;
+        }
+        .search-button {
+            height: 32px;
+            background: #fff;
+            text-align: left;
+            vertical-align: top;
+            margin: 10px 0;
+            border-radius: 3px;
+            padding: 4px;
+            cursor: pointer;
+            >span {
+                line-height: 22px;
+                vertical-align: top;
+                padding-left: 5px;
+            }
+        }
+        .hyperlink {
+            text-decoration: underline;
+            cursor: pointer;
+            color: @lucid-blue;
+        }
+        &.ng-hide {
+            margin-top: -20px;
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .25s ease-in-out;
+        }
+    }
+}
+
+//search shapes tip
+.search-tip {
+    width: 240px;
+    &.ng-animate.ng-hide-remove {
+        transition-delay: 1s;
+    }
+    &.lucid-tip-wrapper.caret-top:after {
+        left: 8%;
+    }
+}
+///////////////
+//END SEARCH SHAPES 
+///////////////
+.import-to-manager {
+    background-color: @shapemanager-import;
+    color: #fff;
+    padding-right: 30px;
+    &:after {
+        content: '';
+        border-left: 4px solid transparent;
+        border-right: 4px solid transparent;
+        border-top: 6px solid #fff;
+        position: absolute;
+        top: 12px;
+        right: 10px;
+    }
+}

@@ -1,0 +1,60 @@
+<div id="main-header">
+        <div class="left" ng-init="docName = 'Company Org Chart'"><edit-in-place ng-model="docName" class="document-name reversed-text"></edit-in-place></div>
+        <div class="center">
+          <div class="page-toggler" ng-controller="PagesCtrl" ng-show="$root.pages.length>1">
+            <div ng-click="previousPage()" class="previous-page" ng-class="{'inactive': $root.currentPageNumber == 1}">
+              <ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-arrow-22px.svg'"></ng-include>
+            </div>
+            <span>{{$root.currentPageNumber}}/{{$root.pages.length}}</span>
+            <div ng-click="nextPage()" ng-class="{'inactive': $root.currentPageNumber == $root.pages.length}">
+              <ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-arrow-22px.svg'"></ng-include>
+            </div>
+          </div>
+            <div class="page-count" ng-click="pages.show = !pages.show;">{{$root.pages.length}}</div>
+            <a href="#" class="page-name reversed-text" ng-click="pages.show = !pages.show;">
+                <span class="dd-arrow">{{$root.currentPage.name}}</span>
+            </a>
+            <span class="master-page-text lucid-animate" ng-show="$root.currentPage.master">MASTER</span>
+        </div>
+        <div id="documents" ng-click="$parent.showMegamenu=!$parent.showMegamenu; $event.stopPropagation();"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/docs-button2.png" /></div>
+        <div class="right">
+          <span class="save-text">{{savetext}}</span>
+          <lucid-buttcon-popover class="help popover-list" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/help-gray-22px.svg" width="200" showpopover="help.show">
+          <!-- <div style="padding:10px 10px 0">
+            <input style="width: 100%;" type="text" class="lucid-input" placeholder="How do I...?">
+          </div> -->
+          <div class="lucid-select-wrapper">
+              <ul class="lucid-select-dropdown" ng-click="help.show = false">
+                  <li class="lucid-select-option" ng-click="$root.showbetatips = true">Show Tips</li>
+                  <li class="lucid-select-option">Keyboard shortcuts</li>
+                  <li class="lucid-select-option">Report a problem</li>
+                  <li class="lucid-select-option" style="color:#FC8D2A"><a href="http://s.codepen.io/team/lucidsoftware/debug/606932fd1fe96c96d2dbe89c872be603"> Exit Beta</a></li>
+              </ul>
+          </div>
+          </lucid-buttcon-popover>
+          <div class="bell" ng-init="showAlert=true">
+            <div class="bubble lucid-animate" ng-show="showAlert">1</div>
+            <lucid-buttcon-popover class="help popover-list" ng-click="showAlert=false" showpopover="bell.show" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-bell-22px.svg" width="311">
+                <header>Notifications<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-gear-white.svg"></header>
+              <div class="notifications"><img ng-click="$root.addOnsModal.show=true" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/add-ons-notification.png"/></div>
+            </lucid-buttcon-popover>
+          </div>
+          
+
+            <lucid-buttcon-popover class="account-settings popover-list" showpopover="account.show" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-person-large-22px.svg" width="135">
+                <div class="lucid-select-wrapper">
+                    <ul class="lucid-select-dropdown" ng-click="account.show = false;">
+                        <li class="lucid-select-option">
+                            Account Settings
+                        </li>
+                        <li class="lucid-select-option">
+                            User Preferences
+                        </li>
+                        <li class="lucid-select-option">
+                            Log Out
+                        </li>
+                    </ul>
+                </div>
+            </lucid-buttcon-popover>
+        </div>
+      </div>

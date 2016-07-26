@@ -1,0 +1,85 @@
+/////
+//Onboarding-tips
+/////
+.lucid-beta-tips {
+    &.lucid-modal-wrapper {
+        .lucid-modal-bg {
+            transition: .75s ease-in-out;
+            &.ng-hide {
+                opacity: 0;
+            }
+        }
+        &.ng-hide {
+            transition-delay: .75s;
+        }
+        .lucid-modal {
+            background: transparent;
+            box-shadow: none;
+            top: 50%;
+            right: 50%;
+            left: inherit;
+            bottom: inherit;
+            margin: inherit;
+            margin-right: -217px;
+            margin-top: -132.5px;
+            transition: .75s ease-in-out all !important;
+            img {
+                cursor: pointer;
+                transition: .5s ease-in-out all;
+            }
+            &.ng-hide-add {
+                width: 10px !important;
+                height: 10px !important;
+                top: 16px;
+                right: 125px;
+                margin-right: -20px;
+                margin-top: -10px;
+                opacity: 1;
+                img {
+                    transition-delay: .3s;
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
+
+.onboarding-tip {
+    // transition: 5s !important;
+    .lucid-close-icon {
+        display: none;
+    }
+    &.lucid-tip-wrapper {
+        padding: 10px 15px;
+    }
+    &.cancel-beta {
+        transition-delay: .5s;
+        top: 57px;
+        right: 5px;
+        &:after {
+            left: inherit;
+            right: 117px;
+            margin-right: -9px;
+        }
+    }
+    &.mega-menu {
+        transition-delay: .5s;
+        top: 8px;
+        left: 70px;
+    }
+    &.pages-tip {
+        transition-delay: .5s;
+        top: 57px;
+        left: 50%;
+        margin-left: -90px;
+        &.ng-hide {
+            margin-left: -90px;
+        }
+    }
+    &.share-tip {
+        transition-delay: .5s;
+        top: 255px;
+        right: 75px;
+        width: 220px;
+    }
+}

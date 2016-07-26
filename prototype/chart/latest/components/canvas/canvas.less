@@ -1,0 +1,233 @@
+//////////////////////////////
+// START CANVAS
+/////////////////////////////
+#lucid-canvas {
+    >svg polyline {
+        // position: absolute;
+        display: none;
+    }
+    .simple-line-wrapper {
+        position: absolute;
+        top: 100px;
+        left: 448px;
+        cursor: pointer;
+        padding: 0 2px;
+        .simple-line {
+            background: #333;
+            width: 2px;
+            height: 60px;
+            box-sizing: content-box;
+            border-right: 1px solid #fff;
+            border-left: 1px solid #fff;
+            &:after {
+                content: '';
+                border-left: 4px solid transparent;
+                border-right: 4px solid transparent;
+                border-top: 8px solid #333;
+                position: absolute;
+                bottom: -8px;
+                left: 0px;
+            }
+            &:before {
+                content: '';
+                border-left: 5px solid transparent;
+                border-right: 5px solid transparent;
+                border-top: 9px solid transparent;
+                position: absolute;
+                bottom: -9px;
+                left: -1px;
+            }
+            &.selected {
+                border-color: #75B4FE;
+                &:before {
+                    border-top: 9px solid #75B4FE;
+                }
+            }
+        }
+    }
+    .simple-table-wrapper {
+        border: none;
+        position: absolute;
+        top: 480px;
+        left: 448px;
+        cursor: pointer;
+        table {
+            width: 300px;
+            height: 100px;
+        }
+        td {
+            border: 1px solid #999;
+        }
+        .lucid-selected-block {
+            top: -1px;
+            right: -1px;
+            bottom: -1px;
+            left: -1px;
+        }
+    }
+    >ul {
+        position: absolute;
+        width: 100%;
+        height: 690px;
+        top: 0;
+        left: 0;
+    }
+}
+
+.lucid-chart-block {
+    position: absolute;
+    border: 1px solid;
+    //display: table;
+    box-sizing: border-box;
+    cursor: pointer;
+    &.manage-shapes {
+        z-index: 0 !important;
+    }
+    .lucid-outer-block-table {
+        display: table;
+        width: 100%;
+        height: 100%;
+        // position: relative;
+        // z-index: 1;
+    }
+    .lucid-inner-block {
+        display: table-cell;
+    }
+    img.lucid-block-comment {
+        width: 25px;
+        position: absolute;
+        top: -5px;
+        right: -40px;
+        margin-left: 0;
+        opacity: 1;
+        z-index: 1;
+        transition: all ease-in-out .1s;
+        &.ng-hide {
+            opacity: 0;
+        }
+    }
+    @handle-position-center: -8px;
+    @handle-position-outward: -10px;
+    @outline-offset: -3px;
+    .lucid-selected-block {
+        position: absolute;
+        top: @outline-offset;
+        left: @outline-offset;
+        bottom: @outline-offset;
+        right: @outline-offset;
+        border: #75B4FE 1px solid;
+        z-index: 0;
+        .lucid-corner-drag {
+            border: #75B4FE 1px solid;
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background-color: rgba(255, 255, 255, .93);
+            &.lucid-top-left {
+                top: @handle-position-outward;
+                left: @handle-position-outward;
+            }
+            &.lucid-top-center {
+                top: @handle-position-outward;
+                left: 50%;
+                margin-left: @handle-position-center;
+            }
+            &.lucid-top-right {
+                top: @handle-position-outward;
+                right: @handle-position-outward;
+            }
+            &.lucid-center-right {
+                top: 50%;
+                right: @handle-position-outward;
+                margin-top: @handle-position-center;
+            }
+            &.lucid-bottom-right {
+                bottom: @handle-position-outward;
+                right: @handle-position-outward;
+            }
+            &.lucid-bottom-center {
+                bottom: @handle-position-outward;
+                left: 50%;
+                margin-left: @handle-position-center;
+            }
+            &.lucid-bottom-left {
+                bottom: @handle-position-outward;
+                left: @handle-position-outward;
+            }
+            &.lucid-center-left {
+                top: 50%;
+                left: @handle-position-outward;
+                margin-top: @handle-position-center;
+            }
+        }
+    }
+    &.shrink-block {
+        width: 32px !important;
+        height: 32px !important;
+        transition: .25s width, .25s height;
+        margin-top: 30px;
+        margin-left: 40px;
+        transition: .25s width, .25s height, .25s margin;
+        .lucid-outer-block-table {
+            opacity: 0;
+            transition: .25s;
+        }
+    }
+    &.ng-enter {
+        transform: scaleX(.25) scaleY(.667);
+    }
+    &.ng-enter-active {
+        transform: scale(1);
+    }
+    &.ng-animate {
+        transition: .25s;
+    }
+}
+
+// presentation slides
+.lucid-slide {
+    position: absolute;
+    color: orange;
+    border: 1px solid;
+    z-index: 2;
+    opacity: 1;
+    transition: all ease-in-out .1s;
+    &.ng-hide {
+        opacity: 0;
+    }
+    .lucid-slide-corner {
+        width: 8px;
+        height: 8px;
+        border: 2px solid;
+        position: absolute;
+    }
+    .lucid-top-left {
+        border-bottom: none;
+        border-right: none;
+        left: 0;
+        top: 0;
+    }
+    .lucid-top-right {
+        top: 0;
+        right: 0;
+        border-bottom: none;
+        border-left: none;
+    }
+    .lucid-bottom-right {
+        bottom: 0;
+        right: 0;
+        border-top: none;
+        border-left: none;
+    }
+    .lucid-bottom-left {
+        bottom: 0;
+        left: 0;
+        border-top: none;
+        border-right: none;
+    }
+}
+
+//end presentation slides
+//////////////////////////////
+// END CANVAS
+//////////////////////////////

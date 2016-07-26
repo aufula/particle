@@ -1,0 +1,158 @@
+//////
+//START LOADING TIPS
+//////
+.tips-body-wrapper {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: @blue-steel;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    height: 100vh;
+    transition: .25s ease-in-out all;
+    z-index:10;
+    &.ng-hide {
+        opacity: 0;
+    }
+    .tips-wrapper {
+        padding-bottom: 22px;
+    }
+    .hotkey-icon-wrapper {
+        font-size: 35px;
+        font-weight: 400;
+        text-align: center;
+        color: @lucid-orange;
+        display: flex;
+        justify-content: center;
+        margin: 0 auto 30px;
+        .keystroke {
+            text-align: center;
+            padding: 0;
+            border-radius: 4px;
+            height: 56px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            line-height: 56px;
+            .plus-icon {
+                // font-size: 46px;
+                margin: 0 30px;
+                //color:@blue-steel-2;
+                font-size: 25px;
+                position: relative;
+                -webkit-font-smoothing: none;
+                // &:after{
+                //     content:'';
+                //     width:12px;
+                //     height:2px;
+                //     border-radius: 2px;
+                //     background: @lucid-orange;
+                //     position:absolute;
+                //     top:0;
+                //     left:-5px;
+                // }
+                // &:before{
+                //     content:'';
+                //     width:2px;
+                //     height:12px;
+                //     border-radius: 2px;
+                //     background: @lucid-orange;
+                //     position:absolute;
+                //     top:-5px;
+                //     left:0px;
+                // }
+            }
+            .space {
+                padding-bottom: 4px;
+            }
+            .command {
+                padding-top: 2px;
+            }
+            .plus {
+                font-size: 50px;
+                font-weight: 600;
+            }
+        }
+        .keystroke-border {
+            border: 2px solid @lucid-orange;
+            padding: 0 15px;
+            &.square {
+                width: 56px;
+                padding: 0;
+            }
+        }
+    }
+    .tip-text {
+        color: #fff;
+        font-size: 18px;//font size?
+        font-weight: 300;
+        text-align: center;
+        line-height: 24px;
+        b {
+            font-weight: 400;
+        }
+    }
+    span.keystroke {
+        border-radius: 2px;
+        padding: 0px 6px;
+        margin: -2px 4px 0;
+        border: 1px solid #fff;
+        font-size: 12px;
+        letter-spacing: 1px;
+        // font-weight: 400;
+        min-width: 22px;
+        height: 22px;
+        line-height: 20px;
+        display: inline-block;
+        vertical-align: middle;
+        // vertical-align: bottom;
+        // border:none;
+        // color:@lucid-orange;
+        // padding:0 !important;
+        // min-width: 0;
+        &.space {
+            line-height: 18px;
+        }
+        
+        &.square {
+            width: 22px;
+        }
+        &.command {
+            font-size: 11px;
+            padding-left:4px;
+        }
+        &.plus {
+            font-size: 20px;
+            padding-left:5px;
+        }
+    }
+    .tip-loading-bar-wrapper {
+        margin-top: 50px;
+        color: @blue-steel-2;
+        font-weight: 400;
+        text-align: center;
+        font-size: 12px;
+        letter-spacing: 1.5px;
+        .loading-bar {
+            margin: 7px auto 0;
+            width: 200px;
+            height: 4px;
+            background-color: #212C35; //@blue-steel-dark;
+            border-radius: 2px;
+            overflow: hidden;
+            .loading-progress {
+                transition: 3s linear width;//only  for prototype
+                background: @blue-steel-2;
+                width: 0%;
+                height: 4px;
+            }
+        }
+    }
+}
+
+///////
+//END LOADING TIPS 
+///

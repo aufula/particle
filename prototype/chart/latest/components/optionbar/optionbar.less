@@ -1,0 +1,126 @@
+//////////////////////////////
+//START OPTION BAR
+//////////////////////////////
+#option-bar {
+    width: 100%;
+    //z-index: 5;
+    position: relative;
+    padding: 2px 0;
+    background: @optionbar-bg;
+    height: 60px;
+    top: 0;
+    border-bottom: 1px solid @grey-border-dark;
+    transition: opacity .3s, top .3s;
+    .lucid-popover-menu {
+        z-index: 99;
+    }
+    .secondary-gray {
+        background-color: @popover-secondary-bg;
+        padding: 10px;
+    }
+    > ul {
+        margin-left: 265px;
+        margin-top: 10px;
+        transition: margin .3s ease-in-out;
+        > li {
+            display: inline-block;
+            border-radius: 4px;
+            transition: all .1s;
+            vertical-align: top;
+            min-width: 32px;
+            user-select: none;
+            border-radius: 0;
+            &.small {
+                margin-right: -4px;
+                border-radius: 4px 0 0 4px;
+            }
+            &.inactive {
+                opacity: .35;
+                .lucid-popover-menu,
+                .lucid-select-dropdown {
+                    display: none;
+                }
+            }
+        }
+        .line {
+            display: inline-block;
+            width: 1px;
+            background: #ccc;
+            height: 30px;
+            margin: 0 5px 0 10px;
+        }
+    }
+}
+
+.hotspot-options {
+    text-align: center;
+    > li {
+        display: inline-block;
+        padding: 8px 5px;
+        .lucid-buttcon.active {
+            background: transparent;
+        }
+    }
+}
+
+.hotlink-tab-content {
+    padding: 15px 15px 10px;
+    background: @grey-2;
+    border-top: 1px solid @grey-border;
+    .lucid-select-dropdown {
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .5) !important;
+    }
+    .input-label {
+        text-align: center;
+    }
+}
+
+.hotspot-layers {
+    text-align: right;
+    >div {
+        margin-bottom: 5px;
+        >span {
+            margin-right: 5px;
+            font-size: 14px;
+            line-height: 18px;
+        }
+    }
+}
+
+///////
+//start option bar dropdowns
+///////
+.shadow-options {
+    font-size: 0;
+    li {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: 18px;
+        &.no-padding {
+            padding: 0;
+        }
+        &.color {
+            padding: 0 9px 0 0;
+        }
+        &.divider {
+            height: 5px;
+            display: block;
+        }
+    }
+}
+
+///////
+//end option bar dropdowns
+///////
+#full-screen-toggle {
+    float: right;
+    cursor: pointer;
+    margin-right: 10px;
+    margin-top: 5px;
+    img {
+        width: 22px;
+    }
+}
+//////////////////////////////
+//END OPTION BAR
+//////////////////////////////
