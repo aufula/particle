@@ -1,75 +1,113 @@
 #sidebar {
-	background: @blue-steel;
-	width: 250px;
-	position: fixed;
-	left: 0;
-	top: @nav-bar-height;
-	height: 100%;
-	text-align: center;
-	transition: .5s ease-in-out all;
-	img {
-		display: inline-block;
-		margin: 28px auto 0;
-		width: 215px;
-	}
-
-	// Main-level
-	.sidebar-divider{
-		height:1px;
-		background:#212C35;
-		margin: 0 20px;
-		width: 210px;
-	}
-	> ul { 
-		text-align: left;
-		max-height: 75%;
-		margin-top: 20px;
-		margin-bottom: 20px;
-		> li {
-			&.list-header {
-				color: @blue-steel-3;
-				font-weight: bold;
-				font-size: 14px;
-				letter-spacing: 1px;
-				text-transform: uppercase;
-				padding-left: 50px;
-				line-height: 40px;
-				vertical-align: top;
-				position: relative;
-				.lucid-icon-22 {
-					position: absolute;
-					top:7px;
-					left:20px;
-
-					svg path{
-						fill: @blue-steel-3;
-					}
-					&.production{
-						top:9px;
-					}
-				}
-			}
-			> a {
-				-webkit-font-smoothing: auto; //fix to resolve loading lucid css
-				font-size:16px;
-				color: #fff;
-				line-height: 40px;
-				text-indent: 20px;
-				display: block;
-				transition: background .1s;
-				border: 0 solid transparent;
-				&:hover {
-					background: #46525E;
-				}
-				&.active {
-					background: @blue-steel-dark;
-					border-left: 4px solid @blue;
-					text-indent: 16px;
-					&:hover {
-						background: @blue-steel-dark;
-					}
-				}
-			}
-		}
-	}
+    background: @blue-steel;
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: @nav-bar-height;
+    height: 100%;
+    text-align: center;
+    transition: .5s ease-in-out all;
+    img {
+        display: inline-block;
+        margin: 28px auto 0;
+        width: 215px;
+    }
+    // Main-level
+    .sidebar-divider {
+        height: 1px;
+        background: #212C35;
+        margin: 0 20px;
+        width: 210px;
+    }
+    > ul {
+        text-align: left;
+        max-height: 75%;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        > li {
+            &.list-header {
+                color: @blue-steel-3;
+                font-weight: bold;
+                font-size: 14px;
+                letter-spacing: 1px;
+                text-transform: uppercase;
+                padding-left: 50px;
+                line-height: 40px;
+                vertical-align: top;
+                position: relative;
+                .lucid-icon-22 {
+                    position: absolute;
+                    top: 7px;
+                    left: 20px;
+                    svg path {
+                        fill: @blue-steel-3;
+                    }
+                    &.production {
+                        top: 9px;
+                    }
+                }
+            }
+            > a,
+            .prototype-links {
+                -webkit-font-smoothing: auto; //fix to resolve loading lucid css
+                font-size: 16px;
+                color: #fff;
+                line-height: 40px;
+                text-indent: 20px;
+                display: block;
+                transition: background .1s;
+                border: 0 solid transparent;
+                position: relative;
+                &:hover {
+                    background: #46525E;
+                }
+                &.active {
+                    background: @blue-steel-dark;
+                    border-left: 4px solid @blue;
+                    text-indent: 16px;
+                    &:hover {
+                        background: @blue-steel-dark;
+                    }
+                }
+            }
+            .prototype-links {
+                ng-include {
+                    height: 22px;
+                }
+                svg {
+                    vertical-align: middle;
+                    path {
+                        fill: @blue-steel-2;
+                        transition: .25s ease-in-out all;
+                    }
+                }
+                span a,
+                > a {
+                    text-indent: 0;
+                    vertical-align: middle;
+                }
+                > a {
+                	padding: 15px 0;
+                	opacity: 0;
+                    position: absolute;
+                    top: -2px;
+                    right: 0px;
+                    padding: 0 15px;
+                    &:hover {
+                        svg path {
+                            fill: rgba(255,255,255, .8);
+                        }
+                    }
+                }
+                a.view-prototype {
+                    padding:10px 0;
+                }
+                &:hover{
+                	> a{
+                		opacity:1;
+                	}
+                }
+            }
+        }
+    }
 }

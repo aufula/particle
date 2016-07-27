@@ -86,6 +86,17 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
 
     //this pulls in the component groups for the sidebar//
     $scope.componentGroups = lucidComponentFactory;
+    //this adds URLs to the side bar for prototypes
+    $scope.prototypes = [{
+        'title': 'Chart Editor',
+        'url': 'latest-prototype/chart-editor'
+    }, {
+        'title': 'Press Editor',
+        'url': 'latest-prototype/press-editor'
+    },  {
+        'title': 'Press Docs List',
+        'url': 'latest-prototype/press-docslist'
+    }];
 
 });
 particleApp.controller('iconController', function(config, $scope, lucidIconFactory, $routeParams, $location) {
@@ -180,9 +191,9 @@ particleApp.controller('colorController', function($scope, lucidColorFactory, $r
 });
 particleApp.controller('colorCtrl', function($scope, $timeout) {
 
-    $scope.copyItem = function(item){
+    $scope.copyItem = function(item) {
         $scope.copied = item;
-        $timeout(function(){
+        $timeout(function() {
             $scope.copied = null;
         }, 750);
     };

@@ -4,23 +4,19 @@
 <head>
     <title>Lucid Particle Design</title>
     <link rel="shortcut icon" href="http://particle.golucid.co/favicon.ico" />
-    
     <!-- Angular -->
-    <script src= "lib/angular/angular.min.js" type="text/javascript"></script>
-    <script src= "lib/angular/angular-animate.min.js" type="text/javascript"></script>
+    <script src="lib/angular/angular.min.js" type="text/javascript"></script>
+    <script src="lib/angular/angular-animate.min.js" type="text/javascript"></script>
     <script src="lib/angular/angular-route.min.js" type="text/javascript"></script>
-
     <!-- Lucid Components -->
     <script src="components/3.0/components-min.js" type="text/javascript"></script>
     <link href="components/3.0/components.css" type="text/css" rel="stylesheet" />
-
     <!-- Other Libs -->
-    <script src= "lib/Sortable.min.js" type="text/javascript"></script>
-    <script src= "lib/ng-sortable.js" type="text/javascript"></script>
+    <script src="lib/Sortable.min.js" type="text/javascript"></script>
+    <script src="lib/ng-sortable.js" type="text/javascript"></script>
     <script src="lib/svg-morpheus.js" type="text/javascript"></script>
     <script src="lib/ngDraggable.js" type="text/javascript"></script>
     <script src="lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
-
     <!-- this is for highlighting code -->
     <link rel="stylesheet" href="lib/angular-highlight/github.min.css">
     <script src="lib/angular-highlight/highlight.min.js"></script>
@@ -29,14 +25,12 @@
     <!-- Main Styles -->
     <link href="css/style.css" type="text/css" rel="stylesheet" />
     <!-- Loading Angular components and js -->
-    
     <script src="js/main.js" type="text/javascript"></script>
     <script src="js/component-data.js" type="text/javascript"></script>
     <script src="js/production-data.js" type="text/javascript"></script>
     <script src="js/icon-data.js"></script>
     <script src="js/color-data.js"></script>
     <script src="js/snippets-data.js"></script>
-
 </head>
 
 <body ng-controller="mainController" ng-class="{ 'landing-page': isActive('/','overview') }">
@@ -44,7 +38,7 @@
     <nav id="top-navigation">
         <div id="logo">
             <a href="#/overview">
-            <ng-include src="'img/lucid-particle-logo.svg'"></ng-include>
+                <ng-include src="'img/lucid-particle-logo.svg'"></ng-include>
             </a>
         </div>
         <ul>
@@ -64,13 +58,30 @@
         <div class="sidebar-divider"></div>
         <ul class="reversed-text">
             <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-finger-22px.svg'"></ng-include> Prototyping
+                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Building Prototypes
             </li>
             <li>
                 <a href="#/icons" ng-class="{ 'active': isActive('/icons', '') }">Icons</a>
             </li>
             <li ng-repeat="componentGroup in componentGroups">
                 <a href="#/components/{{componentGroup.groupid}}" ng-class="{ 'active': isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
+            </li>
+        </ul>
+        <div class="sidebar-divider"></div>
+        <ul class="reversed-text">
+            <li class="list-header">
+                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-finger-22px.svg'"></ng-include> Latest Prototypes
+            </li>
+            <li ng-repeat="prototype in prototypes">
+                <div class="prototype-links">
+                    <span><a class="view-prototype" href="{{prototype.url}}/index.html" target="_blank">
+                        {{prototype.title}}
+                    </a></span>
+                    
+                    <a class="download-prototype" href="{{prototype.url}}.zip" download="{{prototype.url}}.zip">
+                        <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-download-22px.svg'"></ng-include>
+                    </a>
+                </div>
             </li>
         </ul>
         <div class="sidebar-divider"></div>
@@ -84,12 +95,6 @@
             <li>
                 <a href="#/colors/" ng-class="{ 'active': isActive('/colors', '') }">Colors</a>
             </li>
-            <!-- <li>
-                <a href="/prototype/chart/latest/index.html">Latest Chart Prototype</a>
-            </li>
-            <li>
-                <a href="/prototype/press/latest/index.html">Latest Press Prototype</a>
-            </li> -->
         </ul>
     </section>
     <!-- MAIN CONTENT AND INJECTED VIEWS -->

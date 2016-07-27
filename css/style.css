@@ -259,7 +259,8 @@ p.small-body {
 #sidebar > ul > li.list-header .lucid-icon-22.production {
   top: 9px;
 }
-#sidebar > ul > li > a {
+#sidebar > ul > li > a,
+#sidebar > ul > li .prototype-links {
   -webkit-font-smoothing: auto;
   font-size: 16px;
   color: #fff;
@@ -269,17 +270,54 @@ p.small-body {
   -webkit-transition: background .1s;
   transition: background .1s;
   border: 0 solid transparent;
+  position: relative;
 }
-#sidebar > ul > li > a:hover {
+#sidebar > ul > li > a:hover,
+#sidebar > ul > li .prototype-links:hover {
   background: #46525E;
 }
-#sidebar > ul > li > a.active {
+#sidebar > ul > li > a.active,
+#sidebar > ul > li .prototype-links.active {
   background: #212C35;
   border-left: 4px solid #29AAE1;
   text-indent: 16px;
 }
-#sidebar > ul > li > a.active:hover {
+#sidebar > ul > li > a.active:hover,
+#sidebar > ul > li .prototype-links.active:hover {
   background: #212C35;
+}
+#sidebar > ul > li .prototype-links ng-include {
+  height: 22px;
+}
+#sidebar > ul > li .prototype-links svg {
+  vertical-align: middle;
+}
+#sidebar > ul > li .prototype-links svg path {
+  fill: #77818C;
+  -webkit-transition: 0.25s ease-in-out all;
+  transition: 0.25s ease-in-out all;
+}
+#sidebar > ul > li .prototype-links span a,
+#sidebar > ul > li .prototype-links > a {
+  text-indent: 0;
+  vertical-align: middle;
+}
+#sidebar > ul > li .prototype-links > a {
+  padding: 15px 0;
+  opacity: 0;
+  position: absolute;
+  top: -2px;
+  right: 0px;
+  padding: 0 15px;
+}
+#sidebar > ul > li .prototype-links > a:hover svg path {
+  fill: rgba(255, 255, 255, 0.8);
+}
+#sidebar > ul > li .prototype-links a.view-prototype {
+  padding: 10px 0;
+}
+#sidebar > ul > li .prototype-links:hover > a {
+  opacity: 1;
 }
 #content {
   margin-left: 250px;
