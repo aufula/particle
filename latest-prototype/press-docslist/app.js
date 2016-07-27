@@ -11,7 +11,7 @@ angular.module('particleApp', ['lucidComponents'])
         $scope.pressTemplates = pressTemplates;
         $scope.newDocument = true;
         $scope.createDocument = function(group){
-            var baseURL = '/prototype/press/latest/#';
+            var baseURL = '/latest-prototype/press-editor/#';
             window.location.href = baseURL + group.groupname;
             console.log(group);
         };
