@@ -349,6 +349,8 @@ angular.module("lucidIcons", [])
                 'name': 'icon-out-22px'
             }, {
                 'name': 'icon-add-box-22px'
+            }, {
+                'name': 'icon-box-22px'
             }]
         }, {
             "icongroup": "18px Icons",
