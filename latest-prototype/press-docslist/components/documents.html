@@ -1,0 +1,72 @@
+<div>
+    <!-- Start Docs Header Buttons -->
+    <div class="header">
+        <div class="left-side">
+            <div class="component-btn-group" id="new-document-combined-button">
+                <div class="component-btn component-btn-steel-primary create-button" id="new-document-button" title="Create blank document">
+                    <div class="icn-13 icn-add-plus-white"></div><span class="icon-btn-text">Document</span>
+                </div>
+                <div class="component-btn component-btn-steel-primary create-button" id="new-from-template-button" title="Create document from template">
+                    <div class="expand-arrow"></div>
+                </div>
+            </div>
+            <div class="component-btn component-btn-steel-blue create-button light-hover" id="new-folder-button">
+                <div class="icn-13 icn-add-plus-white"></div><span class="icon-btn-text">Folder</span></div>
+            <div class="beta-tag-wrapper">
+                <div class="import-button component-btn component-btn-steel-blue create-button light-hover" id="press-import-button"><span class="icon-btn-text">InDesign Import</span></div>
+                <div class="import-button component-btn create-button beta-tag" id="import-beta-label"><span class="icon-btn-text">BETA</span></div>
+            </div>
+        </div>
+        <div class="status hide-low">
+            <div class="status-icon"></div>
+            <div class="status-text">Reloading your documents...</div>
+        </div>
+        <div class="right-side">
+            <div class="component-search-bar-white component-search-bar">
+                <input class="disabled" id="search-text" type="text" placeholder="Search Documents">
+                <input class="search-icon icn-search-14px" id="submit-search-button" type="button" title="Search">
+            </div>
+            <div class="icn icn-list" id="list-view-button" title="List view"></div>
+            <div class="icn icn-grid hidden selected" id="grid-view-button" title="Grid view"></div>
+            <div class="icn icn-sort" id="sort-button" title="Sort"></div>
+        </div>
+    </div>
+    <!-- End Docs Header Buttons -->
+    <!-- Start Docs Container -->
+    <div class="file-browser-component">
+        <div class="browser-content-container">
+            <div class="file-browser-container">
+                <div class="file-browser icon-view s4">
+                    <ul class="list-container">
+                        <li class="card file" ng-repeat="card in documents">
+                            <div class="wrapper">
+                                <div class="preview">
+                                    <div class="thumb" style="position: relative;">
+                                        <div class="placeholder"></div>
+                                        <img src="{{card.img}}">
+                                    </div>
+                                </div>
+                                <div class="bottom-bar">
+                                    <div class="title"><span class="title-content">{{card.name}}</span></div>
+                                    <div class="options">
+                                        <div class="component-btn open" ng-click="goTo(card.url)">Open</div>
+                                        <ul>
+                                            <li class="share-container">
+                                                <div class="icon-button share" title="Share"></div>
+                                                <div class="description">Share</div>
+                                            </li>
+                                            <li class="cog-container">
+                                                <div class="icon-button cog" title="Settings"></div>
+                                                <div class="description">More</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End Docs Container -->
