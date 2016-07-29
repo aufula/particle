@@ -122,14 +122,14 @@ particleApp.controller('iconController', function(config, $scope, lucidIconFacto
 
 });
 
-particleApp.controller('componentController', function($scope, lucidComponentFactory, $routeParams, $filter, $location) {
+particleApp.controller('componentController', function($scope, config, lucidComponentFactory, $routeParams, $filter, $location) {
     //gets component id from URL
     $scope.componentGroupID = $routeParams.componentGroupID;
 
     $scope.components = $filter('filter')(lucidComponentFactory, {
         "groupid": $routeParams.componentGroupID
     });
-    $scope.componentPath = "components/2.0/";
+    $scope.componentPath = config.componentsURL; //
 
     $scope.searchResults = $routeParams.searchResults;
 
