@@ -253,7 +253,6 @@ a {
 #main-header .bell .bubble.ng-hide {
   opacity: 0;
   -webkit-transform: scale(0);
-      -ms-transform: scale(0);
           transform: scale(0);
 }
 #main-header .bell header {
@@ -370,6 +369,7 @@ nav.file-menu li > a:only-child:after {
   position: absolute;
   top: 48px;
   left: 200px;
+  background: #FFF;
 }
 #main-container .document-container {
   position: absolute;
@@ -406,7 +406,6 @@ nav.file-menu li > a:only-child:after {
   padding: 14px 0;
   position: relative;
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
   margin-left: -1px;
   margin-right: -1px;
@@ -436,7 +435,6 @@ nav.file-menu li > a:only-child:after {
 }
 #left-bar .icons-wrapper .icon-wrapper.ng-hide {
   -webkit-transform: scale(0);
-      -ms-transform: scale(0);
           transform: scale(0);
   margin: -32px 0;
 }
@@ -509,14 +507,12 @@ nav.file-menu li > a:only-child:after {
   top: -3px;
   right: 0;
   -webkit-transform: rotateZ(0);
-      -ms-transform: rotate(0);
           transform: rotateZ(0);
   -webkit-transition: all 0.35s ease-in-out;
   transition: all 0.35s ease-in-out;
 }
 .panel-content > header .panel-gear.active {
   -webkit-transform: rotateZ(90deg);
-      -ms-transform: rotate(90deg);
           transform: rotateZ(90deg);
 }
 .panel-content ul.template-list {
@@ -750,7 +746,6 @@ nav.file-menu li > a:only-child:after {
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter h4 {
   -webkit-transform: translateX(-40px);
-      -ms-transform: translateX(-40px);
           transform: translateX(-40px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter-active,
@@ -761,7 +756,6 @@ nav.file-menu li > a:only-child:after {
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter-active h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter-active h4 {
   -webkit-transform: translateX(0px);
-      -ms-transform: translateX(0px);
           transform: translateX(0px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-leave-active,
@@ -778,7 +772,6 @@ nav.file-menu li > a:only-child:after {
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li .ng-leave h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page .ng-leave h4 {
   -webkit-transform: translateX(-40px);
-      -ms-transform: translateX(-40px);
           transform: translateX(-40px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-animate h4,
@@ -1088,12 +1081,10 @@ nav.file-menu li > a:only-child:after {
 }
 .lucid-chart-block.ng-enter {
   -webkit-transform: scaleX(0.25) scaleY(0.667);
-      -ms-transform: scaleX(0.25) scaleY(0.667);
           transform: scaleX(0.25) scaleY(0.667);
 }
 .lucid-chart-block.ng-enter-active {
   -webkit-transform: scale(1);
-      -ms-transform: scale(1);
           transform: scale(1);
 }
 .lucid-chart-block.ng-animate {

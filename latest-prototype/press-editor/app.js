@@ -1,22 +1,22 @@
 /*global angular : true fixes codekit error*/
 /*global console : true fixes codekit error*/
 
-angular.module('particleApp', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dndLists', 'ngRoute'])
+angular.module('particleApp', ['lucidComponents', 'pressData', 'ngDraggable', 'ngSortable', 'dndLists', 'ngRoute'])
     .config(function($locationProvider) {
         $locationProvider.html5Mode(true);
     })
     ////////////////
     ////START MAIN CTRL
     ////////////////
-    .controller('mainCtrl', function($scope, $timeout, $rootScope, pressData) {
+    .controller('mainCtrl', function($scope, $timeout, $rootScope, pagesData) {
         $rootScope.selectedBlock = {
             'type': 'document'
         };
         $scope.loading = function() {
             console.log('loading');
             $rootScope.loadingClass = "loading";
-            //$rootScope.pages = pressData;
-            $rootScope.pages = [{}];
+            $rootScope.pages = pagesData;
+            //$rootScope.pages = [{}];
             $timeout(function() {
                 //add loaded class to slide in panels
                 $rootScope.loadedClass = 'loaded';

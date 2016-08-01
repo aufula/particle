@@ -14,9 +14,11 @@
     <script src="http://particle.golucid.co/lib/svg-morpheus.js" type="text/javascript"></script>
     <script src="http://particle.golucid.co/lib/ngDraggable.js" type="text/javascript"></script>
     <script src="http://particle.golucid.co/lib/angular-drag-and-drop-lists.min.js" type="text/javascript"></script>
+
     <!-- Prototype Specific -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="app.js"></script>
+    <script src="press-data.js"></script>
     <script>
       document.write('<base href="' + document.location + '" />');
     </script>
@@ -129,7 +131,7 @@
       <div class="center">
       </div>
       <div id="documents">
-        <a href="/prototype/press/docs/1.0/index.html">
+        <a href="#">
           <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-logo-megamenu.png" />
         </a>
       </div>
@@ -229,7 +231,7 @@
             ng-click="$root.selectedBlock = block; $event.stopPropagation(); $root.selectedType = 'block'"
             class="lucid-chart-block lucid-animate" 
             ng-class="{'manage-shapes': $root.manageshapes, 'shrink-block' : $root.selectedBlock == block && $root.mouseInLeftPanel}"
-            ng-style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
+            style="background-color:{{block.swatch.fill}}; border: {{block.borderwidth}}px {{block.borderstyle}} {{block.swatch.border}}; width:{{block.metrics.width}}px; height:{{block.metrics.height}}px; text-align:{{block.text.horizontalalignment}}; left:{{block.metrics.x}}px; top:{{block.metrics.y}}px; padding:{{block.padding}}px; border-radius:{{block.radius}}px; box-shadow:{{block.shadow.x}}px {{block.shadow.y}}px {{block.shadow.blur}}px {{block.shadow.color}}; z-index:{{block.metrics.z}}; border-style:solid; background-image: url({{block.backgroundImage}}); background-size: {{block.metrics.width}}px {{block.metrics.height}}px; background-repeat: no-repeat; background-position: center;">
               <div class="lucid-outer-block-table" ng-if="block.type !== 'table'">
                   <div class="lucid-inner-block" style="vertical-align:{{block.text.verticalalignment}}; color:{{block.swatch.text}}; font-family:{{block.text.font}}; font-size:{{block.text.size}}px; font-weight:{{block.text.weight}}; letter-spacing:{{block.text.letterspacing}}">
                     <span ng-hide="edittext" ng-dblclick="edittext=false" ng-enter="edittext=false">{{block.text.text}}</span>
@@ -467,7 +469,6 @@
                 <lucid-top-tab name="Document" selected>
 
                   <lucid-collapse-bar title="Size & Orientation">
-                  <lucid-select options="['Letter (8.5x11)', 'Card (7x5)']" width="130" class="condensed"></lucid-select>
                     <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/press-placeholder-document-size-orientation.png">
                   </lucid-collapse-bar>
 
