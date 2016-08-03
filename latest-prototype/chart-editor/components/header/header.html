@@ -13,7 +13,7 @@
     <span class="save-text">{{savetext}}</span>
   </section>
   <section class="header-middle">
-    <span id="page-name">{{$root.currentPage.name}}</span>
+    <h1 id="document-title" ng-init="docTitle = 'Company Org Chart'"><edit-in-place ng-model="docTitle"></edit-in-place></h1>
   </section>
   <section class="header-right">
     <ul class="collaborators">

@@ -1,13 +1,12 @@
-//////////////////////////////
-//START OPTION BAR
-//////////////////////////////
 #option-bar {
     width: 100%;
-    //z-index: 5;
     position: relative;
-    padding: 2px 0;
+    padding-right: 10px;
     background: @optionbar-bg;
-    height: 60px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     top: 0;
     border-bottom: 1px solid @grey-border-dark;
     transition: opacity .3s, top .3s;
@@ -19,17 +18,16 @@
         padding: 10px;
     }
     > ul {
-        margin-left: 265px;
-        margin-top: 10px;
+        margin-left: 256px;
+        display: flex;
+        align-items: center;
         transition: margin .3s ease-in-out;
         > li {
-            display: inline-block;
-            border-radius: 4px;
+            display: flex;
+            align-items: center;
             transition: all .1s;
-            vertical-align: top;
-            min-width: 32px;
             user-select: none;
-            border-radius: 0;
+            margin-top:-1px;
             &.small {
                 margin-right: -4px;
                 border-radius: 4px 0 0 4px;
@@ -41,13 +39,41 @@
                     display: none;
                 }
             }
+            .joint-left {
+                margin-left: 10px;
+                span {
+                    border-radius: 3px 0 0 3px;
+                }
+            }
+            .joint-right {
+                .lucid-input-stepper {
+                    border-left: 0;
+                    border-radius: 0 3px 3px 0;
+                }
+            }
         }
         .line {
             display: inline-block;
             width: 1px;
-            background: #ccc;
-            height: 30px;
-            margin: 0 5px 0 10px;
+            background: @grey-border;
+            height: 24px;
+            margin: 0 10px;
+            transition: margin .2s;
+        }
+        .lucid-buttcon {
+            transition: all .2s;
+        }
+        .lucid-popover-menu-drawer {
+            padding: 0;
+        }
+    }
+    @media all and (max-width: 1220px) {
+        ul .line {
+            margin: 0 5px;
+        }
+        .lucid-buttcon {
+            width: 30px;
+            padding: 5px 3px;
         }
     }
 }
@@ -87,9 +113,6 @@
     }
 }
 
-///////
-//start option bar dropdowns
-///////
 .shadow-options {
     font-size: 0;
     li {
@@ -108,19 +131,3 @@
         }
     }
 }
-
-///////
-//end option bar dropdowns
-///////
-#full-screen-toggle {
-    float: right;
-    cursor: pointer;
-    margin-right: 10px;
-    margin-top: 5px;
-    img {
-        width: 22px;
-    }
-}
-//////////////////////////////
-//END OPTION BAR
-//////////////////////////////

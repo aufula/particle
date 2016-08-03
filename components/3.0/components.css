@@ -317,6 +317,7 @@ input {
   opacity: 1;
   margin-top: 0;
   transition: 0.35s ease-in-out all;
+  border-top: 1px solid #D2D2D2;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
   margin-top: 0px !important;

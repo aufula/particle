@@ -250,19 +250,15 @@
     z-index: 6;
     opacity: 1;
     .lucid-shapes-header {
-        padding: 18px 15px;
-        background: @optionbar-bg; // #EDEDED;
-        //line-height: 59px;
-        height: 60px;
-        box-sizing: border-box;
+        padding: 0 10px;
+        background: @optionbar-bg;
+        height: 40px;
         border-bottom: 1px solid @grey-border-dark;
-        text-align: left;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
         .lucid-more-shapes {
             line-height: 22px;
-            cursor: pointer;
-        }
-        .manage-shapes-button {
-            cursor: pointer;
         }
         .lucid-shapes-gear {
             vertical-align: top;
@@ -271,39 +267,11 @@
         }
         .lucid-shapes-search,
         .import-image-icon {
-            cursor: pointer;
-            position: absolute;
-            right: 10px;
-            top: 13px;
-            opacity: 1;
             &.ng-hide {
                 opacity: 0;
             }
             &.ng-animate {
                 transition: .3s all ease-in-out;
-            }
-        }
-        .import-image-icon {
-            right: 45px;
-            .lucid-popover-menu {
-                background: #FFF;
-                top: 48px;
-                &:after {
-                    border-bottom-color: #FFF;
-                }
-            }
-            .lucid-select-wrapper {
-                width: 100%;
-                padding: 3px 2px;
-            }
-            .lucid-select-dropdown {
-                width: 100%;
-                position: static;
-                box-shadow: none;
-                border-radius: 3px;
-                .lucid-select-option {
-                    padding: 5px 15px 5px 15px;
-                }
             }
         }
     }
@@ -868,9 +836,9 @@
 ///////////////
 .search-shapes {
     position: absolute;
-    top: 60px;
+    top: 40px;
     left: 0;
-    right: 0;
+    width: 100%;
     .search-groups-wrapper {
         padding: 10px;
     }

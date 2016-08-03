@@ -1,15 +1,16 @@
 <div id="option-bar" class="group">
           <ul>
-
-            <li class="left" ng-class="{'inactive': $root.selectedType == 'nothing'}">
-              <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
+            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+              <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-undo-22px.svg"></lucid-buttcon>
             </li>
-            <li><span class="line"></span>
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <lucid-select options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="140" style="margin: 0 10px 0 5px;"></lucid-select>
+            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+              <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-redo-22px.svg"></lucid-buttcon>
             </li>
             <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <lucid-input-stepper step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
+              <lucid-select class="condensed joint-left" options="['Lucida Sans', 'Raleway', 'Source Sans Pro', 'Helvetica Neue']" width="140"></lucid-select>
+            </li>
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+              <lucid-input-stepper class="condensed joint-right" step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
             </li>
             <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
               <lucid-buttcon ng-click="bold=!bold" active="bold" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-text-bold-22px.svg"></lucid-buttcon>
@@ -43,65 +44,39 @@
             </li>
             <!-- END TEXT OPTIONS -->
             <span class="line"></span>
-            <!-- BEGIN SHADOW OPTIONS -->
+            <!-- START COLOR PICKER -->
+            <li class="left" ng-class="{'inactive': $root.selectedType == 'nothing'}">
+              <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
+            </li>
+            <!-- END COLOR PICKER -->
+            <span class="line"></span>
+
+
+            <!-- BEGIN SHAPE OPTIONS -->
             <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-shadow-bluesteel.svg" width="231">
-                  <div style="padding:15px 15px 10px 15px;">
-                    <ul class="shadow-options">
-                      <li class="no-padding">
-                        <lucid-toggle label="shadow"></lucid-toggle>
-                      </li>
-                      <li>
-                        <lucid-input-stepper label="offset" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
-                      </li>
-                      <li>
-                        <lucid-input-stepper label="x distance" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
-                      </li>
-                    <li class="divider"></li>
-                    <li class="color">
-                        <lucid-buttcon icon="http://particle.golucid.co/components/0.1/icon/img/colorpicker-solid-22px.svg" label="color"></lucid-buttcon>
-                      </li>
-                      <li>
-                        <lucid-input-stepper label="offset" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
-                      </li>
-                      <li>
-                        <lucid-input-stepper label="y distance" number="3" unit="px" width="60" class="condensed"></lucid-input-stepper>
-                      </li>
-                    </ul>
+              <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-shape-options-22px.svg" width="245">
+                  <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shape-options-3.0.png">
                   </div>
-                  </lucid-popover-menu>
+                  <lucid-more-drawer height="108">
+                    <img style="width: 217px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shadow-options-3.0.png" />
+                  </lucid-more-drawer>
               </lucid-buttcon-popover>
             </li>
             <!-- END SHADOW OPTIONS -->
-            <!-- BEGIN BORDER OPTIONS -->
-            <li class="middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <lucid-buttcon-popover width="309" icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-borderoptions-bluesteel.svg">
-                  <div style="padding:15px 15px 10px 15px">
-                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-border-options-5.0.png">
-                  </div>
-              </lucid-buttcon-popover>
-            </li>
-            <!-- END BORDER OPTIONS -->
+
+
             <!-- BEGIN POSITION OPTIONS -->
             <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-position-bluesteel.svg" width="280">
-                <div style="padding:10px"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-position-top-v4.png" /></div>
-                <div class="secondary-gray"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-position-bottom-v4.png" /></div>
+              <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-position-bluesteel.svg" width="260">
+                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shape-metrics-3.0.png" /></div>
               </lucid-buttcon-popover>
             </li> 
             <!-- END POSITION OPTIONS -->
             <span class="line"></span>
-              <!-- BEGIN LINE OPTIONS -->
-            <li class="middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'table'}">
-              <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lineoptions-bluesteel.svg" width="252">
-                  <div style="padding:15px 15px 10px 15px;">
-                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-line-options-4.9.png">
-                  </div>
-              </lucid-buttcon-popover>
-            </li>
-            <!-- END LINE OPTIONS -->
+
+
             <!-- BEGIN LINE PATH -->
-            <li class="left" ng-controller="linePathCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'table'}">
+            <li class="left" ng-controller="linePathCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}">
               <lucid-buttcon-popover 
                 icon="http://particle.golucid.co/components/1.0/icon/img/morph-path-style.svg" 
                 width="32"
@@ -113,8 +88,19 @@
                       </div>
               </lucid-buttcon-popover>
             </li>
-            <li id="full-screen-toggle"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-screen-mode-22px.svg" ng-click="canvasMode()"/></li>
-            <!-- END LINE WIDTH -->
+            <!-- END LINE PATH -->
+            <!-- BEGIN LINE OPTIONS -->
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}">
+              <lucid-buttcon-popover icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lineoptions-bluesteel.svg" width="252">
+                  <div style="padding:15px 15px 10px 15px;">
+                      <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-line-options-4.9.png">
+                  </div>
+              </lucid-buttcon-popover>
+            </li>
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}">
+              <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-swap-22px.svg"></lucid-buttcon>
+            </li>
+            <!-- END LINE OPTIONS -->
             <span class="line"></span>
             <!-- BEGIN MISC. OPTIONS -->
             <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
@@ -161,11 +147,28 @@
                   </div>
               </lucid-buttcon-popover>
             </li>
-            <li class="small left lucid-buttcon toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
-              <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-lock-bluesteel.svg" class="lucid-buttcon-icon" />
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'container'}">
+              <lucid-buttcon ng-click="magnetize=!magnetize" active="magnetize" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-magnet-22px.svg"></lucid-buttcon>
             </li>
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'shape'}"">
+              <lucid-buttcon ng-click="locked=!locked" active="locked" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-lock-locked-22px.svg"></lucid-buttcon>
+            </li>
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'shape'}"">
+              <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-shape-data-22px.svg" width="368">
+                <div><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shape-data-3.0.png" /></div>
+              </lucid-buttcon-popover>
+            </li>
+            <span class="line"></span>
+            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'table'}"">
+              <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-wrench-22px.svg"></lucid-buttcon>
+            </li>
+
             <!-- END MISC. OPTIONS -->
-          </ul> 
+          </ul>
+          <div style="display: flex; align-items: center;">
+            <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-present-22px.svg"></lucid-buttcon>
+            <lucid-buttcon id="full-screen-toggle" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-screen-mode-22px.svg" ng-click="canvasMode()"/></lucid-buttcon>
+          </div>
    
     <div class="hover-handle" ng-mouseenter="enterOptionBar()" ng-mouseleave="cancelHover()" ng-if="canvasmode == 2"></div>
         </div>
