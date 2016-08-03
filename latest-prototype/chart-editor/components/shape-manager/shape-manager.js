@@ -5,7 +5,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
         });
         $scope.$on('draggable:move', function(event, data) {
             //console.log(event);
-            var mouseX = window.event.clientX
+            var mouseX = window.event.clientX;
             if (mouseX < 250) {
                 $rootScope.mouseInLeftPanel = true;
             } else {
@@ -174,7 +174,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             });
             //console.log('pinnedCount', pinnedCount, 'length', groupCount)
             if (pinnedCount == groupCount && groupCount != 0) {
-                return true
+                return true;
             } else {
                 return false;
             }
@@ -188,7 +188,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
                 //console.log(lucidShapesData.pinned(id))
                 return true;
             } else {
-                return false
+                return false;
             }
         };
         $scope.showPinMessage = function(shapegroup) {
@@ -235,7 +235,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
 
             var unpingroup = $scope.getObject(shapegroup.id, $scope.lucidShapeGroups);
             if (!unpingroup) {
-                var unpingroup = $scope.getObject(shapegroup.id, $scope.customShapeGroups);
+                unpingroup = $scope.getObject(shapegroup.id, $scope.customShapeGroups);
             }
             unpingroup.pinned = false;
         };
@@ -336,7 +336,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
                     }, 1000); //wait until first slide open is done, then load groups
                     $timeout(function() {
                         $scope.loadingshapes = true;
-                    }, 600)
+                    }, 600);
 
                 } else {
                     $rootScope.manageshapes = false;
@@ -436,7 +436,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
                 //console.log('edit?', shapegroup.edit);
                 shapegroup.edit = true;
                 //console.log('edit?', shapegroup.edit);
-            }, 100)
+            }, 100);
             $rootScope.saveDocument();
 
 

@@ -120,7 +120,7 @@ angular.module('canvas', [])
                 if (data) {
                     if (angular.element(event.event.srcElement).hasClass('lucid-block-comment')) {
                         //console.log('comment');
-                        return
+                        return;
                     }
                     data.metrics.x = event.x - canvasX - event.element.centerX;
                     data.metrics.y = event.y - canvasY - event.element.centerY;
@@ -128,4 +128,4 @@ angular.module('canvas', [])
                 }
             }
         };
-    })
+    });

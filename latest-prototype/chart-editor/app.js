@@ -1,14 +1,33 @@
-/*global angular, console, */
+/*global angular, console*/
 
 //include Components js
-//@codekit-prepend "components/shape-manager/shape-manager.js"
-//@codekit-prepend "components/pages/pages.js"
-//@codekit-prepend "components/right-dock/right-dock.js"
-//@codekit-prepend "components/optionbar/optionbar.js"
-//@codekit-prepend "components/loading-tips/loading-tips.js"
-//@codekit-prepend "components/canvas/canvas.js"
+// @codekit-prepend "components/shape-manager/shape-manager.js"
+// @codekit-prepend "components/pages/pages.js"
+// @codekit-prepend "components/pages/pages-data.js"
+// @codekit-prepend "components/right-dock/right-dock.js"
+// @codekit-prepend "components/optionbar/optionbar.js"
+// @codekit-prepend "components/loading-tips/loading-tips.js"
+// @codekit-prepend "components/canvas/canvas.js"
+// @codekit-prepend "components/shape-manager/shapes-data.js"
 
-angular.module('particleApp', ['lucidComponents', 'optionbar', 'shapeManager', 'rightDock', 'lucidShapesData', 'pages', 'pagesData', 'loadingTips', 'canvas', 'ngDraggable', 'ngSortable', 'dndLists'])
+angular.module('particleApp', 
+    [
+        // loaded from particle.golucid.co
+        'lucidComponents',
+        'ngDraggable', 
+        'ngSortable', 
+        'dndLists',
+
+        // Codekit prepend
+        'canvas',
+        'loadingTips',
+        'optionbar',
+        'pages',
+        'pagesData', 
+        'rightDock',
+        'shapeManager',
+        'lucidShapesData'
+    ])
     .config(['$sceDelegateProvider', function($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist([
             // Allow same origin resource loads.
@@ -22,16 +41,16 @@ angular.module('particleApp', ['lucidComponents', 'optionbar', 'shapeManager', '
     ////START MAIN CTRL
     ////////////////
     .controller('mainCtrl', function($scope, $timeout, $rootScope) {
-        $scope.savetext = 'saved';
+        $scope.savetext = 'Saved';
         $timeout(function() {
             //pause for a moment to load editor 
             $scope.showBody = true;
             console.log('show-body');
-        }, 100)
+        }, 100);
         $rootScope.saveDocument = function() {
-            $scope.savetext = 'saving...';
+            $scope.savetext = 'Saving...';
             $timeout(function() {
-                $scope.savetext = 'saved';
+                $scope.savetext = 'Saved';
             }, 1000);
 
         };
@@ -71,6 +90,7 @@ angular.module('particleApp', ['lucidComponents', 'optionbar', 'shapeManager', '
 
         };
         //Start function for showing and hiding panels
+        var timer; // js-lint fix
         $scope.enterOptionBar = function() {
             if (!$scope.hideHeader) {
                 $scope.hideHeader = true;
@@ -111,4 +131,4 @@ angular.module('particleApp', ['lucidComponents', 'optionbar', 'shapeManager', '
             $timeout.cancel(timer);
         };
 
-    })
+    });

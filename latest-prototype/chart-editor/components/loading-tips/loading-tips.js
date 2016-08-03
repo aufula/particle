@@ -8,7 +8,7 @@ angular.module('loadingTips', [])
             // $element.removeClass('hide-body');
             // $scope.$root.showbetatips = true; //removed for latest prototype
             $scope.$root.loaded = true;
-        }, 4500)
+        }, 4500);
         $scope.showTip = (Math.ceil(Math.random() * 3));
         $scope.newTip = function() {
             $scope.showTip = $scope.showTip + 1;
@@ -16,4 +16,4 @@ angular.module('loadingTips', [])
                 $scope.showTip = 1;
             }
         };
-    })
+    });

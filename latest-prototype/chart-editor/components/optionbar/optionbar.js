@@ -190,4 +190,4 @@ angular.module('optionbar', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dn
             "name": "bottom-right",
             "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-right-bluesteel.svg",
         }];
-    })
+    });
