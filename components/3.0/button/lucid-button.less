@@ -3,7 +3,6 @@
     border: none;
     border-radius: 4px;
     font-size: 14px;
-    font-weight: 200;
     font-family: @font-stack;
     cursor: pointer;
     outline: none;
@@ -13,6 +12,9 @@
     whitespace: nowrap;
     transition:.15s ease-in-out background-color;
     -webkit-font-smoothing: auto;
+    svg path {
+        fill: #fff;
+    }
     &.lucid-blue {
         background-color: @info-blue;
         color: #fff;
@@ -30,7 +32,6 @@
         color: #fff;
     }
     &.lucid-button-icon {
-        padding-left:7px;
         .lucid-icon-18 {
             vertical-align: top;
             margin-right: 3px;

@@ -151,9 +151,6 @@ input {
   font-family: 'Source Sans Pro', sans-serif;
   font-size: 14px;
 }
-.reversed-text {
-  font-weight: 200;
-}
 .lucid-input-wrapper {
   display: inline-block;
   vertical-align: top;
@@ -171,7 +168,6 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
-  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
 }
 .lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
@@ -222,7 +218,6 @@ input {
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
-  -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
   padding-right: 10px;
   text-align: left;
@@ -253,10 +248,8 @@ input {
 }
 .lucid-input-stepper-wrapper .lucid-input-stepper .lucid-down {
   bottom: 1px;
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-input-stepper-wrapper.condensed .lucid-input-stepper {
   background: #FFF;
@@ -302,13 +295,11 @@ input {
   text-align: center;
   height: 25px;
   line-height: 25px;
-  font-weight: 100;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon {
   position: absolute;
   top: 10px;
   right: 0;
-  -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
   font-size: 0;
 }
@@ -316,10 +307,8 @@ input {
   fill: #fff;
 }
 .lucid-drawer-wrapper .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer {
   padding: 10px;
@@ -327,7 +316,6 @@ input {
   box-sizing: border-box;
   opacity: 1;
   margin-top: 0;
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.lucid-drawer-open {
@@ -341,23 +329,18 @@ input {
   padding: 0;
 }
 .lucid-drawer-wrapper .lucid-popover-menu-drawer.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button {
   border-radius: 0;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon {
-  -webkit-transform: rotateX(180deg);
-          transform: rotateX(180deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(180deg);
+  transform-origin: center;
 }
 .lucid-drawer-wrapper.top-handle .lucid-show-more-drawer-button .lucid-drawer-more-icon.lucid-drawer-open {
-  -webkit-transform: rotateX(0deg);
-          transform: rotateX(0deg);
-  -webkit-transform-origin: center;
-          transform-origin: center;
+  transform: rotateX(0deg);
+  transform-origin: center;
 }
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
   display: none;
@@ -387,7 +370,6 @@ input {
 .lucid-buttcon .lucid-buttcon-image svg path,
 .lucid-buttcon .lucid-buttcon-image svg polygon,
 .lucid-buttcon .lucid-buttcon-image svg rect {
-  -webkit-transition: all 0.15s ease-in-out;
   transition: all 0.15s ease-in-out;
 }
 .lucid-buttcon .input-label {
@@ -455,7 +437,6 @@ input {
   opacity: 0;
 }
 .lucid-popover-menu.ng-animate {
-  -webkit-transition: .1s all linear;
   transition: .1s all linear;
 }
 .lucid-popover-menu ul {
@@ -606,7 +587,6 @@ input {
   top: -2px;
   z-index: 2;
   opacity: 1;
-  -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments {
@@ -665,7 +645,6 @@ input {
   fill: #29AAE1;
 }
 .lucid-color-picker .fill-content-wrapper {
-  -webkit-transition: 0.35s ease-in-out height;
   transition: 0.35s ease-in-out height;
   overflow: hidden;
 }
@@ -783,7 +762,6 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 0;
 }
 .lucid-modal-wrapper.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal {
@@ -800,12 +778,10 @@ input[type=range]:focus::-ms-fill-upper {
   z-index: 2;
 }
 .lucid-modal-wrapper .lucid-modal.ng-hide {
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
+  transform: translateY(10px);
   opacity: 0;
 }
 .lucid-modal-wrapper .lucid-modal.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-modal-wrapper .lucid-modal > header {
@@ -820,7 +796,6 @@ input[type=range]:focus::-ms-fill-upper {
   color: #fff;
   line-height: 22px;
   font-size: 16px;
-  font-weight: 200;
 }
 .lucid-modal-wrapper .lucid-modal > header .lucid-close-modal {
   width: 22px;
@@ -884,7 +859,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 0 15px;
   line-height: 42px;
   white-space: nowrap;
-  font-weight: 300;
 }
 .lucid-finger-tabs .lucid-finger-tab svg path,
 .lucid-finger-tabs .lucid-finger-tab svg polygon {
@@ -925,16 +899,17 @@ input[type=range]:focus::-ms-fill-upper {
   border: none;
   border-radius: 4px;
   font-size: 14px;
-  font-weight: 200;
   font-family: 'Source Sans Pro', sans-serif;
   cursor: pointer;
   outline: none;
   display: inline-block;
   box-sizing: border-box;
   whitespace: nowrap;
-  -webkit-transition: 0.15s ease-in-out background-color;
   transition: 0.15s ease-in-out background-color;
   -webkit-font-smoothing: auto;
+}
+.lucid-button svg path {
+  fill: #fff;
 }
 .lucid-button.lucid-blue {
   background-color: #29AAE1;
@@ -951,9 +926,6 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-button.lucid-cancel {
   background-color: #A5A5A5;
   color: #fff;
-}
-.lucid-button.lucid-button-icon {
-  padding-left: 7px;
 }
 .lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
@@ -980,7 +952,6 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-icon svg polygon,
 .lucid-icon svg rect,
 .lucid-icon svg circle {
-  -webkit-transition: 0.15s ease-in-out;
   transition: 0.15s ease-in-out;
 }
 .lucid-icon.fill-blue-steel svg path,
@@ -1096,7 +1067,6 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-select-wrapper .lucid-select-dropdown > div {
   padding: 3px 2px;
   margin-top: 0;
-  -webkit-transition: 0.1s ease-in-out margin;
   transition: 0.1s ease-in-out margin;
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-hide {
@@ -1107,14 +1077,12 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-select-wrapper .lucid-select-dropdown.ng-animate {
   overflow: hidden;
-  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
 }
 .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
   cursor: pointer;
   padding: 5px 15px 5px 25px;
   text-align: left;
-  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   position: relative;
 }
@@ -1267,7 +1235,6 @@ input[type=range]:focus::-ms-fill-upper {
   padding: 8px 10px;
   position: relative;
   color: #5A5A5A;
-  -webkit-transition: 0.3s ease-in-out;
   transition: 0.3s ease-in-out;
   box-sizing: border-box;
   height: 32px;
@@ -1281,24 +1248,19 @@ input[type=range]:focus::-ms-fill-upper {
   left: 0;
   height: 30px;
   padding: 12px 4px 0 11px;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg {
   vertical-align: top;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon svg path {
-  -webkit-transform: rotate(0);
-          transform: rotate(0);
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: all 0.25s ease-in-out;
+  transform: rotate(0);
+  transform-origin: center;
   transition: all 0.25s ease-in-out;
   fill: #77818C;
 }
 .lucid-collapse-bar .collapse-bar-top .lucid-hide-content-icon.lucid-hide-content svg path {
-  -webkit-transform: rotate(-90deg);
-          transform: rotate(-90deg);
+  transform: rotate(-90deg);
 }
 .lucid-collapse-bar .collapse-bar-top .collapse-bar-name {
   vertical-align: top;
@@ -1309,7 +1271,6 @@ input[type=range]:focus::-ms-fill-upper {
   display: inline-block;
 }
 .lucid-collapse-bar .lucid-collapse-bar-content {
-  -webkit-transition: all .5s;
   transition: all .5s;
   width: 100%;
 }
@@ -1329,7 +1290,6 @@ input[type=range]:focus::-ms-fill-upper {
   background: #E6E6E6;
   border: 1px solid #979797;
   color: #5A5A5A;
-  -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
   text-align: center;
   cursor: pointer;
@@ -1462,12 +1422,10 @@ input[type=range]:focus::-ms-fill-upper {
   bottom: -10px;
 }
 .lucid-tip-wrapper.ng-animate {
-  -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
 }
 .lucid-tip-wrapper.ng-hide.ng-hide-add-active {
   margin: 0;
-  -webkit-transition: 0.2s ease-out all;
   transition: 0.2s ease-out all;
 }
 .lucid-tip-wrapper .lucid-close-icon {
@@ -1495,7 +1453,6 @@ input[type=range]:focus::-ms-fill-upper {
   opacity: 0;
 }
 .lucid-paywall-wrapper.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-paywall-wrapper .lucid-paywall-inner-wrapper {
@@ -1528,10 +1485,8 @@ input[type=range]:focus::-ms-fill-upper {
   height: 28px;
   line-height: 26px;
   text-align: center;
-  -webkit-transform: rotateZ(-45deg);
-          transform: rotateZ(-45deg);
-  -webkit-transform-origin: bottom left;
-          transform-origin: bottom left;
+  transform: rotateZ(-45deg);
+  transform-origin: bottom left;
   position: absolute;
   bottom: 0;
   left: 0;
@@ -1591,12 +1546,10 @@ input[type=range]:focus::-ms-fill-upper {
   font-size: 16px;
 }
 .lucid-paywall-wrapper .lucid-paywall.ng-hide {
-  -webkit-transform: translateY(10px);
-          transform: translateY(10px);
+  transform: translateY(10px);
   opacity: 0;
 }
 .lucid-paywall-wrapper .lucid-paywall.ng-animate {
-  -webkit-transition: 0.35s ease-in-out;
   transition: 0.35s ease-in-out;
 }
 .lucid-paywall-wrapper .lucid-paywall-bg {
