@@ -1349,14 +1349,6 @@
 #documents svg path {
   fill: white;
 }
-#file-menu {
-  display: inline-block;
-  margin-left: 20px;
-}
-#file-menu li {
-  display: inline-block;
-  margin-right: 20px;
-}
 #document-title {
   display: inline-block;
   width: 100%;
@@ -1412,6 +1404,74 @@ button {
 }
 .collaborators li img {
   width: 24px;
+}
+#file-menu ul {
+  margin-left: 20px;
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 400;
+}
+#file-menu ul > li span {
+  margin-right: 20px;
+}
+#file-menu ul li {
+  display: inline-block;
+  position: relative;
+}
+#file-menu ul li.divider,
+#file-menu ul li.divider:hover {
+  padding: 0;
+  margin: 4px -3px;
+  height: 1px;
+  background: #D2D2D2;
+  width: calc(100% + 6px);
+}
+#file-menu ul li.checked {
+  background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
+}
+#file-menu a {
+  display: block;
+  padding: 0 10px;
+  color: #FFF;
+  font-size: 20px;
+  line-height: 60px;
+  text-decoration: none;
+}
+#file-menu ul ul {
+  background: #FFF;
+  color: #3d4752;
+  position: absolute;
+  top: 25px;
+  left: -22px;
+  padding: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+#file-menu ul li:hover > ul {
+  display: inherit;
+}
+#file-menu ul ul li {
+  width: 220px;
+  float: none;
+  display: list-item;
+  position: relative;
+  padding: 4px 10px 4px 20px;
+  font-size: 14px;
+}
+#file-menu ul ul li:hover {
+  background-color: #F0F0F0;
+}
+#file-menu ul ul ul li {
+  position: relative;
+  top: -60px;
+  left: 170px;
+}
+#file-menu li > a:after {
+  content: '>';
+}
+#file-menu li > a:only-child:after {
+  content: '';
 }
 #option-bar {
   width: 100%;
@@ -1545,8 +1605,8 @@ button {
 }
 #lucid-canvas .simple-line-wrapper {
   position: absolute;
-  top: 100px;
-  left: 448px;
+  top: 175px;
+  left: 131px;
   cursor: pointer;
   padding: 0 2px;
 }
@@ -1585,8 +1645,8 @@ button {
 #lucid-canvas .simple-table-wrapper {
   border: none;
   position: absolute;
-  top: 480px;
-  left: 448px;
+  top: 75px;
+  left: 298px;
   cursor: pointer;
 }
 #lucid-canvas .simple-table-wrapper table {
@@ -1755,7 +1815,7 @@ button {
 }
 .advanced-shapes-wrapper {
   position: absolute;
-  top: 60px;
+  top: 39px;
   left: 250px;
   width: 100%;
   border-bottom: 1px solid #999;

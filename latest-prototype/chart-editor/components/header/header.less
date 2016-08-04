@@ -44,14 +44,14 @@
     }
 }
 
-#file-menu {
-    display: inline-block;
-    margin-left: 20px;
-    li {
-        display: inline-block;
-        margin-right: 20px;
-    }
-}
+// #file-menu {
+//     display: inline-block;
+//     margin-left: 20px;
+//     li {
+//         display: inline-block;
+//         margin-right: 20px;
+//     }
+// }
 
 #document-title {
     display: inline-block;
@@ -113,5 +113,86 @@ button {
         img {
             width: 24px;
         }
+    }
+}
+
+#file-menu {
+    ul {
+        margin-left: 20px;
+        list-style: none;
+        position: relative;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 400;
+        > li span {
+            margin-right: 20px;
+        }
+        li {
+            display: inline-block;
+            //background-color: #E64A19;
+            position: relative;
+            &.divider,
+            &.divider:hover {
+                padding: 0;
+                margin: 4px -3px;
+                height: 1px;
+                background: @grey-border;
+                width: ~'calc(100% + 6px)';
+            }
+            &.checked {
+                background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
+            }
+        }
+    }
+    a {
+        display: block;
+        padding: 0 10px;
+        color: #FFF;
+        font-size: 20px;
+        line-height: 60px;
+        text-decoration: none;
+    }
+    a:hover {
+        //background-color: #000000;
+    }
+    // Hide Dropdowns by Default */
+    ul ul {
+        background: #FFF;
+        color: @blue-steel;
+        //display: none; //removed because of ng-click and ng-mouseenter
+        position: absolute;
+        top: 25px; // the height of the main nav 
+        left: -22px;
+        padding: 3px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+    }
+    // Display Dropdowns on Hover */
+    ul li:hover > ul {
+        display: inherit;
+    }
+    // First Tier Dropdown */
+    ul ul li {
+        width: 220px;
+        float: none;
+        display: list-item;
+        position: relative;
+        padding: 4px 10px 4px 20px;
+        font-size: 14px;
+        &:hover {
+            background-color: @grey-1;
+        }
+    }
+    // Second, Third and more Tiers */
+    ul ul ul li {
+        position: relative;
+        top: -60px;
+        left: 170px;
+    }
+    //show caret if there's more
+    li > a:after {
+        content: '>';
+    }
+    li > a:only-child:after {
+        content: '';
     }
 }

@@ -2,7 +2,7 @@
 angular.module('lucidData', [])
     //chart data
     .factory('pagesData', [function() {
-        //this factory will contain page data, block elements, positoins etc.
+        //this factory will contain page data, block elements, positions etc.
         var lucidPages = [{
             'name': 'Page 1',
             'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/thumb-placeholder-flowchart.png',

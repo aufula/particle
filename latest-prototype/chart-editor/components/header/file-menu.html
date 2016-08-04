@@ -1,0 +1,137 @@
+<nav id="file-menu" click-outside="nav.display = false">
+      <ul>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='file'">
+          <span>File</span>
+          <ul ng-show="nav.show == 'file' && nav.display">
+            <li>Share</li>
+            <li class="divider"></li>
+            <li>New Document</li>
+            <li>Rename</li>
+            <li>Save</li>
+            <li>Save As</li>
+            <li class="divider"></li>
+            <li>Import Diagram</li>
+            <li class="divider"></li>
+            <li>Page Settings</li>
+            <li class="divider"></li>
+            <li>Download & Export</li>
+            <li>Publish</li>
+            <li>Print</li>
+            <li>Export to Google Drive</li>
+            <li class="divider"></li>
+            <li>Set Reminder</li>
+            <li class="divider"></li>
+            <li>Integrations</li>
+            <li>User Preferences</li>
+            <li class="divider"></li>
+            <li>Back to Documents</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='edit'">
+          <span>Edit</span>
+          <ul ng-show="nav.show == 'edit' && nav.display">
+            <li>Undo</li>
+            <li>Redo</li>
+            <li class="divider"></li>
+            <li>Cut</li>
+            <li>Copy</li>
+            <li>Paste</li>
+            <li>Paste Plain</li>
+            <li class="divider"></li>
+            <li>Copy Style</li>
+            <li>Paste Style</li>
+            <li>Set Default Style</li>
+            <li class="divider"></li>
+            <li>Select All</li>
+            <li class="divider"></li>
+            <li>Edit Mask</li>
+            <li class="divider"></li>
+            <li>Spell Check</li>
+            <li>Change Spellcheck Language</li>
+            <li>Find and Replace</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='view'">
+          <span>View</span>
+          <ul ng-show="nav.show == 'view' && nav.display">
+            <li>Zoom In</li>
+            <li>Zoom Out</li>
+            <li>Zoom to Width</li>
+            <li>Zoom to Page</li>
+            <li>Reset Zoom</li>
+            <li class="divider"></li>
+            <li>Grid</li>
+            <li>Guides</li>
+            <li>Margins</li>
+            <li class="divider"></li>
+            <li>Show Notes</li>
+            <li>Show Comments</li>
+            <li>Show Rulers</li>
+            <li class="divider"></li>
+            <li>Enable Line Connections</li>
+            <li class="divider"></li>
+            <li>Use Web GL</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='insert'">
+          <span>Insert</span>
+          <ul ng-show="nav.show == 'insert' && nav.display">
+            <li>New Page</li>
+            <li>Import Page</li>
+            <li class="divider"></li>
+            <li>Comment</li>
+            <li>Image</li>
+            <li>SVG</li>
+            <li>Hotspot</li>
+            <li>Action</li>
+            <li>Presentation Slide</li>
+            <li class="divider"></li>
+            <li>Creator Name</li>
+            <li>Date & Time</li>
+            <li>Document Name</li>
+            <li>Last Modified By</li>
+            <li>Last Modified Date & Time</li>
+            <li>Fill with Lorem Ipsum</li>
+            <li>Page Name</li>
+            <li>Page Number</li>
+            <li>Page Count</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='arrange'">
+          <span>Arrange</span>
+          <ul ng-show="nav.show == 'arrange' && nav.display">
+            <li>Bring to Front</li>
+            <li>Send to Back</li>
+            <li>Bring Item Forward</li>
+            <li>Send Item Backward</li>
+            <li class="divider"></li>
+            <li>Align Objects</li>
+            <li>Distribute Objects</li>
+            <li>Match Size</li>
+            <li>Auto Layout</li>
+            <li class="divider"></li>
+            <li>Lock</li>
+            <li>Unlock</li>
+            <li class="divider"></li>
+            <li>Group</li>
+            <li>Ungroup</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='share'">
+          <span>Share</span>
+          <ul ng-show="nav.show == 'share' && nav.display">
+            <li>Add Collaborator</li>
+            <li>Publish</li>
+            <li>Social</li>
+            <li>Embed</li>
+          </ul>
+        </li>
+        <li ng-click="nav.display = !nav.display" ng-mouseenter="nav.show='help'">
+          <span>Help</span>
+          <ul ng-show="nav.show == 'help' && nav.display">
+            <li>Help Center</li>
+            <li>Hot Key Reference</li>
+          </ul>
+        </li>
+      </ul>
+    </nav>

@@ -24,15 +24,15 @@ angular.module('pagesData', [])
                 "text": {
                     "verticalalignment": "middle",
                     "horizontalalignment": "center",
-                    "text": "Double-Click to Add Text",
+                    "text": "Process",
                     "size": 16,
                 },
 
                 "padding": 7,
                 "metrics": {
                     "z": 2,
-                    "x": 390,
-                    "y": 85,
+                    "x": 75,
+                    "y": 75,
                     "width": 120,
                     "height": 100
                 },
@@ -58,8 +58,8 @@ angular.module('pagesData', [])
                 "padding": 7,
                 "metrics": {
                     "z": 2,
-                    "x": 393,
-                    "y": 248,
+                    "x": 75,
+                    "y": 243,
                     "width": 120,
                     "height": 80
                 },
