@@ -2229,18 +2229,20 @@ a {
 #main-footer {
   position: absolute;
   transition: all 0.3s ease-in-out;
-  bottom: 0;
-  left: 210px;
-  width: calc(100vw - 210px);
-  z-index: 2;
+  bottom: -32px;
+  left: 0;
+  width: 100%;
+  z-index: 7;
   background: #77818C;
   color: #fff;
-  height: 40px;
-  text-align: center;
+  height: 32px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
 }
 #main-footer img {
-  width: 281px;
-  margin-top: 8px;
+  height: 22px;
 }
 .tips-body-wrapper {
   display: block;

@@ -8764,6 +8764,17 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-zoom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 5562,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-zoom.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-zoom.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-android.png": {
 		"fileType": 32768,
 		"ignore": 0,
