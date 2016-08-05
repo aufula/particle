@@ -226,7 +226,7 @@
 .lucid-page .page-x {
   width: 18px;
   height: 18px;
-  background: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-dark-filled.svg');
+  background: url('assets/icon-close-dark-filled.svg');
   background-position: center center;
   position: absolute;
   top: 3px;
@@ -393,7 +393,7 @@
 }
 #left-bar {
   background: #E6E6E6;
-  width: 250px;
+  width: 210px;
   position: absolute;
   left: 0;
   top: 0;
@@ -593,7 +593,7 @@
   transform-origin: center;
 }
 .lucid-shapes-panel {
-  width: 250px;
+  width: 210px;
   position: relative;
   top: 0;
   height: 100%;
@@ -684,7 +684,7 @@
 .lucid-manage-shapes {
   background: #B2B2B2;
   border-right: none;
-  width: 250px;
+  width: 210px;
 }
 .lucid-managing-shapes .lucid-shape-group-wrapper.left-panel,
 .lucid-manage-shapes .lucid-shape-group-wrapper.left-panel,
@@ -800,22 +800,20 @@
 .lucid-shape-manager {
   position: absolute;
   top: 0;
-  width: calc(100vw - 250px );
+  width: calc(100vw - 210px );
   bottom: 0;
-  left: 250px;
+  left: 210px;
   background: rgba(61, 71, 82, 0.95);
   z-index: -1;
   margin-left: 0;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar {
   background: #77818C;
-  height: 59px;
-  padding: 15px 20px;
+  height: 40px;
+  display: flex;
+  align-items: center;
   box-sizing: border-box;
   text-align: left;
-}
-.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library {
-  float: left;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-new-library.lucid-select-wrapper {
   margin-left: 10px;
@@ -830,7 +828,6 @@
   width: 200px;
   position: relative;
   margin-left: 10px;
-  float: left;
 }
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container input {
   width: 100%;
@@ -853,8 +850,10 @@
   top: 5px;
   right: 7px;
 }
+.lucid-shape-manager .lucid-shape-manager-top-bar .lucid-search-container .lucid-search-icon svg path {
+  fill: #fff;
+}
 .lucid-shape-manager .lucid-shape-manager-top-bar .lucid-close-icon {
-  float: right;
   margin-top: 2px;
   cursor: pointer;
 }
@@ -863,6 +862,10 @@
 }
 .lucid-shape-manager .top-bar-inner {
   opacity: 1;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0 10px;
 }
 .lucid-shape-manager .top-bar-inner.ng-hide {
   opacity: 0;
@@ -1320,6 +1323,9 @@
   transition: top .3s;
   font-size: 14px;
 }
+#main-header button {
+  margin-left: 20px;
+}
 .header-left {
   flex: 1 0 0;
   display: flex;
@@ -1393,9 +1399,6 @@
   width: 1px;
   background: #77818C;
   margin: 0 10px;
-}
-button {
-  margin-left: 20px;
 }
 .collaborators li {
   border: 1px solid #77818C;
@@ -1494,7 +1497,7 @@ button {
   padding: 10px;
 }
 #option-bar > ul {
-  margin-left: 256px;
+  margin-left: 216px;
   display: flex;
   align-items: center;
   transition: margin 0.3s ease-in-out;
@@ -1816,7 +1819,7 @@ button {
 .advanced-shapes-wrapper {
   position: absolute;
   top: 39px;
-  left: 250px;
+  left: 210px;
   width: 100%;
   border-bottom: 1px solid #999;
 }
@@ -1855,159 +1858,6 @@ button {
 }
 .advanced-shapes-wrapper.ng-animate .advanced-shapes {
   transition: 0.25s ease-in-out;
-}
-#share section {
-  padding: 15px;
-}
-#share .add-button {
-  float: left;
-  font-size: 14px;
-  cursor: pointer;
-}
-#share .add-button img {
-  width: 18px !important;
-  display: inline;
-  margin-right: 5px;
-  position: relative;
-  vertical-align: middle;
-  top: -2px;
-}
-#share .group {
-  position: relative;
-}
-#share .group:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-#share .add-popup {
-  top: 30px;
-  left: -5px;
-  padding: 10px;
-  background: #FFF;
-  width: 200px;
-}
-#share .add-popup:after {
-  border-bottom-color: #FFF;
-  top: -10px;
-  left: 15px;
-}
-#share .add-popup input {
-  width: 100%;
-  text-indent: 5px;
-  margin-bottom: 5px;
-}
-#share .add-popup select {
-  float: left;
-}
-#share .add-popup .lucid-button {
-  height: 22px;
-  width: 43px;
-  padding: 0;
-  float: right;
-}
-#share .add-popup .lucid-button[disabled='disabled'] {
-  opacity: .6;
-}
-#share .options {
-  float: right;
-  font-size: 14px;
-  color: #2C84B5;
-  cursor: pointer;
-}
-#share ul.collaborators {
-  margin-top: 15px;
-}
-#share ul.collaborators > li {
-  height: 32px;
-  background: white;
-  text-align: left;
-  font-size: 14px;
-  border-radius: 4px;
-  margin-bottom: 10px;
-  transition: all .25s;
-  position: relative;
-  cursor: pointer;
-}
-#share ul.collaborators > li.ng-enter {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-}
-#share ul.collaborators > li.ng-enter-active {
-  opacity: 1;
-  height: 30px;
-}
-#share ul.collaborators > li.ng-leave {
-  opacity: 1;
-  height: 30px;
-}
-#share ul.collaborators > li.ng-leave-active {
-  opacity: 0;
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 0;
-}
-#share ul.collaborators > li.ng-enter-stagger {
-  transition-delay: .1s;
-  transition-duration: 0s;
-}
-#share ul.collaborators > li .image-container {
-  float: left;
-  width: 32px !important;
-  height: 32px;
-  background: #77818C;
-  border-radius: 4px 0 0 4px;
-  overflow: hidden;
-}
-#share ul.collaborators > li .image-container img {
-  border-radius: 4px 0 0 4px;
-}
-#share ul.collaborators > li .permissions .lucid-buttcon {
-  background-color: rgba(61, 71, 82, 0.6);
-}
-#share ul.collaborators > li .permissions .lucid-buttcon svg path {
-  fill: #fff;
-}
-#share ul.collaborators > li .permissions .lucid-buttcon,
-#share ul.collaborators > li .avatar,
-#share ul.collaborators > li .delete {
-  transition: opacity .2s;
-}
-#share ul.collaborators > li .permissions .lucid-buttcon {
-  opacity: 0;
-}
-#share ul.collaborators > li .delete {
-  position: absolute;
-  top: 5px;
-  width: 22px !important;
-  opacity: 0;
-}
-#share ul.collaborators > li .avatar {
-  opacity: 1;
-}
-#share ul.collaborators > li .delete {
-  right: 3px;
-  opacity: 0;
-}
-#share ul.collaborators > li:hover .permissions .lucid-buttcon,
-#share ul.collaborators > li:hover .delete {
-  opacity: 1;
-}
-#share ul.collaborators > li span {
-  display: inline-block;
-  margin: 7px 0 0 10px;
-}
-#share .permissions {
-  position: absolute;
-  top: 0px;
-  left: 0;
-}
-#share .permissions .lucid-popover-menu {
-  top: 39px;
-}
-#share .permissions .lucid-select-option {
-  padding: 5px 15px 5px 25px;
 }
 .share-modal .lucid-tab-content,
 .share-modal article {
@@ -2182,7 +2032,7 @@ a {
   line-height: 22px;
   cursor: pointer;
   position: absolute;
-  width: 250px;
+  width: 210px;
   left: 0;
   top: 0;
 }
@@ -2197,7 +2047,7 @@ a {
 }
 .import-options .show-import-options {
   position: absolute;
-  width: 250px;
+  width: 210px;
   left: 0;
   top: 0;
 }
@@ -2232,10 +2082,11 @@ a {
 }
 #main-container {
   z-index: 0;
-  height: calc(100% - 40px);
+  height: calc(100% - 72px);
   width: 100%;
   display: inline-block;
   margin-top: 40px;
+  margin-bottom: 32px;
   position: relative;
   transition: all .3s;
   background: #ACAFB0;
@@ -2243,7 +2094,7 @@ a {
 #main-container .page-container {
   position: absolute;
   top: 60px;
-  left: 274px;
+  left: 232px;
   box-shadow: 0 2px 20px rgba(0, 0, 0, 0.25);
   background: #fff;
   height: 694px;
@@ -2379,8 +2230,8 @@ a {
   position: absolute;
   transition: all 0.3s ease-in-out;
   bottom: 0;
-  left: 250px;
-  width: calc(100vw - 250px);
+  left: 210px;
+  width: calc(100vw - 210px);
   z-index: 2;
   background: #77818C;
   color: #fff;
@@ -2592,13 +2443,12 @@ a {
   top: 40px;
   right: 0;
   width: 60px;
-  height: 100%;
+  height: calc(100% - 32px);
   background: #E6E6E6;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 7;
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
-  padding-top: 5px;
   border-left: 1px solid #A5A5A5;
   border-right: 1px solid #D2D2D2;
 }
@@ -2609,7 +2459,7 @@ a {
 #right-dock .icon-wrapper {
   cursor: pointer;
   transition: color ease-in-out 0.1s, background 0.1s, transform 0.5s, margin 0.5s;
-  padding: 14px 0;
+  padding: 10px 0;
   position: relative;
   margin-left: -1px;
   transform: scale(1);
@@ -2656,18 +2506,14 @@ a {
 }
 #right-dock .right-panel .container > header {
   background: #77818C;
-  padding: 10px 15px;
+  padding: 0 15px;
+  height: 32px;
   color: #fff;
   text-align: left;
   font-size: 14px;
   position: relative;
-}
-#right-dock .right-panel .container > header img {
-  width: 22px;
-  position: absolute;
-  right: 10px;
-  top: 6px;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
 }
 #right-dock .right-panel .lucid-collapse-bar {
   margin-bottom: 10px;
@@ -2695,6 +2541,10 @@ a {
 #right-dock .right-panel img {
   max-width: 100%;
 }
+#right-dock .close-arrows svg {
+  transform: rotate(180deg);
+  margin: 7px;
+}
 #right-dock.open {
   right: 250px;
 }
@@ -2708,6 +2558,9 @@ a {
 }
 #right-dock.open .right-panel .container.ng-animate {
   transition: 0s ease-in-out all;
+}
+#right-dock.open .close-arrows svg {
+  transform: rotate(0);
 }
 .inactive {
   opacity: .6;

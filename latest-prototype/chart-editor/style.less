@@ -131,170 +131,6 @@ sans-serif;
 @import 'components/optionbar/optionbar.less';
 @import 'components/canvas/canvas.less';
 @import 'components/advanced-shapes/advanced-shapes.less';
-/////////////////////////////////////////////////
-//START SHARE
-////////////////////////////////////////////////
-#share {
-    section {
-        padding: 15px;
-    }
-    .add-button {
-        float: left;
-        font-size: 14px;
-        cursor: pointer;
-        img {
-            width: 18px !important;
-            display: inline;
-            margin-right: 5px;
-            position: relative;
-            vertical-align: middle;
-            top: -2px;
-        }
-    }
-    .group {
-        position: relative;
-        &:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-    }
-    .add-popup {
-        top: 30px;
-        left: -5px;
-        padding: 10px;
-        background: #FFF;
-        width: 200px;
-        &:after {
-            border-bottom-color: #FFF;
-            top: -10px;
-            left: 15px;
-        }
-        input {
-            width: 100%;
-            text-indent: 5px;
-            margin-bottom: 5px;
-        }
-        select {
-            float: left;
-        }
-        .lucid-button {
-            height: 22px;
-            width: 43px;
-            padding: 0;
-            float: right;
-            &[disabled='disabled'] {
-                opacity: .6;
-            }
-        }
-    }
-    .options {
-        float: right;
-        font-size: 14px;
-        color: #2C84B5;
-        cursor: pointer;
-    }
-    ul.collaborators {
-        margin-top: 15px;
-        > li {
-            height: 32px;
-            background: white;
-            //overflow: hidden;
-            text-align: left;
-            font-size: 14px;
-            border-radius: 4px;
-            margin-bottom: 10px;
-            transition: all .25s;
-            position: relative;
-            cursor: pointer;
-            &.ng-enter {
-                opacity: 0;
-                height: 0;
-                overflow: hidden;
-            }
-            &.ng-enter-active {
-                opacity: 1;
-                height: 30px;
-            }
-            &.ng-leave {
-                opacity: 1;
-                height: 30px;
-            }
-            &.ng-leave-active {
-                opacity: 0;
-                height: 0;
-                overflow: hidden;
-                margin-bottom: 0;
-            }
-            &.ng-enter-stagger {
-                transition-delay: .1s;
-                transition-duration: 0s;
-            }
-            .image-container {
-                float: left;
-                width: 32px !important;
-                height: 32px;
-                background: @blue-steel-2;
-                border-radius: 4px 0 0 4px;
-                overflow: hidden;
-                img {
-                    border-radius: 4px 0 0 4px;
-                }
-            }
-            .permissions .lucid-buttcon {
-                svg path {
-                    fill: #fff;
-                }
-                background-color: fade(@blue-steel, 60%);
-            }
-            .permissions .lucid-buttcon,
-            .avatar,
-            .delete {
-                transition: opacity .2s;
-            }
-            .permissions .lucid-buttcon {
-                opacity: 0;
-            }
-            .delete {
-                position: absolute;
-                top: 5px;
-                width: 22px !important;
-                opacity: 0;
-            }
-            .avatar {
-                opacity: 1;
-            }
-            .delete {
-                right: 3px;
-                opacity: 0;
-            }
-            &:hover {
-                // .avatar {
-                //     opacity: .5;
-                // }
-                .permissions .lucid-buttcon,
-                .delete {
-                    opacity: 1;
-                }
-            }
-            span {
-                display: inline-block;
-                margin: 7px 0 0 10px;
-            }
-        }
-    }
-    .permissions {
-        position: absolute;
-        top: 0px;
-        left: 0;
-        .lucid-popover-menu {
-            top: 39px;
-        }
-        .lucid-select-option {
-            padding: 5px 15px 5px 25px;
-        }
-    }
-}
 
 //share modal
 .share-modal .lucid-tab-content,
@@ -302,10 +138,7 @@ sans-serif;
     padding: 0;
 }
 
-/////////////////////////////////////////////////
-//END SHARE
-////////////////////////////////////////////////
-// >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> Not Share Stuff ???? <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
 .lucid-shapes-header >span {
     cursor: pointer;
 }
@@ -554,10 +387,11 @@ a {
 
 #main-container {
     z-index: 0; //added so popovers stay on top
-    height: ~"calc(100% - 40px)";
+    height: ~"calc(100% - 72px)";
     width: 100%;
     display: inline-block;
     margin-top: 40px;
+    margin-bottom: 32px;
     position: relative;
     transition: all .3s;
     background: #ACAFB0;
@@ -565,7 +399,7 @@ a {
     .page-container {
         position: absolute;
         top: 60px;
-        left: 274px;
+        left: 232px;
         //border: 2px solid #ccc;
         //overflow: hidden;
         box-shadow: 0 2px 20px rgba(0, 0, 0, .25);

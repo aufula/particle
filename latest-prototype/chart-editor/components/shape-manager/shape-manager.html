@@ -85,7 +85,7 @@
                               </div>
                               <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                 <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
-                                    <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                    <img style="width:99px;padding-top:12px;" src="assets/placeholder-drag.png">
                                     <span class="lucid-save-shapes-hint">Drop shapes to save</span>
                                 </div>
                                 <ul class="shapes-wrapper"
@@ -151,7 +151,7 @@
                               </div>
                               <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                 <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
-                                    <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                    <img style="width:99px;padding-top:12px;" src="assets/placeholder-drag.png">
                                     <span class="lucid-save-shapes-hint">Drop shapes to save</span>
                                 </div>
                                 <ul class="shapes-wrapper"
@@ -197,34 +197,36 @@
         <div class="lucid-shape-manager lucid-manage-shapes lucid-animate" ng-show="$root.manageshapes">
             <div class="lucid-shape-manager-top-bar">
                 <div class="top-bar-inner" ng-show="$root.manageshapes">
-                  <lucid-button 
-                        icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-add-white-18px.svg"  
-                        class="lucid-new-library lucid-blue" 
-                        ng-click="newCustomGroup()">Custom Group</lucid-button>
-                    <!-- start -->
-                    <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
-                      <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
-                      <div class="lucid-select-dropdown no-checkmarks" ng-show="showdropdown">
-                          <div>
-                              <ul ng-click="showdropdown = false;">
-                              <li class="lucid-select-option">
-                                  Image<input type="file" class="hidden-file-upload">
-                              </li>   
-                              <li class="lucid-select-option">
-                                  SVG<input type="file" class="hidden-file-upload">
-                              </li>  
-                              <li class="lucid-select-option">
-                                  Visio Stencil<input type="file" class="hidden-file-upload">
-                              </li>     
-                            </ul>
-                          </div>
+                  <div>
+                    <lucid-button 
+                          icon="http://particle.golucid.co/components/3.0/icon/icons/icon-plus-18px.svg"  
+                          class="lucid-new-library lucid-blue" 
+                          ng-click="newCustomGroup()">Custom Group</lucid-button>
+                      <!-- start -->
+                      <div class="lucid-select-wrapper lucid-new-library" click-outside="showdropdown = false">
+                        <lucid-button class="lucid-new-library import-to-manager" ng-click="showdropdown = !showdropdown">Import</lucid-button>
+                        <div class="lucid-select-dropdown no-checkmarks" ng-show="showdropdown">
+                            <div>
+                                <ul ng-click="showdropdown = false;">
+                                <li class="lucid-select-option">
+                                    Image<input type="file" class="hidden-file-upload">
+                                </li>   
+                                <li class="lucid-select-option">
+                                    SVG<input type="file" class="hidden-file-upload">
+                                </li>  
+                                <li class="lucid-select-option">
+                                    Visio Stencil<input type="file" class="hidden-file-upload">
+                                </li>     
+                              </ul>
+                            </div>
+                        </div>
                       </div>
-                    </div>
-                    <!-- import modal is close to end of document -->
-                    <!-- End -->
-                    <div class="lucid-search-container">
-                        <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
-                        <img class="lucid-search-icon" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-search-white.svg">
+                      <!-- import modal is close to end of document -->
+                      <!-- End -->
+                      <div class="lucid-search-container">
+                          <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
+                          <ng-include class="lucid-search-icon lucid-icon-22" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-search-18px.svg'"></ng-include>
+                      </div>
                     </div>
                     <ng-include ng-click="$root.toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
                     </ng-include>
@@ -279,7 +281,7 @@
                               </div>
                               <div class="slide-toggle" ng-hide="hideshapes">
                                   <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
-                                      <img style="width:99px;padding-top:12px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-drag-v4.9.png">
+                                      <img style="width:99px;padding-top:12px;" src="assets/placeholder-drag.png">
                                       <span class="lucid-save-shapes-hint">Drop shapes to save</span>
                                   </div>
                                   <ul class="shapes-wrapper"

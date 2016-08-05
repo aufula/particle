@@ -36,17 +36,6 @@ angular.module('optionbar', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dn
             }
             $scope.showpopover = false;
         };
-        $scope.pathstyles = [{
-            "name": "curved",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-curved-bluesteel.svg",
-        }, {
-            "name": "angle",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-angle-bluesteel.svg",
-        }, {
-            "name": "straight",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-line-straight-bluesteel.svg",
-        }];
-        $scope.pathstyle = $scope.pathstyles[0];
 
     })
     ////////////////
@@ -148,46 +137,46 @@ angular.module('optionbar', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dn
             "verticalalignment": "top",
             "horizontalalignment": "left",
             "name": "top-left",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-left-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-left-22px.svg",
         }, {
             "verticalalignment": "top",
             "horizontalalignment": "center",
             "name": "top-center",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-center-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-center-22px.svg",
         }, {
             "verticalalignment": "top",
             "horizontalalignment": "right",
             "name": "top-right",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_top-right-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-right-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "left",
             "name": "center-left",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-left-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-left-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "center",
             "name": "center-center",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-center-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-center-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "right",
             "name": "center-right",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_center-right-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-right-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "left",
             "name": "bottom-left",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-left-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-left-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "center",
             "name": "bottom-center",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-center-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-center-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "right",
             "name": "bottom-right",
-            "icon": "https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-alignment_bottom-right-bluesteel.svg",
+            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-right-22px.svg",
         }];
     });

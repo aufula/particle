@@ -28,7 +28,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/border-options\/lucid-border-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/border-options\/lucid-border-options.less": {
@@ -77,7 +77,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -117,7 +117,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/buttcon\/lucid-buttcon.less": {
@@ -166,7 +166,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/button\/lucid-button.less": {
@@ -215,7 +215,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/canvas\/lucid-canvas-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/canvas\/lucid-canvas.less": {
@@ -264,7 +264,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/chart-block\/lucid-chart-block-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/chart-block\/lucid-chart-block.less": {
@@ -322,7 +322,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/color-picker\/lucid-color-picker.less": {
@@ -353,7 +353,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/components.css": {
@@ -373,7 +373,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/components.less": {
@@ -422,7 +422,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/context-menu\/lucid-context-menu.less": {
@@ -480,7 +480,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/finger-tabs\/lucid-finger-tabs.less": {
@@ -567,7 +567,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/input-stepper\/lucid-input-stepper.less": {
@@ -616,7 +616,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/line-options\/lucid-line-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/line-options\/lucid-line-options.less": {
@@ -665,7 +665,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/modal\/lucid-modal.less": {
@@ -714,7 +714,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/more-drawer\/lucid-more-drawer.less": {
@@ -763,7 +763,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/notification\/lucid-notification.less": {
@@ -812,7 +812,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/page\/lucid-page-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/page\/lucid-page.less": {
@@ -852,7 +852,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/pages\/lucid-pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/pages\/lucid-pages.html": {
@@ -872,7 +872,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/pages\/lucid-pages-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/pages\/lucid-pages.less": {
@@ -921,7 +921,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/path-style\/lucid-path-style-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/path-style\/lucid-path-style.less": {
@@ -970,7 +970,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/popover-menu\/lucid-popover-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/popover-menu\/lucid-popover-menu.less": {
@@ -1019,7 +1019,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/position-options\/lucid-position-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/position-options\/lucid-position-options.less": {
@@ -1088,7 +1088,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/prototype\/js\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/saved-styles\/lucid-saved-styles-basic.html": {
@@ -1117,7 +1117,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/saved-styles\/lucid-saved-styles-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/saved-styles\/lucid-saved-styles.less": {
@@ -1166,7 +1166,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/select\/lucid-select.less": {
@@ -1215,7 +1215,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/settings-drawer\/lucid-settings-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/settings-drawer\/lucid-settings-drawer.less": {
@@ -1264,7 +1264,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/shadow-options\/lucid-shadow-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/shadow-options\/lucid-shadow-options.less": {
@@ -1313,7 +1313,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/shape-group\/lucid-shape-group-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/shape-group\/lucid-shape-group.less": {
@@ -1362,7 +1362,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/shape\/lucid-shape-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/shape\/lucid-shape.less": {
@@ -1431,7 +1431,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/shapes-manager\/lucid-shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/shapes-manager\/lucid-shapes-manager-basic.html": {
@@ -1460,7 +1460,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/shapes-manager\/lucid-shapes-manager-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/shapes-manager\/lucid-shapes-manager.less": {
@@ -1509,7 +1509,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/slides\/lucid-slides-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/slides\/lucid-slides.less": {
@@ -1558,7 +1558,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/text-alignment\/lucid-text-alignment-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/text-alignment\/lucid-text-alignment.less": {
@@ -1607,7 +1607,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/text-options\/lucid-text-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/text-options\/lucid-text-options.less": {
@@ -1647,7 +1647,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/themes\/lucid-themes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/themes\/lucid-themes.html": {
@@ -1667,7 +1667,7 @@
 		"outputAbbreviatedPath": "\/components\/0.0\/themes\/lucid-themes-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.0\/themes\/lucid-themes.less": {
@@ -1716,7 +1716,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/border-options\/lucid-border-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/border-options\/lucid-border-options.less": {
@@ -1765,7 +1765,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -1814,7 +1814,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/buttcon-toggle\/lucid-buttcon-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/buttcon-toggle\/lucid-buttcon-toggle.less": {
@@ -1854,7 +1854,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/buttcon\/lucid-buttcon.less": {
@@ -1903,7 +1903,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/button\/lucid-button.less": {
@@ -1952,7 +1952,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/canvas\/lucid-canvas-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/canvas\/lucid-canvas.less": {
@@ -2001,7 +2001,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/chart-block\/lucid-chart-block-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/chart-block\/lucid-chart-block.less": {
@@ -2050,7 +2050,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/collapse-bar\/lucid-collapse-bar.less": {
@@ -2152,7 +2152,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/color-picker\/lucid-color-picker.less": {
@@ -2183,7 +2183,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/components.css": {
@@ -2203,7 +2203,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/components.less": {
@@ -2252,7 +2252,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/context-menu\/lucid-context-menu.less": {
@@ -2310,7 +2310,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/finger-tabs\/lucid-finger-tabs.less": {
@@ -2397,7 +2397,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/input-stepper\/lucid-input-stepper.less": {
@@ -2446,7 +2446,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/line-options\/lucid-line-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/line-options\/lucid-line-options.less": {
@@ -2495,7 +2495,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/modal\/lucid-modal.less": {
@@ -2544,7 +2544,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/more-drawer\/lucid-more-drawer.less": {
@@ -2593,7 +2593,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/notification\/lucid-notification.less": {
@@ -2642,7 +2642,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/page\/lucid-page-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/page\/lucid-page.less": {
@@ -2682,7 +2682,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/pages\/lucid-pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/pages\/lucid-pages.html": {
@@ -2702,7 +2702,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/pages\/lucid-pages-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/pages\/lucid-pages.less": {
@@ -2751,7 +2751,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/path-style\/lucid-path-style-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/path-style\/lucid-path-style.less": {
@@ -2800,7 +2800,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/popover-menu\/lucid-popover-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/popover-menu\/lucid-popover-menu.less": {
@@ -2849,7 +2849,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/position-options\/lucid-position-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/position-options\/lucid-position-options.less": {
@@ -2918,7 +2918,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/prototype\/js\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/prototype\/js\/min\/app-min.js": {
@@ -2929,7 +2929,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/prototype\/js\/min\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/saved-styles\/lucid-saved-styles-basic.html": {
@@ -2958,7 +2958,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/saved-styles\/lucid-saved-styles-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/saved-styles\/lucid-saved-styles.less": {
@@ -3007,7 +3007,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/select\/lucid-select.less": {
@@ -3056,7 +3056,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/settings-drawer\/lucid-settings-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/settings-drawer\/lucid-settings-drawer.less": {
@@ -3105,7 +3105,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/shadow-options\/lucid-shadow-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/shadow-options\/lucid-shadow-options.less": {
@@ -3154,7 +3154,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/shape-group\/lucid-shape-group-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/shape-group\/lucid-shape-group.less": {
@@ -3203,7 +3203,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/shape\/lucid-shape-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/shape\/lucid-shape.less": {
@@ -3272,7 +3272,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/shapes-manager\/lucid-shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/shapes-manager\/lucid-shapes-manager-basic.html": {
@@ -3301,7 +3301,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/shapes-manager\/lucid-shapes-manager-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/shapes-manager\/lucid-shapes-manager.less": {
@@ -3350,7 +3350,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/slides\/lucid-slides-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/slides\/lucid-slides.less": {
@@ -3399,7 +3399,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/text-alignment\/lucid-text-alignment-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/text-alignment\/lucid-text-alignment.less": {
@@ -3448,7 +3448,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/text-options\/lucid-text-options-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/text-options\/lucid-text-options.less": {
@@ -3488,7 +3488,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/themes\/lucid-themes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/themes\/lucid-themes.html": {
@@ -3508,7 +3508,7 @@
 		"outputAbbreviatedPath": "\/components\/0.1\/themes\/lucid-themes-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/0.1\/themes\/lucid-themes.less": {
@@ -3557,7 +3557,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -3606,7 +3606,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/buttcon-toggle\/lucid-buttcon-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/buttcon-toggle\/lucid-buttcon-toggle.less": {
@@ -3646,7 +3646,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/buttcon\/lucid-buttcon.less": {
@@ -3695,7 +3695,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/button\/lucid-button.less": {
@@ -3744,7 +3744,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/collapse-bar\/lucid-collapse-bar.less": {
@@ -3846,7 +3846,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/color-picker\/lucid-color-picker.less": {
@@ -3877,7 +3877,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/components.css": {
@@ -3897,7 +3897,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/components.less": {
@@ -3946,7 +3946,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/context-menu\/lucid-context-menu.less": {
@@ -4004,7 +4004,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/finger-tabs\/lucid-finger-tabs.less": {
@@ -4091,7 +4091,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/input-stepper\/lucid-input-stepper.less": {
@@ -4140,7 +4140,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/modal\/lucid-modal.less": {
@@ -4189,7 +4189,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/more-drawer\/lucid-more-drawer.less": {
@@ -4238,7 +4238,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/notification\/lucid-notification.less": {
@@ -4269,7 +4269,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/pages\/lucid-pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/popover-menu\/lucid-popover-menu-basic.html": {
@@ -4298,7 +4298,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/popover-menu\/lucid-popover-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/popover-menu\/lucid-popover-menu.less": {
@@ -4347,7 +4347,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/select\/lucid-select.less": {
@@ -4378,7 +4378,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/shapes-manager\/lucid-shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.0\/themes\/lucid-themes-data.js": {
@@ -4389,7 +4389,7 @@
 		"outputAbbreviatedPath": "\/components\/1.0\/themes\/lucid-themes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/buttcon-popover\/lucid-buttcon-popover-basic.html": {
@@ -4418,7 +4418,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -4467,7 +4467,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/buttcon\/lucid-buttcon.less": {
@@ -4516,7 +4516,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/button\/lucid-button.less": {
@@ -4565,7 +4565,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/collapse-bar\/lucid-collapse-bar.less": {
@@ -4667,7 +4667,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/color-picker\/lucid-color-picker.less": {
@@ -4718,7 +4718,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/components.css": {
@@ -4738,7 +4738,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/components.less": {
@@ -4787,7 +4787,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/context-menu\/lucid-context-menu.less": {
@@ -4845,7 +4845,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/finger-tabs\/lucid-finger-tabs.less": {
@@ -4894,7 +4894,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/icon\/lucid-icon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/icon\/lucid-icon.less": {
@@ -4943,7 +4943,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/input-stepper\/lucid-input-stepper.less": {
@@ -4992,7 +4992,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/input\/lucid-input-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/input\/lucid-input.less": {
@@ -5041,7 +5041,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/modal\/lucid-modal.less": {
@@ -5090,7 +5090,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/more-drawer\/lucid-more-drawer.less": {
@@ -5139,7 +5139,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/notification\/lucid-notification.less": {
@@ -5170,7 +5170,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/pages\/lucid-pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/popover-menu\/lucid-popover-menu-basic.html": {
@@ -5199,7 +5199,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/popover-menu\/lucid-popover-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/popover-menu\/lucid-popover-menu.less": {
@@ -5248,7 +5248,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/select\/lucid-select.less": {
@@ -5279,7 +5279,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/shapes-manager\/lucid-shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/themes\/lucid-themes-data.js": {
@@ -5290,7 +5290,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/themes\/lucid-themes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/toggle\/lucid-toggle-basic.html": {
@@ -5319,7 +5319,7 @@
 		"outputAbbreviatedPath": "\/components\/1.1\/toggle\/lucid-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.1\/toggle\/lucid-toggle.less": {
@@ -5368,7 +5368,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -5417,7 +5417,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/buttcon\/lucid-buttcon.less": {
@@ -5466,7 +5466,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/button\/lucid-button.less": {
@@ -5515,7 +5515,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/collapse-bar\/lucid-collapse-bar.less": {
@@ -5617,7 +5617,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/color-picker\/lucid-color-picker.less": {
@@ -5668,7 +5668,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/components.css": {
@@ -5688,7 +5688,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/components.less": {
@@ -5737,7 +5737,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/context-menu\/lucid-context-menu.less": {
@@ -5786,7 +5786,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/edit-in-place\/lucid-edit-in-place-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/edit-in-place\/lucid-edit-in-place.less": {
@@ -5844,7 +5844,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/finger-tabs\/lucid-finger-tabs.less": {
@@ -5893,7 +5893,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/icon\/lucid-icon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/icon\/lucid-icon.less": {
@@ -5942,7 +5942,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/input-stepper\/lucid-input-stepper.less": {
@@ -5991,7 +5991,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/input\/lucid-input-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/input\/lucid-input.less": {
@@ -6040,7 +6040,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/modal\/lucid-modal.less": {
@@ -6089,7 +6089,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/more-drawer\/lucid-more-drawer.less": {
@@ -6138,7 +6138,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/notification\/lucid-notification.less": {
@@ -6169,7 +6169,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/pages\/lucid-pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/select\/lucid-select-basic.html": {
@@ -6198,7 +6198,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/select\/lucid-select.less": {
@@ -6229,7 +6229,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/shapes-manager\/lucid-shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/themes\/lucid-themes-data.js": {
@@ -6240,7 +6240,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/themes\/lucid-themes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/toggle\/lucid-toggle-basic.html": {
@@ -6269,7 +6269,7 @@
 		"outputAbbreviatedPath": "\/components\/1.2\/toggle\/lucid-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/1.2\/toggle\/lucid-toggle.less": {
@@ -6318,7 +6318,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -6367,7 +6367,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/buttcon\/lucid-buttcon.less": {
@@ -6416,7 +6416,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/button\/lucid-button.less": {
@@ -6465,7 +6465,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/collapse-bar\/lucid-collapse-bar.less": {
@@ -6556,7 +6556,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/color-picker\/lucid-color-picker.less": {
@@ -6607,7 +6607,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/components.css": {
@@ -6627,7 +6627,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/components.less": {
@@ -6676,7 +6676,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/context-menu\/lucid-context-menu.less": {
@@ -6707,7 +6707,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/data\/lucid-data-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/data\/lucid-data.js": {
@@ -6718,7 +6718,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/data\/lucid-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/edit-in-place\/lucid-edit-in-place-basic.html": {
@@ -6747,7 +6747,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/edit-in-place\/lucid-edit-in-place-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/edit-in-place\/lucid-edit-in-place.less": {
@@ -6805,7 +6805,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/finger-tabs\/lucid-finger-tabs.less": {
@@ -6854,7 +6854,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/icon\/lucid-icon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/icon\/lucid-icon.less": {
@@ -6903,7 +6903,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/input-stepper\/lucid-input-stepper.less": {
@@ -6952,7 +6952,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/input\/lucid-input-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/input\/lucid-input.less": {
@@ -7001,7 +7001,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/modal\/lucid-modal.less": {
@@ -7050,7 +7050,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/more-drawer\/lucid-more-drawer.less": {
@@ -7099,7 +7099,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/notification\/lucid-notification.less": {
@@ -7148,7 +7148,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/paywall\/lucid-paywall-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/paywall\/lucid-paywall.less": {
@@ -7208,7 +7208,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/select\/lucid-select.less": {
@@ -7257,7 +7257,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/tip\/lucid-tip-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/tip\/lucid-tip.less": {
@@ -7306,7 +7306,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/toggle\/lucid-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/toggle\/lucid-toggle.less": {
@@ -7364,7 +7364,7 @@
 		"outputAbbreviatedPath": "\/components\/2.0\/top-tabs\/lucid-top-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/2.0\/top-tabs\/lucid-top-tabs.less": {
@@ -7413,7 +7413,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/buttcon-popover\/lucid-buttcon-popover-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/buttcon-popover\/lucid-buttcon-popover.less": {
@@ -7462,7 +7462,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/buttcon\/lucid-buttcon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/buttcon\/lucid-buttcon.less": {
@@ -7511,7 +7511,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/button\/lucid-button-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/button\/lucid-button.less": {
@@ -7560,7 +7560,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/collapse-bar\/lucid-collapse-bar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/collapse-bar\/lucid-collapse-bar.less": {
@@ -7651,7 +7651,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/color-picker\/lucid-color-picker-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/color-picker\/lucid-color-picker.less": {
@@ -7702,7 +7702,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/components-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/components.css": {
@@ -7722,7 +7722,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/components-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/components.less": {
@@ -7771,7 +7771,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/context-menu\/lucid-context-menu-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/context-menu\/lucid-context-menu.less": {
@@ -7802,7 +7802,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/data\/lucid-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/edit-in-place\/lucid-edit-in-place-basic.html": {
@@ -7831,7 +7831,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/edit-in-place\/lucid-edit-in-place-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/edit-in-place\/lucid-edit-in-place.less": {
@@ -7889,7 +7889,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/finger-tabs\/lucid-finger-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/finger-tabs\/lucid-finger-tabs.less": {
@@ -7938,7 +7938,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/icon\/lucid-icon-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/icon\/lucid-icon.less": {
@@ -7987,7 +7987,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/input-stepper\/lucid-input-stepper-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/input-stepper\/lucid-input-stepper.less": {
@@ -8036,7 +8036,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/input\/lucid-input-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/input\/lucid-input.less": {
@@ -8085,7 +8085,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/modal\/lucid-modal-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/modal\/lucid-modal.less": {
@@ -8134,7 +8134,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/more-drawer\/lucid-more-drawer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/more-drawer\/lucid-more-drawer.less": {
@@ -8183,7 +8183,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/notification\/lucid-notification-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/notification\/lucid-notification.less": {
@@ -8232,7 +8232,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/paywall\/lucid-paywall-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/paywall\/lucid-paywall.less": {
@@ -8292,7 +8292,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/select\/lucid-select-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/select\/lucid-select.less": {
@@ -8341,7 +8341,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/tip\/lucid-tip-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/tip\/lucid-tip.less": {
@@ -8390,7 +8390,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/toggle\/lucid-toggle-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/toggle\/lucid-toggle.less": {
@@ -8448,7 +8448,7 @@
 		"outputAbbreviatedPath": "\/components\/3.0\/top-tabs\/lucid-top-tabs-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/components\/3.0\/top-tabs\/lucid-top-tabs.less": {
@@ -8497,7 +8497,7 @@
 		"outputAbbreviatedPath": "\/js\/color-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/component-data.js": {
@@ -8508,7 +8508,7 @@
 		"outputAbbreviatedPath": "\/js\/component-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/icon-data.js": {
@@ -8519,7 +8519,7 @@
 		"outputAbbreviatedPath": "\/js\/icon-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/main.js": {
@@ -8530,7 +8530,7 @@
 		"outputAbbreviatedPath": "\/js\/main-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/production-data.js": {
@@ -8541,7 +8541,7 @@
 		"outputAbbreviatedPath": "\/js\/production-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/js\/snippets-data.js": {
@@ -8552,7 +8552,7 @@
 		"outputAbbreviatedPath": "\/js\/snippets-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/app-min.js": {
@@ -8563,7 +8563,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/app-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/app.js": {
@@ -8574,8 +8574,294 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
+		},
+	"\/latest-prototype\/chart-editor\/assets\/beta-tips-modal-placeholder.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 53951,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/beta-tips-modal-placeholder.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/beta-tips-modal-placeholder.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/collaborator.jpg": {
+		"fileType": 16384,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3056,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/collaborator.jpg",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/collaborator.jpg",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-comments-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 74567,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-comments-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-comments-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-drag.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7114,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-drag.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-drag.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-history-bottom-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 7650,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-bottom-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-bottom-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-history-top-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 44659,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-top-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-top-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-layers-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 24157,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-layers-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-layers-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-line-options.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 11566,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-line-options.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-line-options.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-pagelineoptions-Snyder.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 10718,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-pagelineoptions-Snyder.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-pagelineoptions-Snyder.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-present-2-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4452,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-present-2-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-present-2-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-present-v4.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 71592,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-present-v4.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-present-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-shadow-options.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18914,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shadow-options.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shadow-options.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-shape-data.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 33192,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-data.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-data.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-shape-metrics.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 18723,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-metrics.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-metrics.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-shape-options.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12908,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-options.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-shape-options.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-text-options-bottom.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 15917,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options-bottom.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options-bottom.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-text-options.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 12402,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-android.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1028,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-android.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-android.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-computer.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 322,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-computer.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-computer.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-flowchart.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 530,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-flowchart.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-flowchart.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-shapes.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1170,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-shapes.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/shapegroup-placeholder-shapes.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/share-placeholder-collaborate.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 30771,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-collaborate.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-collaborate.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/share-placeholder-embed.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 52264,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-embed.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-embed.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/share-placeholder-publish.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 31342,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-publish.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-publish.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/share-placeholder-social.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 28768,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-social.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/share-placeholder-social.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/thumb-placeholder-flowchart.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 19357,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/thumb-placeholder-flowchart.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/thumb-placeholder-flowchart.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
 		},
 	"\/latest-prototype\/chart-editor\/components\/add-ons\/add-ons.less": {
 		"allowInsecureImports": 0,
@@ -8652,7 +8938,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/canvas\/canvas-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/canvas\/canvas.less": {
@@ -8759,7 +9045,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/loading-tips\/loading-tips-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/loading-tips\/loading-tips.less": {
@@ -8782,17 +9068,6 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/latest-prototype\/chart-editor\/components\/lucid-data-min.js": {
-		"fileType": 64,
-		"ignore": 1,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/lucid-data-min.js",
-		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/lucid-data-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
-		},
 	"\/latest-prototype\/chart-editor\/components\/lucid-data.js": {
 		"fileType": 64,
 		"ignore": 0,
@@ -8801,7 +9076,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/lucid-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/modals\/modals.html": {
@@ -8859,7 +9134,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/optionbar\/optionbar-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/optionbar\/optionbar.less": {
@@ -8890,7 +9165,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/pages\/pages-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/pages\/pages.html": {
@@ -8910,7 +9185,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/pages\/pages-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/pages\/pages.less": {
@@ -8950,7 +9225,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/right-dock\/right-dock-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/right-dock\/right-dock.less": {
@@ -8990,7 +9265,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/shape-manager\/shape-manager-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/shape-manager\/shape-manager.less": {
@@ -9021,7 +9296,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/shape-manager\/shapes-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/css\/style.css": {
@@ -9033,17 +9308,6 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/latest-prototype\/chart-editor\/img\/collaborator.jpg": {
-		"fileType": 16384,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"initialSize": 3056,
-		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/img\/collaborator.jpg",
-		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/img\/collaborator.jpg",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"processed": 0
-		},
 	"\/latest-prototype\/chart-editor\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -9052,17 +9316,6 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
-		},
-	"\/latest-prototype\/chart-editor\/min\/app-min.js": {
-		"fileType": 64,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/min\/app-min.js",
-		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/min\/app-min-min.js",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
-		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/style.css": {
 		"fileType": 16,
@@ -9101,7 +9354,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/press-docslist\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/press-docslist\/components\/documents.html": {
@@ -9241,7 +9494,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/press-editor\/app-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/press-editor\/index.html": {
@@ -9261,7 +9514,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/press-editor\/press-data-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/press-editor\/style.css": {
@@ -9601,7 +9854,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular-drag-and-drop-lists.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular-highlight\/angular-highlightjs.min.js": {
@@ -9612,7 +9865,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular-highlight\/angular-highlightjs.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular-highlight\/github.min.css": {
@@ -9632,7 +9885,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular-highlight\/highlight.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular\/angular-animate.min.js": {
@@ -9643,7 +9896,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular\/angular-animate.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular\/angular-route.min.js": {
@@ -9654,7 +9907,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular\/angular-route.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular\/angular.min.js": {
@@ -9665,7 +9918,7 @@
 		"outputAbbreviatedPath": "\/lib\/angular\/angular.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/ng-sortable.js": {
@@ -9676,7 +9929,7 @@
 		"outputAbbreviatedPath": "\/lib\/ng-sortable-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/ngDraggable.js": {
@@ -9687,7 +9940,7 @@
 		"outputAbbreviatedPath": "\/lib\/ngDraggable-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/Sortable.min.js": {
@@ -9698,7 +9951,7 @@
 		"outputAbbreviatedPath": "\/lib\/Sortable.min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/svg-morpheus.js": {
@@ -9709,7 +9962,7 @@
 		"outputAbbreviatedPath": "\/lib\/svg-morpheus-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/production\/banners.html": {
@@ -10093,7 +10346,7 @@
 	"javascriptAutoOutputPathReplace2": "",
 	"javascriptAutoOutputPathStyle": 0,
 	"javascriptCreateSourceMap": 1,
-	"javascriptOutputStyle": 1,
+	"javascriptOutputStyle": 0,
 	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {

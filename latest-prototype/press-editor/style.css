@@ -11,17 +11,13 @@ html {
 body {
   font-family: "Source Sans Pro", sans-serif;
   background: #AAADAE;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 #wrapper {
   position: relative;
   height: 100%;
   width: 100%;
   box-shadow: -10px 0 30px rgba(0, 0, 0, 0.25);
-  -webkit-transition: margin 0.3s ease-in-out;
   transition: margin 0.3s ease-in-out;
 }
 #wrapper.with-mega-menu {
@@ -62,7 +58,6 @@ a {
   text-align: center;
   top: 0;
   width: 100%;
-  -webkit-transition: top .3s;
   transition: top .3s;
 }
 #main-header .dd-arrow {
@@ -219,7 +214,6 @@ a {
   opacity: 0;
 }
 #main-header .master-page-text.ng-animate {
-  -webkit-transition: 0.35s ease-in-out opacity;
   transition: 0.35s ease-in-out opacity;
 }
 #main-header .status {
@@ -247,13 +241,11 @@ a {
   bottom: 0px;
   right: -2px;
   z-index: 1;
-  -webkit-transition: all .2s;
   transition: all .2s;
 }
 #main-header .bell .bubble.ng-hide {
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 #main-header .bell header {
   background: #77818C;
@@ -361,7 +353,6 @@ nav.file-menu li > a:only-child:after {
   display: inline-block;
   margin-top: 54px;
   position: relative;
-  -webkit-transition: all .3s;
   transition: all .3s;
   background: #ACAFB0;
 }
@@ -387,7 +378,6 @@ nav.file-menu li > a:only-child:after {
   top: 0;
   height: 100%;
   z-index: 7;
-  -webkit-transition: opacity 0.3s, left 0.5s ease-in-out;
   transition: opacity 0.3s, left 0.5s ease-in-out;
 }
 #left-bar .icons-wrapper {
@@ -399,14 +389,10 @@ nav.file-menu li > a:only-child:after {
 }
 #left-bar .icons-wrapper .icon-wrapper {
   cursor: pointer;
-  -webkit-transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
-  transition: color ease-in-out 0.1s, background 0.1s, margin 0.5s, -webkit-transform 0.5s;
   transition: color ease-in-out 0.1s, background 0.1s, transform 0.5s, margin 0.5s;
-  transition: color ease-in-out 0.1s, background 0.1s, transform 0.5s, margin 0.5s, -webkit-transform 0.5s;
   padding: 14px 0;
   position: relative;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
   margin-left: -1px;
   margin-right: -1px;
 }
@@ -430,12 +416,10 @@ nav.file-menu li > a:only-child:after {
   border-bottom: 3.5px solid transparent;
 }
 #left-bar .icons-wrapper .icon-wrapper.ng-animate .tooltip {
-  -webkit-transition: opacity .5s .5s;
   transition: opacity .5s .5s;
 }
 #left-bar .icons-wrapper .icon-wrapper.ng-hide {
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
   margin: -32px 0;
 }
 #left-bar .icons-wrapper .icon-wrapper.ng-hide .tooltip {
@@ -457,7 +441,6 @@ nav.file-menu li > a:only-child:after {
   border-right: 1px solid #A5A5A5;
 }
 .left-panel-slide.ng-animate {
-  -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
   z-index: -1;
 }
@@ -506,14 +489,11 @@ nav.file-menu li > a:only-child:after {
   position: absolute;
   top: -3px;
   right: 0;
-  -webkit-transform: rotateZ(0);
-          transform: rotateZ(0);
-  -webkit-transition: all 0.35s ease-in-out;
+  transform: rotateZ(0);
   transition: all 0.35s ease-in-out;
 }
 .panel-content > header .panel-gear.active {
-  -webkit-transform: rotateZ(90deg);
-          transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
 }
 .panel-content ul.template-list {
   margin-left: -10px;
@@ -533,7 +513,6 @@ nav.file-menu li > a:only-child:after {
   opacity: 1;
 }
 .panel-content ul.template-list li.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 #template-manager {
@@ -696,7 +675,6 @@ nav.file-menu li > a:only-child:after {
   opacity: 1;
 }
 #template-manager .templates-group.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 #template-manager.ng-hide {
@@ -705,7 +683,6 @@ nav.file-menu li > a:only-child:after {
 }
 #template-manager.ng-animate {
   z-index: -1;
-  -webkit-transition: 0.5s ease-out all;
   transition: 0.5s ease-out all;
 }
 #pages-panel {
@@ -730,7 +707,6 @@ nav.file-menu li > a:only-child:after {
   margin-bottom: 10px;
   vertical-align: top;
   border-radius: 4px;
-  -webkit-transition: background .2s;
   transition: background .2s;
   position: relative;
 }
@@ -740,57 +716,36 @@ nav.file-menu li > a:only-child:after {
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter {
-  -webkit-animation: PageAnimation 0.4s ease-out;
-          animation: PageAnimation 0.4s ease-out;
+  animation: PageAnimation 0.4s ease-out;
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter h4 {
-  -webkit-transform: translateX(-40px);
-          transform: translateX(-40px);
+  transform: translateX(-40px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter-active,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter-active {
-  -webkit-animation: PageAnimation 0.4s ease-out;
-          animation: PageAnimation 0.4s ease-out;
+  animation: PageAnimation 0.4s ease-out;
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-enter-active h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-enter-active h4 {
-  -webkit-transform: translateX(0px);
-          transform: translateX(0px);
+  transform: translateX(0px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-leave-active,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active,
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li .ng-leave,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page .ng-leave {
-  -webkit-animation: PageAnimation 0.4s ease-in-out;
-          animation: PageAnimation 0.4s ease-in-out;
-  -webkit-animation-direction: reverse;
-          animation-direction: reverse;
+  animation: PageAnimation 0.4s ease-in-out;
+  animation-direction: reverse;
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-leave-active h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-leave-active h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li .ng-leave h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page .ng-leave h4 {
-  -webkit-transform: translateX(-40px);
-          transform: translateX(-40px);
+  transform: translateX(-40px);
 }
 #pages-panel .lucid-pages .lucid-pages-wrapper > ul > li.ng-animate h4,
 #pages-panel .lucid-pages .lucid-pages-wrapper .add-new-page.ng-animate h4 {
-  -webkit-transition: 0.4s ease-in-out all;
   transition: 0.4s ease-in-out all;
-}
-@-webkit-keyframes PageAnimation {
-  0% {
-    margin-right: -50px;
-    opacity: 0;
-  }
-  40% {
-    opacity: 0;
-  }
-  100% {
-    margin-right: 0;
-    opacity: 1;
-  }
 }
 @keyframes PageAnimation {
   0% {
@@ -845,7 +800,6 @@ nav.file-menu li > a:only-child:after {
   text-align: center;
   vertical-align: top;
   border-radius: 4px;
-  -webkit-transition: background .2s;
   transition: background .2s;
 }
 #pages-panel .lucid-page .center-image {
@@ -869,7 +823,6 @@ nav.file-menu li > a:only-child:after {
   background: #fff;
   border-radius: 1px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  -webkit-transition: top 0.2s, box-shadow 0.2s;
   transition: top 0.2s, box-shadow 0.2s;
   margin: 0 auto;
 }
@@ -914,7 +867,6 @@ nav.file-menu li > a:only-child:after {
   top: -32px;
 }
 #pages-panel .lucid-page .master-page.ng-animate {
-  -webkit-transition: 0.35s ease-in-out all;
   transition: 0.35s ease-in-out all;
 }
 #lucid-canvas {
@@ -1021,7 +973,6 @@ nav.file-menu li > a:only-child:after {
   margin-left: 0;
   opacity: 1;
   z-index: 1;
-  -webkit-transition: all ease-in-out 0.1s;
   transition: all ease-in-out 0.1s;
 }
 .lucid-chart-block img.lucid-block-comment.ng-hide {
@@ -1080,15 +1031,12 @@ nav.file-menu li > a:only-child:after {
   margin-top: -8px;
 }
 .lucid-chart-block.ng-enter {
-  -webkit-transform: scaleX(0.25) scaleY(0.667);
-          transform: scaleX(0.25) scaleY(0.667);
+  transform: scaleX(0.25) scaleY(0.667);
 }
 .lucid-chart-block.ng-enter-active {
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 .lucid-chart-block.ng-animate {
-  -webkit-transition: .25s;
   transition: .25s;
 }
 #right-dock {
@@ -1101,7 +1049,6 @@ nav.file-menu li > a:only-child:after {
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
   text-align: center;
   z-index: 2;
-  -webkit-transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   transition: right 0.3s ease-out, opacity 0.3s, z-index 0.2s linear;
   border-left: 1px solid #A5A5A5;
 }
@@ -1120,7 +1067,6 @@ nav.file-menu li > a:only-child:after {
   position: absolute;
   width: 100%;
   background: #E6E6E6;
-  -webkit-transition: all 0.25s ease-in-out;
   transition: all 0.25s ease-in-out;
 }
 #right-dock .layers-drawer .lucid-popover-menu-drawer {
@@ -1147,7 +1093,6 @@ nav.file-menu li > a:only-child:after {
   height: 175px;
   width: 200px;
   text-align: center;
-  -webkit-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
 }
 #page-loading img {
@@ -1159,21 +1104,16 @@ nav.file-menu li > a:only-child:after {
 }
 .loading #right-dock {
   right: -277px;
-  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+  transition-delay: 0s;
 }
 .loading #left-bar {
   left: -180px;
-  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
-  -webkit-transition-delay: 0s;
-          transition-delay: 0s;
+  transition-delay: 0s;
 }
 .loading #lucid-canvas {
   opacity: 0;
-  -webkit-transition: all 1s ease-in-out;
   transition: all 1s ease-in-out;
 }
 .loading.left-panel-open #left-bar {

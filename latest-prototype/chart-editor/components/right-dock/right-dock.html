@@ -1,33 +1,41 @@
 <div id="right-dock" ng-controller="RightDockCtrl" ng-class="{ open: rightDock, 'manage-shapes': $root.manageshapes }">
     <!-- RIGHT DOCK ICONS -->
-    <div class="icon-wrapper input-label" ng-click="$root.addOnsModal.show=true">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-addons-orange-22px.svg" class="full" /></div><span class="orange">Add Ons</span>
+    <ng-include 
+        class="close-arrows" 
+        src="'http://particle.golucid.co/components/3.0/icon/icons/icon-double-arrow-18px.svg'" 
+        ng-click="closeRightDock();"></ng-include>
+    <div 
+        class="icon-wrapper input-label" 
+        ng-class="{active: openTab == 'pageSettings'}" 
+        ng-click="$root.setTab('pageSettings');">
+        <div class="icon share">
+            <img src="http://particle.golucid.co/components/3.0/icon/icons/icon-page-outline-22px.svg" class="full" />
+        </div>
+        <span>Settings</span>
     </div>
-    <div class="icon-wrapper input-label" ng-class="{active: openTab == 'pageSettings'}" ng-click="$root.setTab('pageSettings');">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-page.svg" class="full" /></div><span>Page</span>
-    </div>
-    <div class="icon-wrapper input-label" ng-class="{active: openTab == 'share'}" ng-click="$root.setTab('share'); ">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-share-3.svg" class="full" /></div><span>Share</span>
-    </div>
-    <div class="icon-wrapper input-label" ng-class="{active: openTab == 'layers'}" ng-click="$root.setTab('layers');">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-layers-mode.svg" class="full" /></div><span>Layers</span>
+    <div 
+        class="icon-wrapper input-label" 
+        ng-class="{active: openTab == 'layers'}" 
+        ng-click="$root.setTab('layers');">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-layers-22px.svg" class="full" /></div><span>Layers</span>
     </div>
     <div class="icon-wrapper input-label" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-comments-mode.svg" class="full" /></div><span>Comment</span>
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-comment-outline-22px.svg" class="full" /></div><span>Comment</span>
     </div>
-    <div ng-show="addOnPresent" class="icon-wrapper input-label lucid-animate" ng-class="{active: openTab == 'present'}" ng-click="$root.setTab('present'); showTooltipPresent=false">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-presentation-bluesteel.svg" class="full" /></div><span>Present</span>
-        <lucid-tip showtip="showTooltipPresent" caret="right" class="addon-tip">Presentation Mode</lucid-tip>
+    <div 
+        class="icon-wrapper input-label lucid-animate" 
+        ng-class="{active: openTab == 'present'}" 
+        ng-click="$root.setTab('present'); showTooltipPresent=false">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-present-22px.svg" class="full" /></div><span>Present</span>
     </div>
-    <div class="icon-wrapper input-label lucid-animate" ng-show="addOnHistory" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
-        <div class="icon share"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-history-mode.svg" class="full" /></div><span>History</span>
-        <lucid-tip showtip="showTooltipHistory" caret="right" class="addon-tip">Revision History</lucid-tip>
+    <div class="icon-wrapper input-label lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-clock-fill-22px.svg" class="full" /></div><span>History</span>
     </div>
     <!-- END RIGHT DOCK ICONS -->
     <!-- RIGHT DOCK PANEL CONTENT -->
     <div class="right-panel">
         <div id="pageSettings" class="container" ng-show="openTab === 'pageSettings'">
-            <header>Page Settings<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header>
+            <header>Page Settings</header>
             <div style="padding: 15px 15px 15px 16px;">
                 <lucid-collapse-bar title="Page">
                     <ul class="page-settings">
@@ -50,7 +58,7 @@
                     </ul>
                 </lucid-collapse-bar>
                 <lucid-collapse-bar title="Line Options" closed="true">
-                    <img style="width:184px;padding-top:10px;padding-left:5px;" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-pagelineoptions-Snyder.png">
+                    <img style="width:184px;padding-top:10px;padding-left:5px;" src="assets/placeholder-pagelineoptions-Snyder.png">
                 </lucid-collapse-bar>
                 <lucid-collapse-bar title="Guides" closed="true">
                     <ul class="page-settings">
@@ -101,60 +109,19 @@
                 </lucid-collapse-bar>
             </div>
         </div>
-        <!-- SHARE PANEL -->
-        <div id="share" class="container" ng-controller="ShareCtrl" ng-show="openTab === 'share'">
-            <header>Share<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header>
-            <section>
-                <div class="group">
-                    <div class="add-button" click-outside="showing=false">
-                        <div class="add-button" ng-click="showing=!showing; focusCollaborator()">
-                            <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-more-shapes-plus-grey.svg" />Add</div>
-                        <div class="lucid-popover-menu add-popup" ng-show="showing">
-                            <lucid-input id="add-collaborator-input" value="dummyData.name" class="condensed" placeholder="Add name, email, or group" ng-enter="addPerson(dummyData);"></lucid-input>
-                            <lucid-select width="110" class="condensed" ng-model="dummyData.role" options="['Editor', 'Commenter', 'Viewer']"></lucid-select>
-                            <button class="lucid-button lucid-blue" ng-disabled="!dummyData.name" ng-click="addPerson(dummyData); $event.stopPropagation()">Add</button>
-                        </div>
-                    </div>
-                    <div class="options" ng-click="$root.showShareModal = true">Options</div>
-                </div>
-                <ul class="collaborators">
-                    <li class="lucid-animate" ng-repeat="person in collaborators">
-                        <div class="image-container" ng-click="showPermissions = !showPermissions;">
-                            <img class="avatar" ng-src="{{ person.image }}" ng-if="person.image && !person.svg" />
-                            <ng-include class="lucid-icon fill-white lucid-buttcon avatar" ng-if="person.svg" src="person.svg"></ng-include>
-                            <lucid-buttcon-popover class="permissions popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-pencil-22px.svg" width="110">
-                                <div class="lucid-select-wrapper">
-                                    <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
-                                        <li class="lucid-select-option" ng-click="person.role = 'Editor'">
-                                            <ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Editor'"></ng-include>Editor</li>
-                                        <li class="lucid-select-option" ng-click="person.role = 'Commenter'">
-                                            <ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Commenter'"></ng-include>Commenter</li>
-                                        <li class="lucid-select-option" ng-click="person.role = 'Viewer'">
-                                            <ng-include class="selected-checkmark" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-check-18px.svg'" ng-if="person.role == 'Viewer'"></ng-include>Viewer</li>
-                                    </ul>
-                                </div>
-                            </lucid-buttcon-popover>
-                        </div>
-                        <span>{{ person.name }}</span>
-                        <img class="delete" src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-closeXsmall-bluesteel.svg" ng-click="collaborators.splice($index, 1);" />
-                    </li>
-                </ul>
-            </section>
-        </div>
-        <!-- END SHARE PANEL CONTENT -->
         <div id="interact" class="container" ng-show="openTab === 'layers'">
-            <header>Layers<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-layers-v4.png" />
+            <header>Layers</header><img src="assets/placeholder-layers-v4.png" />
         </div>
         <div id="comments" class="container" ng-show="openTab === 'comments'">
-            <header>Comments<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-comments-v4.png" />
+            <header>Comments</header><img src="assets/placeholder-comments-v4.png" />
         </div>
         <div id="present" class="container" ng-show="openTab === 'present'">
-            <header>Present<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-v4.png" />
-            <footer id="present-trigger"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-present-2-v4.png" /></footer>
+            <header>Present</header><img src="assets/placeholder-present-v4.png" />
+            <footer id="present-trigger"><img src="assets/placeholder-present-2-v4.png" /></footer>
         </div>
         <div id="history" class="container" ng-show="openTab === 'history'">
-            <header>History<img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-close-white.svg" class="close" ng-click="$root.setTab('');" /></header><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-top-v4.png" />
-            <footer><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/placeholder-history-bottom-v4.png"></footer>
+            <header>History</header><img src="assets/placeholder-history-top-v4.png" />
+            <footer><img src="assets/placeholder-history-bottom-v4.png"></footer>
         </div>
     </div>
     <div class="hover-handle" ng-mouseenter="enterRightPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>

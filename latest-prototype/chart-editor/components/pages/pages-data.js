@@ -4,7 +4,7 @@ angular.module('pagesData', [])
         //this factory will contain page data, block elements, positoins etc.
         var lucidPages = [{
             'name': 'Page 1',
-            'thumb': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/thumb-placeholder-flowchart.png',
+            'thumb': 'assets/thumb-placeholder-flowchart.png',
             'id': 14543,
             'canvasBG': '#FFF',
             'blocks': [{

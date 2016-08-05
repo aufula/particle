@@ -31,85 +31,85 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
         };
         $scope.lucidGroups = [{
             'groupname': 'Default',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Flowchart Shapes',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Geometric Shapes',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-shapes.png'
+            'image': 'assets/shapegroup-placeholder-shapes.png'
         }, {
             'groupname': 'Android Mockups',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-android.png'
+            'image': 'assets/shapegroup-placeholder-android.png'
         }, {
             'groupname': 'Entity Relationship',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Site Maps',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'UI Mockups',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }, {
             'groupname': 'UML',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'iOS 7 Mockups',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'BPMN 2.0',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Data Flow',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Org Charts',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Tables',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Value Stream',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'AWS Architecture',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Azure',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Cisco Network Icons',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Network Infrastructure',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Server Rack Diagrams',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Tech Clipart',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Circuit Diagrams',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Enterprise Integration',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-flowchart.png'
+            'image': 'assets/shapegroup-placeholder-flowchart.png'
         }, {
             'groupname': 'Equations',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }, {
             'groupname': 'Floor Plans',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }, {
             'groupname': 'Mind Mapping',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }, {
             'groupname': 'Process Engineering',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }, {
             'groupname': 'Venn Diagrams',
-            'image': 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/shapegroup-placeholder-computer.png'
+            'image': 'assets/shapegroup-placeholder-computer.png'
         }];
         $scope.setGroup = function(newIndex, oldIndex) {
             console.log('old index', oldIndex, 'new index', newIndex);
