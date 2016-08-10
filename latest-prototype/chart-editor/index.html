@@ -30,7 +30,7 @@
                 <li>
                     <a href="http://s.codepen.io/team/lucidsoftware/debug/944b732e7d71a1fb50537f7278783fee?"><img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/icon-folder-orange.svg" class="icon" />Go to Documents</a>
                 </li>
-                <li>New documentc</li>
+                <li>New document</li>
                 <li>Duplicate</li>
                 <li>Download</li>
                 <li ng-click="$root.showImportModal = true">Import</li>
@@ -42,7 +42,6 @@
             <!-- MAIN HEADER PAGES WRAPPER -->
             <div class="main-header-pages-wrapper" click-outside="pages.show = false">
                 <ng-include src="'components/header/header.html'"></ng-include>
-                <ng-include src="'components/pages/pages.html'"></ng-include>
             </div>
             <!-- END PAGES AND MAIN HEADER WRAPPER -->
             <div id="main-container">
@@ -61,6 +60,7 @@
                 </div>
                 <!-- CANVAS FOOTER -->
                 <ng-include src="'components/footer/footer.html'"></ng-include>
+                <ng-include src="'components/pages/pages.html'"></ng-include>
                 <!-- ADVANCED SHAPES -->
                 <ng-include src="'components/advanced-shapes/advanced-shapes.html'"></ng-include>
             </div>

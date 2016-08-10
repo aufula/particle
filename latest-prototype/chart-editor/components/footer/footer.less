@@ -1,4 +1,3 @@
-//>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> FOOTER / PAGE SETTINGS DRAWER <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 #main-footer {
     position: absolute;
     transition: all .3s ease-in-out;
@@ -13,7 +12,70 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 10px;
+    width: 100%;
     img {
         height: 22px;
+    }
+    svg {
+        margin: 0 5px;
+        path {
+            fill: #fff;
+        }
+    }
+    .right {
+        flex: 0 0 auto;
+        width: 251px;
+    }
+    .left {
+        flex: 0 1 auto;
+        display: flex;
+        align-items: center;
+        overflow: hidden;
+    }
+
+    // ----- Page tabs ------
+    ul.page-tabs {
+        display: flex;
+        flex: 0 1 auto;
+        margin: 0 5px;
+        overflow: scroll;
+        height: 32px;
+        > li {
+            transition: all .2s;
+            max-width: 150px;
+            &.ng-enter, &.ng-leave-active  {
+                width: 0;
+                opacity: 0;
+            }
+            &.ng-enter-active, &.ng-leave {
+                width: 90px;
+                opacity: 1;
+            }
+        }
+    }
+    .page-tab {
+        text-align: center;
+        opacity: .5;
+        background: @blue-steel;
+        border-radius: 0 0 4px 4px;
+        font-size: 14px;
+        color: #fff;
+        padding: 5px 10px 6px;
+        margin-right: 2px;
+        display: flex;
+        align-contents: bottom;
+        h4 {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: clip; //ellipsis is rendering incorrectly
+            height: 15px;
+        }
+        .edit-in-place {
+            color: inherit;
+        }
+        &.current-page {
+            opacity: 1;
+            padding: 6px 10px 7px;
+        }
     }
 }

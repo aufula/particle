@@ -20,8 +20,10 @@
 }
 
 #page-list {
-    position: relative;
-    top: 54px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    z-index: 10;
 }
 
 //////////////////////////////
@@ -33,6 +35,7 @@
         padding: 10px;
         background: @pagedrawer-bg;
         display: block;
+        box-shadow: inset 0 1px 0 @grey-border-dark;
         >ul>li,
         .add-new-page {
             cursor: pointer;

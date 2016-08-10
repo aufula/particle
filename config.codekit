@@ -8972,6 +8972,15 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/latest-prototype\/chart-editor\/components\/footer\/edit-in-place-dbl.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/footer\/edit-in-place-dbl.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/latest-prototype\/chart-editor\/components\/footer\/footer.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8980,6 +8989,17 @@
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
+		},
+	"\/latest-prototype\/chart-editor\/components\/footer\/footer.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/footer\/footer.js",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/footer\/footer-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 1,
+		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/footer\/footer.less": {
 		"allowInsecureImports": 0,
@@ -9310,15 +9330,6 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/latest-prototype\/chart-editor\/css\/style.css": {
-		"fileType": 16,
-		"ignore": 0,
-		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/css\/style.css",
-		"outputAbbreviatedPath": "No Output Path",
-		"outputPathIsOutsideProject": 0,
-		"outputPathIsSetByUser": 0
-		},
 	"\/latest-prototype\/chart-editor\/index.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -9356,6 +9367,15 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/latest-prototype\/css\/style.css": {
+		"fileType": 16,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/latest-prototype\/css\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/latest-prototype\/press-docslist\/app.js": {
 		"fileType": 64,
@@ -10357,7 +10377,7 @@
 	"javascriptAutoOutputPathReplace2": "",
 	"javascriptAutoOutputPathStyle": 0,
 	"javascriptCreateSourceMap": 1,
-	"javascriptOutputStyle": 0,
+	"javascriptOutputStyle": 1,
 	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {
@@ -10803,7 +10823,7 @@
 	"typescriptJSXMode": 0,
 	"typescriptMinifyOutput": 0,
 	"typescriptModuleResolutionType": 0,
-	"typescriptModuleType": 0,
+	"typescriptModuleType": 2,
 	"typescriptNoImplicitAny": 0,
 	"typescriptPreserveConstEnums": 0,
 	"typescriptRemoveComments": 0,

@@ -8,7 +8,7 @@ angular.module('pages', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dndLis
                 //console.log('edit?', shapegroup.edit);
                 page.edit = true;
                 //console.log('edit?', shapegroup.edit);
-            }, 100)
+            }, 100);
 
 
         };

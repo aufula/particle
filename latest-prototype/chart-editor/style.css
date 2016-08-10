@@ -49,13 +49,16 @@
   transition: 0.5s ease-in-out !important;
 }
 #page-list {
-  position: relative;
-  top: 54px;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  z-index: 10;
 }
 .lucid-pages .lucid-pages-wrapper {
   padding: 10px;
   background: #D6D6D8;
   display: block;
+  box-shadow: inset 0 1px 0 #A5A5A5;
 }
 .lucid-pages .lucid-pages-wrapper > ul > li,
 .lucid-pages .lucid-pages-wrapper .add-new-page {
@@ -2192,7 +2195,7 @@ a {
   right: -75px;
 }
 .footer-hidden #main-footer {
-  bottom: -40px;
+  bottom: -32px;
 }
 #option-bar .hover-handle {
   position: absolute;
@@ -2231,7 +2234,6 @@ a {
   transition: all 0.3s ease-in-out;
   bottom: -32px;
   left: 0;
-  width: 100%;
   z-index: 7;
   background: #77818C;
   color: #fff;
@@ -2240,9 +2242,72 @@ a {
   justify-content: space-between;
   align-items: center;
   padding: 0 10px;
+  width: 100%;
 }
 #main-footer img {
   height: 22px;
+}
+#main-footer svg {
+  margin: 0 5px;
+}
+#main-footer svg path {
+  fill: #fff;
+}
+#main-footer .right {
+  flex: 0 0 auto;
+  width: 251px;
+}
+#main-footer .left {
+  flex: 0 1 auto;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+#main-footer ul.page-tabs {
+  display: flex;
+  flex: 0 1 auto;
+  margin: 0 5px;
+  overflow: scroll;
+  height: 32px;
+}
+#main-footer ul.page-tabs > li {
+  transition: all .2s;
+  max-width: 150px;
+}
+#main-footer ul.page-tabs > li.ng-enter,
+#main-footer ul.page-tabs > li.ng-leave-active {
+  width: 0;
+  opacity: 0;
+}
+#main-footer ul.page-tabs > li.ng-enter-active,
+#main-footer ul.page-tabs > li.ng-leave {
+  width: 90px;
+  opacity: 1;
+}
+#main-footer .page-tab {
+  text-align: center;
+  opacity: .5;
+  background: #3d4752;
+  border-radius: 0 0 4px 4px;
+  font-size: 14px;
+  color: #fff;
+  padding: 5px 10px 6px;
+  margin-right: 2px;
+  display: flex;
+  align-contents: bottom;
+}
+#main-footer .page-tab h4 {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: clip;
+  height: 15px;
+}
+#main-footer .page-tab .edit-in-place {
+  color: inherit;
+}
+#main-footer .page-tab.current-page {
+  opacity: 1;
+  padding: 6px 10px 7px;
 }
 .tips-body-wrapper {
   display: block;

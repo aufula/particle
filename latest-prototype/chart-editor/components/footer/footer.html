@@ -1,5 +1,48 @@
-<footer class="settings-drawer" id="main-footer">
+<footer class="settings-drawer" id="main-footer" ng-controller="PagesCtrl">
 	<section class="left">
+		<ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-view-list-22px.svg'"></ng-include>
+		<ng-include 
+			src="'http://particle.golucid.co/components/3.0/icon/icons/icon-view-grid-large-22px.svg'"
+			ng-click="$root.showPageDrawer = !$root.showPageDrawer">
+		</ng-include>
+		<ul class="page-tabs" ng-sortable="{group: 'pages',handle: '.page-wrapper', animation: 150}">
+              <li ng-repeat="page in $root.pages track by page.id" class="page-wrapper lucid-animate">
+                  <div>
+                    <div
+                        lucid-context-menu
+                        data-target="page-context-{{ page.id }}">
+                        <div 
+                        	class="page-tab" 
+                        	ng-click="$root.currentPage = page;"
+                        	ng-class="{'current-page': $root.currentPage == page}">
+                          <h4><edit-in-place-dbl edit="page.edit" ng-model="page.name"></edit-in-place></h4>
+                        </div>
+                        <!-- Right Click Context Menu -->
+                        <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
+                            <ul>
+                                <li ng-click="editName(page)">Rename</li>
+                                <li ng-click="$parent.duplicatePage(page, $index)">Duplicate</li>
+                                <li ng-click="$parent.deletePage(page, $index)">Delete</li>
+                                <li class="context-divider"></li>
+                                <li ng-show="!page.master" ng-click="page.master = true">Convert to Master Page</li>
+                                <li ng-show="page.master" ng-click="page.master = false">Convert to Page</li>
+                                <li ng-show="page.master" ng-click="applyMasterAll()">Apply Master to All</li>
+                                <li class="lucid-context-more" ng-show="$root.masterPageCount().length>0 && !page.master">Apply Master Page
+                                    <ul>
+                                        <li ng-repeat="master in $root.masterPageCount()" ng-click="$parent.$parent.applyMaster(page);">
+                                            {{master.name}}
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li ng-show="masterapplied" ng-click="masterapplied = false">Remove Master Page</li>
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+              </li>
+          </ul>
+          <ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-outline-circle-plus-22px.svg'" ng-click="addPage()"></ng-include>
 	</section>
 	<section class="right">
 	<img src="assets/placeholder-zoom.png"/>

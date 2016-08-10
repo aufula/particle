@@ -9,6 +9,7 @@
 // @codekit-prepend "components/loading-tips/loading-tips.js"
 // @codekit-prepend "components/canvas/canvas.js"
 // @codekit-prepend "components/shape-manager/shapes-data.js"
+// @codekit-prepend "components/footer/footer.js"
 
 angular.module('particleApp', 
     [
@@ -26,7 +27,8 @@ angular.module('particleApp',
         'pagesData', 
         'rightDock',
         'shapeManager',
-        'lucidShapesData'
+        'lucidShapesData',
+        'footer'
     ])
     .config(['$sceDelegateProvider', function($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist([
