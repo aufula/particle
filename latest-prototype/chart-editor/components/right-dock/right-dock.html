@@ -15,21 +15,39 @@
     </div>
     <div 
         class="icon-wrapper input-label" 
-        ng-class="{active: openTab == 'layers'}" 
-        ng-click="$root.setTab('layers');">
-        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-layers-22px.svg" class="full" /></div><span>Layers</span>
-    </div>
-    <div class="icon-wrapper input-label" ng-class="{active: openTab == 'comments'}" ng-click="$root.setTab('comments');">
-        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-comment-outline-22px.svg" class="full" /></div><span>Comment</span>
+        ng-class="{active: openTab == 'comments'}" 
+        ng-click="$root.setTab('comments');">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-comment-22px.svg" class="full" /></div><span>Comment</span>
     </div>
     <div 
         class="icon-wrapper input-label lucid-animate" 
         ng-class="{active: openTab == 'present'}" 
-        ng-click="$root.setTab('present'); showTooltipPresent=false">
+        ng-click="$root.setTab('present');">
         <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-present-22px.svg" class="full" /></div><span>Present</span>
     </div>
-    <div class="icon-wrapper input-label lucid-animate" ng-class="{active: openTab == 'history'}" ng-click="$root.setTab('history'); showTooltipHistory=false;">
+    <div 
+        class="icon-wrapper input-label lucid-animate" 
+        ng-class="{active: openTab == 'history'}" 
+        ng-click="$root.setTab('history');">
         <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-clock-fill-22px.svg" class="full" /></div><span>History</span>
+    </div>
+    <div 
+        class="icon-wrapper input-label" 
+        ng-class="{active: openTab == 'layers'}" 
+        ng-click="$root.setTab('layers');">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-layers-22px.svg" class="full" /></div><span>Layers</span>
+    </div>
+    <div 
+        class="icon-wrapper input-label lucid-animate" 
+        ng-class="{active: openTab == 'themes'}" 
+        ng-click="$root.setTab('themes');">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-themes-22px.svg" class="full" /></div><span>Themes</span>
+    </div>
+    <div 
+        class="icon-wrapper input-label lucid-animate" 
+        ng-class="{active: openTab == 'chat'}" 
+        ng-click="$root.setTab('chat');">
+        <div class="icon share"><img src="http://particle.golucid.co/components/3.0/icon/icons/icon-chat-22px.svg" class="full" /></div><span>Chat</span>
     </div>
     <!-- END RIGHT DOCK ICONS -->
     <!-- RIGHT DOCK PANEL CONTENT -->
@@ -120,8 +138,13 @@
             <footer id="present-trigger"><img src="assets/placeholder-present-2-v4.png" /></footer>
         </div>
         <div id="history" class="container" ng-show="openTab === 'history'">
-            <header>History</header><img src="assets/placeholder-history-top-v4.png" />
-            <footer><img src="assets/placeholder-history-bottom-v4.png"></footer>
+            <header>History</header><img src="assets/placeholder-history.png" />
+        </div>
+        <div id="themes" class="container" ng-show="openTab === 'themes'">
+            <header>Theme</header><img src="assets/placeholder-themes.png" />
+        </div>
+        <div id="chat" class="container" ng-show="openTab === 'chat'">
+            <header>Chat</header><img src="assets/placeholder-chat.png" /><footer><img src="assets/placeholder-chat-footer.png"/></footer>
         </div>
     </div>
     <div class="hover-handle" ng-mouseenter="enterRightPanel()" ng-mouseleave="cancelHover()" ng-if="canvasmode !== 0"></div>

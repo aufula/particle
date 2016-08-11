@@ -1,9 +1,19 @@
 <div id="option-bar" class="group">
           <ul>
-            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="small left" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Undo">
               <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-undo-22px.svg"></lucid-buttcon>
             </li>
-            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="small left" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Redo">
               <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-redo-22px.svg"></lucid-buttcon>
             </li>
             <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
@@ -12,17 +22,38 @@
             <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
               <lucid-input-stepper class="condensed joint-right" step="1" width="50" number="selectedBlock.text.size" unit="pt" style="margin-right: 5px;"></lucid-input-stepper>
             </li>
-            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="small left" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Bold">
               <lucid-buttcon ng-click="bold=!bold" active="bold" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-text-bold-22px.svg"></lucid-buttcon>
             </li>
-            <li class="small middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="small middle" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Italic">
               <lucid-buttcon ng-click="italic=!italic" active="italic" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-text-italic-22px.svg"></lucid-buttcon>
             </li>
-            <li class="middle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="middle" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Underline">
               <lucid-buttcon ng-click="underline=!underline" active="underline" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-text-underline-22px.svg"></lucid-buttcon>
             </li>
             <!-- BEGIN TEXT ALIGNMENT -->
-            <li class="middle" ng-controller="textAlignmentCtrl" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="middle" 
+              ng-controller="textAlignmentCtrl" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Alignment">
               <lucid-buttcon-popover 
                 icon="http://particle.golucid.co/components/1.0/icon/img/morph-text-alignment.svg" 
                 width="96"
@@ -36,7 +67,12 @@
             </li>
             <!-- END TEXT ALIGNMENT -->
             <!-- BEGIN TEXT OPTIONS -->
-            <li class="middle toggle" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="middle toggle" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Text Options">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-text-options-22px.svg" width="322">
                 <div style="padding:10px"><img src="assets/placeholder-text-options.png" /></div>
                 <div class="secondary-gray"><img class="gray-bottom" src="assets/placeholder-text-options-bottom.png" /></div>
@@ -45,7 +81,12 @@
             <!-- END TEXT OPTIONS -->
             <span class="line"></span>
             <!-- START COLOR PICKER -->
-            <li class="left" ng-class="{'inactive': $root.selectedType == 'nothing'}">
+            <li 
+              class="left" 
+              ng-class="{'inactive': $root.selectedType == 'nothing'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Color">
               <lucid-color-picker selected="selectedBlock"></lucid-color-picker>
             </li>
             <!-- END COLOR PICKER -->
@@ -53,7 +94,11 @@
 
 
             <!-- BEGIN SHAPE OPTIONS -->
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Shape Options">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-shape-options-22px.svg" width="245">
                   <div><img src="assets/placeholder-shape-options.png">
                   </div>
@@ -66,7 +111,11 @@
 
 
             <!-- BEGIN POSITION OPTIONS -->
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Shape Metrics">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-position-22px.svg" width="260">
                 <div><img src="assets/placeholder-shape-metrics.png" /></div>
               </lucid-buttcon-popover>
@@ -75,23 +124,37 @@
             <span class="line"></span>
 
             <!-- BEGIN LINE OPTIONS -->
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Line Options">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-linepath-90-22px.svg" width="288">
                 <div><img src="assets/placeholder-line-options.png" /></div>
               </lucid-buttcon-popover>
             </li> 
             <!-- END LINE OPTIONS -->
 
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
               <img src="assets/placeholder-line-style.svg">
             </li>
 
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Swap Line Ending">
               <lucid-buttcon icon="http://particle.golucid.co/components/3.0/icon/icons/icon-swap-22px.svg"></lucid-buttcon>
             </li>
             <span class="line"></span>
             <!-- BEGIN MISC. OPTIONS -->
-            <li class="small left" ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}">
+            <li 
+              class="small left" 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Actions">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-lightning-22px.svg" width="217">
                 <ul ng-init="link.type = 'None'" class="hotspot-options">
                       <li>
@@ -135,20 +198,36 @@
                   </div>
               </lucid-buttcon-popover>
             </li>
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}"
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Magnetize">
               <lucid-buttcon ng-click="magnetize=!magnetize" active="magnetize" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-magnet-22px.svg"></lucid-buttcon>
             </li>
-            <li ng-class="{'inactive': $root.selectedType == 'nothing'}"">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing'}""
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Lock">
               <lucid-buttcon ng-click="locked=!locked" active="locked" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-lock-locked-22px.svg"></lucid-buttcon>
             </li>
-            <li ng-class="{'inactive': $root.selectedType == 'nothing'}"">
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing'}""
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Shape Data">
               <lucid-buttcon-popover icon="http://particle.golucid.co/components/3.0/icon/icons/icon-shape-data-22px.svg" width="368">
                 <div><img src="assets/placeholder-shape-data.png" /></div>
               </lucid-buttcon-popover>
             </li>
             <span class="line"></span>
-            <li ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}"">
-              <lucid-buttcon active="$root.selectedType == 'table'"icon="http://particle.golucid.co/components/3.0/icon/icons/icon-wrench-22px.svg"></lucid-buttcon>
+            <li 
+              ng-class="{'inactive': $root.selectedType == 'nothing' || $root.selectedType == 'block' || $root.selectedType == 'line'}""
+              tooltips 
+              tooltip-side="bottom"
+              tooltip-template="Advanced Options">
+              <lucid-buttcon active="$root.selectedType == 'table'" icon="http://particle.golucid.co/components/3.0/icon/icons/icon-wrench-22px.svg"></lucid-buttcon>
             </li>
 
             <!-- END MISC. OPTIONS -->

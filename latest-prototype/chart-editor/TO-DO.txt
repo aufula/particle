@@ -1,9 +1,9 @@
+- Drop down
+	- Fix Select drop down broken click-outside and drop shadow
 - Tooltips
 	- Use https://github.com/720kb/angular-tooltips#angular-tooltips
-- Right Dock
-	- Add Chat
-	- Change placeholder for Revision History
 - Create new component for text drop down (Account)
-- Build out page list for footer
-- Fix text overflow: ellipsis on page tabs
-- Create a scrolling directive for page tabs (scroll into view)
+- Page Tabs
+	- Build out page list for footer
+	- Fix text overflow: ellipsis on page tabs
+	- Create a scrolling directive for page tabs (scroll into view)
