@@ -398,3 +398,4 @@ angular.module("lucidIcons", [])
         }];
         return icons;
     });
+
