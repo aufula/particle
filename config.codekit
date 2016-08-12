@@ -8413,6 +8413,55 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/components\/3.0\/tooltips\/lucid-tooltips-basic.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips-basic.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/3.0\/tooltips\/lucid-tooltips.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/3.0\/tooltips\/lucid-tooltips.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips.js",
+		"outputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/components\/3.0\/tooltips\/lucid-tooltips.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips.less",
+		"outputAbbreviatedPath": "\/components\/3.0\/tooltips\/lucid-tooltips.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
 	"\/components\/3.0\/top-tabs\/lucid-top-tab.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8500,12 +8549,34 @@
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
+	"\/js\/component-data-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/component-data-min.js",
+		"outputAbbreviatedPath": "\/js\/component-data-min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
 	"\/js\/component-data.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/js\/component-data.js",
 		"outputAbbreviatedPath": "\/js\/component-data-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/js\/icon-data-min.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/js\/icon-data-min.js",
+		"outputAbbreviatedPath": "\/js\/icon-data-min-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -8599,6 +8670,28 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-chat-footer.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 3476,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-chat-footer.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-chat-footer.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-chat.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 8788,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-chat.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-chat.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/latest-prototype\/chart-editor\/assets\/placeholder-comments-v4.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -8639,6 +8732,17 @@
 		"initialSize": 44659,
 		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-top-v4.png",
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history-top-v4.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-history.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 26974,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-history.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -8760,6 +8864,17 @@
 		"initialSize": 12402,
 		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options.png",
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-text-options.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/latest-prototype\/chart-editor\/assets\/placeholder-themes.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 41138,
+		"inputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-themes.png",
+		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/assets\/placeholder-themes.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -8998,7 +9113,7 @@
 		"outputAbbreviatedPath": "\/latest-prototype\/chart-editor\/components\/footer\/footer-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
-		"outputStyle": 1,
+		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
 	"\/latest-prototype\/chart-editor\/components\/footer\/footer.less": {
@@ -10377,7 +10492,7 @@
 	"javascriptAutoOutputPathReplace2": "",
 	"javascriptAutoOutputPathStyle": 0,
 	"javascriptCreateSourceMap": 1,
-	"javascriptOutputStyle": 1,
+	"javascriptOutputStyle": 0,
 	"javascriptSyntaxCheckerStyle": 1,
 	"jsCheckerReservedNamesString": "",
 	"jsHintFlags2": {

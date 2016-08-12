@@ -19,7 +19,6 @@
 //@codekit-append "top-tabs/lucid-top-tabs.js"
 //@codekit-append "tip/lucid-tip.js"
 //@codekit-append "paywall/lucid-paywall.js"
-//@codekit-append "tooltips/angular-tooltips.min.js"
 
 
 angular.module('appConfig', [])
@@ -40,7 +39,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', '720kb.tooltips'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key

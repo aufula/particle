@@ -1,7 +1,8 @@
 - Drop down
 	- Fix Select drop down broken click-outside and drop shadow
 - Tooltips
-	- Use https://github.com/720kb/angular-tooltips#angular-tooltips
+	- Hook up 'lucid-tooltips' component
+	- Current functionality not desirable: appears on top of open callouts and popovers
 - Create new component for text drop down (Account)
 - Page Tabs
 	- Build out page list for footer

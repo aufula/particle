@@ -79,8 +79,8 @@ tooltip {
     color: #fff;
     display: none;
     line-height: normal;
-    max-width: 500px;
-    min-width: 100px;
+    max-width: 200px;
+    min-width: 30px;
     opacity: 0;
     padding: 3px 16px;
     position: absolute;
@@ -96,7 +96,8 @@ tooltip {
     opacity: 1;
     z-index: 999; }
   tooltip tip-tip {
-    font-size: .95em; }
+    font-size: .95em;
+    white-space: nowrap; } // added to prevent text wrapping, use </br> instead
     tooltip tip-tip._large {
       font-size: 1.1em; }
     tooltip tip-tip._small {

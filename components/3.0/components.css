@@ -1669,8 +1669,8 @@ tooltip tip {
   color: #fff;
   display: none;
   line-height: normal;
-  max-width: 500px;
-  min-width: 100px;
+  max-width: 200px;
+  min-width: 30px;
   opacity: 0;
   padding: 3px 16px;
   position: absolute;
@@ -1690,6 +1690,7 @@ tooltip.active:not(._force-hidden) tip {
 }
 tooltip tip-tip {
   font-size: .95em;
+  white-space: nowrap;
 }
 tooltip tip-tip._large {
   font-size: 1.1em;

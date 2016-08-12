@@ -12,12 +12,12 @@
 (function withAngular(angular, window) {
   'use strict';
 
-  var directiveName = 'tooltips'
-  , resizeObserver = (function resizeObserver() {
+  var directiveName = 'tooltips', 
+  resizeObserver = (function resizeObserver() {
 
-    var callbacks = []
-      , lastTime = 0
-      , runCallbacks = function runCallbacks(currentTime) {
+    var callbacks = [], 
+    lastTime = 0, 
+    runCallbacks = function runCallbacks(currentTime) {
 
         if (currentTime - lastTime >= 15) {
 
@@ -30,15 +30,15 @@
 
           window.console.log('Skipped!');
         }
-      }
-      , resizeTimeout
-      , resize = function resize() {
+      }, 
+      resizeTimeout, 
+      resize = function resize() {
         window.clearTimeout(resizeTimeout);
         resizeTimeout = window.setTimeout(function onResizeTimeout() {
           window.requestAnimationFrame(runCallbacks);
         }, 500);
-      }
-      , addCallback = function addCallback(callback) {
+      }, 
+      addCallback = function addCallback(callback) {
 
         if (callback) {
 
@@ -62,8 +62,8 @@
         }
       }
     };
-  }())
-  , getAttributesToAdd = function getAttributesToAdd(element) {
+  }()), 
+  getAttributesToAdd = function getAttributesToAdd(element) {
     var attributesToAdd = {};
 
     element.removeAttr(directiveName);
@@ -140,8 +140,8 @@
     }
 
     return attributesToAdd;
-  }
-  , getStyle = function getStyle(anElement) {
+  }, 
+  getStyle = function getStyle(anElement) {
 
     if (window.getComputedStyle) {
 
@@ -150,13 +150,13 @@
 
       return anElement.currentStyle;
     }
-  }
-  , getAppendedTip = function getAppendedTip(theTooltipElement) {
-    var tipsInBody = window.document.querySelectorAll('._exradicated-tooltip')
-      , aTipInBody
-      , tipsInBodyIndex = 0
-      , tipsInBodyLength = tipsInBody.length
-      , angularizedElement;
+  }, 
+  getAppendedTip = function getAppendedTip(theTooltipElement) {
+    var tipsInBody = window.document.querySelectorAll('._exradicated-tooltip'), 
+    aTipInBody, 
+    tipsInBodyIndex = 0, 
+    tipsInBodyLength = tipsInBody.length, 
+    angularizedElement;
 
     for (; tipsInBodyIndex < tipsInBodyLength; tipsInBodyIndex += 1) {
 
@@ -171,16 +171,16 @@
         }
       }
     }
-  }
-  , removeAppendedTip = function removeAppendedTip(theTooltipElement) {
+  }, 
+  removeAppendedTip = function removeAppendedTip(theTooltipElement) {
     var tipElement = getAppendedTip(theTooltipElement);
 
     if (tipElement) {
 
       tipElement.remove();
     }
-  }
-  , isOutOfPage = function isOutOfPage(theTipElement) {
+  }, 
+  isOutOfPage = function isOutOfPage(theTipElement) {
 
     if (theTipElement) {
       var squarePosition = theTipElement[0].getBoundingClientRect();
@@ -207,8 +207,8 @@
     }
 
     throw new Error('You must provide a position');
-  }
-  , tooltipConfigurationProvider = function tooltipConfigurationProvider() {
+  }, 
+  tooltipConfigurationProvider = function tooltipConfigurationProvider() {
 
     var tooltipConfiguration = {
       'side': 'top',
@@ -224,9 +224,9 @@
 
     return {
       'configure': function configure(configuration) {
-        var configurationKeys = Object.keys(tooltipConfiguration)
-          , configurationIndex = 0
-          , aConfigurationKey;
+        var configurationKeys = Object.keys(tooltipConfiguration), 
+        configurationIndex = 0, 
+        aConfigurationKey;
 
         if (configuration) {
 
@@ -246,8 +246,8 @@
         return tooltipConfiguration;
       }
     };
-  }
-  , tooltipDirective = /*@ngInject*/ ['$log', '$http', '$compile', '$timeout', '$controller', '$injector', 'tooltipsConf', '$templateCache', function tooltipDirective($log, $http, $compile, $timeout, $controller, $injector, tooltipsConf, $templateCache) {
+  }, 
+  tooltipDirective = /*@ngInject*/ ['$log', '$http', '$compile', '$timeout', '$controller', '$injector', 'tooltipsConf', '$templateCache', function tooltipDirective($log, $http, $compile, $timeout, $controller, $injector, tooltipsConf, $templateCache) {
 
     var linkingFunction = function linkingFunction($scope, $element, $attrs, $controllerDirective, $transcludeFunc) {
 
@@ -263,12 +263,12 @@
         throw new Error('You can not have a controller without a template or templateUrl defined');
       }
 
-      var oldTooltipSide = '_' + tooltipsConf.side
-        , oldTooltipShowTrigger = tooltipsConf.showTrigger
-        , oldTooltipHideTrigger = tooltipsConf.hideTrigger
-        , oldTooltipClass
-        , oldSize = tooltipsConf.size
-        , oldSpeed = '_' + tooltipsConf.speed;
+      var oldTooltipSide = '_' + tooltipsConf.side, 
+      oldTooltipShowTrigger = tooltipsConf.showTrigger, 
+      oldTooltipHideTrigger = tooltipsConf.hideTrigger, 
+      oldTooltipClass, 
+      oldSize = tooltipsConf.size, 
+      oldSpeed = '_' + tooltipsConf.speed;
 
       $attrs.tooltipSide = $attrs.tooltipSide || tooltipsConf.side;
       $attrs.tooltipShowTrigger = $attrs.tooltipShowTrigger || tooltipsConf.showTrigger;
@@ -281,18 +281,18 @@
       $attrs.tooltipAppendToBody = $attrs.tooltipAppendToBody === 'true';
 
       $transcludeFunc($scope, function onTransclusionDone(element, scope) {
-        var attributes = getAttributesToAdd(element)
-          , tooltipElement = angular.element(window.document.createElement('tooltip'))
-          , tipContElement = angular.element(window.document.createElement('tip-cont'))
-          , tipElement = angular.element(window.document.createElement('tip'))
-          , tipTipElement = angular.element(window.document.createElement('tip-tip'))
-          , closeButtonElement = angular.element(window.document.createElement('span'))
-          , tipArrowElement = angular.element(window.document.createElement('tip-arrow'))
-          , whenActivateMultilineCalculation = function whenActivateMultilineCalculation() {
+        var attributes = getAttributesToAdd(element), 
+        tooltipElement = angular.element(window.document.createElement('tooltip')), 
+        tipContElement = angular.element(window.document.createElement('tip-cont')), 
+        tipElement = angular.element(window.document.createElement('tip')), 
+        tipTipElement = angular.element(window.document.createElement('tip-tip')), 
+        closeButtonElement = angular.element(window.document.createElement('span')), 
+        tipArrowElement = angular.element(window.document.createElement('tip-arrow')), 
+        whenActivateMultilineCalculation = function whenActivateMultilineCalculation() {
 
             return tipContElement.html();
-          }
-          , calculateIfMultiLine = function calculateIfMultiLine(newValue) {
+          }, 
+          calculateIfMultiLine = function calculateIfMultiLine(newValue) {
 
             if (newValue !== undefined &&
               tipContElement[0].getClientRects().length > 1) {
@@ -302,8 +302,8 @@
 
               tooltipElement.removeClass('_multiline');
             }
-          }
-          , onTooltipShow = function onTooltipShow(event) {
+          }, 
+          onTooltipShow = function onTooltipShow(event) {
 
             tipElement.addClass('_hidden');
             if ($attrs.tooltipSmart) {
@@ -417,25 +417,25 @@
 
             if ($attrs.tooltipAppendToBody) {
 
-              var tipTipElementStyle = getStyle(tipTipElement[0])
-                , tipArrowElementStyle = getStyle(tipArrowElement[0])
-                , tipElementStyle = getStyle(tipElement[0])
-                , tipElementBoundingClientRect = tipElement[0].getBoundingClientRect()
-                , exradicatedTipElement = angular.copy(tipElement)
-                , tipTipStyleIndex = 0
-                , tipTipStyleLength = tipTipElementStyle.length
-                , tipArrowStyleIndex = 0
-                , tipArrowStyleLength = tipArrowElementStyle.length
-                , tipStyleIndex = 0
-                , tipStyleLength = tipElementStyle.length
-                , aStyleKey
-                , tipTipCssToSet = {}
-                , tipCssToSet = {}
-                , tipArrowCssToSet = {}
-                , paddingTopValue
-                , paddingBottomValue
-                , paddingLeftValue
-                , paddingRightValue;
+              var tipTipElementStyle = getStyle(tipTipElement[0]), 
+              tipArrowElementStyle = getStyle(tipArrowElement[0]), 
+              tipElementStyle = getStyle(tipElement[0]), 
+              tipElementBoundingClientRect = tipElement[0].getBoundingClientRect(), 
+              exradicatedTipElement = angular.copy(tipElement), 
+              tipTipStyleIndex = 0, 
+              tipTipStyleLength = tipTipElementStyle.length, 
+              tipArrowStyleIndex = 0, 
+              tipArrowStyleLength = tipArrowElementStyle.length, 
+              tipStyleIndex = 0, 
+              tipStyleLength = tipElementStyle.length, 
+              aStyleKey, 
+              tipTipCssToSet = {}, 
+              tipCssToSet = {}, 
+              tipArrowCssToSet = {}, 
+              paddingTopValue, 
+              paddingBottomValue, 
+              paddingLeftValue, 
+              paddingRightValue;
 
               tipElement.removeClass('_hidden');
               exradicatedTipElement.removeClass('_hidden');
@@ -510,8 +510,8 @@
                 tooltipElement.addClass('active');
               }
             }
-          }
-          , onTooltipHide = function onTooltipHide() {
+          }, 
+          onTooltipHide = function onTooltipHide() {
 
             if ($attrs.tooltipAppendToBody) {
 
@@ -520,10 +520,10 @@
 
               tooltipElement.removeClass('active');
             }
-          }
-          , registerOnScrollFrom = function registerOnScrollFrom(theElement) {
-            var parentElement = theElement.parent()
-              , timer;
+          }, 
+          registerOnScrollFrom = function registerOnScrollFrom(theElement) {
+            var parentElement = theElement.parent(), 
+            timer;
 
             if (theElement[0] &&
               (theElement[0].scrollHeight > theElement[0].clientHeight ||
@@ -539,9 +539,9 @@
 
                 timer = $timeout(function doLater() {
 
-                  var theTipElement = getAppendedTip(tooltipElement)
-                    , tooltipBoundingRect = tooltipElement[0].getBoundingClientRect()
-                    , thatBoundingRect = that.getBoundingClientRect();
+                  var theTipElement = getAppendedTip(tooltipElement), 
+                  tooltipBoundingRect = tooltipElement[0].getBoundingClientRect(), 
+                  thatBoundingRect = that.getBoundingClientRect();
 
                   if (tooltipBoundingRect.top < thatBoundingRect.top ||
                     tooltipBoundingRect.bottom > thatBoundingRect.bottom ||
@@ -562,8 +562,8 @@
 
               registerOnScrollFrom(parentElement);
             }
-          }
-          , onTooltipTemplateChange = function onTooltipTemplateChange(newValue) {
+          }, 
+          onTooltipTemplateChange = function onTooltipTemplateChange(newValue) {
             if (newValue) {
               tooltipElement.removeClass('_force-hidden'); //see lines below, this forces to hide tooltip when is empty
               tipTipElement.empty();
@@ -578,8 +578,8 @@
               tipTipElement.empty();
               tooltipElement.addClass('_force-hidden'); //force to be hidden if empty
             }
-          }
-          , onTooltipTemplateUrlChange = function onTooltipTemplateUrlChange(newValue) {
+          }, 
+          onTooltipTemplateUrlChange = function onTooltipTemplateUrlChange(newValue) {
             if (newValue && !$attrs.tooltipTemplateUrlCache) {
 
               $http.get(newValue).then(function onResponse(response) {
@@ -602,8 +602,8 @@
               tipTipElement.empty();
               tooltipElement.addClass('_force-hidden'); //force to be hidden if empty
             }
-          }
-          , onTooltipTemplateUrlCacheChange = function onTooltipTemplateUrlCacheChange(newValue) {
+          }, 
+          onTooltipTemplateUrlCacheChange = function onTooltipTemplateUrlCacheChange(newValue) {
             if (newValue && $attrs.tooltipTemplateUrl) {
 
               var template = $templateCache.get($attrs.tooltipTemplateUrl);
@@ -623,8 +623,8 @@
               tipTipElement.empty();
               tooltipElement.addClass('_force-hidden'); //force to be hidden if empty
             }
-          }
-          , onTooltipSideChange = function onTooltipSideChange(newValue) {
+          }, 
+          onTooltipSideChange = function onTooltipSideChange(newValue) {
 
             if (newValue) {
 
@@ -635,8 +635,8 @@
               tooltipElement.addClass('_' + newValue);
               oldTooltipSide = newValue;
             }
-          }
-          , onTooltipShowTrigger = function onTooltipShowTrigger(newValue) {
+          }, 
+          onTooltipShowTrigger = function onTooltipShowTrigger(newValue) {
 
             if (newValue) {
 
@@ -647,8 +647,8 @@
               tooltipElement.on(newValue, onTooltipShow);
               oldTooltipShowTrigger = newValue;
             }
-          }
-          , onTooltipHideTrigger = function onTooltipHideTrigger(newValue) {
+          }, 
+          onTooltipHideTrigger = function onTooltipHideTrigger(newValue) {
 
             if (newValue) {
 
@@ -659,8 +659,8 @@
               tooltipElement.on(newValue, onTooltipHide);
               oldTooltipHideTrigger = newValue;
             }
-          }
-          , onTooltipClassChange = function onTooltipClassChange(newValue) {
+          }, 
+          onTooltipClassChange = function onTooltipClassChange(newValue) {
 
             if (newValue) {
 
@@ -671,15 +671,15 @@
               tipElement.addClass(newValue);
               oldTooltipClass = newValue;
             }
-          }
-          , onTooltipSmartChange = function onTooltipSmartChange() {
+          }, 
+          onTooltipSmartChange = function onTooltipSmartChange() {
 
             if (typeof $attrs.tooltipSmart !== 'boolean') {
 
               $attrs.tooltipSmart = $attrs.tooltipSmart === 'true';
             }
-          }
-          , onTooltipCloseButtonChange = function onTooltipCloseButtonChange(newValue) {
+          }, 
+          onTooltipCloseButtonChange = function onTooltipCloseButtonChange(newValue) {
             var enableButton = newValue === 'true';
 
             if (enableButton) {
@@ -691,17 +691,17 @@
               closeButtonElement.off('click');
               closeButtonElement.css('display', 'none');
             }
-          }
-          , onTooltipTemplateControllerChange = function onTooltipTemplateControllerChange(newValue) {
+          }, 
+          onTooltipTemplateControllerChange = function onTooltipTemplateControllerChange(newValue) {
 
             if (newValue) {
 
               var tipController = $controller(newValue, {
                   '$scope': scope
-                })
-                , newScope = scope.$new(false, scope)
-                , indexOfAs = newValue.indexOf('as')
-                , controllerName;
+                }), 
+              newScope = scope.$new(false, scope), 
+                indexOfAs = newValue.indexOf('as'), 
+                controllerName;
 
               if (indexOfAs >= 0) {
 
@@ -717,8 +717,8 @@
               unregisterOnTooltipControllerChange();
               /*eslint-enable no-use-before-define*/
             }
-          }
-          , onTooltipSizeChange = function onTooltipSizeChange(newValue) {
+          }, 
+          onTooltipSizeChange = function onTooltipSizeChange(newValue) {
 
             if (newValue) {
 
@@ -729,8 +729,8 @@
               tipTipElement.addClass('_' + newValue);
               oldSize = newValue;
             }
-          }
-          , onTooltipSpeedChange = function onTooltipSpeedChange(newValue) {
+          }, 
+          onTooltipSpeedChange = function onTooltipSpeedChange(newValue) {
 
             if (newValue) {
 
@@ -741,20 +741,20 @@
               tooltipElement.addClass('_' + newValue);
               oldSpeed = newValue;
             }
-          }
-          , unregisterOnTooltipTemplateChange = $attrs.$observe('tooltipTemplate', onTooltipTemplateChange)
-          , unregisterOnTooltipTemplateUrlChange = $attrs.$observe('tooltipTemplateUrl', onTooltipTemplateUrlChange)
-          , unregisterOnTooltipTemplateUrlCacheChange = $attrs.$observe('tooltipTemplateUrlCache', onTooltipTemplateUrlCacheChange)
-          , unregisterOnTooltipSideChangeObserver = $attrs.$observe('tooltipSide', onTooltipSideChange)
-          , unregisterOnTooltipShowTrigger = $attrs.$observe('tooltipShowTrigger', onTooltipShowTrigger)
-          , unregisterOnTooltipHideTrigger = $attrs.$observe('tooltipHideTrigger', onTooltipHideTrigger)
-          , unregisterOnTooltipClassChange = $attrs.$observe('tooltipClass', onTooltipClassChange)
-          , unregisterOnTooltipSmartChange = $attrs.$observe('tooltipSmart', onTooltipSmartChange)
-          , unregisterOnTooltipCloseButtonChange = $attrs.$observe('tooltipCloseButton', onTooltipCloseButtonChange)
-          , unregisterOnTooltipControllerChange = $attrs.$observe('tooltipController', onTooltipTemplateControllerChange)
-          , unregisterOnTooltipSizeChange = $attrs.$observe('tooltipSize', onTooltipSizeChange)
-          , unregisterOnTooltipSpeedChange = $attrs.$observe('tooltipSpeed', onTooltipSpeedChange)
-          , unregisterTipContentChangeWatcher = scope.$watch(whenActivateMultilineCalculation, calculateIfMultiLine);
+          }, 
+          unregisterOnTooltipTemplateChange = $attrs.$observe('tooltipTemplate', onTooltipTemplateChange), 
+          unregisterOnTooltipTemplateUrlChange = $attrs.$observe('tooltipTemplateUrl', onTooltipTemplateUrlChange), 
+          unregisterOnTooltipTemplateUrlCacheChange = $attrs.$observe('tooltipTemplateUrlCache', onTooltipTemplateUrlCacheChange), 
+          unregisterOnTooltipSideChangeObserver = $attrs.$observe('tooltipSide', onTooltipSideChange), 
+          unregisterOnTooltipShowTrigger = $attrs.$observe('tooltipShowTrigger', onTooltipShowTrigger), 
+          unregisterOnTooltipHideTrigger = $attrs.$observe('tooltipHideTrigger', onTooltipHideTrigger), 
+          unregisterOnTooltipClassChange = $attrs.$observe('tooltipClass', onTooltipClassChange), 
+          unregisterOnTooltipSmartChange = $attrs.$observe('tooltipSmart', onTooltipSmartChange), 
+          unregisterOnTooltipCloseButtonChange = $attrs.$observe('tooltipCloseButton', onTooltipCloseButtonChange), 
+          unregisterOnTooltipControllerChange = $attrs.$observe('tooltipController', onTooltipTemplateControllerChange), 
+          unregisterOnTooltipSizeChange = $attrs.$observe('tooltipSize', onTooltipSizeChange), 
+          unregisterOnTooltipSpeedChange = $attrs.$observe('tooltipSpeed', onTooltipSpeedChange), 
+          unregisterTipContentChangeWatcher = scope.$watch(whenActivateMultilineCalculation, calculateIfMultiLine);
 
         closeButtonElement.attr({
           'id': 'close-button'
@@ -829,7 +829,7 @@
     };
   }];
 
-  angular.module('720kb.tooltips', [])
+  angular.module('lucid-tooltips', [])
   .provider(directiveName + 'Conf', tooltipConfigurationProvider)
   .directive(directiveName, tooltipDirective);
 }(angular, window));
