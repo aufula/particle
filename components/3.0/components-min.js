@@ -522,11 +522,12 @@ angular.module("lucidModal", ['appConfig'])
     }]);
 
 angular.module("lucidFingerTabs", ['appConfig'])
-.directive('lucidFingerTabs', ['config', function(config) {
+    .directive('lucidFingerTabs', ['config', function(config) {
         return {
             restrict: 'E',
             templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tabs.html',
-            scope: { 
+            scope: {
+                selectedTab: '='
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -536,15 +537,16 @@ angular.module("lucidFingerTabs", ['appConfig'])
                     $scope.tabs.push(tab);
                 };
 
-                $scope.selectTab = function(tab) {
+                $scope.$watch('selectedTab', function(newVal) {
                     for (var i = 0; i < $scope.tabs.length; i++) {
-                        if (tab.name !== $scope.tabs[i].name) {
+                        if (i !== newVal) {
                             $scope.tabs[i].selected = false;
                         } else {
                             $scope.tabs[i].selected = true;
+                            //console.log('selected', i);
                         }
                     }
-                };
+                });
             }]
         };
     }])
