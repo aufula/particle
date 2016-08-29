@@ -394,6 +394,8 @@ angular.module("lucidIcons", [])
                 "name": "icon-clock-medium-18px"
             }, {
                 "name":"icon-double-arrow-18px"
+            }, {
+                "name":"icon-stalker-18px"
             }]
         }];
         return icons;
