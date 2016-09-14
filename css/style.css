@@ -219,25 +219,26 @@ p.small-body {
   text-align: center;
   -webkit-transition: 0.5s ease-in-out all;
   transition: 0.5s ease-in-out all;
+  overflow: scroll;
 }
 #sidebar img {
   display: inline-block;
   margin: 28px auto 0;
   width: 215px;
 }
-#sidebar .sidebar-divider {
+#sidebar .sidebar-scroll .sidebar-divider {
   height: 1px;
   background: #212C35;
   margin: 0 20px;
   width: 210px;
 }
-#sidebar > ul {
+#sidebar .sidebar-scroll > ul {
   text-align: left;
   max-height: 75%;
   margin-top: 20px;
   margin-bottom: 20px;
 }
-#sidebar > ul > li.list-header {
+#sidebar .sidebar-scroll > ul > li.list-header {
   color: #95A8BA;
   font-weight: bold;
   font-size: 14px;
@@ -248,19 +249,19 @@ p.small-body {
   vertical-align: top;
   position: relative;
 }
-#sidebar > ul > li.list-header .lucid-icon-22 {
+#sidebar .sidebar-scroll > ul > li.list-header .lucid-icon-22 {
   position: absolute;
   top: 7px;
   left: 20px;
 }
-#sidebar > ul > li.list-header .lucid-icon-22 svg path {
+#sidebar .sidebar-scroll > ul > li.list-header .lucid-icon-22 svg path {
   fill: #95A8BA;
 }
-#sidebar > ul > li.list-header .lucid-icon-22.production {
+#sidebar .sidebar-scroll > ul > li.list-header .lucid-icon-22.production {
   top: 9px;
 }
-#sidebar > ul > li > a,
-#sidebar > ul > li .prototype-links {
+#sidebar .sidebar-scroll > ul > li > a,
+#sidebar .sidebar-scroll > ul > li .prototype-links {
   -webkit-font-smoothing: auto;
   font-size: 16px;
   color: #fff;
@@ -272,37 +273,37 @@ p.small-body {
   border: 0 solid transparent;
   position: relative;
 }
-#sidebar > ul > li > a:hover,
-#sidebar > ul > li .prototype-links:hover {
+#sidebar .sidebar-scroll > ul > li > a:hover,
+#sidebar .sidebar-scroll > ul > li .prototype-links:hover {
   background: #46525E;
 }
-#sidebar > ul > li > a.active,
-#sidebar > ul > li .prototype-links.active {
+#sidebar .sidebar-scroll > ul > li > a.active,
+#sidebar .sidebar-scroll > ul > li .prototype-links.active {
   background: #212C35;
   border-left: 4px solid #29AAE1;
   text-indent: 16px;
 }
-#sidebar > ul > li > a.active:hover,
-#sidebar > ul > li .prototype-links.active:hover {
+#sidebar .sidebar-scroll > ul > li > a.active:hover,
+#sidebar .sidebar-scroll > ul > li .prototype-links.active:hover {
   background: #212C35;
 }
-#sidebar > ul > li .prototype-links ng-include {
+#sidebar .sidebar-scroll > ul > li .prototype-links ng-include {
   height: 22px;
 }
-#sidebar > ul > li .prototype-links svg {
+#sidebar .sidebar-scroll > ul > li .prototype-links svg {
   vertical-align: middle;
 }
-#sidebar > ul > li .prototype-links svg path {
+#sidebar .sidebar-scroll > ul > li .prototype-links svg path {
   fill: #77818C;
   -webkit-transition: 0.25s ease-in-out all;
   transition: 0.25s ease-in-out all;
 }
-#sidebar > ul > li .prototype-links span a,
-#sidebar > ul > li .prototype-links > a {
+#sidebar .sidebar-scroll > ul > li .prototype-links span a,
+#sidebar .sidebar-scroll > ul > li .prototype-links > a {
   text-indent: 0;
   vertical-align: middle;
 }
-#sidebar > ul > li .prototype-links > a {
+#sidebar .sidebar-scroll > ul > li .prototype-links > a {
   padding: 15px 0;
   opacity: 0;
   position: absolute;
@@ -310,13 +311,13 @@ p.small-body {
   right: 0px;
   padding: 0 15px;
 }
-#sidebar > ul > li .prototype-links > a:hover svg path {
+#sidebar .sidebar-scroll > ul > li .prototype-links > a:hover svg path {
   fill: rgba(255, 255, 255, 0.8);
 }
-#sidebar > ul > li .prototype-links a.view-prototype {
+#sidebar .sidebar-scroll > ul > li .prototype-links a.view-prototype {
   padding: 10px 0;
 }
-#sidebar > ul > li .prototype-links:hover > a {
+#sidebar .sidebar-scroll > ul > li .prototype-links:hover > a {
   opacity: 1;
 }
 #content {

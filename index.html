@@ -48,54 +48,56 @@
     </nav>
     <!-- STATIC SIDEBAR -->
     <section id="sidebar">
-        <ul class="reversed-text">
-            <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Getting Started
-            </li>
-            <li><a href="#/angular" ng-class="{ 'active': isActive('/','angular') }">Angular for Designers</a></li>
-            <li><a href="#/codepen" ng-class="{ 'active': isActive('/','codepen') }">Starting in Codepen</a></li>
-        </ul>
-        <div class="sidebar-divider"></div>
-        <ul class="reversed-text">
-            <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Building Prototypes
-            </li>
-            <li>
-                <a href="#/icons" ng-class="{ 'active': isActive('/icons', '') }">Icons</a>
-            </li>
-            <li ng-repeat="componentGroup in componentGroups">
-                <a href="#/components/{{componentGroup.groupid}}" ng-class="{ 'active': isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
-            </li>
-        </ul>
-        <div class="sidebar-divider"></div>
-        <ul class="reversed-text">
-            <li class="list-header">
-                <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-finger-22px.svg'"></ng-include> Latest Prototypes
-            </li>
-            <li ng-repeat="prototype in prototypes">
-                <div class="prototype-links">
-                    <span><a class="view-prototype" href="{{prototype.url}}/index.html" target="_blank">
+        <div class="sidebar-scroll">
+            <ul class="reversed-text">
+                <li class="list-header">
+                    <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Getting Started
+                </li>
+                <li><a href="#/angular" ng-class="{ 'active': isActive('/','angular') }">Angular for Designers</a></li>
+                <li><a href="#/codepen" ng-class="{ 'active': isActive('/','codepen') }">Starting in Codepen</a></li>
+                <li><a href="#/how-to" ng-class="{ 'active': isActive('/','how-to') }">Start with Prototype</a></li>
+            </ul>
+            <div class="sidebar-divider"></div>
+            <ul class="reversed-text">
+                <li class="list-header">
+                    <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-compass-22px.svg'"></ng-include> Building Prototypes
+                </li>
+                <li>
+                    <a href="#/icons" ng-class="{ 'active': isActive('/icons', '') }">Icons</a>
+                </li>
+                <li ng-repeat="componentGroup in componentGroups">
+                    <a href="#/components/{{componentGroup.groupid}}" ng-class="{ 'active': isActive('/components/', componentGroup.groupid) }">{{componentGroup.groupname}}</a>
+                </li>
+            </ul>
+            <div class="sidebar-divider"></div>
+            <ul class="reversed-text">
+                <li class="list-header">
+                    <ng-include class="lucid-icon-22" src="'components/1.2/icon/icons/icon-finger-22px.svg'"></ng-include> Latest Prototypes
+                </li>
+                <li ng-repeat="prototype in prototypes">
+                    <div class="prototype-links">
+                        <span><a class="view-prototype" href="{{prototype.url}}/index.html" target="_blank">
                         {{prototype.title}}
                     </a></span>
-                    
-                    <a class="download-prototype" href="{{prototype.url}}.zip" download="{{prototype.url}}.zip">
-                        <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-download-22px.svg'"></ng-include>
-                    </a>
-                </div>
-            </li>
-        </ul>
-        <div class="sidebar-divider"></div>
-        <ul class="reversed-text">
-            <li class="list-header">
-                <ng-include class="lucid-icon-22 production" src="'components/1.2/icon/icons/icon-html-22px.svg'"></ng-include> Production
-            </li>
-            <li>
-                <a href="#/production/" ng-class="{ 'active': isActive('/production', '') }">Production Code</a>
-            </li>
-            <li>
-                <a href="#/colors/" ng-class="{ 'active': isActive('/colors', '') }">Colors</a>
-            </li>
-        </ul>
+                        <a class="download-prototype" href="{{prototype.url}}.zip" download="{{prototype.url}}.zip">
+                            <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-download-22px.svg'"></ng-include>
+                        </a>
+                    </div>
+                </li>
+            </ul>
+            <div class="sidebar-divider"></div>
+            <ul class="reversed-text">
+                <li class="list-header">
+                    <ng-include class="lucid-icon-22 production" src="'components/1.2/icon/icons/icon-html-22px.svg'"></ng-include> Production
+                </li>
+                <li>
+                    <a href="#/production/" ng-class="{ 'active': isActive('/production', '') }">Production Code</a>
+                </li>
+                <li>
+                    <a href="#/colors/" ng-class="{ 'active': isActive('/colors', '') }">Colors</a>
+                </li>
+            </ul>
+        </div>
     </section>
     <!-- MAIN CONTENT AND INJECTED VIEWS -->
     <section id="content">

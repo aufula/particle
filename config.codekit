@@ -9972,6 +9972,15 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/less\/style.css": {
+		"fileType": 16,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/less\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/less\/style.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
@@ -10267,6 +10276,15 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/templates\/how-to.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/templates\/how-to.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
 	"\/templates\/icons.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -10297,7 +10315,7 @@
 	},
 "hooks": [
 	],
-"lastSavedByUser": "Taylor Palmer",
+"lastSavedByUser": "Cory",
 "manualImportLinks": {
 	},
 "projectAttributes": {
