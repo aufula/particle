@@ -226,6 +226,9 @@ p.small-body {
   margin: 28px auto 0;
   width: 215px;
 }
+#sidebar .sidebar-scroll {
+  padding-bottom: 50px;
+}
 #sidebar .sidebar-scroll .sidebar-divider {
   height: 1px;
   background: #212C35;

@@ -22,6 +22,9 @@ particleApp.config(function($routeProvider) {
         .when('/codepen', {
             templateUrl: 'templates/codepen.html',
         })
+        .when('/how-to', {
+            templateUrl: 'templates/how-to.html',
+        })
         .when('/angular', {
             templateUrl: 'templates/angular.html',
             controller: 'angularController'

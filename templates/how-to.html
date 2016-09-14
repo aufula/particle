@@ -1,0 +1,49 @@
+<div class="wrapper">
+    <style>
+    .icon-list-container.prototypes {
+        margin: 30px 0;
+        background: #f0f0f0;
+        padding: 20px;
+        border-radius: 8px;
+        -webkit-transition: 0.25s ease-in-out;
+        display: inline-block;
+        margin: 10px;
+    }
+    
+    .prototypes .download-prototype {
+        position: absolute;
+        left: 50%;
+        top: 2px;
+        margin-left: -11px;
+    }
+    
+    .prototypes .prototype-links {
+        position: relative;
+        padding-top: 30px;
+    }
+    </style>
+    <h1>Prototyping using Lucid Particle</h1>
+    <div class="hr"></div>
+    <h2>Step 1</h2>
+    <p>Download a starter file of the prototype you are building.</p>
+    <ul>
+        <li ng-repeat="prototype in prototypes">
+            <div class="prototype-links">
+                <span><a class="view-prototype" href="{{prototype.url}}/index.html" target="_blank">
+                        {{prototype.title}}
+                    </a></span>
+                <a class="download-prototype" href="{{prototype.url}}.zip" download="{{prototype.url}}.zip">
+                    <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-download-22px.svg'"></ng-include>
+                </a>
+            </div>
+        </li>
+    </ul>
+    <p></p>
+    <h2>Step 2</h2>
+    <p>Unzip, Rename, and Drag into Codekit</p>
+    <p>INSERT GIF HERE</p>
+    <p></p>
+    <h2>Step 3</h2>
+    <p>Push to github pages to share with customers.</p>
+    <div hljs language="HTML" include="'templates/code/step-3.html'"></div>
+</div>
