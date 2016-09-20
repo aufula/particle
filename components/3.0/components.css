@@ -1355,6 +1355,9 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-top-tabs .lucid-top-tab:first-child {
   border-left: none;
 }
+.lucid-top-tabs .lucid-top-tab.col-25 {
+  width: 25%;
+}
 .lucid-top-tabs .lucid-top-tab.col-33 {
   width: 33.333333%;
 }
