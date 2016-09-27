@@ -351,6 +351,10 @@ angular.module("lucidIcons", [])
                 'name': 'icon-add-box-22px'
             }, {
                 'name': 'icon-box-22px'
+            }, {
+                'name': 'icon-jump-22px'
+            }, {
+                'name': 'icon-scale-22px'
             }]
         }, {
             "icongroup": "18px Icons",
