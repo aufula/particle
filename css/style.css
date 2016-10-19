@@ -1881,12 +1881,8 @@ p.small-body {
 }
 .overview-section .benefits-block .benefits-block-icon {
   position: absolute;
-  top: 8px;
-  left: 0;
-}
-.overview-section .benefits-block .benefits-block-icon svg {
-  width: 30px;
-  height: 30px;
+  top: 13px;
+  left: 6px;
 }
 .overview-section .benefits-block .benefits-block-icon svg path {
   fill: #777;
