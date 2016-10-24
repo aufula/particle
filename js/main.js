@@ -96,7 +96,7 @@ particleApp.controller('mainController', function($scope, $location, lucidCompon
     }, {
         'title': 'Press Editor',
         'url': 'latest-prototype/press-editor'
-    },  {
+    }, {
         'title': 'Press Docs List',
         'url': 'latest-prototype/press-docslist'
     }];
@@ -108,7 +108,7 @@ particleApp.controller('iconController', function(config, $scope, lucidIconFacto
 
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue != null) {
+        if (newValue) {
             var newPath = '/icons/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath')
@@ -137,7 +137,7 @@ particleApp.controller('componentController', function($scope, config, lucidComp
     $scope.searchResults = $routeParams.searchResults;
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue != null) {
+        if (newValue) {
             var newPath = '/components/' + $scope.componentGroupID + '/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath', newPath)
@@ -161,7 +161,7 @@ particleApp.controller('productionController', function($scope, lucidProductionF
     $scope.searchResults = $routeParams.searchResults;
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue != null) {
+        if (newValue) {
             var newPath = '/production/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath', newPath)
@@ -182,7 +182,7 @@ particleApp.controller('colorController', function($scope, lucidColorFactory, $r
     $scope.searchResults = $routeParams.searchResults;
 
     $scope.$watch('searchResults', function(newValue) {
-        if (newValue != null) {
+        if (newValue) {
             var newPath = '/colors/' + newValue;
             $location.path(newPath, false);
             //console.log('changepath', newPath)
@@ -204,6 +204,17 @@ particleApp.controller('colorCtrl', function($scope, $timeout) {
 
 });
 //////// directives ////////
+particleApp.directive("landingPage", function($animate) {
+    return function(scope, element, attrs) {
+        scope.$watch(attrs.landingPage, function(newVal) {
+            if (newVal) {
+                $animate.addClass(element, "landing-page");
+            } else {
+                $animate.removeClass(element, "landing-page");
+            }
+        });
+    };
+});
 particleApp.directive('collapse', ['$timeout', function($timeout) {
     return {
         restrict: 'A',

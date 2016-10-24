@@ -1900,6 +1900,7 @@ p.small-body {
 }
 .overview-section .particle-large-icon > svg {
   max-width: 110px;
+  max-height: 110px;
 }
 .overview-section .particle-large-icon > svg path,
 .overview-section .particle-large-icon > svg ellipse {
