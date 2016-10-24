@@ -10,19 +10,19 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "input",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "value",
+                    "attr": "value",
                     "type": "text",
                     "details": "Initial value of input."
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "how wide the input should be (includes arrows)."
                 }, {
-                    "name": "label",
+                    "attr": "label",
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "text",
                     "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
@@ -31,27 +31,27 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "input-stepper",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "number",
+                    "attr": "number",
                     "type": "number",
                     "details": "Initial value of input."
                 }, {
-                    "name": "unit",
+                    "attr": "unit",
                     "type": "text",
                     "details": "Insert unit to be placed after number (px, in, pt)"
                 }, {
-                    "name": "step",
+                    "attr": "step",
                     "type": "number",
                     "details": "How much number is increased or decreased when clicking the up/down arrows"
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "how wide the input should be (includes arrows)."
                 }, {
-                    "name": "label",
+                    "attr": "label",
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "text",
                     "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
@@ -60,19 +60,19 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "select",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "options",
+                    "attr": "options",
                     "type": "Array",
                     "details": "List out the options in an array. ['One', 'Two', 'Three']"
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "how wide the dropdown should be, *check when dropdown is open."
                 }, {
-                    "name": "label",
+                    "attr": "label",
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "text",
                     "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
@@ -82,27 +82,27 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "toggle",
                 "description": "On/Off toggle state component used mostly in settings.",
                 "inputs": [{
-                    "name": "activetext",
+                    "attr": "activetext",
                     "type": "text",
                     "details": "Optional: default is 'ON'"
                 }, {
-                    "name": "inactivetext",
+                    "attr": "inactivetext",
                     "type": "text",
                     "details": "Optional: default is 'OFF'"
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "Optional: used if you have alternate text. "
                 }, {
-                    "name": "label",
+                    "attr": "label",
                     "type": "text",
                     "details": "Optional: add label to bottom of toggle"
                 }, {
-                    "name": "toggle",
+                    "attr": "toggle",
                     "type": "true/false",
                     "details": "Optional: used to connect to existing variable, or set default on/off state."
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "'reverse-text'",
                     "details": "Optional: add class of 'reverse-text' to make label text white and darken off state"
                 }]
@@ -111,19 +111,19 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "buttcon",
                 "description": "Add a label to an icon, example is inside the colorpicker.",
                 "inputs": [{
-                    "name": "icon",
+                    "attr": "icon",
                     "type": "URL",
                     "details": "svg will be included inline so you can manipulate colors using css"
                 }, {
-                    "name": "label",
+                    "attr": "label",
                     "type": "text",
                     "details": "Optional: add label to bottom of toggle"
                 }, {
-                    "name": "active",
+                    "attr": "active",
                     "type": "true/false",
                     "details": "Optional: if true, 'active' class is added to color icon lucid blue. Note: complex icons will need custom css"
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "text",
                     "details": "Optional: add 'condensed' for condensed aesthetic. Note: should be 14px icon if condensed."
                 }]
@@ -132,11 +132,11 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "button",
                 "description": "Buttons can be created by adding a class",
                 "inputs": [{
-                    "name": "color",
+                    "attr": "color",
                     "type": "text",
                     "details": "colors available: blue, red, green, yellow, grey"
                 }, {
-                    "name": "icon",
+                    "attr": "icon",
                     "type": "URL",
                     "details": "insert URL of icon (should be white)."
                 }]
@@ -150,19 +150,19 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "buttcon-popover",
                 "description": "Copy and paste component as is.",
                 "inputs": [{
-                    "name": "icon",
+                    "attr": "icon",
                     "type": "URL",
                     "details": "Insert the URL of the icon you want to be clickable."
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "Set the width of the popover menu. The height is determined by the content"
                 }, {
-                    "name": "class",
+                    "attr": "class",
                     "type": "text",
                     "details": "Optional: add 'popover-list' for a popover dropdown list - see example."
                 }, {
-                    "name": "showpopover",
+                    "attr": "showpopover",
                     "type": "var",
                     "details": "Optional: Assign variable to show/hide popover from another source."
                 }],
@@ -172,15 +172,15 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "more-drawer",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "height",
+                    "attr": "height",
                     "type": "number",
                     "details": "Insert the height the drawer should open."
                 }, {
-                    "name": "options",
+                    "attr": "options",
                     "type": "Array",
                     "details": "List out the options in an array. ['One', 'Two', 'Three']"
                 }, {
-                    "name": "tophandle",
+                    "attr": "tophandle",
                     "type": "true",
                     "details": "If true, drawer will open upwards. Only tested on a fixed bottom position."
                 }]
@@ -190,11 +190,11 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "notification",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "type",
+                    "attr": "type",
                     "type": "text",
                     "details": "options are: information, complete, error, alert"
                 }, {
-                    "name": "button",
+                    "attr": "button",
                     "type": "text",
                     "details": "insert the text for the button. If blank, there won't be a button"
                 }],
@@ -204,53 +204,61 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "finger-tabs",
                 "description": "this component is used in modals and the user settings page",
                 "inputs": [{
-                    "name": "name",
+                    "attr": "name",
                     "type": "text",
                     "details": "Create a name for the finger tab."
                 }, {
-                    "name": "icon",
+                    "attr": "icon",
                     "type": "URL",
                     "details": "Optional: Insert URL of icon. Coloring SVG is added through css"
+                },{
+                    "attr": "selected-tab",
+                    "type": "variable",
+                    "details": "*Optional: link the current selected tab to another variable"
                 }],
             }, {
                 "title": "Top Tabs",
                 "componentid": "top-tabs",
                 "description": "this component is used in press, the page color, etc.",
                 "inputs": [{
-                    "name": "name",
+                    "attr": "name",
                     "type": "text",
                     "details": "Create a name for the finger tab."
+                },{
+                    "attr": "selected-tab",
+                    "type": "variable",
+                    "details": "*Optional: link the current selected tab to another variable"
                 }],
             }, {
                 "title": "Modal",
                 "componentid": "modal",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "showmodal",
+                    "attr": "showmodal",
                     "type": "variable",
                     "details": "Insert a variable, when variable is true, modal will show."
                 }, {
-                    "name": "title",
+                    "attr": "title",
                     "type": "text",
                     "details": "Title of modal."
                 }, {
-                    "name": "width",
+                    "attr": "width",
                     "type": "number",
                     "details": "Width of modal."
                 }, {
-                    "name": "height",
+                    "attr": "height",
                     "type": "number",
                     "details": "Height of modal"
                 }, {
-                    "name": "confirm",
+                    "attr": "confirm",
                     "type": "text",
                     "details": "Text to be displayed inside of confirm button, if empty footer won't show"
                 }, {
-                    "name": "cancel",
+                    "attr": "cancel",
                     "type": "text",
                     "details": "Text to be displayed inside of cancel button"
                 }, {
-                    "name": "confirm-function",
+                    "attr": "confirm-function",
                     "type": "function",
                     "details": "Function called when user clicks confirm."
                 }],
@@ -260,11 +268,11 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "context-menu",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "name": "lucid-context-menu",
+                    "attr": "lucid-context-menu",
                     "type": "",
                     "details": "Include this on any element to add a right click context menu."
                 }, {
-                    "name": "data-target",
+                    "attr": "data-target",
                     "type": "ID",
                     "details": "Insert ID of context menu, that will show up when right clicked."
                 }]
@@ -273,11 +281,11 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "collapse-bar",
                 "description": "Used to separate data and settings",
                 "inputs": [{
-                    "name": "title",
+                    "attr": "title",
                     "type": "text",
                     "details": "Name the top bar"
                 }, {
-                    "name": "closed",
+                    "attr": "closed",
                     "type": "true/false",
                     "details": "Optional: Set to true want the element closed by default"
                 }]
@@ -286,15 +294,15 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "edit-in-place",
                 "description": "double click to edit in place",
                 "inputs": [{
-                    "name": "ng-model",
+                    "attr": "ng-model",
                     "type": "var",
                     "details": "The text that you want to be editable"
                 }, {
-                    "name": "placeholder",
+                    "attr": "placeholder",
                     "type": "text",
                     "details": "Optional: Add placeholder text if input is deleted"
                 }, {
-                    "name": "edit",
+                    "attr": "edit",
                     "type": "true/false",
                     "details": "Optional: Edit mode can be toggled using outside variable. e.g. rename shape library from dropdown rather than double click."
                 }]
@@ -303,19 +311,19 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "tip",
                 "description": "tips show up to show how to use the product, tips are quick introductions, to point out features",
                 "inputs": [{
-                    "name": "showtip",
+                    "attr": "showtip",
                     "type": "var",
                     "details": "when true, tip will show. If they have dismissed it, it will no longer show up."
                 }, {
-                    "name": "dismiss",
+                    "attr": "dismiss",
                     "type": "var",
                     "details": "Set to true to dismiss tip. Once a user has dismissed the tip, it won't return"
                 }, {
-                    "name": "caret",
+                    "attr": "caret",
                     "type": "text",
                     "details": "*Options: top, left, bottom, right. Adds appropriate caret and transition"
                 }, {
-                    "name": "style",
+                    "attr": "style",
                     "type": "text",
                     "details": "Set position with inline style or css."
                 }]
@@ -324,30 +332,43 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "paywall",
                 "description": "Paywalls are used throughout the product to encourage payment",
                 "inputs": [{
-                    "name": "showpaywall",
+                    "attr": "showpaywall",
                     "type": "var",
                     "details": "when true, paywall will show."
                 }, {
-                    "name": "banner",
+                    "attr": "banner",
                     "type": "text",
                     "details": "Text that shows up in the top left orange banner."
                 }, {
-                    "name": "title",
+                    "attr": "title",
                     "type": "text",
                     "details": "Title of paywall."
                 }, {
-                    "name": "subtitle",
+                    "attr": "subtitle",
                     "type": "text",
                     "details": "*Optional: subtitle of paywall."
                 }, {
-                    "name": "confirm",
+                    "attr": "confirm",
                     "type": "text",
                     "details": "Text of confirm button."
                 }, {
-                    "name": "confirm-function",
+                    "attr": "confirm-function",
                     "type": "function",
                     "details": "*Optional: Function called when button is clicked."
                 }]
+            }, {
+                "title": "Progress Stepper",
+                "componentid": "progress-stepper",
+                "description": "this component is used in modals and the user settings page",
+                "inputs": [{
+                    "attr": "name",
+                    "type": "text",
+                    "details": "Create a name for the finger tab."
+                }, {
+                    "attr": "selected-step",
+                    "type": "variable",
+                    "details": "*Optional: link the current selected step to another variable"
+                }],
             }]
         }, {
             //Toolbar Components

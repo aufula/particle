@@ -10,7 +10,9 @@
 }
 
 .lucid-top-tabs {
+    display:flex;
     .lucid-top-tab {
+        flex:1;
         text-align: center;
         cursor: pointer;
         display: inline-block;
@@ -24,15 +26,6 @@
         text-transform: uppercase;
         &:first-child {
             border-left: none;
-        }
-        &.col-25 {
-            width: 25%;
-        }
-        &.col-33 {
-            width: 33.333333%;
-        }
-        &.col-50 {
-            width: 50%;
         }
         &.selected {
             color: @blue-steel-2;

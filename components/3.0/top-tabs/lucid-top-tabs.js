@@ -4,6 +4,7 @@ angular.module("lucidTopTabs", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'top-tabs/lucid-top-tabs.html',
             scope: { 
+                selectedTab: '='
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -13,15 +14,16 @@ angular.module("lucidTopTabs", ['appConfig'])
                     $scope.tabs.push(tab);
                 };
 
-                $scope.selectTab = function(tab) {
+                $scope.$watch('selectedTab', function(newVal) {
                     for (var i = 0; i < $scope.tabs.length; i++) {
-                        if (tab.name !== $scope.tabs[i].name) {
+                        if (i !== newVal) {
                             $scope.tabs[i].selected = false;
                         } else {
                             $scope.tabs[i].selected = true;
+                            //console.log('selected', i);
                         }
                     }
-                };
+                });
             }]
         };
     }])
