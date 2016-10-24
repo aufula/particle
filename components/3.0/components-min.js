@@ -19,6 +19,7 @@
 //@codekit-append "top-tabs/lucid-top-tabs.js"
 //@codekit-append "tip/lucid-tip.js"
 //@codekit-append "paywall/lucid-paywall.js"
+//@codekit-append "progress-stepper/lucid-progress-stepper.js"
 
 
 angular.module('appConfig', [])
@@ -39,7 +40,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
@@ -964,6 +965,7 @@ angular.module("lucidTopTabs", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'top-tabs/lucid-top-tabs.html',
             scope: { 
+                selectedTab: '='
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -973,15 +975,16 @@ angular.module("lucidTopTabs", ['appConfig'])
                     $scope.tabs.push(tab);
                 };
 
-                $scope.selectTab = function(tab) {
+                $scope.$watch('selectedTab', function(newVal) {
                     for (var i = 0; i < $scope.tabs.length; i++) {
-                        if (tab.name !== $scope.tabs[i].name) {
+                        if (i !== newVal) {
                             $scope.tabs[i].selected = false;
                         } else {
                             $scope.tabs[i].selected = true;
+                            //console.log('selected', i);
                         }
                     }
-                };
+                });
             }]
         };
     }])
@@ -1042,6 +1045,53 @@ angular.module("lucidPaywall", ['appConfig'])
                 if (!attrs.banner) {
                     attrs.banner = 'PREMIUM';
                 }
+            }
+        };
+    }]);
+
+angular.module("lucidProgressStepper", ['appConfig'])
+    .directive('lucidProgressStepper', ['config', function(config) {
+        return {
+            restrict: 'E',
+            templateUrl: config.componentsURL + 'progress-stepper/lucid-progress-stepper.html',
+            scope: {
+                selectedStep: '='
+            },
+            transclude: true,
+            controller: ['$scope', function($scope) {
+                $scope.steps = [];
+
+                this.addStep = function(step) {
+                    $scope.steps.push(step);
+                };
+
+                $scope.$watch('selectedStep', function(newVal) {
+                    //console.log('selected', newVal);
+                    for (var i = 0; i < $scope.steps.length; i++) {
+                        if (i !== newVal) {
+                            $scope.steps[i].selected = false;
+                        } else {
+                            $scope.steps[i].selected = true;
+                            //console.log('selected', i);
+                        }
+                    }
+                });
+            }]
+        };
+    }])
+    .directive('lucidProgressStep', ['config', function(config) {
+        return {
+            restrict: 'E',
+            templateUrl: config.componentsURL + 'progress-stepper/lucid-progress-stepper-step.html',
+            transclude: true,
+            replace: true,
+            scope: {
+                name: '@name',
+            },
+            require: '^lucidProgressStepper',
+            link: function(scope, element, attrs, ctrl) {
+                scope.selected = attrs.selected === "" || attrs.selected === true;
+                ctrl.addStep(scope);
             }
         };
     }]);
