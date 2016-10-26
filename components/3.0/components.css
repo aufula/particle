@@ -1496,7 +1496,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-paywall-wrapper .lucid-paywall {
   margin: auto;
-  width: 440px;
+  width: 100%;
+  max-width: 440px;
   padding: 20px;
   background: white;
   border-radius: 8px;
@@ -1525,8 +1526,9 @@ input[type=range]:focus::-ms-fill-upper {
   -webkit-font-smoothing: antialiased;
 }
 .lucid-paywall-wrapper .lucid-paywall img {
-  width: 300px;
-  height: 200px;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
   margin: 0 auto 24px;
   display: block;
 }
