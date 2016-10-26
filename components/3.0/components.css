@@ -774,6 +774,7 @@ input[type=range]:focus::-ms-fill-upper {
   margin: auto;
   background: white;
   border-radius: 8px;
+  width: 100%;
   overflow: hidden;
   box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
   z-index: 2;
