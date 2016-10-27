@@ -755,7 +755,6 @@ angular.module("lucidSelect", ['appConfig'])
                 width: '@',
                 label: '@'
             },
-            replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'select/lucid-select.html',
 
@@ -1015,7 +1014,8 @@ angular.module("lucidTip", ['appConfig'])
                 caret: '@',
                 dismiss: '=?',
                 showtip: '=?',
-                width: '@'
+                width: '@',
+                color: '@'
             },
             replace: true,
             transclude: true,
