@@ -1,0 +1,5 @@
+<button class="lucid-button" ng-class="{'lucid-button-icon': icon}">
+    <!-- <img ng-if="icon" ng-src="{{icon}}" class="lucid-icon-18"> -->
+    <div ng-if="icon" ng-include="icon" class="lucid-icon-18"></div>
+    <ng-transclude></ng-transclude>
+</button>

@@ -1,0 +1,16 @@
+<div class="lucid-modal-wrapper lucid-animate ng-hide" ng-hide="!showmodal">
+    <div ng-hide="!showmodal" class="lucid-modal lucid-animate" style="max-width: {{width}}px; height:{{+height +42 +footerHeight}}px;">
+        <header>
+            <span class="lucid-modal-title">{{title}}</span>
+            <img class="lucid-close-modal lucid-icon-22" src="http://lucidsoftware.github.io/particle/components/0.0/icon/img/x-white.svg" ng-click="showmodal=false">
+        </header>
+        <div style="height:{{height}}px" ng-class="{'has-footer':confirm}">
+            <ng-transclude></ng-transclude>
+        </div>
+        <footer ng-show="confirm">
+            <button class="lucid-button lucid-cancel" ng-show="cancel" ng-click="showmodal=false">{{cancel}}</button>
+            <button class="lucid-button lucid-blue" ng-click="showmodal=false; confirmFunction()">{{confirm}}</button>
+        </footer>
+    </div>
+    <div class="lucid-modal-bg lucid-animate" ng-click="showmodal=false"></div>
+</div>

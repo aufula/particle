@@ -1,0 +1,8 @@
+<div class="lucid-top-tabs-wrapper">
+    <ul class="lucid-top-tabs">
+        <li ng-repeat="tab in tabs" ng-class="{ selected: tab.selected}" class="lucid-top-tab" ng-click="$parent.selectedTab = $index">
+            <span>{{tab.name}}</span>
+        </li>
+    </ul>
+    <section ng-transclude></section>
+</div>

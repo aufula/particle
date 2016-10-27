@@ -1,0 +1,108 @@
+[lucid-context-menu] {
+    cursor: pointer;
+}
+
+.lucid-context-menu {
+    @dropdown-menu-width: 200px;
+    position: fixed;
+    background: #fff;
+    padding: 3px;
+    //border-radius: 5px;
+    min-width: 200px;
+    box-shadow: 0 2px 11px rgba(0, 0, 0, .5);
+    z-index: 10;
+    text-align: left;
+    color: @blue-steel;
+    ul {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        position: relative;
+        li {
+            display: inline-block;
+            line-height: 20px;
+            font-size: 14px;
+            padding: 3px 12px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            &:hover {
+                background: @grey-1;
+            }
+            &.context-divider {
+                background: @grey-border;
+                height: 1px;
+                margin: 5px 0;
+                padding: 0;
+            }
+            a {
+                display: block;
+                padding: 0 10px;
+                color: @blue-steel;
+                text-decoration: none;
+                &.saving {
+                    color: #ccc;
+                }
+            }
+            span.hotkey {
+                position: absolute;
+                right: 7px;
+                top: 0;
+                bottom: 0;
+                color: #999;
+            }
+            li {
+                //line-height: 30px;
+                background: #fff;
+                &.dropdown-divider {
+                    border-bottom: 1px solid @grey-border;
+                }
+                a {
+                    color: @blue-steel;
+                    &:hover {
+                        background-color: @grey-1;
+                    }
+                }
+            }
+        }
+    }
+    /* Hide Dropdowns by Default */
+    ul ul {
+        display: none;
+        position: absolute;
+        padding: 3px;
+        background: #FFF;
+        top: - 3px;
+        left: @dropdown-menu-width ;//+ 3px;
+        box-shadow: 0 2px 11px rgba(0, 0, 0, .5);
+    }
+    /* Display Dropdowns on Hover */
+    ul li:hover > ul {
+        display: inherit;
+        top: -3px;
+    }
+    /* Fisrt Tier Dropdown */
+    ul li {
+        width: @dropdown-menu-width;
+        float: none;
+        display: list-item;
+        position: relative;
+    }
+    /* Second, Third and more Tiers */
+    ul ul ul {
+        position: absolute;
+        top: 0px;
+        left: @dropdown-menu-width;
+        z-index: -1;
+    }
+    /* Change this in order to change the Dropdown symbol */
+    ul li.lucid-context-more:after {
+        content: '';
+        position: absolute;
+        width:18px;
+        height:18px;
+        top: 3px;
+        right: 0px;
+        background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-triangle-right-18px.svg) no-repeat center center;
+    }
+}

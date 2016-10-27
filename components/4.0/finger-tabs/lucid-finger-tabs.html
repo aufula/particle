@@ -1,0 +1,9 @@
+<div class="lucid-finger-tabs-wrapper">
+    <ul class="lucid-finger-tabs">
+        <li ng-repeat="tab in tabs" ng-class="{ selected: tab.selected }" class="lucid-finger-tab" ng-click="$parent.selectedTab = $index">
+            <ng-include src="tab.icon" ng-if="tab.icon" class="lucid-icon-22"></ng-include>
+            <span>{{tab.name}}</span>
+        </li>
+    </ul>
+    <section ng-transclude></section>
+</div>

@@ -1,0 +1,35 @@
+.lucid-top-tabs-wrapper {
+    position: relative;
+    height: 100%;
+    .lucid-top-tab-content {
+        padding: 15px 10px;
+        height: 100%;
+        overflow: auto;
+        background: #E6E6E6;
+    }
+}
+
+.lucid-top-tabs {
+    display:flex;
+    .lucid-top-tab {
+        flex:1;
+        text-align: center;
+        cursor: pointer;
+        display: inline-block;
+        color: #FFF;
+        background-color: @blue-steel-2;
+        font-size: 14px;
+        padding: 10px 0;
+        white-space: nowrap;
+        border-left: 1px solid @grey-2;
+        box-sizing: border-box;
+        text-transform: uppercase;
+        &:first-child {
+            border-left: none;
+        }
+        &.selected {
+            color: @blue-steel-2;
+            background-color: @grey-2;
+        }
+    }
+}

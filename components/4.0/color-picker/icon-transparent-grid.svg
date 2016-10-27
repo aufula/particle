@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="14px" height="14px" viewBox="0 0 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.4.4 (17249) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Toolbar" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="A01" sketch:type="MSArtboardGroup" transform="translate(-132.000000, -144.000000)">
+            <g id="Color-Picker---Solid" sketch:type="MSLayerGroup" transform="translate(117.000000, 64.000000)">
+                <g id="color-swatches" transform="translate(15.000000, 80.000000)" sketch:type="MSShapeGroup">
+                    <g id="colors">
+                        <g id="transparent">
+                            <g id="Line-+-Line-Mask">
+                                <g id="Group">
+                                    <g>
+                                        <rect id="Rectangle-282" fill="#FFFFFF" x="0" y="0" width="7" height="7"></rect>
+                                        <rect id="Rectangle-282-Copy-2" fill="#FFFFFF" x="7" y="7" width="7" height="7"></rect>
+                                        <rect id="Rectangle-282-Copy-6" fill="#CCCCCC" x="7" y="0" width="7" height="7"></rect>
+                                        <rect id="Rectangle-282-Copy-7" fill="#CCCCCC" x="0" y="7" width="7" height="7"></rect>
+                                    </g>
+                                </g>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

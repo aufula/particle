@@ -1,0 +1,40 @@
+.lucid-button {
+    padding: 4px 15px 6px;
+    border: none;
+    border-radius: 4px;
+    font-size: 14px;
+    font-family: @font-stack;
+    cursor: pointer;
+    outline: none;
+    display: inline-block;
+    box-sizing: border-box;
+    //height: 28px;
+    whitespace: nowrap;
+    transition:.15s ease-in-out background-color;
+    -webkit-font-smoothing: auto;
+    svg path {
+        fill: #fff;
+    }
+    &.lucid-blue {
+        background-color: @info-blue;
+        color: #fff;
+    }
+    &.lucid-green {
+        background-color: @info-green;
+        color: #fff;
+    }
+    &.lucid-red {
+        background-color: @info-red;
+        color: #fff;
+    }
+    &.lucid-cancel {
+        background-color: @grey-5;
+        color: #fff;
+    }
+    &.lucid-button-icon {
+        .lucid-icon-18 {
+            vertical-align: top;
+            margin-right: 3px;
+        }
+    }
+}

@@ -1,0 +1,81 @@
+.lucid-modal-wrapper {
+    position: relative;
+    z-index: 1;
+    &.ng-hide {
+        opacity: 0;
+    }
+    &.ng-animate {
+        transition: .35s ease-in-out;
+    }
+    .lucid-modal {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        background: white;
+        border-radius: 8px;
+        width: 100%;
+        //border: 1px solid #5a5a5a;
+        overflow: hidden;
+        box-shadow: 4px 5px 7px rgba(0, 0, 0, 0.3);
+        z-index: 2;
+        &.ng-hide {
+            transform: translateY(10px);
+            opacity: 0;
+        }
+        &.ng-animate {
+            transition: .35s ease-in-out;
+        }
+        > header {
+            background: @blue-steel;
+            height: 42px;
+            width: 100%;
+            text-align: left;
+            display: inline-block;
+            padding: 10px 15px;
+            .lucid-modal-title {
+                color: #fff;
+                line-height: 22px;
+                font-size: 16px;
+            }
+            .lucid-close-modal {
+                width: 22px;
+                position: absolute;
+                right: 10px;
+                top: 10px;
+                cursor: pointer;
+            }
+        }
+        > footer {
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 49px;
+            background: @grey-2;
+            padding: 10px 10px;
+            box-sizing: border-box;
+            white-space: nowrap;
+            font-size: 0;
+            .lucid-button {
+                margin-left: 10px;
+            }
+        }
+    }
+    .has-footer {
+        padding-bottom: 45px;
+    }
+    .lucid-modal-bg {
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: @bg-overlay;
+        z-index: 1;
+        opacity: 1;
+    }
+}

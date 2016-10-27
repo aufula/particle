@@ -1,0 +1,11 @@
+<div class="lucid-stepper-wrapper">
+    <ul class="lucid-top-steps">
+        <li ng-repeat="step in steps" ng-class="{ 'selected': step.selected, 'completed': $index < $parent.selectedStep}" class="lucid-top-step" ng-click="$parent.selectedStep = $index">
+            <div class="step-number-wrapper">
+                {{$index + 1}}
+            </div>
+            <div class="step-label">{{step.name}}</div>
+        </li>
+    </ul>
+    <section ng-transclude></section>
+</div>

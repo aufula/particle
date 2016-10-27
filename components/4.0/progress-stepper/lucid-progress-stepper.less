@@ -1,0 +1,104 @@
+.lucid-stepper-wrapper {
+    position: relative;
+    height: 100%;
+    .lucid-step-content {
+        //padding: 15px 10px;
+        height: 100%;
+        overflow: auto;
+        //background: #E6E6E6;
+    }
+}
+
+.lucid-top-steps {
+    display:flex;
+    .lucid-top-step {
+        text-align: center;
+        display: inline-block;
+        padding: 0;
+        white-space: nowrap;
+        box-sizing: border-box;
+        position: relative;
+        flex:1;
+        &:after,
+        &:before {
+            //this is track for steps
+            content: '';
+            position: absolute;
+            top: 13px;
+            left: 50%;
+            right: 0;
+            height: 4px;
+            background: @grey-border;
+        }
+        &:before {
+            left: 0;
+            right: 50%;
+        }
+        &:first-child {
+            &:before {
+                display: none;
+            }
+        }
+        &:last-child {
+            &:after {
+                display: none;
+            }
+        }
+        .step-number-wrapper {
+            cursor: pointer;
+            width: 28px;
+            height: 28px;
+            border-radius: 14px;
+            background: @grey-5;
+            font-size: 18px;
+            font-weight: 500;
+            margin: 0 auto;
+            padding: 5px 0;
+            color: #fff;
+            position: relative;
+            z-index: 1;
+        }
+        .step-label {
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 300;
+            margin-top: 4px;
+            line-height: 18px;
+            color: @grey-5;
+            // position:absolute;
+            // left:0;
+            // margin-left: -50%;
+        }
+        &:first-child {
+            border-left: none;
+        }
+        &.col-20{
+            width: 20%;
+        }
+        &.col-25 {
+            width: 25%;
+        }
+        &.col-33 {
+            width: 33.333333%;
+        }
+        &.col-50 {
+            width: 50%;
+        }
+        &.selected {
+            .step-number-wrapper {
+                background: @lucid-blue;
+            }
+            .step-label {
+                color: @lucid-blue;
+            }
+        }
+        &.completed {
+            .step-number-wrapper {
+                background: @blue-steel-2;
+            }
+            .step-label {
+                color: @blue-steel-2;
+            }
+        }
+    }
+}

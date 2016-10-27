@@ -1,0 +1,10 @@
+<div class="lucid-buttcon-wrapper">
+    <div click-outside="showpopover=false">
+        <div class="lucid-buttcon" ng-click="showpopover = !showpopover">
+            <div ng-include="icon" class="lucid-button-icon"></div>
+        </div>
+        <div class="lucid-popover-menu lucid-animate" style="width: {{width}}px; left: -{{width/2 - 15}}px" ng-if="showpopover">
+            <ng-transclude></ng-transclude>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,74 @@
+.lucid-finger-tabs-wrapper {
+    position: relative;
+    height: 100%;
+}
+
+.lucid-finger-tabs {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 240px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    border-right: 1px solid @grey-border;
+    .lucid-finger-tab {
+        text-align: left;
+        cursor: pointer;
+        position: relative;
+        color: @blue-steel;
+        background-color: #fff;
+        border-bottom: 1px solid @grey-border;
+        height: 44px;
+        font-size: 16px;
+        padding: 0 15px;
+        line-height: 42px;
+        white-space: nowrap;
+        svg{
+                path, polygon{
+                    fill:@blue-steel;
+                }
+            }
+        &.selected {
+            color: #fff;
+            background-color: @blue-steel-2;
+            svg{
+                path, polygon{
+                    fill:#FFF;
+                }
+            }
+            &:after {
+                position: absolute;
+                content: " ";
+                right: -1px;
+                top: 11px;
+                border-right: 10px solid #fff;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+            }
+        }
+        .lucid-icon-22 {
+            margin: 10px 6px 0 0;
+            vertical-align: top;
+        }
+    }
+}
+
+.lucid-tab-content {
+    position: absolute;
+    left: 240px;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    padding: 40px;
+    overflow: auto;
+    //border: 1px solid black;
+}
+
+// .finger-tabs-blue .finger-tab {
+//     cursor: pointer;
+//     position: relative;
+//     color: #2c84b5;
+//     background-color: #fff;
+//     border-bottom: 1px solid @grey-border;
+// }

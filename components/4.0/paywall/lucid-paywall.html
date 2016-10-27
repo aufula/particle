@@ -1,0 +1,20 @@
+<div class="lucid-paywall-wrapper lucid-animate ng-hide" ng-hide="!showpaywall">
+    <div class="lucid-paywall-inner-wrapper">
+        <div ng-hide="!showpaywall" class="lucid-paywall lucid-animate">
+            <div class="paywall-banner">
+                <div class="paywall-banner-text">{{banner}}</div>
+            </div>
+            <div class="paywall-x" ng-click="showpaywall=false">
+                <ng-include src="'http://particle.golucid.co/components/2.0/icon/icons/icon-x-18px.svg'" class="lucid-icon-18"></ng-include>
+            </div>
+            <div class="paywall-title">
+                <h1> {{title}}</h1>
+                <h2 ng-if="subtitle">{{subtitle}}</h2>
+            </div>
+            <ng-transclude></ng-transclude>
+            <button class="lucid-button lucid-blue" ng-show="confirm" ng-click="showpaywall=false; confirmFunction()">{{confirm}}</button>
+            <div class="cancel-text" ng-click="showpaywall=false">{{cancel}}</div>
+        </div>
+    </div>
+    <div class="lucid-paywall-bg lucid-animate"></div>
+</div>

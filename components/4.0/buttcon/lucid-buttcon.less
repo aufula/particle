@@ -1,0 +1,62 @@
+.lucid-buttcon {
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    display: inline-block;
+    cursor: pointer;
+    border-radius: 3px;
+    position: relative;
+    font-size: 0;
+    display: inline-block;
+    padding: 5px;
+    box-sizing: border-box;
+    cursor: pointer;
+    text-align: center;
+    img,
+    svg {
+        max-width: 100%;
+    }
+    .lucid-buttcon-image {
+        width: 22px;
+        height: 22px;
+        display: inline-block;
+        svg {
+            path,
+            polygon,
+            rect {
+                transition: all .15s ease-in-out;
+            }
+        }
+    }
+    .input-label {
+        text-align: center;
+    }
+    &.active {
+        .lucid-buttcon-image {
+            svg {
+                path,
+                polygon,
+                rect {
+                    fill: @lucid-blue;
+                }
+            }
+        }
+        .input-label {
+            color: @lucid-blue;
+        }
+    }
+    &.has-label {
+        padding: 0;
+        width: inherit;
+        height: inherit;
+    }
+    &.condensed {
+        .lucid-buttcon-image {
+            width: 24px;
+            padding: 3px 4px;
+            background: #fff;
+            border: 1px solid @grey-border-dark;
+            border-radius: 2px;
+        }
+    }
+}

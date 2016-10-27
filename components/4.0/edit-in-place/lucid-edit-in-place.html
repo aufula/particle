@@ -1,0 +1,13 @@
+<span class="edit-in-place-wrapper">
+	<span click-outside="edit=false">
+	<span class="edit-in-place" 
+		  ng-show="!edit" 
+		  ng-click="selectInput(); edit = true; $event.stopPropagation();">{{editableText}}</span>
+	<input class="edit-in-place edit-in-place-input" 
+		   ng-model="editableText" 
+		   ng-show="edit" 
+		   ng-enter="edit=false"
+		   placeholder="{{placeholder}}"
+		   ng-dblclick="selectInput(); $event.stopPropagation();">
+		</span>
+</span>
