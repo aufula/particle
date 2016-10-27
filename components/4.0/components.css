@@ -172,7 +172,7 @@ input {
 }
 .lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
   font-style: italic;
-  color: #C7C7C7;
+  color: #A5A5A5;
 }
 .lucid-input-wrapper.condensed .lucid-input {
   background: #fff;
@@ -532,7 +532,7 @@ input {
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle.lucid-disabled {
   background: transparent;
-  color: #C7C7C7;
+  color: #A5A5A5;
 }
 .lucid-color-picker .lucid-popover-menu .swatch-colors {
   border-top: 1px solid #D2D2D2;
@@ -938,6 +938,9 @@ input[type=range]:focus::-ms-fill-upper {
 .lucid-button.lucidchart-orange {
   background-color: #FC8D2A;
 }
+.lucid-button.clear {
+  background-color: transparent;
+}
 .lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
   margin-right: 3px;
@@ -1096,6 +1099,7 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: left;
   transition: 0.1s ease-in-out all;
   position: relative;
+  color: #5A5A5A;
 }
 .lucid-select-wrapper .lucid-select-dropdown li:hover {
   background: #F0F0F0;
