@@ -19,6 +19,9 @@
             font-style: italic;
             color: @text-inactive;
         }
+        &:focus{
+            border-color: @lucid-blue;
+        }
     }
     //stepper appears different when inside a popover menu
     &.condensed {
@@ -29,6 +32,9 @@
             border: 1px solid @grey-border-dark;
             padding: 0 3px;
             border-radius: 3px;
+            &:focus{
+            border-color: @lucid-blue;
+        }
         }
     }
 }

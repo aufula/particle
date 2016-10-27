@@ -1,0 +1,10 @@
+<div class="lucid-input-wrapper search-wrapper condensed" style="max-width: {{width}}px">
+    <input type="text" class="lucid-input" ng-model="value" placeholder="{{placeholder}}">
+    <div class="search-icon" ng-click="value = null">
+        <ng-include ng-show="!value" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-search-18px.svg'"></ng-include>
+        <ng-include ng-show="value" class="search-x" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-x-18px.svg'"></ng-include>
+    </div>
+    <div class="input-label" ng-if="label">
+        <span>{{label}}</span>
+    </div>
+</div>

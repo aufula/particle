@@ -174,6 +174,9 @@ input {
   font-style: italic;
   color: #A5A5A5;
 }
+.lucid-input-wrapper .lucid-input:focus {
+  border-color: #29AAE1;
+}
 .lucid-input-wrapper.condensed .lucid-input {
   background: #fff;
   height: 22px;
@@ -181,6 +184,9 @@ input {
   border: 1px solid #A5A5A5;
   padding: 0 3px;
   border-radius: 3px;
+}
+.lucid-input-wrapper.condensed .lucid-input:focus {
+  border-color: #29AAE1;
 }
 .input-label {
   font-size: 10px;
@@ -1109,17 +1115,17 @@ input[type=range]:focus::-ms-fill-upper {
   top: 3px;
   left: 3px;
 }
-.lucid-select-wrapper.condensed {
+.condensed .lucid-select-wrapper {
   border-radius: 3px;
 }
-.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow {
+.condensed .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow {
   top: 9px;
   right: 7px;
 }
-.lucid-select-wrapper.condensed .selected-option-wrapper .dropdown-arrow svg path {
+.condensed .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg path {
   fill: #3D4752;
 }
-.lucid-select-wrapper.condensed .selected-option-wrapper .lucid-selected-option {
+.condensed .lucid-select-wrapper .selected-option-wrapper .lucid-selected-option {
   background: #FFF;
   border: 1px solid #A5A5A5;
   border-radius: 3px;
@@ -1127,7 +1133,7 @@ input[type=range]:focus::-ms-fill-upper {
   line-height: 20px;
   padding: 0 20px 0 5px;
 }
-.lucid-select-wrapper.condensed .lucid-select-dropdown {
+.condensed .lucid-select-wrapper .lucid-select-dropdown {
   top: 22px;
   box-shadow: none;
   background: #fff;
@@ -1953,4 +1959,21 @@ tip-tip #close-button {
 .lucid-button-dropdown .lucid-select-dropdown.right-side {
   left: inherit;
   right: 0;
+}
+.lucid-input-wrapper.condensed.search-wrapper {
+  position: relative;
+}
+.lucid-input-wrapper.condensed.search-wrapper .lucid-input {
+  padding-right: 22px;
+}
+.lucid-input-wrapper.condensed.search-wrapper .search-icon {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+}
+.lucid-input-wrapper.condensed.search-wrapper .search-icon svg path {
+  fill: #77818C;
+}
+.lucid-input-wrapper.condensed.search-wrapper .search-icon .search-x {
+  cursor: pointer;
 }

@@ -21,6 +21,7 @@
 //@codekit-append "paywall/lucid-paywall.js"
 //@codekit-append "progress-stepper/lucid-progress-stepper.js"
 //@codekit-append "button-dropdown/lucid-button-dropdown.js"
+//@codekit-append "search/lucid-search.js"
 
 
 angular.module('appConfig', [])
@@ -41,7 +42,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
