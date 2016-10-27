@@ -13,14 +13,27 @@
         transition: .1s ease-in-out all;
         text-align: center;
         cursor: pointer;
+        user-select: none;
+        .toggle-on {
+            display: none;
+        }
+        .toggle-off {
+            display: inherit;
+        }
     }
     &.reversed-text .toggle-button {
         border: 1px solid #59697C;
         background: #A9B3BE;
     }
-    .toggle-button.active{
+    .toggle-button.active {
         background: @lucid-blue-light;
         border: 1px solid @lucid-blue;
         color: @lucid-blue;
+        .toggle-on {
+            display: inherit;
+        }
+        .toggle-off {
+            display: none;
+        }
     }
 }
