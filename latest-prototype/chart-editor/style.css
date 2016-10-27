@@ -1326,9 +1326,6 @@
   transition: top .3s;
   font-size: 14px;
 }
-#main-header button {
-  margin-left: 20px;
-}
 .header-left {
   flex: 1 0 0;
   display: flex;
@@ -1344,7 +1341,6 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  padding-right: 10px;
   min-width: 250px;
 }
 #documents {
@@ -1402,6 +1398,9 @@
   width: 1px;
   background: #77818C;
   margin: 0 10px;
+}
+.collaborators {
+  margin-right: 20px;
 }
 .collaborators li {
   border: 1px solid #77818C;
