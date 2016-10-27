@@ -1,10 +1,7 @@
 <div class="wrapper">
     <h1>{{components[0].groupname}}</h1>
     <div class="hr"></div>
-    <div class="icon-search">
-        <input ng-model="searchResults" placeholder="Search Components">
-        <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
-    </div>
+    <lucid-search value="searchResults" width="200" class="icon-search"></lucid-search>
     <div ng-repeat="particle in components[0].components  | filter:{title : searchResults}">
         <div class="code-preview">
             <header ng-class="{'basic-active': showBasic, 'code-active': showAdvanced}">

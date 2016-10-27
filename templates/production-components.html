@@ -5,10 +5,7 @@
     <h1>Production Components</h1>
     <div class="hr"></div>
     <p>This page contains the production HTML and CSS classes to reuse what has already been coded. If the component isn't already here, reach out to the UX team. Once a new component is created, we will add it to this page so that it can be reused.</p>
-    <div class="icon-search">
-        <input ng-model="searchResults" placeholder="Search Components">
-        <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
-    </div>
+    <lucid-search value="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
     <div ng-repeat="componentgroup in productionComponents | filter: searchResults">
         <div class="code-preview production-preview" ng-repeat="component in componentgroup.components  | filter: {title : searchResults}">
             <header>
@@ -25,7 +22,11 @@
             </div>
             <div class="component-preview production-preview" ng-include src="component.url">
             </div>
-            <lucid-notification ng-if="component.error" type="error">{{component.error.text}}<a ng-if="component.error.url" href="{{component.error.url}}"><button class="lucid-button lucid-red">See Jira Ticket</button></a></lucid-notification>
+            <lucid-notification ng-if="component.error" type="error">{{component.error.text}}
+                <a ng-if="component.error.url" href="{{component.error.url}}">
+                    <button class="lucid-button lucid-red">See Jira Ticket</button>
+                </a>
+            </lucid-notification>
         </div>
     </div>
 </div>

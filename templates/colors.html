@@ -2,10 +2,7 @@
     <h1>Colors & LESS</h1>
     <div class="hr"></div>
     <p>Click on the hex color or the LESS variable to copy to clipboard.</p>
-    <div class="icon-search">
-        <input ng-model="searchResults" placeholder="Search colors">
-        <img src="http://particle.golucid.co/components/2.0/icon/icons/icon-search-18px.svg">
-    </div>
+    <lucid-search value="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
     <div ng-repeat="colorgroup in colors | filter: searchResults" class="color-view">
         <h2>{{colorgroup.colorgroup}}</h2>
         <div class="clearfix {{class}}">
@@ -16,7 +13,7 @@
                         <br>COPIED!
                     </div>
                 </div>
-                <div class="text-wrapper" clipboard text="color.less" on-copied="copyItem(color.less)" >
+                <div class="text-wrapper" clipboard text="color.less" on-copied="copyItem(color.less)">
                     <h6 ng-bind="color.less"></h6>
                     <h6><span ng-bind="color.description"></span></h6>
                 </div>
