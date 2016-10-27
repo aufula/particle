@@ -906,28 +906,37 @@ input[type=range]:focus::-ms-fill-upper {
   outline: none;
   display: inline-block;
   box-sizing: border-box;
-  whitespace: nowrap;
+  white-space: nowrap;
   transition: 0.15s ease-in-out background-color;
   -webkit-font-smoothing: auto;
+  color: #fff;
 }
 .lucid-button svg path {
   fill: #fff;
 }
 .lucid-button.lucid-blue {
   background-color: #29AAE1;
-  color: #fff;
 }
-.lucid-button.lucid-green {
+.lucid-button.info-green {
   background-color: #8CBF3F;
-  color: #fff;
 }
-.lucid-button.lucid-red {
+.lucid-button.info-red {
   background-color: #ED6058;
-  color: #fff;
 }
-.lucid-button.lucid-cancel {
+.lucid-button.grey-5 {
   background-color: #A5A5A5;
-  color: #fff;
+}
+.lucid-button.blue-steel {
+  background-color: #3D4752;
+}
+.lucid-button.blue-steel-2 {
+  background-color: #77818C;
+}
+.lucid-button.info-purple {
+  background-color: #A32385;
+}
+.lucid-button.lucidchart-orange {
+  background-color: #FC8D2A;
 }
 .lucid-button.lucid-button-icon .lucid-icon-18 {
   vertical-align: top;
@@ -1081,17 +1090,17 @@ input[type=range]:focus::-ms-fill-upper {
   overflow: hidden;
   transition: 0.1s ease-in-out all;
 }
-.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+.lucid-select-wrapper .lucid-select-dropdown li {
   cursor: pointer;
   padding: 5px 15px 5px 25px;
   text-align: left;
   transition: 0.1s ease-in-out all;
   position: relative;
 }
-.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option:hover {
+.lucid-select-wrapper .lucid-select-dropdown li:hover {
   background: #F0F0F0;
 }
-.lucid-select-wrapper .lucid-select-dropdown .lucid-select-option .selected-checkmark {
+.lucid-select-wrapper .lucid-select-dropdown li .selected-checkmark {
   position: absolute;
   top: 3px;
   left: 3px;
@@ -1295,6 +1304,13 @@ input[type=range]:focus::-ms-fill-upper {
   transition: 0.1s ease-in-out all;
   text-align: center;
   cursor: pointer;
+  user-select: none;
+}
+.lucid-toggle .toggle-button .toggle-on {
+  display: none;
+}
+.lucid-toggle .toggle-button .toggle-off {
+  display: inherit;
 }
 .lucid-toggle.reversed-text .toggle-button {
   border: 1px solid #59697C;
@@ -1304,6 +1320,12 @@ input[type=range]:focus::-ms-fill-upper {
   background: #D2EDF9;
   border: 1px solid #29AAE1;
   color: #29AAE1;
+}
+.lucid-toggle .toggle-button.active .toggle-on {
+  display: inherit;
+}
+.lucid-toggle .toggle-button.active .toggle-off {
+  display: none;
 }
 .edit-in-place-wrapper .edit-in-place {
   line-height: 1em;
@@ -1366,7 +1388,6 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-tip-wrapper {
   position: absolute;
-  background: #FC8D2A;
   font-size: 14px;
   color: #fff;
   padding: 10px 36px 10px 15px;
@@ -1387,7 +1408,6 @@ input[type=range]:focus::-ms-fill-upper {
   margin-left: 10px;
 }
 .lucid-tip-wrapper.caret-left:after {
-  border-right: 10px solid #FC8D2A;
   border-left: none;
   left: -10px;
   top: 10px;
@@ -1396,7 +1416,6 @@ input[type=range]:focus::-ms-fill-upper {
   margin-right: 10px;
 }
 .lucid-tip-wrapper.caret-right:after {
-  border-left: 10px solid #FC8D2A;
   border-right: none;
   right: -10px;
   top: 10px;
@@ -1405,7 +1424,6 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: 10px;
 }
 .lucid-tip-wrapper.caret-top:after {
-  border-bottom: 10px solid #FC8D2A;
   border-top: none;
   left: 50%;
   margin-left: -9px;
@@ -1415,11 +1433,55 @@ input[type=range]:focus::-ms-fill-upper {
   margin-top: -10px;
 }
 .lucid-tip-wrapper.caret-bottom:after {
-  border-top: 10px solid #FC8D2A;
   border-bottom: none;
   left: 50%;
   margin-left: -9px;
   bottom: -10px;
+}
+.lucid-tip-wrapper.lucidchart-orange {
+  background: #FC8D2A;
+}
+.lucid-tip-wrapper.lucidchart-orange.caret-left:after {
+  border-right: 10px solid #FC8D2A;
+}
+.lucid-tip-wrapper.lucidchart-orange.caret-right:after {
+  border-left: 10px solid #FC8D2A;
+}
+.lucid-tip-wrapper.lucidchart-orange.caret-top:after {
+  border-bottom: 10px solid #FC8D2A;
+}
+.lucid-tip-wrapper.lucidchart-orange.caret-bottom:after {
+  border-top: 10px solid #FC8D2A;
+}
+.lucid-tip-wrapper.info-purple {
+  background: #A32385;
+}
+.lucid-tip-wrapper.info-purple.caret-left:after {
+  border-right: 10px solid #A32385;
+}
+.lucid-tip-wrapper.info-purple.caret-right:after {
+  border-left: 10px solid #A32385;
+}
+.lucid-tip-wrapper.info-purple.caret-top:after {
+  border-bottom: 10px solid #A32385;
+}
+.lucid-tip-wrapper.info-purple.caret-bottom:after {
+  border-top: 10px solid #A32385;
+}
+.lucid-tip-wrapper.info-green {
+  background: #8CBF3F;
+}
+.lucid-tip-wrapper.info-green.caret-left:after {
+  border-right: 10px solid #8CBF3F;
+}
+.lucid-tip-wrapper.info-green.caret-right:after {
+  border-left: 10px solid #8CBF3F;
+}
+.lucid-tip-wrapper.info-green.caret-top:after {
+  border-bottom: 10px solid #8CBF3F;
+}
+.lucid-tip-wrapper.info-green.caret-bottom:after {
+  border-top: 10px solid #8CBF3F;
 }
 .lucid-tip-wrapper.ng-animate {
   transition: 0.5s ease-in-out all;
@@ -1867,4 +1929,24 @@ tip-tip #close-button {
 }
 .lucid-top-steps .lucid-top-step.completed .step-label {
   color: #77818C;
+}
+.lucid-button-dropdown .lucid-button {
+  padding-right: 32px;
+}
+.lucid-button-dropdown .lucid-button .lucid-icon-18 {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+}
+.lucid-button-dropdown .lucid-select-dropdown {
+  top: 28px;
+  width: inherit;
+}
+.lucid-button-dropdown .lucid-select-dropdown li {
+  padding: 5px 15px;
+  white-space: nowrap;
+}
+.lucid-button-dropdown .lucid-select-dropdown.right-side {
+  left: inherit;
+  right: 0;
 }

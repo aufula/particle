@@ -1,0 +1,11 @@
+<div class="lucid-select-wrapper lucid-button-dropdown" click-outside="showdropdown = false">
+    <button class="lucid-button {{color}}" ng-click="showdropdown = !showdropdown">
+        {{text}}
+        <div ng-include="'http://particle.golucid.co/components/4.0/icons/svg/icon-triangle-down-18px.svg'" class="lucid-icon-18"></div>
+    </button>
+    <div class="lucid-select-dropdown" ng-class="{'right-side': side=='right'}" ng-show="showdropdown">
+        <div ng-click="showdropdown = false">
+            <ng-transclude></ng-transclude>
+        </div>
+    </div>
+</div>

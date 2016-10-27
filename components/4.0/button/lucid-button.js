@@ -3,8 +3,9 @@ angular.module("lucidButton", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                color: '@',
                 icon: '@',
+                color: '@',
+                text: '@'
             },
             replace: true,
             transclude: true,

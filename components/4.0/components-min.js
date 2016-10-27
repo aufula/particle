@@ -20,6 +20,7 @@
 //@codekit-append "tip/lucid-tip.js"
 //@codekit-append "paywall/lucid-paywall.js"
 //@codekit-append "progress-stepper/lucid-progress-stepper.js"
+//@codekit-append "button-dropdown/lucid-button-dropdown.js"
 
 
 angular.module('appConfig', [])
@@ -35,12 +36,12 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    'componentsURL': "/components/3.0/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/3.0/" //github
+    'componentsURL': "/components/4.0/" //local dev
+    //'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
@@ -260,7 +261,7 @@ angular.module('lucidInput', ['appConfig'])
             restrict: 'AE',
             scope: {
                 unit: '@',
-                value: '=',
+                value: '=?',
                 width:'@',
                 label: '@',
                 placeholder:'@'
@@ -365,7 +366,7 @@ angular.module("lucidColorPicker", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                selected: '=',
+                selected: '=?',
             },
             replace: false,
             templateUrl: config.componentsURL + 'color-picker/lucid-color-picker.html',
@@ -466,7 +467,7 @@ angular.module("lucidMoreDrawer", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showdrawer: '=',
+                showdrawer: '=?',
                 height: '@',
                 tophandle: '@',
                 more: '@',
@@ -491,7 +492,7 @@ angular.module("lucidModal", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showmodal: '=',
+                showmodal: '=?',
                 width: '@',
                 height: '@',
                 title: '@',
@@ -528,7 +529,7 @@ angular.module("lucidFingerTabs", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tabs.html',
             scope: {
-                selectedTab: '='
+                selectedTab: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -576,7 +577,7 @@ angular.module("lucidButtconPopover", ['appConfig'])
                 scope: {
                     icon: '@',
                     width: '@',
-                    showpopover: '='
+                    showpopover: '=?'
                 },
                 replace: true,
                 transclude: true,
@@ -723,7 +724,7 @@ angular.module("lucidButtcon", ['appConfig'])
             scope: {
                 icon: '@',
                 label: '@',
-                active: '='
+                active: '=?'
             },
             replace: true,
             templateUrl: config.componentsURL + 'buttcon/lucid-buttcon.html',
@@ -749,8 +750,8 @@ angular.module("lucidSelect", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                selectedOption: '=ngModel',
-                options: '=',
+                selectedOption: '=?ngModel',
+                options: '=?',
                 width: '@',
                 label: '@'
             },
@@ -772,8 +773,9 @@ angular.module("lucidButton", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                color: '@',
                 icon: '@',
+                color: '@',
+                text: '@'
             },
             replace: true,
             transclude: true,
@@ -937,9 +939,9 @@ angular.module('editInPlace', ['appConfig'])
         return {
             restrict: 'AE',
             scope: {
-                editableText: '=ngModel',
+                editableText: '=?ngModel',
                 placeholder: '@',
-                edit: '='
+                edit: '=?'
             },
             replace: true,
             templateUrl: config.componentsURL + 'edit-in-place/lucid-edit-in-place.html',
@@ -960,12 +962,12 @@ angular.module('editInPlace', ['appConfig'])
     }]);
 
 angular.module("lucidTopTabs", ['appConfig'])
-.directive('lucidTopTabs', ['config', function(config) {
+    .directive('lucidTopTabs', ['config', function(config) {
         return {
             restrict: 'E',
             templateUrl: config.componentsURL + 'top-tabs/lucid-top-tabs.html',
-            scope: { 
-                selectedTab: '='
+            scope: {
+                selectedTab: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -1011,8 +1013,9 @@ angular.module("lucidTip", ['appConfig'])
             restrict: 'E',
             scope: {
                 caret: '@',
-                dismiss: '=',
-                showtip: '='
+                dismiss: '=?',
+                showtip: '=?',
+                width: '@'
             },
             replace: true,
             transclude: true,
@@ -1030,7 +1033,7 @@ angular.module("lucidPaywall", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showpaywall: '=',
+                showpaywall: '=?',
                 title: '@',
                 subtitle: '@',
                 confirm: '@',
@@ -1055,7 +1058,7 @@ angular.module("lucidProgressStepper", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'progress-stepper/lucid-progress-stepper.html',
             scope: {
-                selectedStep: '='
+                selectedStep: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {
@@ -1093,6 +1096,20 @@ angular.module("lucidProgressStepper", ['appConfig'])
                 scope.selected = attrs.selected === "" || attrs.selected === true;
                 ctrl.addStep(scope);
             }
+        };
+    }]);
+
+angular.module("lucidButtonDropdown", ['appConfig'])
+    .directive('lucidButtonDropdown', ['config', function(config) {
+        return {
+            restrict: 'E',
+            scope: {
+                text: '@',
+                color: '@',
+                side: '@'
+            },
+            transclude: true,
+            templateUrl: config.componentsURL + 'button-dropdown/lucid-button-dropdown.html',
         };
     }]);
 
