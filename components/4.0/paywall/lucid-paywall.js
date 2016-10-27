@@ -3,7 +3,7 @@ angular.module("lucidPaywall", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showpaywall: '=',
+                showpaywall: '=?',
                 title: '@',
                 subtitle: '@',
                 confirm: '@',

@@ -3,8 +3,8 @@ angular.module("lucidSelect", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                selectedOption: '=ngModel',
-                options: '=',
+                selectedOption: '=?ngModel',
+                options: '=?',
                 width: '@',
                 label: '@'
             },

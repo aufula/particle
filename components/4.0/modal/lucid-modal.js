@@ -3,7 +3,7 @@ angular.module("lucidModal", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showmodal: '=',
+                showmodal: '=?',
                 width: '@',
                 height: '@',
                 title: '@',

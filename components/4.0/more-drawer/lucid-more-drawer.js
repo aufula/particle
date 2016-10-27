@@ -3,7 +3,7 @@ angular.module("lucidMoreDrawer", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                showdrawer: '=',
+                showdrawer: '=?',
                 height: '@',
                 tophandle: '@',
                 more: '@',

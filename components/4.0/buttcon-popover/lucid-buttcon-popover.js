@@ -5,7 +5,7 @@ angular.module("lucidButtconPopover", ['appConfig'])
                 scope: {
                     icon: '@',
                     width: '@',
-                    showpopover: '='
+                    showpopover: '=?'
                 },
                 replace: true,
                 transclude: true,

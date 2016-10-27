@@ -1,10 +1,10 @@
 angular.module("lucidTopTabs", ['appConfig'])
-.directive('lucidTopTabs', ['config', function(config) {
+    .directive('lucidTopTabs', ['config', function(config) {
         return {
             restrict: 'E',
             templateUrl: config.componentsURL + 'top-tabs/lucid-top-tabs.html',
-            scope: { 
-                selectedTab: '='
+            scope: {
+                selectedTab: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {

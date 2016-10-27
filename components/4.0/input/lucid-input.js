@@ -4,7 +4,7 @@ angular.module('lucidInput', ['appConfig'])
             restrict: 'AE',
             scope: {
                 unit: '@',
-                value: '=',
+                value: '=?',
                 width:'@',
                 label: '@',
                 placeholder:'@'

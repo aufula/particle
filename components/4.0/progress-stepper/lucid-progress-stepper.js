@@ -4,7 +4,7 @@ angular.module("lucidProgressStepper", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'progress-stepper/lucid-progress-stepper.html',
             scope: {
-                selectedStep: '='
+                selectedStep: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {

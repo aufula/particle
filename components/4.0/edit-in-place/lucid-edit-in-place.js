@@ -3,9 +3,9 @@ angular.module('editInPlace', ['appConfig'])
         return {
             restrict: 'AE',
             scope: {
-                editableText: '=ngModel',
+                editableText: '=?ngModel',
                 placeholder: '@',
-                edit: '='
+                edit: '=?'
             },
             replace: true,
             templateUrl: config.componentsURL + 'edit-in-place/lucid-edit-in-place.html',

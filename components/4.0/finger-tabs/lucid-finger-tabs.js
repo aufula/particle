@@ -4,7 +4,7 @@ angular.module("lucidFingerTabs", ['appConfig'])
             restrict: 'E',
             templateUrl: config.componentsURL + 'finger-tabs/lucid-finger-tabs.html',
             scope: {
-                selectedTab: '='
+                selectedTab: '=?'
             },
             transclude: true,
             controller: ['$scope', function($scope) {

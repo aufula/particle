@@ -5,7 +5,7 @@ angular.module("lucidButtcon", ['appConfig'])
             scope: {
                 icon: '@',
                 label: '@',
-                active: '='
+                active: '=?'
             },
             replace: true,
             templateUrl: config.componentsURL + 'buttcon/lucid-buttcon.html',

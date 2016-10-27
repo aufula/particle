@@ -4,7 +4,7 @@ angular.module("lucidColorPicker", ['appConfig'])
         return {
             restrict: 'E',
             scope: {
-                selected: '=',
+                selected: '=?',
             },
             replace: false,
             templateUrl: config.componentsURL + 'color-picker/lucid-color-picker.html',
