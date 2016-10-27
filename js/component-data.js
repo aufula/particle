@@ -3,8 +3,8 @@ angular.module('lucidComponentFactory', [])
     .factory('lucidComponentFactory', function() {
         var service = [{
             //Basic Particle Components
-            "groupname": "Editor Components",
-            "groupid": "particles",
+            "groupname": "Form Elements",
+            "groupid": "forms",
             "components": [{
                 "title": "Input",
                 "componentid": "input",
@@ -214,8 +214,8 @@ angular.module('lucidComponentFactory', [])
             }]
         }, {
             //Basic Particle Components
-            "groupname": "Content Components",
-            "groupid": "components",
+            "groupname": "Buttons",
+            "groupid": "buttons",
             "components": [{
                 "title": "Buttons",
                 "componentid": "button",
@@ -229,7 +229,12 @@ angular.module('lucidComponentFactory', [])
                     "type": "URL",
                     "details": "insert URL of icon (should be white)."
                 }]
-            }, {
+            }]
+        }, {
+            //Basic Particle Components
+            "groupname": "Tabs",
+            "groupid": "tabs",
+            "components": [{
                 "title": "Finger Tabs",
                 "componentid": "finger-tabs",
                 "description": "this component is used in modals and the user settings page",
@@ -260,6 +265,24 @@ angular.module('lucidComponentFactory', [])
                     "details": "*Optional: link the current selected tab to another variable"
                 }],
             }, {
+                "title": "Progress Stepper",
+                "componentid": "progress-stepper",
+                "description": "this component is used in modals and the user settings page",
+                "inputs": [{
+                    "attr": "name",
+                    "type": "text",
+                    "details": "Create a name for the finger tab."
+                }, {
+                    "attr": "selected-step",
+                    "type": "variable",
+                    "details": "*Optional: link the current selected step to another variable"
+                }],
+            }]
+        }, {
+            //Basic Particle Components
+            "groupname": "Banners",
+            "groupid": "banners",
+            "components": [{
                 "title": "Notifications",
                 "componentid": "notification",
                 "description": "this component is used in the optionbar, the page color, etc.",
@@ -273,19 +296,6 @@ angular.module('lucidComponentFactory', [])
                     "details": "insert the text for the button. If blank, there won't be a button"
                 }],
 
-            }, {
-                "title": "Progress Stepper",
-                "componentid": "progress-stepper",
-                "description": "this component is used in modals and the user settings page",
-                "inputs": [{
-                    "attr": "name",
-                    "type": "text",
-                    "details": "Create a name for the finger tab."
-                }, {
-                    "attr": "selected-step",
-                    "type": "variable",
-                    "details": "*Optional: link the current selected step to another variable"
-                }],
             }]
         }, {
             //Basic Particle Components
@@ -357,8 +367,8 @@ angular.module('lucidComponentFactory', [])
             }]
         }, {
             //Toolbar Components
-            "groupname": "User Education",
-            "groupid": "user-education",
+            "groupname": "Tooltips",
+            "groupid": "tooltips",
             "components": [{
                 "title": "Onboarding Tip",
                 "componentid": "tip",
