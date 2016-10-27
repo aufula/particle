@@ -4,8 +4,10 @@ angular.module("lucidTip", ['appConfig'])
             restrict: 'E',
             scope: {
                 caret: '@',
-                dismiss: '=',
-                showtip: '='
+                dismiss: '=?',
+                showtip: '=?',
+                width: '@',
+                color: '@'
             },
             replace: true,
             transclude: true,
