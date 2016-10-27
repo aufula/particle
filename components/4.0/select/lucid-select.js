@@ -8,7 +8,6 @@ angular.module("lucidSelect", ['appConfig'])
                 width: '@',
                 label: '@'
             },
-            replace: true,
             transclude: true,
             templateUrl: config.componentsURL + 'select/lucid-select.html',
 
