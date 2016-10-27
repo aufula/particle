@@ -16,11 +16,32 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "attr": "width",
                     "type": "number",
-                    "details": "how wide the input should be (includes arrows)."
+                    "details": "how wide the input should be."
                 }, {
                     "attr": "label",
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
+                }, {
+                    "attr": "class",
+                    "type": "text",
+                    "details": "Optional: add 'condensed' for condensed aesthetic."
+                }]
+            }, {
+                "title": "Search",
+                "componentid": "search",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "value",
+                    "type": "text",
+                    "details": "Initial value of input."
+                }, {
+                    "attr": "width",
+                    "type": "number",
+                    "details": "how wide the search input should be"
+                }, {
+                    "attr": "label",
+                    "type": "text",
+                    "details": "Optional: if you want a label below the search input."
                 }, {
                     "attr": "class",
                     "type": "text",
@@ -159,9 +180,8 @@ angular.module('lucidComponentFactory', [])
                 }]
             }, {
                 "title": "Icon",
-                "componentid": "icon",
+                "componentid": "icons",
                 "description": "this component is used in the optionbar, the page color, etc.",
-
             }, {
                 "title": "Buttcon Popover",
                 "componentid": "buttcon-popover",
@@ -214,8 +234,8 @@ angular.module('lucidComponentFactory', [])
             }]
         }, {
             //Basic Particle Components
-            "groupname": "Buttons",
-            "groupid": "buttons",
+            "groupname": "Button",
+            "groupid": "button",
             "components": [{
                 "title": "Buttons",
                 "componentid": "button",
@@ -223,11 +243,42 @@ angular.module('lucidComponentFactory', [])
                 "inputs": [{
                     "attr": "color",
                     "type": "text",
-                    "details": "colors available: blue, red, green, yellow, grey"
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
                 }, {
                     "attr": "icon",
                     "type": "URL",
-                    "details": "insert URL of icon (should be white)."
+                    "details": "insert URL of icon"
+                }]
+            }, {
+                "title": "Button with Icon",
+                "componentid": "button",
+                "sub": 2,
+                "description": "Buttons with icons use the component lucid-button",
+                "inputs": [{
+                    "attr": "color",
+                    "type": "text",
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
+                }, {
+                    "attr": "icon",
+                    "type": "URL",
+                    "details": "insert URL of icon"
+                }]
+            }, {
+                "title": "Button with Dropdown",
+                "componentid": "button-dropdown",
+                "description": "Buttons with icons use the component lucid-button",
+                "inputs": [{
+                    "attr": "text",
+                    "type": "text",
+                    "details": "Button Text"
+                }, {
+                    "attr": "color",
+                    "type": "text",
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
+                }, {
+                    "attr": "side",
+                    "type": "text",
+                    "details": "*Optional: insert 'right' if you want the dropdown to anchor to the right."
                 }]
             }]
         }, {
@@ -374,6 +425,10 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "tip",
                 "description": "tips show up to show how to use the product, tips are quick introductions, to point out features",
                 "inputs": [{
+                    "attr": "color",
+                    "type": "text",
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange"
+                }, {
                     "attr": "showtip",
                     "type": "var",
                     "details": "when true, tip will show. If they have dismissed it, it will no longer show up."

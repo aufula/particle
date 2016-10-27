@@ -26,7 +26,7 @@
                         <span ng-show="particle.inputs" ng-click="drawer = 'inputs'" class="component-inputs" ng-class="{'active': drawer == 'inputs'}">INPUTS</span>
                     </header>
                     <div class="html-content" ng-show="drawer == 'html'">
-                        <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'"></div>
+                        <div hljs language="HTML" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+particle.sub+'-basic.html'"></div>
                     </div>
                     <div class="less-content" ng-show="drawer == 'less'">
                         <div hljs language="css" include="componentPath+particle.componentid+'/lucid-'+particle.componentid+'.less'"></div>
@@ -68,7 +68,7 @@
                 </div>
             </div>
             <!-- <p class="component-description">{{particle.description}}</p> Needs A Home-->
-            <div class="component-preview" ng-include src="componentPath+particle.componentid+'/lucid-'+particle.componentid+'-basic.html'">
+            <div class="component-preview" ng-include src="componentPath+particle.componentid+'/lucid-'+particle.componentid+particle.sub+'-basic.html'">
             </div>
             <lucid-notification type="information">Component for prototyping only. Not ready for production.
             </lucid-notification>

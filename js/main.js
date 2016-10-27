@@ -117,7 +117,7 @@ particleApp.controller('iconController', function(config, $scope, lucidIconFacto
 
     angular.forEach($scope.icongroups, function(icongroup) {
         angular.forEach(icongroup.icons, function(icon) {
-            icon.url = config.componentsURL + 'icon/icons/' + icon.name + '.svg';
+            icon.url = config.componentsURL + 'icons/svg/' + icon.name + '.svg';
         });
     });
 

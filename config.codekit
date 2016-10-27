@@ -8676,6 +8676,55 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
+	"\/components\/4.0\/button-dropdown\/lucid-button-dropdown-basic.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown-basic.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/4.0\/button-dropdown\/lucid-button-dropdown.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/4.0\/button-dropdown\/lucid-button-dropdown.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown.js",
+		"outputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/components\/4.0\/button-dropdown\/lucid-button-dropdown.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown.less",
+		"outputAbbreviatedPath": "\/components\/4.0\/button-dropdown\/lucid-button-dropdown.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
 	"\/components\/4.0\/button\/lucid-button-basic.html": {
 		"fileType": 8192,
 		"ignore": 0,
@@ -8724,6 +8773,15 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/components\/4.0\/button\/lucid-button2-basic.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/button\/lucid-button2-basic.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
 		},
 	"\/components\/4.0\/collapse-bar\/lucid-collapse-bar-basic.html": {
 		"fileType": 8192,
@@ -9103,45 +9161,45 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/components\/4.0\/icons\/lucid-icon-basic.html": {
+	"\/components\/4.0\/icons\/lucid-icons-basic.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon-basic.html",
+		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons-basic.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/components\/4.0\/icons\/lucid-icon.html": {
+	"\/components\/4.0\/icons\/lucid-icons.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon.html",
+		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/components\/4.0\/icons\/lucid-icon.js": {
+	"\/components\/4.0\/icons\/lucid-icons.js": {
 		"fileType": 64,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon.js",
-		"outputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon-min.js",
+		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons.js",
+		"outputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/components\/4.0\/icons\/lucid-icon.less": {
+	"\/components\/4.0\/icons\/lucid-icons.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
 		"fileType": 1,
 		"ieCompatibility": 1,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon.less",
-		"outputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icon.css",
+		"inputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons.less",
+		"outputAbbreviatedPath": "\/components\/4.0\/icons\/lucid-icons.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -9505,6 +9563,55 @@
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/components\/4.0\/progress-stepper\/lucid-progress-stepper.less",
 		"outputAbbreviatedPath": "\/components\/4.0\/progress-stepper\/lucid-progress-stepper.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"relativeURLS": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"strictImports": 0,
+		"strictMath": 0,
+		"strictUnits": 0
+		},
+	"\/components\/4.0\/search\/lucid-search-basic.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search-basic.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/4.0\/search\/lucid-search.html": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search.html",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/components\/4.0\/search\/lucid-search.js": {
+		"fileType": 64,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search.js",
+		"outputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/components\/4.0\/search\/lucid-search.less": {
+		"allowInsecureImports": 0,
+		"createSourceMap": 0,
+		"disableJavascript": 0,
+		"fileType": 1,
+		"ieCompatibility": 1,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search.less",
+		"outputAbbreviatedPath": "\/components\/4.0\/search\/lucid-search.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
@@ -11218,6 +11325,39 @@
 		"strictImports": 0,
 		"strictMath": 0,
 		"strictUnits": 0
+		},
+	"\/lib\/angular-1.5\/angular-animate.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/angular-1.5\/angular-animate.min.js",
+		"outputAbbreviatedPath": "\/lib\/angular-1.5\/angular-animate.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/angular-1.5\/angular-route.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/angular-1.5\/angular-route.min.js",
+		"outputAbbreviatedPath": "\/lib\/angular-1.5\/angular-route.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
+		},
+	"\/lib\/angular-1.5\/angular.min.js": {
+		"fileType": 64,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/lib\/angular-1.5\/angular.min.js",
+		"outputAbbreviatedPath": "\/lib\/angular-1.5\/angular.min-min.js",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"syntaxCheckerStyle": 1
 		},
 	"\/lib\/angular-drag-and-drop-lists.min.js": {
 		"fileType": 64,
