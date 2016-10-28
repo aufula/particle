@@ -1,0 +1,9 @@
+<div class="lucid-input-wrapper" style="max-width:{{width}}px">
+    <div class="range-wrap">
+        <input type="range" ng-model="slider" step="{{step}}" min="{{min}}" max="{{max}}">
+        <lucid-input-stepper ng-model="slider" step="{{step}}" unit="{{unit}}" width="55"></lucid-input-stepper>
+    </div>
+    <div class="input-label" ng-if="label">
+        <span>{{label}}</span>
+    </div>
+</div>
