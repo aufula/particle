@@ -7,13 +7,20 @@
         font-weight: 400;
         border-radius: 4px;
         width: 36px;
-        background: @grey-2;
-        border: 1px solid #979797;
+        background: @grey-3;
+        border: 1px solid @grey-border-dark;
         color: #5A5A5A;
         transition: .1s ease-in-out all;
         text-align: center;
         cursor: pointer;
         user-select: none;
+        display: inline-block;
+        padding: 0;
+        font-family: @font-stack;
+        letter-spacing: 1px;
+        &:focus {
+            outline: none;
+        }
         .toggle-on {
             display: none;
         }
@@ -21,19 +28,36 @@
             display: inherit;
         }
     }
-    &.reversed-text .toggle-button {
+    .toggle-button {
+        &.active {
+            background: @lucid-blue-light;
+            border: 1px solid @lucid-blue;
+            color: @lucid-blue;
+            .toggle-on {
+                display: inherit;
+            }
+            .toggle-off {
+                display: none;
+            }
+        }
+        &[disabled] {
+            background: @grey-1;
+            color: @text-inactive;
+            border: 1px solid @grey-border-dark;
+        }
+    }
+    .long-input-label {
+        padding-left: 4px;
+        font-size: 14px;
+        line-height: 15px;
+        color: @text-standard;
+        display: inline-block;
+    }
+}
+
+&.reversed-text .lucid-toggle {
+    .toggle-button {
         border: 1px solid #59697C;
         background: #A9B3BE;
-    }
-    .toggle-button.active {
-        background: @lucid-blue-light;
-        border: 1px solid @lucid-blue;
-        color: @lucid-blue;
-        .toggle-on {
-            display: inherit;
-        }
-        .toggle-off {
-            display: none;
-        }
     }
 }

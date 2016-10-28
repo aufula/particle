@@ -915,7 +915,9 @@ angular.module('lucidToggle', ['appConfig'])
                 activetext: '@',
                 inactivetext: '@',
                 label: '@',
-                width: '@'
+                width: '@',
+                disabled: '@',
+                longLabel: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'toggle/lucid-toggle.html',

@@ -1288,23 +1288,26 @@ input[type=range]:focus::-ms-fill-upper {
   font-weight: 400;
   border-radius: 4px;
   width: 36px;
-  background: #E6E6E6;
-  border: 1px solid #979797;
+  background: #D6D6D8;
+  border: 1px solid #A5A5A5;
   color: #5A5A5A;
   transition: 0.1s ease-in-out all;
   text-align: center;
   cursor: pointer;
   user-select: none;
+  display: inline-block;
+  padding: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+  letter-spacing: 1px;
+}
+.lucid-toggle .toggle-button:focus {
+  outline: none;
 }
 .lucid-toggle .toggle-button .toggle-on {
   display: none;
 }
 .lucid-toggle .toggle-button .toggle-off {
   display: inherit;
-}
-.lucid-toggle.reversed-text .toggle-button {
-  border: 1px solid #59697C;
-  background: #A9B3BE;
 }
 .lucid-toggle .toggle-button.active {
   background: #D2EDF9;
@@ -1316,6 +1319,22 @@ input[type=range]:focus::-ms-fill-upper {
 }
 .lucid-toggle .toggle-button.active .toggle-off {
   display: none;
+}
+.lucid-toggle .toggle-button[disabled] {
+  background: #F0F0F0;
+  color: #A5A5A5;
+  border: 1px solid #A5A5A5;
+}
+.lucid-toggle .long-input-label {
+  padding-left: 4px;
+  font-size: 14px;
+  line-height: 15px;
+  color: #5A5A5A;
+  display: inline-block;
+}
+.reversed-text .lucid-toggle .toggle-button {
+  border: 1px solid #59697C;
+  background: #A9B3BE;
 }
 .edit-in-place-wrapper .edit-in-place {
   line-height: 1em;

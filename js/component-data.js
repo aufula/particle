@@ -113,11 +113,19 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "attr": "label",
                     "type": "text",
-                    "details": "Optional: add label to bottom of toggle"
+                    "details": "Optional: add label to bottom of the toggle"
+                }, {
+                    "attr": "long-label",
+                    "type": "text",
+                    "details": "Optional: add a label to right of the toggle"
                 }, {
                     "attr": "toggle",
                     "type": "true/false",
                     "details": "Optional: used to connect to existing variable, or set default on/off state."
+                }, {
+                    "attr": "disabled",
+                    "type": "true/false",
+                    "details": "Optional: add disabled=\"true\" to disabled toggle"
                 }, {
                     "attr": "class",
                     "type": "'reverse-text'",

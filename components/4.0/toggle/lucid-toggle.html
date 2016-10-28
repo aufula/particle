@@ -1,10 +1,12 @@
-<div class="lucid-toggle">  
-    <div class="toggle-button" ng-click="toggle=!toggle" ng-class="{'active': toggle}" style="width: {{width}}px;">
+<div class="lucid-toggle">
+    <button class="toggle-button" ng-click="toggle=!toggle" ng-disabled="disabled" ng-class="{'active': toggle}" style="width: {{width}}px;">
         <span class="toggle-on">{{activetext}}</span>
         <span class="toggle-off">{{inactivetext}}</span>
-    </div>
+    </button>
     <div class="input-label" ng-if="label">
         <span>{{label}}</span>
     </div>
-
+    <div class="long-input-label" ng-if="longLabel">
+        <span>{{longLabel}}</span>
+    </div>
 </div>
