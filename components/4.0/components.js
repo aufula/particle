@@ -23,6 +23,7 @@
 //@codekit-append "button-dropdown/lucid-button-dropdown.js"
 //@codekit-append "search/lucid-search.js"
 //@codekit-append "slider/lucid-slider.js"
+//@codekit-append "tooltip/lucid-tooltip.js"
 
 
 angular.module('appConfig', [])
@@ -43,7 +44,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', '720kb.tooltips'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key

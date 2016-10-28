@@ -478,7 +478,28 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Set position with inline style or css."
                 }]
-            }, ]
+            }, {
+                "title": "Tooltips",
+                "componentid": "tooltip",
+                "description": "tips show up to show how to use the product",
+                "inputs": [{
+                    "attr": "tooltips",
+                    "type": "required",
+                    "details": "add this to the element you want to tooltip - might have to wrap existing components in a div for tooltip to work"
+                }, {
+                    "attr": "tooltip-side",
+                    "type": "text",
+                    "details": "top, right, bottom, left"
+                }, {
+                    "attr": "tooltip-hide-trigger",
+                    "type": "text",
+                    "details": "click, mouseleave"
+                }, {
+                    "attr": "tooltip-template",
+                    "type": "html",
+                    "details": "add text to show inside the tooltip (this can be html)"
+                }]
+            }]
         }, {
             //Toolbar Components
             "groupname": "Toolbar Components",

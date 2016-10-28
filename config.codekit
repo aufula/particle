@@ -8968,7 +8968,7 @@
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"relativeURLS": 0,
-		"shouldRunAutoprefixer": 0,
+		"shouldRunAutoprefixer": 1,
 		"shouldRunBless": 0,
 		"strictImports": 0,
 		"strictMath": 0,
@@ -9798,36 +9798,36 @@
 		"strictMath": 0,
 		"strictUnits": 0
 		},
-	"\/components\/4.0\/tooltips\/lucid-tooltips-basic.html": {
+	"\/components\/4.0\/tooltip\/lucid-tooltip-basic.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips-basic.html",
+		"inputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip-basic.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/components\/4.0\/tooltips\/lucid-tooltips.html": {
+	"\/components\/4.0\/tooltip\/lucid-tooltip.html": {
 		"fileType": 8192,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips.html",
+		"inputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip.html",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
-	"\/components\/4.0\/tooltips\/lucid-tooltips.js": {
+	"\/components\/4.0\/tooltip\/lucid-tooltip.js": {
 		"fileType": 64,
-		"ignore": 0,
+		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips.js",
-		"outputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips-min.js",
+		"inputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip.js",
+		"outputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip-min.js",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
 		"syntaxCheckerStyle": 1
 		},
-	"\/components\/4.0\/tooltips\/lucid-tooltips.less": {
+	"\/components\/4.0\/tooltip\/lucid-tooltip.less": {
 		"allowInsecureImports": 0,
 		"createSourceMap": 0,
 		"disableJavascript": 0,
@@ -9835,8 +9835,8 @@
 		"ieCompatibility": 1,
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
-		"inputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips.less",
-		"outputAbbreviatedPath": "\/components\/4.0\/tooltips\/lucid-tooltips.css",
+		"inputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip.less",
+		"outputAbbreviatedPath": "\/components\/4.0\/tooltip\/lucid-tooltip.css",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"outputStyle": 0,
