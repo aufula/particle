@@ -11,7 +11,7 @@ angular.module('lucidComponentFactory', [])
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
                     "attr": "value",
-                    "type": "text",
+                    "type": "var",
                     "details": "Initial value of input."
                 }, {
                     "attr": "width",
@@ -22,9 +22,9 @@ angular.module('lucidComponentFactory', [])
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
                 }, {
-                    "attr": "class",
-                    "type": "text",
-                    "details": "Optional: add 'condensed' for condensed aesthetic."
+                    "attr": "disabled",
+                    "type": "true/false",
+                    "details": "Optional: add disabled=\"true\" to disabled input."
                 }]
             }, {
                 "title": "Search",

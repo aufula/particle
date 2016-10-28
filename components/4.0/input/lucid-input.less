@@ -3,38 +3,31 @@
     vertical-align: top;
     width: 100%;
     .lucid-input {
-        background: transparent;
-        padding: 0;
-        border: none;
-        border-bottom: 1px solid @blue-steel-2;
+        background: #fff;
+        padding: 0 3px;
+        border: 1px solid @grey-border-dark;
+        border-radius: 3px;
         box-sizing: border-box;
         font-size: 14px;
-        height: 28px;
+        height: 22px;
         color: @blue-steel;
         width: 100%;
         outline: none;
         font-family: @font-stack;
+        line-height: 22px;
         transition: background .15s ease-in-out;
         &::-webkit-input-placeholder {
             font-style: italic;
             color: @text-inactive;
         }
-        &:focus{
+        &:focus {
             border-color: @lucid-blue;
         }
     }
-    //stepper appears different when inside a popover menu
-    &.condensed {
+    &[disabled] {
         .lucid-input {
-            background: #fff;
-            height: 22px;
-            line-height: 22px;
-            border: 1px solid @grey-border-dark;
-            padding: 0 3px;
-            border-radius: 3px;
-            &:focus{
-            border-color: @lucid-blue;
-        }
+            background: @grey-1;
+            color: @text-inactive;
         }
     }
 }
@@ -42,7 +35,7 @@
 .input-label {
     font-size: 10px;
     line-height: 10px;
-    margin-top: 4px;
+    margin-top: 5px;
     text-transform: uppercase;
     text-align: left;
     letter-spacing: .5px;

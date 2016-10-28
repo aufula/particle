@@ -265,7 +265,8 @@ angular.module('lucidInput', ['appConfig'])
                 value: '=?',
                 width:'@',
                 label: '@',
-                placeholder:'@'
+                placeholder:'@',
+                disabled: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'input/lucid-input.html',

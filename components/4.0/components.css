@@ -157,17 +157,18 @@ input {
   width: 100%;
 }
 .lucid-input-wrapper .lucid-input {
-  background: transparent;
-  padding: 0;
-  border: none;
-  border-bottom: 1px solid #77818C;
+  background: #fff;
+  padding: 0 3px;
+  border: 1px solid #A5A5A5;
+  border-radius: 3px;
   box-sizing: border-box;
   font-size: 14px;
-  height: 28px;
+  height: 22px;
   color: #3D4752;
   width: 100%;
   outline: none;
   font-family: 'Source Sans Pro', sans-serif;
+  line-height: 22px;
   transition: background 0.15s ease-in-out;
 }
 .lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
@@ -177,21 +178,14 @@ input {
 .lucid-input-wrapper .lucid-input:focus {
   border-color: #29AAE1;
 }
-.lucid-input-wrapper.condensed .lucid-input {
-  background: #fff;
-  height: 22px;
-  line-height: 22px;
-  border: 1px solid #A5A5A5;
-  padding: 0 3px;
-  border-radius: 3px;
-}
-.lucid-input-wrapper.condensed .lucid-input:focus {
-  border-color: #29AAE1;
+.lucid-input-wrapper[disabled] .lucid-input {
+  background: #F0F0F0;
+  color: #A5A5A5;
 }
 .input-label {
   font-size: 10px;
   line-height: 10px;
-  margin-top: 4px;
+  margin-top: 5px;
   text-transform: uppercase;
   text-align: left;
   letter-spacing: .5px;
