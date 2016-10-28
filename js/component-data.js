@@ -63,10 +63,6 @@ angular.module('lucidComponentFactory', [])
                     "attr": "label",
                     "type": "text",
                     "details": "Optional: if you want a label below the input."
-                }, {
-                    "attr": "class",
-                    "type": "text",
-                    "details": "Optional: add 'condensed' for condensed aesthetic."
                 }]
 
             }, {

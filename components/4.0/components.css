@@ -471,7 +471,7 @@ input {
   width: 100%;
   opacity: 1;
 }
-.popover-list .lucid-select-wrapper .lucid-select-dropdown .lucid-select-option {
+.popover-list .lucid-select-wrapper .lucid-select-dropdown li {
   padding: 5px 15px 5px 15px;
 }
 .lucid-color-picker .lucid-popover-menu {
@@ -1042,6 +1042,7 @@ input[type=range]:focus::-ms-fill-upper {
   display: inline-block;
   font-size: 14px;
   vertical-align: top;
+  border-radius: 3px;
 }
 .lucid-select-wrapper .selected-option-wrapper {
   position: relative;
@@ -1050,8 +1051,8 @@ input[type=range]:focus::-ms-fill-upper {
   position: absolute;
   width: 8px;
   height: 6px;
-  top: 13px;
-  right: 0px;
+  top: 8px;
+  right: 6px;
   cursor: pointer;
 }
 .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg {
@@ -1064,22 +1065,26 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: left;
   display: block;
   cursor: pointer;
-  border-bottom: 1px solid #77818C;
-  padding: 8px 18px 5px 0;
+  background: #FFF;
+  border: 1px solid #A5A5A5;
+  border-radius: 3px;
+  height: 22px;
+  line-height: 19px;
+  padding: 0 20px 0 8px;
 }
 .lucid-select-wrapper .lucid-select-dropdown {
   display: inline-block;
   position: absolute;
   z-index: 1;
-  top: 32px;
-  left: 0;
+  top: 22px;
+  left: 1px;
+  right: 1px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
   background: #fff;
-  width: 100%;
   opacity: 1;
 }
 .lucid-select-wrapper .lucid-select-dropdown > div {
-  padding: 3px 2px;
+  padding: 2px;
   margin-top: 0;
   transition: 0.1s ease-in-out margin;
 }
@@ -1100,37 +1105,18 @@ input[type=range]:focus::-ms-fill-upper {
   transition: 0.1s ease-in-out all;
   position: relative;
   color: #5A5A5A;
+  margin-bottom: 4px;
+}
+.lucid-select-wrapper .lucid-select-dropdown li:last-child {
+  margin-bottom: 0;
 }
 .lucid-select-wrapper .lucid-select-dropdown li:hover {
   background: #F0F0F0;
 }
 .lucid-select-wrapper .lucid-select-dropdown li .selected-checkmark {
   position: absolute;
-  top: 3px;
+  top: 2px;
   left: 3px;
-}
-.condensed .lucid-select-wrapper {
-  border-radius: 3px;
-}
-.condensed .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow {
-  top: 9px;
-  right: 7px;
-}
-.condensed .lucid-select-wrapper .selected-option-wrapper .dropdown-arrow svg path {
-  fill: #3D4752;
-}
-.condensed .lucid-select-wrapper .selected-option-wrapper .lucid-selected-option {
-  background: #FFF;
-  border: 1px solid #A5A5A5;
-  border-radius: 3px;
-  height: 22px;
-  line-height: 20px;
-  padding: 0 20px 0 5px;
-}
-.condensed .lucid-select-wrapper .lucid-select-dropdown {
-  top: 22px;
-  box-shadow: none;
-  background: #fff;
 }
 [lucid-context-menu] {
   cursor: pointer;
@@ -1944,7 +1930,8 @@ tip-tip #close-button {
 }
 .lucid-button-dropdown .lucid-select-dropdown {
   top: 28px;
-  width: inherit;
+  left: 1px;
+  right: inherit;
 }
 .lucid-button-dropdown .lucid-select-dropdown li {
   padding: 5px 15px;
@@ -1952,7 +1939,7 @@ tip-tip #close-button {
 }
 .lucid-button-dropdown .lucid-select-dropdown.right-side {
   left: inherit;
-  right: 0;
+  right: 1px;
 }
 .lucid-input-wrapper.condensed.search-wrapper {
   position: relative;
