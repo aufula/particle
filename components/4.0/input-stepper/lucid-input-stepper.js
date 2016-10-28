@@ -14,7 +14,12 @@ angular.module('lucidInputStepper', ['appConfig'])
             controller: ['$scope', '$interval', function($scope, $interval) {
                 var $promise = null;
                 $scope.$watch('number + unit', function() {
-                    $scope.stepperinput = $scope.number + ' ' +$scope.unit;
+                    if ($scope.unit !== '%') {
+                        $scope.stepperinput = $scope.number + ' ' + $scope.unit;
+                    }
+                    else{
+                        $scope.stepperinput = $scope.number + $scope.unit;
+                    }
                 });
 
                 $scope.removeText = function() {

@@ -5,7 +5,7 @@
     <h1>Production Components</h1>
     <div class="hr"></div>
     <p>This page contains the production HTML and CSS classes to reuse what has already been coded. If the component isn't already here, reach out to the UX team. Once a new component is created, we will add it to this page so that it can be reused.</p>
-    <lucid-search value="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
+    <lucid-search ng-model="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
     <div ng-repeat="componentgroup in productionComponents | filter: searchResults">
         <div class="code-preview production-preview" ng-repeat="component in componentgroup.components  | filter: {title : searchResults}">
             <header>

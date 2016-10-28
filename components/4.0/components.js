@@ -1,4 +1,4 @@
-/*global angular : true fixes codekit error*/
+/*global angular*/
 
 //include Components js
 //@codekit-append "input/lucid-input.js"
@@ -22,6 +22,7 @@
 //@codekit-append "progress-stepper/lucid-progress-stepper.js"
 //@codekit-append "button-dropdown/lucid-button-dropdown.js"
 //@codekit-append "search/lucid-search.js"
+//@codekit-append "slider/lucid-slider.js"
 
 
 angular.module('appConfig', [])
@@ -37,12 +38,12 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    //'componentsURL': "/components/4.0/" //local dev
-    'componentsURL': "http://particle.golucid.co/components/4.0/" //github
+    'componentsURL': "/components/4.0/" //local dev
+    //'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key

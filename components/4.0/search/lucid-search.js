@@ -3,10 +3,10 @@ angular.module('lucidSearch', ['appConfig'])
         return {
             restrict: 'AE',
             scope: {
-                value: '=?',
-                width:'@',
+                value: '=?ngModel',
+                width: '@',
                 label: '@',
-                placeholder:'@'
+                placeholder: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'search/lucid-search.html',

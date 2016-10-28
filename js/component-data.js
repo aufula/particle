@@ -10,9 +10,9 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "input",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "attr": "value",
+                    "attr": "ng-model",
                     "type": "var",
-                    "details": "Initial value of input."
+                    "details": "input variable, if you want a default use ng-init."
                 }, {
                     "attr": "width",
                     "type": "number",
@@ -31,9 +31,9 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "search",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "attr": "value",
-                    "type": "text",
-                    "details": "Initial value of input."
+                    "attr": "ng-model",
+                    "type": "var",
+                    "details": "input variable, if you want a default use ng-init."
                 }, {
                     "attr": "width",
                     "type": "number",
@@ -70,9 +70,9 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "input-stepper",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "attr": "number",
-                    "type": "number",
-                    "details": "Initial value of input."
+                    "attr": "ng-model",
+                    "type": "var",
+                    "details": "input variable, if you want a default use ng-init."
                 }, {
                     "attr": "unit",
                     "type": "text",
@@ -130,6 +130,31 @@ angular.module('lucidComponentFactory', [])
                     "attr": "class",
                     "type": "'reverse-text'",
                     "details": "Optional: add class of 'reverse-text' to make label text white and darken off state"
+                }]
+            }, {
+                "title": "Slider",
+                "componentid": "slider",
+                "description": "slider input with input stepper",
+                "inputs": [{
+                    "attr": "ng-model",
+                    "type": "var",
+                    "details": "The text that you want to be editable"
+                }, {
+                    "attr": "label",
+                    "type": "text",
+                    "details": "Optional: add label to bottom of the toggle"
+                }, {
+                    "attr": "min",
+                    "type": "number",
+                    "details": "*Optional - minimum slider value"
+                }, {
+                    "attr": "max",
+                    "type": "number",
+                    "details": "*Optional - maximum slider value"
+                }, {
+                    "attr": "edit",
+                    "type": "true/false",
+                    "details": "Optional: Edit mode can be toggled using outside variable. e.g. rename shape library from dropdown rather than double click."
                 }]
             }, {
                 "title": "Edit in Place",

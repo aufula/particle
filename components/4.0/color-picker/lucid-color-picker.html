@@ -25,18 +25,10 @@
                                 <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
                             </li>
                             <li>
-                                <lucid-input class="condensed" value="selected.swatch.fill" label="hex" width="62"></lucid-input>
+                                <lucid-input ng-model="selected.swatch.fill" label="hex" width="62"></lucid-input>
                             </li>
                             <li>
-                                <div class="opacity-wrap">
-                                    <div class="range-wrap">
-                                        <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
-                                    </div>
-                                    <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
-                                    <div class="input-label">
-                                        <span>Opacity</span>
-                                    </div>
-                                </div>
+                                <lucid-slider ng-init="fill.opacity=100" ng-model="fill.opacity" min="0" max="100" unit="%" step="1" width="148" label="OPACITY"></lucid-slider>
                             </li>
                         </ul>
                     </div>
@@ -77,18 +69,10 @@
                         <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-input class="condensed" value="selected.swatch.border" label="hex" width="62"></lucid-input>
+                        <lucid-input ng-model="selected.swatch.border" label="hex" width="62"></lucid-input>
                     </li>
                     <li>
-                        <div class="opacity-wrap">
-                            <div class="range-wrap">
-                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
-                            </div>
-                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
-                            <div class="input-label">
-                                <span>Opacity</span>
-                            </div>
-                        </div>
+                        <lucid-slider ng-init="border.opacity=100" ng-model="border.opacity" min="0" max="100" unit="%" step="1" width="148" label="OPACITY"></lucid-slider>
                     </li>
                 </ul>
             </div>
@@ -102,18 +86,10 @@
                         <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-input class="condensed" value="selected.swatch.text" label="hex" width="62"></lucid-input>
+                        <lucid-input ng-model="selected.swatch.text" label="hex" width="62"></lucid-input>
                     </li>
                     <li>
-                        <div class="opacity-wrap">
-                            <div class="range-wrap">
-                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
-                            </div>
-                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
-                            <div class="input-label">
-                                <span>Opacity</span>
-                            </div>
-                        </div>
+                        <lucid-slider ng-init="text.opacity=100" ng-model="text.opacity" min="0" max="100" unit="%" step="1" width="148" label="OPACITY"></lucid-slider>
                     </li>
                 </ul>
             </div>
@@ -127,18 +103,10 @@
                         <lucid-buttcon icon="https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/advanced-picker-wheel.svg" label="pick"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-input class="condensed" value="selected.swatch.line" label="hex" width="62"></lucid-input>
+                        <lucid-input ng-model="selected.swatch.line" label="hex" width="62"></lucid-input>
                     </li>
                     <li>
-                        <div class="opacity-wrap">
-                            <div class="range-wrap">
-                                <input type="range" ng-init="fill.opacity= 100" ng-model="fill.opacity" step="1" min="0" max="100">
-                            </div>
-                            <lucid-input-stepper number="fill.opacity" step="1" unit="%" width="55" class="condensed"></lucid-input-stepper>
-                            <div class="input-label">
-                                <span>Opacity</span>
-                            </div>
-                        </div>
+                        <lucid-slider ng-init="line.opacity=100" ng-model="line.opacity" min="0" max="100" unit="%" step="1" width="148" label="OPACITY"></lucid-slider>
                     </li>
                 </ul>
             </div>

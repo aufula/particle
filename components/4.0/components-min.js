@@ -1,4 +1,4 @@
-/*global angular : true fixes codekit error*/
+/*global angular*/
 
 //include Components js
 //@codekit-append "input/lucid-input.js"
@@ -22,6 +22,7 @@
 //@codekit-append "progress-stepper/lucid-progress-stepper.js"
 //@codekit-append "button-dropdown/lucid-button-dropdown.js"
 //@codekit-append "search/lucid-search.js"
+//@codekit-append "slider/lucid-slider.js"
 
 
 angular.module('appConfig', [])
@@ -37,12 +38,12 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    //'componentsURL': "/components/4.0/" //local dev
-    'componentsURL': "http://particle.golucid.co/components/4.0/" //github
+    'componentsURL': "/components/4.0/" //local dev
+    //'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
@@ -262,7 +263,7 @@ angular.module('lucidInput', ['appConfig'])
             restrict: 'AE',
             scope: {
                 unit: '@',
-                value: '=?',
+                value: '=?ngModel',
                 width:'@',
                 label: '@',
                 placeholder:'@',
@@ -280,74 +281,74 @@ angular.module('lucidInputStepper', ['appConfig'])
             scope: {
                 unit: '@',
                 step: '@',
-                number: '=',
+                number: '=?ngModel',
                 width: '@',
                 label: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'input-stepper/lucid-input-stepper.html',
             controller: ['$scope', '$interval', function($scope, $interval) {
-                            var $promise = null;
-            
-                            $scope.$watch('number + unit', function(newValue) {
-                                $scope.stepperinput = newValue;
-                            });
-            
-                            $scope.removeText = function() {
-                                var text = $scope.stepperinput;
-                                //removing text keeping decimal
-                                $scope.number = text.replace(/[^0-9.]/g, "");
-                            };
-            
-                            $scope.updateInput = function() {
-                                $scope.removeText();
-                                $scope.number = Number($scope.number);
-                                $scope.stepperinput = $scope.number + $scope.unit;
-                            };
-                            $scope.stepUp = function() {
-                                //first step up instantly on click
-            
-                                $scope.removeText();
-                                $scope.number = Number($scope.number) + Number($scope.step);
-                                $scope.stepperinput = $scope.number + $scope.unit;
-                                //then continually step up if still holding.
-                                $promise = $interval(function() {
-                                    $scope.removeText();
-                                    $scope.number = Number($scope.number) + Number($scope.step);
-                                    $scope.stepperinput = $scope.number + $scope.unit;
-            
-                                }, 100);
-            
-                            };
-                            $scope.stepDown = function() {
-            
-                                //first step down instantly on click
-                                $scope.removeText();
-                                if ($scope.number < 1) {
-                                    //console.log('zero');
-                                    return;
-                                }
-                                $scope.number = Number($scope.number) + Number(-$scope.step);
-                                $scope.stepperinput = $scope.number + $scope.unit;
-                                //then continually step down if still holding.
-                                $promise = $interval(function() {
-            
-                                    $scope.removeText();
-                                    if ($scope.number < 1) {
-                                        //console.log('zero');
-                                        return;
-                                    }
-                                    $scope.number = Number($scope.number) + Number(-$scope.step);
-                                    $scope.stepperinput = $scope.number + $scope.unit;
-            
-                                }, 100);
-                            };
-                            $scope.mouseUp = function() {
-                                if ($promise) {
-                                    $interval.cancel($promise);
-                                }
-                            };
-                        }],
+                var $promise = null;
+                $scope.$watch('number + unit', function() {
+                    if ($scope.unit !== '%') {
+                        $scope.stepperinput = $scope.number + ' ' + $scope.unit;
+                    }
+                    else{
+                        $scope.stepperinput = $scope.number + $scope.unit;
+                    }
+                });
+
+                $scope.removeText = function() {
+                    var text = $scope.stepperinput;
+                    //removing text keeping decimal
+                    $scope.number = text.replace(/[^0-9.]/g, "");
+                };
+
+                $scope.updateInput = function() {
+                    $scope.removeText();
+                    $scope.number = Number($scope.number);
+                };
+                $scope.stepUp = function() {
+                    //first step up instantly on click
+
+                    $scope.removeText();
+                    $scope.number = Number($scope.number) + Number($scope.step);
+                    //then continually step up if still holding.
+                    $promise = $interval(function() {
+                        $scope.removeText();
+                        $scope.number = Number($scope.number) + Number($scope.step);
+
+
+                    }, 100);
+
+                };
+                $scope.stepDown = function() {
+
+                    //first step down instantly on click
+                    $scope.removeText();
+                    if ($scope.number < 1) {
+                        //console.log('zero');
+                        return;
+                    }
+                    $scope.number = Number($scope.number) + Number(-$scope.step);
+                    //then continually step down if still holding.
+                    $promise = $interval(function() {
+
+                        $scope.removeText();
+                        if ($scope.number < 1) {
+                            //console.log('zero');
+                            return;
+                        }
+                        $scope.number = Number($scope.number) + Number(-$scope.step);
+
+                    }, 100);
+                };
+                $scope.mouseUp = function() {
+                    if ($promise) {
+                        $interval.cancel($promise);
+                    }
+                };
+            }],
             compile: function(el, attrs) {
                 if (!attrs.step) {
                     attrs.step = 1;
@@ -355,7 +356,7 @@ angular.module('lucidInputStepper', ['appConfig'])
                 if (!attrs.unit) {
                     attrs.unit = "";
                 }
-                if(!attrs.number){
+                if (!attrs.number) {
                     attrs.number = "0";
                 }
             }
@@ -1122,13 +1123,42 @@ angular.module('lucidSearch', ['appConfig'])
         return {
             restrict: 'AE',
             scope: {
-                value: '=?',
-                width:'@',
+                value: '=?ngModel',
+                width: '@',
                 label: '@',
-                placeholder:'@'
+                placeholder: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'search/lucid-search.html',
+        };
+    }]);
+
+angular.module('lucidSlider', ['appConfig'])
+    .directive('lucidSlider', ['config', function(config) {
+        return {
+            restrict: 'AE',
+            scope: {
+                slider: '=?ngModel',
+                width:'@',
+                label: '@',
+                min:'@',
+                max:'@',
+                unit:'@',
+                step: '@'
+            },
+            replace: true,
+            templateUrl: config.componentsURL + 'slider/lucid-slider.html',
+            compile: function(el, attrs) {
+                if (!attrs.step) {
+                    attrs.step = 1;
+                }
+                if (!attrs.unit) {
+                    attrs.unit = "";
+                }
+                if (!attrs.slider) {
+                    attrs.slider = "0";
+                }
+            }
         };
     }]);
 

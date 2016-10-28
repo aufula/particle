@@ -589,15 +589,6 @@ input {
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li input {
   text-transform: uppercase;
 }
-.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap {
-  display: inline-block;
-  height: 22px;
-  width: 92px;
-  padding-right: 10px;
-}
-.lucid-color-picker .lucid-popover-menu .color-hex-adjustments li .range-wrap input[type="range"] {
-  margin: 8px 0;
-}
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li:last-child {
   padding-right: 0;
 }
@@ -1882,8 +1873,9 @@ tip-tip #close-button {
 }
 .range-wrap input[type=range] {
   -webkit-appearance: none;
-  margin: 4px 5px;
+  margin: 4px 5px 4px 0;
   width: 100%;
+  background: transparent;
 }
 .range-wrap input[type=range]:focus {
   outline: none;

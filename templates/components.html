@@ -1,7 +1,7 @@
 <div class="wrapper">
     <h1>{{components[0].groupname}}</h1>
     <div class="hr"></div>
-    <lucid-search value="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
+    <lucid-search ng-model="searchResults" width="200" class="icon-search" placeholder="Search"></lucid-search>
     <div ng-repeat="particle in components[0].components  | filter:{title : searchResults}">
         <div class="code-preview">
             <header ng-class="{'basic-active': showBasic, 'code-active': showAdvanced}">
