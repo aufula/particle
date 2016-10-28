@@ -62,23 +62,21 @@
             border-bottom-color: #FFF;
         }
     }
-    .lucid-select-wrapper {
-        width: 100%;
-        padding: 3px 2px;
-        .lucid-select-dropdown {
-            width: 100%;
-            top: 0;
-            position: static;
-            box-shadow: none;
-            border-radius: 3px;
-            display: inline-block;
+    .lucid-select-dropdown {
+        padding:2px;
+        li {
+            cursor: pointer;
+            padding: 5px 15px;
+            text-align: left;
+            transition: .1s ease-in-out all;
             position: relative;
-            box-shadow: none;
-            //background: #fff;
-            width: 100%;
-            opacity: 1;
-            li {
-                padding: 5px 15px 5px 15px;
+            color: @text-standard;
+            margin-bottom: 4px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            &:hover {
+                background: @grey-1;
             }
         }
     }

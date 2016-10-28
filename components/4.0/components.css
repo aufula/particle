@@ -453,22 +453,23 @@ input {
 .popover-list .lucid-popover-menu:after {
   border-bottom-color: #FFF;
 }
-.popover-list .lucid-select-wrapper {
-  width: 100%;
-  padding: 3px 2px;
+.popover-list .lucid-select-dropdown {
+  padding: 2px;
 }
-.popover-list .lucid-select-wrapper .lucid-select-dropdown {
-  top: 0;
-  position: static;
-  border-radius: 3px;
-  display: inline-block;
+.popover-list .lucid-select-dropdown li {
+  cursor: pointer;
+  padding: 5px 15px;
+  text-align: left;
+  transition: 0.1s ease-in-out all;
   position: relative;
-  box-shadow: none;
-  width: 100%;
-  opacity: 1;
+  color: #5A5A5A;
+  margin-bottom: 4px;
 }
-.popover-list .lucid-select-wrapper .lucid-select-dropdown li {
-  padding: 5px 15px 5px 15px;
+.popover-list .lucid-select-dropdown li:last-child {
+  margin-bottom: 0;
+}
+.popover-list .lucid-select-dropdown li:hover {
+  background: #F0F0F0;
 }
 .lucid-color-picker .lucid-popover-menu {
   font-size: 0;
