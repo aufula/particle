@@ -1,34 +1,48 @@
-.lucid-buttcon {
-    width: 32px;
-    height: 32px;
-    background: transparent;
-    display: inline-block;
-    cursor: pointer;
-    border-radius: 3px;
-    position: relative;
-    font-size: 0;
-    display: inline-block;
-    padding: 5px;
-    box-sizing: border-box;
-    cursor: pointer;
-    text-align: center;
-    img,
-    svg {
-        max-width: 100%;
-    }
-    .lucid-buttcon-image {
-        width: 22px;
-        height: 22px;
+.lucid-buttcon-wrapper {
+    .lucid-buttcon {
+        width: 32px;
+        height: 32px;
+        background: transparent;
         display: inline-block;
+        cursor: pointer;
+        border-radius: 3px;
+        position: relative;
+        font-size: 0;
+        padding: 5px;
+        box-sizing: border-box;
+        cursor: pointer;
+        text-align: center;
+        img,
         svg {
-            path,
-            polygon,
-            rect {
-                transition: all .15s ease-in-out;
+            max-width: 100%;
+        }
+        .lucid-buttcon-image {
+            width: 22px;
+            height: 22px;
+            display: inline-block;
+            svg {
+                path,
+                polygon,
+                rect {
+                    transition: all .15s ease-in-out;
+                }
             }
+        }
+        .badge{
+            position:absolute;
+            width:16px;
+            height:16px;
+            border-radius: 8px;
+            background: @info-red;
+            color: #fff;
+            font-size:12px;
+            line-height: 16px;
+            bottom:1px;
+            right:0;
         }
     }
     .input-label {
+        margin-top: 0;
         text-align: center;
     }
     &.active {
@@ -44,11 +58,6 @@
         .input-label {
             color: @lucid-blue;
         }
-    }
-    &.has-label {
-        padding: 0;
-        width: inherit;
-        height: inherit;
     }
     &.condensed {
         .lucid-buttcon-image {

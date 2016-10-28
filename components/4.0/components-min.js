@@ -38,8 +38,8 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    'componentsURL': "/components/4.0/" //local dev
-    //'componentsURL': "http://particle.golucid.co/components/4.0/" //github
+    //'componentsURL': "/components/4.0/" //local dev
+    'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
@@ -727,7 +727,8 @@ angular.module("lucidButtcon", ['appConfig'])
             scope: {
                 icon: '@',
                 label: '@',
-                active: '=?'
+                active: '@',
+                badge: '@'
             },
             replace: true,
             templateUrl: config.componentsURL + 'buttcon/lucid-buttcon.html',

@@ -334,50 +334,58 @@ input {
 .hide-drawer-handle.lucid-drawer-wrapper .lucid-show-more-drawer-button {
   display: none;
 }
-.lucid-buttcon {
+.lucid-buttcon-wrapper .lucid-buttcon {
   width: 32px;
   height: 32px;
   background: transparent;
+  display: inline-block;
   border-radius: 3px;
   position: relative;
   font-size: 0;
-  display: inline-block;
   padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
   text-align: center;
 }
-.lucid-buttcon img,
-.lucid-buttcon svg {
+.lucid-buttcon-wrapper .lucid-buttcon img,
+.lucid-buttcon-wrapper .lucid-buttcon svg {
   max-width: 100%;
 }
-.lucid-buttcon .lucid-buttcon-image {
+.lucid-buttcon-wrapper .lucid-buttcon .lucid-buttcon-image {
   width: 22px;
   height: 22px;
   display: inline-block;
 }
-.lucid-buttcon .lucid-buttcon-image svg path,
-.lucid-buttcon .lucid-buttcon-image svg polygon,
-.lucid-buttcon .lucid-buttcon-image svg rect {
+.lucid-buttcon-wrapper .lucid-buttcon .lucid-buttcon-image svg path,
+.lucid-buttcon-wrapper .lucid-buttcon .lucid-buttcon-image svg polygon,
+.lucid-buttcon-wrapper .lucid-buttcon .lucid-buttcon-image svg rect {
   transition: all 0.15s ease-in-out;
 }
-.lucid-buttcon .input-label {
+.lucid-buttcon-wrapper .lucid-buttcon .badge {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  background: #ED6058;
+  color: #fff;
+  font-size: 12px;
+  line-height: 16px;
+  bottom: 1px;
+  right: 0;
+}
+.lucid-buttcon-wrapper .input-label {
+  margin-top: 0;
   text-align: center;
 }
-.lucid-buttcon.active .lucid-buttcon-image svg path,
-.lucid-buttcon.active .lucid-buttcon-image svg polygon,
-.lucid-buttcon.active .lucid-buttcon-image svg rect {
+.lucid-buttcon-wrapper.active .lucid-buttcon-image svg path,
+.lucid-buttcon-wrapper.active .lucid-buttcon-image svg polygon,
+.lucid-buttcon-wrapper.active .lucid-buttcon-image svg rect {
   fill: #29AAE1;
 }
-.lucid-buttcon.active .input-label {
+.lucid-buttcon-wrapper.active .input-label {
   color: #29AAE1;
 }
-.lucid-buttcon.has-label {
-  padding: 0;
-  width: inherit;
-  height: inherit;
-}
-.lucid-buttcon.condensed .lucid-buttcon-image {
+.lucid-buttcon-wrapper.condensed .lucid-buttcon-image {
   width: 24px;
   padding: 3px 4px;
   background: #fff;

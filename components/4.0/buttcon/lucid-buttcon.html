@@ -1,6 +1,9 @@
-<div class="lucid-buttcon" ng-class="{'active': active, 'has-label': label}">
-    <div ng-include="icon" class="lucid-buttcon-image"></div>
-    <div class="input-label" ng-if="label" style="text-align: {{alignment}}">
+<div class="lucid-buttcon-wrapper">
+    <div class="lucid-buttcon" ng-class="{'active': active}">
+        <div ng-include="icon" class="lucid-buttcon-image"></div>
+        <div class="badge" ng-if="badge">{{2}}</div>
+    </div>
+    <div class="input-label" ng-if="label" ng-if="label" style="text-align: {{alignment}}">
         <span>{{label}}</span>
     </div>
 </div>
