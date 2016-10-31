@@ -106,6 +106,19 @@ table {
 @text-inactive: #A5A5A5;
 @lucid-blue-dark: #2C84B5;
 
+@transparent: transparent;
+
+//creating mixin for colors list
+
+// ............................................................
+// .for-each
+
+.for(@array)   when (default()) {.for-impl_(length(@array))}
+.for-impl_(@i) when (@i > 1)    {.for-impl_((@i - 1))}
+.for-impl_(@i) when (@i > 0)    {.-each(extract(@array, @i))}
+
+@color-options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent;
+
 /////////////////// GENERAL CSS ///////////////
 body {
 	font-family: @font-stack;
@@ -143,4 +156,6 @@ input{
 @import "search/lucid-search.less";
 @import "slider/lucid-slider.less";
 @import "tooltip/lucid-tooltip.less";
+@import "growl/lucid-growl.less";
+@import "dynamic-height-hide/dynamic-height-hide.less";
 

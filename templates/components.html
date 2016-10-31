@@ -16,7 +16,7 @@
                 </div>
             </header>
             <div class="drawer-wrapper">
-                <div class="drawer slide-toggle" ng-show="showBasic">
+                <div class="drawer dynamic-height-hide" ng-show="showBasic">
                     <header class="drawer-header">
                         <span ng-init="drawer = 'html'" ng-click="drawer = 'html'" ng-class="{'active': drawer == 'html'}">HTML</span>
                         <span ng-click="drawer = 'less'" ng-class="{'active': drawer == 'less'}">LESS</span>
@@ -47,7 +47,7 @@
                         </table>
                     </div>
                 </div>
-                <div class="drawer slide-toggle" ng-show="showAdvanced">
+                <div class="drawer dynamic-height-hide" ng-show="showAdvanced">
                     <header class="drawer-header">
                         <span ng-init="advancedDrawer = 'js'" ng-click="advancedDrawer = 'js'" ng-class="{'active': advancedDrawer == 'js'}">JS</span>
                         <span ng-click="advancedDrawer = 'html'" ng-class="{'active': advancedDrawer == 'html'}">HTML</span>

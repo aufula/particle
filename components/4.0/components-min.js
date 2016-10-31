@@ -24,6 +24,8 @@
 //@codekit-append "search/lucid-search.js"
 //@codekit-append "slider/lucid-slider.js"
 //@codekit-append "tooltip/lucid-tooltip.js"
+//@codekit-append "growl/lucid-growl.js"
+//@codekit-append "dynamic-height-hide/dynamic-height-hide.js"
 
 
 angular.module('appConfig', [])
@@ -44,7 +46,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', '720kb.tooltips'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', '720kb.tooltips', 'lucidGrowl', 'dynamicHeightHide'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
@@ -132,129 +134,6 @@ angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper'
 .filter("sanitize", ['$sce', function($sce) {
     return function(htmlCode) {
         return $sce.trustAsHtml(htmlCode);
-    };
-}])
-
-///////////////////      Animations      //////////////////////
-
-
-//this is used with lucid-collapse-bar
-.animation('.slide-toggle', ['$animateCss', function($animateCss) {
-    var lastId = 0;
-    var _cache = {};
-
-    function getId(el) {
-        var id = el[0].getAttribute("data-slide-toggle");
-        if (!id) {
-            id = ++lastId;
-            el[0].setAttribute("data-slide-toggle", id);
-        }
-        return id;
-    }
-
-    function getState(id) {
-        var state = _cache[id];
-        if (!state) {
-            state = {};
-            _cache[id] = state;
-        }
-        return state;
-    }
-
-    function generateRunner(closing, state, animator, element, doneFn) {
-        return function() {
-            state.animating = true;
-            state.animator = animator;
-            state.doneFn = doneFn;
-            animator.start().finally(function() {
-                if (closing && state.doneFn === doneFn) {
-                    element[0].style.height = '';
-                }
-                if (!closing && state.doneFn === doneFn) {
-                    element[0].style.height = '';
-                }
-                state.animating = false;
-                state.animator = undefined;
-                state.doneFn();
-            });
-        };
-    }
-
-    return {
-        addClass: function(element, className, doneFn) {
-            if (className === 'ng-hide') {
-                var state = getState(getId(element));
-                var height = (state.animating && state.height) ?
-                    state.height : element[0].offsetHeight;
-
-                var animator = $animateCss(element, {
-                    from: {
-                        height: height + 'px',
-                        opacity: 1
-                    },
-                    to: {
-                        height: '0px',
-                        opacity: 0
-                    }
-                });
-                if (animator) {
-                    if (state.animating) {
-                        state.doneFn =
-                            generateRunner(true,
-                                state,
-                                animator,
-                                element,
-                                doneFn);
-                        return state.animator.end();
-                    } else {
-                        state.height = height;
-                        return generateRunner(true,
-                            state,
-                            animator,
-                            element,
-                            doneFn)();
-                    }
-                }
-            }
-            doneFn();
-        },
-        removeClass: function(element, className, doneFn) {
-            if (className === 'ng-hide') {
-                var state = getState(getId(element));
-                var height = (state.animating && state.height) ?
-                    state.height : element[0].offsetHeight;
-
-                var animator = $animateCss(element, {
-                    from: {
-                        height: '0px',
-                        opacity: 0
-                    },
-                    to: {
-                        height: height + 'px',
-                        opacity: 1
-                    }
-                });
-
-                if (animator) {
-                    if (state.animating) {
-                        state.doneFn = generateRunner(false,
-                            state,
-                            animator,
-                            element,
-                            doneFn);
-                        return state.animator.end();
-                    } else {
-                        state.height = height;
-                        return generateRunner(false,
-                            state,
-                            animator,
-                            element,
-                            doneFn)();
-                    }
-                }
-            }
-            doneFn();
-        }
     };
 }]);
 
@@ -591,17 +470,17 @@ angular.module("lucidButtconPopover", ['appConfig'])
 
 angular.module('lucidCollapseBar', ['appConfig'])
     .directive('lucidCollapseBar', ['config', function(config) {
-            return {
-                restrict: 'E',
-                scope: {
-                    title: '@',
-                    closed: '@'
-                },
-                replace: true,
-                transclude: true,
-                templateUrl: config.componentsURL + 'collapse-bar/lucid-collapse-bar.html',
-            };
-        }])
+        return {
+            restrict: 'E',
+            scope: {
+                title: '@',
+                closed: '@'
+            },
+            replace: true,
+            transclude: true,
+            templateUrl: config.componentsURL + 'collapse-bar/lucid-collapse-bar.html',
+        };
+    }])
     .animation('.lucid-collapse-bar-content', ['$animateCss', function($animateCss) {
         var lastId = 0;
         var _cache = {};
@@ -1997,4 +1876,136 @@ angular.module('lucidSlider', ['appConfig'])
         .provider(directiveName + 'Conf', tooltipConfigurationProvider)
         .directive(directiveName, tooltipDirective);
 }(angular, window));
+
+angular.module("lucidGrowl", ['appConfig'])
+    .directive('lucidGrowl', ['config', function(config) {
+        return {
+            restrict: 'E',
+            scope: {
+                color: '@',
+                hideGrowl: '=',
+            },
+            replace: true,
+            transclude: true,
+            templateUrl: config.componentsURL + 'growl/lucid-growl.html',
+        };
+    }]); 
+
+angular.module('dynamicHeightHide', [])
+    .animation('.dynamic-height-hide', ['$animateCss', function($animateCss) {
+        var lastId = 0;
+        var _cache = {};
+
+        function getId(el) {
+            var id = el[0].getAttribute("data-slide-toggle");
+            if (!id) {
+                id = ++lastId;
+                el[0].setAttribute("data-slide-toggle", id);
+            }
+            return id;
+        }
+
+        function getState(id) {
+            var state = _cache[id];
+            if (!state) {
+                state = {};
+                _cache[id] = state;
+            }
+            return state;
+        }
+
+        function generateRunner(closing, state, animator, element, doneFn) {
+            return function() {
+                state.animating = true;
+                state.animator = animator;
+                state.doneFn = doneFn;
+                animator.start().finally(function() {
+                    if (closing && state.doneFn === doneFn) {
+                        element[0].style.height = '';
+                    }
+                    if (!closing && state.doneFn === doneFn) {
+                        element[0].style.height = '';
+                    }
+                    state.animating = false;
+                    state.animator = undefined;
+                    state.doneFn();
+                });
+            };
+        }
+
+        return {
+            addClass: function(element, className, doneFn) {
+                if (className === 'ng-hide') {
+                    var state = getState(getId(element));
+                    var height = (state.animating && state.height) ?
+                        state.height : element[0].offsetHeight;
+
+                    var animator = $animateCss(element, {
+                        from: {
+                            height: height + 'px'
+                        },
+                        to: {
+                            height: '0px'
+                        }
+                    });
+                    if (animator) {
+                        if (state.animating) {
+                            state.doneFn =
+                                generateRunner(true,
+                                    state,
+                                    animator,
+                                    element,
+                                    doneFn);
+                            return state.animator.end();
+                        } else {
+                            state.height = height;
+                            return generateRunner(true,
+                                state,
+                                animator,
+                                element,
+                                doneFn)();
+                        }
+                    }
+                }
+                doneFn();
+            },
+            removeClass: function(element, className, doneFn) {
+                if (className === 'ng-hide') {
+                    var state = getState(getId(element));
+                    var height = (state.animating && state.height) ?
+                        state.height : element[0].offsetHeight;
+
+                    var animator = $animateCss(element, {
+                        from: {
+                            height: '0px',
+                            opacity: 0
+                        },
+                        to: {
+                            height: height + 'px',
+                            opacity: 1
+                        }
+                    });
+
+                    if (animator) {
+                        if (state.animating) {
+                            state.doneFn = generateRunner(false,
+                                state,
+                                animator,
+                                element,
+                                doneFn);
+                            return state.animator.end();
+                        } else {
+                            state.height = height;
+                            return generateRunner(false,
+                                state,
+                                animator,
+                                element,
+                                doneFn)();
+                        }
+                    }
+                }
+                doneFn();
+            }
+        };
+    }]);
 

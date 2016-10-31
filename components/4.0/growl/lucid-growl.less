@@ -1,0 +1,30 @@
+.lucid-growl {
+    position: relative;
+    .for(@color-options); .-each(@name) {
+        &.@{name} {
+            background: @@name
+        }
+    }
+    .growl-content {
+        padding: 9px 32px 9px 9px;
+        color: #fff;
+        font-size: 14px;
+        transition: color .25s ease-in-out;
+        a{
+            text-decoration: underline;
+        }
+    }
+    .close-growl {
+        position: absolute;
+        top: 0;
+        right: 2px;
+        svg path {
+            fill: #fff;
+        }
+    }
+    &.ng-hide {
+        .growl-content {
+            color: transparent;
+        }
+    }
+}

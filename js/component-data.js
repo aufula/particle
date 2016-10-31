@@ -276,7 +276,7 @@ angular.module('lucidComponentFactory', [])
                 "inputs": [{
                     "attr": "color",
                     "type": "text",
-                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent"
                 }, {
                     "attr": "icon",
                     "type": "URL",
@@ -290,7 +290,7 @@ angular.module('lucidComponentFactory', [])
                 "inputs": [{
                     "attr": "color",
                     "type": "text",
-                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent"
                 }, {
                     "attr": "icon",
                     "type": "URL",
@@ -307,7 +307,7 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "attr": "color",
                     "type": "text",
-                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, clear"
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent"
                 }, {
                     "attr": "side",
                     "type": "text",
@@ -378,6 +378,20 @@ angular.module('lucidComponentFactory', [])
                     "attr": "button",
                     "type": "text",
                     "details": "insert the text for the button. If blank, there won't be a button"
+                }],
+
+            }, {
+                "title": "Growl",
+                "componentid": "growl",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "type",
+                    "type": "var",
+                    "details": "*Optional: if you want to hide/show the growl based on a condition."
+                }, {
+                    "attr": "color",
+                    "type": "text",
+                    "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent"
                 }],
 
             }]

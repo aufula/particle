@@ -476,10 +476,6 @@ p.small-body {
   position: relative;
   border-bottom: 1px solid #CCC;
 }
-.code-preview .drawer.slide-toggle {
-  -webkit-transition: 0.3s ease-in-out all;
-  transition: 0.3s ease-in-out all;
-}
 .code-preview .drawer .drawer-header {
   background: #77818C;
   height: 40px;

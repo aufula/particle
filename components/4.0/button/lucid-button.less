@@ -16,29 +16,15 @@
     svg path {
         fill: #fff;
     }
-    &.lucid-blue {
-        background-color: @info-blue;
-    }
-    &.info-green {
-        background-color: @info-green;
-    }
-    &.info-red {
-        background-color: @info-red;
-    }
-    &.grey-5 {
-        background-color: @grey-5;
-    }
-    &.blue-steel {
-        background-color: @blue-steel;
-    }
-    &.blue-steel-2 {
-        background-color: @blue-steel-2;
-    }
-    &.info-purple {
-        background-color: @info-purple;
-    }
-    &.lucidchart-orange {
-        background-color: @lucidchart-orange;
+
+    //loop through available colors
+    .for(@color-options); .-each(@name) {
+        &.@{name} {
+            background: @@name;
+            &:hover{
+                background: lighten(@@name, 5%);
+            }
+        }
     }
 
     &.clear {

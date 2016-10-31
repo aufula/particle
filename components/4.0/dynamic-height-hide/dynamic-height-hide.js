@@ -1,17 +1,5 @@
-angular.module('lucidCollapseBar', ['appConfig'])
-    .directive('lucidCollapseBar', ['config', function(config) {
-        return {
-            restrict: 'E',
-            scope: {
-                title: '@',
-                closed: '@'
-            },
-            replace: true,
-            transclude: true,
-            templateUrl: config.componentsURL + 'collapse-bar/lucid-collapse-bar.html',
-        };
-    }])
-    .animation('.lucid-collapse-bar-content', ['$animateCss', function($animateCss) {
+angular.module('dynamicHeightHide', [])
+    .animation('.dynamic-height-hide', ['$animateCss', function($animateCss) {
         var lastId = 0;
         var _cache = {};
 
@@ -61,12 +49,10 @@ angular.module('lucidCollapseBar', ['appConfig'])
 
                     var animator = $animateCss(element, {
                         from: {
-                            height: height + 'px',
-                            opacity: 1
+                            height: height + 'px'
                         },
                         to: {
-                            height: '0px',
-                            opacity: 0
+                            height: '0px'
                         }
                     });
                     if (animator) {
