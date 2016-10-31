@@ -385,13 +385,13 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "growl",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "attr": "type",
-                    "type": "var",
-                    "details": "*Optional: if you want to hide/show the growl based on a condition."
-                }, {
                     "attr": "color",
                     "type": "text",
                     "details": "*Options: lucid-blue, info-green, info-red, grey-5, blue-steel, blue-steel-2, info-purple, lucidchart-orange, transparent"
+                }, {
+                    "attr": "hide-growl",
+                    "type": "var",
+                    "details": "*Optional: if you want to hide/show the growl based on a condition."
                 }],
 
             }]
