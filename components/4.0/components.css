@@ -470,8 +470,9 @@ input {
   padding: 2px;
 }
 .popover-list .lucid-select-dropdown li {
+  font-size: 14px;
   cursor: pointer;
-  padding: 5px 15px;
+  padding: 5px 10px;
   text-align: left;
   -webkit-transition: 0.1s ease-in-out all;
   transition: 0.1s ease-in-out all;
@@ -1714,7 +1715,7 @@ input {
   right: inherit;
 }
 .lucid-button-dropdown .lucid-select-dropdown li {
-  padding: 5px 15px;
+  padding: 5px 10px;
   white-space: nowrap;
 }
 .lucid-button-dropdown .lucid-select-dropdown.right-side {
