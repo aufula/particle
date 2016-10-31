@@ -171,7 +171,6 @@ input {
   line-height: 22px;
   -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
-  -webkit-font-smoothing: antialiased;
 }
 .lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
   font-style: italic;
@@ -1508,7 +1507,6 @@ input {
   left: 0;
   font-size: 18px;
   font-weight: 700;
-  -webkit-font-smoothing: antialiased;
 }
 .lucid-paywall-wrapper .lucid-paywall {
   margin: auto;
@@ -1529,7 +1527,6 @@ input {
   font-size: 24px;
   font-weight: 700;
   line-height: 24px;
-  -webkit-font-smoothing: antialiased;
 }
 .lucid-paywall-wrapper .lucid-paywall .paywall-title > h2 {
   font-size: 18px;
@@ -1539,7 +1536,6 @@ input {
   margin-top: 5px;
   font-weight: normal;
   letter-spacing: inherit;
-  -webkit-font-smoothing: antialiased;
 }
 .lucid-paywall-wrapper .lucid-paywall img {
   width: 100%;
