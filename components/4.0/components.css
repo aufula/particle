@@ -171,6 +171,7 @@ input {
   line-height: 22px;
   -webkit-transition: background 0.15s ease-in-out;
   transition: background 0.15s ease-in-out;
+  -webkit-font-smoothing: antialiased;
 }
 .lucid-input-wrapper .lucid-input::-webkit-input-placeholder {
   font-style: italic;
@@ -385,7 +386,7 @@ input {
   bottom: 1px;
   right: 0;
 }
-.lucid-buttcon-wrapper .input-label {
+.lucid-buttcon-wrapper > .input-label {
   margin-top: 0;
   text-align: center;
 }
@@ -608,7 +609,7 @@ input {
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li {
   display: inline-block;
   padding-right: 10px;
-  vertical-align: top;
+  vertical-align: bottom;
 }
 .lucid-color-picker .lucid-popover-menu .color-hex-adjustments li input {
   text-transform: uppercase;
