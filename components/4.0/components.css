@@ -346,14 +346,11 @@ input {
   display: none;
 }
 .lucid-buttcon-wrapper .lucid-buttcon {
-  width: 32px;
-  height: 32px;
   background: transparent;
   display: inline-block;
   border-radius: 3px;
   position: relative;
   font-size: 0;
-  padding: 5px;
   box-sizing: border-box;
   cursor: pointer;
   text-align: center;
@@ -382,11 +379,36 @@ input {
   color: #fff;
   font-size: 12px;
   line-height: 16px;
-  bottom: 1px;
-  right: 0;
+  bottom: -4px;
+  right: -5px;
+  -webkit-transform: scale(1);
+          transform: scale(1);
+}
+.lucid-buttcon-wrapper .lucid-buttcon .badge.ng-enter {
+  -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+}
+.lucid-buttcon-wrapper .lucid-buttcon .badge.ng-enter-active {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.lucid-buttcon-wrapper .lucid-buttcon .badge.ng-leave {
+  -webkit-transform: scale(1);
+          transform: scale(1);
+  opacity: 1;
+}
+.lucid-buttcon-wrapper .lucid-buttcon .badge.ng-leave-active {
+  -webkit-transform: scale(0.01);
+          transform: scale(0.01);
+  opacity: 0;
+}
+.lucid-buttcon-wrapper .lucid-buttcon .badge.ng-animate {
+  -webkit-transition: .15s all linear;
+  transition: .15s all linear;
 }
 .lucid-buttcon-wrapper > .input-label {
-  margin-top: 0;
   text-align: center;
 }
 .lucid-buttcon-wrapper.active .lucid-buttcon-image svg path,
@@ -396,13 +418,6 @@ input {
 }
 .lucid-buttcon-wrapper.active .input-label {
   color: #29AAE1;
-}
-.lucid-buttcon-wrapper.condensed .lucid-buttcon-image {
-  width: 24px;
-  padding: 3px 4px;
-  background: #fff;
-  border: 1px solid #A5A5A5;
-  border-radius: 2px;
 }
 .lucid-buttcon-wrapper {
   position: relative;

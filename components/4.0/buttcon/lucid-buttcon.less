@@ -1,14 +1,11 @@
 .lucid-buttcon-wrapper {
     .lucid-buttcon {
-        width: 32px;
-        height: 32px;
         background: transparent;
         display: inline-block;
         cursor: pointer;
         border-radius: 3px;
         position: relative;
         font-size: 0;
-        padding: 5px;
         box-sizing: border-box;
         cursor: pointer;
         text-align: center;
@@ -28,21 +25,40 @@
                 }
             }
         }
-        .badge{
-            position:absolute;
-            width:16px;
-            height:16px;
+        .badge {
+            position: absolute;
+            width: 16px;
+            height: 16px;
             border-radius: 8px;
             background: @info-red;
             color: #fff;
-            font-size:12px;
+            font-size: 12px;
             line-height: 16px;
-            bottom:1px;
-            right:0;
+            bottom: -4px;
+            right: -5px;
+            transform: scale(1);
+            &.ng-enter {
+                transform: scale(.01);
+                opacity: 0;
+            }
+            &.ng-enter-active {
+                transform: scale(1);
+                opacity: 1;
+            }
+            &.ng-leave {
+                transform: scale(1);
+                opacity: 1;
+            }
+            &.ng-leave-active {
+                transform: scale(.01);
+                opacity: 0;
+            }
+            &.ng-animate {
+                transition: .15s all linear;
+            }
         }
     }
     >.input-label {
-        margin-top: 0;
         text-align: center;
     }
     &.active {
@@ -57,15 +73,6 @@
         }
         .input-label {
             color: @lucid-blue;
-        }
-    }
-    &.condensed {
-        .lucid-buttcon-image {
-            width: 24px;
-            padding: 3px 4px;
-            background: #fff;
-            border: 1px solid @grey-border-dark;
-            border-radius: 2px;
         }
     }
 }
