@@ -188,15 +188,11 @@ angular.module('lucidComponentFactory', [])
                 }, {
                     "attr": "active",
                     "type": "true/false",
-                    "details": "Optional: if true, 'active' class is added to color icon lucid blue. Note: complex icons will need custom css"
+                    "details": "Optional: if true, icon & text will turn blue. Note: complex icons will need custom css"
                 }, {
                     "attr": "badge",
                     "type": "number",
                     "details": "Add a number for a red badge."
-                }, {
-                    "attr": "class",
-                    "type": "text",
-                    "details": "Optional: add 'condensed' for condensed aesthetic. Note: should be 14px icon if condensed."
                 }]
             }, {
                 "title": "Collapse Bar",
