@@ -1738,6 +1738,13 @@ input {
 }
 .lucid-input-wrapper.condensed.search-wrapper .search-icon .search-x {
   cursor: pointer;
+  display: none;
+}
+.lucid-input-wrapper.condensed.search-wrapper .search-icon.searching .empty-search {
+  display: none;
+}
+.lucid-input-wrapper.condensed.search-wrapper .search-icon.searching .search-x {
+  display: inherit;
 }
 .range-wrap {
   display: -webkit-box;

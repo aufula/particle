@@ -12,6 +12,15 @@
         }
         .search-x {
             cursor: pointer;
+            display: none;
+        }
+        &.searching {
+            .empty-search {
+                display: none;
+            }
+            .search-x {
+                display: inherit;
+            }
         }
     }
 }
