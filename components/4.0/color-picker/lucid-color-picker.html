@@ -43,10 +43,10 @@
                     <img src="http://particle.golucid.co/components/2.0/color-picker/colorpicker-fill-image.png">
                 </div>
             </div>
-            <lucid-more-drawer showAdvancedColor="showdrawer" height="55">
+            <lucid-more-drawer height="55">
                 <ul>
                     <li>
-                        <lucid-buttcon class="colorpicker-fill-solid" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-fill-solid-22px.svg" alignment="center" label="Solid" active="colorpicker.type == 'Solid'" ng-click="colorpicker.type='Solid'"></lucid-buttcon>
+                        <lucid-buttcon class="colorpicker-fill-solid" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-fill-solid-22px.svg" alignment="center" label="Solid" active="{{colorpicker.type == 'Solid'}}" ng-click="colorpicker.type='Solid'"></lucid-buttcon>
                     </li>
                     <li ng-class="{'active-fill':colorpicker.type == 'Linear'}" >
                         <lucid-buttcon class="colorpicker-fill-linear" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-fill-gradient-linear-22px.svg" alignment="center" label="Linear" ng-click="colorpicker.type='Linear'"></lucid-buttcon>
@@ -55,7 +55,7 @@
                         <lucid-buttcon class="colorpicker-fill-radial" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-fill-gradient-radial-22px.svg" alignment="center" label="Radial"  ng-click="colorpicker.type='Radial'"></lucid-buttcon>
                     </li>
                     <li>
-                        <lucid-buttcon class="colorpicker-fill-image" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" alignment="center" label="Image" active="colorpicker.type == 'Image'" ng-click="colorpicker.type='Image'"></lucid-buttcon>
+                        <lucid-buttcon class="colorpicker-fill-image" icon="http://particle.golucid.co/components/2.0/icon/icons/icon-image-22px.svg" alignment="center" label="Image" active="{{colorpicker.type == 'Image'}}" ng-click="colorpicker.type='Image'"></lucid-buttcon>
                     </li>
                 </ul>
             </lucid-more-drawer>
