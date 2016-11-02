@@ -38,9 +38,9 @@ lucid-tooltip {
 }
 
 .tooltip {
+    animation: animate-tooltip .25s;
     &.tooltip-up {
         text-align: left;
-        animation: animate-tooltip-top .25s;
         .tooltip-arrow {
             bottom: -9px;
             left: 50%;
@@ -51,7 +51,6 @@ lucid-tooltip {
     }
     &.tooltip-right {
         text-align: left;
-        animation: animate-tooltip-right .25s;
         .tooltip-arrow {
             left: -9px;
             top: 50%;
@@ -62,7 +61,6 @@ lucid-tooltip {
     }
     &.tooltip-bottom {
         text-align: center;
-        animation: animate-tooltip-bottom .25s;
         .tooltip-arrow {
             top: -9px;
             left: 50%;
@@ -73,7 +71,6 @@ lucid-tooltip {
     }
     &.tooltip-left {
         text-align: left;
-        animation: animate-tooltip-left .25s;
         .tooltip-arrow {
             right: -9px;
             top: 50%;
@@ -85,46 +82,13 @@ lucid-tooltip {
 }
 
 ////
-@keyframes animate-tooltip-top {
+@keyframes animate-tooltip {
     from {
-        margin-top: -10px;
+        // margin-top: -10px;
         opacity: 0;
     }
     to {
         opacity: 1;
         margin-top: 0;
-    }
-}
-
-@keyframes animate-tooltip-bottom {
-    from {
-        margin-top: 10px;
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        margin-top: 0;
-    }
-}
-
-@keyframes animate-tooltip-right {
-    from {
-        margin-left: 10px;
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        margin-left: 0;
-    }
-}
-
-@keyframes animate-tooltip-left {
-    from {
-        margin-left: -10px;
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-        margin-left: 0;
     }
 }

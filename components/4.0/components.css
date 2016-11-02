@@ -1887,10 +1887,12 @@ lucid-tooltip {
   height: 0;
   border: 8px solid transparent;
 }
+.tooltip {
+  -webkit-animation: animate-tooltip 0.25s;
+          animation: animate-tooltip 0.25s;
+}
 .tooltip.tooltip-up {
   text-align: left;
-  -webkit-animation: animate-tooltip-top 0.25s;
-          animation: animate-tooltip-top 0.25s;
 }
 .tooltip.tooltip-up .tooltip-arrow {
   bottom: -9px;
@@ -1901,8 +1903,6 @@ lucid-tooltip {
 }
 .tooltip.tooltip-right {
   text-align: left;
-  -webkit-animation: animate-tooltip-right 0.25s;
-          animation: animate-tooltip-right 0.25s;
 }
 .tooltip.tooltip-right .tooltip-arrow {
   left: -9px;
@@ -1913,8 +1913,6 @@ lucid-tooltip {
 }
 .tooltip.tooltip-bottom {
   text-align: center;
-  -webkit-animation: animate-tooltip-bottom 0.25s;
-          animation: animate-tooltip-bottom 0.25s;
 }
 .tooltip.tooltip-bottom .tooltip-arrow {
   top: -9px;
@@ -1925,8 +1923,6 @@ lucid-tooltip {
 }
 .tooltip.tooltip-left {
   text-align: left;
-  -webkit-animation: animate-tooltip-left 0.25s;
-          animation: animate-tooltip-left 0.25s;
 }
 .tooltip.tooltip-left .tooltip-arrow {
   right: -9px;
@@ -1935,9 +1931,8 @@ lucid-tooltip {
   border-left: 9px solid #3D4752;
   border-right: none;
 }
-@-webkit-keyframes animate-tooltip-top {
+@-webkit-keyframes animate-tooltip {
   from {
-    margin-top: -10px;
     opacity: 0;
   }
   to {
@@ -1945,74 +1940,13 @@ lucid-tooltip {
     margin-top: 0;
   }
 }
-@keyframes animate-tooltip-top {
+@keyframes animate-tooltip {
   from {
-    margin-top: -10px;
     opacity: 0;
   }
   to {
     opacity: 1;
     margin-top: 0;
-  }
-}
-@-webkit-keyframes animate-tooltip-bottom {
-  from {
-    margin-top: 10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-top: 0;
-  }
-}
-@keyframes animate-tooltip-bottom {
-  from {
-    margin-top: 10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-top: 0;
-  }
-}
-@-webkit-keyframes animate-tooltip-right {
-  from {
-    margin-left: 10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
-  }
-}
-@keyframes animate-tooltip-right {
-  from {
-    margin-left: 10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
-  }
-}
-@-webkit-keyframes animate-tooltip-left {
-  from {
-    margin-left: -10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
-  }
-}
-@keyframes animate-tooltip-left {
-  from {
-    margin-left: -10px;
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-    margin-left: 0;
   }
 }
 .lucid-growl {
