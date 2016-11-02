@@ -1855,25 +1855,85 @@ input {
 .range-wrap input[type=range]:focus::-ms-fill-upper {
   background: #dadbdd;
 }
-/*
- * angular-tooltips
- * 1.1.6
- * 
- * Angular.js tooltips module.
- * http://720kb.github.io/angular-tooltips
- * 
- * MIT license
- * Fri Aug 05 2016
- */
-._exradicated-tooltip {
-  display: block;
-  opacity: 1;
-  position: absolute;
-  z-index: 999;
-}
-tooltip {
+lucid-tooltip {
   display: inline-block;
-  position: relative;
+}
+.tooltip {
+  border-radius: 4px;
+  background: #3D4752;
+  position: absolute;
+  display: none;
+  background-color: #3D4752;
+  padding: 3px 8px 5px;
+  max-width: 250px;
+  color: #fff;
+  font-size: 14px;
+  white-space: nowrap;
+  font-weight: 300;
+}
+.tooltip .hotkey {
+  margin-left: 22px;
+  color: #AFB7BF;
+}
+.tooltip-show {
+  display: inherit;
+}
+.tooltip-hide {
+  display: none;
+}
+.tooltip-arrow {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border: 8px solid transparent;
+}
+.tooltip.tooltip-up {
+  text-align: left;
+  -webkit-animation: animate-tooltip-top 0.25s;
+          animation: animate-tooltip-top 0.25s;
+}
+.tooltip.tooltip-up .tooltip-arrow {
+  bottom: -9px;
+  left: 50%;
+  margin-left: -9px;
+  border-top: 9px solid #3D4752;
+  border-bottom: none;
+}
+.tooltip.tooltip-right {
+  text-align: left;
+  -webkit-animation: animate-tooltip-right 0.25s;
+          animation: animate-tooltip-right 0.25s;
+}
+.tooltip.tooltip-right .tooltip-arrow {
+  left: -9px;
+  top: 50%;
+  margin-top: -8px;
+  border-right: 9px solid #3D4752;
+  border-left: none;
+}
+.tooltip.tooltip-bottom {
+  text-align: center;
+  -webkit-animation: animate-tooltip-bottom 0.25s;
+          animation: animate-tooltip-bottom 0.25s;
+}
+.tooltip.tooltip-bottom .tooltip-arrow {
+  top: -9px;
+  left: 50%;
+  margin-left: -9px;
+  border-bottom: 9px solid #3D4752;
+  border-top: none;
+}
+.tooltip.tooltip-left {
+  text-align: left;
+  -webkit-animation: animate-tooltip-left 0.25s;
+          animation: animate-tooltip-left 0.25s;
+}
+.tooltip.tooltip-left .tooltip-arrow {
+  right: -9px;
+  top: 50%;
+  margin-top: -8px;
+  border-left: 9px solid #3D4752;
+  border-right: none;
 }
 @-webkit-keyframes animate-tooltip-top {
   from {
@@ -1954,168 +2014,6 @@ tooltip {
     opacity: 1;
     margin-left: 0;
   }
-}
-tooltip._multiline {
-  display: block;
-}
-tooltip._slow._ready._top,
-tooltip._fast._ready._top,
-tooltip._steady._ready._top {
-  text-align: left;
-}
-tooltip._slow._ready._top tip,
-tooltip._fast._ready._top tip,
-tooltip._steady._ready._top tip {
-  -webkit-animation: animate-tooltip-top 0.25s;
-          animation: animate-tooltip-top 0.25s;
-}
-tooltip._slow._ready._right,
-tooltip._fast._ready._right,
-tooltip._steady._ready._right {
-  text-align: left;
-}
-tooltip._slow._ready._right tip,
-tooltip._fast._ready._right tip,
-tooltip._steady._ready._right tip {
-  -webkit-animation: animate-tooltip-right 0.25s;
-          animation: animate-tooltip-right 0.25s;
-}
-tooltip._slow._ready._bottom,
-tooltip._fast._ready._bottom,
-tooltip._steady._ready._bottom {
-  text-align: center;
-}
-tooltip._slow._ready._bottom tip,
-tooltip._fast._ready._bottom tip,
-tooltip._steady._ready._bottom tip {
-  -webkit-animation: animate-tooltip-bottom 0.25s;
-          animation: animate-tooltip-bottom 0.25s;
-}
-tooltip._slow._ready._left,
-tooltip._fast._ready._left,
-tooltip._steady._ready._left {
-  text-align: left;
-}
-tooltip._slow._ready._left tip,
-tooltip._fast._ready._left tip,
-tooltip._steady._ready._left tip {
-  -webkit-animation: animate-tooltip-left 0.25s;
-          animation: animate-tooltip-left 0.25s;
-}
-tooltip tip {
-  border-radius: 4px;
-  background: #3D4752;
-  color: #fff;
-  display: none;
-  line-height: normal;
-  max-width: 115px;
-  min-width: 0px;
-  opacity: 0;
-  padding: 1px 8px;
-  position: absolute;
-  width: auto;
-  will-change: top, left, bottom, right;
-  font-family: 'Source Sans Pro', sans-serif;
-}
-tooltip tip._hidden {
-  display: block;
-  visibility: hidden;
-}
-tooltip.active:not(._force-hidden) tip {
-  display: block;
-  opacity: 1;
-  z-index: 999;
-}
-tooltip tip-tip {
-  font-size: 14px;
-  top: -1px;
-  position: relative;
-  white-space: nowrap;
-  font-weight: 300;
-}
-tooltip tip-tip .tooltip-hotkey {
-  margin-left: 10px;
-  color: #AFB7BF;
-}
-tooltip._top tip {
-  left: 50%;
-  top: -9px;
-  -webkit-transform: translateX(-50%) translateY(-100%);
-  transform: translateX(-50%) translateY(-100%);
-}
-tooltip._top tip tip-arrow {
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-top: 6px solid #3D4752;
-  content: '';
-  height: 0;
-  left: 50%;
-  margin-left: -6px;
-  position: absolute;
-  top: 100%;
-  width: 0;
-}
-tooltip._bottom tip {
-  right: 50%;
-  top: 100%;
-  -webkit-transform: translateX(50%) translateY(9px);
-  transform: translateX(50%) translateY(9px);
-}
-tooltip._bottom tip tip-arrow {
-  border-bottom: 8px solid #3D4752;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  bottom: 100%;
-  content: '';
-  height: 0;
-  left: 50%;
-  margin-left: -6px;
-  position: absolute;
-  width: 0;
-}
-tooltip._right tip {
-  left: 100%;
-  top: 50%;
-  -webkit-transform: translateX(9px) translateY(-50%);
-  transform: translateX(9px) translateY(-50%);
-}
-tooltip._right tip tip-arrow {
-  border-bottom: 8px solid transparent;
-  border-right: 8px solid #3D4752;
-  border-top: 8px solid transparent;
-  content: '';
-  height: 0;
-  margin-top: -8px;
-  position: absolute;
-  right: 100%;
-  top: 50%;
-  width: 0;
-}
-tooltip._left tip {
-  left: -9px;
-  top: 50%;
-  -webkit-transform: translateX(-100%) translateY(-50%);
-  transform: translateX(-100%) translateY(-50%);
-}
-tooltip._left tip tip-arrow {
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid #3D4752;
-  border-top: 8px solid transparent;
-  content: '';
-  height: 0;
-  left: 100%;
-  margin-top: -8px;
-  position: absolute;
-  top: 50%;
-  width: 0;
-}
-tip-tip #close-button {
-  cursor: pointer;
-  float: right;
-  left: 8%;
-  margin-top: -7%;
-  padding: 3px;
-  position: relative;
 }
 .lucid-growl {
   position: relative;

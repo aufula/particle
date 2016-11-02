@@ -41,12 +41,12 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    //'componentsURL': "/components/4.0/" //local dev
+    // 'componentsURL': "/components/4.0/" //local dev
     'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', '720kb.tooltips', 'lucidGrowl', 'dynamicHeightHide'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', 'lucidGrowl', 'dynamicHeightHide', 'lucidTooltip'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key

@@ -1,1 +1,5 @@
-<!-- All built in js -->
+<div ng-class="[tipClass, {'tooltip-show': showTip, 'tooltip-hide': hideTip}]">
+    {{tooltip}}
+    <span class="hotkey" ng-if="hotkey">{{hotkey}}</span>
+    <div class="tooltip-arrow"></div>
+</div>

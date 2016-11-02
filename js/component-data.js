@@ -493,21 +493,21 @@ angular.module('lucidComponentFactory', [])
                 "componentid": "tooltip",
                 "description": "tips show up to show how to use the product",
                 "inputs": [{
-                    "attr": "tooltips",
-                    "type": "required",
-                    "details": "add this to the element you want to tooltip - might have to wrap existing components in a div for tooltip to work"
+                    "attr": "tooltip",
+                    "type": "text",
+                    "details": "text you'd like to show on the tooltip"
                 }, {
-                    "attr": "tooltip-side",
+                    "attr": "position",
                     "type": "text",
                     "details": "top, right, bottom, left"
                 }, {
-                    "attr": "tooltip-hide-trigger",
+                    "attr": "hotkey",
                     "type": "text",
-                    "details": "click, mouseleave"
+                    "details": "*Optional: Add text to be shown for hotkey."
                 }, {
-                    "attr": "tooltip-template",
-                    "type": "html",
-                    "details": "add text to show inside the tooltip (this can be html)"
+                    "attr": "popover",
+                    "type": "{{var}}",
+                    "details": "*Optional: Only needed if adding a popover to an element with a popover to prevent the tooltip from showing when the popover is shown."
                 }]
             }]
         }, {

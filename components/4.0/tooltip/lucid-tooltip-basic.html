@@ -1,38 +1,5 @@
-<button class="lucid-button lucid-blue"
-		tooltips 
-		tooltip-side="left"
-		tooltip-hide-trigger="click mouseleave"
-		tooltip-template="Tooltip <span class='tooltip-hotkey'>⌘T</span>">
-	Left
-</button>
-<button class="lucid-button lucid-blue"
-		tooltips 
-		tooltip-side="top"
-		tooltip-hide-trigger="click mouseleave"
-		tooltip-template="Tooltip Text">
-	Top
-</button>
-<button class="lucid-button lucid-blue"
-		tooltips 
-		tooltip-side="bottom"
-		tooltip-hide-trigger="click mouseleave"
-		tooltip-template="Multiline tooltip <br>with more info">
-	Bottom
-</button>
-<button class="lucid-button lucid-blue"
-		tooltips 
-		tooltip-side="right"
-		tooltip-hide-trigger="click mouseleave"
-		tooltip-template="Tooltip Text">
-	Right
-</button>
-<div style="display: inline-block;"
-		tooltips 
-	has-popover="true"
-		tooltip-side="bottom"
-		tooltip-hide-trigger="click mouseleave"
-		tooltip-template="Tooltip Text">
-		<lucid-buttcon-popover class="popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="125">
+<lucid-tooltip tooltip="Dropdown Option" tooltip-position="bottom" popover="{{dropdown.show}}">
+    <lucid-buttcon-popover class="popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="125">
         <ul ng-click="dropdown.show = false;">
             <li>
                 Image
@@ -44,5 +11,25 @@
                 Visio Stencil
             </li>
         </ul>
-</lucid-buttcon-popover>
-</div>
+    </lucid-buttcon-popover>
+</lucid-tooltip>
+<lucid-tooltip tooltip="Tooltip" hotkey="⌘T" tooltip-position="up">
+    <button class="lucid-button lucid-blue">
+        Up
+    </button>
+</lucid-tooltip>
+<lucid-tooltip tooltip="Tooltip" hotkey="⌘T" tooltip-position="right">
+    <button class="lucid-button lucid-blue">
+        Right
+    </button>
+</lucid-tooltip>
+<lucid-tooltip tooltip="Tooltip" hotkey="⌘T" tooltip-position="bottom">
+    <button class="lucid-button lucid-blue">
+        Bottom
+    </button>
+</lucid-tooltip>
+<lucid-tooltip tooltip="Tooltip" hotkey="⌘T" tooltip-position="left">
+    <button class="lucid-button lucid-blue">
+        Left
+    </button>
+</lucid-tooltip>
