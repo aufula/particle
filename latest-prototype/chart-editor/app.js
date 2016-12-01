@@ -1,15 +1,13 @@
-/*global angular, console*/
+/*global angular, console, SVGMorpheus*/
 
 //include Components js
-// @codekit-prepend "components/shape-manager/shape-manager.js"
-// @codekit-prepend "components/pages/pages.js"
-// @codekit-prepend "components/pages/pages-data.js"
-// @codekit-prepend "components/right-dock/right-dock.js"
-// @codekit-prepend "components/optionbar/optionbar.js"
-// @codekit-prepend "components/loading-tips/loading-tips.js"
-// @codekit-prepend "components/canvas/canvas.js"
-// @codekit-prepend "components/shape-manager/shapes-data.js"
-// @codekit-prepend "components/footer/footer.js"
+// @codekit-append "components/shape-manager/shape-manager.js"
+// @codekit-append "components/pages/pages.js"
+// @codekit-append "components/right-dock/right-dock.js"
+// @codekit-append "components/optionbar/optionbar.js"
+// @codekit-append "components/loading-tips/loading-tips.js"
+// @codekit-append "components/canvas/canvas.js"
+// @codekit-append "components/footer/footer.js"
 
 angular.module('particleApp', 
     [
@@ -19,7 +17,7 @@ angular.module('particleApp',
         'ngSortable', 
         'dndLists',
 
-        // Codekit prepend
+        // Codekit append
         'canvas',
         'loadingTips',
         'optionbar',

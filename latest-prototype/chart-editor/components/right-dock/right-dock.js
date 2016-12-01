@@ -37,4 +37,4 @@ angular.module('rightDock', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dn
                 $scope.rightDock = true;
             }
         };
-    })
+    });

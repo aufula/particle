@@ -1,6 +1,6 @@
 angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dndLists'])
     .controller('shapesManagerCtrl', function($scope, $rootScope, $filter, $window, $timeout, lucidShapesData) {
-        $scope.$on('draggable:start', function(event, data) {
+        $scope.$on('draggable:start', function() {
             $rootScope.draggingshape = true;
         });
         $scope.$on('draggable:move', function(event, data) {
@@ -15,7 +15,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             $rootScope.$apply();
             //console.log(mouseX)
         });
-        $scope.$on('draggable:end', function(event, data) {
+        $scope.$on('draggable:end', function() {
             $rootScope.draggingshape = false;
             $rootScope.mouseInLeftPanel = false;
             $rootScope.saveDocument();
@@ -117,7 +117,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             if (newIndex === $scope.showGroupIndex) { // is the tab already open?
                 $scope.showGroupIndex = null; // then empty the var
 
-            } else if ($scope.showGroupIndex == null) { // no tab is open
+            } else if ($scope.showGroupIndex === null) { // no tab is open
                 $scope.showGroupIndex = newIndex;
 
             } else { //switching tabs
@@ -137,7 +137,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             //if pinned, unpin all
             if ($scope.lucidGroupPinned(lucidGroup)) {
                 angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
-                    if (lucidGroup.groupname == shapegroup.lucidgroup && shapegroup.pinned) {
+                    if (lucidGroup.groupname === shapegroup.lucidgroup && shapegroup.pinned) {
                         $scope.unPinGroup(shapegroup);
 
                     }
@@ -146,7 +146,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             //else pin all
             else {
                 angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
-                    if (lucidGroup.groupname == shapegroup.lucidgroup && !shapegroup.pinned) {
+                    if (lucidGroup.groupname === shapegroup.lucidgroup && !shapegroup.pinned) {
                         $scope.pinGroup(shapegroup);
 
                     }
@@ -163,7 +163,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             var groupCount = 0;
             angular.forEach($scope.lucidShapeGroups, function(shapegroup) {
 
-                if (lucidGroup.groupname == shapegroup.lucidgroup) {
+                if (lucidGroup.groupname === shapegroup.lucidgroup) {
                     //count number in this group
                     groupCount += 1;
                     if (shapegroup.pinned) {
@@ -173,7 +173,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
                 }
             });
             //console.log('pinnedCount', pinnedCount, 'length', groupCount)
-            if (pinnedCount == groupCount && groupCount != 0) {
+            if (pinnedCount === groupCount && groupCount !== 0) {
                 return true;
             } else {
                 return false;
@@ -275,10 +275,10 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
                 $rootScope.draggingShapeGroup = false;
                 $rootScope.saveDocument();
             },
-            onStart: function(evt) {
+            onStart: function() {
                 $rootScope.draggingShapeGroup = true;
             },
-            onEnd: function(evt) {
+            onEnd: function() {
                 $rootScope.draggingShapeGroup = false;
                 $rootScope.saveDocument();
             },
@@ -294,10 +294,10 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             filter: '.shapegroup-pinned',
             handle: '.shape-group-top',
             animation: 150,
-            onStart: function(evt) {
+            onStart: function() {
                 $rootScope.draggingShapeGroup = true;
             },
-            onEnd: function(evt) {
+            onEnd: function() {
                 $rootScope.draggingShapeGroup = false;
             },
         };
@@ -313,10 +313,10 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             filter: '.shapegroup-pinned',
             handle: '.shape-group-top',
             animation: 150,
-            onStart: function(evt) {
+            onStart: function() {
                 $rootScope.draggingShapeGroup = true;
             },
-            onEnd: function(evt) {
+            onEnd: function() {
                 $rootScope.draggingShapeGroup = false;
             },
         };
@@ -388,13 +388,13 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
 
         /////// START DRAGGING SHAPES STUFF
 
-        $scope.dragoverCallback = function(event, index, external, type) {
+        $scope.dragoverCallback = function(event, index) {
             //$scope.logListEvent('dragged over', event, index, external, type);
             // Disallow dropping in the third row. Could also be done with dnd-disable-if.
             return index < 10;
         };
 
-        $scope.dropCallback = function(event, index, item, external, type, allowedType, shapegroup) {
+        $scope.dropCallback = function(event, index, item, external, type, allowedType) {
             //$scope.logListEvent('dropped at', event, index, external, type);
             if (external) {
                 if (allowedType === 'itemType' && !item.label) {
@@ -431,7 +431,7 @@ angular.module('shapeManager', ['lucidComponents', 'ngDraggable', 'ngSortable', 
             $scope.customShapeGroups.splice(0, 0, newGroup);
             $rootScope.saveDocument();
         };
-        $scope.editName = function(shapegroup, index) {
+        $scope.editName = function(shapegroup) {
             $timeout(function() {
                 //console.log('edit?', shapegroup.edit);
                 shapegroup.edit = true;

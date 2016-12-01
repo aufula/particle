@@ -1,5 +1,5 @@
-angular.module('footer', ['appConfig'])
-    .directive('editInPlaceDbl', ['config', function(config) {
+angular.module('footer', [])
+    .directive('editInPlaceDbl', [function() {
         return {
             restrict: 'AE',
             scope: {
