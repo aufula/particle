@@ -12,15 +12,15 @@
                       <div>
                         <div
                             lucid-context-menu
-                            data-target="page-context-{{ page.id }}">
+                            data-target="page-context-{{ page.id }}-1">
                             <div 
                             	class="page-tab" 
                             	ng-click="$root.currentPage = page;"
                             	ng-class="{'current-page': $root.currentPage == page}">
-                              <h4><edit-in-place-dbl edit="page.edit" ng-model="page.name"></edit-in-place-dbl></h4>
+                              <h4><edit-in-place double-click="true" edit="page.edit" ng-model="page.name"></edit-in-place></h4>
                             </div>
                             <!-- Right Click Context Menu -->
-                            <div id="page-context-{{ page.id }}" class="lucid-context-menu ng-hide">
+                            <div id="page-context-{{ page.id }}-1" class="lucid-context-menu ng-hide">
                                 <ul>
                                     <li ng-click="editName(page)">Rename</li>
                                     <li ng-click="$parent.duplicatePage(page, $index)">Duplicate</li>

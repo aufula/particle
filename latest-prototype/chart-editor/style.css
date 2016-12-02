@@ -578,6 +578,7 @@
   position: absolute;
   top: 0;
   left: 0;
+  padding: 5px;
   border-radius: 3px 0 0 0;
   cursor: pointer;
 }
@@ -1069,6 +1070,7 @@
   position: absolute;
   right: 0;
   top: 0;
+  padding: 5px;
 }
 .lucid-shape-manager .lucid-shape-group .shape-group-top .gear-dropdown-icon .lucid-popover-menu {
   background: #FFF;
@@ -1142,7 +1144,7 @@
   position: relative;
 }
 .search-shapes .search-shapes-input > input {
-  width: 200px;
+  width: 160px;
   height: 26px;
   border: none;
   outline: none;

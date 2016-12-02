@@ -1,5 +1,4 @@
 /*global angular, console, SVGMorpheus*/
-
 //include Components js
 // @codekit-append "components/shape-manager/shape-manager.js"
 // @codekit-append "components/pages/pages.js"
@@ -7,7 +6,6 @@
 // @codekit-append "components/optionbar/optionbar.js"
 // @codekit-append "components/loading-tips/loading-tips.js"
 // @codekit-append "components/canvas/canvas.js"
-// @codekit-append "components/footer/footer.js"
 
 angular.module('particleApp', 
     [
@@ -25,8 +23,7 @@ angular.module('particleApp',
         'pagesData', 
         'rightDock',
         'shapeManager',
-        'lucidShapesData',
-        'footer'
+        'lucidShapesData'
     ])
     .config(['$sceDelegateProvider', function($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist([
@@ -1083,31 +1080,4 @@ angular.module('canvas', [])
             }
         };
     });
-
-angular.module('footer', [])
-    .directive('editInPlaceDbl', [function() {
-        return {
-            restrict: 'AE',
-            scope: {
-                editableText: '=ngModel',
-                placeholder: '@',
-                edit: '='
-            },
-            replace: true,
-            templateUrl: 'components/footer/edit-in-place-dbl.html',
-            controller: ['$scope', '$element', '$timeout', function($scope, $element, $timeout) {
-                $scope.$watch('edit', function() {
-                    $scope.selectInput();
-                });
-                $scope.selectInput = function() {
-                    var input = $element[0].getElementsByTagName('input')[0];
-                    $timeout(function() {
-                        input.select();
-                    }, 10);
-                    //console.log('Focus This', input, 'model', $scope.editableText);
-
-                };
-            }]
-        };
-    }]);
 

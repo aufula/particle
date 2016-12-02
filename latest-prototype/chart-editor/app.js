@@ -1,5 +1,4 @@
 /*global angular, console, SVGMorpheus*/
-
 //include Components js
 // @codekit-append "components/shape-manager/shape-manager.js"
 // @codekit-append "components/pages/pages.js"
@@ -7,7 +6,6 @@
 // @codekit-append "components/optionbar/optionbar.js"
 // @codekit-append "components/loading-tips/loading-tips.js"
 // @codekit-append "components/canvas/canvas.js"
-// @codekit-append "components/footer/footer.js"
 
 angular.module('particleApp', 
     [
@@ -25,8 +23,7 @@ angular.module('particleApp',
         'pagesData', 
         'rightDock',
         'shapeManager',
-        'lucidShapesData',
-        'footer'
+        'lucidShapesData'
     ])
     .config(['$sceDelegateProvider', function($sceDelegateProvider) {
         $sceDelegateProvider.resourceUrlWhitelist([

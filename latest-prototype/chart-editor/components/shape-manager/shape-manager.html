@@ -10,16 +10,14 @@
                 </span>
               <div>
                 <lucid-buttcon-popover class="popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
-                    <div class="lucid-select-wrapper">
-                        <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
-                            <li class="lucid-select-option">
-                                Image
-                            </li>
-                            <li class="lucid-select-option">
-                                SVG
-                            </li>
-                        </ul>
-                    </div>
+                  <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
+                      <li>
+                          Image
+                      </li>
+                      <li>
+                          SVG
+                      </li>
+                  </ul>
                 </lucid-buttcon-popover>
                 <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
                 </lucid-buttcon>
@@ -53,8 +51,7 @@
                               </div>
                           </div>
                         </div>
-
-                    <input id="search-shapes-input" ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
+                    <input ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
 
                     <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
                 </div>
