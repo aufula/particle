@@ -159,7 +159,7 @@ angular.module('lucidComponentFactory', [])
             }, {
                 "title": "Edit in Place",
                 "componentid": "edit-in-place",
-                "description": "double click to edit in place",
+                "description": "single/double click to edit in place",
                 "inputs": [{
                     "attr": "ng-model",
                     "type": "var",
@@ -168,6 +168,10 @@ angular.module('lucidComponentFactory', [])
                     "attr": "placeholder",
                     "type": "text",
                     "details": "Optional: Add placeholder text if input is deleted"
+                }, {
+                    "attr": "double-click",
+                    "type": "true/false",
+                    "details": "Optional: edit in place is a single click by default, insert double-click=\"true\" when requiring double click "
                 }, {
                     "attr": "edit",
                     "type": "true/false",
