@@ -60,7 +60,7 @@
                 showpopover="textAlignment.show">
                   <div class="lucid-wrapper-overflow-hidden">
                           <ul ng-click="textAlignment.show=false">
-                            <li class="lucid-buttcon" ng-repeat="align in alignment" ng-class="{active: align.verticalalignment == selected.text.verticalalignment && align.horizontalalignment == selected.text.horizontalalignment}" ng-click="$parent.selected.text.verticalalignment = align.verticalalignment; $parent.selected.text.horizontalalignment = align.horizontalalignment; changeAlignment(align.verticalalignment, align.horizontalalignment);"><img class="lucid-button-icon" ng-src="{{align.icon}}"></li>
+                            <li class="lucid-buttcon alignment" ng-repeat="align in alignment" ng-class="{active: align.verticalalignment == selected.text.verticalalignment && align.horizontalalignment == selected.text.horizontalalignment}" ng-click="$parent.selected.text.verticalalignment = align.verticalalignment; $parent.selected.text.horizontalalignment = align.horizontalalignment; changeAlignment(align.verticalalignment, align.horizontalalignment);"><img class="lucid-button-icon" ng-src="{{align.icon}}"></li>
                         </ul>
                       </div>
               </lucid-buttcon-popover>

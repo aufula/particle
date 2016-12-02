@@ -1542,8 +1542,17 @@
   margin: 0 10px;
   transition: margin .2s;
 }
+#option-bar > ul .lucid-buttcon-wrapper {
+  margin: 5px;
+}
 #option-bar > ul .lucid-buttcon {
   transition: all .2s;
+  width: 22px;
+}
+#option-bar > ul .lucid-buttcon.alignment {
+  padding: 5px;
+  width: 32px;
+  margin: 0;
 }
 #option-bar > ul .lucid-popover-menu-drawer {
   padding: 0;
@@ -1552,19 +1561,21 @@
   #option-bar ul .line {
     margin: 0 5px;
   }
-  #option-bar .lucid-buttcon {
-    width: 30px;
-    padding: 5px 3px;
+  #option-bar .lucid-buttcon-wrapper {
+    margin: 5px 3px;
   }
 }
-.hotspot-options {
+#option-bar .hotspot-options {
   text-align: center;
 }
-.hotspot-options > li {
+#option-bar .hotspot-options .lucid-buttcon-wrapper {
+  margin: 0 ;
+}
+#option-bar .hotspot-options > li {
   display: inline-block;
   padding: 8px 5px;
 }
-.hotspot-options > li .lucid-buttcon.active {
+#option-bar .hotspot-options > li .lucid-buttcon.active {
   background: transparent;
 }
 .hotlink-tab-content {
