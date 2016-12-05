@@ -16460,6 +16460,44 @@
 		"oAP": "\/components\/4.0\/button\/lucid-button2-basic.html",
 		"oF": 0
 		},
+	"\/components\/4.0\/click-outside\/lucid-click-outside-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/click-outside\/lucid-click-outside-basic.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/click-outside\/lucid-click-outside.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/click-outside\/lucid-click-outside.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/click-outside\/lucid-click-outside.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/components\/4.0\/click-outside\/lucid-click-outside-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/components\/4.0\/click-outside\/lucid-click-outside.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/4.0\/click-outside\/lucid-click-outside.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/components\/4.0\/collapse-bar\/lucid-collapse-bar-basic.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -19118,6 +19156,44 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/components\/4.0\/right-click\/lucid-right-click-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/right-click\/lucid-right-click-basic.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/right-click\/lucid-right-click.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/right-click\/lucid-right-click.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/right-click\/lucid-right-click.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/components\/4.0\/right-click\/lucid-right-click-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/components\/4.0\/right-click\/lucid-right-click.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/4.0\/right-click\/lucid-right-click.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
 	"\/components\/4.0\/search\/lucid-search-basic.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -19578,6 +19654,15 @@
 		"oAP": "\/latest-prototype\/chart-editor.zip",
 		"oF": 0
 		},
+	"\/latest-prototype\/chart-editor\/app-min.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/latest-prototype\/chart-editor\/app-min-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
 	"\/latest-prototype\/chart-editor\/app.js": {
 		"ft": 64,
 		"mi": 0,
@@ -20029,26 +20114,11 @@
 		"sM": 0,
 		"sU": 0
 		},
-	"\/latest-prototype\/chart-editor\/components\/footer\/edit-in-place-dbl.html": {
-		"ft": 8192,
-		"oA": 0,
-		"oAP": "\/latest-prototype\/chart-editor\/components\/footer\/edit-in-place-dbl.html",
-		"oF": 0
-		},
 	"\/latest-prototype\/chart-editor\/components\/footer\/footer.html": {
 		"ft": 8192,
 		"oA": 0,
 		"oAP": "\/latest-prototype\/chart-editor\/components\/footer\/footer.html",
 		"oF": 0
-		},
-	"\/latest-prototype\/chart-editor\/components\/footer\/footer.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 1,
-		"oAP": "\/latest-prototype\/chart-editor\/components\/footer\/footer-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/latest-prototype\/chart-editor\/components\/footer\/footer.less": {
 		"aP": 0,
@@ -20317,15 +20387,6 @@
 		"oA": 2,
 		"oAP": "\/latest-prototype\/chart-editor\/index.html",
 		"oF": 0
-		},
-	"\/latest-prototype\/chart-editor\/min\/app-min.js": {
-		"ft": 64,
-		"mi": 0,
-		"oA": 0,
-		"oAP": "\/latest-prototype\/chart-editor\/min\/app-min-min.js",
-		"oF": 0,
-		"sC": 1,
-		"tS": 0
 		},
 	"\/latest-prototype\/chart-editor\/style.css": {
 		"aP": 0,

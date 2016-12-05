@@ -27,6 +27,10 @@
 //@codekit-append "growl/lucid-growl.js"
 //@codekit-append "dynamic-height-hide/dynamic-height-hide.js"
 
+//directives
+//@codekit-append "right-click/lucid-right-click.js"
+//@codekit-append "click-outside/lucid-click-outside.js"
+
 
 angular.module('appConfig', [])
 
@@ -46,7 +50,7 @@ angular.module('appConfig', [])
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace','lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', 'lucidGrowl', 'dynamicHeightHide', 'lucidTooltip'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace', 'lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', 'lucidGrowl', 'dynamicHeightHide', 'lucidTooltip', 'clickOutside', 'ngRightClick'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
 //hit enter key
@@ -76,42 +80,6 @@ angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper'
                 event.preventDefault();
             }
         });
-    };
-}])
-
-//right click
-.directive('ngRightClick', ['$parse', function($parse) {
-    return function(scope, element, attrs) {
-        var fn = $parse(attrs.ngRightClick);
-        element.bind('contextmenu', function(event) {
-            scope.$apply(function() {
-                event.preventDefault();
-                fn(scope, {
-                    $event: event
-                });
-            });
-        });
-    };
-}])
-
-
-//click outside element
-.directive('clickOutside', ['$document', function($document) {
-    return {
-        restrict: 'A',
-        scope: {
-            clickOutside: '&'
-        },
-        link: function(scope, el) {
-
-            $document.on('click', function(e) {
-                if (el !== e.target && !el[0].contains(e.target)) {
-                    scope.$apply(function() {
-                        scope.$eval(scope.clickOutside);
-                    });
-                }
-            });
-        }
     };
 }])
 

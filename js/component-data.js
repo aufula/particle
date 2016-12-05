@@ -524,6 +524,29 @@ angular.module('lucidComponentFactory', [])
                 "description": "Copy and paste component as is.",
 
             }]
+        }, {
+            //Basic Particle Components
+            "groupname": "Events",
+            "groupid": "events",
+            "components": [{
+                "title": "Right Click",
+                "componentid": "right-click",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "ng-right-click",
+                    "type": "function()",
+                    "details": "call a function or set a variable. "
+                }]
+            }, {
+                "title": "Click Outside",
+                "componentid": "click-outside",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "click-outside",
+                    "type": "function()",
+                    "details": "call a function or set a variable. "
+                }]
+            }]
         }];
         return service;
     });
