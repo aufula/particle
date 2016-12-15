@@ -570,7 +570,7 @@ angular.module('lucidComponentFactory', [])
                     "details": "call a function or set a variable. "
                 }]
             }, {
-                "title": "Press Enter",
+                "title": "Press Key: Enter",
                 "componentid": "press-key",
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
@@ -583,14 +583,18 @@ angular.module('lucidComponentFactory', [])
                     "details": "enter a character code: http://www.w3schools.com/charsets/ref_html_ascii.asp"
                 }]
             }, {
-                "title": "Press Escape",
+                "title": "Press Key: Escape",
                 "componentid": "press-key",
                 "sub": 2,
                 "description": "this component is used in the optionbar, the page color, etc.",
                 "inputs": [{
-                    "attr": "ng-enter",
+                    "attr": "press-key",
                     "type": "function()",
                     "details": "call a function or set a variable. "
+                }, {
+                    "attr": "key",
+                    "type": "number",
+                    "details": "enter a character code: http://www.w3schools.com/charsets/ref_html_ascii.asp"
                 }]
             }]
         }];
