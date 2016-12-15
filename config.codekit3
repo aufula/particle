@@ -7,7 +7,7 @@
 		"uuidString": "1C6746B7-18AA-42D2-A059-C7E3D406FA71"
 		}
 	],
-"creatorBuild": "25444",
+"creatorBuild": "25479",
 "files": {
 	"\/.gitignore": {
 		"ft": 8192,
@@ -16635,7 +16635,7 @@
 		},
 	"\/components\/4.0\/components.js": {
 		"ft": 64,
-		"mi": 0,
+		"mi": 1,
 		"oA": 0,
 		"oAP": "\/components\/4.0\/components-min.js",
 		"oF": 0,
@@ -19112,6 +19112,50 @@
 		"oF": 0,
 		"opt": 0
 		},
+	"\/components\/4.0\/press-key\/lucid-press-key-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/press-key\/lucid-press-key-basic.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/press-key\/lucid-press-key.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/press-key\/lucid-press-key.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/press-key\/lucid-press-key.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 1,
+		"oAP": "\/components\/4.0\/press-key\/lucid-press-key-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/components\/4.0\/press-key\/lucid-press-key.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/4.0\/press-key\/lucid-press-key.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/components\/4.0\/press-key\/lucid-press-key2-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/press-key\/lucid-press-key2-basic.html",
+		"oF": 0
+		},
 	"\/components\/4.0\/progress-stepper\/lucid-progress-stepper-basic.html": {
 		"ft": 8192,
 		"oA": 0,
@@ -21133,7 +21177,7 @@
 	"creationDate": 500319315,
 	"displayValue": "lucid-particle-website",
 	"displayValueWasSetByUser": 0,
-	"iconImageName": "meme-facepalm"
+	"iconImageName": "brackets_gray"
 	},
 "projectSettings": {
 	"abortBuildOnError": 1,
@@ -21577,6 +21621,10 @@
 			"active": 0,
 			"optionString": "{'properties': 'always'}"
 			},
+		"capitalized-comments": {
+			"active": 0,
+			"optionString": "'always', {'ignoreInlineComments': false, 'ignoreConsecutiveComments': false}"
+			},
 		"class-methods-use-this": {
 			"active": 0,
 			"optionString": "{'exceptMethods': []}"
@@ -21740,6 +21788,10 @@
 		"max-statements": {
 			"active": 0,
 			"optionString": "{'max': 10}, {'ignoreTopLevelFunctions': true}"
+			},
+		"max-statements-per-line": {
+			"active": 0,
+			"optionString": "{'max': 1}"
 			},
 		"multiline-ternary": {
 			"active": 0,
@@ -22105,6 +22157,10 @@
 			"active": 0,
 			"optionString": "'except-parens'"
 			},
+		"no-return-await": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-script-url": {
 			"active": 0,
 			"optionString": ""
@@ -22336,6 +22392,10 @@
 		"radix": {
 			"active": 0,
 			"optionString": "'always'"
+			},
+		"require-await": {
+			"active": 0,
+			"optionString": ""
 			},
 		"require-jsdoc": {
 			"active": 0,
@@ -23169,6 +23229,10 @@
 			},
 		"space-colon": {
 			"active": 1,
+			"flagValue": -1
+			},
+		"support-ie8": {
+			"active": 0,
 			"flagValue": -1
 			},
 		"toplevel": {

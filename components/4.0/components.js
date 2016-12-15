@@ -1,4 +1,4 @@
-/*global angular*/
+/*global angular, console*/
 
 //include Components js
 //@codekit-append "input/lucid-input.js"
@@ -26,6 +26,7 @@
 //@codekit-append "tooltip/lucid-tooltip.js"
 //@codekit-append "growl/lucid-growl.js"
 //@codekit-append "dynamic-height-hide/dynamic-height-hide.js"
+//@codekit-append "press-key/lucid-press-key.js"
 
 //directives
 //@codekit-append "right-click/lucid-right-click.js"
@@ -45,43 +46,15 @@ angular.module('appConfig', [])
 }])
 
 .constant("config", {
-    // 'componentsURL': "/components/4.0/" //local dev
-    'componentsURL': "http://particle.golucid.co/components/4.0/" //github
+    'componentsURL': "/components/4.0/" //local dev
+    //'componentsURL': "http://particle.golucid.co/components/4.0/" //github
 
 });
 
-angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace', 'lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', 'lucidGrowl', 'dynamicHeightHide', 'lucidTooltip', 'clickOutside', 'ngRightClick'])
+angular.module("lucidComponents", ['ngAnimate', 'appConfig', 'lucidInputStepper', 'lucidButtconPopover', 'lucidColorPicker', 'lucidMoreDrawer', 'lucidModal', 'lucidFingerTabs', 'lucidButtcon', 'lucidNotification', 'lucidSelect', 'lucidInput', 'lucidButton', 'lucidCollapseBar', 'lucidContextMenu', 'lucidToggle', 'editInPlace', 'lucidTopTabs', 'lucidTip', 'lucidPaywall', 'lucidProgressStepper', 'lucidButtonDropdown', 'lucidSearch', 'lucidSlider', 'lucidGrowl', 'dynamicHeightHide', 'lucidTooltip', 'clickOutside', 'ngRightClick', 'keyPressEvents'])
 
 ////////////////////      REUSABLE DIRECTIVES      //////////////////////
-//hit enter key
-.directive('ngEnter', [function() {
-    return function(scope, element, attrs) {
-        element.bind("keydown keypress", function(event) {
-            if (event.which === 13) {
-                scope.$apply(function() {
-                    scope.$eval(attrs.ngEnter);
-                });
 
-                event.preventDefault();
-            }
-        });
-    };
-}])
-
-//hit escape key
-.directive('escKey', [function() {
-    return function(scope, element, attrs) {
-        element.bind('keydown keypress', function(event) {
-            if (event.which === 27) { // 27 = esc key
-                scope.$apply(function() {
-                    scope.$eval(attrs.escKey);
-                });
-
-                event.preventDefault();
-            }
-        });
-    };
-}])
 
 //this is for the select on load when you create a new shape library
 .directive('selectOnLoad', ['$timeout', function($timeout) {

@@ -7,7 +7,8 @@
 	<input class="edit-in-place edit-in-place-input" 
 		   ng-model="editableText" 
 		   ng-show="edit" 
-		   ng-enter="edit=false"
+		   press-key="edit=false"
+		   key="13"
 		   placeholder="{{placeholder}}"
 		   ng-dblclick="selectInput(); $event.stopPropagation();"
 		   pu-elastic-input>
