@@ -217,8 +217,6 @@ p.small-body {
   top: 64px;
   height: 100%;
   text-align: center;
-  -webkit-transition: 0.5s ease-in-out all;
-  transition: 0.5s ease-in-out all;
   overflow: scroll;
 }
 #sidebar img {
@@ -323,11 +321,17 @@ p.small-body {
 #sidebar .sidebar-scroll > ul > li .prototype-links:hover > a {
   opacity: 1;
 }
+.loaded #sidebar {
+  -webkit-transition: 0.5s ease-in-out all;
+  transition: 0.5s ease-in-out all;
+}
 #content {
   margin-left: 250px;
+  position: relative;
+}
+.loaded #content {
   -webkit-transition: 0.5s ease-in-out margin;
   transition: 0.5s ease-in-out margin;
-  position: relative;
 }
 ::-webkit-scrollbar {
   display: none;

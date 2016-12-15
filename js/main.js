@@ -204,8 +204,13 @@ particleApp.controller('colorCtrl', function($scope, $timeout) {
 
 });
 //////// directives ////////
-particleApp.directive("landingPage", function($animate) {
+particleApp.directive("landingPage", function($animate, $timeout) {
     return function(scope, element, attrs) {
+        $timeout(function() {
+            $animate.addClass(element, "loaded");
+            //console.log('loaded');
+        }, 10);
+
         scope.$watch(attrs.landingPage, function(newVal) {
             if (newVal) {
                 $animate.addClass(element, "landing-page");
