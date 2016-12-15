@@ -529,6 +529,29 @@ angular.module('lucidComponentFactory', [])
             "groupname": "Events",
             "groupid": "events",
             "components": [{
+                "title": "Left Click",
+                "componentid": "angular",
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "ng-click",
+                    "type": "function()",
+                    "details": "call a function or set a variable. "
+                }]
+            }, {
+                "title": "Mouse Over / Mouse Out",
+                "componentid": "angular",
+                "sub": 2,
+                "description": "this component is used in the optionbar, the page color, etc.",
+                "inputs": [{
+                    "attr": "mouseover",
+                    "type": "function()",
+                    "details": "call a function or set a variable. "
+                }, {
+                    "attr": "mouseout",
+                    "type": "function()",
+                    "details": "call a function or set a variable. "
+                }]
+            }, {
                 "title": "Right Click",
                 "componentid": "right-click",
                 "description": "this component is used in the optionbar, the page color, etc.",

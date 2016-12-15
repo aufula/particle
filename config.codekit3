@@ -16302,6 +16302,50 @@
 		"sM": 0,
 		"sU": 0
 		},
+	"\/components\/4.0\/angular\/lucid-angular-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/angular\/lucid-angular-basic.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/angular\/lucid-angular.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/angular\/lucid-angular.html",
+		"oF": 0
+		},
+	"\/components\/4.0\/angular\/lucid-angular.js": {
+		"ft": 64,
+		"mi": 0,
+		"oA": 0,
+		"oAP": "\/components\/4.0\/angular\/lucid-angular-min.js",
+		"oF": 0,
+		"sC": 1,
+		"tS": 0
+		},
+	"\/components\/4.0\/angular\/lucid-angular.less": {
+		"aP": 0,
+		"bl": 0,
+		"dJ": 0,
+		"ft": 1,
+		"ie": 1,
+		"iI": 0,
+		"ma": 0,
+		"oA": 0,
+		"oAP": "\/components\/4.0\/angular\/lucid-angular.css",
+		"oF": 0,
+		"oS": 0,
+		"rU": 0,
+		"sI": 0,
+		"sM": 0,
+		"sU": 0
+		},
+	"\/components\/4.0\/angular\/lucid-angular2-basic.html": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/components\/4.0\/angular\/lucid-angular2-basic.html",
+		"oF": 0
+		},
 	"\/components\/4.0\/buttcon-popover\/lucid-buttcon-popover-basic.html": {
 		"ft": 8192,
 		"oA": 0,
