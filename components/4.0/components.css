@@ -960,6 +960,15 @@ input {
   color: #5a5a5a;
   text-align: left;
   font-size: 16px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 .lucid-notification [ng-transclude] {
   font-size: 16px;
@@ -969,7 +978,8 @@ input {
   height: 22px;
   position: absolute;
   left: 15px;
-  top: 20px;
+  top: 50%;
+  margin-top: -11px;
 }
 .lucid-notification.lucid-notification-information {
   background-color: #D2EDF9;
@@ -997,12 +1007,6 @@ input {
 }
 .lucid-notification.lucid-notification-error button {
   background-color: #ED6058;
-}
-.lucid-notification button {
-  position: absolute;
-  right: 15px;
-  top: 20px;
-  color: #fff;
 }
 .lucid-select-wrapper {
   position: relative;
