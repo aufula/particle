@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="22px" height="22px" viewBox="0 0 22 22" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 41.2 (35397) - http://www.bohemiancoding.com/sketch -->
+    <title>icon-information-circle-22px</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="22px" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="icon-information-circle-22px" fill="#3D4752">
+            <path d="M11,20 C15.9705627,20 20,15.9705627 20,11 C20,6.02943725 15.9705627,2 11,2 C6.02943725,2 2,6.02943725 2,11 C2,15.9705627 6.02943725,20 11,20 Z M10,9 L12,9 L12,15 L10,15 L10,9 Z M9,9 L10,9 L10,10 L9,10 L9,9 Z M9,15 L13,15 L13,16 L9,16 L9,15 Z M11,8 C11.5522847,8 12,7.55228475 12,7 C12,6.44771525 11.5522847,6 11,6 C10.4477153,6 10,6.44771525 10,7 C10,7.55228475 10.4477153,8 11,8 Z" id="Combined-Shape"></path>
+        </g>
+    </g>
+</svg>

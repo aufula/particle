@@ -355,6 +355,8 @@ angular.module("lucidIcons", [])
                 'name': 'icon-jump-22px'
             }, {
                 'name': 'icon-scale-22px'
+            }, {
+                'name': 'icon-information-circle-22px'
             }]
         }, {
             "icongroup": "18px Icons",
