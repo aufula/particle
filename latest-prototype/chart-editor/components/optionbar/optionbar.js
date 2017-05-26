@@ -137,46 +137,46 @@ angular.module('optionbar', ['lucidComponents', 'ngDraggable', 'ngSortable', 'dn
             "verticalalignment": "top",
             "horizontalalignment": "left",
             "name": "top-left",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-left-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-top-left-22px.svg",
         }, {
             "verticalalignment": "top",
             "horizontalalignment": "center",
             "name": "top-center",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-center-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-top-center-22px.svg",
         }, {
             "verticalalignment": "top",
             "horizontalalignment": "right",
             "name": "top-right",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-top-right-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-top-right-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "left",
             "name": "center-left",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-left-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-center-left-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "center",
             "name": "center-center",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-center-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-center-center-22px.svg",
         }, {
             "verticalalignment": "middle",
             "horizontalalignment": "right",
             "name": "center-right",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-center-right-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-center-right-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "left",
             "name": "bottom-left",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-left-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-bottom-left-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "center",
             "name": "bottom-center",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-center-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-bottom-center-22px.svg",
         }, {
             "verticalalignment": "bottom",
             "horizontalalignment": "right",
             "name": "bottom-right",
-            "icon": "http://particle.golucid.co/components/3.0/icon/icons/icon-text-bottom-right-22px.svg",
+            "icon": "https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-text-bottom-right-22px.svg",
         }];
     });

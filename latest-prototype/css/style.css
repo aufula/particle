@@ -182,7 +182,7 @@
   background: #AFB7BF;
 }
 .lucid-page.current-page .master-icon {
-  background: url(http://particle.golucid.co/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
+  background: url(https://lucidsoftware.github.io/particle/components/0.0/icon/img/icon-master-white-22px.svg) no-repeat left center;
   background-size: 22px;
 }
 .lucid-page.current-page .page-thumb-name h4 {
@@ -1432,7 +1432,7 @@
   width: calc(100% + 6px);
 }
 #file-menu ul li.checked {
-  background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
+  background: url(https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-check-18px.svg) no-repeat center left;
 }
 #file-menu a {
   display: block;

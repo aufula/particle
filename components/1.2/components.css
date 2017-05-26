@@ -1122,7 +1122,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #d6e9f1;
 }
 .lucid-notification.lucid-notification-information .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-information button {
   background-color: #29AAE1;
@@ -1131,7 +1131,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #e9f2d9;
 }
 .lucid-notification.lucid-notification-complete .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-complete button {
   background-color: #8BC326;
@@ -1140,7 +1140,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #fff3e1;
 }
 .lucid-notification.lucid-notification-alert .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/alert-triangle-yellow.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/alert-triangle-yellow.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-alert button {
   background-color: #ffaf46;
@@ -1149,7 +1149,7 @@ input[type=range]:focus::-ms-fill-upper {
   background-color: #fbdcda;
 }
 .lucid-notification.lucid-notification-error .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-error button {
   background-color: #ed6058;

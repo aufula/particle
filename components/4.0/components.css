@@ -554,7 +554,7 @@ input {
   bottom: 2px;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle .swatch.lucid-transparent-swatch {
-  background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) #FFF !important;
+  background: url(https://lucidsoftware.github.io/particle/components/2.0/color-picker/icon-transparent-grid.svg) #FFF !important;
   background-size: 6px !important;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-swatch-top .lucid-swatch-toggle.lucid-disabled {
@@ -584,7 +584,7 @@ input {
   position: relative;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.lucid-transparent {
-  background: url(http://particle.golucid.co/components/2.0/color-picker/icon-transparent-grid.svg) repeat #FFF;
+  background: url(https://lucidsoftware.github.io/particle/components/2.0/color-picker/icon-transparent-grid.svg) repeat #FFF;
 }
 .lucid-color-picker .lucid-popover-menu .lucid-square.blank {
   cursor: auto;
@@ -985,7 +985,7 @@ input {
   background-color: #D2EDF9;
 }
 .lucid-notification.lucid-notification-information .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/info-circle-blue.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-information button {
   background-color: #29AAE1;
@@ -994,7 +994,7 @@ input {
   background-color: #E9F2D9;
 }
 .lucid-notification.lucid-notification-complete .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/check-circle-green.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-complete button {
   background-color: #8CBF3F;
@@ -1003,7 +1003,7 @@ input {
   background-color: #FBDCDA;
 }
 .lucid-notification.lucid-notification-error .notification-icon {
-  background: url(http://particle.golucid.co/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
+  background: url(https://lucidsoftware.github.io/particle/components/1.1/icon/img/error-triangle-red.svg) center center no-repeat;
 }
 .lucid-notification.lucid-notification-error button {
   background-color: #ED6058;
@@ -1194,7 +1194,7 @@ input {
   height: 18px;
   top: 3px;
   right: 0px;
-  background: url(http://particle.golucid.co/components/2.0/icon/icons/icon-triangle-right-18px.svg) no-repeat center center;
+  background: url(https://lucidsoftware.github.io/particle/components/2.0/icon/icons/icon-triangle-right-18px.svg) no-repeat center center;
 }
 .lucid-collapse-bar {
   position: relative;
@@ -1535,7 +1535,7 @@ input {
   cursor: pointer;
 }
 .lucid-paywall-wrapper .paywall-banner {
-  background: url(http://particle.golucid.co/components/2.0/paywall/premium-banner.png);
+  background: url(https://lucidsoftware.github.io/particle/components/2.0/paywall/premium-banner.png);
   width: 111px;
   height: 111px;
   position: absolute;

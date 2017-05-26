@@ -5,11 +5,11 @@
         <div class="lucid-pinned-shapes-panel">
             <header class="lucid-shapes-header">
                 <span ng-click="$root.toggleShapesManager();">
-                <img src="http://particle.golucid.co/components/3.0/icon/icons/icon-gear-22px.svg" class="lucid-icon-22 lucid-shapes-gear">
+                <img src="https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-gear-22px.svg" class="lucid-icon-22 lucid-shapes-gear">
                 <span class="lucid-more-shapes">Shapes</span>
                 </span>
               <div>
-                <lucid-buttcon-popover class="popover-list" showpopover="dropdown.show" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-image-22px.svg" width="105">
+                <lucid-buttcon-popover class="popover-list" showpopover="dropdown.show" icon="https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-image-22px.svg" width="105">
                   <ul class="lucid-select-dropdown" ng-click="dropdown.show = false;">
                       <li>
                           Image
@@ -19,7 +19,7 @@
                       </li>
                   </ul>
                 </lucid-buttcon-popover>
-                <lucid-buttcon ng-hide="$root.manageshapes" icon="http://particle.golucid.co/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
+                <lucid-buttcon ng-hide="$root.manageshapes" icon="https://lucidsoftware.github.io/particle/components/0.0/icon/img/search-dark.svg" class="lucid-shapes-search" ng-click="searchshapes = !searchshapes; focusSearch(searchshapes); $root.showSearchTip = !$root.showSearchTip" active="searchshapes">
                 </lucid-buttcon>
               </div>
             </header>
@@ -28,23 +28,23 @@
 
                     <div class="lucid-select-wrapper search-dropdown" click-outside="searchDropdown = false">
                           <div class="search-dropdown-button" ng-init="searchType = 'Lucidchart'" ng-click="searchDropdown = !searchDropdown; $root.searchTipDismissed = true;">
-                            <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
-                            <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
-                            <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                            <ng-include ng-show="searchType == 'Lucidchart'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                            <ng-include ng-show="searchType == 'Google Images'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                            <ng-include ng-show="searchType == 'Iconfinder'" class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
                           </div>
                           <div class="lucid-select-dropdown" ng-show="searchDropdown">
                               <div>
                                   <ul>
                                       <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Lucidchart'">
-                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
+                                          <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-lucidchart-22px.svg'"></ng-include>
                                           <span>Lucidchart</span>
                                       </li>
                                       <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Google Images'">
-                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
+                                          <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-google-22px.svg'"></ng-include>
                                           <span>Google Images</span>
                                       </li>
                                       <li class="lucid-select-option" ng-click="searchDropdown = false; searchType = 'Iconfinder'">
-                                          <ng-include class="lucid-icon" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
+                                          <ng-include class="lucid-icon" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-iconfinder-22px.svg'"></ng-include>
                                           <span>Iconfinder</span>
                                       </li>
                                   </ul>
@@ -53,7 +53,7 @@
                         </div>
                     <input ng-model="searchgroups.input" placeholder="Search {{searchType}}..." ng-enter="searchShapeGroups(searchgroups.input)">
 
-                    <ng-include class="lucid-icon search-x" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
+                    <ng-include class="lucid-icon search-x" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-x-18px.svg'" ng-click="searchShapeGroups(null); searchgroups.input = ''; searchgroups.searched = false;"></ng-include>
                 </div>
                 <!-- Start Search Shapes -->
                 <div class="lucid-shapes-scroll">
@@ -78,7 +78,7 @@
                                 <span class="shape-group-name">{{shapegroup.groupname}}</span>
                               </div>
                               <div class="pin-library search-shapes-pin" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                  <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                               </div>
                               <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                 <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -144,7 +144,7 @@
                               </div>
                               <div class="shape-group-top">
                                 <span class="shape-group-name"> {{shapegroup.groupname}}</span>
-                                <span class="lucid-close-icon" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)"><ng-include src="'http://particle.golucid.co/components/3.0/icon/icons/icon-x-18px.svg'"></ng-include></span>
+                                <span class="lucid-close-icon" ng-show="$root.manageshapes" ng-click="unPinGroup(shapegroup)"><ng-include src="'https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-x-18px.svg'"></ng-include></span>
                               </div>
                               <div class="slide-toggle lucid-animate" ng-hide="hideshapes">
                                 <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -196,7 +196,7 @@
                 <div class="top-bar-inner" ng-show="$root.manageshapes">
                   <div>
                     <lucid-button 
-                          icon="http://particle.golucid.co/components/3.0/icon/icons/icon-plus-18px.svg"  
+                          icon="https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-plus-18px.svg"  
                           class="lucid-new-library lucid-blue" 
                           ng-click="newCustomGroup()">Custom Group</lucid-button>
                       <!-- start -->
@@ -222,10 +222,10 @@
                       <!-- End -->
                       <div class="lucid-search-container">
                           <input type="search" placeholder="Search Shapes" ng-model="searchShapes">
-                          <ng-include class="lucid-search-icon lucid-icon-22" src="'http://particle.golucid.co/components/3.0/icon/icons/icon-search-18px.svg'"></ng-include>
+                          <ng-include class="lucid-search-icon lucid-icon-22" src="'https://lucidsoftware.github.io/particle/components/3.0/icon/icons/icon-search-18px.svg'"></ng-include>
                       </div>
                     </div>
-                    <ng-include ng-click="$root.toggleShapesManager();" src="'http://particle.golucid.co/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
+                    <ng-include ng-click="$root.toggleShapesManager();" src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-x-22px.svg'" class="lucid-close-icon lucid-icon fill-dark">
                     </ng-include>
                 </div>
             </div>
@@ -261,7 +261,7 @@
                                 <edit-in-place class="shape-group-name" placeholder="Group Name" ng-model="shapegroup.groupname" edit="shapegroup.edit"></edit-in-place>
 
                                 <div class="lucid-shape-group-top-right-icons" ng-show="shapegroup.custom">
-                                    <lucid-buttcon-popover showpopover="customgroupdropdown.show" class="gear-dropdown-icon lucid-select-dropdown-wrapper lucid-icon fill-white" icon="http://particle.golucid.co/components/1.2/icon/icons/icon-gear-22px.svg" width="106">
+                                    <lucid-buttcon-popover showpopover="customgroupdropdown.show" class="gear-dropdown-icon lucid-select-dropdown-wrapper lucid-icon fill-white" icon="https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-gear-22px.svg" width="106">
                                       <div class="lucid-select-wrapper">
                                         <ul class="lucid-select-dropdown" ng-click="customgroupdropdown.show = false;">
                                           <li class="lucid-select-option" ng-click="$root.shareModal = true">Share</li>
@@ -274,7 +274,7 @@
                                 </div>
                               </div>
                               <div class="pin-library" ng-click="$parent.togglePin(shapegroup)" ng-class="{'pinned': shapegroup.pinned}">
-                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                  <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                               </div>
                               <div class="slide-toggle" ng-hide="hideshapes">
                                   <div class="zero-state" ng-if="shapegroup.custom && shapegroup.shapes.length == 0">
@@ -329,7 +329,7 @@
                                 <span class="shape-group-name">{{lucidGroup.groupname}}</span>
                               </div>
                               <div class="pin-library" ng-click="$parent.toggleGroupPin(lucidGroup); $event.stopPropagation();" ng-class="{'pinned': lucidGroupPinned(lucidGroup)}">
-                                  <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                  <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                               </div>
                               <div class="group-icon-wrapper lucid-drawer-wrapper" ng-click="setGroup($index, $parent.showGroupIndex);">
                                 <img ng-src="{{lucidGroup.image}}">
@@ -368,7 +368,7 @@
                                             <span class="shape-group-name">{{shapegroup.groupname}}</span>
                                           </div>
                                           <div class="pin-library" ng-click="$parent.togglePin(shapegroup); $event.stopPropagation();" ng-class="{'pinned': shapegroup.pinned}">
-                                              <ng-include src="'http://particle.golucid.co/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
+                                              <ng-include src="'https://lucidsoftware.github.io/particle/components/1.2/icon/icons/icon-pin-22px.svg'" class="lucid-buttcon lucid-icon"></ng-include>
                                           </div>
                                           <div class="slide-toggle" ng-hide="hideshapes">
                                               <ul class="shapes-wrapper"

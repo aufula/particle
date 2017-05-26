@@ -30,7 +30,7 @@ angular.module('particleApp',
             // Allow same origin resource loads.
             'self',
             // Allow loading from our assets domain.  Notice the difference between * and **.
-            'http://particle.golucid.co/**',
+            'https://lucidsoftware.github.io/particle/**',
             'https://s3-us-west-2.amazonaws.com/s.cdpn.io/t-157/**'
         ]);
     }])
